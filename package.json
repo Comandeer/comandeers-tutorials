@@ -1,0 +1,11 @@
+{
+  "name": "SiteBuilder",
+  "version": "0.0.0",
+  "main": "Gruntfile.js",
+  "private": true,
+  "dependencies": {
+    "cheerio": "~0.12.4"
+  },
+  "author": "Comandeer",
+  "license": "MIT"
+}

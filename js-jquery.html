@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+	<html lang="pl" dir="ltr" class="no-js">
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width,initial-scale=1.0">
+			<script>
+			(function(H,c){H[c]=H[c].replace(/\bno-js\b/,'')+' js'})(document.documentElement,'className');
+
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-33158520-2', 'auto');
+			ga('send', 'pageview');
+
+			/*
+			 Details primitive polyfill by Comandeer
+			 */
+			"open"in document.createElement("details")||document.addEventListener("DOMContentLoaded",function(){try{[].forEach.call(document.querySelectorAll("details"),function(e){var t=e.querySelector("summary"),n=function(n){n?(e.removeAttribute("open"),t.setAttribute("aria-expanded",!1)):(e.setAttribute("open","open"),t.setAttribute("aria-expanded",!0))},i=function(){n(e.hasAttribute("open"))};n(!e.hasAttribute("open")),t.setAttribute("tabindex",0),t.setAttribute("role","button"),t.addEventListener("click",i),t.addEventListener("keyup",function(e){-1!==[13,32].indexOf(e.keyCode)&&(e.preventDefault(),this.click())})})}catch(e){}})
+			</script>
+			<title>Czemu nie potrzebujesz jQuery?</title>
+			<!--[if lt IE 9]>
+				<script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<![endif]-->
+			<link rel="stylesheet" href="/css/framework.css">
+			<link rel="stylesheet" href="/css/prism.css">
+			<style>
+			h1[id]:hover:after,h2[id]:hover:after,h3[id]:hover:after
+			{
+				content:'#'attr(id);
+				margin-left:20px;
+				opacity:.4;
+			}
+			.code-switch
+			{
+				cursor:pointer;
+			}
+			.code-switch
+			{
+				font-size:smaller;
+				font-weight:bold;
+			}
+			pre
+			{
+				max-height:300px;
+				overflow:auto;
+			}
+			pre.expanded
+			{
+				max-height:99999px;
+			}
+			.code,.quote
+			{
+				margin-top:5px;
+			}
+			ul 
+			{
+				list-style-image:url(/images/bullet.gif);
+			}
+			</style>
+		</head>
+		<body class="fluid">
+			<header class="topbar gradient">
+				<h1><a href="/" title="« Powrót do spisu tutoriali">Tutorials</a></h1>
+			</header>
+			<main class="content">
+				<article>
+				<h1 id="start">Czemu nie potrzebujesz jQuery?</h1> 
+
+<h2 id="mimo">Mimo, że zdaje ci się inaczej</h2>
+<p>Ten tutorial kieruję do wszystkich tych, którzy nie wyobrażają sobie wykonania jakiejkolwiek prostej czynności w JS bez użycia tego wszechstronnego frameworka. Część zarzutów tyczy się też mnie, gdyż osobiście również korzystam z jQuery (hej, to nie moja wina, że DOM jest tak spaprany!)</p>
+
+
+<h2 id="alternatywa">Alternatywa?</h2>
+<p><a href="http://vanilla-js.com/">VanillaJS</a> + <a href="http://microjs.com/">jeden z tych maluczkich</a></p>
+
+
+<h2 id="dom">Podstawowe operacje DOM-owe</h2>
+
+<h3 id="selektory">Wyszukiwanie po selektorach</h3>
+<p>Potęgą jQuery jest jego silniczek Sizzle, który pozwala wyszukać dowolny element tylko i wyłącznie na podstawie selektora. To jest często główny/jedyny powód, dla którego część webmasterów sięga po jQ.</p>
+<p class="code">Kod:</p><pre><code class="language-javascript">$('#bardzo &gt; optymalny .selektor #ktory .na-bank.dziala');</code></pre>
+<p class="info">Oczywiście optymalizacja takich selektorów to zupełnie inna sprawa ;)</p> 
+<p>Skupmy się na tym czy w czystym JS istnieje jakaś alternatywa dla tego pięknego owijacza?</p> Otóż tak
+<p class="code">Kod:</p><pre><code class="language-javascript">document.querySelectorAll('#bardzo &gt; optymalny .selektor #ktory .na-bank.dziala');</code></pre>
+<p>Prawdę mówiąc, jeśli przyjrzymy się kodowi jQ, zauważymy, że wewnętrznie używa on właśnie tej metody. Nie trzeba chyba mówić co jest szybsze ;) Oczywiście można pójść o krok dalej i zrobić sobie coś takiego:</p>
+<p class="code">Kod:</p><pre><code class="language-javascript">var $ = document.querySelectorAll.bind(document);</code></pre>
+<p>Voilla! Mamy jQ bez jQ</p>
+
+<h3 id="chaining">Chainowanie metod</h3>
+<p>Chainowanie metod to to, co decyduje o niezwykłej użyteczności jQ w zastosowaniach DOM-owych</p>
+<p class="code">Kod:</p><pre><code class="language-javascript">$('&lt;a&gt;').attr('href', '#').on('click', function() {});</code></pre>
+<p>Owszem, w VanillaJS nie jestem w stanie uzyskać tak wygodnej obsługi DOM. Ale tu z pomocą przychodzi nam <a href="http://leaverou.github.com/chainvas/">Chainvas</a> - małe cudeńko, które jest w stanie złańcuchować de facto wszystko. i dzięki temu można spokojnie napisać</p>
+<p class="code">Kod:</p><pre><code class="language-javascript">document.createElement('a').setAttribute('href', '#').addEventListener('click', function() {});</code></pre>
+<p>I tym sposobem odebraliśmy jQ największą jego przewagę w operacjach DOM-owych, oszczędzając przy tym 31KB kodu (oczywiście mowa tu o wersjach gzipniętych i zminifikowanych)</p>
+
+<h3 id="delegation">Event delegation</h3>
+<p>w jQ jest prosto:</p>
+<p class="code">Kod:</p><pre><code class="language-javascript">$(document).on('click', '.clicky', function(e)
+{
+	//awesome stuff
+});</code></pre>
+<p>w czystym JS też jest prosto</p>
+<p class="code">Kod:</p><pre><code class="language-javascript">document.addEventListener('click', function(e)
+{
+	if(!e.target || !e.target.matches('.clicky')/*to jest, ale z vendor prefixami ;) można zmienić na !e.target.classList.contains('clicky')*/)
+		return;
+	//awesome stuff
+}, false);</code></pre>
+
+<h3 id="clone"><code class="label">.clone</code></h3>
+<p>żeby sklonować obiekt w jQ, wystarczy skorzystać z metody <code class="label">.clone</code>. Czy da się zrobić coś takiego w czystym JS? A i owszem.</p>
+<p class="warning"><b>UWAGA!</b> Podany tutaj przykład rozszerza prototyp <code class="label">Object</code>, co może być <a href="http://www.nczonline.net/blog/2010/03/02/maintainable-javascript-dont-modify-objects-you-down-own/">dość kiepskim pomysłem</a> (a przynajmniej w takiej formie, bez ustawienia enumeracji wartości na fałsz)</p>
+<p class="code">Kod:</p><pre><code class="language-javascript">Object.prototype.clone = function()
+{
+	return this.cloneNode ? this.cloneNode(this) : JSON.parse(JSON.stringify(this));
+};
+console.log(document.createElement('a').clone());</code></pre>
+<p>Prosta i przyjemna sztuczka ;)</p>
+
+<h3 id="extend"><code class="label">.extend</code></h3>
+<p>To już nie jest do końca DOM, ale może się tu nadać ;)</p>
+<p>jak wiadomo, w jQ mamy metodę <code class="label">.extend</code> uzupełniającą nam obiekt</p>
+<p class="code">Kod:</p><pre><code class="language-javascript">console.log($.extend({}, {cos: 1}));</code></pre>
+<p>W czystym JS <a href="https://github.com/shimondoodkin/nodejs-clone-extend/blob/master/index.js#L40">też się da</a>. ba, można być nawet chamskim i po prostu wyciągnąć ten kod z jQ ;)</p>
+
+
+<h2 id="animacje">Animacje</h2>
+<p>Co tu dużo mówić - od kiedy w CSS są transition i animations, większość rzeczy można wgl wyjąć poza JS. Natomiast niektóre inne animacje z jQ można równie łatwo napisać w czystym JS. Przykład, lekko poprawiony, ze strony VanillaJS:</p>
+<p class="code">Kod:</p><pre><code class="language-javascript">$('#thing').fadeOut();
+//vs
+var s = document.getElementById('d').style;
+s.opacity = +(s.opacity || window.getComputedStyle(el)['opacity']);
+(function f() {(s.opacity -= 1 / 100) &lt;= 0 ? s.display = "none" : requestAnimationFrame(f)}());</code></pre>
+<p>Nie trzeba chyba zaznaczać, że porównanie objętościowe tych trzech linijek i całego jQ wypada korzystnie dla czystego JS ;)</p>
+<p>oczywiście warto zauważyć, że rAF jest tylko w nowszych browserach i trza by zarzucić jakimś fallbackiem:</p>
+<p class="code">Kod:</p><pre><code class="language-javascript">window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame || function(f){setTimeout(f, 1000 / 60)};</code></pre>
+
+
+<h2 id="xhr">XHR</h2>
+<p>Tu nie będzie przykładów, jedynie krótkie info ;)</p>
+<p>Otóż wrapper w jQ jest cholernie wygodny i wgl. Jednak jeśli chcemy mieć dostęp do bardziej zaawansowanych własności obiektu xhr (np. <code class="label">xhr.upload.progress</code>) <a href="https://github.com/malsup/form/blob/master/jquery.form.js#L258">trzeba użyć natywnego obiektu</a>.</p>
+
+
+<h2 id="ui">jQUI</h2>
+<p>wiele rzeczy <a href="http://pulpit.luke.co.pl/">da się napisać</a> bez tego, wystarcza trochę pomyślunku</p>
+<p>szybki przykład na resize elementów (akurat wykorzystywany w zupełnie innym kontekście niż browserowy ;)):</p>
+<p class="code">Kod:</p><pre><code class="language-javascript">if(&#91;'l', 'r'&#93;.indexOf(resizing) !== -1)
+{
+	if(resizing === 'l')
+	{
+		window.frame.width += x - e.pageX;
+		window.frame.left -= x - e.pageX;		
+	}
+	else
+		window.frame.width -= x - e.pageX;
+
+	if(window.frame.width &lt; 60)
+		window.frame.width = 60;
+	
+	x = e.pageX;
+	y = e.pageY;
+}
+else if(&#91;'t', 'b'&#93;.indexOf(resizing) !== -1)
+{
+	if(resizing === 't')
+	{
+		window.frame.height += y - e.pageY;
+		window.frame.top -= y - e.pageY;		
+	}
+	else
+		window.frame.height -= y - e.pageY;
+	
+	if(window.frame.height &lt; 120)
+		window.frame.height = 120;
+
+	x=e.pageX;
+	y=e.pageY;
+}
+else
+{
+	window.frame.width -= x-e.pageX;
+	window.frame.height -= y-e.pageY;
+}</code></pre>
+<p>co prawda kod najwyższych lotów nie jest i raczej przedstawia ogólną ideę jak to może wyglądać, niż jak to powinno wyglądać. Ba, można zdać się na natywne funkcje, takie jak <code class="label">resize</code> w CSS (miało działać na wszystkim, ale nie wiem czy ta obietnica jest spełniona ;)) i drag&drop (w IE od wersji 5 bodaj!). Dobitnie to pokazuje, że nawet tak skomplikowane czynności jakie wykonuje za nas jQUI można zrobić zarówno bez niego, jak i jego ojca - jQ.</p>
+ 
+
+
+<h2 id="ale">Ale za to w jQ da się...</h2>
+<p>Z racji tego, że jQ jest tylko subsetem JS, śmiem twierdzić, że nie ma rzeczy, której nie dałoby się osiągnąć w czystym JS. Jestem w stanie podjąć każde wyzwanie i udowodnić, że się da bez ;)</p>
+
+<h2 id="czy-porzucic">Czy porzucić?</h2>
+<p>Nie trzeba. Sam używam i jestem zadowolony ;) cały problem polega na tym, że jQuery jest przedstawiane jako lekarstwo na wszelkie zło JS, a to po prostu wierutna bzdura. jQuery powstało jako helper DOM-owy i to wciąż jest jego główną siłą.</p>
+<p>Co więcej - jQuery niszczy świadomość programistów sieciowych. Coraz częściej można spotkać bowiem nie programistów JS, a programistów jQuery, którzy jedynie tą biblioteką są w stanie się posługiwać.</p>
+<p>Dlatego nie mówię, żeby przestać jQ używać. Jeśli natomiast do stronki, gdzie trza oskryptować jeden link, wsadzasz jQ, to znak, że coś jest nie tego. Jeśli natomiast umiesz zastąpić jQ <a href="http://www.forumweb.pl/javascript/cancelbubble-stoppropagation-problem/397808#397808">własnym rozwiązaniem</a> i robisz to, gdy potrzebujesz jedną, konkretną rzecz, to oznacza, że jesteś zupełnie normalnym użytkownikiem tej biblioteki i syndrom uzależnienia ciebie nie dotyczy.</p>
+
+				</article>
+				<section id="komentarze">
+					<h2>Komentarze</h2>
+					<div id="disqus_thread"></div>
+					<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+					<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+				</section>
+			</main>
+			<nav class="sidebar nice">
+		<h2 class="sidebar-header">Spis treści</h2>
+			<div class="sidebar-inner">
+				<ul class="unstyled">
+				<li><a href="#mimo">Mimo, że zdaje ci się inaczej</a></li><li><a href="#alternatywa">Alternatywa?</a></li><li><a href="#dom">Podstawowe operacje DOM-owe</a><ul class="unstyled"><li><a href="#selektory">Wyszukiwanie po selektorach</a></li><li><a href="#chaining">Chainowanie metod</a></li><li><a href="#delegation">Event delegation</a></li><li><a href="#clone"><code class="label">.clone</code></a></li><li><a href="#extend"><code class="label">.extend</code></a></li></ul></li><li><a href="#animacje">Animacje</a></li><li><a href="#xhr">XHR</a></li><li><a href="#ui">jQUI</a></li><li><a href="#ale">Ale za to w jQ da się...</a></li><li><a href="#czy-porzucic">Czy porzucić?</a></li>
+				</ul>
+			</div>
+		</nav>
+			<footer class="footer">Copyright &copy; by <a href="http://www.comandeer.pl" rel="author">Comandeer</a>.</footer>
+			<script>
+			(function()
+			{
+				try
+				{
+					var b = document.getElementsByClassName('code');
+					
+					[].forEach.call(b, function(t)
+					{
+						var n = t.nextElementSibling;
+						
+						if(!n || n.tagName.toLowerCase() !== 'pre' || n.scrollHeight<300)
+							return false;
+
+						t.innerHTML = t.innerHTML.replace(':', ' <span class="code-switch">[Rozwiń]</span>:');
+						t.getElementsByTagName('span')[0].toSwitch = n;
+					});
+
+					document.addEventListener('click', function(e)
+					{
+						if(!e.target || !e.target.classList.contains('code-switch'))
+							return true;
+
+						e.preventDefault();
+						
+						var t = e.target
+						,n = t.toSwitch
+						,iH = t.innerHTML;
+						
+						if(!n || n.tagName.toLowerCase() !== 'pre')
+							return false;
+						
+						n.classList.toggle('expanded');
+						t.innerHTML = (iH === '[Zwiń]' ? '[Rozwiń]' : '[Zwiń]');
+					});
+
+					//defer loading of disqus
+					window.disqus_shortname = 'comandeerowa';
+
+					var comments = document.getElementById('komentarze')
+					,offset = comments.getBoundingClientRect().top
+					,dsq = document.createElement('script');
+
+					dsq.type = 'text/javascript'; dsq.async = true;
+					dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+					if(document.documentElement.scrollHeight <= document.documentElement.clientHeight + 50 || location.hash.indexOf('#comment-') === 0)
+						(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+					else
+						window.addEventListener('scroll', (function throttle()
+						{
+							var threshhold = 50
+							,last
+							,deferTimer
+							,fn = function()
+							{
+								if(window.scrollY < offset - (document.documentElement.clientHeight))
+									return;
+
+								(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+								unpin();
+							}
+							,f = function()
+							{
+								var context = this;
+
+								var now = +new Date
+								,args = arguments;
+
+								if(last && now < last + threshhold)
+								{
+									// hold on to it
+									clearTimeout(deferTimer);
+
+									deferTimer = setTimeout(function()
+									{
+										last = now;
+										fn.apply(context, args);
+									}, threshhold);
+								}
+								else
+								{
+									last = now;
+									fn.apply(context, args);
+								}
+							}
+							,unpin = function()
+							{
+								window.removeEventListener('scroll', f)
+							};
+
+							return f;
+						}()));
+				}
+				catch(e)
+				{
+				}
+			}());
+			</script>
+			<script src="/js/prism.js"></script>
+		</body>
+	</html>
