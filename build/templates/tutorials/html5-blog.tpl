@@ -183,7 +183,7 @@
 
 [h3="artykul-obrazki"]Obrazki[/h3]
 [p]Dobra, później mamy obrazek. "No cóż, przynajmniej obrazka tykać nie będzie…" - pomyślą ci, których przytłacza ogrom nowych możliwości. Niestety, obrazek też można ulepszyć :D W tym wypadku posłużymy się znacznikiem [tt]figure[/tt]. Jego zadaniem jest oznaczanie danych multimedialnych, które są istotne dla danego artykułu (sekcji), lecz mogą także być prezentowane samodzielnie - na chłopski rozum: masz ilustrację do swojego artykułu, użyj [tt]figure[/tt]![/p]
-[p=warning]Co rozumiem pod pojęciem "ilustracja"? Wystarczy wyobrazić sobie książkę, w której mamy obrazek (albo tabelkę, zdjęcie itp.), a pod nim podpis typu "Ryc. 1. Pusta szafa". Dzięki takiemu oznaczeniu można wyciągnąć tego typu obiekt poza pierwotny kontekst, a wciąż będzie mieć te same znaczenie (pusta szafa z podpisem to wciąż pusta szafa). Natomiast wszelkie ozdobniki graficzne, które są w artykule, żeby było ładnie to po prostu ozdobniki. Ilustracja musi nieść ze sobą jakąś wartość semantyczną (łatwo to stwierdzić po tym, że da się wymyślić sensowny opis).[/p]
+[p=warning]Co rozumiem pod pojęciem "ilustracja"? Wystarczy wyobrazić sobie książkę, w której mamy obrazek (albo tabelkę, zdjęcie itp.), a pod nim podpis typu "Ryc. 1. Pusta szafa". Dzięki takiemu oznaczeniu można wyciągnąć tego typu obiekt poza pierwotny kontekst, a wciąż będzie mieć te same znaczenie (pusta szafa z podpisem to wciąż pusta szafa). Natomiast wszelkie ozdobniki graficzne, które są w artykule, żeby było ładnie to po prostu ozdobniki. Ilustracja musi nieść ze sobą jakąś wartość semantyczną (łatwo to stwierdzić po tym, że da się wymyślić sensowny opis) i nie może zależeć od kontekstu swojego występowania (jeśli tekst traci sens po przesunięciu danego obiektu, to znak, że to nie jest kandydat na [tt]figure[/tt]).[/p]
 [code=markup]<figure>
 	<img src="http://example.net/images/obrazek-do-artykulu.png" alt="Ważny obrazek">
 	<figcaption>Bardzo ważny obrazek[…],który jest bardzo ważny</figcaption>
@@ -405,10 +405,9 @@
 [p=info]Chciałbym tutaj zwrócić uwagę, że warto także podać atrybut [tt][lang][/tt] wskazujący na język użyty w metadanych. W końcu to międzynarodowy standard i niekoniecznie opis dokumentu musi być po polsku.[/p]
 
 
-[h2="ostatnie"]Ostatnie poprawki[/h2]
-[p]To już prawie koniec :D Co jeszcze warto zmienić?[/p]
-[list]
-[*] [p]Na początku [tt]body[/tt] dodać[/p]
+[h2="dostepnosc"]Kilka uwag o dostępności[/h2]
+[p]Pisząc ten poradnik, skupiałem się głównie na kwestiach semantyki. Skutkiem ubocznym tego jest automatyczne zwiększenie dostępności tak stworzonej strony WWW. Na chwilę obecną nasza strona powinna być już naprawdę dobrze dostosowana dla osób niepełnosprawnych (zwłaszcza po dodaniu kilku rzeczy z opisanego wyżej standardu WAI-ARIA), lecz kilka rzeczy można jeszcze poprawić.[/p]
+[p]Na początku [tt]body[/tt] warto dodać:[/p]
 [code=markup]<a href="#Super-hiper-wazny-wpis" class="focus-only" tabindex="1">Przejdź do treści</a>[/code]
 [p]Zwiększy to użyteczność dla tych, którzy korzystają z przeglądarek głosowych lub mają zaburzenia psychomotoryczne i są zmuszeni używać jedynie klawiatury. Dla innych ukryjemy to w CSS robiąc np. tak:[/p]
 [code=css].focus-only 
@@ -421,7 +420,7 @@
 {
 	position:static;
 }[/code]
-[p]Oczywiście link będzie czuły na TAB. Inna metoda (ponoć bardziej użyteczna i nie powodująca problemów z wydajnością na urządzeniach mobilnych) to [url=http://adaptivethemes.com/using-css-clip-as-an-accessible-method-of-hiding-content/]wykorzystanie [tt]clip[/tt][/url]. Stosuje ją m.in. [url=http://h5bp.com]H5BP[/url][/p]
+[p]Oczywiście link będzie czuły na TAB. Inna metoda (bardziej użyteczna i nie powodująca problemów z wydajnością na urządzeniach mobilnych) to [url=http://adaptivethemes.com/using-css-clip-as-an-accessible-method-of-hiding-content/]wykorzystanie [tt]clip[/tt][/url]. Stosuje ją m.in. [url=http://h5bp.com]H5BP[/url][/p]
 [code=css].focus-only
 {
 	position: absolute;
@@ -431,21 +430,46 @@
 {
 	position: static; /*lub clip: auto;*/
 }[/code]
-[p]Warto także dodać, że niektóre przeglądarki co prawda przeskoczą do odpowiedniego elementu, ale zachowają starą kolejność TAB-owania elementów (czyli będzie TAB-ować menu, które chcieliśmy przeskoczyć) - dlatego dla kontenera z treścią warto dorzucić [tt][tabindex=-1][/tt]. Więcej info można znaleźć tutaj: http://viget.com/inspire/skip-link-primer[/p]
-[*] Oprócz RSS dodać także ATOM, bo to o wiele lepszy format i lepiej się z nim pracuje
-[*] Wszystkie [tt]script[/tt] (oprócz tego dla IE) przerzucić na koniec [tt]body[/tt] (zwiększy to szybkość ładowania strony, bo skrypty w [tt]head[/tt] mogą ją [url=http://developer.yahoo.com/performance/rules.html#js_bottom]"blokować"[/url]). Jeśli mamy bardzo dużo JS, ze złożonymi relacjami pomiędzy poszczególnymi plikami, warto rozważyć [url=https://github.com/umdjs/umd]architekturę modułową[/url]
-[*] [s]Dodać odpowiednie [tt][tabindex][/tt], [tt][accesskey][/tt] (szczególnie dla menu i wyszukiwarki)[/s] Wycofuję się z tego, gdyż narzucony [tt][tabindex][/tt] może zrobić więcej szkody niż pożytku i w gruncie rzeczy powinien służyć do uczynienia focusowalnymi tych elementów, które natywnie nie są (czyli de facto winien być używany tylko i wyłącznie w połączeniu z JS i ARIA). Tak samo wydaje mi się, że skróty klawiaturowe lepiej i wygodniej dla użytkownika zrobić jest w JS.
-[*] Dla obrazków w treści artykułu warto stosować ścieżki bezwzględne [s](te z // na początku)[/s], bo treść może być udostępniana także przez RSS i ATOM i może pojawić się problem z odnalezieniem właściwego obrazka. [s]Czemu //, a nie http://? Ponieważ raz, że szybciej się pisze ;) Po drugie zapis // sam się "przystosowuje": jeśli strona jest słana przez HTTP, obrazek również zostanie przez niego zassany; jeśli przez HTTPS, obrazek będzie przesłany z szyfrowaniem i w ogóle (oczywiście jeśli nie stać cię na SSL, to lepiej wymuszaj http:// ;))[/s]. Gdy to tylko możliwe, należy [url=https://twitter.com/paul_irish/status/588502455530311680]wymuszać HTTPS[/url]. Zapewnia to większe bezpieczeństwo, a w przyszłości umożliwi korzystanie z [url=https://http2.github.io/]HTTP/2[/url].
-[*] Można się w ogóle pokusić o serwowanie CSS, JS i obrazków z [url=http://en.wikipedia.org/wiki/Content_Delivery_Network]CDN[/url]. Jest to jedno z zaleceń Google odnośnie szybkości wczytywania stron: rozłożenie wczytywania na 2 paralelne domeny. Jedna serwuje dynamiczną stronę (czyli PHP i generujemy blogaska), a druga serwuje wszystko, co statyczne. Jednak rozłożenie wczytywania strony to tylko część zalet i bardziej rozbudowane CDN-y korzystają choćby z geolokalizacji, żeby zasysać zasoby z serwera jak najbliżej użytkownika, aby czas wczytywania był jeszcze krótszy. Istnieją także darmowe CDN-y, np. [url=http://www.coralcdn.org/]Coral CDN[/url].
-[*] Dla IE słać nagłówek [tt]X-UA-Compatible[/tt] ustawiony na [tt]IE=edge[/tt]. Wymusza to renderowanie strony przy pomocy najnowszych standardów w IE >= 8. [s]Dodatkowo można słać ten nagłówek z wartością [tt]IE=edge; chrome=1[/tt], co wymusi użycie [url=https://developers.google.com/chrome/chrome-frame/]Chrome Frame[/url], jeśli jest dostępny.[/s] Chrome Frame odszedł na emeryturę… Googlersi to jednak skrajni idealiści. Jeśli nie lubisz wciskać pluginów userowi, zawsze możesz [s][url=http://browsehappy.pl/infobarwebmaster]kulturalnie poinformować[/url][/s] [url=https://browser-update.org/pl/]naprawdę kulturalnie poinformować[/url] ;)
-[*] Używać media-queries, aby strona sama się dostosowywała do urządzenia użytkownika (nurt responsive webdesign). Opłaca się, bo Google [url=https://www.google.com/webmasters/tools/mobile-friendly/]lubi strony mobile friendly[/url] (a mój telefon to popiera!).
-[*] Jeśli masz profil na Google+, rozważ umieszczenie [tt]link[rel=author][/tt] (jako osoba prywatna) bądź też [tt]link[rel=publisher][/tt] (jako firma, organizacja, paracyrk…) z [tt][href][/tt] ustawionym na adres Twojego profilu. Jak Ci się uda, to możliwe, że w wynikach wyszukiwania obok Twojej strony pojawi się Twoje zdjęcie profilowe :>
-[code=markup]<link rel="author" href="//plus.google.com/108791847143656151689/">[/code]
-[*] Jak już jesteśmy przy społecznościówkach, Facebook też serwuje [url=http://davidwalsh.name/facebook-meta-tags]swoje metatagi[/url] a Twtiter [url=https://dev.twitter.com/docs/cards]nie pozostaje mu dłużny[/url]
-[*] Warto też serwować ikonkę strony. Najlepiej mieć podstawową - [tt]favicon.ico[/tt] - w głównym folderze witryny. Wtedy, nawet jeśli nie zamieścimy [tt]link[rel=icon][/tt] w kodzie, przeglądarki sobie ją pobiorą (tak, przeglądarki po prostu na chama szukają ikonki, śląc requesty pod http://naszastrona.pl/favicon.ico). Mając taką podstawową w zapasie, można próbować wcisnąć browserom np coś w PNG właśnie przy pomocy [tt]link[rel=icon][/tt]. IE < 9 i tak tego nie rozumie, uparcie szukając [tt]link[rel=shortcut][/tt], zatem ono dostanie ico a reszta ładny PNG (albo nawet animację w GIF ;)). Do tego dochodzą jeszcze np. [url=http://mathiasbynens.be/notes/touch-icons]ikonki dotykowe dla iUrządzeń[/url] i inne takie, które też można (a jeśli strona ma być dla mobilnych też - nawet trzeba ;)) zamieścić. Są od tego [url=http://realfavicongenerator.net/]odpowiednie narzędzia[/url]. Uwaga! Generowany kod to prawdziwa kobyła. Tak się to kończy, gdy [url=http://css-tricks.com/favicon-quiz/]nie istnieje jeden, powszechny standard[/url]
-[*] W nowszych Windowsach (7 i 8) można sobie [url=http://msdn.microsoft.com/en-us/library/ie/gg491732(v=vs.85).aspx]przypiąć stronę[/url] i odpalać ją jak zwykłą aplikację (oczywiście w IE :))
-[*] Dla większości elementów sekcjonujących ([tt]section, article, nav, aside[/tt]) warto dodać nagłówki, które - dla piękna - ukryć można przed wizualnymi podobną techniką, jak ta dla już wspominanego linku [tt].focus-only[/tt]. Oczywiście nie ma sensu na chamca wtryniać nagłówków dla każdej sekcji  - czasami "Untitled section" jest dozwolone. Lepszy jest brak nagłówka, niźli bezsensowny nagłówek. Inna rzecz, że jeśli coś nie ma nagłówka, to prawdopodobnie nie jest sekcją
-[*] Na końcu warto poświęcić chwilkę i przetestować stronę, poczynając od [url=http://validator.w3.org]Validatora[/url], przechodząc do [url=http://wave.webaim.org/]testu dostępności[/url] a na [url=http://developers.google.com/speed/pagespeed/insights/]teście szybkości kończąc[/url]. Sprawdzenie strony na kilku różnych urządzeniach też jest dobrym pomysłem
+[p]Warto także dodać, że niektóre przeglądarki co prawda przeskoczą do odpowiedniego elementu, ale zachowają starą kolejność TAB-owania elementów (czyli będzie TAB-ować menu, które chcieliśmy przeskoczyć) – dlatego dla kontenera z treścią warto dorzucić [tt][tabindex=-1][/tt]. Więcej info można znaleźć tutaj: http://viget.com/inspire/skip-link-primer[/p]
+[p][s]Dodać odpowiednie [tt][tabindex][/tt], [tt][accesskey][/tt] (szczególnie dla menu i wyszukiwarki)[/s] Wycofuję się z tego, gdyż narzucony [tt][tabindex][/tt] może zrobić więcej szkody niż pożytku i w gruncie rzeczy powinien służyć do uczynienia focusowalnymi tych elementów, które natywnie nie są (czyli de facto winien być używany tylko i wyłącznie w połączeniu z JS i ARIA). Tak samo wydaje mi się, że skróty klawiaturowe lepiej i wygodniej dla użytkownika zrobić jest w JS.[/p]
+[p]Dla większości elementów sekcjonujących ([tt]section, article, nav, aside[/tt]) warto dodać nagłówki, które – dla piękna – ukryć można przed wizualnymi przeglądarkami podobną techniką, jak ta dla już wspominanego linku [tt].focus-only[/tt]. Oczywiście nie ma sensu na chamca wtryniać nagłówków dla każdej sekcji – czasami "Untitled section" jest dozwolone. Lepszy jest brak nagłówka, niźli bezsensowny nagłówek. Inna rzecz, że jeśli coś nie ma nagłówka, to prawdopodobnie nie jest sekcją. Warto o tym pamiętać, bo nagłówki dla sekcji tworzą swoisty schemat nawigacyjny po stronie, który można wykorzystać do szybkiego przeskakiwania między częściami strony i identyfikowania ich. Tutaj warto też zauważyć, że każda sekcja powinna mieć odpowiednie [tt][id][/tt] – w języku strony. Dzięki temu będzie można linkować do każdej sekcji, co znacząco zwiększa użyteczność strony. Podobna technika jest stosowana w przypadku tego tutorialu, gdzie można zauważyć najczęściej stosowany wzorzec dla tworzenia identyfikatorów: slug z treści nagłówka.[/p]
+[p]Czasami zdarza się też, że musimy zapewnić jeszcze większy poziom dostępności. Tutaj na pomoc przychodzi nam [url=https://www.w3.org/TR/WCAG20/]standard WCAG 2.0[/url], dokładnie opisujący wszelkie aspekty dotyczące dostępności stron WWW. Jest on podzielony na 3 poziomy (A, AA i AAA), określające stopień dostępności (od minimum do sensownego maksimum). Standard ten opisuje [b]naprawdę wszystko[/b], co webmaster powinien wiedzieć o dostępności, stąd można go traktować jako swoistą biblię. Istnieje także [url=https://www.w3.org/WAI/WCAG20/quickref/]oficjalny katechizm[/url].[/p]
+[p="warning"]WCAG powinien znać [b]KAŻDY[/b] szanujący się programista sieciowy. Zasady określone w tym standardzie nie są trudne w zastosowaniu (większość sprowadza się do poprawnego użycia HTML-a), a przynoszą spore korzyści w dziedzinie dostępności.[/p]
+[p]Jeśli przestrzega się zasad semantyki HTML i nie zapomina o zasadzie Progressive Enhancement, wówczas prawdopodobnie nie będziesz musiał specjalnie przejmować się kwestiami dostępności strony. Wyjątkiem będą tu kwestie związane z kontrastem, gdyż je bardzo łatwo przeoczyć.[/p]
+
+
+[h2="ostatnie"]Ostatnie poprawki[/h2]
+[p]To już prawie koniec :D Co jeszcze warto zmienić?[/p]
+
+[h3="wydajnosc"]Wydajność i bezpieczeństwo[/h3]
+[list]
+	[*] Wszystkie [tt]script[/tt] (oprócz tego dla IE) przerzucić na koniec [tt]body[/tt] (zwiększy to szybkość ładowania strony, bo skrypty w [tt]head[/tt] mogą ją [url=http://developer.yahoo.com/performance/rules.html#js_bottom]"blokować"[/url]). Jeśli mamy bardzo dużo JS, ze złożonymi relacjami pomiędzy poszczególnymi plikami, warto rozważyć [url=https://github.com/umdjs/umd]architekturę modułową[/url]
+	[*] Można się w ogóle pokusić o serwowanie CSS, JS i obrazków z [url=http://en.wikipedia.org/wiki/Content_Delivery_Network]CDN[/url]. Jest to jedno z zaleceń Google odnośnie szybkości wczytywania stron: rozłożenie wczytywania na 2 paralelne domeny. Jedna serwuje dynamiczną stronę (czyli PHP i generujemy blogaska), a druga serwuje wszystko, co statyczne. Jednak rozłożenie wczytywania strony to tylko część zalet i bardziej rozbudowane CDN-y korzystają choćby z geolokalizacji, żeby zasysać zasoby z serwera jak najbliżej użytkownika, aby czas wczytywania był jeszcze krótszy. Istnieją także darmowe CDN-y, np. [url=http://www.coralcdn.org/]Coral CDN[/url].
+	[*] Warto też stosować build process, podczas którego będziemy minifikować kod HTML, łączyć i minifikować pliki CSS i JS (być może nawet z przygotowywaniem paczek dla poszczególnych podstron) oraz kompresować obrazki (np. przy pomocy [url=https://imageoptim.com/]ImageOptim[/url]). Bardzo prymitywny przykład takiego rozwiązania można zobaczyć w [url=https://github.com/Comandeer/comandeers-homepage]repozytorium mojej strony domowej[/url].
+	[*] Jak lubimy eksperymentować, to warto przejść całkowicie na HTTPS i [url=https://http2.github.io/]protokół HTTP/2[/url]. Zwiększy to zarówno bezpieczeństwo, jak i wydajność naszej strony.
+	[*] Jak już jesteśmy przy HTTPS, to warto wspomnieć o [url=https://developer.mozilla.org/en-US/docs/Web/Security/HTTP_strict_transport_security]HSTS[/url] i [url=https://developer.mozilla.org/en/docs/Web/Security/Public_Key_Pinning]HPKP[/url].
+	[*] Kontynuując ten temat, jest jeszcze [url=https://www.owasp.org/index.php/List_of_useful_HTTP_headers]kilka innych pomocnych nagłówków[/url], z czego najwięcej uwagi warto poświęcić [url=https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy][tt]Content-Security-Policy[/tt][/url].
+[/list]
+
+[h3="integracja"]Integracja z zewnętrznymi usługami[/h3]
+[list]
+	[*] Dodać [url=http://html5doctor.com/web-manifest-specification/]web app manifest[/url], co pozwoli "uaplikacjowić" się naszemu blogowi.
+	[*] Oprócz RSS dodać także ATOM, bo to o wiele lepszy format i lepiej się z nim pracuje.
+	[*] Dla obrazków w treści artykułu warto stosować ścieżki bezwzględne [s](te z // na początku)[/s], bo treść może być udostępniana także przez RSS i ATOM i może pojawić się problem z odnalezieniem właściwego obrazka. [s]Czemu //, a nie http://? Ponieważ raz, że szybciej się pisze ;) Po drugie zapis // sam się "przystosowuje": jeśli strona jest słana przez HTTP, obrazek również zostanie przez niego zassany; jeśli przez HTTPS, obrazek będzie przesłany z szyfrowaniem i w ogóle (oczywiście jeśli nie stać cię na SSL, to lepiej wymuszaj http:// ;))[/s]. Gdy to tylko możliwe, należy [url=https://twitter.com/paul_irish/status/588502455530311680]wymuszać HTTPS[/url]. Zapewnia to większe bezpieczeństwo, a w przyszłości umożliwi korzystanie z [url=https://http2.github.io/]HTTP/2[/url].
+	[*] Jeśli masz profil na Google+, rozważ umieszczenie [tt]link[rel=author][/tt] (jako osoba prywatna) bądź też [tt]link[rel=publisher][/tt] (jako firma, organizacja, paracyrk…) z [tt][href][/tt] ustawionym na adres Twojego profilu. [s]Jak Ci się uda, to możliwe, że w wynikach wyszukiwania obok Twojej strony pojawi się Twoje zdjęcie profilowe :>[/s] [url=https://support.google.com/webmasters/answer/6083347?hl=pl]Się nie pojawi[/url], ale i tak warto taką informację dodać dla innych usług:
+	[code=markup]<link rel="author" href="//plus.google.com/108791847143656151689/">[/code]
+	[*] Jak już jesteśmy przy społecznościówkach, Facebook też serwuje [url=http://davidwalsh.name/facebook-meta-tags]swoje metatagi[/url] a Twtiter [url=https://dev.twitter.com/docs/cards]nie pozostaje mu dłużny[/url].
+	[*] Warto też serwować ikonkę strony. Najlepiej mieć podstawową - [tt]favicon.ico[/tt] - w głównym folderze witryny. Wtedy, nawet jeśli nie zamieścimy [tt]link[rel=icon][/tt] w kodzie, przeglądarki sobie ją pobiorą (tak, przeglądarki po prostu na chama szukają ikonki, śląc requesty pod http://naszastrona.pl/favicon.ico). Mając taką podstawową w zapasie, można próbować wcisnąć browserom np coś w PNG właśnie przy pomocy [tt]link[rel=icon][/tt]. IE < 9 i tak tego nie rozumie, uparcie szukając [tt]link[rel=shortcut][/tt], zatem ono dostanie ico a reszta ładny PNG (albo nawet animację w GIF ;)). Do tego dochodzą jeszcze np. [url=http://mathiasbynens.be/notes/touch-icons]ikonki dotykowe dla iUrządzeń[/url] i inne takie, które też można (a jeśli strona ma być dla mobilnych też - nawet trzeba ;)) zamieścić. Są od tego [url=http://realfavicongenerator.net/]odpowiednie narzędzia[/url]. Uwaga! Generowany kod to prawdziwa kobyła. Tak się to kończy, gdy [url=http://css-tricks.com/favicon-quiz/]nie istnieje jeden, powszechny standard[/url].
+	[*] W nowszych Windowsach (7 i 8) można sobie [url=http://msdn.microsoft.com/en-us/library/ie/gg491732(v=vs.85).aspx]przypiąć stronę[/url] i odpalać ją jak zwykłą aplikację (oczywiście w IE :)). Podobna opcja [url=https://productforums.google.com/forum/#!topic/chrome/9jHS2dpJX5Q]jest dostępna w Chrome[/url].
+	[*] Chrome na mobilnych urządzeniach pozwala również [url=https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android?hl=en]zmienić kolor paska adresu[/url]:
+	[code=markup]<meta name="theme-color" content="#db5945">[/code]
+[/list]
+
+[h3="kompatybilnosc"]Kompatybilność[/h3]
+[list]
+	[*] Używać media-queries, aby strona sama się dostosowywała do urządzenia użytkownika (nurt responsive webdesign). Opłaca się, bo Google [url=https://www.google.com/webmasters/tools/mobile-friendly/]lubi strony mobile friendly[/url] (a mój telefon to popiera!).
+	[*] Dla IE słać nagłówek [tt]X-UA-Compatible[/tt] ustawiony na [tt]IE=edge[/tt]. Wymusza to renderowanie strony przy pomocy najnowszych standardów w IE >= 8. [s]Dodatkowo można słać ten nagłówek z wartością [tt]IE=edge; chrome=1[/tt], co wymusi użycie [url=https://developers.google.com/chrome/chrome-frame/]Chrome Frame[/url], jeśli jest dostępny.[/s] Chrome Frame odszedł na emeryturę… Googlersi to jednak skrajni idealiści. Jeśli nie lubisz wciskać pluginów userowi, zawsze możesz [s][url=http://browsehappy.pl/infobarwebmaster]kulturalnie poinformować[/url][/s] [url=https://browser-update.org/pl/]naprawdę kulturalnie poinformować[/url].
+	[*] Na końcu warto poświęcić chwilkę i przetestować stronę, poczynając od [url=http://validator.w3.org]Validatora[/url], przechodząc do [url=http://wave.webaim.org/]testu dostępności[/url] a na [url=http://developers.google.com/speed/pagespeed/insights/]teście szybkości kończąc[/url]. Sprawdzenie strony na kilku różnych urządzeniach lub [url=https://www.browserstack.com/]BrowserStack[/url] też jest dobrym pomysłem.
 [/list]
 [p] Więcej grzechów nie pamiętam :D[/p]
 
@@ -597,7 +621,7 @@
 				</article>
 			</aside>
 			
-			<footer id="footer">Copyright &copy; 2014 by <a href="https://example.net/author" rel="author">Comandeer</a></footer>
+			<footer id="footer">Copyright &copy; 2016 by <a href="https://example.net/author" rel="author">Comandeer</a></footer>
 
 			<script src="https://bardzo-zajety-serwer.google.com/jquery.js"></script>
 			<script src="https://mniej-zajety-serwer.blog.pl/scripty.js"></script>
@@ -606,26 +630,51 @@
 
 
 [h2="przydatne"]Przydatne linki[/h2]
+
+[h3="standardy"]Standardy i oficjalne materiały[/h3]
 [list]
-	[*] [url=http://validator.w3.org/nu]Oficjalny walidator[/url]
+	[*] [url=http://www.whatwg.org/specs/web-apps/current-work/multipage/]HTML Living Standard[/url]
+	[*] [url=http://www.w3.org/TR/html5]Specyfikacja HTML5[/url] (która jest oficjalną rekomendacją W3C od 28.10.2014!)
+	[*] [url=http://www.w3.org/TR/html51]Specyfikacja HTML5.1[/url]
+	[*] [url=http://developers.whatwg.org/]Specka dla developerów[/url] ;)
+	[*] [url=https://www.w3.org/TR/WCAG20/]Specyfikacja WCAG 2.0[/url]
+	[*] [url=https://www.w3.org/WAI/WCAG20/quickref/]Oficjalny poradnik WCAG 2.0[/url]
+	[*] [url=https://www.w3.org/TR/wai-aria/]Specyfikacja WAI-ARIA[/url]
+	[*] [url=http://www.w3.org/WAI/PF/aria-practices/]Oficjalny poradnik dla chcących bawić się WAI-ARIA[/url]
+	[*] [url=http://microformats.org/wiki/Main_Page]Specyfikacje i oficjalne materiały o mikroformatach[/url]
+	[*] [url=https://www.w3.org/TR/microdata/]Specyfikacja microdata[/url]
+	[*] [url=http://dublincore.org/]Informacje o Dublin Core[/url]
+	[*] [url=http://usecases.responsiveimages.org]Oficjalna informacja o responsywnych obrazkach[/url]
+	[*] [url=http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-picture-element]Definicja tagu [tt]picture[/tt] w HTML5.1[/url]
+	[*] [url=https://tools.ietf.org/html/rfc7540]Specyfikacja HTTP/2[/url]
+	[*] [url=https://www.w3.org/TR/CSP2/]Specyfikacja Content Security Policy[/url]
+[/list]
+
+[h3="poradniki"]Poradniki[/h3]
+[list]
 	[*] [url=http://lea.verou.me]Perfekcyjny przykład bloga w HTML5[/url]
-	[*] [url=http://microformats.org/wiki/Main_Page]Mikroformaty[/url]
 	[*] [url=http://www.diveinto.org/html5/extensibility.html]Microdata[/url]
 	[*] [url=http://html5doctor.com/microdata/]Doktorzy o microdata[/url]
 	[*] [url=http://kurs.browsehappy.pl/HTML/DublinCore]DublinCore[/url]
 	[*] [url=http://www.alistapart.com/articles/waiaria]WAI-ARIA[/url]
-	[*] [url=http://www.w3.org/WAI/PF/aria-practices/]Oficjalny poradnik dla chcących bawić się WAI-ARIA[/url]
 	[*] [url=http://html5doctor.com/on-html-belts-and-aria-braces/]Krótka uwaga dla nadużywających ARIA[/url]
-	[*] [url=http://www.w3.org/TR/html5]Specyfikacja HTML5[/url] (która jest oficjalną rekomendacją W3C od 28.10.2014!)
-	[*] [url=http://www.w3.org/TR/html51]Specyfikacja HTML5.1[/url]
-	[*] [url=http://www.whatwg.org/specs/web-apps/current-work/multipage/]HTML Living Standard[/url]
-	[*] [url=http://developers.whatwg.org/]Specka dla developerów[/url] ;)
-	[*] [url=http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-picture-element]Definicja tagu [tt]picture[/tt] w HTML5.1[/url]
 	[*] [url=http://html5doctor.com/the-time-element/]Trochę o tagu [tt]time[/tt][/url]
-	[*] [url=http://usecases.responsiveimages.org]Najświeższe info o responsywnych obrazkach[/url]
 	[*] [url=http://html5doctor.com/avoiding-common-html5-mistakes/]Lista najczęstszych błędów[/url]
 	[*] [url=http://html5doctor.com/downloads/h5d-sectioning-flowchart.pdf]Prosty schemat pomagający dobrać odpowiedni tag[/url]
+	[*] [url=http://webroad.pl/inne/3722-progressive-enhancement-zapomniany-fundament]Progressive Enhancement[/url]
+	[*] [url=http://webroad.pl/html5-css3/3925-validate-or-not-to-validate-that-is-the-question]Krótki artykuł o walidacji[/url]
+[/list]
+
+[h3="narzedzia"]Narzędzia[/h3]
+[list]
+	[*] [url=http://validator.w3.org/nu]Oficjalny walidator[/url]
+	[*] [url=http://wave.webaim.org/]Narzędzie do sprawdzania dostępności strony[/url]
+	[*] [url=https://developers.google.com/speed/pagespeed/insights/]Narzędzie do mierzenia wydajności strony[/url]
+	[*] [url=https://www.google.com/webmasters/tools/mobile-friendly/]Tester przyjazności dla urządzeń mobilnych[/url]
+	[*] [url=https://developers.google.com/structured-data/testing-tool/]Narzędzie do testowania microdata/mikroformatów/RDFa[/url]
 	[*] [url=http://caniuse.com]Prosty sposób na sprawdzenie wsparcia HTML5 w różnych przeglądarkach[/url]
+	[*] [url=https://www.browserstack.com/]Testowanie strony w różnych przeglądarkach[/url]
+	[*] [url=http://html5test.com/]Test wsparcia dla HTML5[/url]
 [/list]
 
 
@@ -657,6 +706,7 @@
 		[*] [b]04.06.2015[/b] - opisanie komentarzy, informacja o relative protocol, uzupełnienie informacji o [tt]figure[/tt], poprawienie wykorzystania [tt][rel=tag][/tt], notka przy [tt][rel][/tt] o ich połączeniu z konkretną stroną oraz uaktualnienie kodu bloga
 		[*] [b]31.07.2015[/b] - wyjęcie komentarzy poza stopkę artykułu
 		[*] [b]26.11.2015[/b] - mała poprawka we fragmencie o adresach zasobów na stronie
-		[*] [b]11.12.2015[/b] - uaktualnienie obrazków z outlinem blogów; dodanie notki o możliwości testowania outline w walidatorze; dodanie linka do walidatora 
+		[*] [b]11.12.2015[/b] - uaktualnienie obrazków z outlinem blogów; dodanie notki o możliwości testowania outline w walidatorze; dodanie linka do walidatora
+		[*] [b]03.02.2016[/b] - lekkie uszczegółowienie opisu [tt]figure[/tt]; przebudowa i aktualizacja sekcji "Ostatnie poprawki"; dopisanie kilku informacji o bezpieczeństwie; utworzenie sekcji o dostępności; przebudowa i aktualizacja sekcji z linkami; uaktualnienie stopki bloga 
 	[/list]
 [/spoiler]

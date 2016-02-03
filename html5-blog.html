@@ -251,7 +251,7 @@
 
 <h3 id="artykul-obrazki">Obrazki</h3>
 <p>Dobra, później mamy obrazek. "No cóż, przynajmniej obrazka tykać nie będzie…" - pomyślą ci, których przytłacza ogrom nowych możliwości. Niestety, obrazek też można ulepszyć :D W tym wypadku posłużymy się znacznikiem <code class="label">figure</code>. Jego zadaniem jest oznaczanie danych multimedialnych, które są istotne dla danego artykułu (sekcji), lecz mogą także być prezentowane samodzielnie - na chłopski rozum: masz ilustrację do swojego artykułu, użyj <code class="label">figure</code>!</p>
-<p class="warning">Co rozumiem pod pojęciem "ilustracja"? Wystarczy wyobrazić sobie książkę, w której mamy obrazek (albo tabelkę, zdjęcie itp.), a pod nim podpis typu "Ryc. 1. Pusta szafa". Dzięki takiemu oznaczeniu można wyciągnąć tego typu obiekt poza pierwotny kontekst, a wciąż będzie mieć te same znaczenie (pusta szafa z podpisem to wciąż pusta szafa). Natomiast wszelkie ozdobniki graficzne, które są w artykule, żeby było ładnie to po prostu ozdobniki. Ilustracja musi nieść ze sobą jakąś wartość semantyczną (łatwo to stwierdzić po tym, że da się wymyślić sensowny opis).</p>
+<p class="warning">Co rozumiem pod pojęciem "ilustracja"? Wystarczy wyobrazić sobie książkę, w której mamy obrazek (albo tabelkę, zdjęcie itp.), a pod nim podpis typu "Ryc. 1. Pusta szafa". Dzięki takiemu oznaczeniu można wyciągnąć tego typu obiekt poza pierwotny kontekst, a wciąż będzie mieć te same znaczenie (pusta szafa z podpisem to wciąż pusta szafa). Natomiast wszelkie ozdobniki graficzne, które są w artykule, żeby było ładnie to po prostu ozdobniki. Ilustracja musi nieść ze sobą jakąś wartość semantyczną (łatwo to stwierdzić po tym, że da się wymyślić sensowny opis) i nie może zależeć od kontekstu swojego występowania (jeśli tekst traci sens po przesunięciu danego obiektu, to znak, że to nie jest kandydat na <code class="label">figure</code>).</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;figure&gt;
 	&lt;img src="http://example.net/images/obrazek-do-artykulu.png" alt="Ważny obrazek"&gt;
 	&lt;figcaption&gt;Bardzo ważny obrazek&#91;…&#93;,który jest bardzo ważny&lt;/figcaption&gt;
@@ -473,10 +473,9 @@
 <p class="info">Chciałbym tutaj zwrócić uwagę, że warto także podać atrybut <code class="label">&#91;lang&#93;</code> wskazujący na język użyty w metadanych. W końcu to międzynarodowy standard i niekoniecznie opis dokumentu musi być po polsku.</p>
 
 
-<h2 id="ostatnie">Ostatnie poprawki</h2>
-<p>To już prawie koniec :D Co jeszcze warto zmienić?</p>
-<ul>
-<li> <p>Na początku <code class="label">body</code> dodać</p>
+<h2 id="dostepnosc">Kilka uwag o dostępności</h2>
+<p>Pisząc ten poradnik, skupiałem się głównie na kwestiach semantyki. Skutkiem ubocznym tego jest automatyczne zwiększenie dostępności tak stworzonej strony <a href="http://WWW." >WWW.</a> Na chwilę obecną nasza strona powinna być już naprawdę dobrze dostosowana dla osób niepełnosprawnych (zwłaszcza po dodaniu kilku rzeczy z opisanego wyżej standardu WAI-ARIA), lecz kilka rzeczy można jeszcze poprawić.</p>
+<p>Na początku <code class="label">body</code> warto dodać:</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;a href="#Super-hiper-wazny-wpis" class="focus-only" tabindex="1"&gt;Przejdź do treści&lt;/a&gt;</code></pre>
 <p>Zwiększy to użyteczność dla tych, którzy korzystają z przeglądarek głosowych lub mają zaburzenia psychomotoryczne i są zmuszeni używać jedynie klawiatury. Dla innych ukryjemy to w CSS robiąc np. tak:</p>
 <p class="code">Kod:</p><pre><code class="language-css">.focus-only 
@@ -489,7 +488,7 @@
 {
 	position:static;
 }</code></pre>
-<p>Oczywiście link będzie czuły na TAB. Inna metoda (ponoć bardziej użyteczna i nie powodująca problemów z wydajnością na urządzeniach mobilnych) to <a href="http://adaptivethemes.com/using-css-clip-as-an-accessible-method-of-hiding-content/">wykorzystanie <code class="label">clip</code></a>. Stosuje ją m.in. <a href="http://h5bp.com">H5BP</a></p>
+<p>Oczywiście link będzie czuły na TAB. Inna metoda (bardziej użyteczna i nie powodująca problemów z wydajnością na urządzeniach mobilnych) to <a href="http://adaptivethemes.com/using-css-clip-as-an-accessible-method-of-hiding-content/">wykorzystanie <code class="label">clip</code></a>. Stosuje ją m.in. <a href="http://h5bp.com">H5BP</a></p>
 <p class="code">Kod:</p><pre><code class="language-css">.focus-only
 {
 	position: absolute;
@@ -499,21 +498,46 @@
 {
 	position: static; /*lub clip: auto;*/
 }</code></pre>
-<p>Warto także dodać, że niektóre przeglądarki co prawda przeskoczą do odpowiedniego elementu, ale zachowają starą kolejność TAB-owania elementów (czyli będzie TAB-ować menu, które chcieliśmy przeskoczyć) - dlatego dla kontenera z treścią warto dorzucić <code class="label">&#91;tabindex=-1&#93;</code>. Więcej info można znaleźć tutaj: <a href="http://viget.com/inspire/skip-link-primer">http://viget.com/inspire/skip-link-primer</a></p>
-</li><li> Oprócz RSS dodać także ATOM, bo to o wiele lepszy format i lepiej się z nim pracuje
-</li><li> Wszystkie <code class="label">script</code> (oprócz tego dla IE) przerzucić na koniec <code class="label">body</code> (zwiększy to szybkość ładowania strony, bo skrypty w <code class="label">head</code> mogą ją <a href="http://developer.yahoo.com/performance/rules.html#js_bottom">"blokować"</a>). Jeśli mamy bardzo dużo JS, ze złożonymi relacjami pomiędzy poszczególnymi plikami, warto rozważyć <a href="https://github.com/umdjs/umd">architekturę modułową</a>
-</li><li> <s>Dodać odpowiednie <code class="label">&#91;tabindex&#93;</code>, <code class="label">&#91;accesskey&#93;</code> (szczególnie dla menu i wyszukiwarki)</s> Wycofuję się z tego, gdyż narzucony <code class="label">&#91;tabindex&#93;</code> może zrobić więcej szkody niż pożytku i w gruncie rzeczy powinien służyć do uczynienia focusowalnymi tych elementów, które natywnie nie są (czyli de facto winien być używany tylko i wyłącznie w połączeniu z JS i ARIA). Tak samo wydaje mi się, że skróty klawiaturowe lepiej i wygodniej dla użytkownika zrobić jest w JS.
-</li><li> Dla obrazków w treści artykułu warto stosować ścieżki bezwzględne <s>(te z // na początku)</s>, bo treść może być udostępniana także przez RSS i ATOM i może pojawić się problem z odnalezieniem właściwego obrazka. <s>Czemu //, a nie <a href="http://?">http://?</a> Ponieważ raz, że szybciej się pisze ;) Po drugie zapis // sam się "przystosowuje": jeśli strona jest słana przez HTTP, obrazek również zostanie przez niego zassany; jeśli przez HTTPS, obrazek będzie przesłany z szyfrowaniem i w ogóle (oczywiście jeśli nie stać cię na SSL, to lepiej wymuszaj <a href="http://">http://</a> ;))</s>. Gdy to tylko możliwe, należy <a href="https://twitter.com/paul_irish/status/588502455530311680">wymuszać HTTPS</a>. Zapewnia to większe bezpieczeństwo, a w przyszłości umożliwi korzystanie z <a href="https://http2.github.io/">HTTP/2</a>.
-</li><li> Można się w ogóle pokusić o serwowanie CSS, JS i obrazków z <a href="http://en.wikipedia.org/wiki/Content_Delivery_Network">CDN</a>. Jest to jedno z zaleceń Google odnośnie szybkości wczytywania stron: rozłożenie wczytywania na 2 paralelne domeny. Jedna serwuje dynamiczną stronę (czyli PHP i generujemy blogaska), a druga serwuje wszystko, co statyczne. Jednak rozłożenie wczytywania strony to tylko część zalet i bardziej rozbudowane CDN-y korzystają choćby z geolokalizacji, żeby zasysać zasoby z serwera jak najbliżej użytkownika, aby czas wczytywania był jeszcze krótszy. Istnieją także darmowe CDN-y, np. <a href="http://www.coralcdn.org/">Coral CDN</a>.
-</li><li> Dla IE słać nagłówek <code class="label">X-UA-Compatible</code> ustawiony na <code class="label">IE=edge</code>. Wymusza to renderowanie strony przy pomocy najnowszych standardów w IE &gt;= 8. <s>Dodatkowo można słać ten nagłówek z wartością <code class="label">IE=edge; chrome=1</code>, co wymusi użycie <a href="https://developers.google.com/chrome/chrome-frame/">Chrome Frame</a>, jeśli jest dostępny.</s> Chrome Frame odszedł na emeryturę… Googlersi to jednak skrajni idealiści. Jeśli nie lubisz wciskać pluginów userowi, zawsze możesz <s><a href="http://browsehappy.pl/infobarwebmaster">kulturalnie poinformować</a></s> <a href="https://browser-update.org/pl/">naprawdę kulturalnie poinformować</a> ;)
-</li><li> Używać media-queries, aby strona sama się dostosowywała do urządzenia użytkownika (nurt responsive webdesign). Opłaca się, bo Google <a href="https://www.google.com/webmasters/tools/mobile-friendly/">lubi strony mobile friendly</a> (a mój telefon to popiera!).
-</li><li> Jeśli masz profil na Google+, rozważ umieszczenie <code class="label">link&#91;rel=author&#93;</code> (jako osoba prywatna) bądź też <code class="label">link&#91;rel=publisher&#93;</code> (jako firma, organizacja, paracyrk…) z <code class="label">&#91;href&#93;</code> ustawionym na adres Twojego profilu. Jak Ci się uda, to możliwe, że w wynikach wyszukiwania obok Twojej strony pojawi się Twoje zdjęcie profilowe :&gt;
-<p class="code">Kod:</p><pre><code class="language-markup">&lt;link rel="author" href="//plus.google.com/108791847143656151689/"&gt;</code></pre>
-</li><li> Jak już jesteśmy przy społecznościówkach, Facebook też serwuje <a href="http://davidwalsh.name/facebook-meta-tags">swoje metatagi</a> a Twtiter <a href="https://dev.twitter.com/docs/cards">nie pozostaje mu dłużny</a>
-</li><li> Warto też serwować ikonkę strony. Najlepiej mieć podstawową - <code class="label">favicon.ico</code> - w głównym folderze witryny. Wtedy, nawet jeśli nie zamieścimy <code class="label">link&#91;rel=icon&#93;</code> w kodzie, przeglądarki sobie ją pobiorą (tak, przeglądarki po prostu na chama szukają ikonki, śląc requesty pod <a href="http://naszastrona.pl/favicon.ico">http://naszastrona.pl/favicon.ico</a>). Mając taką podstawową w zapasie, można próbować wcisnąć browserom np coś w PNG właśnie przy pomocy <code class="label">link&#91;rel=icon&#93;</code>. IE &lt; 9 i tak tego nie rozumie, uparcie szukając <code class="label">link&#91;rel=shortcut&#93;</code>, zatem ono dostanie ico a reszta ładny PNG (albo nawet animację w GIF ;)). Do tego dochodzą jeszcze np. <a href="http://mathiasbynens.be/notes/touch-icons">ikonki dotykowe dla iUrządzeń</a> i inne takie, które też można (a jeśli strona ma być dla mobilnych też - nawet trzeba ;)) zamieścić. Są od tego <a href="http://realfavicongenerator.net/">odpowiednie narzędzia</a>. Uwaga! Generowany kod to prawdziwa kobyła. Tak się to kończy, gdy <a href="http://css-tricks.com/favicon-quiz/">nie istnieje jeden, powszechny standard</a>
-</li><li> W nowszych Windowsach (7 i 8) można sobie <a href="http://msdn.microsoft.com/en-us/library/ie/gg491732(v=vs.85).aspx">przypiąć stronę</a> i odpalać ją jak zwykłą aplikację (oczywiście w IE :))
-</li><li> Dla większości elementów sekcjonujących (<code class="label">section, article, nav, aside</code>) warto dodać nagłówki, które - dla piękna - ukryć można przed wizualnymi podobną techniką, jak ta dla już wspominanego linku <code class="label">.focus-only</code>. Oczywiście nie ma sensu na chamca wtryniać nagłówków dla każdej sekcji  - czasami "Untitled section" jest dozwolone. Lepszy jest brak nagłówka, niźli bezsensowny nagłówek. Inna rzecz, że jeśli coś nie ma nagłówka, to prawdopodobnie nie jest sekcją
-</li><li> Na końcu warto poświęcić chwilkę i przetestować stronę, poczynając od <a href="http://validator.w3.org">Validatora</a>, przechodząc do <a href="http://wave.webaim.org/">testu dostępności</a> a na <a href="http://developers.google.com/speed/pagespeed/insights/">teście szybkości kończąc</a>. Sprawdzenie strony na kilku różnych urządzeniach też jest dobrym pomysłem
+<p>Warto także dodać, że niektóre przeglądarki co prawda przeskoczą do odpowiedniego elementu, ale zachowają starą kolejność TAB-owania elementów (czyli będzie TAB-ować menu, które chcieliśmy przeskoczyć) – dlatego dla kontenera z treścią warto dorzucić <code class="label">&#91;tabindex=-1&#93;</code>. Więcej info można znaleźć tutaj: <a href="http://viget.com/inspire/skip-link-primer">http://viget.com/inspire/skip-link-primer</a></p>
+<p><s>Dodać odpowiednie <code class="label">&#91;tabindex&#93;</code>, <code class="label">&#91;accesskey&#93;</code> (szczególnie dla menu i wyszukiwarki)</s> Wycofuję się z tego, gdyż narzucony <code class="label">&#91;tabindex&#93;</code> może zrobić więcej szkody niż pożytku i w gruncie rzeczy powinien służyć do uczynienia focusowalnymi tych elementów, które natywnie nie są (czyli de facto winien być używany tylko i wyłącznie w połączeniu z JS i ARIA). Tak samo wydaje mi się, że skróty klawiaturowe lepiej i wygodniej dla użytkownika zrobić jest w JS.</p>
+<p>Dla większości elementów sekcjonujących (<code class="label">section, article, nav, aside</code>) warto dodać nagłówki, które – dla piękna – ukryć można przed wizualnymi przeglądarkami podobną techniką, jak ta dla już wspominanego linku <code class="label">.focus-only</code>. Oczywiście nie ma sensu na chamca wtryniać nagłówków dla każdej sekcji – czasami "Untitled section" jest dozwolone. Lepszy jest brak nagłówka, niźli bezsensowny nagłówek. Inna rzecz, że jeśli coś nie ma nagłówka, to prawdopodobnie nie jest sekcją. Warto o tym pamiętać, bo nagłówki dla sekcji tworzą swoisty schemat nawigacyjny po stronie, który można wykorzystać do szybkiego przeskakiwania między częściami strony i identyfikowania ich. Tutaj warto też zauważyć, że każda sekcja powinna mieć odpowiednie <code class="label">&#91;id&#93;</code> – w języku strony. Dzięki temu będzie można linkować do każdej sekcji, co znacząco zwiększa użyteczność strony. Podobna technika jest stosowana w przypadku tego tutorialu, gdzie można zauważyć najczęściej stosowany wzorzec dla tworzenia identyfikatorów: slug z treści nagłówka.</p>
+<p>Czasami zdarza się też, że musimy zapewnić jeszcze większy poziom dostępności. Tutaj na pomoc przychodzi nam <a href="https://www.w3.org/TR/WCAG20/">standard WCAG 2.0</a>, dokładnie opisujący wszelkie aspekty dotyczące dostępności stron <a href="http://WWW." >WWW.</a> Jest on podzielony na 3 poziomy (A, AA i AAA), określające stopień dostępności (od minimum do sensownego maksimum). Standard ten opisuje <b>naprawdę wszystko</b>, co webmaster powinien wiedzieć o dostępności, stąd można go traktować jako swoistą biblię. Istnieje także <a href="https://www.w3.org/WAI/WCAG20/quickref/">oficjalny katechizm</a>.</p>
+<p class="warning">WCAG powinien znać <b>KAŻDY</b> szanujący się programista sieciowy. Zasady określone w tym standardzie nie są trudne w zastosowaniu (większość sprowadza się do poprawnego użycia HTML-a), a przynoszą spore korzyści w dziedzinie dostępności.</p>
+<p>Jeśli przestrzega się zasad semantyki HTML i nie zapomina o zasadzie Progressive Enhancement, wówczas prawdopodobnie nie będziesz musiał specjalnie przejmować się kwestiami dostępności strony. Wyjątkiem będą tu kwestie związane z kontrastem, gdyż je bardzo łatwo przeoczyć.</p>
+
+
+<h2 id="ostatnie">Ostatnie poprawki</h2>
+<p>To już prawie koniec :D Co jeszcze warto zmienić?</p>
+
+<h3 id="wydajnosc">Wydajność i bezpieczeństwo</h3>
+<ul>
+	<li> Wszystkie <code class="label">script</code> (oprócz tego dla IE) przerzucić na koniec <code class="label">body</code> (zwiększy to szybkość ładowania strony, bo skrypty w <code class="label">head</code> mogą ją <a href="http://developer.yahoo.com/performance/rules.html#js_bottom">"blokować"</a>). Jeśli mamy bardzo dużo JS, ze złożonymi relacjami pomiędzy poszczególnymi plikami, warto rozważyć <a href="https://github.com/umdjs/umd">architekturę modułową</a>
+	</li><li> Można się w ogóle pokusić o serwowanie CSS, JS i obrazków z <a href="http://en.wikipedia.org/wiki/Content_Delivery_Network">CDN</a>. Jest to jedno z zaleceń Google odnośnie szybkości wczytywania stron: rozłożenie wczytywania na 2 paralelne domeny. Jedna serwuje dynamiczną stronę (czyli PHP i generujemy blogaska), a druga serwuje wszystko, co statyczne. Jednak rozłożenie wczytywania strony to tylko część zalet i bardziej rozbudowane CDN-y korzystają choćby z geolokalizacji, żeby zasysać zasoby z serwera jak najbliżej użytkownika, aby czas wczytywania był jeszcze krótszy. Istnieją także darmowe CDN-y, np. <a href="http://www.coralcdn.org/">Coral CDN</a>.
+	</li><li> Warto też stosować build process, podczas którego będziemy minifikować kod HTML, łączyć i minifikować pliki CSS i JS (być może nawet z przygotowywaniem paczek dla poszczególnych podstron) oraz kompresować obrazki (np. przy pomocy <a href="https://imageoptim.com/">ImageOptim</a>). Bardzo prymitywny przykład takiego rozwiązania można zobaczyć w <a href="https://github.com/Comandeer/comandeers-homepage">repozytorium mojej strony domowej</a>.
+	</li><li> Jak lubimy eksperymentować, to warto przejść całkowicie na HTTPS i <a href="https://http2.github.io/">protokół HTTP/2</a>. Zwiększy to zarówno bezpieczeństwo, jak i wydajność naszej strony.
+	</li><li> Jak już jesteśmy przy HTTPS, to warto wspomnieć o <a href="https://developer.mozilla.org/en-US/docs/Web/Security/HTTP_strict_transport_security">HSTS</a> i <a href="https://developer.mozilla.org/en/docs/Web/Security/Public_Key_Pinning">HPKP</a>.
+	</li><li> Kontynuując ten temat, jest jeszcze <a href="https://www.owasp.org/index.php/List_of_useful_HTTP_headers">kilka innych pomocnych nagłówków</a>, z czego najwięcej uwagi warto poświęcić <a href="https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy"><code class="label">Content-Security-Policy</code></a>.
+</li></ul>
+
+<h3 id="integracja">Integracja z zewnętrznymi usługami</h3>
+<ul>
+	<li> Dodać <a href="http://html5doctor.com/web-manifest-specification/">web app manifest</a>, co pozwoli "uaplikacjowić" się naszemu blogowi.
+	</li><li> Oprócz RSS dodać także ATOM, bo to o wiele lepszy format i lepiej się z nim pracuje.
+	</li><li> Dla obrazków w treści artykułu warto stosować ścieżki bezwzględne <s>(te z // na początku)</s>, bo treść może być udostępniana także przez RSS i ATOM i może pojawić się problem z odnalezieniem właściwego obrazka. <s>Czemu //, a nie <a href="http://?">http://?</a> Ponieważ raz, że szybciej się pisze ;) Po drugie zapis // sam się "przystosowuje": jeśli strona jest słana przez HTTP, obrazek również zostanie przez niego zassany; jeśli przez HTTPS, obrazek będzie przesłany z szyfrowaniem i w ogóle (oczywiście jeśli nie stać cię na SSL, to lepiej wymuszaj <a href="http://">http://</a> ;))</s>. Gdy to tylko możliwe, należy <a href="https://twitter.com/paul_irish/status/588502455530311680">wymuszać HTTPS</a>. Zapewnia to większe bezpieczeństwo, a w przyszłości umożliwi korzystanie z <a href="https://http2.github.io/">HTTP/2</a>.
+	</li><li> Jeśli masz profil na Google+, rozważ umieszczenie <code class="label">link&#91;rel=author&#93;</code> (jako osoba prywatna) bądź też <code class="label">link&#91;rel=publisher&#93;</code> (jako firma, organizacja, paracyrk…) z <code class="label">&#91;href&#93;</code> ustawionym na adres Twojego profilu. <s>Jak Ci się uda, to możliwe, że w wynikach wyszukiwania obok Twojej strony pojawi się Twoje zdjęcie profilowe :&gt;</s> <a href="https://support.google.com/webmasters/answer/6083347?hl=pl">Się nie pojawi</a>, ale i tak warto taką informację dodać dla innych usług:
+	<p class="code">Kod:</p><pre><code class="language-markup">&lt;link rel="author" href="//plus.google.com/108791847143656151689/"&gt;</code></pre>
+	</li><li> Jak już jesteśmy przy społecznościówkach, Facebook też serwuje <a href="http://davidwalsh.name/facebook-meta-tags">swoje metatagi</a> a Twtiter <a href="https://dev.twitter.com/docs/cards">nie pozostaje mu dłużny</a>.
+	</li><li> Warto też serwować ikonkę strony. Najlepiej mieć podstawową - <code class="label">favicon.ico</code> - w głównym folderze witryny. Wtedy, nawet jeśli nie zamieścimy <code class="label">link&#91;rel=icon&#93;</code> w kodzie, przeglądarki sobie ją pobiorą (tak, przeglądarki po prostu na chama szukają ikonki, śląc requesty pod <a href="http://naszastrona.pl/favicon.ico">http://naszastrona.pl/favicon.ico</a>). Mając taką podstawową w zapasie, można próbować wcisnąć browserom np coś w PNG właśnie przy pomocy <code class="label">link&#91;rel=icon&#93;</code>. IE &lt; 9 i tak tego nie rozumie, uparcie szukając <code class="label">link&#91;rel=shortcut&#93;</code>, zatem ono dostanie ico a reszta ładny PNG (albo nawet animację w GIF ;)). Do tego dochodzą jeszcze np. <a href="http://mathiasbynens.be/notes/touch-icons">ikonki dotykowe dla iUrządzeń</a> i inne takie, które też można (a jeśli strona ma być dla mobilnych też - nawet trzeba ;)) zamieścić. Są od tego <a href="http://realfavicongenerator.net/">odpowiednie narzędzia</a>. Uwaga! Generowany kod to prawdziwa kobyła. Tak się to kończy, gdy <a href="http://css-tricks.com/favicon-quiz/">nie istnieje jeden, powszechny standard</a>.
+	</li><li> W nowszych Windowsach (7 i 8) można sobie <a href="http://msdn.microsoft.com/en-us/library/ie/gg491732(v=vs.85).aspx">przypiąć stronę</a> i odpalać ją jak zwykłą aplikację (oczywiście w IE :)). Podobna opcja <a href="https://productforums.google.com/forum/#!topic/chrome/9jHS2dpJX5Q">jest dostępna w Chrome</a>.
+	</li><li> Chrome na mobilnych urządzeniach pozwala również <a href="https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android?hl=en">zmienić kolor paska adresu</a>:
+	<p class="code">Kod:</p><pre><code class="language-markup">&lt;meta name="theme-color" content="#db5945"&gt;</code></pre>
+</li></ul>
+
+<h3 id="kompatybilnosc">Kompatybilność</h3>
+<ul>
+	<li> Używać media-queries, aby strona sama się dostosowywała do urządzenia użytkownika (nurt responsive webdesign). Opłaca się, bo Google <a href="https://www.google.com/webmasters/tools/mobile-friendly/">lubi strony mobile friendly</a> (a mój telefon to popiera!).
+	</li><li> Dla IE słać nagłówek <code class="label">X-UA-Compatible</code> ustawiony na <code class="label">IE=edge</code>. Wymusza to renderowanie strony przy pomocy najnowszych standardów w IE &gt;= 8. <s>Dodatkowo można słać ten nagłówek z wartością <code class="label">IE=edge; chrome=1</code>, co wymusi użycie <a href="https://developers.google.com/chrome/chrome-frame/">Chrome Frame</a>, jeśli jest dostępny.</s> Chrome Frame odszedł na emeryturę… Googlersi to jednak skrajni idealiści. Jeśli nie lubisz wciskać pluginów userowi, zawsze możesz <s><a href="http://browsehappy.pl/infobarwebmaster">kulturalnie poinformować</a></s> <a href="https://browser-update.org/pl/">naprawdę kulturalnie poinformować</a>.
+	</li><li> Na końcu warto poświęcić chwilkę i przetestować stronę, poczynając od <a href="http://validator.w3.org">Validatora</a>, przechodząc do <a href="http://wave.webaim.org/">testu dostępności</a> a na <a href="http://developers.google.com/speed/pagespeed/insights/">teście szybkości kończąc</a>. Sprawdzenie strony na kilku różnych urządzeniach lub <a href="https://www.browserstack.com/">BrowserStack</a> też jest dobrym pomysłem.
 </li></ul>
 <p> Więcej grzechów nie pamiętam :D</p>
 
@@ -665,7 +689,7 @@
 				&lt;/article&gt;
 			&lt;/aside&gt;
 			
-			&lt;footer id="footer"&gt;Copyright &copy; 2014 by &lt;a href="https://example.net/author" rel="author"&gt;Comandeer&lt;/a&gt;&lt;/footer&gt;
+			&lt;footer id="footer"&gt;Copyright &copy; 2016 by &lt;a href="https://example.net/author" rel="author"&gt;Comandeer&lt;/a&gt;&lt;/footer&gt;
 
 			&lt;script src="https://bardzo-zajety-serwer.google.com/jquery.js"&gt;&lt;/script&gt;
 			&lt;script src="https://mniej-zajety-serwer.blog.pl/scripty.js"&gt;&lt;/script&gt;
@@ -674,26 +698,51 @@
 
 
 <h2 id="przydatne">Przydatne linki</h2>
+
+<h3 id="standardy">Standardy i oficjalne materiały</h3>
 <ul>
-	<li> <a href="http://validator.w3.org/nu">Oficjalny walidator</a>
-	</li><li> <a href="http://lea.verou.me">Perfekcyjny przykład bloga w HTML5</a>
-	</li><li> <a href="http://microformats.org/wiki/Main_Page">Mikroformaty</a>
+	<li> <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/">HTML Living Standard</a>
+	</li><li> <a href="http://www.w3.org/TR/html5">Specyfikacja HTML5</a> (która jest oficjalną rekomendacją W3C od 28.10.2014!)
+	</li><li> <a href="http://www.w3.org/TR/html51">Specyfikacja HTML5.1</a>
+	</li><li> <a href="http://developers.whatwg.org/">Specka dla developerów</a> ;)
+	</li><li> <a href="https://www.w3.org/TR/WCAG20/">Specyfikacja WCAG 2.0</a>
+	</li><li> <a href="https://www.w3.org/WAI/WCAG20/quickref/">Oficjalny poradnik WCAG 2.0</a>
+	</li><li> <a href="https://www.w3.org/TR/wai-aria/">Specyfikacja WAI-ARIA</a>
+	</li><li> <a href="http://www.w3.org/WAI/PF/aria-practices/">Oficjalny poradnik dla chcących bawić się WAI-ARIA</a>
+	</li><li> <a href="http://microformats.org/wiki/Main_Page">Specyfikacje i oficjalne materiały o mikroformatach</a>
+	</li><li> <a href="https://www.w3.org/TR/microdata/">Specyfikacja microdata</a>
+	</li><li> <a href="http://dublincore.org/">Informacje o Dublin Core</a>
+	</li><li> <a href="http://usecases.responsiveimages.org">Oficjalna informacja o responsywnych obrazkach</a>
+	</li><li> <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-picture-element">Definicja tagu <code class="label">picture</code> w HTML5.1</a>
+	</li><li> <a href="https://tools.ietf.org/html/rfc7540">Specyfikacja HTTP/2</a>
+	</li><li> <a href="https://www.w3.org/TR/CSP2/">Specyfikacja Content Security Policy</a>
+</li></ul>
+
+<h3 id="poradniki">Poradniki</h3>
+<ul>
+	<li> <a href="http://lea.verou.me">Perfekcyjny przykład bloga w HTML5</a>
 	</li><li> <a href="http://www.diveinto.org/html5/extensibility.html">Microdata</a>
 	</li><li> <a href="http://html5doctor.com/microdata/">Doktorzy o microdata</a>
 	</li><li> <a href="http://kurs.browsehappy.pl/HTML/DublinCore">DublinCore</a>
 	</li><li> <a href="http://www.alistapart.com/articles/waiaria">WAI-ARIA</a>
-	</li><li> <a href="http://www.w3.org/WAI/PF/aria-practices/">Oficjalny poradnik dla chcących bawić się WAI-ARIA</a>
 	</li><li> <a href="http://html5doctor.com/on-html-belts-and-aria-braces/">Krótka uwaga dla nadużywających ARIA</a>
-	</li><li> <a href="http://www.w3.org/TR/html5">Specyfikacja HTML5</a> (która jest oficjalną rekomendacją W3C od 28.10.2014!)
-	</li><li> <a href="http://www.w3.org/TR/html51">Specyfikacja HTML5.1</a>
-	</li><li> <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/">HTML Living Standard</a>
-	</li><li> <a href="http://developers.whatwg.org/">Specka dla developerów</a> ;)
-	</li><li> <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-picture-element">Definicja tagu <code class="label">picture</code> w HTML5.1</a>
 	</li><li> <a href="http://html5doctor.com/the-time-element/">Trochę o tagu <code class="label">time</code></a>
-	</li><li> <a href="http://usecases.responsiveimages.org">Najświeższe info o responsywnych obrazkach</a>
 	</li><li> <a href="http://html5doctor.com/avoiding-common-html5-mistakes/">Lista najczęstszych błędów</a>
 	</li><li> <a href="http://html5doctor.com/downloads/h5d-sectioning-flowchart.pdf">Prosty schemat pomagający dobrać odpowiedni tag</a>
+	</li><li> <a href="http://webroad.pl/inne/3722-progressive-enhancement-zapomniany-fundament">Progressive Enhancement</a>
+	</li><li> <a href="http://webroad.pl/html5-css3/3925-validate-or-not-to-validate-that-is-the-question">Krótki artykuł o walidacji</a>
+</li></ul>
+
+<h3 id="narzedzia">Narzędzia</h3>
+<ul>
+	<li> <a href="http://validator.w3.org/nu">Oficjalny walidator</a>
+	</li><li> <a href="http://wave.webaim.org/">Narzędzie do sprawdzania dostępności strony</a>
+	</li><li> <a href="https://developers.google.com/speed/pagespeed/insights/">Narzędzie do mierzenia wydajności strony</a>
+	</li><li> <a href="https://www.google.com/webmasters/tools/mobile-friendly/">Tester przyjazności dla urządzeń mobilnych</a>
+	</li><li> <a href="https://developers.google.com/structured-data/testing-tool/">Narzędzie do testowania microdata/mikroformatów/RDFa</a>
 	</li><li> <a href="http://caniuse.com">Prosty sposób na sprawdzenie wsparcia HTML5 w różnych przeglądarkach</a>
+	</li><li> <a href="https://www.browserstack.com/">Testowanie strony w różnych przeglądarkach</a>
+	</li><li> <a href="http://html5test.com/">Test wsparcia dla HTML5</a>
 </li></ul>
 
 
@@ -725,7 +774,8 @@
 		</li><li> <b>04.06.2015</b> - opisanie komentarzy, informacja o relative protocol, uzupełnienie informacji o <code class="label">figure</code>, poprawienie wykorzystania <code class="label">&#91;rel=tag&#93;</code>, notka przy <code class="label">&#91;rel&#93;</code> o ich połączeniu z konkretną stroną oraz uaktualnienie kodu bloga
 		</li><li> <b>31.07.2015</b> - wyjęcie komentarzy poza stopkę artykułu
 		</li><li> <b>26.11.2015</b> - mała poprawka we fragmencie o adresach zasobów na stronie
-		</li><li> <b>11.12.2015</b> - uaktualnienie obrazków z outlinem blogów; dodanie notki o możliwości testowania outline w walidatorze; dodanie linka do walidatora 
+		</li><li> <b>11.12.2015</b> - uaktualnienie obrazków z outlinem blogów; dodanie notki o możliwości testowania outline w walidatorze; dodanie linka do walidatora
+		</li><li> <b>03.02.2016</b> - lekkie uszczegółowienie opisu <code class="label">figure</code>; przebudowa i aktualizacja sekcji "Ostatnie poprawki"; dopisanie kilku informacji o bezpieczeństwie; utworzenie sekcji o dostępności; przebudowa i aktualizacja sekcji z linkami; uaktualnienie stopki bloga 
 	</li></ul>
 </details>
 
@@ -741,7 +791,7 @@
 		<h2 class="sidebar-header">Spis treści</h2>
 			<div class="sidebar-inner">
 				<ul class="unstyled">
-				<li><a href="#punkt-wyjscia">Punkt wyjścia</a></li><li><a href="#nasz-cel">Nasz cel</a></li><li><a href="#doctype">Nowy <code class="label">DOCTYPE</code></a></li><li><a href="#ustawienie-kodowania">Ustawienie kodowania</a></li><li><a href="#arkusz-styl&#xF3;w">Dołączanie arkusza stylów i skryptów</a></li><li><a href="#obsluga-ie">Obsługa starszych przeglądarek</a></li><li><a href="#naglowek">Nagłówek i nawigacja</a></li><li><a href="#artykul">Artykuł</a><ul class="unstyled"><li><a href="#artykul-ramy">Główne ramy</a></li><li><a href="#artykul-naglowek">Nagłówek</a></li><li><a href="#artykul-obrazki">Obrazki</a></li><li><a href="#artykul-outline">Outline</a></li><li><a href="#artykul-komentarz">Komentarze</a></li><li><a href="#artykul-calosc">Całość złożona do kupy</a></li></ul></li><li><a href="#sidebar">Sidebar</a></li><li><a href="#stopka">Stopka</a></li><li><a href="#formularze">Formularze (WebForms 2.0)</a><ul class="unstyled"><li><a href="#formularze-wyszukiwarka">Wyszukiwarka</a></li><li><a href="#formularze-nowe-pola">Nowe typy pól</a></li><li><a href="#formularze-bajery">Inne bajery i dostępność</a></li><li><a href="#formularze-obsluga">Kompatybilność</a></li></ul></li><li><a href="#rel"><code class="label">&#91;rel&#93;</code> czyli dokąd to prowadzi</a><ul class="unstyled"><li><a href="#rel-lista">Lista dozwolonych <code class="label">&#91;rel&#93;</code></a></li><li><a href="#rel-rozszerzalnosc">Rozszerzalność</a></li></ul></li><li><a href="#wai-aria">WAI-ARIA</a><ul class="unstyled"><li><a href="#aria-role">Role</a></li><li><a href="#aria-wut">Ale po co to?</a></li></ul></li><li><a href="#semantyka">Dane semantyczne</a><ul class="unstyled"><li><a href="#semantyka-mikroformaty">Mikroformaty</a></li><li><a href="#microdata">Microdata</a></li><li><a href="#semantyka-inne">Inne formaty danych semantycznych</a></li></ul></li><li><a href="#dublin-core">Dublin Core</a></li><li><a href="#ostatnie">Ostatnie poprawki</a></li><li><a href="#nasz-blog">Nasz blog</a></li><li><a href="#przydatne">Przydatne linki</a></li><li><a href="#changelog">Poprawki i takie tam</a></li>
+				<li><a href="#punkt-wyjscia">Punkt wyjścia</a></li><li><a href="#nasz-cel">Nasz cel</a></li><li><a href="#doctype">Nowy <code class="label">DOCTYPE</code></a></li><li><a href="#ustawienie-kodowania">Ustawienie kodowania</a></li><li><a href="#arkusz-styl&#xF3;w">Dołączanie arkusza stylów i skryptów</a></li><li><a href="#obsluga-ie">Obsługa starszych przeglądarek</a></li><li><a href="#naglowek">Nagłówek i nawigacja</a></li><li><a href="#artykul">Artykuł</a><ul class="unstyled"><li><a href="#artykul-ramy">Główne ramy</a></li><li><a href="#artykul-naglowek">Nagłówek</a></li><li><a href="#artykul-obrazki">Obrazki</a></li><li><a href="#artykul-outline">Outline</a></li><li><a href="#artykul-komentarz">Komentarze</a></li><li><a href="#artykul-calosc">Całość złożona do kupy</a></li></ul></li><li><a href="#sidebar">Sidebar</a></li><li><a href="#stopka">Stopka</a></li><li><a href="#formularze">Formularze (WebForms 2.0)</a><ul class="unstyled"><li><a href="#formularze-wyszukiwarka">Wyszukiwarka</a></li><li><a href="#formularze-nowe-pola">Nowe typy pól</a></li><li><a href="#formularze-bajery">Inne bajery i dostępność</a></li><li><a href="#formularze-obsluga">Kompatybilność</a></li></ul></li><li><a href="#rel"><code class="label">&#91;rel&#93;</code> czyli dokąd to prowadzi</a><ul class="unstyled"><li><a href="#rel-lista">Lista dozwolonych <code class="label">&#91;rel&#93;</code></a></li><li><a href="#rel-rozszerzalnosc">Rozszerzalność</a></li></ul></li><li><a href="#wai-aria">WAI-ARIA</a><ul class="unstyled"><li><a href="#aria-role">Role</a></li><li><a href="#aria-wut">Ale po co to?</a></li></ul></li><li><a href="#semantyka">Dane semantyczne</a><ul class="unstyled"><li><a href="#semantyka-mikroformaty">Mikroformaty</a></li><li><a href="#microdata">Microdata</a></li><li><a href="#semantyka-inne">Inne formaty danych semantycznych</a></li></ul></li><li><a href="#dublin-core">Dublin Core</a></li><li><a href="#dostepnosc">Kilka uwag o dostępności</a></li><li><a href="#ostatnie">Ostatnie poprawki</a><ul class="unstyled"><li><a href="#wydajnosc">Wydajność i bezpieczeństwo</a></li><li><a href="#integracja">Integracja z zewnętrznymi usługami</a></li><li><a href="#kompatybilnosc">Kompatybilność</a></li></ul></li><li><a href="#nasz-blog">Nasz blog</a></li><li><a href="#przydatne">Przydatne linki</a><ul class="unstyled"><li><a href="#standardy">Standardy i oficjalne materiały</a></li><li><a href="#poradniki">Poradniki</a></li><li><a href="#narzedzia">Narzędzia</a></li></ul></li><li><a href="#changelog">Poprawki i takie tam</a></li>
 				</ul>
 			</div>
 		</nav>
