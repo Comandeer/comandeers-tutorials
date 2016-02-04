@@ -9,7 +9,7 @@ tutorials.forEach(function(tutorial)
 {
 	var content = fs.readFileSync(tutDir + tutorial, 'utf8')
 	,output = tutTemplate
-	,nav = `<nav class="sidebar nice">
+	,nav = `<nav class="col-md-4 well" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
 		<h2 class="sidebar-header">Spis treści</h2>
 			<div class="sidebar-inner">
 				<ul class="unstyled">
@@ -34,6 +34,11 @@ tutorials.forEach(function(tutorial)
 
 	$ul.html('');
 
+	// Bootstrap hack for http://getbootstrap.com/components/#alerts-links
+	$( '.alert a').each( function() {
+		this.addClass( 'alert-link' );
+	} );
+
 	$('h1,h2,h3,h4,h5,h6').each(function()
 	{
 		if(this.is('h1#start'))
@@ -41,9 +46,10 @@ tutorials.forEach(function(tutorial)
 		else
 		{
 			var depth = +this[0].name.substring(1)
-			,html = '';
+			,html = ''
+			,name = this.html().replace( /<a.+?>.+?<\/a>/gi, '');
 
-			html = '<li><a href="#' + this.attr('id') + '">' + this.html() + '</a></li>';
+			html = '<li><a href="#' + this.attr('id') + '">' + name + '</a></li>';
 					
 
 			if(lastDepth)
@@ -73,7 +79,7 @@ tutorials.forEach(function(tutorial)
 		nav = '';
 
 	output = output.replace('{NAV}', nav)
-	output = output.replace('{CONTENT}', content);
+	output = output.replace('{CONTENT}', $.html() );
 	output = output.replace('{DISQUS}', tutorial.replace('.tpl', ''));
 			
 	fs.writeFileSync('../' + tutorial.replace('tpl', 'html'), output, 'utf8');
@@ -90,17 +96,17 @@ Object.keys(tuts).forEach(function(t)
 {
 	var tut = tuts[t];
 	
-	response += '<dt>' + t + '</dt>';
+	response += '<dt class="list-group-item active">' + t + '</dt>';
 
 	Object.keys(tut).forEach(function(x)
 	{
-		response += '<dd><a href="http://tutorials.comandeer.pl/' + tut[x] + '.html">' + x + '</a></dd>';
+		response += '<dd class="list-group-item"><a href="http://tutorials.comandeer.pl/' + tut[x] + '.html" class="list-group-item-link">' + x + '</a></dd>';
 	})			
 });
 
 Object.keys(arts).reverse().forEach(function(t)
 {
-	artsr += '<li><a href="' + arts[t] + '">' + t + '</a></li>';
+	artsr += '<li class="list-group-item"><a href="' + arts[t] + '" class="list-group-item-link">' + t + '</a></li>';
 });
 
 list = list.replace('{LIST}', response);

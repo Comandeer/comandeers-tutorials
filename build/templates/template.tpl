@@ -2,7 +2,7 @@
 	<html lang="pl" dir="ltr" class="no-js">
 		<head>
 			<meta charset="UTF-8">
-			<meta name="viewport" content="width=device-width,initial-scale=1.0">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
 			<script>
 			(function(H,c){H[c]=H[c].replace(/\bno-js\b/,'')+' js'})(document.documentElement,'className');
 
@@ -23,60 +23,103 @@
 			<!--[if lt IE 9]>
 				<script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 			<![endif]-->
-			<link rel="stylesheet" href="/css/framework.css">
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 			<link rel="stylesheet" href="/css/prism.css">
 			<style>
-			h1[id]:hover:after,h2[id]:hover:after,h3[id]:hover:after
-			{
-				content:'#'attr(id);
-				margin-left:20px;
-				opacity:.4;
+			body {
+				padding-top: 60px;
 			}
-			.code-switch
-			{
-				cursor:pointer;
+			.navbar-brand {
+				margin: 0;
 			}
-			.code-switch
-			{
-				font-size:smaller;
-				font-weight:bold;
+			.navbar-brand a {
+				color: #9d9d9d;
 			}
-			pre
-			{
-				max-height:300px;
-				overflow:auto;
+			.site-footer {
+				margin-top: 50px;
+				padding: 50px 0;
+				background: #222;
+				color: #9d9d9d;
 			}
-			pre.expanded
-			{
-				max-height:99999px;
+			.site-footer a {
+				color: #fff;
 			}
-			.code,.quote
-			{
-				margin-top:5px;
+			nav.affix {
+				right: 0;
+				top: 60px;
+				bottom: 0;
 			}
-			ul 
-			{
-				list-style-image:url(/images/bullet.gif);
+			nav.affix .sidebar-header {
+				height: 40px;
+			}
+			nav.affix .sidebar-inner {
+				position: absolute;
+				top: 80px;
+				bottom: 0;
+				overflow: auto;
+			}
+			h1[id] a, h2[id] a, h3[id] a, h2[id] a, h3[id] a, h4[id] a, h5[id] a, h6[id] a {
+				opacity: 0;
+				transition: opacity .7s ease-in-out;
+			}
+			h1[id]:hover a, h2[id]:hover a, h3[id]:hover a, h4[id]:hover a, h5[id]:hover a, h6[id]:hover a {
+				opacity: .6;
+			}
+			.code-switch {
+				cursor: pointer;
+			}
+			.code-switch {
+				font-size: smaller;
+				font-weight: bold;
+			}
+			pre {
+				max-height: 300px;
+				overflow: auto;
+			}
+			pre.expanded {
+				max-height: 99999px;
+			}
+			.code,.quote {
+				margin-top: 5px;
+			}
+			ul li {
+				list-style-image: url(/images/bullet.gif);
 			}
 			</style>
 		</head>
-		<body class="fluid">
-			<header class="topbar gradient">
-				<h1><a href="/" title="« Powrót do spisu tutoriali">Tutorials</a></h1>
+		<body>
+			<header class="navbar navbar-inverse navbar-fixed-top">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<h1 class="navbar-brand"><a href="/" title="« Powrót do spisu tutoriali">Tutorials</a></h1>
+					</div>
+				</div>
 			</header>
-			<main class="content">
-				<article>
-				{CONTENT}
-				</article>
-				<section id="komentarze">
-					<h2>Komentarze</h2>
-					<div id="disqus_thread"></div>
-					<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-					<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-				</section>
-			</main>
-			{NAV}
-			<footer class="footer">Copyright &copy; by <a href="http://www.comandeer.pl" rel="author">Comandeer</a>.</footer>
+
+			<div class="container-fluid">
+				<div class="row">
+					<main class="col-md-8">
+						<article>
+						{CONTENT}
+						</article>
+						<section id="komentarze">
+							<h2>Komentarze</h2>
+							<div id="disqus_thread"></div>
+							<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+							<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+						</section>
+					</main>
+
+					{NAV}
+				</div>
+			</div>
+
+			<footer class="site-footer">
+				<div class="container-fluid">
+					<p>Copyright © by <a href="https://www.comandeer.pl" rel="author">Comandeer</a>.</p>
+				</div>
+			</footer>
+
 			<script>
 			(function()
 			{
@@ -121,62 +164,17 @@
 					,dsq = document.createElement('script');
 
 					dsq.type = 'text/javascript'; dsq.async = true;
-					dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+					dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
 
-					if(document.documentElement.scrollHeight <= document.documentElement.clientHeight + 50 || location.hash.indexOf('#comment-') === 0)
-						(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-					else
-						window.addEventListener('scroll', (function throttle()
-						{
-							var threshhold = 50
-							,last
-							,deferTimer
-							,fn = function()
-							{
-								if(window.scrollY < offset - (document.documentElement.clientHeight))
-									return;
-
-								(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-
-								unpin();
-							}
-							,f = function()
-							{
-								var context = this;
-
-								var now = +new Date
-								,args = arguments;
-
-								if(last && now < last + threshhold)
-								{
-									// hold on to it
-									clearTimeout(deferTimer);
-
-									deferTimer = setTimeout(function()
-									{
-										last = now;
-										fn.apply(context, args);
-									}, threshhold);
-								}
-								else
-								{
-									last = now;
-									fn.apply(context, args);
-								}
-							}
-							,unpin = function()
-							{
-								window.removeEventListener('scroll', f)
-							};
-
-							return f;
-						}()));
+					(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 				}
 				catch(e)
 				{
 				}
 			}());
 			</script>
+			<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 			<script src="/js/prism.js"></script>
 		</body>
 	</html>
