@@ -45,19 +45,28 @@
 				color: #fff;
 			}
 			nav.affix {
-				right: 0;
-				top: 60px;
-				bottom: 0;
+				position: static !important;
 			}
-			nav.affix .sidebar-header {
-				height: 40px;
+			@media screen and (min-width: 992px) {
+				nav.affix {
+					position: fixed !important;
+				}
+				nav.affix {
+					right: 0;
+					top: 60px;
+					bottom: 0;
+				}
+				nav.affix .sidebar-header {
+					height: 40px;
+				}
+				nav.affix .sidebar-inner {
+					position: absolute;
+					top: 80px;
+					bottom: 0;
+					overflow: auto;
+				}
 			}
-			nav.affix .sidebar-inner {
-				position: absolute;
-				top: 80px;
-				bottom: 0;
-				overflow: auto;
-			}
+			
 			h1[id] a, h2[id] a, h3[id] a, h2[id] a, h3[id] a, h4[id] a, h5[id] a, h6[id] a {
 				opacity: 0;
 				transition: opacity .7s ease-in-out;
