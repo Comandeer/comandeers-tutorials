@@ -52,7 +52,7 @@
 					position: fixed !important;
 				}
 				nav.affix {
-					right: 0;
+					left: 0;
 					top: 60px;
 					bottom: 0;
 				}
@@ -107,6 +107,15 @@
 
 			<div class="container-fluid">
 				<div class="row">
+					<nav class="col-md-4 well" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+		<h2 class="sidebar-header">Spis treści</h2>
+			<div class="sidebar-inner">
+				<ul class="unstyled">
+				<li><a href="#co-to">Co to? </a></li><li><a href="#ninja">Sposób na ninja </a></li><li><a href="#prymitywny">Sposób prymitywny </a></li><li><a href="#rozbudowanszy">Sposób rozbudowańszy </a></li><li><a href="#amd">Sposób pro dla browserów </a></li><li><a href="#serwery">Jedyny pro sposób dla serwerów </a></li><li><a href="#umd">Pro sposób dla wszystkich </a></li><li><a href="#es6">Przyszłość - ES6 Modules </a></li><li><a href="#cm">Rebelia - Chainable Module Definition </a></li>
+				</ul>
+			</div>
+		</nav>
+
 					<main class="col-md-8">
 						<article>
 						<h1 id="start">Dynamiczne wczytywanie skryptów <a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h1>
@@ -332,15 +341,6 @@ s.src = uri;</code></pre>
 							<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 						</section>
 					</main>
-
-					<nav class="col-md-4 well" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
-		<h2 class="sidebar-header">Spis treści</h2>
-			<div class="sidebar-inner">
-				<ul class="unstyled">
-				<li><a href="#co-to">Co to? </a></li><li><a href="#ninja">Sposób na ninja </a></li><li><a href="#prymitywny">Sposób prymitywny </a></li><li><a href="#rozbudowanszy">Sposób rozbudowańszy </a></li><li><a href="#amd">Sposób pro dla browserów </a></li><li><a href="#serwery">Jedyny pro sposób dla serwerów </a></li><li><a href="#umd">Pro sposób dla wszystkich </a></li><li><a href="#es6">Przyszłość - ES6 Modules </a></li><li><a href="#cm">Rebelia - Chainable Module Definition </a></li>
-				</ul>
-			</div>
-		</nav>
 				</div>
 			</div>
 
@@ -405,6 +405,13 @@ s.src = uri;</code></pre>
 			</script>
 			<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+			<script>
+			$( 'nav' ).on( 'affix.bs.affix', function() {
+				$( 'main' ).addClass( 'col-md-offset-4' );
+			} ).on( 'affix-top.bs.affix affix-bottom.bs.affix', function() {
+				$( 'main' ).removeClass( 'col-md-offset-4' );
+			} );
+			</script>
 			<script src="/js/prism.js"></script>
 		</body>
 	</html>

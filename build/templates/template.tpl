@@ -52,7 +52,7 @@
 					position: fixed !important;
 				}
 				nav.affix {
-					right: 0;
+					left: 0;
 					top: 60px;
 					bottom: 0;
 				}
@@ -107,6 +107,8 @@
 
 			<div class="container-fluid">
 				<div class="row">
+					{NAV}
+
 					<main class="col-md-8">
 						<article>
 						{CONTENT}
@@ -118,8 +120,6 @@
 							<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 						</section>
 					</main>
-
-					{NAV}
 				</div>
 			</div>
 
@@ -184,6 +184,13 @@
 			</script>
 			<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+			<script>
+			$( 'nav' ).on( 'affix.bs.affix', function() {
+				$( 'main' ).addClass( 'col-md-offset-4' );
+			} ).on( 'affix-top.bs.affix affix-bottom.bs.affix', function() {
+				$( 'main' ).removeClass( 'col-md-offset-4' );
+			} );
+			</script>
 			<script src="/js/prism.js"></script>
 		</body>
 	</html>

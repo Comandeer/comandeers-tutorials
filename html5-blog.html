@@ -52,7 +52,7 @@
 					position: fixed !important;
 				}
 				nav.affix {
-					right: 0;
+					left: 0;
 					top: 60px;
 					bottom: 0;
 				}
@@ -107,6 +107,15 @@
 
 			<div class="container-fluid">
 				<div class="row">
+					<nav class="col-md-4 well" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+		<h2 class="sidebar-header">Spis treści</h2>
+			<div class="sidebar-inner">
+				<ul class="unstyled">
+				<li><a href="#punkt-wyjscia">Punkt wyjścia </a></li><li><a href="#nasz-cel">Nasz cel </a></li><li><a href="#doctype">Nowy <code>DOCTYPE</code> </a></li><li><a href="#ustawienie-kodowania">Ustawienie kodowania </a></li><li><a href="#arkusz-styl&#xF3;w">Dołączanie arkusza stylów i skryptów </a></li><li><a href="#obsluga-ie">Obsługa starszych przeglądarek </a></li><li><a href="#naglowek">Nagłówek i nawigacja </a></li><li><a href="#artykul">Artykuł </a><ul class="unstyled"><li><a href="#artykul-ramy">Główne ramy </a></li><li><a href="#artykul-naglowek">Nagłówek </a></li><li><a href="#artykul-obrazki">Obrazki </a></li><li><a href="#artykul-outline">Outline </a></li><li><a href="#artykul-komentarz">Komentarze </a></li><li><a href="#artykul-calosc">Całość złożona do kupy </a></li></ul></li><li><a href="#sidebar">Sidebar </a></li><li><a href="#stopka">Stopka </a></li><li><a href="#formularze">Formularze (WebForms 2.0) </a><ul class="unstyled"><li><a href="#formularze-wyszukiwarka">Wyszukiwarka </a></li><li><a href="#formularze-nowe-pola">Nowe typy pól </a></li><li><a href="#formularze-bajery">Inne bajery i dostępność </a></li><li><a href="#formularze-obsluga">Kompatybilność </a></li></ul></li><li><a href="#rel"><code>&#91;rel&#93;</code> czyli dokąd to prowadzi </a><ul class="unstyled"><li><a href="#rel-lista">Lista dozwolonych <code>&#91;rel&#93;</code> </a></li><li><a href="#rel-rozszerzalnosc">Rozszerzalność </a></li></ul></li><li><a href="#wai-aria">WAI-ARIA </a><ul class="unstyled"><li><a href="#aria-role">Role </a></li><li><a href="#aria-wut">Ale po co to? </a></li></ul></li><li><a href="#semantyka">Dane semantyczne </a><ul class="unstyled"><li><a href="#semantyka-mikroformaty">Mikroformaty </a></li><li><a href="#microdata">Microdata </a></li><li><a href="#semantyka-inne">Inne formaty danych semantycznych </a></li></ul></li><li><a href="#dublin-core">Dublin Core </a></li><li><a href="#dostepnosc">Kilka uwag o dostępności </a></li><li><a href="#ostatnie">Ostatnie poprawki </a><ul class="unstyled"><li><a href="#wydajnosc">Wydajność i bezpieczeństwo </a></li><li><a href="#integracja">Integracja z zewnętrznymi usługami </a></li><li><a href="#kompatybilnosc">Kompatybilność </a></li></ul></li><li><a href="#nasz-blog">Nasz blog </a></li><li><a href="#przydatne">Przydatne linki </a><ul class="unstyled"><li><a href="#standardy">Standardy i oficjalne materiały </a></li><li><a href="#poradniki">Poradniki </a></li><li><a href="#narzedzia">Narzędzia </a></li></ul></li><li><a href="#changelog">Poprawki i takie tam </a></li>
+				</ul>
+			</div>
+		</nav>
+
 					<main class="col-md-8">
 						<article>
 						<h1 id="start">Semantyczny blog w HTML5 <a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h1>
@@ -830,15 +839,6 @@
 							<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 						</section>
 					</main>
-
-					<nav class="col-md-4 well" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
-		<h2 class="sidebar-header">Spis treści</h2>
-			<div class="sidebar-inner">
-				<ul class="unstyled">
-				<li><a href="#punkt-wyjscia">Punkt wyjścia </a></li><li><a href="#nasz-cel">Nasz cel </a></li><li><a href="#doctype">Nowy <code>DOCTYPE</code> </a></li><li><a href="#ustawienie-kodowania">Ustawienie kodowania </a></li><li><a href="#arkusz-styl&#xF3;w">Dołączanie arkusza stylów i skryptów </a></li><li><a href="#obsluga-ie">Obsługa starszych przeglądarek </a></li><li><a href="#naglowek">Nagłówek i nawigacja </a></li><li><a href="#artykul">Artykuł </a><ul class="unstyled"><li><a href="#artykul-ramy">Główne ramy </a></li><li><a href="#artykul-naglowek">Nagłówek </a></li><li><a href="#artykul-obrazki">Obrazki </a></li><li><a href="#artykul-outline">Outline </a></li><li><a href="#artykul-komentarz">Komentarze </a></li><li><a href="#artykul-calosc">Całość złożona do kupy </a></li></ul></li><li><a href="#sidebar">Sidebar </a></li><li><a href="#stopka">Stopka </a></li><li><a href="#formularze">Formularze (WebForms 2.0) </a><ul class="unstyled"><li><a href="#formularze-wyszukiwarka">Wyszukiwarka </a></li><li><a href="#formularze-nowe-pola">Nowe typy pól </a></li><li><a href="#formularze-bajery">Inne bajery i dostępność </a></li><li><a href="#formularze-obsluga">Kompatybilność </a></li></ul></li><li><a href="#rel"><code>&#91;rel&#93;</code> czyli dokąd to prowadzi </a><ul class="unstyled"><li><a href="#rel-lista">Lista dozwolonych <code>&#91;rel&#93;</code> </a></li><li><a href="#rel-rozszerzalnosc">Rozszerzalność </a></li></ul></li><li><a href="#wai-aria">WAI-ARIA </a><ul class="unstyled"><li><a href="#aria-role">Role </a></li><li><a href="#aria-wut">Ale po co to? </a></li></ul></li><li><a href="#semantyka">Dane semantyczne </a><ul class="unstyled"><li><a href="#semantyka-mikroformaty">Mikroformaty </a></li><li><a href="#microdata">Microdata </a></li><li><a href="#semantyka-inne">Inne formaty danych semantycznych </a></li></ul></li><li><a href="#dublin-core">Dublin Core </a></li><li><a href="#dostepnosc">Kilka uwag o dostępności </a></li><li><a href="#ostatnie">Ostatnie poprawki </a><ul class="unstyled"><li><a href="#wydajnosc">Wydajność i bezpieczeństwo </a></li><li><a href="#integracja">Integracja z zewnętrznymi usługami </a></li><li><a href="#kompatybilnosc">Kompatybilność </a></li></ul></li><li><a href="#nasz-blog">Nasz blog </a></li><li><a href="#przydatne">Przydatne linki </a><ul class="unstyled"><li><a href="#standardy">Standardy i oficjalne materiały </a></li><li><a href="#poradniki">Poradniki </a></li><li><a href="#narzedzia">Narzędzia </a></li></ul></li><li><a href="#changelog">Poprawki i takie tam </a></li>
-				</ul>
-			</div>
-		</nav>
 				</div>
 			</div>
 
@@ -903,6 +903,13 @@
 			</script>
 			<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+			<script>
+			$( 'nav' ).on( 'affix.bs.affix', function() {
+				$( 'main' ).addClass( 'col-md-offset-4' );
+			} ).on( 'affix-top.bs.affix affix-bottom.bs.affix', function() {
+				$( 'main' ).removeClass( 'col-md-offset-4' );
+			} );
+			</script>
 			<script src="/js/prism.js"></script>
 		</body>
 	</html>
