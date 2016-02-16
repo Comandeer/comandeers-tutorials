@@ -183,13 +183,13 @@
 
 [h3="artykul-obrazki"]Obrazki[/h3]
 [p]Dobra, później mamy obrazek. "No cóż, przynajmniej obrazka tykać nie będzie…" - pomyślą ci, których przytłacza ogrom nowych możliwości. Niestety, obrazek też można ulepszyć :D W tym wypadku posłużymy się znacznikiem [tt]figure[/tt]. Jego zadaniem jest oznaczanie danych multimedialnych, które są istotne dla danego artykułu (sekcji), lecz mogą także być prezentowane samodzielnie - na chłopski rozum: masz ilustrację do swojego artykułu, użyj [tt]figure[/tt]![/p]
-[p=warning]Co rozumiem pod pojęciem "ilustracja"? Wystarczy wyobrazić sobie książkę, w której mamy obrazek (albo tabelkę, zdjęcie itp.), a pod nim podpis typu "Ryc. 1. Pusta szafa". Dzięki takiemu oznaczeniu można wyciągnąć tego typu obiekt poza pierwotny kontekst, a wciąż będzie mieć te same znaczenie (pusta szafa z podpisem to wciąż pusta szafa). Natomiast wszelkie ozdobniki graficzne, które są w artykule, żeby było ładnie to po prostu ozdobniki. Ilustracja musi nieść ze sobą jakąś wartość semantyczną (łatwo to stwierdzić po tym, że da się wymyślić sensowny opis) i nie może zależeć od kontekstu swojego występowania (jeśli tekst traci sens po przesunięciu danego obiektu, to znak, że to nie jest kandydat na [tt]figure[/tt]).[/p]
+[p=info]Co rozumiem pod pojęciem "ilustracja"? Wystarczy wyobrazić sobie książkę, w której mamy obrazek (albo tabelkę, zdjęcie itp.), a pod nim podpis typu "Ryc. 1. Pusta szafa". Dzięki takiemu oznaczeniu można wyciągnąć tego typu obiekt poza pierwotny kontekst, a wciąż będzie mieć te same znaczenie (pusta szafa z podpisem to wciąż pusta szafa). Natomiast wszelkie ozdobniki graficzne, które są w artykule, żeby było ładnie to po prostu ozdobniki. Ilustracja musi nieść ze sobą jakąś wartość semantyczną (łatwo to stwierdzić po tym, że da się wymyślić sensowny opis) i nie może zależeć od kontekstu swojego występowania (jeśli tekst traci sens po przesunięciu danego obiektu, to znak, że to nie jest kandydat na [tt]figure[/tt]).[/p]
 [code=markup]<figure>
 	<img src="http://example.net/images/obrazek-do-artykulu.png" alt="Ważny obrazek">
 	<figcaption>Bardzo ważny obrazek[…],który jest bardzo ważny</figcaption>
 </figure>[/code]
 [p]W [tt]figcaption[/tt] można umieścić dokładny opis danego obiektu. Napisałem "obiektu", bo równie dobrze w [tt]figure[/tt] można umieścić filmik (np. poprzez HTML-owy [tt]video[/tt] - tak, też nowy znacznik :D) czy dźwięk ([tt]audio[/tt]).[/p]
-[p=info]Mała dygresja: [tt][alt][/tt] jest potrzebny dla obrazka z powodów dostępności. Jednakże czasami… warto pozostawić go pustym, z tych samych powodów ;) O co chodzi? Otóż nie ma sensu powielać opisu obrazka, jeśli jest on zawarty w otaczającej go treści (np. jeśli w [tt]figcaption[/tt] jest dokładny opis tego, co na obrazku, należy zostawić [tt][alt][/tt] pusty; często zdarza się jednak, że w takim wypadku [tt][alt][/tt] opisuje co jest na obrazku, a [tt]figcaption[/tt] dodaje do tego interpretację/wyjaśnienie; np [tt][alt][/tt] - "czerwony ptak na gałęzi", [tt]figcaption[/tt] - "Karłowata odmiana papugi"). W takich wypadkach można użyć [tt][aria-labelledby][/tt]. W3C przygotowało [url=http://dev.w3.org/html5/alt-techniques/]kilka wskazówek[/url] (zresztą [url=http://webaim.org/techniques/alttext/]nie tylko ono[/url]). Ciekawy jest także fakt, że [url=http://blog.paciellogroup.com/2014/04/short-note-alt/][tt][alt][/tt] to nie jedyny sposób na zapewnienie dostępności[/url].[/p]
+[p=info]Mała dygresja: [tt][alt][/tt] jest potrzebny dla obrazka z powodów dostępności. Jednakże czasami… warto pozostawić go pustym, z tych samych powodów ;) O co chodzi? Otóż nie ma sensu powielać opisu obrazka, jeśli jest on zawarty w otaczającej go treści (np. jeśli w [tt]figcaption[/tt] jest dokładny opis tego, co na obrazku, należy zostawić [tt][alt][/tt] pusty; często zdarza się jednak, że w takim wypadku [tt][alt][/tt] opisuje co jest na obrazku, a [tt]figcaption[/tt] dodaje do tego interpretację/wyjaśnienie; np [tt][alt][/tt] - "czerwony ptak na gałęzi", [tt]figcaption[/tt] - "Karłowata odmiana papugi"). W takich wypadkach można użyć [tt][aria-labelledby][/tt]. W3C przygotowało [url=https://www.w3.org/TR/html51/semantics.html#alt]kilka wskazówek[/url] (zresztą [url=http://webaim.org/techniques/alttext/]nie tylko ono[/url]). Ciekawy jest także fakt, że [url=http://blog.paciellogroup.com/2014/04/short-note-alt/][tt][alt][/tt] to nie jedyny sposób na zapewnienie dostępności[/url].[/p]
 [p]Jeśli chodzi o sam znacznik [tt]img[/tt] - jego również można ruszyć, a to za sprawą [url=http://picture.responsiveimages.org/]nowego tagu [tt]picture[/tt][/url]. Przykładzik, wprost ze specki:[/p]
 [code=markup]<picture>
 	<source media="(min-width: 45em)" srcset="large-1.jpg 1x, large-2.jpg 2x">
@@ -644,6 +644,7 @@
 	[*] [url=http://microformats.org/wiki/Main_Page]Specyfikacje i oficjalne materiały o mikroformatach[/url]
 	[*] [url=https://www.w3.org/TR/microdata/]Specyfikacja microdata[/url]
 	[*] [url=http://dublincore.org/]Informacje o Dublin Core[/url]
+	[*] [url=https://www.w3.org/TR/html51/semantics.html#alt]Oficjalna część specyfikacji HTML5, opsiująca użycie atrybutu [tt][alt][/tt][/url]
 	[*] [url=http://usecases.responsiveimages.org]Oficjalna informacja o responsywnych obrazkach[/url]
 	[*] [url=http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-picture-element]Definicja tagu [tt]picture[/tt] w HTML5.1[/url]
 	[*] [url=https://tools.ietf.org/html/rfc7540]Specyfikacja HTTP/2[/url]
@@ -656,6 +657,7 @@
 	[*] [url=http://www.diveinto.org/html5/extensibility.html]Microdata[/url]
 	[*] [url=http://html5doctor.com/microdata/]Doktorzy o microdata[/url]
 	[*] [url=http://kurs.browsehappy.pl/HTML/DublinCore]DublinCore[/url]
+	[*] [url=http://webaim.org/techniques/alttext/]Techniki dobierania odpowiedniego atrybutu [tt][alt][/tt][/url]
 	[*] [url=http://www.alistapart.com/articles/waiaria]WAI-ARIA[/url]
 	[*] [url=http://html5doctor.com/on-html-belts-and-aria-braces/]Krótka uwaga dla nadużywających ARIA[/url]
 	[*] [url=http://html5doctor.com/the-time-element/]Trochę o tagu [tt]time[/tt][/url]
@@ -681,32 +683,33 @@
 [h2="changelog"]Poprawki i takie tam[/h2]
 [spoiler="changelog"]
 	[list]
-		[*] [b]09.01.2011[/b] - pierwsza wersja
-		[*] [b]20.10.2011[/b] - poprawiłem kilka linków i literówek, lepiej sformatowałem tekst, uzupełniłem informację o mikrodanych, mała zmiana w markupie artykułu
-		[*] [b]25.07.2012[/b] - kilka poprawek wymuszonych zmianami w specyfikacji i trochę więcej o Schema.org + kilka takich tam uwag o różnych elementach
-		[*] [b]17.09.2012[/b] - pojawił się akapicik o responsive images, zmiany w linkach
-		[*] [b]28.11.2012[/b] - małe poprawki w kilku miejscach, dodanie kilku linków
-		[*] [b]29.12.2012[/b] - dopisek o elemencie [tt]main[/tt]
-		[*] [b]06.01.2013[/b] - gryzło mnie sumienie o [tt]label[/tt] na wyszukiwarce. Toteż dopisałem, opisałem i przesadziłem ;) również dodałem/zmieniłem/poprawiłem kilka linków i doaktualizowałem pewne informacje. No i przekroczyłem limit znaków ;) kod HTML początkowy i końcowy walnięte na serwer :P
-		[*] [b]10.01.2013[/b] - dodano kilka linków, dopisano kilka informacji (m.in. o OpenGraph wspomniano)
-		[*] [b]10.03.2013[/b] - oddanie sprawiedliwości tagowi [tt]main[/tt], dodanie kilku linków, troszkę poprawek
-		[*] [b]20.09.2013[/b] - dodałem nagłówki w kilku miejscach ostatecznego kodu bloga oraz usunąłem z niego [tt]hgroup[/tt]
-		[*] [b]20.11.2013[/b] - zmiana sposobu generowania tutorialu (kod powinien być czystszy), zmiana kodu artykułu (głównie [tt]section, footer[/tt]), wyjaśnienie wątpliwości z [tt]cite[/tt], aktualności związane z responsywnymi obrazkami oraz nagłówkami
-		[*] [b]21.11.2013[/b] - dodanie fragmentu o [tt][pattern][/tt] i kilka dodatkowych uwag na temat [tt]aside[/tt]
-		[*] [b]10.04.2014[/b] - dodanie kilku linków, aktualizacja fragmentu o [tt]picture[/tt], dodanie części o podstawowych stylach i porady o testowaniu strony
-		[*] [b]16.04.2014[/b] - uwaga początkowa + podlinkowanie książki Ferrante i Kursu HTML + uwagi o [tt][alt][/tt]; pewna zmiana w stosunku do [tt][tabindex][/tt] i [tt][accesskey][/tt]
-		[*] [b]13.07.2014[/b] - dodanie kilku informacji o ARIA, faviconach oraz przeredagowanie kilku fragmentów; rozróżnienie między [tt]nav[/tt] a [tt]menu[/tt]
-		[*] [b]04.08.2014[/b] - poprawnie kodu formularzu (wywalenie [tt][tabindex][/tt] i wyjęcie przycisku poza [tt]dl[/tt])
-		[*] [b]18.08.2014[/b] - dodanie linku do artykułu o favicons
-		[*] [b]05.11.2014[/b] - kilka poprawek związanych głównie z ARIA
-		[*] [b]19.11.2014[/b] - poprawienie zapisu atrybutów, dodanie linku do CanIUse.com i aktualizacja informacji o tagu [tt]picture[/tt]
-		[*] [b]09.03.2015[/b] - ulepszenie skip linków, uaktualnienie informacji o atrybutach [tt][rel][/tt], poprawienie kodu [tt]picture[/tt] oraz krótki dopisek o formacie JSON LD
-		[*] [b]23.04.2015[/b] - krótka notka na temat wystrzegania się niepotrzebnego stosowania ARIA; poprawiony kod bloga
-		[*] [b]26.04.2015[/b] - podział tutorialu na mniejsze partie (zwłaszcza część poświęconą HTML5)
-		[*] [b]04.06.2015[/b] - opisanie komentarzy, informacja o relative protocol, uzupełnienie informacji o [tt]figure[/tt], poprawienie wykorzystania [tt][rel=tag][/tt], notka przy [tt][rel][/tt] o ich połączeniu z konkretną stroną oraz uaktualnienie kodu bloga
-		[*] [b]31.07.2015[/b] - wyjęcie komentarzy poza stopkę artykułu
-		[*] [b]26.11.2015[/b] - mała poprawka we fragmencie o adresach zasobów na stronie
+		[*] [b]16.02.2016[/b] - poprawienie linków o [tt][alt][/tt]; odwrócenie changeloga; poprawienie notki o [tt]figure[/tt]
+		[*] [b]03.02.2016[/b] - lekkie uszczegółowienie opisu [tt]figure[/tt]; przebudowa i aktualizacja sekcji "Ostatnie poprawki"; dopisanie kilku informacji o bezpieczeństwie; utworzenie sekcji o dostępności; przebudowa i aktualizacja sekcji z linkami; uaktualnienie stopki bloga
 		[*] [b]11.12.2015[/b] - uaktualnienie obrazków z outlinem blogów; dodanie notki o możliwości testowania outline w walidatorze; dodanie linka do walidatora
-		[*] [b]03.02.2016[/b] - lekkie uszczegółowienie opisu [tt]figure[/tt]; przebudowa i aktualizacja sekcji "Ostatnie poprawki"; dopisanie kilku informacji o bezpieczeństwie; utworzenie sekcji o dostępności; przebudowa i aktualizacja sekcji z linkami; uaktualnienie stopki bloga 
+		[*] [b]26.11.2015[/b] - mała poprawka we fragmencie o adresach zasobów na stronie
+		[*] [b]31.07.2015[/b] - wyjęcie komentarzy poza stopkę artykułu
+		[*] [b]04.06.2015[/b] - opisanie komentarzy, informacja o relative protocol, uzupełnienie informacji o [tt]figure[/tt], poprawienie wykorzystania [tt][rel=tag][/tt], notka przy [tt][rel][/tt] o ich połączeniu z konkretną stroną oraz uaktualnienie kodu bloga
+		[*] [b]26.04.2015[/b] - podział tutorialu na mniejsze partie (zwłaszcza część poświęconą HTML5)
+		[*] [b]23.04.2015[/b] - krótka notka na temat wystrzegania się niepotrzebnego stosowania ARIA; poprawiony kod bloga
+		[*] [b]09.03.2015[/b] - ulepszenie skip linków, uaktualnienie informacji o atrybutach [tt][rel][/tt], poprawienie kodu [tt]picture[/tt] oraz krótki dopisek o formacie JSON LD
+		[*] [b]19.11.2014[/b] - poprawienie zapisu atrybutów, dodanie linku do CanIUse.com i aktualizacja informacji o tagu [tt]picture[/tt]
+		[*] [b]05.11.2014[/b] - kilka poprawek związanych głównie z ARIA
+		[*] [b]18.08.2014[/b] - dodanie linku do artykułu o favicons
+		[*] [b]04.08.2014[/b] - poprawnie kodu formularzu (wywalenie [tt][tabindex][/tt] i wyjęcie przycisku poza [tt]dl[/tt])
+		[*] [b]13.07.2014[/b] - dodanie kilku informacji o ARIA, faviconach oraz przeredagowanie kilku fragmentów; rozróżnienie między [tt]nav[/tt] a [tt]menu[/tt]
+		[*] [b]16.04.2014[/b] - uwaga początkowa + podlinkowanie książki Ferrante i Kursu HTML + uwagi o [tt][alt][/tt]; pewna zmiana w stosunku do [tt][tabindex][/tt] i [tt][accesskey][/tt]
+		[*] [b]10.04.2014[/b] - dodanie kilku linków, aktualizacja fragmentu o [tt]picture[/tt], dodanie części o podstawowych stylach i porady o testowaniu strony
+		[*] [b]21.11.2013[/b] - dodanie fragmentu o [tt][pattern][/tt] i kilka dodatkowych uwag na temat [tt]aside[/tt]
+		[*] [b]20.11.2013[/b] - zmiana sposobu generowania tutorialu (kod powinien być czystszy), zmiana kodu artykułu (głównie [tt]section, footer[/tt]), wyjaśnienie wątpliwości z [tt]cite[/tt], aktualności związane z responsywnymi obrazkami oraz nagłówkami
+		[*] [b]20.09.2013[/b] - dodałem nagłówki w kilku miejscach ostatecznego kodu bloga oraz usunąłem z niego [tt]hgroup[/tt]
+		[*] [b]10.03.2013[/b] - oddanie sprawiedliwości tagowi [tt]main[/tt], dodanie kilku linków, troszkę poprawek
+		[*] [b]10.01.2013[/b] - dodano kilka linków, dopisano kilka informacji (m.in. o OpenGraph wspomniano)
+		[*] [b]06.01.2013[/b] - gryzło mnie sumienie o [tt]label[/tt] na wyszukiwarce. Toteż dopisałem, opisałem i przesadziłem ;) również dodałem/zmieniłem/poprawiłem kilka linków i doaktualizowałem pewne informacje. No i przekroczyłem limit znaków ;) kod HTML początkowy i końcowy walnięte na serwer :P
+		[*] [b]29.12.2012[/b] - dopisek o elemencie [tt]main[/tt]
+		[*] [b]28.11.2012[/b] - małe poprawki w kilku miejscach, dodanie kilku linków
+		[*] [b]17.09.2012[/b] - pojawił się akapicik o responsive images, zmiany w linkach
+		[*] [b]25.07.2012[/b] - kilka poprawek wymuszonych zmianami w specyfikacji i trochę więcej o Schema.org + kilka takich tam uwag o różnych elementach
+		[*] [b]20.10.2011[/b] - poprawiłem kilka linków i literówek, lepiej sformatowałem tekst, uzupełniłem informację o mikrodanych, mała zmiana w markupie artykułu
+		[*] [b]09.01.2011[/b] - pierwsza wersja
 	[/list]
 [/spoiler]

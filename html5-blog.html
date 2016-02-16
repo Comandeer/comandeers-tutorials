@@ -303,13 +303,13 @@
 
 <h3 id="artykul-obrazki">Obrazki <a href="#artykul-obrazki" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Dobra, później mamy obrazek. "No cóż, przynajmniej obrazka tykać nie będzie…" - pomyślą ci, których przytłacza ogrom nowych możliwości. Niestety, obrazek też można ulepszyć :D W tym wypadku posłużymy się znacznikiem <code>figure</code>. Jego zadaniem jest oznaczanie danych multimedialnych, które są istotne dla danego artykułu (sekcji), lecz mogą także być prezentowane samodzielnie - na chłopski rozum: masz ilustrację do swojego artykułu, użyj <code>figure</code>!</p>
-<p class="alert alert-danger">Co rozumiem pod pojęciem "ilustracja"? Wystarczy wyobrazić sobie książkę, w której mamy obrazek (albo tabelkę, zdjęcie itp.), a pod nim podpis typu "Ryc. 1. Pusta szafa". Dzięki takiemu oznaczeniu można wyciągnąć tego typu obiekt poza pierwotny kontekst, a wciąż będzie mieć te same znaczenie (pusta szafa z podpisem to wciąż pusta szafa). Natomiast wszelkie ozdobniki graficzne, które są w artykule, żeby było ładnie to po prostu ozdobniki. Ilustracja musi nieść ze sobą jakąś wartość semantyczną (łatwo to stwierdzić po tym, że da się wymyślić sensowny opis) i nie może zależeć od kontekstu swojego występowania (jeśli tekst traci sens po przesunięciu danego obiektu, to znak, że to nie jest kandydat na <code>figure</code>).</p>
+<p class="alert alert-info">Co rozumiem pod pojęciem "ilustracja"? Wystarczy wyobrazić sobie książkę, w której mamy obrazek (albo tabelkę, zdjęcie itp.), a pod nim podpis typu "Ryc. 1. Pusta szafa". Dzięki takiemu oznaczeniu można wyciągnąć tego typu obiekt poza pierwotny kontekst, a wciąż będzie mieć te same znaczenie (pusta szafa z podpisem to wciąż pusta szafa). Natomiast wszelkie ozdobniki graficzne, które są w artykule, żeby było ładnie to po prostu ozdobniki. Ilustracja musi nieść ze sobą jakąś wartość semantyczną (łatwo to stwierdzić po tym, że da się wymyślić sensowny opis) i nie może zależeć od kontekstu swojego występowania (jeśli tekst traci sens po przesunięciu danego obiektu, to znak, że to nie jest kandydat na <code>figure</code>).</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;figure&gt;
 	&lt;img src="http://example.net/images/obrazek-do-artykulu.png" alt="Ważny obrazek"&gt;
 	&lt;figcaption&gt;Bardzo ważny obrazek&#91;…&#93;,który jest bardzo ważny&lt;/figcaption&gt;
 &lt;/figure&gt;</code></pre>
 <p>W <code>figcaption</code> można umieścić dokładny opis danego obiektu. Napisałem "obiektu", bo równie dobrze w <code>figure</code> można umieścić filmik (np. poprzez HTML-owy <code>video</code> - tak, też nowy znacznik :D) czy dźwięk (<code>audio</code>).</p>
-<p class="alert alert-info">Mała dygresja: <code>&#91;alt&#93;</code> jest potrzebny dla obrazka z powodów dostępności. Jednakże czasami… warto pozostawić go pustym, z tych samych powodów ;) O co chodzi? Otóż nie ma sensu powielać opisu obrazka, jeśli jest on zawarty w otaczającej go treści (np. jeśli w <code>figcaption</code> jest dokładny opis tego, co na obrazku, należy zostawić <code>&#91;alt&#93;</code> pusty; często zdarza się jednak, że w takim wypadku <code>&#91;alt&#93;</code> opisuje co jest na obrazku, a <code>figcaption</code> dodaje do tego interpretację/wyjaśnienie; np <code>&#91;alt&#93;</code> - "czerwony ptak na gałęzi", <code>figcaption</code> - "Karłowata odmiana papugi"). W takich wypadkach można użyć <code>&#91;aria-labelledby&#93;</code>. W3C przygotowało <a href="http://dev.w3.org/html5/alt-techniques/" class="alert-link">kilka wskazówek</a> (zresztą <a href="http://webaim.org/techniques/alttext/" class="alert-link">nie tylko ono</a>). Ciekawy jest także fakt, że <a href="http://blog.paciellogroup.com/2014/04/short-note-alt/" class="alert-link"><code>&#91;alt&#93;</code> to nie jedyny sposób na zapewnienie dostępności</a>.</p>
+<p class="alert alert-info">Mała dygresja: <code>&#91;alt&#93;</code> jest potrzebny dla obrazka z powodów dostępności. Jednakże czasami… warto pozostawić go pustym, z tych samych powodów ;) O co chodzi? Otóż nie ma sensu powielać opisu obrazka, jeśli jest on zawarty w otaczającej go treści (np. jeśli w <code>figcaption</code> jest dokładny opis tego, co na obrazku, należy zostawić <code>&#91;alt&#93;</code> pusty; często zdarza się jednak, że w takim wypadku <code>&#91;alt&#93;</code> opisuje co jest na obrazku, a <code>figcaption</code> dodaje do tego interpretację/wyjaśnienie; np <code>&#91;alt&#93;</code> - "czerwony ptak na gałęzi", <code>figcaption</code> - "Karłowata odmiana papugi"). W takich wypadkach można użyć <code>&#91;aria-labelledby&#93;</code>. W3C przygotowało <a href="https://www.w3.org/TR/html51/semantics.html#alt" class="alert-link">kilka wskazówek</a> (zresztą <a href="http://webaim.org/techniques/alttext/" class="alert-link">nie tylko ono</a>). Ciekawy jest także fakt, że <a href="http://blog.paciellogroup.com/2014/04/short-note-alt/" class="alert-link"><code>&#91;alt&#93;</code> to nie jedyny sposób na zapewnienie dostępności</a>.</p>
 <p>Jeśli chodzi o sam znacznik <code>img</code> - jego również można ruszyć, a to za sprawą <a href="http://picture.responsiveimages.org/">nowego tagu <code>picture</code></a>. Przykładzik, wprost ze specki:</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;picture&gt;
 	&lt;source media="(min-width: 45em)" srcset="large-1.jpg 1x, large-2.jpg 2x"&gt;
@@ -764,6 +764,7 @@
 	</li><li> <a href="http://microformats.org/wiki/Main_Page">Specyfikacje i oficjalne materiały o mikroformatach</a>
 	</li><li> <a href="https://www.w3.org/TR/microdata/">Specyfikacja microdata</a>
 	</li><li> <a href="http://dublincore.org/">Informacje o Dublin Core</a>
+	</li><li> <a href="https://www.w3.org/TR/html51/semantics.html#alt">Oficjalna część specyfikacji HTML5, opsiująca użycie atrybutu <code>&#91;alt&#93;</code></a>
 	</li><li> <a href="http://usecases.responsiveimages.org">Oficjalna informacja o responsywnych obrazkach</a>
 	</li><li> <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-picture-element">Definicja tagu <code>picture</code> w HTML5.1</a>
 	</li><li> <a href="https://tools.ietf.org/html/rfc7540">Specyfikacja HTTP/2</a>
@@ -776,6 +777,7 @@
 	</li><li> <a href="http://www.diveinto.org/html5/extensibility.html">Microdata</a>
 	</li><li> <a href="http://html5doctor.com/microdata/">Doktorzy o microdata</a>
 	</li><li> <a href="http://kurs.browsehappy.pl/HTML/DublinCore">DublinCore</a>
+	</li><li> <a href="http://webaim.org/techniques/alttext/">Techniki dobierania odpowiedniego atrybutu <code>&#91;alt&#93;</code></a>
 	</li><li> <a href="http://www.alistapart.com/articles/waiaria">WAI-ARIA</a>
 	</li><li> <a href="http://html5doctor.com/on-html-belts-and-aria-braces/">Krótka uwaga dla nadużywających ARIA</a>
 	</li><li> <a href="http://html5doctor.com/the-time-element/">Trochę o tagu <code>time</code></a>
@@ -801,33 +803,34 @@
 <h2 id="changelog">Poprawki i takie tam <a href="#changelog" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
 <details><summary>changelog</summary>
 	<ul>
-		<li> <b>09.01.2011</b> - pierwsza wersja
-		</li><li> <b>20.10.2011</b> - poprawiłem kilka linków i literówek, lepiej sformatowałem tekst, uzupełniłem informację o mikrodanych, mała zmiana w markupie artykułu
-		</li><li> <b>25.07.2012</b> - kilka poprawek wymuszonych zmianami w specyfikacji i trochę więcej o Schema.org + kilka takich tam uwag o różnych elementach
-		</li><li> <b>17.09.2012</b> - pojawił się akapicik o responsive images, zmiany w linkach
-		</li><li> <b>28.11.2012</b> - małe poprawki w kilku miejscach, dodanie kilku linków
-		</li><li> <b>29.12.2012</b> - dopisek o elemencie <code>main</code>
-		</li><li> <b>06.01.2013</b> - gryzło mnie sumienie o <code>label</code> na wyszukiwarce. Toteż dopisałem, opisałem i przesadziłem ;) również dodałem/zmieniłem/poprawiłem kilka linków i doaktualizowałem pewne informacje. No i przekroczyłem limit znaków ;) kod HTML początkowy i końcowy walnięte na serwer :P
-		</li><li> <b>10.01.2013</b> - dodano kilka linków, dopisano kilka informacji (m.in. o OpenGraph wspomniano)
-		</li><li> <b>10.03.2013</b> - oddanie sprawiedliwości tagowi <code>main</code>, dodanie kilku linków, troszkę poprawek
-		</li><li> <b>20.09.2013</b> - dodałem nagłówki w kilku miejscach ostatecznego kodu bloga oraz usunąłem z niego <code>hgroup</code>
-		</li><li> <b>20.11.2013</b> - zmiana sposobu generowania tutorialu (kod powinien być czystszy), zmiana kodu artykułu (głównie <code>section, footer</code>), wyjaśnienie wątpliwości z <code>cite</code>, aktualności związane z responsywnymi obrazkami oraz nagłówkami
-		</li><li> <b>21.11.2013</b> - dodanie fragmentu o <code>&#91;pattern&#93;</code> i kilka dodatkowych uwag na temat <code>aside</code>
-		</li><li> <b>10.04.2014</b> - dodanie kilku linków, aktualizacja fragmentu o <code>picture</code>, dodanie części o podstawowych stylach i porady o testowaniu strony
-		</li><li> <b>16.04.2014</b> - uwaga początkowa + podlinkowanie książki Ferrante i Kursu HTML + uwagi o <code>&#91;alt&#93;</code>; pewna zmiana w stosunku do <code>&#91;tabindex&#93;</code> i <code>&#91;accesskey&#93;</code>
-		</li><li> <b>13.07.2014</b> - dodanie kilku informacji o ARIA, faviconach oraz przeredagowanie kilku fragmentów; rozróżnienie między <code>nav</code> a <code>menu</code>
-		</li><li> <b>04.08.2014</b> - poprawnie kodu formularzu (wywalenie <code>&#91;tabindex&#93;</code> i wyjęcie przycisku poza <code>dl</code>)
-		</li><li> <b>18.08.2014</b> - dodanie linku do artykułu o favicons
-		</li><li> <b>05.11.2014</b> - kilka poprawek związanych głównie z ARIA
-		</li><li> <b>19.11.2014</b> - poprawienie zapisu atrybutów, dodanie linku do CanIUse.com i aktualizacja informacji o tagu <code>picture</code>
-		</li><li> <b>09.03.2015</b> - ulepszenie skip linków, uaktualnienie informacji o atrybutach <code>&#91;rel&#93;</code>, poprawienie kodu <code>picture</code> oraz krótki dopisek o formacie JSON LD
-		</li><li> <b>23.04.2015</b> - krótka notka na temat wystrzegania się niepotrzebnego stosowania ARIA; poprawiony kod bloga
-		</li><li> <b>26.04.2015</b> - podział tutorialu na mniejsze partie (zwłaszcza część poświęconą HTML5)
-		</li><li> <b>04.06.2015</b> - opisanie komentarzy, informacja o relative protocol, uzupełnienie informacji o <code>figure</code>, poprawienie wykorzystania <code>&#91;rel=tag&#93;</code>, notka przy <code>&#91;rel&#93;</code> o ich połączeniu z konkretną stroną oraz uaktualnienie kodu bloga
-		</li><li> <b>31.07.2015</b> - wyjęcie komentarzy poza stopkę artykułu
-		</li><li> <b>26.11.2015</b> - mała poprawka we fragmencie o adresach zasobów na stronie
+		<li> <b>16.02.2016</b> - poprawienie linków o <code>&#91;alt&#93;</code>; odwrócenie changeloga; poprawienie notki o <code>figure</code>
+		</li><li> <b>03.02.2016</b> - lekkie uszczegółowienie opisu <code>figure</code>; przebudowa i aktualizacja sekcji "Ostatnie poprawki"; dopisanie kilku informacji o bezpieczeństwie; utworzenie sekcji o dostępności; przebudowa i aktualizacja sekcji z linkami; uaktualnienie stopki bloga
 		</li><li> <b>11.12.2015</b> - uaktualnienie obrazków z outlinem blogów; dodanie notki o możliwości testowania outline w walidatorze; dodanie linka do walidatora
-		</li><li> <b>03.02.2016</b> - lekkie uszczegółowienie opisu <code>figure</code>; przebudowa i aktualizacja sekcji "Ostatnie poprawki"; dopisanie kilku informacji o bezpieczeństwie; utworzenie sekcji o dostępności; przebudowa i aktualizacja sekcji z linkami; uaktualnienie stopki bloga 
+		</li><li> <b>26.11.2015</b> - mała poprawka we fragmencie o adresach zasobów na stronie
+		</li><li> <b>31.07.2015</b> - wyjęcie komentarzy poza stopkę artykułu
+		</li><li> <b>04.06.2015</b> - opisanie komentarzy, informacja o relative protocol, uzupełnienie informacji o <code>figure</code>, poprawienie wykorzystania <code>&#91;rel=tag&#93;</code>, notka przy <code>&#91;rel&#93;</code> o ich połączeniu z konkretną stroną oraz uaktualnienie kodu bloga
+		</li><li> <b>26.04.2015</b> - podział tutorialu na mniejsze partie (zwłaszcza część poświęconą HTML5)
+		</li><li> <b>23.04.2015</b> - krótka notka na temat wystrzegania się niepotrzebnego stosowania ARIA; poprawiony kod bloga
+		</li><li> <b>09.03.2015</b> - ulepszenie skip linków, uaktualnienie informacji o atrybutach <code>&#91;rel&#93;</code>, poprawienie kodu <code>picture</code> oraz krótki dopisek o formacie JSON LD
+		</li><li> <b>19.11.2014</b> - poprawienie zapisu atrybutów, dodanie linku do CanIUse.com i aktualizacja informacji o tagu <code>picture</code>
+		</li><li> <b>05.11.2014</b> - kilka poprawek związanych głównie z ARIA
+		</li><li> <b>18.08.2014</b> - dodanie linku do artykułu o favicons
+		</li><li> <b>04.08.2014</b> - poprawnie kodu formularzu (wywalenie <code>&#91;tabindex&#93;</code> i wyjęcie przycisku poza <code>dl</code>)
+		</li><li> <b>13.07.2014</b> - dodanie kilku informacji o ARIA, faviconach oraz przeredagowanie kilku fragmentów; rozróżnienie między <code>nav</code> a <code>menu</code>
+		</li><li> <b>16.04.2014</b> - uwaga początkowa + podlinkowanie książki Ferrante i Kursu HTML + uwagi o <code>&#91;alt&#93;</code>; pewna zmiana w stosunku do <code>&#91;tabindex&#93;</code> i <code>&#91;accesskey&#93;</code>
+		</li><li> <b>10.04.2014</b> - dodanie kilku linków, aktualizacja fragmentu o <code>picture</code>, dodanie części o podstawowych stylach i porady o testowaniu strony
+		</li><li> <b>21.11.2013</b> - dodanie fragmentu o <code>&#91;pattern&#93;</code> i kilka dodatkowych uwag na temat <code>aside</code>
+		</li><li> <b>20.11.2013</b> - zmiana sposobu generowania tutorialu (kod powinien być czystszy), zmiana kodu artykułu (głównie <code>section, footer</code>), wyjaśnienie wątpliwości z <code>cite</code>, aktualności związane z responsywnymi obrazkami oraz nagłówkami
+		</li><li> <b>20.09.2013</b> - dodałem nagłówki w kilku miejscach ostatecznego kodu bloga oraz usunąłem z niego <code>hgroup</code>
+		</li><li> <b>10.03.2013</b> - oddanie sprawiedliwości tagowi <code>main</code>, dodanie kilku linków, troszkę poprawek
+		</li><li> <b>10.01.2013</b> - dodano kilka linków, dopisano kilka informacji (m.in. o OpenGraph wspomniano)
+		</li><li> <b>06.01.2013</b> - gryzło mnie sumienie o <code>label</code> na wyszukiwarce. Toteż dopisałem, opisałem i przesadziłem ;) również dodałem/zmieniłem/poprawiłem kilka linków i doaktualizowałem pewne informacje. No i przekroczyłem limit znaków ;) kod HTML początkowy i końcowy walnięte na serwer :P
+		</li><li> <b>29.12.2012</b> - dopisek o elemencie <code>main</code>
+		</li><li> <b>28.11.2012</b> - małe poprawki w kilku miejscach, dodanie kilku linków
+		</li><li> <b>17.09.2012</b> - pojawił się akapicik o responsive images, zmiany w linkach
+		</li><li> <b>25.07.2012</b> - kilka poprawek wymuszonych zmianami w specyfikacji i trochę więcej o Schema.org + kilka takich tam uwag o różnych elementach
+		</li><li> <b>20.10.2011</b> - poprawiłem kilka linków i literówek, lepiej sformatowałem tekst, uzupełniłem informację o mikrodanych, mała zmiana w markupie artykułu
+		</li><li> <b>09.01.2011</b> - pierwsza wersja
 	</li></ul>
 </details>
 
