@@ -1,7 +1,7 @@
 [h1="start"]Czemu nie potrzebujesz jQuery?[/h1] 
 
 [h2="mimo"]Mimo, że zdaje ci się inaczej[/h2]
-[p]Ten tutorial kieruję do wszystkich tych, którzy nie wyobrażają sobie wykonania jakiejkolwiek prostej czynności w JS bez użycia tego wszechstronnego frameworka. Część zarzutów tyczy się też mnie, gdyż osobiście również korzystam z jQuery (hej, to nie moja wina, że DOM jest tak spaprany!)[/p]
+[p]Ten tutorial kieruję do wszystkich tych, którzy nie wyobrażają sobie wykonania jakiejkolwiek prostej czynności w JS bez użycia tej wszechstronnej biblioteki. Część zarzutów tyczy się też mnie, gdyż osobiście również korzystam z jQuery (hej, to nie moja wina, że DOM jest tak spaprany!)[/p]
 
 
 [h2="alternatywa"]Alternatywa?[/h2]
