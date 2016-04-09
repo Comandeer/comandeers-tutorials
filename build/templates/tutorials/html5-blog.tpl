@@ -125,7 +125,7 @@
 [code=markup]<meta charset="utf-8">[/code]
 [p]To króciutkie meta obsługuje nawet IE6. Zdziwieni? A powinni, bo ta składnia powstała z… błędu. Na wielu stronach bowiem można było znaleźć potworka typu[/p]
 [code=markup]<meta http-equiv="Content-type" content="text/html;charset="UTF-8"">[/code]
-[p]Przeglądarki stwierdziły bowiem, że nie ma sensu parsować nieprawidłowego znacznika i po prostu znalazły inny sposób: szukały czegoś na wzór [tt]charset=["]*[a-z0-9]["]*[/tt] (chyba dobre wyrażenie regularne :D). No, i tak już zostało. BTW ten znacznik i tak nie ma jakiegokolwiek sensu, bo kodowanie jest narzucane przez nagłówki HTTP. Można je kontrolować ręcznie, np. przez PHP[/p]
+[p]Przeglądarki stwierdziły bowiem, że nie ma sensu parsować nieprawidłowego znacznika i po prostu znalazły inny sposób: szukały czegoś na wzór [tt]charset=["]*[a-z0-9]["]*[/tt] (chyba dobre wyrażenie regularne :D). No, i tak już zostało, a później to… [url=https://www.w3.org/TR/html5/infrastructure.html#extracting-character-encodings-from-meta-elements]ustandaryzowano w ramach HTML5[/url]. BTW ten znacznik i tak nie ma jakiegokolwiek sensu, bo kodowanie jest narzucane przez nagłówki HTTP. Można je kontrolować ręcznie, np. przez PHP[/p]
 [code=php]<?php header('Content-Type: text/html;charset=UTF-8'); ?>[/code]
 [p][s]Chcę także zwrócić uwagę, że powinno się pisać "UTF-8", a nie "utf-8", bo nazwa normy pisana jest z dużej litery (validator.nu się o to rzuca).[/s] w specce pojawił się zwrot "case insensitive", więc obydwie formy są już poprawne.[/p]
 
@@ -468,7 +468,7 @@
 [h3="kompatybilnosc"]Kompatybilność[/h3]
 [list]
 	[*] Używać media-queries, aby strona sama się dostosowywała do urządzenia użytkownika (nurt responsive webdesign). Opłaca się, bo Google [url=https://www.google.com/webmasters/tools/mobile-friendly/]lubi strony mobile friendly[/url] (a mój telefon to popiera!).
-	[*] Dla IE słać nagłówek [tt]X-UA-Compatible[/tt] ustawiony na [tt]IE=edge[/tt]. Wymusza to renderowanie strony przy pomocy najnowszych standardów w IE >= 8. [s]Dodatkowo można słać ten nagłówek z wartością [tt]IE=edge; chrome=1[/tt], co wymusi użycie [url=https://developers.google.com/chrome/chrome-frame/]Chrome Frame[/url], jeśli jest dostępny.[/s] Chrome Frame odszedł na emeryturę… Googlersi to jednak skrajni idealiści. Jeśli nie lubisz wciskać pluginów userowi, zawsze możesz [s][url=http://browsehappy.pl/infobarwebmaster]kulturalnie poinformować[/url][/s] [url=https://browser-update.org/pl/]naprawdę kulturalnie poinformować[/url].
+	[*] Dla IE słać [url=https://github.com/h5bp/html5-boilerplate/blob/b5d6e7b1613fca24d250fa8e5bc7bcc3dd6002ef/dist/doc/html.md#x-ua-compatible]nagłówek [tt]X-UA-Compatible[/tt][/url] ustawiony na [tt]IE=edge[/tt]. Wymusza to renderowanie strony przy pomocy najnowszych standardów w IE >= 8. [s]Dodatkowo można słać ten nagłówek z wartością [tt]IE=edge; chrome=1[/tt], co wymusi użycie [url=https://developers.google.com/chrome/chrome-frame/]Chrome Frame[/url], jeśli jest dostępny.[/s] Chrome Frame odszedł na emeryturę… Googlersi to jednak skrajni idealiści. Jeśli nie lubisz wciskać pluginów userowi, zawsze możesz [s][url=http://browsehappy.pl/infobarwebmaster]kulturalnie poinformować[/url][/s] [url=https://browser-update.org/pl/]naprawdę kulturalnie poinformować[/url].
 	[*] Na końcu warto poświęcić chwilkę i przetestować stronę, poczynając od [url=http://validator.w3.org]Validatora[/url], przechodząc do [url=http://wave.webaim.org/]testu dostępności[/url] a na [url=http://developers.google.com/speed/pagespeed/insights/]teście szybkości kończąc[/url]. Sprawdzenie strony na kilku różnych urządzeniach lub [url=https://www.browserstack.com/]BrowserStack[/url] też jest dobrym pomysłem.
 [/list]
 [p] Więcej grzechów nie pamiętam :D[/p]
@@ -683,6 +683,7 @@
 [h2="changelog"]Poprawki i takie tam[/h2]
 [spoiler="changelog"]
 	[list]
+		[*] [b]09.04.2016[/b] - dodanie linku do algorytmu wyszukiwania deklaracji kodowania w `meta` oraz linku do opisu `X-UA-Compatible` w H5BP
 		[*] [b]16.03.2016[/b] - dopisanie krótkiego wyjaśnienia w fragmencie o [tt]main[/tt] zachowującym się jak [tt]div[/tt]
 		[*] [b]16.02.2016[/b] - poprawienie linków o [tt][alt][/tt]; odwrócenie changeloga; poprawienie notki o [tt]figure[/tt]
 		[*] [b]03.02.2016[/b] - lekkie uszczegółowienie opisu [tt]figure[/tt]; przebudowa i aktualizacja sekcji "Ostatnie poprawki"; dopisanie kilku informacji o bezpieczeństwie; utworzenie sekcji o dostępności; przebudowa i aktualizacja sekcji z linkami; uaktualnienie stopki bloga

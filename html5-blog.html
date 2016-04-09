@@ -246,7 +246,7 @@
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;meta charset="utf-8"&gt;</code></pre>
 <p>To króciutkie meta obsługuje nawet IE6. Zdziwieni? A powinni, bo ta składnia powstała z… błędu. Na wielu stronach bowiem można było znaleźć potworka typu</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;meta http-equiv="Content-type" content="text/html;charset="UTF-8""&gt;</code></pre>
-<p>Przeglądarki stwierdziły bowiem, że nie ma sensu parsować nieprawidłowego znacznika i po prostu znalazły inny sposób: szukały czegoś na wzór <code>charset=["]*&#91;a-z0-9&#93;&#91;"&#93;*</code> (chyba dobre wyrażenie regularne :D). No, i tak już zostało. BTW ten znacznik i tak nie ma jakiegokolwiek sensu, bo kodowanie jest narzucane przez nagłówki HTTP. Można je kontrolować ręcznie, np. przez PHP</p>
+<p>Przeglądarki stwierdziły bowiem, że nie ma sensu parsować nieprawidłowego znacznika i po prostu znalazły inny sposób: szukały czegoś na wzór <code>charset=["]*&#91;a-z0-9&#93;&#91;"&#93;*</code> (chyba dobre wyrażenie regularne :D). No, i tak już zostało, a później to… <a href="https://www.w3.org/TR/html5/infrastructure.html#extracting-character-encodings-from-meta-elements">ustandaryzowano w ramach HTML5</a>. BTW ten znacznik i tak nie ma jakiegokolwiek sensu, bo kodowanie jest narzucane przez nagłówki HTTP. Można je kontrolować ręcznie, np. przez PHP</p>
 <p class="code">Kod:</p><pre><code class="language-php">&lt;?php header('Content-Type: text/html;charset=UTF-8'); ?&gt;</code></pre>
 <p><s>Chcę także zwrócić uwagę, że powinno się pisać "UTF-8", a nie "utf-8", bo nazwa normy pisana jest z dużej litery (validator.nu się o to rzuca).</s> w specce pojawił się zwrot "case insensitive", więc obydwie formy są już poprawne.</p>
 
@@ -589,7 +589,7 @@
 <h3 id="kompatybilnosc">Kompatybilność <a href="#kompatybilnosc" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <ul>
 	<li> Używać media-queries, aby strona sama się dostosowywała do urządzenia użytkownika (nurt responsive webdesign). Opłaca się, bo Google <a href="https://www.google.com/webmasters/tools/mobile-friendly/">lubi strony mobile friendly</a> (a mój telefon to popiera!).
-	</li><li> Dla IE słać nagłówek <code>X-UA-Compatible</code> ustawiony na <code>IE=edge</code>. Wymusza to renderowanie strony przy pomocy najnowszych standardów w IE &gt;= 8. <s>Dodatkowo można słać ten nagłówek z wartością <code>IE=edge; chrome=1</code>, co wymusi użycie <a href="https://developers.google.com/chrome/chrome-frame/">Chrome Frame</a>, jeśli jest dostępny.</s> Chrome Frame odszedł na emeryturę… Googlersi to jednak skrajni idealiści. Jeśli nie lubisz wciskać pluginów userowi, zawsze możesz <s><a href="http://browsehappy.pl/infobarwebmaster">kulturalnie poinformować</a></s> <a href="https://browser-update.org/pl/">naprawdę kulturalnie poinformować</a>.
+	</li><li> Dla IE słać <a href="https://github.com/h5bp/html5-boilerplate/blob/b5d6e7b1613fca24d250fa8e5bc7bcc3dd6002ef/dist/doc/html.md#x-ua-compatible">nagłówek <code>X-UA-Compatible</code></a> ustawiony na <code>IE=edge</code>. Wymusza to renderowanie strony przy pomocy najnowszych standardów w IE &gt;= 8. <s>Dodatkowo można słać ten nagłówek z wartością <code>IE=edge; chrome=1</code>, co wymusi użycie <a href="https://developers.google.com/chrome/chrome-frame/">Chrome Frame</a>, jeśli jest dostępny.</s> Chrome Frame odszedł na emeryturę… Googlersi to jednak skrajni idealiści. Jeśli nie lubisz wciskać pluginów userowi, zawsze możesz <s><a href="http://browsehappy.pl/infobarwebmaster">kulturalnie poinformować</a></s> <a href="https://browser-update.org/pl/">naprawdę kulturalnie poinformować</a>.
 	</li><li> Na końcu warto poświęcić chwilkę i przetestować stronę, poczynając od <a href="http://validator.w3.org">Validatora</a>, przechodząc do <a href="http://wave.webaim.org/">testu dostępności</a> a na <a href="http://developers.google.com/speed/pagespeed/insights/">teście szybkości kończąc</a>. Sprawdzenie strony na kilku różnych urządzeniach lub <a href="https://www.browserstack.com/">BrowserStack</a> też jest dobrym pomysłem.
 </li></ul>
 <p> Więcej grzechów nie pamiętam :D</p>
@@ -804,7 +804,8 @@
 <h2 id="changelog">Poprawki i takie tam <a href="#changelog" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
 <details><summary>changelog</summary>
 	<ul>
-		<li> <b>16.03.2016</b> - dopisanie krótkiego wyjaśnienia w fragmencie o <code>main</code> zachowującym się jak <code>div</code>
+		<li> <b>09.04.2016</b> - dodanie linku do algorytmu wyszukiwania deklaracji kodowania w `meta` oraz linku do opisu `X-UA-Compatible` w H5BP
+		</li><li> <b>16.03.2016</b> - dopisanie krótkiego wyjaśnienia w fragmencie o <code>main</code> zachowującym się jak <code>div</code>
 		</li><li> <b>16.02.2016</b> - poprawienie linków o <code>&#91;alt&#93;</code>; odwrócenie changeloga; poprawienie notki o <code>figure</code>
 		</li><li> <b>03.02.2016</b> - lekkie uszczegółowienie opisu <code>figure</code>; przebudowa i aktualizacja sekcji "Ostatnie poprawki"; dopisanie kilku informacji o bezpieczeństwie; utworzenie sekcji o dostępności; przebudowa i aktualizacja sekcji z linkami; uaktualnienie stopki bloga
 		</li><li> <b>11.12.2015</b> - uaktualnienie obrazków z outlinem blogów; dodanie notki o możliwości testowania outline w walidatorze; dodanie linka do walidatora
