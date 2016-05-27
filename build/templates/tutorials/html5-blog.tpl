@@ -16,10 +16,10 @@
 			<script type="text/javascript" src="http://bardzo-zajety-serwer.google.com/jquery.js"></script>
 			<script type="text/javascript" src="http://mniej-zajety-serwer.blog.pl/scripty.js"></script>
 			<link rel="alternate" type="application/rss+xml" title="Wpisy na RSS" href="http://example.net/feed">
-			<link rel="index" title="Strona główna" href="http://example.net"> 
+			<link rel="index" title="Strona główna" href="http://example.net">
 			<link rel="prev" title="Jakiś hiper poprzedni wpis" href="http://example.net/Jakis-hiper-poprzedni-wpis">
 			<link rel="next" title="Jakiś super następny wpis" href="http://example.net/Jakis-super-nastepny-wpis">
-			<link rel="canonical" href="http://example.net/Super-hiper-wazny-wpis"> 
+			<link rel="canonical" href="http://example.net/Super-hiper-wazny-wpis">
 			<link rel="pingback" href="http://example.net/xmlrpc.php">
 			<link rel="stylesheet" type="text/css" href="http://example.net/css/style.css">
 			<title>Super hiper ważny wpis | Example.net - fajowy blog, na którym bloguję</title>
@@ -42,10 +42,10 @@
 					<h2><a href="http://example.net/Super-hiper-wazny-wpis" rel="bookmark" title="Permalink do Super hiper ważny wpis">Super hiper ważny wpis</a></h2>
 					<p class="post info">Opublikowano 07.01.2011 przez <a href="http://example.net/author">Comandeer</a></p>
 					<img src="obrazek-do-artykulu.png" alt="Ważny obrazek">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu justo enim, ac faucibus massa. Vestibulum in elit aliquam purus sollicitudin adipiscing ac et sapien. Curabitur eleifend justo diam, et viverra nisi. Quisque a ipsum vehicula nunc vestibulum posuere. Suspendisse potenti. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum porttitor, neque eu congue fermentum, velit ante pellentesque arcu, a posuere risus tortor vel ante. Donec et neque at odio hendrerit mattis sed eu tellus. Nullam accumsan leo ut felis suscipit vehicula posuere erat eleifend. Donec semper lorem eu nibh tincidunt varius.</p> 
-					<p>Vivamus leo arcu, convallis id iaculis sit amet, fringilla et nunc. Donec aliquam, justo at mollis porta, enim lorem tempor eros, id iaculis arcu elit ac sem. In et erat eu metus ornare vestibulum non at arcu. Integer in nisi massa. Etiam nulla felis, rhoncus non pharetra sed, vehicula eu risus. Vestibulum sodales nunc nisi, vitae gravida nisl. Quisque lacus ipsum, commodo ac hendrerit vitae, porta dapibus tortor. Mauris sed risus diam. Morbi lacus elit, euismod dapibus interdum id, fermentum et mi. Nam at neque orci. Sed ac hendrerit augue. Vestibulum pharetra mattis mattis. Sed porta turpis dolor, condimentum blandit libero. Aliquam non nisi mi. Nulla nec sem elit. Duis blandit viverra lacus, in convallis mauris dictum et. Ut eget risus enim. Suspendisse potenti. Aenean leo odio, luctus quis eleifend quis, consectetur sit amet ipsum. Curabitur commodo leo ac risus dignissim at porttitor turpis fringilla.</p> 
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ullamcorper neque a magna sodales sodales. Nulla id enim sem, sit amet ultrices dolor. Vestibulum sollicitudin dolor quis quam vehicula egestas. Ut urna erat, gravida a tristique non, congue nec elit. Aenean tincidunt purus sed nisl semper sagittis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus in orci sit amet ligula posuere mollis a in diam. Nam enim tortor, ultrices quis laoreet nec, egestas non leo. Nam non fringilla turpis. Quisque vitae pellentesque nibh. Etiam dictum tincidunt ultricies. Cras sit amet aliquam odio. Morbi quis urna a nulla egestas placerat sed in lacus. Morbi id urna lacinia nunc bibendum ultricies. In pretium leo non odio feugiat porttitor. Donec aliquet purus in purus pretium aliquam. Etiam aliquet nibh ut nibh semper egestas. Cras in purus quam, nec posuere diam. Aliquam erat volutpat.</p> 
-					<p>Morbi porta blandit nisi at fermentum. Praesent vel sagittis urna. Pellentesque ipsum eros, vestibulum id gravida vitae, dictum vel sapien. Nam placerat lacus non lacus facilisis vitae hendrerit nibh adipiscing. Sed aliquet nisi ligula, eu viverra turpis. Curabitur tincidunt arcu in enim tempus sit amet auctor nunc luctus. Praesent dui turpis, lobortis in euismod quis, fringilla at felis. Nullam ligula purus, mattis nec tristique non, aliquam vitae sem. Quisque sit amet magna magna, eget aliquam orci. Aliquam placerat diam sit amet erat gravida fermentum. Maecenas malesuada nibh quis lorem pellentesque laoreet. Vestibulum pulvinar tincidunt fringilla. Nullam pellentesque felis ac nisi dictum egestas. Nunc metus mi, euismod non convallis nec, varius et felis. Pellentesque vel lacus turpis. In hac habitasse platea dictumst. Morbi sodales mauris a nisi feugiat pulvinar.</p> 
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu justo enim, ac faucibus massa. Vestibulum in elit aliquam purus sollicitudin adipiscing ac et sapien. Curabitur eleifend justo diam, et viverra nisi. Quisque a ipsum vehicula nunc vestibulum posuere. Suspendisse potenti. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum porttitor, neque eu congue fermentum, velit ante pellentesque arcu, a posuere risus tortor vel ante. Donec et neque at odio hendrerit mattis sed eu tellus. Nullam accumsan leo ut felis suscipit vehicula posuere erat eleifend. Donec semper lorem eu nibh tincidunt varius.</p>
+					<p>Vivamus leo arcu, convallis id iaculis sit amet, fringilla et nunc. Donec aliquam, justo at mollis porta, enim lorem tempor eros, id iaculis arcu elit ac sem. In et erat eu metus ornare vestibulum non at arcu. Integer in nisi massa. Etiam nulla felis, rhoncus non pharetra sed, vehicula eu risus. Vestibulum sodales nunc nisi, vitae gravida nisl. Quisque lacus ipsum, commodo ac hendrerit vitae, porta dapibus tortor. Mauris sed risus diam. Morbi lacus elit, euismod dapibus interdum id, fermentum et mi. Nam at neque orci. Sed ac hendrerit augue. Vestibulum pharetra mattis mattis. Sed porta turpis dolor, condimentum blandit libero. Aliquam non nisi mi. Nulla nec sem elit. Duis blandit viverra lacus, in convallis mauris dictum et. Ut eget risus enim. Suspendisse potenti. Aenean leo odio, luctus quis eleifend quis, consectetur sit amet ipsum. Curabitur commodo leo ac risus dignissim at porttitor turpis fringilla.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ullamcorper neque a magna sodales sodales. Nulla id enim sem, sit amet ultrices dolor. Vestibulum sollicitudin dolor quis quam vehicula egestas. Ut urna erat, gravida a tristique non, congue nec elit. Aenean tincidunt purus sed nisl semper sagittis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus in orci sit amet ligula posuere mollis a in diam. Nam enim tortor, ultrices quis laoreet nec, egestas non leo. Nam non fringilla turpis. Quisque vitae pellentesque nibh. Etiam dictum tincidunt ultricies. Cras sit amet aliquam odio. Morbi quis urna a nulla egestas placerat sed in lacus. Morbi id urna lacinia nunc bibendum ultricies. In pretium leo non odio feugiat porttitor. Donec aliquet purus in purus pretium aliquam. Etiam aliquet nibh ut nibh semper egestas. Cras in purus quam, nec posuere diam. Aliquam erat volutpat.</p>
+					<p>Morbi porta blandit nisi at fermentum. Praesent vel sagittis urna. Pellentesque ipsum eros, vestibulum id gravida vitae, dictum vel sapien. Nam placerat lacus non lacus facilisis vitae hendrerit nibh adipiscing. Sed aliquet nisi ligula, eu viverra turpis. Curabitur tincidunt arcu in enim tempus sit amet auctor nunc luctus. Praesent dui turpis, lobortis in euismod quis, fringilla at felis. Nullam ligula purus, mattis nec tristique non, aliquam vitae sem. Quisque sit amet magna magna, eget aliquam orci. Aliquam placerat diam sit amet erat gravida fermentum. Maecenas malesuada nibh quis lorem pellentesque laoreet. Vestibulum pulvinar tincidunt fringilla. Nullam pellentesque felis ac nisi dictum egestas. Nunc metus mi, euismod non convallis nec, varius et felis. Pellentesque vel lacus turpis. In hac habitasse platea dictumst. Morbi sodales mauris a nisi feugiat pulvinar.</p>
 					<p>Vivamus vitae lectus ut dui luctus iaculis. Pellentesque quis lectus id ipsum venenatis bibendum. Pellentesque non magna nec purus mollis suscipit. Nulla vestibulum interdum ante, vestibulum ullamcorper est vulputate vitae. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque aliquet mollis rhoncus. Phasellus imperdiet posuere bibendum. Quisque consequat imperdiet nibh vitae pretium. Suspendisse quis eros libero, non luctus mauris. Nulla laoreet nibh at eros scelerisque condimentum. Cras aliquam velit at orci luctus et tincidunt arcu scelerisque. Donec at quam magna. Integer leo leo, ultrices facilisis bibendum vel, feugiat interdum neque. Fusce vitae nibh sapien, sit amet consequat velit. Fusce adipiscing tortor id nibh fringilla sollicitudin. Donec sodales sapien in sapien rutrum rutrum. Nam quis enim nec nibh varius mattis nec in ante. Morbi non est eu diam elementum interdum. Morbi at odio non libero tempus eleifend nec quis ligula. Cras pellentesque mauris sit amet felis vestibulum tincidunt.</p>
 				</div>
 				<div class="tags">
@@ -57,7 +57,7 @@
 				</div>
 				<h3>Komentarze</h3>
 				<ol class="comments">
-					<li class="alt" id="comment-25"> 
+					<li class="alt" id="comment-25">
 						<small><a href="#comment-25" title="">30.12.08, 21:19</a> </small>
 						<cite><a href="http://example.net/"><img alt="Avatar użytkownika Comandeer" src="http://avatary.gdziekolwiek.com/Comandeer" height="48" width="48">Comandeer</a></cite>
 						<div><p>Ale komentarz!</p></div>
@@ -68,13 +68,13 @@
 					<fieldset>
 						<legend>Napisz komentarz</legend>
 						<dl>
-							<dt><label for="comment_author">Nick</label></dt> 
+							<dt><label for="comment_author">Nick</label></dt>
 								<dd><input type="text" name="author" id="comment_author" tabindex="1"></dd>
 							<dt><label for="comment_email">E-mail</label></dt>
-								<dd><input type="text" name="email" id="comment_email" tabindex="2"></dd> 
+								<dd><input type="text" name="email" id="comment_email" tabindex="2"></dd>
 							<dt><label for="comment_url">Strona</label></dt>
 								<dd><input type="text" name="url" id="comment_url" tabindex="3"></dd>
-							<dt><label for="comment_comment">Komentarz</label></dt> 
+							<dt><label for="comment_comment">Komentarz</label></dt>
 								<dd><textarea name="comment" id="comment_comment" cols="48" rows="7" tabindex="5" ></textarea></dd>
 							<dd><button name="submit" type="submit" id="comment_submit" tabindex="5">Wyślij</button></dd>
 						</dl>
@@ -189,13 +189,13 @@
 	<figcaption>Bardzo ważny obrazek[…],który jest bardzo ważny</figcaption>
 </figure>[/code]
 [p]W [tt]figcaption[/tt] można umieścić dokładny opis danego obiektu. Napisałem "obiektu", bo równie dobrze w [tt]figure[/tt] można umieścić filmik (np. poprzez HTML-owy [tt]video[/tt] - tak, też nowy znacznik :D) czy dźwięk ([tt]audio[/tt]).[/p]
-[p=info]Mała dygresja: [tt][alt][/tt] jest potrzebny dla obrazka z powodów dostępności. Jednakże czasami… warto pozostawić go pustym, z tych samych powodów ;) O co chodzi? Otóż nie ma sensu powielać opisu obrazka, jeśli jest on zawarty w otaczającej go treści (np. jeśli w [tt]figcaption[/tt] jest dokładny opis tego, co na obrazku, należy zostawić [tt][alt][/tt] pusty; często zdarza się jednak, że w takim wypadku [tt][alt][/tt] opisuje co jest na obrazku, a [tt]figcaption[/tt] dodaje do tego interpretację/wyjaśnienie; np [tt][alt][/tt] - "czerwony ptak na gałęzi", [tt]figcaption[/tt] - "Karłowata odmiana papugi"). W takich wypadkach można użyć [tt][aria-labelledby][/tt]. W3C przygotowało [url=https://www.w3.org/TR/html51/semantics.html#alt]kilka wskazówek[/url] (zresztą [url=http://webaim.org/techniques/alttext/]nie tylko ono[/url]). Ciekawy jest także fakt, że [url=http://blog.paciellogroup.com/2014/04/short-note-alt/][tt][alt][/tt] to nie jedyny sposób na zapewnienie dostępności[/url].[/p]
+[p=info]Mała dygresja: [tt][alt][/tt] jest potrzebny dla obrazka z powodów dostępności. Jednakże czasami… warto pozostawić go pustym, z tych samych powodów ;) O co chodzi? Otóż nie ma sensu powielać opisu obrazka, jeśli jest on zawarty w otaczającej go treści (np. jeśli w [tt]figcaption[/tt] jest dokładny opis tego, co na obrazku, należy zostawić [tt][alt][/tt] pusty; często zdarza się jednak, że w takim wypadku [tt][alt][/tt] opisuje co jest na obrazku, a [tt]figcaption[/tt] dodaje do tego interpretację/wyjaśnienie; np [tt][alt][/tt] - "czerwony ptak na gałęzi", [tt]figcaption[/tt] - "Karłowata odmiana papugi"). W takich wypadkach można użyć [tt][aria-labelledby][/tt]. W3C przygotowało [url=https://www.w3.org/TR/html51/semantics-embedded-content.html#alt-text]kilka wskazówek[/url] (zresztą [url=http://webaim.org/techniques/alttext/]nie tylko ono[/url]). Ciekawy jest także fakt, że [url=http://blog.paciellogroup.com/2014/04/short-note-alt/][tt][alt][/tt] to nie jedyny sposób na zapewnienie dostępności[/url].[/p]
 [p]Jeśli chodzi o sam znacznik [tt]img[/tt] - jego również można ruszyć, a to za sprawą [url=http://picture.responsiveimages.org/]nowego tagu [tt]picture[/tt][/url]. Przykładzik, wprost ze specki:[/p]
 [code=markup]<picture>
 	<source media="(min-width: 45em)" srcset="large-1.jpg 1x, large-2.jpg 2x">
 	<source media="(min-width: 18em)" srcset="med-1.jpg 1x, med-2.jpg 2x">
-	<source srcset="small-1.jpg 1x, small-2.jpg 2x"> 
-	<img src="small-1.jpg" alt=""> 
+	<source srcset="small-1.jpg 1x, small-2.jpg 2x">
+	<img src="small-1.jpg" alt="">
 </picture>[/code]
 [p]Ci, którzy bawili się [tt]video[/tt]/[tt]audio[/tt] na pewno znają znaczniki [tt]source[/tt]. Wskazują one "źródło elementu multimedialnego" (w tym wypadku obrazka). Które [tt]source[/tt] ma wybrać przeglądarka? O tym decydują media queries, zawarte w atrybucie [tt]media[/tt]. Warto zauważyć także, że zawsze podawane są dwa obrazki, dodatkowo oznaczone "1x" i "2x". Są to wersje przystosowane do gęstości pikseli ("1x" dla normalnych monitorów, "2x" dla Retiny ;)). Oczywiście pojawa się też [tt]img[/tt], [s]jako fallback[/s]. Zgodnie z najnowszą wersją [tt]picutre[/tt], [tt]img[/tt] jest jego główną składową - cała otoczka służy jedynie wyborowi odpowiedniego pliku grafiki, który jest następnie ładowany do rzeczonego [tt]img[/tt]. Proste i skuteczne. Jaki ma sens stosowanie tego typu zabiegów? Wyobraźmy sobie, że mamy zdjęcie prezydenta wygłaszającego orędzie do narodu. Owszem, można zastosować tricki w CSS, żeby obrazek nam się ładnie zeskalował na komórce, ale… No właśnie - będziemy mieli małe, rozmazane wiadomo co ;) Natomiast przy pomocy [tt]picture[/tt] komórkom i innym mniejszym ekranom możemy zaserwować odpowiednio mniejszy (zatem i lżejszy) obrazek ze zbliżeniem na twarz prezydenta. Nie dość, że iPhone będzie musiał mniej ściągnąć, to jeszcze dostanie zdjęcie przedstawiające to, co najważniejsze. Oczywiście działa to też w drugą stronę i super wypasionym ekranom panoramicznym o przekątnej 100 cali możemy wysłać zdjęcie prezydenta + całego słuchającego go tłumu ;)[/p]
 [p][s]Jak widać, specyfikacja [tt]picture[/tt] nosi niepokojącą nazwę "Unofficial draft", jednakowoż wciąż jest sygnowana logiem W3C (nadszedł czas standardów i "dobrych praktyk"?).[/s] [s]Na razie tag [tt]picture[/tt] ma status [url=http://www.w3.org/TR/html-picture-element/]szkicu roboczego[/url][/s]. Tag [tt]picture[/tt] jest już częścią [url=http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-picture-element]specyfikacji HTML5[/url]. Równocześnie rozwojem technik związanych z responsive images zajmuje się powołana [url=http://responsiveimages.org/]"grupa społeczna"[/url]. To właśnie ona zajmuje się rozwojem tagu [tt]picture[/tt] oraz jego mniej inwazyjnych odpowiedników - [url=http://dev.w3.org/html5/srcset/]atrybutów [tt][srcset][/tt] i [tt][sizes][/tt] dla tagu [tt]img[/tt][/url]. I tutaj warto nadmienić, że WHATWG odrzuciło początkowo propozycję znacznika [tt]picture[/tt], promując [tt][srcset][/tt]. Najlepiej wyjaśnia to Ian Hickson - [s]najbardziej wływowy człowiek w Sieci[/s] redaktor żyjącego standardu:[/p]
@@ -294,7 +294,7 @@
 [/list]
 
 [h3="formularze-bajery"]Inne bajery i dostępność[/h3]
-[p]Ale, ale. Można jeszcze bardziej podbajerować dzięki atrybutowi [tt][placeholder][/tt]. Robi on to, co tysiące tych badziewnych JS - wyświetla pomocniczy tekst, który znika po kliknięciu w pole (i nie kasuje przy okazji już wprowadzonego zapytania…).[/p] 
+[p]Ale, ale. Można jeszcze bardziej podbajerować dzięki atrybutowi [tt][placeholder][/tt]. Robi on to, co tysiące tych badziewnych JS - wyświetla pomocniczy tekst, który znika po kliknięciu w pole (i nie kasuje przy okazji już wprowadzonego zapytania…).[/p]
 [p=warning][b]Nie powinien być jednak traktowany jako zastępstwo dla [tt]label[/tt][/b]. Wspomina o tym nawet specyfikacja.[/p]
 [p]A jeśli już chcesz się nazywać mistrzem formularzy, to dodaj sobie jeszcze atrybut [tt][required][/tt], który oznacza, że formularz nie może zostać wysłany jeśli dane pole jest puste. Po przeróbce formularz szukania wygląda następująco:[/p]
 [code=markup]<form action="search.php" method="post">
@@ -311,13 +311,13 @@
 		<fieldset>
 			<legend>Napisz komentarz</legend>
 			<dl>
-				<dt><label for="comment_author">Nick</label></dt> 
+				<dt><label for="comment_author">Nick</label></dt>
 					<dd><input type="text" name="author" id="comment_author" required></dd>
 				<dt><label for="comment_email">E-mail</label></dt>
-					<dd><input type="email" name="email" id="comment_email" required></dd> 
+					<dd><input type="email" name="email" id="comment_email" required></dd>
 				<dt><label for="comment_url">Strona</label></dt>
 					<dd><input type="url" name="url" id="comment_url"></dd>
-				<dt><label for="comment_comment">Komentarz</label></dt> 
+				<dt><label for="comment_comment">Komentarz</label></dt>
 					<dd><textarea name="comment" id="comment_comment" cols="48" rows="7" required></textarea></dd>
 			</dl>
 			<button name="submit" type="submit" id="comment_submit">Wyślij</button>
@@ -410,7 +410,7 @@
 [p]Na początku [tt]body[/tt] warto dodać:[/p]
 [code=markup]<a href="#Super-hiper-wazny-wpis" class="focus-only" tabindex="1">Przejdź do treści</a>[/code]
 [p]Zwiększy to użyteczność dla tych, którzy korzystają z przeglądarek głosowych lub mają zaburzenia psychomotoryczne i są zmuszeni używać jedynie klawiatury. Dla innych ukryjemy to w CSS robiąc np. tak:[/p]
-[code=css].focus-only 
+[code=css].focus-only
 {
 	position:absolute;
 	top:-1000px;
@@ -498,10 +498,10 @@
 			<link rel="author" href="https://plus.google.com/108791847143656151689/">
 			<link rel="alternate" type="application/rss+xml" title="Wpisy na RSS" href="http://example.net/feed">
 			<link rel="alternate" type="application/atom+xml" title="Wpisy na ATOM" href="http://example.net/atom">
-			<link rel="index" title="Strona główna" href="https://example.net"> 
+			<link rel="index" title="Strona główna" href="https://example.net">
 			<link rel="prev" title="Jakiś hiper poprzedni wpis" href="https://example.net/Jakis-hiper-poprzedni-wpis">
 			<link rel="next" title="Jakiś super następny wpis" href="https://example.net/Jakis-super-nastepny-wpis">
-			<link rel="canonical" href="https://example.net/Super-hiper-wazny-wpis"> 
+			<link rel="canonical" href="https://example.net/Super-hiper-wazny-wpis">
 			<link rel="pingback" href="https://example.net/xmlrpc.php">
 			<link rel="icon" href="https://example.net/images/favicon.png" type="image/png">
 			<link rel="apple-touch-icon" href="https://example.net/images/apple-touch-icon.png">
@@ -511,7 +511,7 @@
 
 			<!--[if lt IE 9]>
 				<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-			<![endif]--> 
+			<![endif]-->
 		</head>
 		<body>
 			<a href="#Super-hiper-wazny-wpis" class="focus-only">Przejdź do treści</a>
@@ -544,15 +544,15 @@
 							<picture>
 								<source media="(min-width: 45em)" srcset="large-1.jpg 1x, large-2.jpg 2x">
 								<source media="(min-width: 18em)" srcset="med-1.jpg 1x, med-2.jpg 2x">
-								<source srcset="small-1.jpg 1x, small-2.jpg 2x"> 
+								<source srcset="small-1.jpg 1x, small-2.jpg 2x">
 								<img src="small-1.jpg" alt="Kwadratowa ramka z czerwonym krzyżykiem w środku">
 							</picture>
 							<figcaption>Bardzo ważny obrazek[…],który jest bardzo ważny</figcaption>
 						</figure>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu justo enim, ac faucibus massa. Vestibulum in elit aliquam purus sollicitudin adipiscing ac et sapien. Curabitur eleifend justo diam, et viverra nisi. Quisque a ipsum vehicula nunc vestibulum posuere. Suspendisse potenti. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum porttitor, neque eu congue fermentum, velit ante pellentesque arcu, a posuere risus tortor vel ante. Donec et neque at odio hendrerit mattis sed eu tellus. Nullam accumsan leo ut felis suscipit vehicula posuere erat eleifend. Donec semper lorem eu nibh tincidunt varius.</p> 
-						<p>Vivamus leo arcu, convallis id iaculis sit amet, fringilla et nunc. Donec aliquam, justo at mollis porta, enim lorem tempor eros, id iaculis arcu elit ac sem. In et erat eu metus ornare vestibulum non at arcu. Integer in nisi massa. Etiam nulla felis, rhoncus non pharetra sed, vehicula eu risus. Vestibulum sodales nunc nisi, vitae gravida nisl. Quisque lacus ipsum, commodo ac hendrerit vitae, porta dapibus tortor. Mauris sed risus diam. Morbi lacus elit, euismod dapibus interdum id, fermentum et mi. Nam at neque orci. Sed ac hendrerit augue. Vestibulum pharetra mattis mattis. Sed porta turpis dolor, condimentum blandit libero. Aliquam non nisi mi. Nulla nec sem elit. Duis blandit viverra lacus, in convallis mauris dictum et. Ut eget risus enim. Suspendisse potenti. Aenean leo odio, luctus quis eleifend quis, consectetur sit amet ipsum. Curabitur commodo leo ac risus dignissim at porttitor turpis fringilla.</p> 
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ullamcorper neque a magna sodales sodales. Nulla id enim sem, sit amet ultrices dolor. Vestibulum sollicitudin dolor quis quam vehicula egestas. Ut urna erat, gravida a tristique non, congue nec elit. Aenean tincidunt purus sed nisl semper sagittis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus in orci sit amet ligula posuere mollis a in diam. Nam enim tortor, ultrices quis laoreet nec, egestas non leo. Nam non fringilla turpis. Quisque vitae pellentesque nibh. Etiam dictum tincidunt ultricies. Cras sit amet aliquam odio. Morbi quis urna a nulla egestas placerat sed in lacus. Morbi id urna lacinia nunc bibendum ultricies. In pretium leo non odio feugiat porttitor. Donec aliquet purus in purus pretium aliquam. Etiam aliquet nibh ut nibh semper egestas. Cras in purus quam, nec posuere diam. Aliquam erat volutpat.</p> 
-						<p>Morbi porta blandit nisi at fermentum. Praesent vel sagittis urna. Pellentesque ipsum eros, vestibulum id gravida vitae, dictum vel sapien. Nam placerat lacus non lacus facilisis vitae hendrerit nibh adipiscing. Sed aliquet nisi ligula, eu viverra turpis. Curabitur tincidunt arcu in enim tempus sit amet auctor nunc luctus. Praesent dui turpis, lobortis in euismod quis, fringilla at felis. Nullam ligula purus, mattis nec tristique non, aliquam vitae sem. Quisque sit amet magna magna, eget aliquam orci. Aliquam placerat diam sit amet erat gravida fermentum. Maecenas malesuada nibh quis lorem pellentesque laoreet. Vestibulum pulvinar tincidunt fringilla. Nullam pellentesque felis ac nisi dictum egestas. Nunc metus mi, euismod non convallis nec, varius et felis. Pellentesque vel lacus turpis. In hac habitasse platea dictumst. Morbi sodales mauris a nisi feugiat pulvinar.</p> 
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu justo enim, ac faucibus massa. Vestibulum in elit aliquam purus sollicitudin adipiscing ac et sapien. Curabitur eleifend justo diam, et viverra nisi. Quisque a ipsum vehicula nunc vestibulum posuere. Suspendisse potenti. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum porttitor, neque eu congue fermentum, velit ante pellentesque arcu, a posuere risus tortor vel ante. Donec et neque at odio hendrerit mattis sed eu tellus. Nullam accumsan leo ut felis suscipit vehicula posuere erat eleifend. Donec semper lorem eu nibh tincidunt varius.</p>
+						<p>Vivamus leo arcu, convallis id iaculis sit amet, fringilla et nunc. Donec aliquam, justo at mollis porta, enim lorem tempor eros, id iaculis arcu elit ac sem. In et erat eu metus ornare vestibulum non at arcu. Integer in nisi massa. Etiam nulla felis, rhoncus non pharetra sed, vehicula eu risus. Vestibulum sodales nunc nisi, vitae gravida nisl. Quisque lacus ipsum, commodo ac hendrerit vitae, porta dapibus tortor. Mauris sed risus diam. Morbi lacus elit, euismod dapibus interdum id, fermentum et mi. Nam at neque orci. Sed ac hendrerit augue. Vestibulum pharetra mattis mattis. Sed porta turpis dolor, condimentum blandit libero. Aliquam non nisi mi. Nulla nec sem elit. Duis blandit viverra lacus, in convallis mauris dictum et. Ut eget risus enim. Suspendisse potenti. Aenean leo odio, luctus quis eleifend quis, consectetur sit amet ipsum. Curabitur commodo leo ac risus dignissim at porttitor turpis fringilla.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ullamcorper neque a magna sodales sodales. Nulla id enim sem, sit amet ultrices dolor. Vestibulum sollicitudin dolor quis quam vehicula egestas. Ut urna erat, gravida a tristique non, congue nec elit. Aenean tincidunt purus sed nisl semper sagittis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus in orci sit amet ligula posuere mollis a in diam. Nam enim tortor, ultrices quis laoreet nec, egestas non leo. Nam non fringilla turpis. Quisque vitae pellentesque nibh. Etiam dictum tincidunt ultricies. Cras sit amet aliquam odio. Morbi quis urna a nulla egestas placerat sed in lacus. Morbi id urna lacinia nunc bibendum ultricies. In pretium leo non odio feugiat porttitor. Donec aliquet purus in purus pretium aliquam. Etiam aliquet nibh ut nibh semper egestas. Cras in purus quam, nec posuere diam. Aliquam erat volutpat.</p>
+						<p>Morbi porta blandit nisi at fermentum. Praesent vel sagittis urna. Pellentesque ipsum eros, vestibulum id gravida vitae, dictum vel sapien. Nam placerat lacus non lacus facilisis vitae hendrerit nibh adipiscing. Sed aliquet nisi ligula, eu viverra turpis. Curabitur tincidunt arcu in enim tempus sit amet auctor nunc luctus. Praesent dui turpis, lobortis in euismod quis, fringilla at felis. Nullam ligula purus, mattis nec tristique non, aliquam vitae sem. Quisque sit amet magna magna, eget aliquam orci. Aliquam placerat diam sit amet erat gravida fermentum. Maecenas malesuada nibh quis lorem pellentesque laoreet. Vestibulum pulvinar tincidunt fringilla. Nullam pellentesque felis ac nisi dictum egestas. Nunc metus mi, euismod non convallis nec, varius et felis. Pellentesque vel lacus turpis. In hac habitasse platea dictumst. Morbi sodales mauris a nisi feugiat pulvinar.</p>
 						<p>Vivamus vitae lectus ut dui luctus iaculis. Pellentesque quis lectus id ipsum venenatis bibendum. Pellentesque non magna nec purus mollis suscipit. Nulla vestibulum interdum ante, vestibulum ullamcorper est vulputate vitae. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque aliquet mollis rhoncus. Phasellus imperdiet posuere bibendum. Quisque consequat imperdiet nibh vitae pretium. Suspendisse quis eros libero, non luctus mauris. Nulla laoreet nibh at eros scelerisque condimentum. Cras aliquam velit at orci luctus et tincidunt arcu scelerisque. Donec at quam magna. Integer leo leo, ultrices facilisis bibendum vel, feugiat interdum neque. Fusce vitae nibh sapien, sit amet consequat velit. Fusce adipiscing tortor id nibh fringilla sollicitudin. Donec sodales sapien in sapien rutrum rutrum. Nam quis enim nec nibh varius mattis nec in ante. Morbi non est eu diam elementum interdum. Morbi at odio non libero tempus eleifend nec quis ligula. Cras pellentesque mauris sit amet felis vestibulum tincidunt.</p>
 					</div>
 					<footer>
@@ -564,7 +564,7 @@
 								</ul>
 						</section>
 					</footer>
-					
+
 					<section class="comments">
 						<h3>Komentarze</h3>
 							<article id="comment-25" itemprop="comment" itemscope itemtype="http://schema.org/UserComments">
@@ -574,19 +574,19 @@
 								</header>
 									<p itemprop="commentText">Ale komentarz!</p>
 							</article>
-							
+
 						<h3>Dodaj komentarz</h3>
 						<form action="https://example.net/comment.php" method="post" id="add_comment">
 							<fieldset>
 								<legend>Napisz komentarz</legend>
 									<dl>
-										<dt><label for="comment-author">Nick</label></dt> 
+										<dt><label for="comment-author">Nick</label></dt>
 											<dd><input type="text" name="author" id="comment-author" required></dd>
 										<dt><label for="comment-email">E-mail</label></dt>
-											<dd><input type="email" name="email" id="comment-email" required></dd> 
+											<dd><input type="email" name="email" id="comment-email" required></dd>
 										<dt><label for="comment-url">Strona</label></dt>
 											<dd><input type="url" name="url" id="comment-url"></dd>
-										<dt><label for="comment-comment">Komentarz</label></dt> 
+										<dt><label for="comment-comment">Komentarz</label></dt>
 											<dd><textarea name="comment" id="comment-comment" cols="48" rows="7" required></textarea></dd>
 									</dl>
 									<button name="submit" type="submit" id="comment-submit">Wyślij</button>
@@ -596,7 +596,7 @@
 					</section>
 				</article>
 			</main>
-			
+
 			<aside id="aside">
 				<h2>Dodatkowe informacje</h2>
 				<article class="author vcard" itemscope itemtype="http://schema.org/Person/">
@@ -620,7 +620,7 @@
 					</ol>
 				</article>
 			</aside>
-			
+
 			<footer id="footer">Copyright &copy; 2016 by <a href="https://example.net/author" rel="author">Comandeer</a></footer>
 
 			<script src="https://bardzo-zajety-serwer.google.com/jquery.js"></script>
@@ -644,9 +644,9 @@
 	[*] [url=http://microformats.org/wiki/Main_Page]Specyfikacje i oficjalne materiały o mikroformatach[/url]
 	[*] [url=https://www.w3.org/TR/microdata/]Specyfikacja microdata[/url]
 	[*] [url=http://dublincore.org/]Informacje o Dublin Core[/url]
-	[*] [url=https://www.w3.org/TR/html51/semantics.html#alt]Oficjalna część specyfikacji HTML5, opsiująca użycie atrybutu [tt][alt][/tt][/url]
+	[*] [url=https://www.w3.org/TR/html51/semantics-embedded-content.html#alt-text]Oficjalna część specyfikacji HTML5, opsiująca użycie atrybutu [tt][alt][/tt][/url]
 	[*] [url=http://usecases.responsiveimages.org]Oficjalna informacja o responsywnych obrazkach[/url]
-	[*] [url=http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-picture-element]Definicja tagu [tt]picture[/tt] w HTML5.1[/url]
+	[*] [url=http://w3c.github.io/html/semantics-embedded-content.html#the-picture-element]Definicja tagu [tt]picture[/tt] w HTML5.1[/url]
 	[*] [url=https://tools.ietf.org/html/rfc7540]Specyfikacja HTTP/2[/url]
 	[*] [url=https://www.w3.org/TR/CSP2/]Specyfikacja Content Security Policy[/url]
 [/list]
@@ -683,7 +683,8 @@
 [h2="changelog"]Poprawki i takie tam[/h2]
 [spoiler="changelog"]
 	[list]
-		[*] [b]17.04.2016[/b] - dodanie informacji o aktualizacji algorytmu outline'u w specyfikacji HTML5 
+		[*] [b]28.05.2016[/b] - poprawienie linków do sekcji o [tt][alt][/tt] i [tt]picture[/tt] w specyfikacji HTML 5.1
+		[*] [b]17.04.2016[/b] - dodanie informacji o aktualizacji algorytmu outline'u w specyfikacji HTML5
 		[*] [b]09.04.2016[/b] - dodanie linku do algorytmu wyszukiwania deklaracji kodowania w `meta` oraz linku do opisu `X-UA-Compatible` w H5BP
 		[*] [b]16.03.2016[/b] - dopisanie krótkiego wyjaśnienia w fragmencie o [tt]main[/tt] zachowującym się jak [tt]div[/tt]
 		[*] [b]16.02.2016[/b] - poprawienie linków o [tt][alt][/tt]; odwrócenie changeloga; poprawienie notki o [tt]figure[/tt]
