@@ -6,10 +6,10 @@
 [p]JS to język, który pozwala chyba na największą dowolność w składni ze wszystkich języków programowania. Ba, jego parser jest tak sprawny, że sam sobie wstawia średniki w miejscach, w których być powinny.[/p]
 [code=javascript]return
 {};[/code]
-[p]Ten krótki kod - mimo, że na pierwszy, a nawet drugi rzut oka wydaje się poprawny - rzuci nam ładny błąd na konsolę. Czemu? Bo parser widzi go tak:[/p]
+[p]Ten krótki kod – mimo że na pierwszy, a nawet drugi rzut oka wydaje się poprawny – rzuci nam ładny błąd na konsolę. Czemu? Bo parser widzi go tak:[/p]
 [code=javascript]return; //bo niedbały programista zapomniał go tu dać
 {}; //o, a co tu robi definicja obiektu?[/code]
-[p]Przez to małe głupstwo kiedyś zraziłem się do JSON i za wszelką cenę próbowałem go omijać ;) Dlatego na sam początek porad ot, taki mały kwiatek z własnego doświadczenia :D[/p]
+[p]Przez to małe głupstwo kiedyś zraziłem się do JSON i za wszelką cenę próbowałem go omijać. Dlatego na sam początek porad ot, taki mały kwiatek z własnego doświadczenia.[/p]
 
 [h2="krotszy-zapis"]Krótszy zapis[/h2]
 [code=javascript]var width = 0;
@@ -21,7 +21,7 @@ var elem = null;[/code]
 ,height = 0
 ,img = null
 ,elem = null;[/code]
-[p]IMO czytelniej. Gdyby ktoś pytał czemu przecinek jest przerzucony na początek nowej linii, a nie zostawiony na końcu poprzedniej: spróbuj pousuwać parę zmiennych z listy ;) jeśli przecinek jest na końcu linijki, musisz usunąć interesującą cię zmienną, a następnie przecinek. Tak usuwasz jedno i drugie za jednym zamachem i na pewno nie zostawisz przecinka przez nieuwagę.[/p]
+[p]IMO czytelniej. Gdyby ktoś pytał czemu przecinek jest przerzucony na początek nowej linii, a nie zostawiony na końcu poprzedniej: spróbuj pousuwać parę zmiennych z listy. Jeśli przecinek jest na końcu linijki, musisz usunąć interesującą Cię zmienną, a następnie przecinek. Tak usuwasz jedno i drugie za jednym zamachem i na pewno nie zostawisz przecinka przez nieuwagę.[/p]
 
 [p=info]Od kiedy ten tutorial powstał, jednak powróciłem do "normalnego" sposobu zapisu przecinków. Mój styl można podejrzeć [url=https://github.com/Comandeer]na moim GitHubie[/url], a zwłaszcza [url=https://github.com/BEMQuery/bemquery-package-boilerplate]w projekcie BEMQuery[/url].[/p]
 
@@ -36,7 +36,7 @@ function a()
 {
 	"use strict"; //lub w funkcji, aby działał tylko w niej
 }[/code]
-[p]Od razu uprzedzam, że jeśli nigdy nie zwracałeś uwagi na jakość swojego JS, to po włączeniu strict mode skrypty ci się wykrzaczą ;) Ale przystosowanie ich do strict mode wcale nie jest trudne, a w przyszłości na pewno przyniesie korzyści (bo np. ociupinkę zmieni się składnia JS).[/p]
+[p]Od razu uprzedzam, że jeśli nigdy nie zwracałeś uwagi na jakość swojego JS, to po włączeniu strict mode skrypty Ci się wykrzaczą. Ale przystosowanie ich do strict mode wcale nie jest trudne, a w przyszłości na pewno przyniesie korzyści (bo np. ociupinkę zmieni się składnia JS).[/p]
 
 [h2="literaly"]Literały[/h2]
 [p]Spójrzmy na ten kod:[/p]
@@ -83,7 +83,7 @@ for(var x in b)
 [h2="setTimeout"]setTimeout[/h2]
 [p]Nie przekazuj nazwy funkcji jako stringa![/p]
 [code=javascript]setTimeout("funkcja()", 1000); //don't do this![/code]
-[p]Tym samym wywołujesz sobie [tt]eval[/tt], a jak każdy wie - [tt]eval[/tt] jest [s]złe[/s] niepotrzebnie wykorzystywane, co jedynie obniża wydajność! Przekaż uchwyt do funkcji:[/p]
+[p]Tym samym wywołujesz sobie [tt]eval[/tt], a jak każdy wie – [tt]eval[/tt] jest [s]złe[/s] niepotrzebnie wykorzystywane, co jedynie obniża wydajność! Przekaż uchwyt do funkcji:[/p]
 [code=javascript]setTimeout(funkcja, 1000);[/code]
 [p]A jak już musisz parametry przekazać:[/p]
 [code=javascript]setTimeout(function(){funkcja(1, 2);}, 1000);
@@ -173,7 +173,7 @@ var elem = null;
 	var elem = null;
 }());
 console.log(window['width']);[/code]
-[p]Ok, a jeśli chcemy coś specjalnie umieścić w globalnym scope, np. funkcje naszego super-hiper API? Oczywiście głupim pomysłem jest ładowanie oddzielnie wszystkich 150+ funkcji, bo istnieje szansa, że coś naszego nadpisze funkcje już używane na stronie (np. funkcja o nazwie [tt]resizeImg[/tt]). Wtedy możemy posłużyć się przestrzenią nazw:[/p]
+[p]OK, a jeśli chcemy coś specjalnie umieścić w globalnym scope, np. funkcje naszego super-hiper API? Oczywiście głupim pomysłem jest ładowanie oddzielnie wszystkich 150+ funkcji, bo istnieje szansa, że coś naszego nadpisze funkcje już używane na stronie (np. funkcja o nazwie [tt]resizeImg[/tt]). Wtedy możemy posłużyć się przestrzenią nazw:[/p]
 [code=javascript]
 var API = {
 	resizeImg: function()
@@ -192,7 +192,7 @@ API.resizeImg();
 	API.resizeImg = resizeImg;
 	$.API = API;
 }(window))[/code]
-[p]Voilla! W globalnym scope mamy tylko to, co chcieliśmy mieć![/p]
+[p]Voila! W globalnym scope mamy tylko to, co chcieliśmy mieć![/p]
 
 [h2="feature-detection"]Feature detection[/h2]
 [quote="porneL"]Sniffing an user agent is like sniffing a glue[/quote]
@@ -213,4 +213,4 @@ API.resizeImg();
 			console.log(t.innerHTML);
 	}, false);
 }(document));[/code]
-[p]Kiedy warto tego użyć? Jeśli np. mamy dużo przycisków na stronie i wszystkie są w jednym rodzicu. Zamiast przypisywać zdarzenia do każdego z nich, można przypisać te zdarzenia do ich rodzica i za pomocą [tt]e.target[/tt] (w IE [tt]e.srcElement[/tt]) sprawdzić co tak naprawdę zostało kliknięte. Przydaje się także przy stronach AJAX-owych, gdzie część elementów interaktywnych zostanie dodana po wczytaniu strony. Wtedy można doczepić zdarzenie np. do [tt]body[/tt] i mieć pewność, że każdy przycisk będzie klikalny.[/p]
+[p]Kiedy warto tego użyć? Jeśli np. mamy dużo przycisków na stronie i wszystkie są w jednym rodzicu. Zamiast przypisywać zdarzenia do każdego z nich, można przypisać te zdarzenia do ich rodzica i za pomocą [tt]e.target[/tt] (w IE [tt]e.srcElement[/tt]) sprawdzić, co tak naprawdę zostało kliknięte. Przydaje się także przy stronach ajaksowych, gdzie część elementów interaktywnych zostanie dodana po wczytaniu strony. Wtedy można doczepić zdarzenie np. do [tt]body[/tt] i mieć pewność, że każdy przycisk będzie klikalny.[/p]

@@ -60,10 +60,10 @@
 <p>JS to język, który pozwala chyba na największą dowolność w składni ze wszystkich języków programowania. Ba, jego parser jest tak sprawny, że sam sobie wstawia średniki w miejscach, w których być powinny.</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">return
 {};</code></pre>
-<p>Ten krótki kod - mimo, że na pierwszy, a nawet drugi rzut oka wydaje się poprawny - rzuci nam ładny błąd na konsolę. Czemu? Bo parser widzi go tak:</p>
+<p>Ten krótki kod – mimo że na pierwszy, a nawet drugi rzut oka wydaje się poprawny – rzuci nam ładny błąd na konsolę. Czemu? Bo parser widzi go tak:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">return; //bo niedbały programista zapomniał go tu dać
 {}; //o, a co tu robi definicja obiektu?</code></pre>
-<p>Przez to małe głupstwo kiedyś zraziłem się do JSON i za wszelką cenę próbowałem go omijać ;) Dlatego na sam początek porad ot, taki mały kwiatek z własnego doświadczenia :D</p>
+<p>Przez to małe głupstwo kiedyś zraziłem się do JSON i za wszelką cenę próbowałem go omijać. Dlatego na sam początek porad ot, taki mały kwiatek z własnego doświadczenia.</p>
 
 <h3 id="krotszy-zapis">Krótszy zapis <a href="#krotszy-zapis" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p class="code">Kod:</p><pre><code class="language-javascript">var width = 0;
@@ -75,7 +75,7 @@ var elem = null;</code></pre>
 ,height = 0
 ,img = null
 ,elem = null;</code></pre>
-<p>IMO czytelniej. Gdyby ktoś pytał czemu przecinek jest przerzucony na początek nowej linii, a nie zostawiony na końcu poprzedniej: spróbuj pousuwać parę zmiennych z listy ;) jeśli przecinek jest na końcu linijki, musisz usunąć interesującą cię zmienną, a następnie przecinek. Tak usuwasz jedno i drugie za jednym zamachem i na pewno nie zostawisz przecinka przez nieuwagę.</p>
+<p>IMO czytelniej. Gdyby ktoś pytał czemu przecinek jest przerzucony na początek nowej linii, a nie zostawiony na końcu poprzedniej: spróbuj pousuwać parę zmiennych z listy. Jeśli przecinek jest na końcu linijki, musisz usunąć interesującą Cię zmienną, a następnie przecinek. Tak usuwasz jedno i drugie za jednym zamachem i na pewno nie zostawisz przecinka przez nieuwagę.</p>
 
 <p class="alert alert-info">Od kiedy ten tutorial powstał, jednak powróciłem do "normalnego" sposobu zapisu przecinków. Mój styl można podejrzeć <a href="https://github.com/Comandeer" class="alert-link">na moim GitHubie</a>, a zwłaszcza <a href="https://github.com/BEMQuery/bemquery-package-boilerplate" class="alert-link">w projekcie BEMQuery</a>.</p>
 
@@ -90,7 +90,7 @@ function a()
 {
 	"use strict"; //lub w funkcji, aby działał tylko w niej
 }</code></pre>
-<p>Od razu uprzedzam, że jeśli nigdy nie zwracałeś uwagi na jakość swojego JS, to po włączeniu strict mode skrypty ci się wykrzaczą ;) Ale przystosowanie ich do strict mode wcale nie jest trudne, a w przyszłości na pewno przyniesie korzyści (bo np. ociupinkę zmieni się składnia JS).</p>
+<p>Od razu uprzedzam, że jeśli nigdy nie zwracałeś uwagi na jakość swojego JS, to po włączeniu strict mode skrypty Ci się wykrzaczą. Ale przystosowanie ich do strict mode wcale nie jest trudne, a w przyszłości na pewno przyniesie korzyści (bo np. ociupinkę zmieni się składnia JS).</p>
 
 <h3 id="literaly">Literały <a href="#literaly" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Spójrzmy na ten kod:</p>
@@ -137,7 +137,7 @@ for(var x in b)
 <h3 id="setTimeout">setTimeout <a href="#setTimeout" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Nie przekazuj nazwy funkcji jako stringa!</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">setTimeout("funkcja()", 1000); //don't do this!</code></pre>
-<p>Tym samym wywołujesz sobie <code>eval</code>, a jak każdy wie - <code>eval</code> jest <s>złe</s> niepotrzebnie wykorzystywane, co jedynie obniża wydajność! Przekaż uchwyt do funkcji:</p>
+<p>Tym samym wywołujesz sobie <code>eval</code>, a jak każdy wie – <code>eval</code> jest <s>złe</s> niepotrzebnie wykorzystywane, co jedynie obniża wydajność! Przekaż uchwyt do funkcji:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">setTimeout(funkcja, 1000);</code></pre>
 <p>A jak już musisz parametry przekazać:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">setTimeout(function(){funkcja(1, 2);}, 1000);
@@ -227,7 +227,7 @@ var elem = null;
 	var elem = null;
 }());
 console.log(window&#91;'width'&#93;);</code></pre>
-<p>Ok, a jeśli chcemy coś specjalnie umieścić w globalnym scope, np. funkcje naszego super-hiper API? Oczywiście głupim pomysłem jest ładowanie oddzielnie wszystkich 150+ funkcji, bo istnieje szansa, że coś naszego nadpisze funkcje już używane na stronie (np. funkcja o nazwie <code>resizeImg</code>). Wtedy możemy posłużyć się przestrzenią nazw:</p>
+<p>OK, a jeśli chcemy coś specjalnie umieścić w globalnym scope, np. funkcje naszego super-hiper API? Oczywiście głupim pomysłem jest ładowanie oddzielnie wszystkich 150+ funkcji, bo istnieje szansa, że coś naszego nadpisze funkcje już używane na stronie (np. funkcja o nazwie <code>resizeImg</code>). Wtedy możemy posłużyć się przestrzenią nazw:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">
 var API = {
 	resizeImg: function()
@@ -246,7 +246,7 @@ API.resizeImg();
 	API.resizeImg = resizeImg;
 	$.API = API;
 }(window))</code></pre>
-<p>Voilla! W globalnym scope mamy tylko to, co chcieliśmy mieć!</p>
+<p>Voila! W globalnym scope mamy tylko to, co chcieliśmy mieć!</p>
 
 <h3 id="feature-detection">Feature detection <a href="#feature-detection" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <blockquote><p>Sniffing an user agent is like sniffing a glue</p><footer><cite>"porneL"</cite></footer></blockquote>
@@ -267,7 +267,7 @@ API.resizeImg();
 			console.log(t.innerHTML);
 	}, false);
 }(document));</code></pre>
-<p>Kiedy warto tego użyć? Jeśli np. mamy dużo przycisków na stronie i wszystkie są w jednym rodzicu. Zamiast przypisywać zdarzenia do każdego z nich, można przypisać te zdarzenia do ich rodzica i za pomocą <code>e.target</code> (w IE <code>e.srcElement</code>) sprawdzić co tak naprawdę zostało kliknięte. Przydaje się także przy stronach AJAX-owych, gdzie część elementów interaktywnych zostanie dodana po wczytaniu strony. Wtedy można doczepić zdarzenie np. do <code>body</code> i mieć pewność, że każdy przycisk będzie klikalny.</p>
+<p>Kiedy warto tego użyć? Jeśli np. mamy dużo przycisków na stronie i wszystkie są w jednym rodzicu. Zamiast przypisywać zdarzenia do każdego z nich, można przypisać te zdarzenia do ich rodzica i za pomocą <code>e.target</code> (w IE <code>e.srcElement</code>) sprawdzić, co tak naprawdę zostało kliknięte. Przydaje się także przy stronach ajaksowych, gdzie część elementów interaktywnych zostanie dodana po wczytaniu strony. Wtedy można doczepić zdarzenie np. do <code>body</code> i mieć pewność, że każdy przycisk będzie klikalny.</p>
 
 						</article>
 						<section id="komentarze">
