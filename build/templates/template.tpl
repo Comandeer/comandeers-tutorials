@@ -67,7 +67,7 @@
 					overflow: auto;
 				}
 			}
-			
+
 			h1[id] a, h2[id] a, h3[id] a, h2[id] a, h3[id] a, h4[id] a, h5[id] a, h6[id] a {
 				opacity: 0;
 				transition: opacity .7s ease-in-out;
@@ -136,11 +136,11 @@
 				try
 				{
 					var b = document.getElementsByClassName('code');
-					
+
 					[].forEach.call(b, function(t)
 					{
 						var n = t.nextElementSibling;
-						
+
 						if(!n || n.tagName.toLowerCase() !== 'pre' || n.scrollHeight<300)
 							return false;
 
@@ -154,14 +154,14 @@
 							return true;
 
 						e.preventDefault();
-						
+
 						var t = e.target
 						,n = t.toSwitch
 						,iH = t.innerHTML;
-						
+
 						if(!n || n.tagName.toLowerCase() !== 'pre')
 							return false;
-						
+
 						n.classList.toggle('expanded');
 						t.innerHTML = (iH === '[Zwiń]' ? '[Rozwiń]' : '[Zwiń]');
 					});
@@ -183,7 +183,7 @@
 				}
 			}());
 			</script>
-			<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+			<script src="https://code.jquery.com/jquery-1.12.0.min.js" integrity="sha384-XxcvoeNF5V0ZfksTnV+bejnCsJjOOIzN6UVwF85WBsAnU3zeYh5bloN+L4WLgeNE" crossorigin="anonymous"></script>
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 			<script>
 			$( 'nav' ).on( 'affix.bs.affix', function() {

@@ -51,14 +51,14 @@
 					</div>
 				</div>
 			</header>
-			
+
 			<div class="container-fluid">
 				<main class="content col-md-10 col-md-offset-1">
 					<h2 id="lista">Lista tutoriali</h2>
 					<dl class="list-group">
 							{LIST}
 						</dl>
-						
+
 					<h2 id="artykuly">Pozostałe artykuły</h2>
 					<p>Tak, czasami pisuję gdzie indziej.</p>
 					<ul class="list-group">
@@ -73,8 +73,8 @@
 					<p>Copyright © by <a href="https://www.comandeer.pl" rel="author">Comandeer</a>.</p>
 				</div>
 			</footer>
-			
-			<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+			<script src="https://code.jquery.com/jquery-1.12.0.min.js" integrity="sha384-XxcvoeNF5V0ZfksTnV+bejnCsJjOOIzN6UVwF85WBsAnU3zeYh5bloN+L4WLgeNE" crossorigin="anonymous"></script>
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		</body>
 	</html>
