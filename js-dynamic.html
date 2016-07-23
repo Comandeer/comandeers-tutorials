@@ -119,10 +119,10 @@
 
 					<main class="col-md-8">
 						<article>
-						<h1 id="start">Dynamiczne wczytywanie skryptów <a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h1>
+						<h2 id="start">Dynamiczne wczytywanie skryptów <a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
 <p>Umieszczając JS na swojej stronie, zapewne nieraz słyszałeś, że masz je umieścić na końcu <code>body</code> i najlepiej je wsadzić w jeden, góra trzy pliki i <a href="https://github.com/mishoo/UglifyJS/">zminifikować</a>. Takie są standardowe zalecenia dotyczące JavaScript na stronie. Ale czy istnieje jakaś alternatywa? Przecież wiadomo, że nawet po wykonaniu tych wszystkich kroków, w tym niby mniejszym pliku JS znajduje się pełno kodu, który nie zostanie wykorzystany na danej podstronie (no przecież nie wszędzie wpychamy slider czy też okienka). Okazuje się, że istnieje! Zwie się "dynamiczne (leniwe) ładowanie skryptów".</p>
 
-<h2 id="co-to">Co to? <a href="#co-to" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="co-to">Co to? <a href="#co-to" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Jeśli znasz PHP, na pewno słyszałeś o autoładowaniu klas. Jak to działa?</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">function __autoload($name)
 {
@@ -131,7 +131,7 @@
 $p=new Klasaktorejwczesniejniktniezaladowalaitaknierzucibledu();</code></pre>
 <p>Czemu nasza klasa o zbyt długiej nazwie błędu nie rzuci? Bo PHP - dzięki magii <code>__autoload</code> - przy próbie utworzenia jej instancji, załączy plik z nią! Na podobnej zasadzie działa to w JS.</p>
 
-<h2 id="ninja">Sposób na ninja <a href="#ninja" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="ninja">Sposób na ninja <a href="#ninja" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Ten sposób stosują "dostawcy usług zewnętrznych", czyli np widgety Google+, Twittera, Facebooka, a także Google Analytics. Przykładowy kod (z Google+):</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;script type="text/javascript"&gt;
 	window.___gcfg = {lang: 'pl'};
@@ -154,7 +154,7 @@ $p=new Klasaktorejwczesniejniktniezaladowalaitaknierzucibledu();</code></pre>
 <p>Taki kod jest w pełni poprawnym HTML5 (a ile można znaleźć niepoprawnych, to też wiadomo ;)) - nie ma tu ani <code>head</code>, ani <code>body</code>, do których tradycyjnie wstawia się skrypty. Dlatego też nie można sobie pozwolić na założenie, że na stronie, nad którą nie mamy kontroli, te elementy istnieją. Natomiast rodzic pierwszego elementu <code>script</code> istnieć musi. Czemu? Na początek znajdźmy ten "pierwszy element <code>script</code>". Wiesz co to? Tak, to nasz skrypt wstawiający znacznik <code>script</code>! ;) (czyli ten, co właśnie go omówiłem, jeśli wciąż masz wątpliwości). A co jest jego rodzicem? Coś musi być - na pewno znajduje się w <code>document</code> (to de facto główny węzeł <a href="https://developer.mozilla.org/en-US/docs/DOM">DOM</a>, który istnieje zawsze). Zatem - jeśli nie znasz strony, na której pracujesz, a masz tam coś wstawić - wstaw to w rodzica elementu, który na pewno istnieje ;)</p>
 <p>Ten sposób wstawiania skryptów jednak nie daje dużej kontroli nad procesem jego wczytywania - po prostu go wstawia... i tyle. Jednak jest doskonałym punktem wyjścia do własnych rozwiązań.</p>
 
-<h2 id="prymitywny">Sposób prymitywny <a href="#prymitywny" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="prymitywny">Sposób prymitywny <a href="#prymitywny" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Zatem chcesz wczytywać swój skrypcik i dopiero po jego wczytaniu odpalić zadania, za które jest odpowiedzialny? Ok, to musisz odkryć kiedy nasz dynamicznie wstawiony skrypt zostanie wczytany! Na szczęście nie jest to zadanie trudne, bo odpowiada za to zdarzenie <code>load</code> - to dla niego należy dodać nasze zadania. A jak to zrobić najwygodniej? Za pomocą funkcji!</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">function addScript(uri, callback)
 {
@@ -222,7 +222,7 @@ s.src = uri;</code></pre>
 	&lt;/html&gt;</code></pre>
 <p>Gdy skrypt się wczyta, do konsoli zostanie dodany wpis "Wczytano skrypt".</p>
 
-<h2 id="rozbudowanszy">Sposób rozbudowańszy <a href="#rozbudowanszy" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="rozbudowanszy">Sposób rozbudowańszy <a href="#rozbudowanszy" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>"Czemu to rozbudowywać?" - zapytasz. A ja odpowiem - spróbuj załadować jQuery i jakiś skrypt od niego zależny. Na bank okaże się, że często to ten drugi skrypt wczyta się pierwszy. Musimy jakoś upewnić się, że zostanie zachowana narzucona kolejność wczytywania. Na szczęście jest i na to sposób! Wystarczy wrzucić wymagane skrypty do tablicy, a następnie zagnieżdżać obsługę zdarzenia <code>load</code>. Szybki szkic rozwiązania:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">function addScripts(uris, callback)
 {
@@ -300,7 +300,7 @@ s.src = uri;</code></pre>
 		&lt;/body&gt;
 	&lt;/html&gt;</code></pre>
 	
-<h2 id="amd">Sposób pro dla browserów <a href="#amd" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="amd">Sposób pro dla browserów <a href="#amd" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Ten problem postanowiono rozwiązać w sposób kulturalny i jakoś go ustandaryzować. Tak powstało <a href="https://github.com/amdjs/amdjs-api/wiki/AMD">Asynchrounous Module Definition</a>, na które składają się de facto dwie funkcje - <code>define</code> i <code>require</code></p>
 <p><code>define</code> służy do deklarowania modułów:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">define('opcjonalnanazwamodulu', &#91;'tablica/modulow', 'lubinnychplikowjs', 'potrzebnychtemumodulowido', 'uruchomienia'&#93;, function($1, $2, $3, $4) //poszczególne parametry to wczytane moduły z tablicy
@@ -317,21 +317,21 @@ s.src = uri;</code></pre>
 <p>Oczywiście nie wszystkie skrypty są zgodne z AMD (nie stosują <code>define</code>), co nie przeszkadza w ich wczytywaniu przy wykorzystaniu tej techniki. jQuery jest ciekawym przykładem, który stoi pośrodku - dodaje się do globalnego scope, ale równocześnie zachowuje jako moduł AMD.</p>
 <p>Najpopularniejsza implementacja AMD to <a href="http://requirejs.org">Require.js</a>, z którego osobiście korzystam.</p>
 
-<h2 id="serwery">Jedyny pro sposób dla serwerów <a href="#serwery" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="serwery">Jedyny pro sposób dla serwerów <a href="#serwery" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Czyli jak to zrobić w node.js przy pomocy składni CommonJS (CJS)</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">var modul = require('nazwamodulu')
 ,inny = require('lub/sciezka/do/pliku.js');</code></pre>
 <p>Tyle ;) Teoretycznie można zastosować pokazane powyżej AMD, ale to nie ma sensu ;)</p>
 
-<h2 id="umd">Pro sposób dla wszystkich <a href="#umd" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="umd">Pro sposób dla wszystkich <a href="#umd" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Oczywiście składni CJS zaczęto używać także dla przeglądarek. Co więcej, coraz częściej mamy do czynienia z <a href="http://nerds.airbnb.com/isomorphic-javascript-future-web-apps/">izomorficznymi aplikacjami internetowymi</a>, co wymusza znalezienie sposobu na współdzielenie tego samego kodu na serwerze i w przeglądarce. Tym samym powstało <a href="https://github.com/umdjs/umd">UMD - Universal Module Definition</a>, które pozwala korzystać nam równocześnie z AMD, jak i CJS. Jest to obecnie najczęściej polecany sposób rozprowadzania kodu JS.</p>
 
-<h2 id="es6">Przyszłość - ES6 Modules <a href="#es6" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="es6">Przyszłość - ES6 Modules <a href="#es6" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Przyszłość przyniesie nam moduły natywnie wbudowane w ECMAScript. Niestety, ich składnia jest niekompatybilna zarówno z AMD, jak i CJS. Niemniej <a href="https://github.com/systemjs/systemjs">istnieją już odpowiednie narzędzia</a> zapewniające choć cień zgodności.</p>
 <p>Po wyczerpujący opis modułów ES6 odsyłam do <a href="http://www.2ality.com/2014/09/es6-modules-final.html">artykułu na 2ality.com</a>.</p>
 <p class="alert alert-info">Jeśli chcesz dowiedzieć się praktycznie wszystkiego o systemach modułów w JS i różnicach między nimi, zajrzyj do <a href="http://addyosmani.com/writing-modular-js/" class="alert-link">wyczerpującego artykułu Addy'iego Osmaniego</a>.</p>
 
-<h2 id="cm">Rebelia - Chainable Module Definition <a href="#cm" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="cm">Rebelia - Chainable Module Definition <a href="#cm" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Czyli przeniesienie łańcuszków z jQuery na poziom modułów. Jedyna implementacja to <a href="http://labs.voronianski.com/melchior.js/">Melchior.js</a>. Wygląda to nawet fajnie i składniowo jest ładniejsze od AMD (ale nie CJS!), ale jest całkowicie niekompatybilne. Tym samym raczej nie zyska dużej popularności i pozostanie ciekawostką (zwłaszcza, że za chwilę wejdą do użycia ES6 Modules).</p>
 
 						</article>

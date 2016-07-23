@@ -24,7 +24,7 @@ tutorials.forEach(function(tutorial)
 	});
 
 	console.log(tmp.errorQueue); // debugging, yay!
-			
+
 	content = tmp.html;
 
 	var $ = dom.load(content)
@@ -41,7 +41,7 @@ tutorials.forEach(function(tutorial)
 
 	$('h1,h2,h3,h4,h5,h6').each(function()
 	{
-		if(this.is('h1#start'))
+		if(this.is('#start, h2:first-of-type'))
 			output = output.replace( /{TITLE}/g, this.html().replace( /<a.+?>.+?<\/a>/gi, '') );
 		else
 		{
@@ -50,7 +50,7 @@ tutorials.forEach(function(tutorial)
 			,name = this.html().replace( /<a.+?>.+?<\/a>/gi, '');
 
 			html = '<li><a href="#' + this.attr('id') + '">' + name + '</a></li>';
-					
+
 
 			if(lastDepth)
 			{
@@ -81,7 +81,7 @@ tutorials.forEach(function(tutorial)
 	output = output.replace('{NAV}', nav)
 	output = output.replace('{CONTENT}', $.html() );
 	output = output.replace('{DISQUS}', tutorial.replace('.tpl', ''));
-			
+
 	fs.writeFileSync('../' + tutorial.replace('tpl', 'html'), output, 'utf8');
 });
 
@@ -95,13 +95,13 @@ var list = fs.readFileSync('./templates/list.tpl', 'utf8')
 Object.keys(tuts).forEach(function(t)
 {
 	var tut = tuts[t];
-	
+
 	response += '<dt class="list-group-item active">' + t + '</dt>';
 
 	Object.keys(tut).forEach(function(x)
 	{
 		response += '<dd class="list-group-item"><a href="http://tutorials.comandeer.pl/' + tut[x] + '.html" class="list-group-item-link">' + x + '</a></dd>';
-	})			
+	})
 });
 
 Object.keys(arts).reverse().forEach(function(t)

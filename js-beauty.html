@@ -119,9 +119,9 @@
 
 					<main class="col-md-8">
 						<article>
-						<h1 id="start">Wypieść swój JS <a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h1>
+						<h2 id="start">Wypieść swój JS <a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
 
-<h2 id="parser">Inteligentny parser <a href="#parser" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="parser">Inteligentny parser <a href="#parser" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>JS to język, który pozwala chyba na największą dowolność w składni ze wszystkich języków programowania. Ba, jego parser jest tak sprawny, że sam sobie wstawia średniki w miejscach, w których być powinny.</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">return
 {};</code></pre>
@@ -130,7 +130,7 @@
 {}; //o, a co tu robi definicja obiektu?</code></pre>
 <p>Przez to małe głupstwo kiedyś zraziłem się do JSON i za wszelką cenę próbowałem go omijać ;) Dlatego na sam początek porad ot, taki mały kwiatek z własnego doświadczenia :D</p>
 
-<h2 id="krotszy-zapis">Krótszy zapis <a href="#krotszy-zapis" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="krotszy-zapis">Krótszy zapis <a href="#krotszy-zapis" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p class="code">Kod:</p><pre><code class="language-javascript">var width = 0;
 var height = 0;
 var img = null;
@@ -142,7 +142,7 @@ var elem = null;</code></pre>
 ,elem = null;</code></pre>
 <p>IMO czytelniej. Gdyby ktoś pytał czemu przecinek jest przerzucony na początek nowej linii, a nie zostawiony na końcu poprzedniej: spróbuj pousuwać parę zmiennych z listy ;) jeśli przecinek jest na końcu linijki, musisz usunąć interesującą cię zmienną, a następnie przecinek. Tak usuwasz jedno i drugie za jednym zamachem i na pewno nie zostawisz przecinka przez nieuwagę.</p>
 
-<h2 id="strict">Strict mode <a href="#strict" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="strict">Strict mode <a href="#strict" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>To małe cudeńko bardzo ułatwia życie, utrudniając je. Włączenie tzw. "strict mode" (tryb ścisły jak ktoś polski lubi) usuwa najbardziej bugowate części JS (np. <code>with</code> czy też ciut naprawia stringi w <code>setTimeout</code>). Co więcej, nie pozwala nam tworzyć nieświadomie zmiennych globalnych, np tak:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">for(i = 0; i&lt;tab.length; i++)</code></pre>
 <p>W trybie ścisłym każda zmienna musi być zadeklarowana przed użyciem</p>
@@ -155,7 +155,7 @@ function a()
 }</code></pre>
 <p>Od razu uprzedzam, że jeśli nigdy nie zwracałeś uwagi na jakość swojego JS, to po włączeniu strict mode skrypty ci się wykrzaczą ;) Ale przystosowanie ich do strict mode wcale nie jest trudne, a w przyszłości na pewno przyniesie korzyści (bo np. ociupinkę zmieni się składnia JS).</p>
 
-<h2 id="literaly">Literały <a href="#literaly" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="literaly">Literały <a href="#literaly" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Spójrzmy na ten kod:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">var a = new Array(1, 2, 3)
 ,b = new Object();
@@ -197,7 +197,7 @@ for(var x in b)
 	console.log(b&#91;x&#93;);</code></pre>
 <p>Tych wykrzaczyć się nie da ;)</p>
 
-<h2 id="setTimeout">setTimeout <a href="#setTimeout" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="setTimeout">setTimeout <a href="#setTimeout" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Nie przekazuj nazwy funkcji jako stringa!</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">setTimeout("funkcja()", 1000); //don't do this!</code></pre>
 <p>Tym samym wywołujesz sobie <code>eval</code>, a jak każdy wie - <code>eval</code> jest <s>złe</s> niepotrzebnie wykorzystywane, co jedynie obniża wydajność! Przekaż uchwyt do funkcji:</p>
@@ -207,7 +207,7 @@ for(var x in b)
 //lub
 setTimeout(funkcja, 1000, 1, 2);</code></pre>
 
-<h2 id="petle">Pętle i obiekty <a href="#petle" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="petle">Pętle i obiekty <a href="#petle" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Masz obiekt i musisz po nim poiterować? Zapewne robisz coś takiego:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">var o = {
 	a: 1
@@ -272,7 +272,7 @@ Object.keys(o).forEach(function(x)
 	console.log(o&#91;x&#93;);
 });</code></pre>
 
-<h2 id="namespaces">Funkcje natychmiastowego wywołania i przestrzenie nazw <a href="#namespaces" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="namespaces">Funkcje natychmiastowego wywołania i przestrzenie nazw <a href="#namespaces" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Każdy doskonale wie, że zmienne globalne są bleeee. Jednak w wielu skryptach można znaleźć coś takiego:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">var width = 0;
 var height = 0;
@@ -311,7 +311,7 @@ API.resizeImg();
 }(window))</code></pre>
 <p>Voilla! W globalnym scope mamy tylko to, co chcieliśmy mieć!</p>
 
-<h2 id="feature-detection">Feature detection <a href="#feature-detection" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="feature-detection">Feature detection <a href="#feature-detection" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <blockquote><p>Sniffing an user agent is like sniffing a glue</p><footer><cite>"porneL"</cite></footer></blockquote>
 <p>Dlatego też, zamiast opierać się na wątpliwym przekonaniu, że w IE 5.5.1733958399 zainstalowanym pod Win XP z SP 14 na pewno to działa, warto sprawdzić czy naprawdę funkcja x istnieje i jest funkcją. Wyobraźmy sobie choćby, że chcemy stworzyć obiekt przy pomocy <code>Object.create</code>, ale nie jesteśmy pewni czy ta metoda istnieje:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">var o = Object.create(null);</code></pre>
@@ -319,7 +319,7 @@ API.resizeImg();
 <p class="code">Kod:</p><pre><code class="language-javascript">if(typeof Object.create === 'function')</code></pre>
 <p>Jeśli nie, to można walnąć <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object/create#Polyfill">polyfilla</a>. Na tej samej zasadzie działa cała biblioteka <a href="http://modernizr.com">Modernizr</a>.</p>
 
-<h2 id="delegation">Event delegation <a href="#delegation" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="delegation">Event delegation <a href="#delegation" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Zdarzenia bąbelkują (jak ktoś nie wierzy, to niech <a href="http://www.quirksmode.org/js/events_order.html">poczyta</a>). Dlatego też możliwe staje się odkrycie, że jakiś tam akapit w jakimś tam divie został kliknięty.</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">(function(d)
 {

@@ -119,13 +119,13 @@
 
 					<main class="col-md-8">
 						<article>
-						<h1 id="start">Data po polsku <a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h1>
+						<h2 id="start">Data po polsku <a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
 <p>Dzisiaj będzie krótko, rzeczowo i na temat (co dość rzadko mi się zdarza). Otóż: jak <b>dobrze</b> zrobić datę po polsku w JS i się przy tym nie narobić.</p>
 
-<h2 id="po-staremu">Po staremu <a href="#po-staremu" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="po-staremu">Po staremu <a href="#po-staremu" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Dotąd jedynym właściwym sposobem były różne dziwne kombinacje typu "stwórzmy sobie tablicę z polskimi nazwami miesięcy i dni tygodnia, a następnie podstawiajmy pod dane, zwracane przez <code>new Date</code>". Mogą one wyglądać <a href="http://webmade.org/porady/data-po-polsku-js.php">rozwlekle i odpychająco</a> (a ich autorem nie jest Polak :D). Mogą być też <a href="http://phpjs.org/functions/strftime/">wzorowane na innych językach</a>, stając się jeszcze bardziej rozwlekłe i… nie JS-owe. Mogą w końcu zmienić się po prostu w wywołanie odpowiedniej, krótkiej funkcyjki w PHP, po stwierdzeniu, że JS się do tego nie nadaje.</p>
 
-<h2 id="Intl">Na ratunek <code>Intl</code> <a href="#Intl" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="Intl">Na ratunek <code>Intl</code> <a href="#Intl" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Na szczęście się to zmieniło. I to nie znowu tak niedawno (bo w 2012) - wtedy powstał standard <a href="http://www.ecma-international.org/ecma-402/1.0/">ECMA-402 (ECMAScript Internationalization API)</a>. Oczywiście na odzew ze strony producentów przeglądarek trzeba było ciut poczekać, niemniej - jeśli wierzyć <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Browser_Compatibility">MDN</a> - działa dziś wszędzie, oprócz Safari i - co prawdopodobnie może być o wiele ważniejsze - node.js (jednak od czego jest niezawodny GitHub i <a href="https://github.com/andyearnshaw/Intl.js">polyfille</a>; oczywiście w node.js/io.js <a href="https://github.com/nodejs/io.js#intl-ecma-402-support">obsługę można sobie wkompilować</a>).</p>
 <p>Cały standard składa się z 3 głównych "klas", zamkniętych w krótkiej i schludnej przestrzeni nazw - <code>Intl</code>. Są to:</p>
 <ul>
@@ -134,7 +134,7 @@
 	</li><li> <code>Intl.DateTimeFormat</code> - tak, tego właśnie użyjemy ;)
 </li></ul>
 
-<h2 id="formatujemy">Formatujemy datę <a href="#formatujemy" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="formatujemy">Formatujemy datę <a href="#formatujemy" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Żeby wyświetlić ładną datę po polsku, musimy stworzyć nowy obiekt "klasy" <code>Intl.DateTimeFormat</code>. Jako pierwszy parametr konstruktor bierze nazwę języka (oczywiście zgodną ze standardem ISO, zatem dwuliterowy skrót):</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">var formatter = new Intl.DateTimeFormat('pl');</code></pre>
 <p>Już! Pierwszy krok za nami - mamy obiekt wyświetlający datę po polsku. Udostępnia on aż jedną metodę - <code>format</code>, która formatuje przekazaną jej datę (jeśli jej nie podamy, zastosuje aktualną - przynajmniej w Chrome; polecam jednak ją podawać dla zwiększenia czytelności kodu).</p>

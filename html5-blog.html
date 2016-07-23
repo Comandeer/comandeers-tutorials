@@ -119,14 +119,14 @@
 
 					<main class="col-md-8">
 						<article>
-						<h1 id="start">Semantyczny blog w HTML5 <a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h1>
+						<h2 id="start">Semantyczny blog w HTML5 <a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
 
 <p class="alert alert-info">Ten tutorial przeznaczony jest dla tych, którzy już mają jakiekolwiek pojęcie o HTML. Dobrym miejscem na zdobycie podstaw wiedzy jest <a href="http://kurshtml.edu.pl" class="alert-link">Kurs HTML</a> czy też książka Ferrante <a href="http://ferrante.pl/books/html/" class="alert-link">Moja pierwsza strona internetowa w HTML5 i CSS3</a>.</p>
 <p>Witam wszystkich! Przeszukałem kilka for webmasterskich i nie znalazłem ani jednego tutoriala na temat HTML5. Trza to naprawić ;)</p>
 <p class="alert alert-info">Od razu uprzedzam, że słowa "semantyczny" i "HTML5" z tematu są rozdzielne i część porad można zastosować w starym dobrym HTML4. A na upartego słowa "blog" wgl można się pozbyć ;)</p>
 
 
-<h2 id="punkt-wyjscia">Punkt wyjścia <a href="#punkt-wyjscia" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="punkt-wyjscia">Punkt wyjścia <a href="#punkt-wyjscia" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Dobra, do rzeczy. Wyobraźmy sobie, że mamy sobie przykładowy blog: <a href="http://tutorials.comandeer.pl/res/html5-blog/start.html">http://tutorials.comandeer.pl/res/html5-blog/start.html</a></p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;
 	&lt;html lang="pl" dir="ltr"&gt;
@@ -231,17 +231,17 @@
 <p>Nic nadzwyczajnego - blog jakich dużo w Internecie. Przyznam się bez bicia, że ten przykładzik to połączenie blogu <a href="http://lea.verou.me">Lea Verou</a> i naszego kochanego <a href="http://roberto.ovh.org/blog">Roberto</a>. Kodu nie będę wyjaśniał, bo mam wrażenie, że powinien być jasny. Ot, zwyczajny wpis na zwyczajnym blogu, poniżej komentarze, formularz do komentowania i jakieś tam dodatkowe info w bocznym panelu. Specjalnie nie dorzucam CSS, bo jestem z tych purystów, co to twierdzą, że strona to treść i kod, a wygląd jest jedynie dodatkiem.</p>
 
 
-<h2 id="nasz-cel">Nasz cel <a href="#nasz-cel" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="nasz-cel">Nasz cel <a href="#nasz-cel" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Chcemy być cool i porzucamy zgrzybiałego HTML4 na rzecz jego potomka :D. Poza tym spróbujemy nadać większe znaczenie naszej treści, przede wszystkim dla Google, pamiętając, że co dobre dla Google zwykle jest także dobre dla usera. Do tego celu wykorzystamy m.in. mikroformaty i nowe znaczniki z HTML5.</p>
 
 
-<h2 id="doctype">Nowy <code>DOCTYPE</code> <a href="#doctype" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="doctype">Nowy <code>DOCTYPE</code> <a href="#doctype" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Okey, to zaczynamy. Najpierw omówię przejście na HTML5, bo tego jest najwięcej, a później doszlifujemy resztę. Pierwsze, co należy zmienić, to ten cały rozwlekły <code>DOCTYPE</code>. W HTML5 mamy króciutki i ładniutki:</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;!DOCTYPE html&gt;</code></pre>
 <p>I już - po bólu. Twój blog właśnie stał się cool ;) Jeśli nie jesteś odważny, migrację na HTML5 możesz zakończyć w tym miejscu. Jeśli chcesz jednak poznać jaką zmianę w semantyce przynosi, pójdź za mną, a pokażę ci piękno :D</p>
 
 
-<h2 id="ustawienie-kodowania">Ustawienie kodowania <a href="#ustawienie-kodowania" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="ustawienie-kodowania">Ustawienie kodowania <a href="#ustawienie-kodowania" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Kolejnym wrogiem jest ustawienie kodowania. Po nowemu zapisać je można następująco:</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;meta charset="utf-8"&gt;</code></pre>
 <p>To króciutkie meta obsługuje nawet IE6. Zdziwieni? A powinni, bo ta składnia powstała z… błędu. Na wielu stronach bowiem można było znaleźć potworka typu</p>
@@ -251,11 +251,11 @@
 <p><s>Chcę także zwrócić uwagę, że powinno się pisać "UTF-8", a nie "utf-8", bo nazwa normy pisana jest z dużej litery (validator.nu się o to rzuca).</s> w specce pojawił się zwrot "case insensitive", więc obydwie formy są już poprawne.</p>
 
 
-<h2 id="arkusz-styl&#xF3;w">Dołączanie arkusza stylów i skryptów <a href="#arkusz-styl&#xF3;w" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="arkusz-styl&#xF3;w">Dołączanie arkusza stylów i skryptów <a href="#arkusz-styl&#xF3;w" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Teraz słówko o arkuszu stylów - jeśli dołączamy go poprzez <code>link</code> można usunąć zbędny atrybut <code>&#91;type&#93;</code> - arkusze i tak zawsze są typu <code>text/css</code>. To samo tyczy się <code>script</code> - prawie zawsze jest to JS (prawie, bo w teorii można np. zaserwować VBScript dla IE lub użyć tych tagów jako <a href="http://stackoverflow.com/questions/4912586/explanation-of-script-type-text-template-script">system szablonów</a> (co jest nawet opisane w specyfikacji!); w takich wypadkach tego atrybutu ominąć się nie da), więc <code>&#91;type&#93;</code> jest zbędny. Nie ma obaw, ta kosmetyczna zmiana nie sprawi żadnej przeglądarce problemu.</p>
 
 
-<h2 id="obsluga-ie">Obsługa starszych przeglądarek <a href="#obsluga-ie" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="obsluga-ie">Obsługa starszych przeglądarek <a href="#obsluga-ie" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Niestety, z obsługą reszty znaczników nie jest już tak kolorowo i IE wymaga odpowiedniego skryptu, który trza dodać w <code>head</code> (IE 9 na szczęście jest już normalny):</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;!--&#91;if lt IE 9&#93;&gt;
 	&lt;script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"&gt;&lt;/script&gt;
@@ -264,7 +264,7 @@
 <p>Tutaj warto też od razu zwrócić uwagę na fakt, że nieznane przeglądarce elementy są nieostylowane w żaden sensowny sposób i przez to możemy dostać np. liniowe <code>section</code>, co raczej jest niezbyt pożądane. Na szczęście problem ten rozwiązuje normalizacja stylów (nawet jeśli nie chcesz używać nowych znaczników, to i tak <a href="http://nicolasgallagher.com/about-normalize-css/">powinieneś normalizować</a> lub <a href="http://html5doctor.com/html-5-reset-stylesheet/">resetować</a>), przypisując najbardziej podstawowe style odpowiednim elementom.</p>
 
 
-<h2 id="naglowek">Nagłówek i nawigacja <a href="#naglowek" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="naglowek">Nagłówek i nawigacja <a href="#naglowek" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Dobra, <code>head</code> na razie zostawmy i przejdźmy do <code>body</code>. Pierwsze, co rzuca nam się w oczy, to <code>div#header</code>. Zero znaczenia semantycznego, prawda? Nawet <code>&#91;id=header&#93;</code> tego nie ratuje, ponieważ identyfikatory nie mają żadnego znaczenia semantycznego.</p>
 <blockquote><p>Identifiers are opaque strings. Particular meanings should not be derived from the value of the id attribute</p><footer><cite>"http://www.whatwg.org/specs/web-apps/current-work/multipage/elements.html#the-id-attribute"</cite></footer></blockquote>
 <p>HTML5 rozwiązuje ten problem, wprowadzając znacznik <code>header</code>. Jak sama nazwa wskazuje, służy do oznaczania nagłówków i świetnie się nadaje do oznaczenia nagłówka strony. Zatem zamieńmy nasz <code>div#header</code> na <code>header#header</code>. Niby mała zmiana, a semantyka kodu rośnie. Ale, ale - to jeszcze nie wszystko! Spójrzmy na nagłówek - mamy tam <code>h1</code> z tytułem strony i <code>p</code> z mottem. Fajnie by było gdyby motto też było nagłówkiem, ale co z outlinem dokumentu? <s>Czy się przypadkiem nie zaburzy? Otóż w HTML5 outline jest liczony zupełnie inaczej, a jak, to się dowiedzie jak przerobimy treść artykułu :D Teraz wystarczy abyście wiedzieli, że akapit można z pełnym spokojem zamienić na <code>h2</code> i oba nagłówki opatulić nowiutkim <code>hgroup</code>. Ten znacznik "grupuje" nagłówki, tzn. w outline widnieje tylko nagłówek o najwyższym stopniu. Jest to bardzo pomocne, gdy chcemy wpleść właśnie jakiś bardzo ważny tekst (np. tytuł podstrony), a równocześnie nie chcemy zaburzać outline'u dokumentu.</s>Niestety, <code>hgroup</code> wypadł z wersji specyfikacji od W3C (a z racji tego, że to ta wersja specyfikacji jest tą "oficjalną", to raczej nie powinienem zachęcać do używania tego znacznika). Obecnie podtytuły, zgodnie z tym, co <a href="http://www.w3.org/TR/html5/common-idioms.html#sub-head">czytamy w specyfikacji</a>, winny być oznaczane przy pomocy <code>p</code>, tudzież <code>h* &gt; span</code>.</p>
@@ -287,9 +287,9 @@
 &lt;/header&gt;</code></pre>
 
 
-<h2 id="artykul">Artykuł <a href="#artykul" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="artykul">Artykuł <a href="#artykul" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 
-<h3 id="artykul-ramy">Główne ramy <a href="#artykul-ramy" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<h4 id="artykul-ramy">Główne ramy <a href="#artykul-ramy" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <p>Oki doki, teraz czas na danie główne - treść artykułu! Zapewne zauważyliście, że jest opatulona w dodatkowy <code>div#main</code>. Jak już wspomniałem, divy nie mają jakiegoś specjalnego znaczenia semantycznego, dlatego w HTML5 powstało mnóstwo nowych znaczników, które mogą divy zastąpić. Jednym z nich jest <code>section</code>, którym oznacza się pewne części dokumentu, które można wyróżnić ze względu na ich przeznaczenie. W tym wypadku użycie <code>section</code> jest dozwolone, gdyż wyznacza obszar artykułu wraz ze wszystkimi "dodatkami" do niego (tj. tagi i komentarze) - całość tworzy pewną całość treściową. Właśnie do takich przypadków stworzono <code>section</code>! Jednak to, że jest dozwolone, nie oznacza, że na pewno trzeba ten fragment oznaczyć. Za <a href="http://html5doctor.com/the-section-element/">HTML5 Doctor</a>:</p>
 <blockquote><p>But what would be the purpose of marking it &#91;main content&#93; up specifically, anyway? If you need to style it, use a div. An assistive technology like a screenreader can find the main content because it is the first thing inside a page that isn’t a header, nav or footer.</p></blockquote>
 <p><s>Oczywiście ktoś w W3C myśli zupełnie inaczej… Dlatego pojawiła się <a href="https://dvcs.w3.org/hg/html-extensions/raw-file/tip/maincontent/index.html">propozycja elementu <code>main</code></a>. Ja popieram stanowisko doktorów. Wydaje mi się, że W3C próbuje wręcz przesemantyzować nowy HTML (ale w swojej wersji - w wersji kanonicznej od WHATWG taki znacznik prawdpodobnie się nie pojawi). Jako ciekawostkę rzucę tutaj też fragmentem propozycji:</s></p>
@@ -299,10 +299,10 @@
 <p>Dobra, teraz zatrzymujemy się na <code>div.post</code> - to też można ulepszyć. W HTML5 pojawia się <code>article</code>, który służy do oznaczania… artykułów (nie wpadliście na to, co?), a dokładniej "semantycznej całości, która może być prezentowana samodzielnie" (dość swobodna interpretacja specyfikacji ;)). Wpis na blogu pasuje idealnie do tej definicji. No, na co czekasz - wyrzuć tego diva!</p>
 <p class="alert alert-info">W tym miejscu pozwolę sobie na małą dygresję. Przed chwilą oznaczyliśmy główną treść strony przy pomocy <code>main</code>. Teraz oznaczamy artykuł przy pomocy <code>article</code>. Jest to całkowicie poprawne, jednakże przy stronach, na których znajduje się tylko jeden artykuł (jak w naszym przypadku) można się zastanawiać czy aż tak dokładny podział jest konieczny. Wówczas można pomyśleć nad rozwiązaniem typu <code>article&#91;role=main&#93;</code> (o <code>&#91;role&#93;</code> napisałem ciut później) lub po prostu pozostawieniu samego <code>main</code>.</p>
 
-<h3 id="artykul-naglowek">Nagłówek <a href="#artykul-naglowek" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<h4 id="artykul-naglowek">Nagłówek <a href="#artykul-naglowek" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <p>Znowu natykamy się na nagłówek, a tuż za nim na akapit z informacjami na temat daty i autora postu. Te rzeczy doskonale nadają się na nagłówek, prawda? No to otoczmy to <code>header</code>! Nagłówki nie są tylko i wyłącznie dla całych stron - mogą je mieć także sekcje i artykuły. To ma sens, ponieważ praktycznie każdy wpis na blogu ma swój tytuł, swojego autora itd., które wcale nie muszą być zgodne z autorem i tytułem całej strony. Ale to jeszcze nie wszystko - daty też mają swój własny znacznik w HTML5 :D Nie, nie jest to <code>date</code> wbrew pozorom, lecz <code>time</code>. Wraz z nim pojawiają się dwa nowe atrybuty: <code>&#91;datetime&#93;</code>, który przyjmuje datę w formacie ISO-8601 i <s><code>&#91;pubdate&#93;</code>, który mówi, że podana data jest datą publikacji danego materiału</s> wyleciało ze specki. Ten znacznik doskonale pasuje do oznaczenia daty publikacji wpisu.</p>
 
-<h3 id="artykul-obrazki">Obrazki <a href="#artykul-obrazki" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<h4 id="artykul-obrazki">Obrazki <a href="#artykul-obrazki" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <p>Dobra, później mamy obrazek. "No cóż, przynajmniej obrazka tykać nie będzie…" - pomyślą ci, których przytłacza ogrom nowych możliwości. Niestety, obrazek też można ulepszyć :D W tym wypadku posłużymy się znacznikiem <code>figure</code>. Jego zadaniem jest oznaczanie danych multimedialnych, które są istotne dla danego artykułu (sekcji), lecz mogą także być prezentowane samodzielnie - na chłopski rozum: masz ilustrację do swojego artykułu, użyj <code>figure</code>!</p>
 <p class="alert alert-info">Co rozumiem pod pojęciem "ilustracja"? Wystarczy wyobrazić sobie książkę, w której mamy obrazek (albo tabelkę, zdjęcie itp.), a pod nim podpis typu "Ryc. 1. Pusta szafa". Dzięki takiemu oznaczeniu można wyciągnąć tego typu obiekt poza pierwotny kontekst, a wciąż będzie mieć te same znaczenie (pusta szafa z podpisem to wciąż pusta szafa). Natomiast wszelkie ozdobniki graficzne, które są w artykule, żeby było ładnie to po prostu ozdobniki. Ilustracja musi nieść ze sobą jakąś wartość semantyczną (łatwo to stwierdzić po tym, że da się wymyślić sensowny opis) i nie może zależeć od kontekstu swojego występowania (jeśli tekst traci sens po przesunięciu danego obiektu, to znak, że to nie jest kandydat na <code>figure</code>).</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;figure&gt;
@@ -325,13 +325,13 @@
 <blockquote><p>In reality, I can’t really say either “yes” or “no”. What I say doesn’t mean anything: I don’t write any browsers. The browser vendors say “no” to me all the time, by just not implementing what I’ve specced.</p><footer><cite>"http://html5doctor.com/interview-with-ian-hickson-html-editor/"</cite></footer></blockquote>
 <p>Rzeczywistość szybko zweryfikowała poglądy Hixiego i obecnie <a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-picture-element"><code>picture</code> już jest w kanonicznym HTML</a> ;) <s>Chociaż ostatnio dochodzą mnie niepokojące głosy, że twórcy przeglądarek nie biorą pod uwagę <code>picture</code> (jest zbyt kłopotliwy w implementacji).</s> Po wspomnianej zmianie statusu owego tagu <code>picture &gt; img</code> oraz dzięki istniejącym <a href="http://mobile.smashingmagazine.com/2013/08/21/webkit-implements-srcset-and-why-its-a-good-thing/">pierwszym implementacjom <code>srcset</code></a>, <a href="http://alistapart.com/blog/post/picture-element-qa">prace nad <code>picture</code> ruszyły</a> i wkrótce będzie on obsługiwany przez przeglądarki. Tym samym w cień odeszło <a href="http://tabatkins.github.io/specs/respimg">nowe rozwiązanie - <code>&#91;src-n&#93;</code></a>, które łączy w sobie niejako <code>picture</code> i <code>&#91;srcset&#93;</code> w prostsze, bardziej zrozumiałe rozwiązanie. Coraz częściej próbuje się także zrzucić odpowiedzialność za rozwiązanie problemu <a href="http://www.igvita.com/2013/08/29/automating-dpr-switching-with-client-hints/">na serwer</a> (co IMO jest bardzo rozsądnym rozwiązaniem). Jednak najlepszym (ale też najbardziej długotrwałym) rozwiązaniem wydaje się po prostu <a href="http://mobile.smashingmagazine.com/2013/09/24/responsive-image-container/">stworzenie nowego formatu obrazków</a>. Zresztą nieważne tak naprawdę jak problem responsywnych obrazków zostanie rozwiązany - najważniejsze, żeby został rozwiązany.</p>
 
-<h3 id="artykul-outline">Outline <a href="#artykul-outline" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<h4 id="artykul-outline">Outline <a href="#artykul-outline" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <p>Dobra, akapitów się (jeszcze) zmienić nie da, więc treść mamy z głowy :D <s>Tagi i komentarze zostają bez większych zmian, jedynie <code>h3</code> zmienia się w <code>h2</code>. Czemu? Przypatrzmy się <a href="http://tutorials.comandeer.pl/res/html5-blog/outlinehtml5.png">outline</a>. Zaskoczeni? (Pewnie tak, bo do części kodu jeszcze nie doszliśmy :D). Jak widać w HTML5 outline jest liczony dla każdej sekcji i artykułu oddzielnie, tzn. <code>h1</code> w artykule będzie niżej niż <code>h1</code> w dokumencie. Dla porównania <a href="http://tutorials.comandeer.pl/res/html5-blog/outlinehtml4.png">outline z HTML4</a>. O wiele wygodniej, prawda?</s></p>
 <p><s>Co do liczenia outline'u w HTML5 warto także dodać, że można go budować obecnie tylko przy pomocy <code>h1</code> (i wymuszać hierarchię przez odpowiednie wykorzystywanie <code>section</code> czy <code>article</code>).</s> W końcu <a href="https://lists.w3.org/Archives/Public/public-html/2016Apr/0032.html">postanowiono pozbyć się tej fikcji</a>. Stąd jedynym poprawnym sposobem tworzenia hierarchii treści na stronie HTML5 jest połączenie obydwu metod (tagi sekcjonujące + różnicowanie ważności nagłówków), gdyż nowy algorytm zostanie usunięty ze specyfikacji i zastosowanie go spowoduje, że <a href="http://en.wikipedia.org/wiki/Assistive_Technology">AT</a> dostaną spłaszczoną hierarchię nagłówków (co raczej jest średnim pomysłem). <s>Te obawy potwierdzają <a href="http://blog.paciellogroup.com/2013/10/html5-document-outline/">najnowsze doniesienia</a>, z których wynika, że nikt nie zaimplementował jeszcze nowego sposobu liczenia nagłówków.</s> Dlatego też kod bloga został poprawiony tak, by odzworowywać hierarchię nagłówków przy pomocy sekcji + starej hierarchi z HTML4.</p>
 <p>Jeśli chcesz przetestować swój outline, wystarczy zaznaczyć odpowiednią opcję w <a href="http://validator.w3.org/nu">walidatorze</a>.</p>
 <p class="alert alert-info">Jako ciekawostkę można tutaj powiedzieć, że umiejętnie korzystając z atrybutu <code>&#91;role=heading&#93;</code> i <code>&#91;aria-level&#93;</code> można tworzyć hierarchię na samych <code>h1</code>, tak, jak zostało to opisane w specyfikacji. Metodę tą stosuje <a href="https://github.com/ThePacielloGroup/html5-h" class="alert-link">niestandardowy znacznik <code>html5-h</code></a> (<s>jak lenistwo mi pozwoli, kiedyś dokładnie opiszę jak i po co takie elementy się tworzy ;)</s> <a href="http://webroad.pl/javascript/3505-web-components" class="alert-link">overview tej technologii</a> + <a href="http://tutorials.comandeer.pl/polymer.html" class="alert-link">garść refleksji</a>). Niemniej warto zauważyć, że to bardziej hack niźli eleganckie rozwiązanie problemu. Jednakowoż <code>&#91;aria-level&#93;</code> można użyć w przypadku, gdy potrzebujemy więcej niż 6 poziomów zagłębień nagłówków (do "pogłębienia" <code>h6</code> - bardzo edge'owy przypadek, ale warto o tym wiedzieć).</p>
 
-<h3 id="artykul-komentarz">Komentarze <a href="#artykul-komentarz" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<h4 id="artykul-komentarz">Komentarze <a href="#artykul-komentarz" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <p>Okey, to jeszcze słówko na temat wyświetlania komentarzy: <s>większość używa <code>cite</code> do oznaczania autora wypowiedzi, co jest niezgodne z <a href="http://developers.whatwg.org/text-level-semantics.html#the-cite-element">wytycznymi WHATWG</a>, który zaleca do oznaczania autora <code>b</code>, <code>cite</code> zostawiając tylko do tytułów dzieł)</s> w końcu <a href="#"><code>cite</code> działa tak, jak nakazuje logika</a>. Co więcej, umieścić można każdy komentarz w <code>article</code>, dzięki czemu stworzylibyśmy swoistą hierarchię artykułów (tzn. każdy komentarz byłby "podartykułem" wpisu). Jest to logiczne, ponieważ każdy komentarz może być wyświetlany "samodzielnie" (wszak opinia o dziele A może istnieć odrębnie od tego dzieła). Przywodzi to na myśl stare, dobre gazety, w których odpowiedzią na konkretny artykuł jest… inny artykuł.</p>
 <p>Jeśli jednak już zgodzimy się na oznaczanie komentarzy przy pomocy artykułu, czekają nas kolejne wyzwania. Otóż regułą kciuka jest, by każdy artykuł miał odpowiedni nagłówek. Lecz jaki nagłówek powinien mieć komentarz? Wywiązała się <a href="http://www.forumweb.pl/komentarze-kurshtml-edu-pl/html-html5/496603#496603">gorąca dyskusja na ten temat</a>, która skłoniła mnie do refleksji na temat kodu komentarzy. Na większości stron w Sieci, a także <a href="http://www.w3.org/TR/html5/sections.html#article-example">w specyfikacji</a>, komentarze są traktowane jako wyjątek, który nie posiada nagłówka (bo są to artykuły zagnieżdżone). Niemniej na chwilę obecną uważam, że dodanie jako nagłówka nazwy użytkownika nie zaszkodzi - pozwoli to nam w łatwiejszy sposób śledzić komentarze danego użytkownika (np. naszego ulubionego hejtera!). Pomysł, by w nagłówku czy etykietce <code>&#91;aria-label&#93;</code> dodawać pierwsze słowa komentarza ostatecznie odrzuciłem - z tego samego powodu, z jakiego niekiedy warto zostawić puste <code>&#91;alt&#93;</code>: nie ma sensu dublować treści.</p>
 <p class="alert alert-info">Nie oznacza to jednak, że np. w RSS nie warto zamieścić tego typu opisu. W przypadku jednak strony internetowej jest to zbędne.</p>
@@ -345,7 +345,7 @@
 	&lt;p itemprop="commentText"&gt;Ale komentarz!&lt;/p&gt;
 &lt;/article&gt;</code></pre>
 
-<h3 id="artykul-calosc">Całość złożona do kupy <a href="#artykul-calosc" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<h4 id="artykul-calosc">Całość złożona do kupy <a href="#artykul-calosc" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <p>A oto szkielet naszej treści (spokojnie, na końcu podam całość):</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;main&gt;
 	&lt;article&gt;
@@ -371,7 +371,7 @@
 <p>Tak to mniej więcej wygląda. Formularz se opuszczę i powrócę do niego później, bo formularze w HTML5 to bardzo ciekawy temat warty więcej od szybkiego spojrzenia.</p>
 
 
-<h2 id="sidebar">Sidebar <a href="#sidebar" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="sidebar">Sidebar <a href="#sidebar" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Przejdźmy do <code>div#aside</code>. Tworzy on tzw. "boczny pasek" z informacjami luźno związanymi z <s>wpisem</s> główną treścią (gdyby chodziło o sam artykuł, mielibyśmy do czynienia z <code>article &gt; aside</code>; w tym wypadku chodzi o całą zawartość <code>main</code>; inna sprawa, że tutaj faktycznie jest to jeden artykuł): autor, tagi, archiwa… Do oznaczania takich rzeczy powstał <code>aside</code> - oznacza się nim właśnie luźno związane z główną treścią rzeczy, które można zaprezentować samodzielnie (to chyba ulubione słówko w WHATWG :D).</p>
 <p>Idąc dalej, divy z tagami, autorem i archiwami można potraktować jako artykuły. I choć początkowo taka interpretacja specyfikacji wydaje się ciutkę naciągana, to po dogłębniejszym wczytaniu okazuje się (chyba raczej na pewno) właściwa.</p>
 <blockquote><p>This could be a forum post, a magazine or newspaper article, a blog entry, a user-submitted comment, an interactive widget or gadget, or <b>any other independent item of content</b>.</p><footer><cite>"http://developers.whatwg.org/sections.html#the-article-element"</cite></footer></blockquote>
@@ -392,18 +392,18 @@
 <p class="alert alert-info"><code>nav</code> nie służy tylko do oznaczania głównego menu strony. Jest znacznikiem do oznaczania elementów nawigacyjnych w ogóle. Jednak nie każda lista odnośników jest elementem nawigacyjnym. Zbiór odnośników do różnych artykułów w Internecie jest po prostu zbiorem odnośników (lub artykułem, w zależności od kontekstu). Natomiast już breadcrumbs czy też kotwice w obrębie jednej strony można potraktować jako element nawigacyjny.</p>
 
 
-<h2 id="stopka">Stopka <a href="#stopka" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="stopka">Stopka <a href="#stopka" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>No, to lwia część za nami - została tylko stopka. Tak, ją też zmieniamy. Tym razem div zamienia się w <code>footer</code>. Uff, blog jest już w całości przerobiony na HTML5, ale to nie koniec - to dopiero początek :D</p>
 <p class="alert alert-info">P.S. dla ekstrawaganckich: <code>html</code>, <code>head</code> i <code>body</code> są opcjonalne ;) Jednak nie muszę chyba wspominać, że ich usunięcie może skutkować dziwnym drzewkiem DOM (szczególnie w IE).</p>
 
 
-<h2 id="formularze">Formularze (WebForms 2.0) <a href="#formularze" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="formularze">Formularze (WebForms 2.0) <a href="#formularze" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 
-<h3 id="formularze-wyszukiwarka">Wyszukiwarka <a href="#formularze-wyszukiwarka" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<h4 id="formularze-wyszukiwarka">Wyszukiwarka <a href="#formularze-wyszukiwarka" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <p>W HTML5 pojawia się pełno nowych typów pól i atrybutów formularzy. My zastosujemy raptem ułamek z nich.</p>
 <p>Zacznijmy od formularza wyszukiwania. Ktoś zna to fajne pole wyszukiwania z Safari i innych Apple'owych produktów (ja jedynie z anegdot :D)? Otóż teraz można je mieć na stronie i to zupełnie za darmo! Nie wierzysz? No to zmień <code>&#91;type="text"&#93;</code> na <code>&#91;type="search"&#93;</code>. Jeśli oglądasz stronę w Webkicie, to jesteś w raju ;)</p>
 
-<h3 id="formularze-nowe-pola">Nowe typy pól <a href="#formularze-nowe-pola" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<h4 id="formularze-nowe-pola">Nowe typy pól <a href="#formularze-nowe-pola" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <p>Oczywiście <code>search</code> to nie jedyny nowy typ pola. Z innych warto wspomnieć:</p>
 <ul>
 <li> <code>email</code> - dla e-maili
@@ -414,7 +414,7 @@
 </li><li> <code>range</code> - taki fajny slider :D
 </li></ul>
 
-<h3 id="formularze-bajery">Inne bajery i dostępność <a href="#formularze-bajery" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<h4 id="formularze-bajery">Inne bajery i dostępność <a href="#formularze-bajery" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <p>Ale, ale. Można jeszcze bardziej podbajerować dzięki atrybutowi <code>&#91;placeholder&#93;</code>. Robi on to, co tysiące tych badziewnych JS - wyświetla pomocniczy tekst, który znika po kliknięciu w pole (i nie kasuje przy okazji już wprowadzonego zapytania…).</p>
 <p class="alert alert-danger"><b>Nie powinien być jednak traktowany jako zastępstwo dla <code>label</code></b>. Wspomina o tym nawet specyfikacja.</p>
 <p>A jeśli już chcesz się nazywać mistrzem formularzy, to dodaj sobie jeszcze atrybut <code>&#91;required&#93;</code>, który oznacza, że formularz nie może zostać wysłany jeśli dane pole jest puste. Po przeróbce formularz szukania wygląda następująco:</p>
@@ -425,7 +425,7 @@
 <p class="alert alert-danger"><b>PAMIĘTAJ! CSS (jak i obrazki, JS, inne dziwne rzeczy typu Flash, Java, Silverlight) są tylko dodatkami, które nie muszą być dostępne!</b></p>
 <p>Oznacza to, że możesz być pewny tylko tego, że końcowy user zobaczy treść i HTML (patrz: użytkownicy Lynxa). Stąd ważne jest zrozumienie podstaw tworzenia czystego, semantycznego kodu, który - nawet bez CSS - tworzy sensowną i czytelną całość. Dlatego też osobiście wolę tworzyć najpierw HTML dla strony, a dopiero później dorabiać CSS i JS. HTML to kartka papieru, na którą nakładam kolejne warstwy folii (CSS, JS). Podejście to znane jest jako <a href="http://webroad.pl/inne/3722-progressive-enhancement-zapomniany-fundament">Progressive Enhancement</a>.</p>
 
-<h3 id="formularze-obsluga">Kompatybilność <a href="#formularze-obsluga" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<h4 id="formularze-obsluga">Kompatybilność <a href="#formularze-obsluga" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <p>Teraz zapewne się zapytasz: a gdzie nowe typy pól formularzy są obsługiwane? <s>No cóż, tu już jest gorzej. Nowe typy pól formularza obsługuje w pełni tylko Opera, Chrome, Safari i Firefox większość, IE 9 - kilka.</s> Zamiast podawać tak szybko deaktualizujące się informację, <a href="http://caniuse.com/#feat=forms">odsyłam do odpowiedniego źródła</a>. Nie oznacza to jednak, że trza rezygnować z nowoczesnych formularzy. HTML5 jest pisany z myślą o kompatybilności wstecznej, co znaczy, że jeśli dany typ pola nie jest obsługiwany, pojawi się stare, dobre pole tekstowe. Resztę zachowań - włącznie z walidacją wprowadzonych danych - we wszystkich przeglądarkach można osiągnąć dzięki JS (np. <a href="http://www.thecssninja.com/javascript/h5f">http://www.thecssninja.com/javascript/h5f</a>).</p>
 <p>Podobnie można przerobić formularz dodawania komentarzy:</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;form action="http://example.net/comment.php" method="post" id="add_comment"&gt;
@@ -451,10 +451,10 @@
 <p class="alert alert-danger">Uprościć, <b>nie znaczy</b> zaniechać. Niewalidowanie danych po stronie serwera jest jak wpuszczanie nieznajomego do domu, dając mu do tego klucz do sejfu w sypialni.</p>
 
 
-<h2 id="rel"><code>&#91;rel&#93;</code> czyli dokąd to prowadzi <a href="#rel" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="rel"><code>&#91;rel&#93;</code> czyli dokąd to prowadzi <a href="#rel" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Atrybut <code>&#91;rel&#93;</code> dla linków oznacza ich przeznaczenie, a dokładniej do jakiego zasobu się odnoszą. Warto stosować atrybut <code>&#91;rel&#93;</code> na wszystkich linkach, które mają jakiekolwiek znaczenie semantyczne, np. jeśli link prowadzi do strony o autorze, niech będzie miał odpowiedni <code>&#91;rel&#93;</code>. Jakie <code>&#91;rel&#93;</code> można zatem stosować?</p>
 
-<h3 id="rel-lista">Lista dozwolonych <code>&#91;rel&#93;</code> <a href="#rel-lista" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<h4 id="rel-lista">Lista dozwolonych <code>&#91;rel&#93;</code> <a href="#rel-lista" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <ul>
 <li> <code>index</code> - strona główna
 </li><li> <code>author</code> - coś o autorze
@@ -468,14 +468,14 @@
 </li></ul>
 <p class="alert alert-danger">Pamiętaj, że wszystkie <code>&#91;rel&#93;</code> dotyczą aktualnej strony. Tym samym np. niepoprawne jest oznaczenie tagów w chmurce tagów przy pomocy <code>&#91;rel=tag&#93;</code> (gdyż nie odnoszą się one do tej konkretnej strony). Natomiast oznaczenie tak tagów, które występują wewnątrz głównego artykułu (w nagłówku czy stopce) jest już poprawne (bo odnoszą się do treści danej strony)</p>
 
-<h3 id="rel-rozszerzalnosc">Rozszerzalność <a href="#rel-rozszerzalnosc" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<h4 id="rel-rozszerzalnosc">Rozszerzalność <a href="#rel-rozszerzalnosc" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <p>Poza tym można tworzyć własne <code>&#91;rel&#93;</code>, chociaż większego sensu w tym nie widzę, bo wszystkie potrzebne już istnieją i są na tyle elastyczne, że można je nagiąć do własnych potrzeb. Na szczęście radosne tworzenie jest monitorowane i żeby jakiś <code>&#91;rel&#93;</code> został uznany za poprawny w HTML 5, należy <a href="http://microformats.org/wiki/existing-rel-values">go zgłosić</a>. To samo <a href="http://wiki.whatwg.org/wiki/MetaExtensions">tyczy się <code>meta&#91;name&#93;</code></a>.</p>
 <p>A teraz, drogi blogerze, linki czekają na semantyczne wsparcie! Naprzód! :D</p>
 
 
-<h2 id="wai-aria">WAI-ARIA <a href="#wai-aria" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="wai-aria">WAI-ARIA <a href="#wai-aria" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 
-<h3 id="aria-role">Role <a href="#aria-role" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<h4 id="aria-role">Role <a href="#aria-role" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <p>W HTML5 pojawia się nowy atrybut <code>&#91;role&#93;</code>, który określa rolę danego elementu na stronie. W przypadku bloga można je rozdzielić przykładowo tak:</p>
 <ul>
 <li> <code>header</code> (strony): <code>banner</code> - ogólne informacje o stronie
@@ -489,16 +489,16 @@
 </li></ul>
 <p>Warto także zauważyć, że dla większości elementów przeglądarki same nadają odpowiednie <code>&#91;role&#93;</code> i dublowanie ich w kodzie <a href="http://www.w3.org/TR/html5/dom.html#aria-usage-note">jest niezalecane</a>. ARIA przydaje się wówczas, gdy tworzymy pewne struktury od podstaw np. w przypadku wykorzystywania Web Components czy podmienianiu natywnych pól formularza własnymi odpowiednikami.</p>
 
-<h3 id="aria-wut">Ale po co to? <a href="#aria-wut" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<h4 id="aria-wut">Ale po co to? <a href="#aria-wut" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <p>Dobra, <code>&#91;role&#93;</code> jest jasne, ale co to WAI-ARIA? Otóż WAI to organizacja zajmująca się dostępnością stron internetowych, a ARIA to jej najnowszy standard. ARIA to skrót od Accessible Rich Internet Applications i, jak nazwa wskazuje, powstał po to, by podnieść dostępność tak zaawansowanych aplikacji jak Gmail czy Google Docs. Nic jednak nie szkodzi, aby nasz blog potraktować jak webappa :D</p>
 <p class="alert alert-info">Dla tworzących bardziej rozbudowane strony, z wykorzystaniem JS, głównie XHR, mogę polecić jeszcze takie własności jak <code>&#91;aria-live&#93;</code> i <code>&#91;aria-atomic&#93;</code>. Przy ciężkim Ajaksie (czyt. wszystko na History API) wręcz ratują życie ;)</p>
 <p><s>A jeśli chcemy być całkowicie wierni specyfikacji ARIA, to każda sekcja posiadająca nagłówek, powinna być z nim połączona przy pomocy <code>&#91;aria-labelledby&#93;</code>.</s> Przeglądarki same to robią.</p>
 <p>Po więcej info o WAI-ARIA zapraszam do specyfikacji HTML5.</p>
 
 
-<h2 id="semantyka">Dane semantyczne <a href="#semantyka" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="semantyka">Dane semantyczne <a href="#semantyka" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 
-<h3 id="semantyka-mikroformaty">Mikroformaty <a href="#semantyka-mikroformaty" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<h4 id="semantyka-mikroformaty">Mikroformaty <a href="#semantyka-mikroformaty" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <p>Mikroformaty powstały po to, by w dobie HTML4 niesemantycznym divom nadać semantyczne znaczenie. Mimo, że w HTML5 mamy pełno semantycznych znaczników, to jednak mikroformaty wciąż są niezwykle przydatne. Pozwalają nam dokładnie opisać wydarzenia, osoby czy miejsca używając do tego HTML-owego zapisu ogólnie znanych standardów, takich jak np. vcard (format wizytówek, obsługiwany przez większość telefonów komórkowych). Zastosowanie mikroformatów wcale nie jest trudne, wystarczy dodać odpowiednią klasę. Jako przykład zastosuję hCard (odpowiednik vcard) i "oznaczę" boczne info o autorze:</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;article class="vcard"&gt;
 	&lt;h1&gt;O autorze blogaska&lt;/h1&gt;
@@ -506,7 +506,7 @@
 &lt;/article&gt;</code></pre>
 <p>Prawda, że łatwe? W podobny sposób można oznaczać wydarzenia (hCalendar), przepisy (hRecipe), a także upodobnić HTML do ATOM (hAtom).</p>
 
-<h3 id="microdata">Microdata <a href="#microdata" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<h4 id="microdata">Microdata <a href="#microdata" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <p>Microdata (mikrodane) to z kolei nowość w HTML5, która działa podobnie do mikroformatów. Jedyna różnica polega na tym, że korzysta z nowych atrybutów - <code>&#91;itemscope&#93;</code>, <code>&#91;itemtype&#93;</code> i <code>&#91;itemprop&#93;</code> oraz z przestrzenii nazw. Najprościej pokazać to na przykładzie:</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;article itemscope itemtype="http://schema.org/Person"&gt;
 	&lt;h1&gt;O autorze blogaska&lt;/h1&gt;
@@ -515,18 +515,18 @@
 <p>Wygląda i działa bardzo podobnie do mikroformatów (chociaż jest bardziej skomplikowane i - teoretycznie - pozwala odwzorowywać bardziej skomplikowane struktury danych). Co ważne, oba sposoby są znane Googlowi, który korzysta z nich do wyciągania danych ze stron. Korzystanie więc podnosi dostępność treści z poziomu wyszukiwarki.</p>
 <p class="alert alert-info">Google, Yahoo i Bing zaczęły pracować nad nowym standardem oznaczania treści <a href="http://schema.org" class="alert-link">Schema.org</a>, który ma ustandaryzować mikrodane na stronach <a href="http://WWW." class="alert-link">WWW.</a> Dzięki temu przedsięwzięciu można oznaczyć prawie każdy typ danych. Wydaje mi się, że takie podejście ma szansę wyprzeć mikroformaty, a przynajmniej <a href="http://microformats.org/wiki/microformats-2" class="alert-link">zmusić je do ewolucji</a>.</p>
 
-<h3 id="semantyka-inne">Inne formaty danych semantycznych <a href="#semantyka-inne" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<h4 id="semantyka-inne">Inne formaty danych semantycznych <a href="#semantyka-inne" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <p>Tutaj warto wspomnieć o głównym konkurencie microdata - <a href="http://rdfa.info/">RDFa</a>, który wygląda dość podobnie, ale jest bardziej XML-friendly. Chociaż obecnie zarówno on, jak i microdata/mikroformaty, są zagrożone przez najnowszy format danych semantycznych, <a href="http://www.w3.org/TR/json-ld/">JSON LD</a>. Niemniej ten format, z racji swojej specyfiki, IMO znajdzie zastosowanie głównie w RESTful APIs, jako format zwracanych danych.</p>
 
 
-<h2 id="dublin-core">Dublin Core <a href="#dublin-core" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="dublin-core">Dublin Core <a href="#dublin-core" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Dublin Core jest międzynarodowym standardem metadanych (ISO 15836-2003) i służy do opisywania dokumentów. Jest rozwijany i upowszechniany przez organizację Dublin Core Metadata Initiative, mającej na celu stworzenie semantycznej sieci, w której z łatwością można będzie znaleźć dokumenty (pieśń przyszłości). Standard ustala 15 elementów, dzięki którym można dokładniej opisać stronę, lecz nie tylko - praktycznie każdy dokument cyfrowy. Może dzięki temu stanowić zamiennik dla "standardowych" <code>meta</code>. Najczęściej służy jako zamiennik dwóch metatagów: <code>keywords</code> i <code>description</code>. Ich "dublinowe" odpowiedniki to: <code>dcterms.subject</code> i <code>dcterms.description</code>.</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;meta name="dcterms.description" lang="pl" content="Super hiper wpis na temat czegokolwiek"&gt;
 &lt;meta name="dcterms.subject" lang="pl" content="Bardzo ważne słowa kluczowe; rozdzielone średnikiem"&gt;</code></pre>
 <p class="alert alert-info">Chciałbym tutaj zwrócić uwagę, że warto także podać atrybut <code>&#91;lang&#93;</code> wskazujący na język użyty w metadanych. W końcu to międzynarodowy standard i niekoniecznie opis dokumentu musi być po polsku.</p>
 
 
-<h2 id="dostepnosc">Kilka uwag o dostępności <a href="#dostepnosc" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="dostepnosc">Kilka uwag o dostępności <a href="#dostepnosc" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Pisząc ten poradnik, skupiałem się głównie na kwestiach semantyki. Skutkiem ubocznym tego jest automatyczne zwiększenie dostępności tak stworzonej strony <a href="http://WWW.">WWW.</a> Na chwilę obecną nasza strona powinna być już naprawdę dobrze dostosowana dla osób niepełnosprawnych (zwłaszcza po dodaniu kilku rzeczy z opisanego wyżej standardu WAI-ARIA), lecz kilka rzeczy można jeszcze poprawić.</p>
 <p>Na początku <code>body</code> warto dodać:</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;a href="#Super-hiper-wazny-wpis" class="focus-only" tabindex="1"&gt;Przejdź do treści&lt;/a&gt;</code></pre>
@@ -559,10 +559,10 @@
 <p>Jeśli przestrzega się zasad semantyki HTML i nie zapomina o zasadzie Progressive Enhancement, wówczas prawdopodobnie nie będziesz musiał specjalnie przejmować się kwestiami dostępności strony. Wyjątkiem będą tu kwestie związane z kontrastem, gdyż je bardzo łatwo przeoczyć.</p>
 
 
-<h2 id="ostatnie">Ostatnie poprawki <a href="#ostatnie" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="ostatnie">Ostatnie poprawki <a href="#ostatnie" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>To już prawie koniec :D Co jeszcze warto zmienić?</p>
 
-<h3 id="wydajnosc">Wydajność i bezpieczeństwo <a href="#wydajnosc" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<h4 id="wydajnosc">Wydajność i bezpieczeństwo <a href="#wydajnosc" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <ul>
 	<li> Wszystkie <code>script</code> (oprócz tego dla IE) przerzucić na koniec <code>body</code> (zwiększy to szybkość ładowania strony, bo skrypty w <code>head</code> mogą ją <a href="http://developer.yahoo.com/performance/rules.html#js_bottom">"blokować"</a>). Jeśli mamy bardzo dużo JS, ze złożonymi relacjami pomiędzy poszczególnymi plikami, warto rozważyć <a href="https://github.com/umdjs/umd">architekturę modułową</a>
 	</li><li> Można się w ogóle pokusić o serwowanie CSS, JS i obrazków z <a href="http://en.wikipedia.org/wiki/Content_Delivery_Network">CDN</a>. Jest to jedno z zaleceń Google odnośnie szybkości wczytywania stron: rozłożenie wczytywania na 2 paralelne domeny. Jedna serwuje dynamiczną stronę (czyli PHP i generujemy blogaska), a druga serwuje wszystko, co statyczne. Jednak rozłożenie wczytywania strony to tylko część zalet i bardziej rozbudowane CDN-y korzystają choćby z geolokalizacji, żeby zasysać zasoby z serwera jak najbliżej użytkownika, aby czas wczytywania był jeszcze krótszy. Istnieją także darmowe CDN-y, np. <a href="http://www.coralcdn.org/">Coral CDN</a>.
@@ -572,7 +572,7 @@
 	</li><li> Kontynuując ten temat, jest jeszcze <a href="https://www.owasp.org/index.php/List_of_useful_HTTP_headers">kilka innych pomocnych nagłówków</a>, z czego najwięcej uwagi warto poświęcić <a href="https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy"><code>Content-Security-Policy</code></a>.
 </li></ul>
 
-<h3 id="integracja">Integracja z zewnętrznymi usługami <a href="#integracja" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<h4 id="integracja">Integracja z zewnętrznymi usługami <a href="#integracja" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <ul>
 	<li> Dodać <a href="http://html5doctor.com/web-manifest-specification/">web app manifest</a>, co pozwoli "uaplikacjowić" się naszemu blogowi.
 	</li><li> Oprócz RSS dodać także ATOM, bo to o wiele lepszy format i lepiej się z nim pracuje.
@@ -586,7 +586,7 @@
 	<p class="code">Kod:</p><pre><code class="language-markup">&lt;meta name="theme-color" content="#db5945"&gt;</code></pre>
 </li></ul>
 
-<h3 id="kompatybilnosc">Kompatybilność <a href="#kompatybilnosc" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<h4 id="kompatybilnosc">Kompatybilność <a href="#kompatybilnosc" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <ul>
 	<li> Używać media-queries, aby strona sama się dostosowywała do urządzenia użytkownika (nurt responsive webdesign). Opłaca się, bo Google <a href="https://www.google.com/webmasters/tools/mobile-friendly/">lubi strony mobile friendly</a> (a mój telefon to popiera!).
 	</li><li> Dla IE słać <a href="https://github.com/h5bp/html5-boilerplate/blob/b5d6e7b1613fca24d250fa8e5bc7bcc3dd6002ef/dist/doc/html.md#x-ua-compatible">nagłówek <code>X-UA-Compatible</code></a> ustawiony na <code>IE=edge</code>. Wymusza to renderowanie strony przy pomocy najnowszych standardów w IE &gt;= 8. <s>Dodatkowo można słać ten nagłówek z wartością <code>IE=edge; chrome=1</code>, co wymusi użycie <a href="https://developers.google.com/chrome/chrome-frame/">Chrome Frame</a>, jeśli jest dostępny.</s> Chrome Frame odszedł na emeryturę… Googlersi to jednak skrajni idealiści. Jeśli nie lubisz wciskać pluginów userowi, zawsze możesz <s><a href="http://browsehappy.pl/infobarwebmaster">kulturalnie poinformować</a></s> <a href="https://browser-update.org/pl/">naprawdę kulturalnie poinformować</a>.
@@ -595,7 +595,7 @@
 <p> Więcej grzechów nie pamiętam :D</p>
 
 
-<h2 id="nasz-blog">Nasz blog <a href="#nasz-blog" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="nasz-blog">Nasz blog <a href="#nasz-blog" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Oto i pełny przerobiony kod z paroma dodatkami :D <a href="http://tutorials.comandeer.pl/res/html5-blog/final.html">http://tutorials.comandeer.pl/res/html5-blog/final.html</a></p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;!DOCTYPE html&gt;
 	&lt;html lang="pl" dir="ltr" itemscope itemtype="http://schema.org/WebPage"&gt;
@@ -750,9 +750,9 @@
 	&lt;/html&gt;</code></pre>
 
 
-<h2 id="przydatne">Przydatne linki <a href="#przydatne" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="przydatne">Przydatne linki <a href="#przydatne" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 
-<h3 id="standardy">Standardy i oficjalne materiały <a href="#standardy" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<h4 id="standardy">Standardy i oficjalne materiały <a href="#standardy" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <ul>
 	<li> <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/">HTML Living Standard</a>
 	</li><li> <a href="http://www.w3.org/TR/html5">Specyfikacja HTML5</a> (która jest oficjalną rekomendacją W3C od 28.10.2014!)
@@ -772,7 +772,7 @@
 	</li><li> <a href="https://www.w3.org/TR/CSP2/">Specyfikacja Content Security Policy</a>
 </li></ul>
 
-<h3 id="poradniki">Poradniki <a href="#poradniki" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<h4 id="poradniki">Poradniki <a href="#poradniki" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <ul>
 	<li> <a href="http://lea.verou.me">Perfekcyjny przykład bloga w HTML5</a>
 	</li><li> <a href="http://www.diveinto.org/html5/extensibility.html">Microdata</a>
@@ -788,7 +788,7 @@
 	</li><li> <a href="http://webroad.pl/html5-css3/3925-validate-or-not-to-validate-that-is-the-question">Krótki artykuł o walidacji</a>
 </li></ul>
 
-<h3 id="narzedzia">Narzędzia <a href="#narzedzia" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<h4 id="narzedzia">Narzędzia <a href="#narzedzia" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <ul>
 	<li> <a href="http://validator.w3.org/nu">Oficjalny walidator</a>
 	</li><li> <a href="http://wave.webaim.org/">Narzędzie do sprawdzania dostępności strony</a>
@@ -801,7 +801,7 @@
 </li></ul>
 
 
-<h2 id="changelog">Poprawki i takie tam <a href="#changelog" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<h3 id="changelog">Poprawki i takie tam <a href="#changelog" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <details><summary>changelog</summary>
 	<ul>
 		<li> <b>28.05.2016</b> - poprawienie linków do sekcji o <code>&#91;alt&#93;</code> i <code>picture</code> w specyfikacji HTML 5.1
