@@ -11,10 +11,11 @@
 				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-			}
 
-			ga('create', 'UA-33158520-2', 'auto');
-			ga('send', 'pageview');
+
+				ga('create', 'UA-33158520-2', 'auto');
+				ga('send', 'pageview');
+			}
 
 			/*
 			 Details primitive polyfill by Comandeer
@@ -26,7 +27,6 @@
 				<script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 			<![endif]-->
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-			<link rel="stylesheet" href="/css/a11ytheme.min.css">
 			<link rel="stylesheet" href="/css/prism.css">
 			<link rel="stylesheet" href="/css/custom.css">
 		</head>
@@ -689,7 +689,8 @@
 <ul>
 	<li> <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/">HTML Living Standard</a>
 	</li><li> <a href="http://www.w3.org/TR/html5">Specyfikacja HTML5</a> (która jest oficjalną rekomendacją W3C od 28.10.2014!)
-	</li><li> <a href="http://www.w3.org/TR/html51">Specyfikacja HTML5.1</a>
+	</li><li> <a href="http://www.w3.org/TR/html51">Specyfikacja HTML 5.1 (która jest kandydującą rekomendacją W3C od 21.06.2016)</a>
+	</li><li> <a href="https://w3c.github.io/html/">Najnowsza specyfikacja HTML 5.x (na chwilę obecną – czyli 23.07.2016 – jest to wersja 5.2)</a>
 	</li><li> <a href="http://developers.whatwg.org/">Specka dla developerów</a> ;)
 	</li><li> <a href="https://www.w3.org/TR/WCAG20/">Specyfikacja WCAG 2.0</a>
 	</li><li> <a href="https://www.w3.org/WAI/WCAG20/quickref/">Oficjalny poradnik WCAG 2.0</a>
@@ -700,14 +701,15 @@
 	</li><li> <a href="http://dublincore.org/">Informacje o Dublin Core</a>
 	</li><li> <a href="https://www.w3.org/TR/html51/semantics-embedded-content.html#alt-text">Oficjalna część specyfikacji HTML5, opsiująca użycie atrybutu <code>&#91;alt&#93;</code></a>
 	</li><li> <a href="http://usecases.responsiveimages.org">Oficjalna informacja o responsywnych obrazkach</a>
-	</li><li> <a href="http://w3c.github.io/html/semantics-embedded-content.html#the-picture-element">Definicja tagu <code>picture</code> w HTML5.1</a>
+	</li><li> <a href="http://www.w3.org/TR/html51/semantics-embedded-content.html#the-picture-element">Definicja tagu <code>picture</code> w HTML5.1</a>
 	</li><li> <a href="https://tools.ietf.org/html/rfc7540">Specyfikacja HTTP/2</a>
 	</li><li> <a href="https://www.w3.org/TR/CSP2/">Specyfikacja Content Security Policy</a>
 </li></ul>
 
 <h4 id="poradniki">Poradniki <a href="#poradniki" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <ul>
-	<li> <a href="http://lea.verou.me">Perfekcyjny przykład bloga w HTML5</a>
+	<li> <a href="https://www.paciellogroup.com/blog/">Perfekcyjny przykład bloga w HTML5</a>
+	</li><li> <a href="http://lea.verou.me">Dawny perfekcyjny przykład bloga w HTML5</a>
 	</li><li> <a href="http://www.diveinto.org/html5/extensibility.html">Microdata</a>
 	</li><li> <a href="http://html5doctor.com/microdata/">Doktorzy o microdata</a>
 	</li><li> <a href="http://kurs.browsehappy.pl/HTML/DublinCore">DublinCore</a>
@@ -737,7 +739,8 @@
 <h3 id="changelog">Poprawki i takie tam <a href="#changelog" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <details><summary>changelog</summary>
 	<ul>
-		<li> <b>28.05.2016</b> - poprawienie linków do sekcji o <code>&#91;alt&#93;</code> i <code>picture</code> w specyfikacji HTML 5.1
+		<li> <b>23.07.2016</b> - dodanie info o HTML 5.1 jako CR + dodanie linku do najnowszej wersji specki HTML 5.x; zmiana przykładu perfekcyjnego bloga
+		</li><li> <b>28.05.2016</b> - poprawienie linków do sekcji o <code>&#91;alt&#93;</code> i <code>picture</code> w specyfikacji HTML 5.1
 		</li><li> <b>17.04.2016</b> - dodanie informacji o aktualizacji algorytmu outline'u w specyfikacji HTML5
 		</li><li> <b>09.04.2016</b> - dodanie linku do algorytmu wyszukiwania deklaracji kodowania w `meta` oraz linku do opisu `X-UA-Compatible` w H5BP
 		</li><li> <b>16.03.2016</b> - dopisanie krótkiego wyjaśnienia w fragmencie o <code>main</code> zachowującym się jak <code>div</code>

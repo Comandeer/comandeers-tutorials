@@ -635,7 +635,8 @@
 [list]
 	[*] [url=http://www.whatwg.org/specs/web-apps/current-work/multipage/]HTML Living Standard[/url]
 	[*] [url=http://www.w3.org/TR/html5]Specyfikacja HTML5[/url] (która jest oficjalną rekomendacją W3C od 28.10.2014!)
-	[*] [url=http://www.w3.org/TR/html51]Specyfikacja HTML5.1[/url]
+	[*] [url=http://www.w3.org/TR/html51]Specyfikacja HTML 5.1 (która jest kandydującą rekomendacją W3C od 21.06.2016)[/url]
+	[*] [url=https://w3c.github.io/html/]Najnowsza specyfikacja HTML 5.x (na chwilę obecną – czyli 23.07.2016 – jest to wersja 5.2)[/url]
 	[*] [url=http://developers.whatwg.org/]Specka dla developerów[/url] ;)
 	[*] [url=https://www.w3.org/TR/WCAG20/]Specyfikacja WCAG 2.0[/url]
 	[*] [url=https://www.w3.org/WAI/WCAG20/quickref/]Oficjalny poradnik WCAG 2.0[/url]
@@ -646,14 +647,15 @@
 	[*] [url=http://dublincore.org/]Informacje o Dublin Core[/url]
 	[*] [url=https://www.w3.org/TR/html51/semantics-embedded-content.html#alt-text]Oficjalna część specyfikacji HTML5, opsiująca użycie atrybutu [tt][alt][/tt][/url]
 	[*] [url=http://usecases.responsiveimages.org]Oficjalna informacja o responsywnych obrazkach[/url]
-	[*] [url=http://w3c.github.io/html/semantics-embedded-content.html#the-picture-element]Definicja tagu [tt]picture[/tt] w HTML5.1[/url]
+	[*] [url=http://www.w3.org/TR/html51/semantics-embedded-content.html#the-picture-element]Definicja tagu [tt]picture[/tt] w HTML5.1[/url]
 	[*] [url=https://tools.ietf.org/html/rfc7540]Specyfikacja HTTP/2[/url]
 	[*] [url=https://www.w3.org/TR/CSP2/]Specyfikacja Content Security Policy[/url]
 [/list]
 
 [h3="poradniki"]Poradniki[/h3]
 [list]
-	[*] [url=http://lea.verou.me]Perfekcyjny przykład bloga w HTML5[/url]
+	[*] [url=https://www.paciellogroup.com/blog/]Perfekcyjny przykład bloga w HTML5[/url]
+	[*] [url=http://lea.verou.me]Dawny perfekcyjny przykład bloga w HTML5[/url]
 	[*] [url=http://www.diveinto.org/html5/extensibility.html]Microdata[/url]
 	[*] [url=http://html5doctor.com/microdata/]Doktorzy o microdata[/url]
 	[*] [url=http://kurs.browsehappy.pl/HTML/DublinCore]DublinCore[/url]
@@ -683,6 +685,7 @@
 [h2="changelog"]Poprawki i takie tam[/h2]
 [spoiler="changelog"]
 	[list]
+		[*] [b]23.07.2016[/b] - dodanie info o HTML 5.1 jako CR + dodanie linku do najnowszej wersji specki HTML 5.x; zmiana przykładu perfekcyjnego bloga
 		[*] [b]28.05.2016[/b] - poprawienie linków do sekcji o [tt][alt][/tt] i [tt]picture[/tt] w specyfikacji HTML 5.1
 		[*] [b]17.04.2016[/b] - dodanie informacji o aktualizacji algorytmu outline'u w specyfikacji HTML5
 		[*] [b]09.04.2016[/b] - dodanie linku do algorytmu wyszukiwania deklaracji kodowania w `meta` oraz linku do opisu `X-UA-Compatible` w H5BP
