@@ -54,6 +54,8 @@
 						<article>
 						<h2 id="start">Wypieść swój JS <a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
 
+<p class="alert alert-danger">Ten tutorial jest już niestety dość przestarzały i opisuje starszą wersję standardu JS (ECMAScript 5) a także niektóre praktyki, których obecnie nawet ja nie uznaję już za najlepsze. Dlatego lepiej potraktuj go wyłącznie jako ciekawostkę historyczną… i poczekaj aż napiszę o JS coś równie sensownego.</p>
+
 <h3 id="parser">Inteligentny parser <a href="#parser" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>JS to język, który pozwala chyba na największą dowolność w składni ze wszystkich języków programowania. Ba, jego parser jest tak sprawny, że sam sobie wstawia średniki w miejscach, w których być powinny.</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">return
@@ -74,6 +76,8 @@ var elem = null;</code></pre>
 ,img = null
 ,elem = null;</code></pre>
 <p>IMO czytelniej. Gdyby ktoś pytał czemu przecinek jest przerzucony na początek nowej linii, a nie zostawiony na końcu poprzedniej: spróbuj pousuwać parę zmiennych z listy ;) jeśli przecinek jest na końcu linijki, musisz usunąć interesującą cię zmienną, a następnie przecinek. Tak usuwasz jedno i drugie za jednym zamachem i na pewno nie zostawisz przecinka przez nieuwagę.</p>
+
+<p class="alert alert-info">Od kiedy ten tutorial powstał, jednak powróciłem do "normalnego" sposobu zapisu przecinków. Mój styl można podejrzeć <a href="https://github.com/Comandeer" class="alert-link">na moim GitHubie</a>, a zwłaszcza <a href="https://github.com/BEMQuery/bemquery-package-boilerplate" class="alert-link">w projekcie BEMQuery</a>.</p>
 
 <h3 id="strict">Strict mode <a href="#strict" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>To małe cudeńko bardzo ułatwia życie, utrudniając je. Włączenie tzw. "strict mode" (tryb ścisły jak ktoś polski lubi) usuwa najbardziej bugowate części JS (np. <code>with</code> czy też ciut naprawia stringi w <code>setTimeout</code>). Co więcej, nie pozwala nam tworzyć nieświadomie zmiennych globalnych, np tak:</p>
@@ -189,7 +193,7 @@ o.b = 2;
 o.c = 3;
 
 for(var x in o)
-{				
+{
 	console.log(o&#91;x&#93;);
 }</code></pre>
 <p><code>Object.create</code> tworzy nam obiekt z prototypu podanego jako pierwszy parametr, tak więc tworzymy obiekt z pustym prototypem (domyślnie jest to <code>Object.prototype</code>). W starszych przeglądarkach ten sposób nie działa.</p>
@@ -238,7 +242,7 @@ API.resizeImg();
 {
 	var API = {}
 	,resizeImg = jakiswarunek ? function() {console.log('a');} : function() {console.log(b);};
-	
+
 	API.resizeImg = resizeImg;
 	$.API = API;
 }(window))</code></pre>

@@ -1,5 +1,7 @@
 [h1="start"]Wypieść swój JS[/h1]
 
+[p=warning]Ten tutorial jest już niestety dość przestarzały i opisuje starszą wersję standardu JS (ECMAScript 5) a także niektóre praktyki, których obecnie nawet ja nie uznaję już za najlepsze. Dlatego lepiej potraktuj go wyłącznie jako ciekawostkę historyczną… i poczekaj aż napiszę o JS coś równie sensownego.[/p]
+
 [h2="parser"]Inteligentny parser[/h2]
 [p]JS to język, który pozwala chyba na największą dowolność w składni ze wszystkich języków programowania. Ba, jego parser jest tak sprawny, że sam sobie wstawia średniki w miejscach, w których być powinny.[/p]
 [code=javascript]return
@@ -20,6 +22,8 @@ var elem = null;[/code]
 ,img = null
 ,elem = null;[/code]
 [p]IMO czytelniej. Gdyby ktoś pytał czemu przecinek jest przerzucony na początek nowej linii, a nie zostawiony na końcu poprzedniej: spróbuj pousuwać parę zmiennych z listy ;) jeśli przecinek jest na końcu linijki, musisz usunąć interesującą cię zmienną, a następnie przecinek. Tak usuwasz jedno i drugie za jednym zamachem i na pewno nie zostawisz przecinka przez nieuwagę.[/p]
+
+[p=info]Od kiedy ten tutorial powstał, jednak powróciłem do "normalnego" sposobu zapisu przecinków. Mój styl można podejrzeć [url=https://github.com/Comandeer]na moim GitHubie[/url], a zwłaszcza [url=https://github.com/BEMQuery/bemquery-package-boilerplate]w projekcie BEMQuery[/url].[/p]
 
 [h2="strict"]Strict mode[/h2]
 [p]To małe cudeńko bardzo ułatwia życie, utrudniając je. Włączenie tzw. "strict mode" (tryb ścisły jak ktoś polski lubi) usuwa najbardziej bugowate części JS (np. [tt]with[/tt] czy też ciut naprawia stringi w [tt]setTimeout[/tt]). Co więcej, nie pozwala nam tworzyć nieświadomie zmiennych globalnych, np tak:[/p]
@@ -135,7 +139,7 @@ o.b = 2;
 o.c = 3;
 
 for(var x in o)
-{				
+{
 	console.log(o[x]);
 }[/code]
 [p][tt]Object.create[/tt] tworzy nam obiekt z prototypu podanego jako pierwszy parametr, tak więc tworzymy obiekt z pustym prototypem (domyślnie jest to [tt]Object.prototype[/tt]). W starszych przeglądarkach ten sposób nie działa.[/p]
@@ -184,7 +188,7 @@ API.resizeImg();
 {
 	var API = {}
 	,resizeImg = jakiswarunek ? function() {console.log('a');} : function() {console.log(b);};
-	
+
 	API.resizeImg = resizeImg;
 	$.API = API;
 }(window))[/code]
