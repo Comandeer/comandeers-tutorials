@@ -45,16 +45,16 @@
 		<h2 class="sidebar-header">Spis treści</h2>
 			<div class="sidebar-inner">
 				<ul class="unstyled">
-				<li><a href="#mimo">Mimo, że zdaje ci się inaczej </a></li><li><a href="#alternatywa">Alternatywa? </a></li><li><a href="#dom">Podstawowe operacje DOM-owe </a><ul class="unstyled"><li><a href="#selektory">Wyszukiwanie po selektorach </a></li><li><a href="#chaining">Chainowanie metod </a></li><li><a href="#delegation">Event delegation </a></li><li><a href="#clone"><code>.clone</code> </a></li><li><a href="#extend"><code>.extend</code> </a></li></ul></li><li><a href="#animacje">Animacje </a></li><li><a href="#xhr">XHR </a></li><li><a href="#ui">jQUI </a></li><li><a href="#ale">Ale za to w jQ da się... </a></li><li><a href="#czy-porzucic">Czy porzucić? </a></li>
+				<li><a href="#mimo">Mimo że zdaje ci się inaczej </a></li><li><a href="#alternatywa">Alternatywa? </a></li><li><a href="#dom">Podstawowe operacje DOM-owe </a><ul class="unstyled"><li><a href="#selektory">Wyszukiwanie po selektorach </a></li><li><a href="#chaining">Chainowanie metod </a></li><li><a href="#delegation">Event delegation </a></li><li><a href="#clone"><code>.clone</code> </a></li><li><a href="#extend"><code>.extend</code> </a></li></ul></li><li><a href="#animacje">Animacje </a></li><li><a href="#xhr">XHR </a></li><li><a href="#ui">jQUI </a></li><li><a href="#ale">Ale za to w jQ da się… </a></li><li><a href="#czy-porzucic">Czy porzucić? </a></li>
 				</ul>
 			</div>
 		</nav>
 
 					<main class="col-md-8">
 						<article>
-						<h2 id="start">Czemu nie potrzebujesz jQuery? <a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2> 
+						<h2 id="start">Czemu nie potrzebujesz jQuery? <a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
 
-<h3 id="mimo">Mimo, że zdaje ci się inaczej <a href="#mimo" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<h3 id="mimo">Mimo że zdaje ci się inaczej <a href="#mimo" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Ten tutorial kieruję do wszystkich tych, którzy nie wyobrażają sobie wykonania jakiejkolwiek prostej czynności w JS bez użycia tej wszechstronnej biblioteki. Część zarzutów tyczy się też mnie, gdyż osobiście również korzystam z jQuery (hej, to nie moja wina, że DOM jest tak spaprany!)</p>
 
 
@@ -66,120 +66,112 @@
 
 <h4 id="selektory">Wyszukiwanie po selektorach <a href="#selektory" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <p>Potęgą jQuery jest jego silniczek Sizzle, który pozwala wyszukać dowolny element tylko i wyłącznie na podstawie selektora. To jest często główny/jedyny powód, dla którego część webmasterów sięga po jQ.</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">$('#bardzo &gt; optymalny .selektor #ktory .na-bank.dziala');</code></pre>
-<p class="alert alert-info">Oczywiście optymalizacja takich selektorów to zupełnie inna sprawa ;)</p> 
-<p>Skupmy się na tym czy w czystym JS istnieje jakaś alternatywa dla tego pięknego owijacza?</p> Otóż tak
-<p class="code">Kod:</p><pre><code class="language-javascript">document.querySelectorAll('#bardzo &gt; optymalny .selektor #ktory .na-bank.dziala');</code></pre>
-<p>Prawdę mówiąc, jeśli przyjrzymy się kodowi jQ, zauważymy, że wewnętrznie używa on właśnie tej metody. Nie trzeba chyba mówić co jest szybsze ;) Oczywiście można pójść o krok dalej i zrobić sobie coś takiego:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">var $ = document.querySelectorAll.bind(document);</code></pre>
-<p>Voilla! Mamy jQ bez jQ</p>
+<p class="code">Kod:</p><pre><code class="language-javascript">$( '#bardzo &gt; optymalny .selektor #ktory .na-bank.dziala' );</code></pre>
+<p class="alert alert-info">Oczywiście optymalizacja takich selektorów to zupełnie inna sprawa.</p>
+<p>Skupmy się na tym, czy w czystym JS istnieje jakaś alternatywa dla tego pięknego owijacza? Otóż tak!</p>
+<p class="code">Kod:</p><pre><code class="language-javascript">document.querySelectorAll( '#bardzo &gt; optymalny .selektor #ktory .na-bank.dziala' );</code></pre>
+<p>Prawdę mówiąc, jeśli przyjrzymy się kodowi jQ, zauważymy, że wewnętrznie używa on właśnie tej metody. Nie trzeba chyba mówić, co jest szybsze. Oczywiście można pójść o krok dalej i zrobić sobie coś takiego:</p>
+<p class="code">Kod:</p><pre><code class="language-javascript">var $ = document.querySelectorAll.bind( document );</code></pre>
+<p>Voila! Mamy jQ bez jQ.</p>
 
 <h4 id="chaining">Chainowanie metod <a href="#chaining" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
-<p>Chainowanie metod to to, co decyduje o niezwykłej użyteczności jQ w zastosowaniach DOM-owych</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">$('&lt;a&gt;').attr('href', '#').on('click', function() {});</code></pre>
-<p>Owszem, w VanillaJS nie jestem w stanie uzyskać tak wygodnej obsługi DOM. Ale tu z pomocą przychodzi nam <a href="http://leaverou.github.com/chainvas/">Chainvas</a> - małe cudeńko, które jest w stanie złańcuchować de facto wszystko. i dzięki temu można spokojnie napisać</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">document.createElement('a').setAttribute('href', '#').addEventListener('click', function() {});</code></pre>
-<p>I tym sposobem odebraliśmy jQ największą jego przewagę w operacjach DOM-owych, oszczędzając przy tym 31KB kodu (oczywiście mowa tu o wersjach gzipniętych i zminifikowanych)</p>
+<p>Chainowanie metod to to, co decyduje o niezwykłej użyteczności jQ w zastosowaniach DOM-owych.</p>
+<p class="code">Kod:</p><pre><code class="language-javascript">$( '&lt;a&gt;' ).attr( 'href', '#' ).on( 'click', function() {} );</code></pre>
+<p>Owszem, w VanillaJS nie jestem w stanie uzyskać tak wygodnej obsługi DOM. Ale tu z pomocą przychodzi nam <a href="http://leaverou.github.com/chainvas/">Chainvas</a> – małe cudeńko, które jest w stanie złańcuchować <i>de facto</i> wszystko. Dzięki temu można spokojnie napisać:</p>
+<p class="code">Kod:</p><pre><code class="language-javascript">document.createElement( 'a' ).setAttribute( 'href', '#' ).addEventListener( 'click', function() {} );</code></pre>
+<p>I tym sposobem odebraliśmy jQ największą jego przewagę w operacjach DOM-owych, oszczędzając przy tym 31KB kodu (oczywiście mowa tu o wersjach gzipniętych i zminifikowanych).</p>
 
 <h4 id="delegation">Event delegation <a href="#delegation" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <p>w jQ jest prosto:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">$(document).on('click', '.clicky', function(e)
-{
+<p class="code">Kod:</p><pre><code class="language-javascript">$( document ).on( 'click', '.clicky', function( evt ) {
 	//awesome stuff
-});</code></pre>
+} );</code></pre>
 <p>w czystym JS też jest prosto</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">document.addEventListener('click', function(e)
-{
-	if(!e.target || !e.target.matches('.clicky')/*to jest, ale z vendor prefixami ;) można zmienić na !e.target.classList.contains('clicky')*/)
+<p class="code">Kod:</p><pre><code class="language-javascript">document.addEventListener( 'click', function( evt ) {
+	if ( !evt.target || !e.target.matches( '.clicky' ) /* Można zmienić na !evt.target.classList.contains( 'clicky' )*/ ) {
 		return;
+	}
 	//awesome stuff
-}, false);</code></pre>
+}, false );</code></pre>
 
 <h4 id="clone"><code>.clone</code> <a href="#clone" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
-<p>żeby sklonować obiekt w jQ, wystarczy skorzystać z metody <code>.clone</code>. Czy da się zrobić coś takiego w czystym JS? A i owszem.</p>
-<p class="alert alert-danger"><b>UWAGA!</b> Podany tutaj przykład rozszerza prototyp <code>Object</code>, co może być <a href="http://www.nczonline.net/blog/2010/03/02/maintainable-javascript-dont-modify-objects-you-down-own/" class="alert-link">dość kiepskim pomysłem</a> (a przynajmniej w takiej formie, bez ustawienia enumeracji wartości na fałsz)</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">Object.prototype.clone = function()
-{
-	return this.cloneNode ? this.cloneNode(this) : JSON.parse(JSON.stringify(this));
-};
-console.log(document.createElement('a').clone());</code></pre>
-<p>Prosta i przyjemna sztuczka ;)</p>
+<p>Żeby sklonować obiekt w jQ, wystarczy skorzystać z metody <code>.clone</code>. Czy da się zrobić coś takiego w czystym JS? A i owszem.</p>
+<p class="code">Kod:</p><pre><code class="language-javascript">function clone( obj ) {
+	return obj.cloneNode ? obj.cloneNode( obj ) : JSON.parse( JSON.stringify( obj ) );
+}
+console.log( clone( document.createElement( 'a' ) ) );</code></pre>
+<p>Prosta i przyjemna sztuczka.</p>
 
 <h4 id="extend"><code>.extend</code> <a href="#extend" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
-<p>To już nie jest do końca DOM, ale może się tu nadać ;)</p>
-<p>jak wiadomo, w jQ mamy metodę <code>.extend</code> uzupełniającą nam obiekt</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">console.log($.extend({}, {cos: 1}));</code></pre>
-<p>W czystym JS <a href="https://github.com/shimondoodkin/nodejs-clone-extend/blob/master/index.js#L40">też się da</a>. ba, można być nawet chamskim i po prostu wyciągnąć ten kod z jQ ;)</p>
+<p>To już nie jest do końca DOM, ale może się tu nadać.</p>
+<p>Jak wiadomo, w jQ mamy metodę <code>.extend</code> rozszerzającą nam obiekt:</p>
+<p class="code">Kod:</p><pre><code class="language-javascript">console.log( $.extend( {}, { cos: 1 } ) );</code></pre>
+<p>W czystym JS <a href="https://github.com/shimondoodkin/nodejs-clone-extend/blob/master/index.js#L40">też się da</a>. Ba, można być nawet chamskim i po prostu wyciągnąć ten kod z jQ.</p>
 
 
 <h3 id="animacje">Animacje <a href="#animacje" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
-<p>Co tu dużo mówić - od kiedy w CSS są transition i animations, większość rzeczy można wgl wyjąć poza JS. Natomiast niektóre inne animacje z jQ można równie łatwo napisać w czystym JS. Przykład, lekko poprawiony, ze strony VanillaJS:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">$('#thing').fadeOut();
+<p>Co tu dużo mówić – od kiedy w CSS są <code>transition</code> i <code>animation</code>, większość rzeczy można w ogóle wyjąć poza JS. Natomiast niektóre inne animacje z jQ można równie łatwo napisać w czystym JS. Przykład, lekko poprawiony, ze strony VanillaJS:</p>
+<p class="code">Kod:</p><pre><code class="language-javascript">$( '#thing' ).fadeOut();
 //vs
-var s = document.getElementById('d').style;
-s.opacity = +(s.opacity || window.getComputedStyle(el)['opacity']);
-(function f() {(s.opacity -= 1 / 100) &lt;= 0 ? s.display = "none" : requestAnimationFrame(f)}());</code></pre>
-<p>Nie trzeba chyba zaznaczać, że porównanie objętościowe tych trzech linijek i całego jQ wypada korzystnie dla czystego JS ;)</p>
+var s = document.getElementById( 'd' ).style;
+s.opacity = +( s.opacity || window.getComputedStyle( el )[ 'opacity' ] );
+( function f() { ( s.opacity -= 1 / 100 ) &lt;= 0 ? s.display = "none" : requestAnimationFrame( f ) }() );</code></pre>
+<p>Nie trzeba chyba zaznaczać, że porównanie objętościowe tych trzech linijek i całego jQ wypada korzystnie dla czystego JS.</p>
 <p>oczywiście warto zauważyć, że rAF jest tylko w nowszych browserach i trza by zarzucić jakimś fallbackiem:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame || function(f){setTimeout(f, 1000 / 60)};</code></pre>
+<p class="code">Kod:</p><pre><code class="language-javascript">window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame || function( f ){ setTimeout( f, 1000 / 60 ); };</code></pre>
 
 
 <h3 id="xhr">XHR <a href="#xhr" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
-<p>Tu nie będzie przykładów, jedynie krótkie info ;)</p>
-<p>Otóż wrapper w jQ jest cholernie wygodny i wgl. Jednak jeśli chcemy mieć dostęp do bardziej zaawansowanych własności obiektu xhr (np. <code>xhr.upload.progress</code>) <a href="https://github.com/malsup/form/blob/master/jquery.form.js#L258">trzeba użyć natywnego obiektu</a>.</p>
+<p>Tu nie będzie przykładów, jedynie krótkie info.</p>
+<p>Otóż wrapper w jQ jest cholernie wygodny i w ogóle. Jednak jeśli chcemy mieć dostęp do bardziej zaawansowanych własności obiektu xhr (np. <code>xhr.upload.progress</code>), <a href="https://github.com/malsup/form/blob/master/jquery.form.js#L258">trzeba użyć natywnego obiektu</a>.</p>
 
 
 <h3 id="ui">jQUI <a href="#ui" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
-<p>wiele rzeczy <a href="http://pulpit.luke.co.pl/">da się napisać</a> bez tego, wystarcza trochę pomyślunku</p>
-<p>szybki przykład na resize elementów (akurat wykorzystywany w zupełnie innym kontekście niż browserowy ;)):</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">if(&#91;'l', 'r'&#93;.indexOf(resizing) !== -1)
-{
-	if(resizing === 'l')
-	{
+<p>Wiele rzeczy <a href="http://pulpit.luke.co.pl/">da się napisać</a> bez tego, wystarcza trochę pomyślunku.</p>
+<p>Szybki przykład na resize elementów (akurat wykorzystywany w zupełnie innym kontekście niż browserowy):</p>
+<p class="code">Kod:</p><pre><code class="language-javascript">if ( &#91; 'l', 'r' &#93;.indexOf( resizing ) !== -1 ) {
+	if ( resizing === 'l' ) {
 		window.frame.width += x - e.pageX;
-		window.frame.left -= x - e.pageX;		
-	}
-	else
+		window.frame.left -= x - e.pageX;
+	} else {
 		window.frame.width -= x - e.pageX;
+	}
 
-	if(window.frame.width &lt; 60)
+	if ( window.frame.width &lt; 60 ) {
 		window.frame.width = 60;
-	
+	}
+
 	x = e.pageX;
 	y = e.pageY;
-}
-else if(&#91;'t', 'b'&#93;.indexOf(resizing) !== -1)
-{
-	if(resizing === 't')
-	{
+} else if ( &#91; 't', 'b' &#93;.indexOf( resizing ) !== -1 ) {
+	if ( resizing === 't' ) {
 		window.frame.height += y - e.pageY;
-		window.frame.top -= y - e.pageY;		
-	}
-	else
+		window.frame.top -= y - e.pageY;
+	} else {
 		window.frame.height -= y - e.pageY;
-	
-	if(window.frame.height &lt; 120)
-		window.frame.height = 120;
+	}
 
-	x=e.pageX;
-	y=e.pageY;
-}
-else
-{
+	if ( window.frame.height &lt; 120 ) {
+		window.frame.height = 120;
+	}
+
+	x = e.pageX;
+	y = e.pageY;
+} else {
 	window.frame.width -= x-e.pageX;
 	window.frame.height -= y-e.pageY;
 }</code></pre>
-<p>co prawda kod najwyższych lotów nie jest i raczej przedstawia ogólną ideę jak to może wyglądać, niż jak to powinno wyglądać. Ba, można zdać się na natywne funkcje, takie jak <code>resize</code> w CSS (miało działać na wszystkim, ale nie wiem czy ta obietnica jest spełniona ;)) i drag&drop (w IE od wersji 5 bodaj!). Dobitnie to pokazuje, że nawet tak skomplikowane czynności jakie wykonuje za nas jQUI można zrobić zarówno bez niego, jak i jego ojca - jQ.</p>
- 
+<p>co prawda kod najwyższych lotów nie jest i raczej przedstawia ogólną ideę jak to może wyglądać, niż jak to powinno wyglądać. Ba, można zdać się na natywne funkcje, takie jak <code>resize</code> w CSS (miało działać na wszystkim, ale nie wiem czy ta obietnica jest spełniona) i drag&drop (w IE od wersji 5 bodaj!). Dobitnie to pokazuje, że nawet tak skomplikowane czynności jakie wykonuje za nas jQUI można zrobić zarówno bez niego, jak i jego ojca – jQ.</p>
 
 
-<h3 id="ale">Ale za to w jQ da się... <a href="#ale" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
-<p>Z racji tego, że jQ jest tylko subsetem JS, śmiem twierdzić, że nie ma rzeczy, której nie dałoby się osiągnąć w czystym JS. Jestem w stanie podjąć każde wyzwanie i udowodnić, że się da bez ;)</p>
+
+<h3 id="ale">Ale za to w jQ da się… <a href="#ale" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<p>Z racji tego, że jQ jest tylko subsetem JS, śmiem twierdzić, że nie ma rzeczy, której nie dałoby się osiągnąć w czystym JS. Jestem w stanie podjąć każde wyzwanie i udowodnić, że się da bez!</p>
 
 <h3 id="czy-porzucic">Czy porzucić? <a href="#czy-porzucic" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
-<p>Nie trzeba. Sam używam i jestem zadowolony ;) cały problem polega na tym, że jQuery jest przedstawiane jako lekarstwo na wszelkie zło JS, a to po prostu wierutna bzdura. jQuery powstało jako helper DOM-owy i to wciąż jest jego główną siłą.</p>
-<p>Co więcej - jQuery niszczy świadomość programistów sieciowych. Coraz częściej można spotkać bowiem nie programistów JS, a programistów jQuery, którzy jedynie tą biblioteką są w stanie się posługiwać.</p>
-<p>Dlatego nie mówię, żeby przestać jQ używać. Jeśli natomiast do stronki, gdzie trza oskryptować jeden link, wsadzasz jQ, to znak, że coś jest nie tego. Jeśli natomiast umiesz zastąpić jQ <a href="http://www.forumweb.pl/javascript/cancelbubble-stoppropagation-problem/397808#397808">własnym rozwiązaniem</a> i robisz to, gdy potrzebujesz jedną, konkretną rzecz, to oznacza, że jesteś zupełnie normalnym użytkownikiem tej biblioteki i syndrom uzależnienia ciebie nie dotyczy.</p>
+<p>Nie trzeba. Sam używam i jestem zadowolony. Cały problem polega na tym, że jQuery jest przedstawiane jako lekarstwo na wszelkie zło JS, a to po prostu wierutna bzdura. jQuery powstało jako helper DOM-owy i to wciąż jest jego główną siłą.</p>
+<p>Co więcej, jQuery niszczy świadomość programistów sieciowych. Coraz częściej można spotkać bowiem nie programistów JS, a programistów jQuery, którzy jedynie tą biblioteką są w stanie się posługiwać.</p>
+<p>Dlatego nie mówię, żeby przestać jQ używać. Jeśli natomiast do stronki, gdzie trza oskryptować jeden link, wsadzasz jQ, to znak, że coś jest nie tego. Jeśli natomiast umiesz zastąpić jQ <a href="http://www.forumweb.pl/javascript/cancelbubble-stoppropagation-problem/397808#397808">własnym rozwiązaniem</a> i robisz to, gdy potrzebujesz jedną, konkretną rzecz, to oznacza, że jesteś zupełnie normalnym użytkownikiem tej biblioteki i syndrom uzależnienia Ciebie nie dotyczy.</p>
 
 						</article>
 						<section id="komentarze">
