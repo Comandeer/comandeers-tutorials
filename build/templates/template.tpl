@@ -131,60 +131,53 @@
 			</footer>
 
 			<script>
-			(function()
-			{
-				try
-				{
-					var b = document.getElementsByClassName('code');
+			( function() {
+				try {
+					var codes = document.getElementsByClassName( 'code' );
 
-					[].forEach.call(b, function(t)
-					{
-						var n = t.nextElementSibling;
+					[].forEach.call( codes, function( code ) {
+						var next = code.nextElementSibling;
 
-						if(!n || n.tagName.toLowerCase() !== 'pre' || n.scrollHeight<300)
+						if ( !next || next.tagName.toLowerCase() !== 'pre' || next.scrollHeight < 300 ) {
 							return false;
+						}
 
-						t.innerHTML = t.innerHTML.replace(':', ' <span class="code-switch">[Rozwiń]</span>:');
-						t.getElementsByTagName('span')[0].toSwitch = n;
-					});
+						code.innerHTML = code.innerHTML.replace( ':', ' <span class="code-switch">[Rozwiń]</span>:' );
+						code.getElementsByTagName( 'span' )[ 0 ].toSwitch = next;
+					} );
 
-					document.addEventListener('click', function(e)
-					{
-						if(!e.target || !e.target.classList.contains('code-switch'))
+					document.addEventListener( 'click', function( evt ) {
+						if ( !evt.target || !evt.target.classList.contains( 'code-switch' ) ) {
 							return true;
+						}
 
-						e.preventDefault();
+						evt.preventDefault();
 
-						var t = e.target
-						,n = t.toSwitch
-						,iH = t.innerHTML;
+						var target = evt.target,
+							next = target.toSwitch,
+							html = target.innerHTML;
 
-						if(!n || n.tagName.toLowerCase() !== 'pre')
+						if ( !next || next.tagName.toLowerCase() !== 'pre' ) {
 							return false;
+						}
 
-						n.classList.toggle('expanded');
-						t.innerHTML = (iH === '[Zwiń]' ? '[Rozwiń]' : '[Zwiń]');
-					});
+						next.classList.toggle( 'expanded' );
+						target.innerHTML = ( html === '[Zwiń]' ? '[Rozwiń]' : '[Zwiń]' );
+					} );
 
 					//defer loading of disqus
 
 					if ( location.host === 'tutorials.comandeer.pl' ) {
 						window.disqus_shortname = 'comandeerowa';
 
-						var comments = document.getElementById('komentarze')
-						,offset = comments.getBoundingClientRect().top
-						,dsq = document.createElement('script');
+						var dsq = document.createElement( 'script' );
 
-						dsq.type = 'text/javascript'; dsq.async = true;
 						dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
 
-						(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						( document.getElementsByTagName( 'head' )[ 0 ] || document.getElementsByTagName( 'body' )[ 0 ] ).appendChild( dsq );
 					}
-				}
-				catch(e)
-				{
-				}
-			}());
+				} catch( err ) {}
+			} () );
 			</script>
 			<script src="https://code.jquery.com/jquery-1.12.0.min.js" integrity="sha384-XxcvoeNF5V0ZfksTnV+bejnCsJjOOIzN6UVwF85WBsAnU3zeYh5bloN+L4WLgeNE" crossorigin="anonymous"></script>
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
