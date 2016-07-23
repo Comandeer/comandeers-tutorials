@@ -167,16 +167,19 @@
 					});
 
 					//defer loading of disqus
-					window.disqus_shortname = 'comandeerowa';
 
-					var comments = document.getElementById('komentarze')
-					,offset = comments.getBoundingClientRect().top
-					,dsq = document.createElement('script');
+					if ( location.host === 'tutorials.comandeer.pl' ) {
+						window.disqus_shortname = 'comandeerowa';
 
-					dsq.type = 'text/javascript'; dsq.async = true;
-					dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+						var comments = document.getElementById('komentarze')
+						,offset = comments.getBoundingClientRect().top
+						,dsq = document.createElement('script');
 
-					(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						dsq.type = 'text/javascript'; dsq.async = true;
+						dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+
+						(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+					}
 				}
 				catch(e)
 				{
