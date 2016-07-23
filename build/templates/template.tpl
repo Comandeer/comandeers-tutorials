@@ -26,76 +26,7 @@
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 			<link rel="stylesheet" href="/css/a11ytheme.min.css">
 			<link rel="stylesheet" href="/css/prism.css">
-			<style>
-			body {
-				padding-top: 60px;
-			}
-			.navbar-brand {
-				margin: 0;
-			}
-			.navbar-brand a {
-				color: #9d9d9d;
-			}
-			.site-footer {
-				margin-top: 50px;
-				padding: 50px 0;
-				background: #222;
-				color: #9d9d9d;
-			}
-			.site-footer a {
-				color: #fff;
-			}
-			nav.affix {
-				position: static !important;
-			}
-			@media screen and (min-width: 992px) {
-				nav.affix {
-					position: fixed !important;
-				}
-				nav.affix {
-					left: 0;
-					top: 60px;
-					bottom: 0;
-				}
-				nav.affix .sidebar-header {
-					height: 40px;
-				}
-				nav.affix .sidebar-inner {
-					position: absolute;
-					top: 80px;
-					bottom: 0;
-					overflow: auto;
-				}
-			}
-
-			h1[id] a, h2[id] a, h3[id] a, h2[id] a, h3[id] a, h4[id] a, h5[id] a, h6[id] a {
-				opacity: 0;
-				transition: opacity .7s ease-in-out;
-			}
-			h1[id]:hover a, h2[id]:hover a, h3[id]:hover a, h4[id]:hover a, h5[id]:hover a, h6[id]:hover a {
-				opacity: .6;
-			}
-			.code-switch {
-				cursor: pointer;
-			}
-			.code-switch {
-				font-size: smaller;
-				font-weight: bold;
-			}
-			pre {
-				max-height: 300px;
-				overflow: auto;
-			}
-			pre.expanded {
-				max-height: 99999px;
-			}
-			.code,.quote {
-				margin-top: 5px;
-			}
-			ul li {
-				list-style-image: url(/images/bullet.gif);
-			}
-			</style>
+			<link rel="stylesheet" href="/css/custom.css">
 		</head>
 		<body>
 			<header class="navbar navbar-inverse navbar-fixed-top">
