@@ -15,6 +15,7 @@
 				ga('send', 'pageview');
 			}
 			</script>
+			<script async defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 			<title>Lista tutoriali</title>
 			<!--[if lt IE 9]>
 				<script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -59,7 +60,5 @@
 					</footer>
 				</div>
 			</div>
-
-			<script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 		</body>
 	</html>
