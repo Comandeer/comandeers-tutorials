@@ -1,12 +1,12 @@
 var fs = require( 'fs' ),
-	tutDir = './templates/tutorials/',
+	tutDir = '../tutorials/',
 	tutTemplate = fs.readFileSync( './templates/template.tpl', 'utf8' ),
 	parser = require( './bbcode' ),
 	dom = require( 'cheerio' ),
 	tutorials = fs.readdirSync( tutDir );
 
 tutorials.forEach( function( tutorial ) {
-	var content = fs.readFileSync(tutDir + tutorial, 'utf8'),
+	var content = fs.readFileSync( tutDir + tutorial, 'utf8'),
 		output = tutTemplate,
 		nav = `<div class="mdl-layout__drawer mdl-layout__drawer--wide">
 			<span class="mdl-layout-title">
@@ -87,13 +87,13 @@ tutorials.forEach( function( tutorial ) {
 	output = output.replace( '{CONTENT}', $.html() );
 	output = output.replace( '{DISQUS}', tutorial.replace( '.tpl', '' ) );
 
-	fs.writeFileSync( '../' + tutorial.replace( 'tpl', 'html' ), output, 'utf8' );
+	fs.writeFileSync( '../../' + tutorial.replace( 'tpl', 'html' ), output, 'utf8' );
 } );
 
 // building list of tutorials
 var list = fs.readFileSync( './templates/list.tpl', 'utf8' ),
-	tuts = require( './tutslist' ),
-	arts = require( './artslist' ),
+	tuts = require( '../tutslist' ),
+	arts = require( '../artslist' ),
 	response = '',
 	artsr = '';
 
@@ -126,4 +126,4 @@ Object.keys( arts ).reverse().forEach( function( t ) {
 list = list.replace( '{LIST}', response );
 list = list.replace( '{ARTS}', artsr );
 
-fs.writeFileSync( '../index.html', list, 'utf8' );
+fs.writeFileSync( '../../index.html', list, 'utf8' );
