@@ -10,7 +10,7 @@ tutorials.forEach( function( tutorial ) {
 		output = tutTemplate,
 		nav = `<div class="mdl-layout__drawer mdl-layout__drawer--wide">
 			<span class="mdl-layout-title">
-				<a href="/" class="mdl-layout-title__link" title="« Powrót do spisu tutoriali">Tutorials</a>
+				Spis treści
 			</span>
 			<nav>
 				<ul class="mdl-navigation">
