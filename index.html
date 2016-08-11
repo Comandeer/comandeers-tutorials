@@ -19,40 +19,110 @@
 			<!--[if lt IE 9]>
 				<script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 			<![endif]-->
-			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Roboto:300,400,500,700%7CMaterial+Icons">
 			<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.deep_purple-indigo.min.css">
 			<link rel="stylesheet" href="/css/custom.css">
 		</head>
-		<body>
-			<header class="navbar navbar-inverse navbar-fixed-top">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<h1 class="navbar-brand"><a href="/" title="« Powrót do spisu tutoriali">Tutorials</a></h1>
-					</div>
+		<body class="mdl-layout mdl-js-layout">
+			<header class="mdl-layout__header mdl-layout__header--scroll">
+				<div class="mdl-layout__header-row">
+						<h1 class="mdl-layout-title">
+							<a href="/" class="mdl-layout-title__link" title="« Powrót do spisu tutoriali">Tutorials</a>
+						</h1>
 				</div>
 			</header>
 
-			<div class="container-fluid">
-				<main class="content col-md-10 col-md-offset-1">
-					<h2 id="lista">Lista tutoriali</h2>
-					<dl class="list-group">
-							<dt class="list-group-item active">HTML</dt><dd class="list-group-item"><a href="http://tutorials.comandeer.pl/html5-blog.html" class="list-group-item-link">Semantyczny blog w HTML5</a></dd><dt class="list-group-item active">JavaScript</dt><dd class="list-group-item"><a href="http://tutorials.comandeer.pl/js-beauty.html" class="list-group-item-link">Wypieść swój JS</a></dd><dd class="list-group-item"><a href="http://tutorials.comandeer.pl/js-dynamic.html" class="list-group-item-link">Dynamiczne wczytywanie skryptów</a></dd><dd class="list-group-item"><a href="http://tutorials.comandeer.pl/js-hiding.html" class="list-group-item-link">Ukrywanie ciała funkcji</a></dd><dd class="list-group-item"><a href="http://tutorials.comandeer.pl/js-jquery.html" class="list-group-item-link">Czemu nie potrzebujesz jQuery?</a></dd><dd class="list-group-item"><a href="http://tutorials.comandeer.pl/js-intl.html" class="list-group-item-link">Data po polsku</a></dd><dd class="list-group-item"><a href="http://tutorials.comandeer.pl/polymer.html" class="list-group-item-link">WebComponents i Polymer - niespełniony sen?</a></dd><dt class="list-group-item active">CSS</dt><dd class="list-group-item"><a href="http://tutorials.comandeer.pl/svg-sprites.html" class="list-group-item-link">Sprite'y w SVG</a></dd>
+			<div class="mdl-layout__content">
+				<main class="content mdl-grid mdl-grid--no-spacing">
+					<article class="mdl-cell--12-col" id="lista">
+						<h2 class="mdl-typography--title">Lista tutoriali</h2>
+						<dl class="mdl-list">
+							<dt class="mdl-list__item">
+		<i class="material-icons mdl-list__item-icon" aria-hidden="true">star</i>
+		<span class="mdl-list__item-primary-content">HTML</span>
+	</dt><dd class="mdl-list__item">
+			<span class="mdl-list__item-primary-content">
+				<a href="/html5-blog.html">Semantyczny blog w HTML5</a>
+			</span>
+		</dd><dt class="mdl-list__item">
+		<i class="material-icons mdl-list__item-icon" aria-hidden="true">star</i>
+		<span class="mdl-list__item-primary-content">JavaScript</span>
+	</dt><dd class="mdl-list__item">
+			<span class="mdl-list__item-primary-content">
+				<a href="/js-beauty.html">Wypieść swój JS</a>
+			</span>
+		</dd><dd class="mdl-list__item">
+			<span class="mdl-list__item-primary-content">
+				<a href="/js-dynamic.html">Dynamiczne wczytywanie skryptów</a>
+			</span>
+		</dd><dd class="mdl-list__item">
+			<span class="mdl-list__item-primary-content">
+				<a href="/js-hiding.html">Ukrywanie ciała funkcji</a>
+			</span>
+		</dd><dd class="mdl-list__item">
+			<span class="mdl-list__item-primary-content">
+				<a href="/js-jquery.html">Czemu nie potrzebujesz jQuery?</a>
+			</span>
+		</dd><dd class="mdl-list__item">
+			<span class="mdl-list__item-primary-content">
+				<a href="/js-intl.html">Data po polsku</a>
+			</span>
+		</dd><dd class="mdl-list__item">
+			<span class="mdl-list__item-primary-content">
+				<a href="/polymer.html">WebComponents i Polymer - niespełniony sen?</a>
+			</span>
+		</dd><dt class="mdl-list__item">
+		<i class="material-icons mdl-list__item-icon" aria-hidden="true">star</i>
+		<span class="mdl-list__item-primary-content">CSS</span>
+	</dt><dd class="mdl-list__item">
+			<span class="mdl-list__item-primary-content">
+				<a href="/svg-sprites.html">Sprite'y w SVG</a>
+			</span>
+		</dd>
 						</dl>
+					</article>
 
-					<h2 id="artykuly">Pozostałe artykuły</h2>
-					<p>Tak, czasami pisuję gdzie indziej.</p>
-					<ul class="list-group">
-						<li class="list-group-item"><a href="http://webroad.pl/inne/3925-validate-or-not-to-validate-that-is-the-question" class="list-group-item-link">To validate or not to validate – that is the question!</a></li><li class="list-group-item"><a href="http://webroad.pl/inne/3722-progressive-enhancement-zapomniany-fundament" class="list-group-item-link">Progressive Enhancement – zapomniany fundament</a></li><li class="list-group-item"><a href="http://webroad.pl/javascript/3505-web-components" class="list-group-item-link">Web Components</a></li><li class="list-group-item"><a href="http://webroad.pl/inne/3035-web-of-intents-czego-brakuje-dzisiejszej-sieci" class="list-group-item-link">Web (of) Intents – czego brakuje dzisiejszej Sieci?</a></li><li class="list-group-item"><a href="http://webroad.pl/javascript/746-synchroniczna-asynchronicznosc" class="list-group-item-link">Asynchroniczna synchroniczność</a></li>
-					</ul>
-					<p>Dodatkowo jestem także redaktorem <a href="http://www.webkrytyk.pl/author/Comandeer/">WebKrytyka</a>, <a href="http://pasjaonline.pl">Pasji Online</a> oraz <a href="http://e-magnifier.pl/author/tomasz-jakut/">Magnifiera</a> (chociaż on akurat średnio programistyczny).</p>
+					<article class="mdl-cell--12-col" id="artykuly">
+						<h2 class="mdl-typography--title">Pozostałe artykuły</h2>
+						<p>Tak, czasami pisuję gdzie indziej.</p>
+						<ul class="mdl-list">
+							<li class="mdl-list__item">
+		<span class="mdl-list__item-primary-content">
+			<i class="material-icons mdl-list__item-icon" aria-hidden="true">book</i>
+			<a href="http://webroad.pl/inne/3925-validate-or-not-to-validate-that-is-the-question">To validate or not to validate – that is the question!</a>
+		</span>
+	</li><li class="mdl-list__item">
+		<span class="mdl-list__item-primary-content">
+			<i class="material-icons mdl-list__item-icon" aria-hidden="true">book</i>
+			<a href="http://webroad.pl/inne/3722-progressive-enhancement-zapomniany-fundament">Progressive Enhancement – zapomniany fundament</a>
+		</span>
+	</li><li class="mdl-list__item">
+		<span class="mdl-list__item-primary-content">
+			<i class="material-icons mdl-list__item-icon" aria-hidden="true">book</i>
+			<a href="http://webroad.pl/javascript/3505-web-components">Web Components</a>
+		</span>
+	</li><li class="mdl-list__item">
+		<span class="mdl-list__item-primary-content">
+			<i class="material-icons mdl-list__item-icon" aria-hidden="true">book</i>
+			<a href="http://webroad.pl/inne/3035-web-of-intents-czego-brakuje-dzisiejszej-sieci">Web (of) Intents – czego brakuje dzisiejszej Sieci?</a>
+		</span>
+	</li><li class="mdl-list__item">
+		<span class="mdl-list__item-primary-content">
+			<i class="material-icons mdl-list__item-icon" aria-hidden="true">book</i>
+			<a href="http://webroad.pl/javascript/746-synchroniczna-asynchronicznosc">Asynchroniczna synchroniczność</a>
+		</span>
+	</li>
+						</ul>
+						<p>Dodatkowo jestem także redaktorem <a href="http://www.webkrytyk.pl/author/Comandeer/">WebKrytyka</a>, <a href="http://pasjaonline.pl">Pasji Online</a> oraz <a href="http://e-magnifier.pl/author/tomasz-jakut/">Magnifiera</a> (chociaż on akurat średnio programistyczny).</p>
+					</article>
 				</main>
-			</div>
 
-			<footer class="site-footer">
-				<div class="container-fluid">
-					<p>Copyright © by <a href="https://www.comandeer.pl" rel="author">Comandeer</a>.</p>
-				</div>
-			</footer>
+				<footer class="mdl-mini-footer">
+					<div class="mdl-mini-footer__left-section">
+						<p>Copyright © by <a href="https://www.comandeer.pl" class="mdl-color-text--white" rel="author">Comandeer</a>.</p>
+					</div>
+				</footer>
+			</div>
 
 			<script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 		</body>

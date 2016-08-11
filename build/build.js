@@ -94,15 +94,27 @@ var list = fs.readFileSync( './templates/list.tpl', 'utf8' ),
 Object.keys( tuts ).forEach( function( t ) {
 	var tut = tuts[ t ];
 
-	response += '<dt class="list-group-item active">' + t + '</dt>';
+	response += `<dt class="mdl-list__item">
+		<i class="material-icons mdl-list__item-icon" aria-hidden="true">star</i>
+		<span class="mdl-list__item-primary-content">${t}</span>
+	</dt>`;
 
 	Object.keys( tut ).forEach( function( x ) {
-		response += '<dd class="list-group-item"><a href="http://tutorials.comandeer.pl/' + tut[ x ] + '.html" class="list-group-item-link">' + x + '</a></dd>';
+		response += `<dd class="mdl-list__item">
+			<span class="mdl-list__item-primary-content">
+				<a href="/${tut[ x ]}.html">${x}</a>
+			</span>
+		</dd>`;
 	} );
 } );
 
 Object.keys( arts ).reverse().forEach( function( t ) {
-	artsr += '<li class="list-group-item"><a href="' + arts[ t ] + '" class="list-group-item-link">' + t + '</a></li>';
+	artsr += `<li class="mdl-list__item">
+		<span class="mdl-list__item-primary-content">
+			<i class="material-icons mdl-list__item-icon" aria-hidden="true">book</i>
+			<a href="${arts[ t ]}">${t}</a>
+		</span>
+	</li>`;
 } );
 
 list = list.replace( '{LIST}', response );
