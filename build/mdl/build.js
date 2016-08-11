@@ -108,6 +108,7 @@ Object.keys( tuts ).forEach( function( t ) {
 	Object.keys( tut ).forEach( function( x ) {
 		response += `<dd class="mdl-list__item">
 			<span class="mdl-list__item-primary-content">
+				<i class="material-icons mdl-list__item-icon" aria-hidden="true">book</i>
 				<a href="/${tut[ x ]}.html">${x}</a>
 			</span>
 		</dd>`;
