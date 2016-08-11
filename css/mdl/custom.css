@@ -1,3 +1,10 @@
+.mdl-layout--padded {
+	padding: 0 10px;
+}
+.mdl-layout__header--always-visible {
+	display: flex;
+}
+
 .content {
 	margin: 0 auto;
 	max-width: 980px;

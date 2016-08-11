@@ -34,7 +34,7 @@
 		</head>
 		<body>
 			<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-				<header class="mdl-layout__header">
+				<header class="mdl-layout__header mdl-layout__header--always-visible">
 					<div class="mdl-layout__header-row">
 							<h1 class="mdl-layout-title">
 								<a href="/" class="mdl-layout-title__link mdl-color-text--white" title="« Powrót do spisu tutoriali">Tutorials</a>
@@ -45,7 +45,7 @@
 				{NAV}
 
 				<div class="mdl-layout__content">
-					<main class="content mdl-grid mdl-grid--no-spacing">
+					<main class="content mdl-grid">
 						<article class="mdl-cell--12-col">
 							{CONTENT}
 						</article>

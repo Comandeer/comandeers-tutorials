@@ -26,7 +26,7 @@
 		</head>
 		<body>
 			<div class="mdl-layout mdl-js-layout">
-				<header class="mdl-layout__header mdl-layout__header--scroll">
+				<header class="mdl-layout__header mdl-layout__header--always-visible mdl-layout__header--scroll">
 					<div class="mdl-layout__header-row">
 							<h1 class="mdl-layout-title">
 								<a href="/" class="mdl-layout-title__link mdl-color-text--white" title="« Powrót do spisu tutoriali">Tutorials</a>
@@ -35,7 +35,7 @@
 				</header>
 
 				<div class="mdl-layout__content">
-					<main class="content mdl-grid mdl-grid--no-spacing">
+					<main class="content mdl-grid">
 						<article class="mdl-cell--12-col" id="lista">
 							<h2 class="mdl-typography--title">Lista tutoriali</h2>
 							<dl class="mdl-list">
