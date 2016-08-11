@@ -36,8 +36,12 @@ tutorials.forEach( function( tutorial ) {
 	$ul.html( '' );
 
 	// Bootstrap hack for http://getbootstrap.com/components/#alerts-links
-	$( '.alert a' ).each( function() {
-		this.addClass( 'alert-link' );
+	$( '.tutorials-note a' ).each( function() {
+		var textColor = this.parent().attr( 'class' ) && this.parent().attr( 'class' ).match( /mdl\-color\-text\-\-(.+)/ );
+
+		if ( textColor ) {
+			this.addClass( textColor[ 0 ] );
+		}
 	} );
 
 	$( 'h1, h2, h3, h4, h5, h6' ).each( function() {

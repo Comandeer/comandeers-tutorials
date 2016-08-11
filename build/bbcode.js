@@ -125,7 +125,7 @@ var XBBCODE = ( function() {
 
 		'tt': {
 			openTag: function( params, content ) {
-				return '<code>';
+				return '<code class="mdl-color--white mdl-color-text--orange-600">';
 			},
 			closeTag: function( params,content ) {
 				return '</code>';
@@ -209,14 +209,14 @@ var XBBCODE = ( function() {
 
 		'quote': {
 			openTag: function( params, content ) {
-				return '<blockquote><p>';
+				return '<blockquote class="tutorials-quote"><p>';
 			},
 			closeTag: function( params, content ) {
 				var html = '',
 					author;
 
 				if ( params ) {
-					html = '</p><footer><cite>'; // FOOTER? BS, RLY?!
+					html = '</p><cite>';
 					author = params.substr( 1 );
 
 					if ( urlPattern.test( author ) ) {
@@ -225,7 +225,7 @@ var XBBCODE = ( function() {
 						html += author;
 					}
 
-					html += '</cite></footer>';
+					html += '</cite>';
 				}
 
 				return html + '</blockquote>';
@@ -420,49 +420,56 @@ var XBBCODE = ( function() {
 
 		'h1': {
 			openTag: function( params, content ) {
-				return '<h2 id="' + params.replace( /["']/g, '' ).substring( 1 ) + '">';
+				return '<h2 class="mdl-typography--display-3" id="' + params.replace( /["']/g, '' ).substring( 1 ) + '">';
 			},
 			closeTag: function( params, content ) {
-				return ' <a href="#' + params.replace( /["']/g, '' ).substring( 1 ) + '" title="Bezpośredni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>';
+				return `<a href="#${params.replace( /["']/g, '' ).substring( 1 )}" title="Bezpośredni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
+				</h2>`;
 			}
 		},
 
 		'h2': {
 			openTag: function( params,content ) {
-				return '<h3 id="' + params.replace( /["']/g, '' ).substring( 1 ) + '">';
+				return '<h3 class="mdl-typography--display-2" id="' + params.replace( /["']/g, '' ).substring( 1 ) + '">';
 			},
 			closeTag: function( params, content ) {
-				return ' <a href="#' + params.replace( /["']/g, '' ).substring( 1 ) + '" title="Bezpośredni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>';
+				return `<a href="#${params.replace( /["']/g, '' ).substring( 1 )}" title="Bezpośredni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
+				</h3>`;
 			}
 		},
 
 		'h3': {
 			openTag: function( params, content ) {
-				return '<h4 id="' + params.replace( /["']/g, '' ).substring( 1 ) + '">';
+				return '<h4 class="mdl-typography--display-1" id="' + params.replace( /["']/g, '' ).substring( 1 ) + '">';
 			},
 			closeTag: function( params, content ) {
-				return ' <a href="#' + params.replace( /["']/g, '' ).substring( 1 ) + '" title="Bezpośredni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>';
+				return `<a href="#${params.replace( /["']/g, '' ).substring( 1 )}" title="Bezpośredni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
+				</h4>`;
 			}
 		},
 
 		'h4': {
 			openTag: function( params, content ) {
-				return '<h4 id="' + params.replace( /["']/g, '' ).substring( 1 ) + '">';
+				return '<h5 id="' + params.replace( /["']/g, '' ).substring( 1 ) + '">';
 			},
 			closeTag: function( params, content ) {
-				return ' <a href="#' + params.replace( /["']/g, '' ).substring( 1 ) + '" title="Bezpośredni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>';
+				return ` <a href="#${params.replace( /["']/g, '' ).substring( 1 )}" title="Bezpośredni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
+				</h5>`;
 			}
 		},
 
 		'p': {
 			openTag: function( params, content ) {
-				var className = params && params.replace( /["']/g, '' ).substring( 1 );
+				var type = params && params.replace( /["']/g, '' ).substring( 1 ),
+					className = '';
 
-				if ( className === 'warning' ) {
-					className = 'danger';
+				if ( type === 'warning' || type === 'danger' ) {
+					className = 'mdl-color--red mdl-color-text--black';
+				} else if ( type === 'info' ) {
+					className = 'mdl-color--primary mdl-color-text--white';
 				}
 
-				return '<p' + ( className ?' class="alert alert-' + className + '"' : '' ) + '>';
+				return '<p class="tutorials-note ' + className + '">';
 			},
 			closeTag: function( params, content ) {
 				return '</p>';

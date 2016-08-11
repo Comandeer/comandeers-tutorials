@@ -22,7 +22,8 @@
 			 */
 			"open"in document.createElement("details")||document.addEventListener("DOMContentLoaded",function(){try{[].forEach.call(document.querySelectorAll("details"),function(e){var t=e.querySelector("summary"),n=function(n){n?(e.removeAttribute("open"),t.setAttribute("aria-expanded",!1)):(e.setAttribute("open","open"),t.setAttribute("aria-expanded",!0))},i=function(){n(e.hasAttribute("open"))};n(!e.hasAttribute("open")),t.setAttribute("tabindex",0),t.setAttribute("role","button"),t.addEventListener("click",i),t.addEventListener("keyup",function(e){-1!==[13,32].indexOf(e.keyCode)&&(e.preventDefault(),this.click())})})}catch(e){}})
 			</script>
-			<title>[JavaScript] Ukrywanie ciała funkcji </title>
+			<title>[JavaScript] Ukrywanie ciała funkcji
+				</title>
 			<!--[if lt IE 9]>
 				<script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 			<![endif]-->
@@ -32,8 +33,8 @@
 			<link rel="stylesheet" href="/css/custom.css">
 		</head>
 		<body>
-			<div class="mdl-layout mdl-js-layout">
-				<header class="mdl-layout__header mdl-layout__header--scroll">
+			<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+				<header class="mdl-layout__header">
 					<div class="mdl-layout__header-row">
 							<h1 class="mdl-layout-title">
 								<a href="/" class="mdl-layout-title__link mdl-color-text--white" title="« Powrót do spisu tutoriali">Tutorials</a>
@@ -46,17 +47,18 @@
 				<div class="mdl-layout__content">
 					<main class="content mdl-grid mdl-grid--no-spacing">
 						<article class="mdl-cell--12-col">
-							<h2 id="start">[JavaScript] Ukrywanie ciała funkcji <a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+							<h2 class="mdl-typography--display-3" id="start">[JavaScript] Ukrywanie ciała funkcji<a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
+				</h2>
 
-<p class="alert alert-danger">Niestety, w nowych wersjach Chrome ta metoda już nie działa i dostajemy pełen dostęp do ciała funkcji.</p>
-<p class="alert alert-info">Na wstępie uprzedzę, że technika ta nie powstała w mym płodnym umyśle. Została znaleziona przez <a href="http://web.archive.org/web/20130907212310/http://my.opera.com/hallvors/blog/2012/03/20/debugging-maps-google-maps" class="alert-link">developera Opery</a> w czasie debugowania pewnego upierdliwego błędu w działaniu Google Maps w tejże przeglądarce. Jak nietrudno zgadnąć, zostało to w bólach znalezione w źródle tego zaawansowanego webappa. Ja jedynie postanowiłem to wykorzystać na szerszą skalę. Trzeba też zaznaczyć, że technika ta jest średnio przydatna jeśli nie zaciemnimy równocześnie źródła skryptu (np. poprzez uglify.js czy też GCC).</p>
-<p>O co wgl chodzi? A no chodzi o pewną magiczną właściwość poniższego fragmentu kodu:</p>
+<p class="tutorials-note mdl-color--red mdl-color-text--black">Niestety, w nowych wersjach Chrome ta metoda już nie działa i dostajemy pełen dostęp do ciała funkcji.</p>
+<p class="tutorials-note mdl-color--primary mdl-color-text--white">Na wstępie uprzedzę, że technika ta nie powstała w mym płodnym umyśle. Została znaleziona przez <a href="http://web.archive.org/web/20130907212310/http://my.opera.com/hallvors/blog/2012/03/20/debugging-maps-google-maps" class="mdl-color-text--white">developera Opery</a> w czasie debugowania pewnego upierdliwego błędu w działaniu Google Maps w tejże przeglądarce. Jak nietrudno zgadnąć, zostało to w bólach znalezione w źródle tego zaawansowanego webappa. Ja jedynie postanowiłem to wykorzystać na szerszą skalę. Trzeba też zaznaczyć, że technika ta jest średnio przydatna jeśli nie zaciemnimy równocześnie źródła skryptu (np. poprzez uglify.js czy też GCC).</p>
+<p class="tutorials-note ">O co wgl chodzi? A no chodzi o pewną magiczną właściwość poniższego fragmentu kodu:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">Function.prototype</code></pre>
-<p>Niby co w tym takiego nadzwyczajnego? Już mówię!</p>
+<p class="tutorials-note ">Niby co w tym takiego nadzwyczajnego? Już mówię!</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">console.log( Function.prototype.call.apply( Function.prototype.bind, &#91; function(){} &#93; ) );</code></pre>
-<p>Zapewne w większości powyższy kod wzbudza podświadomy lęk. Przyznać trzeba, że naprawdę wygląda dość dziwacznie. Ale postaram się troszkę przybliżyć jego sens.</p>
-<p>Zacznijmy od <code>Function.prototype</code>. Jak już kiedyś wspomniałem, JS jest takim mocno zboczonym językiem, gdzie wszystko jest obiektem. Nic zatem dziwnego, że funkcje są tak naprawdę… obiektami "klasy" <code>Function</code> ("klasy", bo jak wiadomo ECMAScript to jedyna grupa języków prototypowanych). Zatem każda zmiana w prototypie tego globalnego obiektu będzie dziedziczona przez wszystkie funkcje. Jednak tutaj skrypterzy Google poszli o krok dalej i wywołują poszczególne metody prosto z prototypu (czasami, ale to bardzo rzadko, okazuje się to przydatne)!</p>
-<p>Zatem jakie metody się tu wywołuje? <code>call</code>, <code>apply</code> i <code>bind</code>. Wszystkie działają dość podobnie i ich głównym zadaniem jest zmienienie kontekstu wywołania funkcji (<code>this</code>). Już wyjaśniam na przykładzie:</p>
+<p class="tutorials-note ">Zapewne w większości powyższy kod wzbudza podświadomy lęk. Przyznać trzeba, że naprawdę wygląda dość dziwacznie. Ale postaram się troszkę przybliżyć jego sens.</p>
+<p class="tutorials-note ">Zacznijmy od <code class="mdl-color--white mdl-color-text--orange-600">Function.prototype</code>. Jak już kiedyś wspomniałem, JS jest takim mocno zboczonym językiem, gdzie wszystko jest obiektem. Nic zatem dziwnego, że funkcje są tak naprawdę… obiektami "klasy" <code class="mdl-color--white mdl-color-text--orange-600">Function</code> ("klasy", bo jak wiadomo ECMAScript to jedyna grupa języków prototypowanych). Zatem każda zmiana w prototypie tego globalnego obiektu będzie dziedziczona przez wszystkie funkcje. Jednak tutaj skrypterzy Google poszli o krok dalej i wywołują poszczególne metody prosto z prototypu (czasami, ale to bardzo rzadko, okazuje się to przydatne)!</p>
+<p class="tutorials-note ">Zatem jakie metody się tu wywołuje? <code class="mdl-color--white mdl-color-text--orange-600">call</code>, <code class="mdl-color--white mdl-color-text--orange-600">apply</code> i <code class="mdl-color--white mdl-color-text--orange-600">bind</code>. Wszystkie działają dość podobnie i ich głównym zadaniem jest zmienienie kontekstu wywołania funkcji (<code class="mdl-color--white mdl-color-text--orange-600">this</code>). Już wyjaśniam na przykładzie:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">var d = { n: 1 };
 
 function g() {
@@ -64,52 +66,52 @@ function g() {
 }
 
 g.apply( d );</code></pre>
-<p>To wywołanie funkcji wyrzuci do konsoli obiekt <code>d</code> zamiast standardowego <code>window</code>.Dość użyteczne, pod warunkiem, że pisze się obiektowy JS i trochę kojarzy pojęcie kontekstu wywołania. Dla nas jednak nie jest to aż tak ważne. Wystarczy wiedzieć, że <code>apply</code> przyjmuje jako pierwszy parametr obiekt, który ma zastąpić nam <code>this</code>, a drugim parametrem jest tablica parametrów wywoływanej funkcji. Przykład, bo brzmi to dziwnie:</p>
+<p class="tutorials-note ">To wywołanie funkcji wyrzuci do konsoli obiekt <code class="mdl-color--white mdl-color-text--orange-600">d</code> zamiast standardowego <code class="mdl-color--white mdl-color-text--orange-600">window</code>.Dość użyteczne, pod warunkiem, że pisze się obiektowy JS i trochę kojarzy pojęcie kontekstu wywołania. Dla nas jednak nie jest to aż tak ważne. Wystarczy wiedzieć, że <code class="mdl-color--white mdl-color-text--orange-600">apply</code> przyjmuje jako pierwszy parametr obiekt, który ma zastąpić nam <code class="mdl-color--white mdl-color-text--orange-600">this</code>, a drugim parametrem jest tablica parametrów wywoływanej funkcji. Przykład, bo brzmi to dziwnie:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">function g( r ) {
 	console.log( r );
 };
 
 g.apply( window, &#91; 'whatever' &#93; );</code></pre>
-<p>W konsoli ujrzymy wspaniały napis <code>whatever</code>. <code>call</code> w zasadzie działa tak samo, ale zamiast tablicy parametrów, przyjmuje ich listę:</p>
+<p class="tutorials-note ">W konsoli ujrzymy wspaniały napis <code class="mdl-color--white mdl-color-text--orange-600">whatever</code>. <code class="mdl-color--white mdl-color-text--orange-600">call</code> w zasadzie działa tak samo, ale zamiast tablicy parametrów, przyjmuje ich listę:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">function g( r ) {
 	console.log( r );
 };
 
 g.call( window, 'whatever' );</code></pre>
-<p>Efekt identyczny jak w poprzednim przykładzie. Trochę inaczej działa <code>bind</code>, ponieważ nie wywołuje funkcji w podanym kontekście, a zwraca jej "klona", działającego w danym scope. Dla kompletności przykład, z wiadomym wynikiem:</p>
+<p class="tutorials-note ">Efekt identyczny jak w poprzednim przykładzie. Trochę inaczej działa <code class="mdl-color--white mdl-color-text--orange-600">bind</code>, ponieważ nie wywołuje funkcji w podanym kontekście, a zwraca jej "klona", działającego w danym scope. Dla kompletności przykład, z wiadomym wynikiem:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">function g( r ) {
 	console.log( r );
 };
 ( g.bind( window, &#91; 'whatever' &#93; ) )();</code></pre>
-<p>Zatem gdy trochę się wysili szare komórki, można dojść do pewnego uogólnienia, że w bardzo zawoalowany sposób po prostu wywołujemy <code>Function.prototype.bind</code>.</p>
-<p>OK, a teraz gwóźdź programu: co nam daje połączenie tych trzech metod? A no, przy dobrze zaciemnionym kodzie bardzo utrudnia podejrzenie działania naszych funkcji i ukrywa to przed debuggerami. Kod</p>
+<p class="tutorials-note ">Zatem gdy trochę się wysili szare komórki, można dojść do pewnego uogólnienia, że w bardzo zawoalowany sposób po prostu wywołujemy <code class="mdl-color--white mdl-color-text--orange-600">Function.prototype.bind</code>.</p>
+<p class="tutorials-note ">OK, a teraz gwóźdź programu: co nam daje połączenie tych trzech metod? A no, przy dobrze zaciemnionym kodzie bardzo utrudnia podejrzenie działania naszych funkcji i ukrywa to przed debuggerami. Kod</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">console.log( Function.prototype.call.apply( Function.prototype.bind, &#91; function() {} &#93; ) );</code></pre>
-<p>zwróci nam bowiem nic nie mówiące</p>
+<p class="tutorials-note ">zwróci nam bowiem nic nie mówiące</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">function() { &#91;native code&#93; }</code></pre>
-<p>Chyba nie muszę mówić jaką konsternację na twarzy młodocianego hakiera zrobi informacja, że nasza super-hiper-tajna funkcja, w której zaimplementowaliśmy czekający na opatentowanie algorytm, uparcie twierdzi, że jest funkcją wbudowaną i to na dodatek bez nazwy!</p>
-<p>I zanim polecisz opakowywać wszystkie swoje funkcje w ten sposób, wiadro zimnej wody dla ochłody: <b>KOMPATYBILNOŚĆ</b>. Tak, wiem, że wiesz, że ja wiem, że wiesz, że nie działa to w IE &lt; 9 – przecież to logiczne! Ale niestety rynek tych przeglądarek wciąż jest dośc spory. Toteż – dla własnej wygody i kompatybilności – napiszmy sobie prostą funkcję pomocniczą. Nazwijmy ją (a jakże!) <code>obfuscate</code>. Użyjemy tu dwóch bardziej zaawansowanych elementów JS: funkcji natychmiastowego wywołania oraz closures (i w tym miejscu większość mniej zdeterminowanych postanowiła zamknąć tą kartę przeglądarki). Niech Was nie zwiodą pozory – wcale to (aż tak) trudne nie będzie! Na początku zadeklarujmy sobie swoją funkcję:</p>
+<p class="tutorials-note ">Chyba nie muszę mówić jaką konsternację na twarzy młodocianego hakiera zrobi informacja, że nasza super-hiper-tajna funkcja, w której zaimplementowaliśmy czekający na opatentowanie algorytm, uparcie twierdzi, że jest funkcją wbudowaną i to na dodatek bez nazwy!</p>
+<p class="tutorials-note ">I zanim polecisz opakowywać wszystkie swoje funkcje w ten sposób, wiadro zimnej wody dla ochłody: <b>KOMPATYBILNOŚĆ</b>. Tak, wiem, że wiesz, że ja wiem, że wiesz, że nie działa to w IE &lt; 9 – przecież to logiczne! Ale niestety rynek tych przeglądarek wciąż jest dośc spory. Toteż – dla własnej wygody i kompatybilności – napiszmy sobie prostą funkcję pomocniczą. Nazwijmy ją (a jakże!) <code class="mdl-color--white mdl-color-text--orange-600">obfuscate</code>. Użyjemy tu dwóch bardziej zaawansowanych elementów JS: funkcji natychmiastowego wywołania oraz closures (i w tym miejscu większość mniej zdeterminowanych postanowiła zamknąć tą kartę przeglądarki). Niech Was nie zwiodą pozory – wcale to (aż tak) trudne nie będzie! Na początku zadeklarujmy sobie swoją funkcję:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">var obfuscate = ( function() {
 }() );</code></pre>
-<p>To jest właśnie tzw. funkcja natychmiastowego wywołania (IIFE – Immediately Invoked Function Expression). Jak nietrudno zgadnąć, nazywa się tak, bo od razu po zadeklarowaniu jest wywoływana (to tak naprawdę jest wywołanie funkcji anonimowej). Na razie nasz kod jest bezużyteczny, bo zmienna <code>obfuscate</code> będzie miała wartość <code>undefined</code>. Toteż trzeba dodać do naszej funkcji <code>return</code>:</p>
+<p class="tutorials-note ">To jest właśnie tzw. funkcja natychmiastowego wywołania (IIFE – Immediately Invoked Function Expression). Jak nietrudno zgadnąć, nazywa się tak, bo od razu po zadeklarowaniu jest wywoływana (to tak naprawdę jest wywołanie funkcji anonimowej). Na razie nasz kod jest bezużyteczny, bo zmienna <code class="mdl-color--white mdl-color-text--orange-600">obfuscate</code> będzie miała wartość <code class="mdl-color--white mdl-color-text--orange-600">undefined</code>. Toteż trzeba dodać do naszej funkcji <code class="mdl-color--white mdl-color-text--orange-600">return</code>:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">var obfuscate = ( function() {
 	return function( func ) {
 		return Function.prototype.call.apply( Function.prototype.bind, &#91; func &#93; );
 	};
 }() )</code></pre>
-<p>Tak, to jest właśnie closure – funkcja zwracana przez inną funkcję, zamknięta w jej obszarze (no ej, w końcu to technika od samego Google; nikt nie mówił, że łatwo będzie). Tak naprawdę, gdy JS się wczyta, przeglądarka otrzyma coś takiego:</p>
+<p class="tutorials-note ">Tak, to jest właśnie closure – funkcja zwracana przez inną funkcję, zamknięta w jej obszarze (no ej, w końcu to technika od samego Google; nikt nie mówił, że łatwo będzie). Tak naprawdę, gdy JS się wczyta, przeglądarka otrzyma coś takiego:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">var obfuscate = function( func ) {
 	return Function.prototype.call.apply( Function.prototype.bind, &#91; func &#93; );
 }</code></pre>
-<p>Czemu zatem nie zapisałem tego w taki sposób? Otóż przez IE 8 tak nie zapisałem! Trzeba przecież sprawdzić czy ta metoda ukrywania kodu jest wspierana i w zależności od tego funkcja <code>obfuscate</code> przyjąć może dwie postaci:</p>
+<p class="tutorials-note ">Czemu zatem nie zapisałem tego w taki sposób? Otóż przez IE 8 tak nie zapisałem! Trzeba przecież sprawdzić czy ta metoda ukrywania kodu jest wspierana i w zależności od tego funkcja <code class="mdl-color--white mdl-color-text--orange-600">obfuscate</code> przyjąć może dwie postaci:</p>
 <ul>
 	<li> zaciemni nam kod,
 	</li><li> zwróci niezaciemniony kod.
 </li></ul>
-<p>A jak sprawdzić czy technika jest obsługiwana? Można sprawdzić czy przeglądarka wysypie się na wywołaniu zaciemnionej w taki sposób funkcji. Ok, ale to nam zatrzyma wykonywanie skryptu… chyba że wrzucimy do tego obsługę wyjątków!</p>
+<p class="tutorials-note ">A jak sprawdzić czy technika jest obsługiwana? Można sprawdzić czy przeglądarka wysypie się na wywołaniu zaciemnionej w taki sposób funkcji. Ok, ale to nam zatrzyma wykonywanie skryptu… chyba że wrzucimy do tego obsługę wyjątków!</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">try {
 	Function.prototype.call.apply( Function.prototype.bind, &#91; function() {} &#93; )();
 } catch ( err ) {}</code></pre>
-<p>Dobra, zwracanie niezaciemnionego kodu jest łatwe – wystarczy zwrócić parametr <code>func</code>. Tyle. Zatem po połączeniu wszystkiego razem, otrzymamy coś takiego:</p>
+<p class="tutorials-note ">Dobra, zwracanie niezaciemnionego kodu jest łatwe – wystarczy zwrócić parametr <code class="mdl-color--white mdl-color-text--orange-600">func</code>. Tyle. Zatem po połączeniu wszystkiego razem, otrzymamy coś takiego:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">var obfuscate = ( function() {
 	var a = Function.prototype;
 
@@ -126,18 +128,18 @@ g.call( window, 'whatever' );</code></pre>
 	};
 }() );</code></pre>
 <ul>
-	<li> Najpierw przypisujemy sobie <code>Function.prototype</code> do zmiennej <code>a</code> (żeby się później nie napisać i oszczędzić te parę bajtów).
-	</li><li> Sprawdzamy, czy obfuskacja w ogóle działa w bloku <code>try</code>/<code>catch</code>. Jeśli nie, jak gdyby nigdy nic zwracamy funkcję zwracającą parametr <code>func</code> (nieźle to brzmi).
+	<li> Najpierw przypisujemy sobie <code class="mdl-color--white mdl-color-text--orange-600">Function.prototype</code> do zmiennej <code class="mdl-color--white mdl-color-text--orange-600">a</code> (żeby się później nie napisać i oszczędzić te parę bajtów).
+	</li><li> Sprawdzamy, czy obfuskacja w ogóle działa w bloku <code class="mdl-color--white mdl-color-text--orange-600">try</code>/<code class="mdl-color--white mdl-color-text--orange-600">catch</code>. Jeśli nie, jak gdyby nigdy nic zwracamy funkcję zwracającą parametr <code class="mdl-color--white mdl-color-text--orange-600">func</code> (nieźle to brzmi).
 	</li><li> W innych przypadkach po prostu zwracamy funkcję zwracającą zaciemnioną funkcję
 </li></ul>
-<p>Przykład:</p>
+<p class="tutorials-note ">Przykład:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">var f = obfuscate( function( n, r ) {
 	return n + ':' + r;
 } );
 console.log( f( 'r', 't' ) ); // "r:t"
 console.log( f ); // function () { &#91;native code&#93; }</code></pre>
-<p>Demo online nie wstawiam, bo raczej za dynamiczne by nie było.</p>
-<p>Aaaaa, i taka uwaga na koniec: moja funkcja <code>obfuscate</code> bardzo lubi strict mode!</p>
+<p class="tutorials-note ">Demo online nie wstawiam, bo raczej za dynamiczne by nie było.</p>
+<p class="tutorials-note ">Aaaaa, i taka uwaga na koniec: moja funkcja <code class="mdl-color--white mdl-color-text--orange-600">obfuscate</code> bardzo lubi strict mode!</p>
 
 						</article>
 

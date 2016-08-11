@@ -32,8 +32,8 @@
 			<link rel="stylesheet" href="/css/custom.css">
 		</head>
 		<body>
-			<div class="mdl-layout mdl-js-layout">
-				<header class="mdl-layout__header mdl-layout__header--scroll">
+			<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+				<header class="mdl-layout__header">
 					<div class="mdl-layout__header-row">
 							<h1 class="mdl-layout-title">
 								<a href="/" class="mdl-layout-title__link mdl-color-text--white" title="« Powrót do spisu tutoriali">Tutorials</a>
