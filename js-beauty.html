@@ -41,7 +41,7 @@
 
 			<div class="container-fluid">
 				<div class="row">
-					<nav class="col-md-4 well" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+					<nav class="sidebar col-md-4 well">
 		<h2 class="sidebar-header">Spis treści</h2>
 			<div class="sidebar-inner">
 				<ul class="unstyled">
@@ -50,7 +50,7 @@
 			</div>
 		</nav>
 
-					<main class="col-md-8">
+					<main class="col-md-8 col-md-offset-0">
 						<article>
 						<h2 id="start">Wypieść swój JS <a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
 
@@ -338,8 +338,17 @@ API.resizeImg();
 			<script src="https://code.jquery.com/jquery-1.12.0.min.js" integrity="sha384-XxcvoeNF5V0ZfksTnV+bejnCsJjOOIzN6UVwF85WBsAnU3zeYh5bloN+L4WLgeNE" crossorigin="anonymous"></script>
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 			<script>
-			$( 'nav' ).on( 'affix.bs.affix', function() {
-				$( 'main' ).addClass( 'col-md-offset-4' );
+			$( 'nav' ).affix( {
+				offset: {
+					top: function() {
+						return ( this.top = $( '.navbar-fixed-top' ).outerHeight( true ) + 10 );
+					},
+					bottom: function () {
+						return ( this.bottom = $( '.site-footer' ).outerHeight( true ) + 10 );
+					}
+				}
+			} ).on( 'affix.bs.affix', function() {
+				$( 'main' ).removeClass( 'col-md-offset-0' ).addClass( 'col-md-offset-4' );
 			} ).on( 'affix-top.bs.affix affix-bottom.bs.affix', function() {
 				$( 'main' ).removeClass( 'col-md-offset-4' );
 			} );

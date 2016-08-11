@@ -8,7 +8,7 @@ var fs = require( 'fs' ),
 tutorials.forEach( function( tutorial ) {
 	var content = fs.readFileSync(tutDir + tutorial, 'utf8'),
 		output = tutTemplate,
-		nav = `<nav class="col-md-4 well" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+		nav = `<nav class="sidebar col-md-4 well">
 		<h2 class="sidebar-header">Spis treści</h2>
 			<div class="sidebar-inner">
 				<ul class="unstyled">
@@ -16,6 +16,7 @@ tutorials.forEach( function( tutorial ) {
 				</ul>
 			</div>
 		</nav>`,
+		offset = 0,
 		$ul = dom.load( nav )( 'ul' ),
 		tmp = parser.process( {
 			text: content,
@@ -27,9 +28,9 @@ tutorials.forEach( function( tutorial ) {
 	content = tmp.html;
 
 	var $ = dom.load( content ),
-	lastDepth = null,
-	lastElem = null,
-	currentSubmenu = null;
+		lastDepth = null,
+		lastElem = null,
+		currentSubmenu = null;
 
 	$ul.html( '' );
 
@@ -38,7 +39,7 @@ tutorials.forEach( function( tutorial ) {
 		this.addClass( 'alert-link' );
 	} );
 
-	$( 'h1,h2,h3,h4,h5,h6').each( function() {
+	$( 'h1, h2, h3, h4, h5, h6' ).each( function() {
 		if( this.is( '#start, h2:first-of-type' ) ) {
 			output = output.replace( /{TITLE}/g, this.html().replace( /<a.+?>.+?<\/a>/gi, '' ) );
 		} else {
@@ -68,13 +69,15 @@ tutorials.forEach( function( tutorial ) {
 		}
 	} );
 
-	if ( $ul.children.length > 0 ) {
+	if ( $ul.children().length > 0 ) {
 		nav = nav.replace( '{NAV}', $ul.html() );
 	} else {
 		nav = '';
+		offset = 2;
 	}
 
-	output = output.replace( '{NAV}', nav )
+	output = output.replace( '{NAV}', nav );
+	output = output.replace( '{OFFSET}', offset );
 	output = output.replace( '{CONTENT}', $.html() );
 	output = output.replace( '{DISQUS}', tutorial.replace( '.tpl', '' ) );
 

@@ -16,22 +16,22 @@ body {
 .site-footer a {
 	color: #fff;
 }
-nav.affix {
-	position: static !important;
+.sidebar.affix {
+	position: static;
 }
 @media screen and (min-width: 992px) {
-	nav.affix {
-		position: fixed !important;
+	.sidebar.affix {
+		position: fixed;
 	}
-	nav.affix {
+	.sidebar.affix {
 		left: 0;
 		top: 60px;
 		bottom: 0;
 	}
-	nav.affix .sidebar-header {
+	.sidebar.affix .sidebar-header {
 		height: 40px;
 	}
-	nav.affix .sidebar-inner {
+	.sidebar.affix .sidebar-inner {
 		position: absolute;
 		top: 80px;
 		bottom: 0;

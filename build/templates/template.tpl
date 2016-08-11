@@ -43,7 +43,7 @@
 				<div class="row">
 					{NAV}
 
-					<main class="col-md-8">
+					<main class="col-md-8 col-md-offset-{OFFSET}">
 						<article>
 						{CONTENT}
 						</article>
@@ -115,8 +115,17 @@
 			<script src="https://code.jquery.com/jquery-1.12.0.min.js" integrity="sha384-XxcvoeNF5V0ZfksTnV+bejnCsJjOOIzN6UVwF85WBsAnU3zeYh5bloN+L4WLgeNE" crossorigin="anonymous"></script>
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 			<script>
-			$( 'nav' ).on( 'affix.bs.affix', function() {
-				$( 'main' ).addClass( 'col-md-offset-4' );
+			$( 'nav' ).affix( {
+				offset: {
+					top: function() {
+						return ( this.top = $( '.navbar-fixed-top' ).outerHeight( true ) + 10 );
+					},
+					bottom: function () {
+						return ( this.bottom = $( '.site-footer' ).outerHeight( true ) + 10 );
+					}
+				}
+			} ).on( 'affix.bs.affix', function() {
+				$( 'main' ).removeClass( 'col-md-offset-0' ).addClass( 'col-md-offset-4' );
 			} ).on( 'affix-top.bs.affix affix-bottom.bs.affix', function() {
 				$( 'main' ).removeClass( 'col-md-offset-4' );
 			} );
