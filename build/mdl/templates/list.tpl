@@ -22,7 +22,7 @@
 			<![endif]-->
 			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Roboto:300,400,500,700%7CMaterial+Icons">
 			<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.deep_purple-indigo.min.css">
-			<link rel="stylesheet" href="/css/custom.css">
+			<link rel="stylesheet" href="/css/mdl/custom.css">
 		</head>
 		<body>
 			<div class="mdl-layout mdl-js-layout">
