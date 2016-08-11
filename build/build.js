@@ -8,15 +8,16 @@ var fs = require( 'fs' ),
 tutorials.forEach( function( tutorial ) {
 	var content = fs.readFileSync(tutDir + tutorial, 'utf8'),
 		output = tutTemplate,
-		nav = `<nav class="sidebar col-md-4 well">
-		<h2 class="sidebar-header">Spis treści</h2>
-			<div class="sidebar-inner">
-				<ul class="unstyled">
+		nav = `<div class="mdl-layout__drawer mdl-layout__drawer--wide">
+			<span class="mdl-layout-title">
+				<a href="/" class="mdl-layout-title__link" title="« Powrót do spisu tutoriali">Tutorials</a>
+			</span>
+			<nav>
+				<ul class="mdl-navigation">
 				{NAV}
 				</ul>
-			</div>
-		</nav>`,
-		offset = 0,
+			</nav>
+		</div>`,
 		$ul = dom.load( nav )( 'ul' ),
 		tmp = parser.process( {
 			text: content,
@@ -47,11 +48,13 @@ tutorials.forEach( function( tutorial ) {
 				html = '',
 				name = this.html().replace( /<a.+?>.+?<\/a>/gi, '' );
 
-			html = '<li><a href="#' + this.attr( 'id' ) + '">' + name + '</a></li>';
+			html = `<li class="mdl-navigation__item">
+				<a href="#${this.attr( 'id' )}" class="mdl-navigation__link">${name}</a>
+			</li>`;
 
 			if ( lastDepth ) {
 				if ( lastDepth < depth ) {
-					lastElem.append( '<ul class="unstyled"></ul>' );
+					lastElem.append( '<ul class="mdl-navigation"></ul>' );
 					currentSubmenu = lastElem.children().last();
 				} else if ( lastDepth > depth ) {
 					currentSubmenu = null;
@@ -77,7 +80,6 @@ tutorials.forEach( function( tutorial ) {
 	}
 
 	output = output.replace( '{NAV}', nav );
-	output = output.replace( '{OFFSET}', offset );
 	output = output.replace( '{CONTENT}', $.html() );
 	output = output.replace( '{DISQUS}', tutorial.replace( '.tpl', '' ) );
 

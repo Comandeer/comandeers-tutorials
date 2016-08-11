@@ -26,34 +26,54 @@
 			<!--[if lt IE 9]>
 				<script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 			<![endif]-->
-			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Roboto:300,400,500,700%7CMaterial+Icons">
 			<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.deep_purple-indigo.min.css">
 			<link rel="stylesheet" href="/css/prism.css">
 			<link rel="stylesheet" href="/css/custom.css">
 		</head>
 		<body>
-			<header class="navbar navbar-inverse navbar-fixed-top">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<h1 class="navbar-brand"><a href="/" title="« Powrót do spisu tutoriali">Tutorials</a></h1>
+			<div class="mdl-layout mdl-js-layout">
+				<header class="mdl-layout__header mdl-layout__header--scroll">
+					<div class="mdl-layout__header-row">
+							<h1 class="mdl-layout-title">
+								<a href="/" class="mdl-layout-title__link mdl-color-text--white" title="« Powrót do spisu tutoriali">Tutorials</a>
+							</h1>
 					</div>
-				</div>
-			</header>
+				</header>
 
-			<div class="container-fluid">
-				<div class="row">
-					<nav class="sidebar col-md-4 well">
-		<h2 class="sidebar-header">Spis treści</h2>
-			<div class="sidebar-inner">
-				<ul class="unstyled">
-				<li><a href="#parser">Inteligentny parser </a></li><li><a href="#krotszy-zapis">Krótszy zapis </a></li><li><a href="#strict">Strict mode </a></li><li><a href="#literaly">Literały </a></li><li><a href="#setTimeout">setTimeout </a></li><li><a href="#petle">Pętle i obiekty </a></li><li><a href="#namespaces">Funkcje natychmiastowego wywołania i przestrzenie nazw </a></li><li><a href="#feature-detection">Feature detection </a></li><li><a href="#delegation">Event delegation </a></li>
+				<div class="mdl-layout__drawer mdl-layout__drawer--wide">
+			<span class="mdl-layout-title">
+				<a href="/" class="mdl-layout-title__link" title="« Powrót do spisu tutoriali">Tutorials</a>
+			</span>
+			<nav>
+				<ul class="mdl-navigation">
+				<li class="mdl-navigation__item">
+				<a href="#parser" class="mdl-navigation__link">Inteligentny parser </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#krotszy-zapis" class="mdl-navigation__link">Krótszy zapis </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#strict" class="mdl-navigation__link">Strict mode </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#literaly" class="mdl-navigation__link">Literały </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#setTimeout" class="mdl-navigation__link">setTimeout </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#petle" class="mdl-navigation__link">Pętle i obiekty </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#namespaces" class="mdl-navigation__link">Funkcje natychmiastowego wywołania i przestrzenie nazw </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#feature-detection" class="mdl-navigation__link">Feature detection </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#delegation" class="mdl-navigation__link">Event delegation </a>
+			</li>
 				</ul>
-			</div>
-		</nav>
+			</nav>
+		</div>
 
-					<main class="col-md-8 col-md-offset-0">
-						<article>
-						<h2 id="start">Wypieść swój JS <a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+				<div class="mdl-layout__content">
+					<main class="content mdl-grid mdl-grid--no-spacing">
+						<article class="mdl-cell--12-col">
+							<h2 id="start">Wypieść swój JS <a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
 
 <p class="alert alert-danger">Ten tutorial jest już niestety dość przestarzały i opisuje starszą wersję standardu JS (ECMAScript 5) a także niektóre praktyki, których obecnie nawet ja nie uznaję już za najlepsze. Dlatego lepiej potraktuj go wyłącznie jako ciekawostkę historyczną… i poczekaj aż napiszę o JS coś równie sensownego.</p>
 
@@ -271,21 +291,22 @@ API.resizeImg();
 <p>Kiedy warto tego użyć? Jeśli np. mamy dużo przycisków na stronie i wszystkie są w jednym rodzicu. Zamiast przypisywać zdarzenia do każdego z nich, można przypisać te zdarzenia do ich rodzica i za pomocą <code>e.target</code> (w IE <code>e.srcElement</code>) sprawdzić, co tak naprawdę zostało kliknięte. Przydaje się także przy stronach ajaksowych, gdzie część elementów interaktywnych zostanie dodana po wczytaniu strony. Wtedy można doczepić zdarzenie np. do <code>body</code> i mieć pewność, że każdy przycisk będzie klikalny.</p>
 
 						</article>
-						<section id="komentarze">
-							<h2>Komentarze</h2>
+
+						<section id="komentarze" class="mdl-cell--12-col">
+							<h2 class="mdl-typography--title">Komentarze</h2>
 							<div id="disqus_thread"></div>
 							<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 							<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 						</section>
 					</main>
+
+					<footer class="mdl-mini-footer">
+						<div class="mdl-mini-footer__left-section">
+							<p>Copyright © by <a href="https://www.comandeer.pl" class="mdl-color-text--white" rel="author">Comandeer</a>.</p>
+						</div>
+					</footer>
 				</div>
 			</div>
-
-			<footer class="site-footer">
-				<div class="container-fluid">
-					<p>Copyright © by <a href="https://www.comandeer.pl" rel="author">Comandeer</a>.</p>
-				</div>
-			</footer>
 
 			<script>
 			( function() {

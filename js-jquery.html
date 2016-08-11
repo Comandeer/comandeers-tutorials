@@ -26,34 +26,62 @@
 			<!--[if lt IE 9]>
 				<script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 			<![endif]-->
-			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Roboto:300,400,500,700%7CMaterial+Icons">
 			<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.deep_purple-indigo.min.css">
 			<link rel="stylesheet" href="/css/prism.css">
 			<link rel="stylesheet" href="/css/custom.css">
 		</head>
 		<body>
-			<header class="navbar navbar-inverse navbar-fixed-top">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<h1 class="navbar-brand"><a href="/" title="« Powrót do spisu tutoriali">Tutorials</a></h1>
+			<div class="mdl-layout mdl-js-layout">
+				<header class="mdl-layout__header mdl-layout__header--scroll">
+					<div class="mdl-layout__header-row">
+							<h1 class="mdl-layout-title">
+								<a href="/" class="mdl-layout-title__link mdl-color-text--white" title="« Powrót do spisu tutoriali">Tutorials</a>
+							</h1>
 					</div>
-				</div>
-			</header>
+				</header>
 
-			<div class="container-fluid">
-				<div class="row">
-					<nav class="sidebar col-md-4 well">
-		<h2 class="sidebar-header">Spis treści</h2>
-			<div class="sidebar-inner">
-				<ul class="unstyled">
-				<li><a href="#mimo">Mimo że zdaje ci się inaczej </a></li><li><a href="#alternatywa">Alternatywa? </a></li><li><a href="#dom">Podstawowe operacje DOM-owe </a><ul class="unstyled"><li><a href="#selektory">Wyszukiwanie po selektorach </a></li><li><a href="#chaining">Chainowanie metod </a></li><li><a href="#delegation">Event delegation </a></li><li><a href="#clone"><code>.clone</code> </a></li><li><a href="#extend"><code>.extend</code> </a></li></ul></li><li><a href="#animacje">Animacje </a></li><li><a href="#xhr">XHR </a></li><li><a href="#ui">jQUI </a></li><li><a href="#ale">Ale za to w jQ da się… </a></li><li><a href="#czy-porzucic">Czy porzucić? </a></li>
+				<div class="mdl-layout__drawer mdl-layout__drawer--wide">
+			<span class="mdl-layout-title">
+				<a href="/" class="mdl-layout-title__link" title="« Powrót do spisu tutoriali">Tutorials</a>
+			</span>
+			<nav>
+				<ul class="mdl-navigation">
+				<li class="mdl-navigation__item">
+				<a href="#mimo" class="mdl-navigation__link">Mimo że zdaje ci się inaczej </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#alternatywa" class="mdl-navigation__link">Alternatywa? </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#dom" class="mdl-navigation__link">Podstawowe operacje DOM-owe </a>
+			<ul class="mdl-navigation"><li class="mdl-navigation__item">
+				<a href="#selektory" class="mdl-navigation__link">Wyszukiwanie po selektorach </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#chaining" class="mdl-navigation__link">Chainowanie metod </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#delegation" class="mdl-navigation__link">Event delegation </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#clone" class="mdl-navigation__link"><code>.clone</code> </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#extend" class="mdl-navigation__link"><code>.extend</code> </a>
+			</li></ul></li><li class="mdl-navigation__item">
+				<a href="#animacje" class="mdl-navigation__link">Animacje </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#xhr" class="mdl-navigation__link">XHR </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#ui" class="mdl-navigation__link">jQUI </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#ale" class="mdl-navigation__link">Ale za to w jQ da się… </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#czy-porzucic" class="mdl-navigation__link">Czy porzucić? </a>
+			</li>
 				</ul>
-			</div>
-		</nav>
+			</nav>
+		</div>
 
-					<main class="col-md-8 col-md-offset-0">
-						<article>
-						<h2 id="start">Czemu nie potrzebujesz jQuery? <a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+				<div class="mdl-layout__content">
+					<main class="content mdl-grid mdl-grid--no-spacing">
+						<article class="mdl-cell--12-col">
+							<h2 id="start">Czemu nie potrzebujesz jQuery? <a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
 
 <h3 id="mimo">Mimo że zdaje ci się inaczej <a href="#mimo" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Ten tutorial kieruję do wszystkich tych, którzy nie wyobrażają sobie wykonania jakiejkolwiek prostej czynności w JS bez użycia tej wszechstronnej biblioteki. Część zarzutów tyczy się też mnie, gdyż osobiście również korzystam z jQuery (hej, to nie moja wina, że DOM jest tak spaprany!)</p>
@@ -175,21 +203,22 @@ s.opacity = +( s.opacity || window.getComputedStyle( el )[ 'opacity' ] );
 <p>Dlatego nie mówię, żeby przestać jQ używać. Jeśli natomiast do stronki, gdzie trza oskryptować jeden link, wsadzasz jQ, to znak, że coś jest nie tego. Jeśli natomiast umiesz zastąpić jQ <a href="http://www.forumweb.pl/javascript/cancelbubble-stoppropagation-problem/397808#397808">własnym rozwiązaniem</a> i robisz to, gdy potrzebujesz jedną, konkretną rzecz, to oznacza, że jesteś zupełnie normalnym użytkownikiem tej biblioteki i syndrom uzależnienia Ciebie nie dotyczy.</p>
 
 						</article>
-						<section id="komentarze">
-							<h2>Komentarze</h2>
+
+						<section id="komentarze" class="mdl-cell--12-col">
+							<h2 class="mdl-typography--title">Komentarze</h2>
 							<div id="disqus_thread"></div>
 							<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 							<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 						</section>
 					</main>
+
+					<footer class="mdl-mini-footer">
+						<div class="mdl-mini-footer__left-section">
+							<p>Copyright © by <a href="https://www.comandeer.pl" class="mdl-color-text--white" rel="author">Comandeer</a>.</p>
+						</div>
+					</footer>
 				</div>
 			</div>
-
-			<footer class="site-footer">
-				<div class="container-fluid">
-					<p>Copyright © by <a href="https://www.comandeer.pl" rel="author">Comandeer</a>.</p>
-				</div>
-			</footer>
 
 			<script>
 			( function() {

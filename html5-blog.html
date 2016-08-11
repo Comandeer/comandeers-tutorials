@@ -26,34 +26,122 @@
 			<!--[if lt IE 9]>
 				<script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 			<![endif]-->
-			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Roboto:300,400,500,700%7CMaterial+Icons">
 			<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.deep_purple-indigo.min.css">
 			<link rel="stylesheet" href="/css/prism.css">
 			<link rel="stylesheet" href="/css/custom.css">
 		</head>
 		<body>
-			<header class="navbar navbar-inverse navbar-fixed-top">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<h1 class="navbar-brand"><a href="/" title="« Powrót do spisu tutoriali">Tutorials</a></h1>
+			<div class="mdl-layout mdl-js-layout">
+				<header class="mdl-layout__header mdl-layout__header--scroll">
+					<div class="mdl-layout__header-row">
+							<h1 class="mdl-layout-title">
+								<a href="/" class="mdl-layout-title__link mdl-color-text--white" title="« Powrót do spisu tutoriali">Tutorials</a>
+							</h1>
 					</div>
-				</div>
-			</header>
+				</header>
 
-			<div class="container-fluid">
-				<div class="row">
-					<nav class="sidebar col-md-4 well">
-		<h2 class="sidebar-header">Spis treści</h2>
-			<div class="sidebar-inner">
-				<ul class="unstyled">
-				<li><a href="#punkt-wyjscia">Punkt wyjścia </a></li><li><a href="#nasz-cel">Nasz cel </a></li><li><a href="#doctype">Nowy <code>DOCTYPE</code> </a></li><li><a href="#ustawienie-kodowania">Ustawienie kodowania </a></li><li><a href="#arkusz-styl&#xF3;w">Dołączanie arkusza stylów i skryptów </a></li><li><a href="#obsluga-ie">Obsługa starszych przeglądarek </a></li><li><a href="#naglowek">Nagłówek i nawigacja </a></li><li><a href="#artykul">Artykuł </a><ul class="unstyled"><li><a href="#artykul-ramy">Główne ramy </a></li><li><a href="#artykul-naglowek">Nagłówek </a></li><li><a href="#artykul-obrazki">Obrazki </a></li><li><a href="#artykul-outline">Outline </a></li><li><a href="#artykul-komentarz">Komentarze </a></li><li><a href="#artykul-calosc">Całość złożona do kupy </a></li></ul></li><li><a href="#sidebar">Sidebar </a></li><li><a href="#stopka">Stopka </a></li><li><a href="#formularze">Formularze (WebForms 2.0) </a><ul class="unstyled"><li><a href="#formularze-wyszukiwarka">Wyszukiwarka </a></li><li><a href="#formularze-nowe-pola">Nowe typy pól </a></li><li><a href="#formularze-bajery">Inne bajery i dostępność </a></li><li><a href="#formularze-obsluga">Kompatybilność </a></li></ul></li><li><a href="#rel"><code>&#91;rel&#93;</code> czyli dokąd to prowadzi </a><ul class="unstyled"><li><a href="#rel-lista">Lista dozwolonych <code>&#91;rel&#93;</code> </a></li><li><a href="#rel-rozszerzalnosc">Rozszerzalność </a></li></ul></li><li><a href="#wai-aria">WAI-ARIA </a><ul class="unstyled"><li><a href="#aria-role">Role </a></li><li><a href="#aria-wut">Ale po co to? </a></li></ul></li><li><a href="#semantyka">Dane semantyczne </a><ul class="unstyled"><li><a href="#semantyka-mikroformaty">Mikroformaty </a></li><li><a href="#microdata">Microdata </a></li><li><a href="#semantyka-inne">Inne formaty danych semantycznych </a></li></ul></li><li><a href="#dublin-core">Dublin Core </a></li><li><a href="#dostepnosc">Kilka uwag o dostępności </a></li><li><a href="#ostatnie">Ostatnie poprawki </a><ul class="unstyled"><li><a href="#wydajnosc">Wydajność i bezpieczeństwo </a></li><li><a href="#integracja">Integracja z zewnętrznymi usługami </a></li><li><a href="#kompatybilnosc">Kompatybilność </a></li></ul></li><li><a href="#nasz-blog">Nasz blog </a></li><li><a href="#przydatne">Przydatne linki </a><ul class="unstyled"><li><a href="#standardy">Standardy i oficjalne materiały </a></li><li><a href="#poradniki">Poradniki </a></li><li><a href="#narzedzia">Narzędzia </a></li></ul></li><li><a href="#changelog">Poprawki i takie tam </a></li>
+				<div class="mdl-layout__drawer mdl-layout__drawer--wide">
+			<span class="mdl-layout-title">
+				<a href="/" class="mdl-layout-title__link" title="« Powrót do spisu tutoriali">Tutorials</a>
+			</span>
+			<nav>
+				<ul class="mdl-navigation">
+				<li class="mdl-navigation__item">
+				<a href="#punkt-wyjscia" class="mdl-navigation__link">Punkt wyjścia </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#nasz-cel" class="mdl-navigation__link">Nasz cel </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#doctype" class="mdl-navigation__link">Nowy <code>DOCTYPE</code> </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#ustawienie-kodowania" class="mdl-navigation__link">Ustawienie kodowania </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#arkusz-styl&#xF3;w" class="mdl-navigation__link">Dołączanie arkusza stylów i skryptów </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#obsluga-ie" class="mdl-navigation__link">Obsługa starszych przeglądarek </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#naglowek" class="mdl-navigation__link">Nagłówek i nawigacja </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#artykul" class="mdl-navigation__link">Artykuł </a>
+			<ul class="mdl-navigation"><li class="mdl-navigation__item">
+				<a href="#artykul-ramy" class="mdl-navigation__link">Główne ramy </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#artykul-naglowek" class="mdl-navigation__link">Nagłówek </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#artykul-obrazki" class="mdl-navigation__link">Obrazki </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#artykul-outline" class="mdl-navigation__link">Outline </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#artykul-komentarz" class="mdl-navigation__link">Komentarze </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#artykul-calosc" class="mdl-navigation__link">Całość złożona do kupy </a>
+			</li></ul></li><li class="mdl-navigation__item">
+				<a href="#sidebar" class="mdl-navigation__link">Sidebar </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#stopka" class="mdl-navigation__link">Stopka </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#formularze" class="mdl-navigation__link">Formularze (WebForms 2.0) </a>
+			<ul class="mdl-navigation"><li class="mdl-navigation__item">
+				<a href="#formularze-wyszukiwarka" class="mdl-navigation__link">Wyszukiwarka </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#formularze-nowe-pola" class="mdl-navigation__link">Nowe typy pól </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#formularze-bajery" class="mdl-navigation__link">Inne bajery i dostępność </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#formularze-obsluga" class="mdl-navigation__link">Kompatybilność </a>
+			</li></ul></li><li class="mdl-navigation__item">
+				<a href="#rel" class="mdl-navigation__link"><code>&#91;rel&#93;</code> czyli dokąd to prowadzi </a>
+			<ul class="mdl-navigation"><li class="mdl-navigation__item">
+				<a href="#rel-lista" class="mdl-navigation__link">Lista dozwolonych <code>&#91;rel&#93;</code> </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#rel-rozszerzalnosc" class="mdl-navigation__link">Rozszerzalność </a>
+			</li></ul></li><li class="mdl-navigation__item">
+				<a href="#wai-aria" class="mdl-navigation__link">WAI-ARIA </a>
+			<ul class="mdl-navigation"><li class="mdl-navigation__item">
+				<a href="#aria-role" class="mdl-navigation__link">Role </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#aria-wut" class="mdl-navigation__link">Ale po co to? </a>
+			</li></ul></li><li class="mdl-navigation__item">
+				<a href="#semantyka" class="mdl-navigation__link">Dane semantyczne </a>
+			<ul class="mdl-navigation"><li class="mdl-navigation__item">
+				<a href="#semantyka-mikroformaty" class="mdl-navigation__link">Mikroformaty </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#microdata" class="mdl-navigation__link">Microdata </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#semantyka-inne" class="mdl-navigation__link">Inne formaty danych semantycznych </a>
+			</li></ul></li><li class="mdl-navigation__item">
+				<a href="#dublin-core" class="mdl-navigation__link">Dublin Core </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#dostepnosc" class="mdl-navigation__link">Kilka uwag o dostępności </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#ostatnie" class="mdl-navigation__link">Ostatnie poprawki </a>
+			<ul class="mdl-navigation"><li class="mdl-navigation__item">
+				<a href="#wydajnosc" class="mdl-navigation__link">Wydajność i bezpieczeństwo </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#integracja" class="mdl-navigation__link">Integracja z zewnętrznymi usługami </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#kompatybilnosc" class="mdl-navigation__link">Kompatybilność </a>
+			</li></ul></li><li class="mdl-navigation__item">
+				<a href="#nasz-blog" class="mdl-navigation__link">Nasz blog </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#przydatne" class="mdl-navigation__link">Przydatne linki </a>
+			<ul class="mdl-navigation"><li class="mdl-navigation__item">
+				<a href="#standardy" class="mdl-navigation__link">Standardy i oficjalne materiały </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#poradniki" class="mdl-navigation__link">Poradniki </a>
+			</li><li class="mdl-navigation__item">
+				<a href="#narzedzia" class="mdl-navigation__link">Narzędzia </a>
+			</li></ul></li><li class="mdl-navigation__item">
+				<a href="#changelog" class="mdl-navigation__link">Poprawki i takie tam </a>
+			</li>
 				</ul>
-			</div>
-		</nav>
+			</nav>
+		</div>
 
-					<main class="col-md-8 col-md-offset-0">
-						<article>
-						<h2 id="start">Semantyczny blog w HTML5 <a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+				<div class="mdl-layout__content">
+					<main class="content mdl-grid mdl-grid--no-spacing">
+						<article class="mdl-cell--12-col">
+							<h2 id="start">Semantyczny blog w HTML5 <a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
 
 <p class="alert alert-info">Ten tutorial przeznaczony jest dla tych, którzy już mają jakiekolwiek pojęcie o HTML. Dobrym miejscem na zdobycie podstaw wiedzy jest <a href="http://kurshtml.edu.pl" class="alert-link">Kurs HTML</a> czy też książka Ferrante <a href="http://ferrante.pl/books/html/" class="alert-link">Moja pierwsza strona internetowa w HTML5 i CSS3</a>.</p>
 <p>Witam wszystkich! Przeszukałem kilka for webmasterskich i nie znalazłem ani jednego tutoriala na temat HTML5. Trza to naprawić ;)</p>
@@ -777,21 +865,22 @@
 </details>
 
 						</article>
-						<section id="komentarze">
-							<h2>Komentarze</h2>
+
+						<section id="komentarze" class="mdl-cell--12-col">
+							<h2 class="mdl-typography--title">Komentarze</h2>
 							<div id="disqus_thread"></div>
 							<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 							<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 						</section>
 					</main>
+
+					<footer class="mdl-mini-footer">
+						<div class="mdl-mini-footer__left-section">
+							<p>Copyright © by <a href="https://www.comandeer.pl" class="mdl-color-text--white" rel="author">Comandeer</a>.</p>
+						</div>
+					</footer>
 				</div>
 			</div>
-
-			<footer class="site-footer">
-				<div class="container-fluid">
-					<p>Copyright © by <a href="https://www.comandeer.pl" rel="author">Comandeer</a>.</p>
-				</div>
-			</footer>
 
 			<script>
 			( function() {

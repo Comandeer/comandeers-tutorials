@@ -1,9 +1,18 @@
-.mdl-layout-title__link {
-	color: #fff;
-}
 .content {
 	margin: 0 auto;
 	max-width: 980px;
+}
+
+.mdl-navigation__item {
+	list-style: none;
+}
+
+@media screen and (min-width: 600px) {
+	.mdl-layout__drawer--wide {
+		width: 320px;
+		-webkit-transform: translateX(-330px);
+		transform: translateX(-330px);
+	}
 }
 
 h1[id] a, h2[id] a, h3[id] a, h2[id] a, h3[id] a, h4[id] a, h5[id] a, h6[id] a {
