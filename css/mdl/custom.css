@@ -1,0 +1,61 @@
+.content {
+	margin: 0 auto;
+	max-width: 980px;
+}
+
+.mdl-navigation__item {
+	list-style: none;
+}
+
+@media screen and (min-width: 600px) {
+	.mdl-layout__drawer--wide {
+		width: 320px;
+		-webkit-transform: translateX(-330px);
+		transform: translateX(-330px);
+	}
+}
+
+.tutorials-quote {
+	font-size: 1rem;
+}
+.tutorials-note {
+	padding: 5px;
+	border-radius: 3px;
+}
+
+h1[id] a, h2[id] a, h3[id] a, h2[id] a, h3[id] a, h4[id] a, h5[id] a, h6[id] a {
+	opacity: 0;
+	transition: opacity .7s ease-in-out;
+}
+h1[id]:hover a, h2[id]:hover a, h3[id]:hover a, h4[id]:hover a, h5[id]:hover a, h6[id]:hover a,
+h1 a:focus, h2 a:focus, h3 a:focus, h4 a:focus, h5 a:focus, h6 a:focus {
+	opacity: .6;
+}
+.code-switch {
+	cursor: pointer;
+}
+.code-switch {
+	font-size: smaller;
+	font-weight: bold;
+}
+pre {
+	max-height: 300px;
+	overflow: auto;
+}
+pre.expanded {
+	max-height: 99999px;
+}
+.code,.quote {
+	margin-top: 5px;
+}
+
+.sr-only {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}

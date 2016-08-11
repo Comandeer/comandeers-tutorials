@@ -1,12 +1,12 @@
 var fs = require( 'fs' ),
-	tutDir = './templates/tutorials/',
-	tutTemplate = fs.readFileSync( './templates/template.tpl', 'utf8' ),
+	tutDir = '../tutorials/',
+	tutTemplate = fs.readFileSync( './templates/tutorial.tpl', 'utf8' ),
 	parser = require( './bbcode' ),
 	dom = require( 'cheerio' ),
 	tutorials = fs.readdirSync( tutDir );
 
 tutorials.forEach( function( tutorial ) {
-	var content = fs.readFileSync(tutDir + tutorial, 'utf8'),
+	var content = fs.readFileSync( tutDir + tutorial, 'utf8' ),
 		output = tutTemplate,
 		nav = `<nav class="sidebar col-md-4 well">
 		<h2 class="sidebar-header">Spis treści</h2>
@@ -81,13 +81,13 @@ tutorials.forEach( function( tutorial ) {
 	output = output.replace( '{CONTENT}', $.html() );
 	output = output.replace( '{DISQUS}', tutorial.replace( '.tpl', '' ) );
 
-	fs.writeFileSync( '../' + tutorial.replace( 'tpl', 'html' ), output, 'utf8' );
+	fs.writeFileSync( '../../' + tutorial.replace( 'tpl', 'html' ), output, 'utf8' );
 } );
 
 // building list of tutorials
-var list = fs.readFileSync( './templates/list.tpl', 'utf8' ),
-	tuts = require( './tutslist' ),
-	arts = require( './artslist' ),
+var list = fs.readFileSync( './templates/index.tpl', 'utf8' ),
+	tuts = require( '../tutslist' ),
+	arts = require( '../artslist' ),
 	response = '',
 	artsr = '';
 
@@ -97,15 +97,19 @@ Object.keys( tuts ).forEach( function( t ) {
 	response += '<dt class="list-group-item active">' + t + '</dt>';
 
 	Object.keys( tut ).forEach( function( x ) {
-		response += '<dd class="list-group-item"><a href="http://tutorials.comandeer.pl/' + tut[ x ] + '.html" class="list-group-item-link">' + x + '</a></dd>';
+		response += `<dd class="list-group-item">
+			<a href="${tut[ x ]}.html" class="list-group-item-link">${x}</a>
+			</dd>`;
 	} );
 } );
 
 Object.keys( arts ).reverse().forEach( function( t ) {
-	artsr += '<li class="list-group-item"><a href="' + arts[ t ] + '" class="list-group-item-link">' + t + '</a></li>';
+	artsr += `<li class="list-group-item">
+		<a href="${arts[ t ]}" class="list-group-item-link">${t}</a>
+		</li>`;
 } );
 
 list = list.replace( '{LIST}', response );
 list = list.replace( '{ARTS}', artsr );
 
-fs.writeFileSync( '../index.html', list, 'utf8' );
+fs.writeFileSync( '../../index.html', list, 'utf8' );
