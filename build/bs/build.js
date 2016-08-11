@@ -6,7 +6,7 @@ var fs = require( 'fs' ),
 	tutorials = fs.readdirSync( tutDir );
 
 tutorials.forEach( function( tutorial ) {
-	var content = fs.readFileSync(tutDir + tutorial, 'utf8'),
+	var content = fs.readFileSync( tutDir + tutorial, 'utf8' ),
 		output = tutTemplate,
 		nav = `<nav class="sidebar col-md-4 well">
 		<h2 class="sidebar-header">Spis treści</h2>
@@ -97,12 +97,16 @@ Object.keys( tuts ).forEach( function( t ) {
 	response += '<dt class="list-group-item active">' + t + '</dt>';
 
 	Object.keys( tut ).forEach( function( x ) {
-		response += '<dd class="list-group-item"><a href="http://tutorials.comandeer.pl/' + tut[ x ] + '.html" class="list-group-item-link">' + x + '</a></dd>';
+		response += `<dd class="list-group-item">
+			<a href="${tut[ x ]}.html" class="list-group-item-link">${x}</a>
+			</dd>`;
 	} );
 } );
 
 Object.keys( arts ).reverse().forEach( function( t ) {
-	artsr += '<li class="list-group-item"><a href="' + arts[ t ] + '" class="list-group-item-link">' + t + '</a></li>';
+	artsr += `<li class="list-group-item">
+		<a href="${arts[ t ]}" class="list-group-item-link">${t}</a>
+		</li>`;
 } );
 
 list = list.replace( '{LIST}', response );

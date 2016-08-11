@@ -6,7 +6,7 @@ var fs = require( 'fs' ),
 	tutorials = fs.readdirSync( tutDir );
 
 tutorials.forEach( function( tutorial ) {
-	var content = fs.readFileSync( tutDir + tutorial, 'utf8'),
+	var content = fs.readFileSync( tutDir + tutorial, 'utf8' ),
 		output = tutTemplate,
 		nav = `<div class="mdl-layout__drawer mdl-layout__drawer--wide">
 			<span class="mdl-layout-title">

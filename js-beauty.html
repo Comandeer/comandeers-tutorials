@@ -22,78 +22,115 @@
 			 */
 			"open"in document.createElement("details")||document.addEventListener("DOMContentLoaded",function(){try{[].forEach.call(document.querySelectorAll("details"),function(e){var t=e.querySelector("summary"),n=function(n){n?(e.removeAttribute("open"),t.setAttribute("aria-expanded",!1)):(e.setAttribute("open","open"),t.setAttribute("aria-expanded",!0))},i=function(){n(e.hasAttribute("open"))};n(!e.hasAttribute("open")),t.setAttribute("tabindex",0),t.setAttribute("role","button"),t.addEventListener("click",i),t.addEventListener("keyup",function(e){-1!==[13,32].indexOf(e.keyCode)&&(e.preventDefault(),this.click())})})}catch(e){}})
 			</script>
-			<title>Wypieść swój JS </title>
+			<script async defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+			<title>Wypieść swój JS
+				</title>
 			<!--[if lt IE 9]>
 				<script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 			<![endif]-->
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Roboto:300,400,500,700%7CMaterial+Icons">
+			<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.deep_purple-indigo.min.css">
 			<link rel="stylesheet" href="/css/prism.css">
-			<link rel="stylesheet" href="/css/bs/custom.css">
+			<link rel="stylesheet" href="/css/mdl/custom.css">
 		</head>
 		<body>
-			<header class="navbar navbar-inverse navbar-fixed-top">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<h1 class="navbar-brand"><a href="/" title="« Powrót do spisu tutoriali">Tutorials</a></h1>
+			<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+				<header class="mdl-layout__header">
+					<div class="mdl-layout__header-row">
+							<h1 class="mdl-layout-title">
+								<a href="/" class="mdl-layout-title__link mdl-color-text--white" title="« Powrót do spisu tutoriali">Tutorials</a>
+							</h1>
 					</div>
-				</div>
-			</header>
+				</header>
 
-			<div class="container-fluid">
-				<div class="row">
-					<nav class="sidebar col-md-4 well">
-		<h2 class="sidebar-header">Spis treści</h2>
-			<div class="sidebar-inner">
-				<ul class="unstyled">
-				<li><a href="#parser">Inteligentny parser </a></li><li><a href="#krotszy-zapis">Krótszy zapis </a></li><li><a href="#strict">Strict mode </a></li><li><a href="#literaly">Literały </a></li><li><a href="#setTimeout">setTimeout </a></li><li><a href="#petle">Pętle i obiekty </a></li><li><a href="#namespaces">Funkcje natychmiastowego wywołania i przestrzenie nazw </a></li><li><a href="#feature-detection">Feature detection </a></li><li><a href="#delegation">Event delegation </a></li>
+				<div class="mdl-layout__drawer mdl-layout__drawer--wide">
+			<span class="mdl-layout-title">
+				<a href="/" class="mdl-layout-title__link" title="« Powrót do spisu tutoriali">Tutorials</a>
+			</span>
+			<nav>
+				<ul class="mdl-navigation">
+				<li class="mdl-navigation__item">
+				<a href="#parser" class="mdl-navigation__link">Inteligentny parser
+				</a>
+			</li><li class="mdl-navigation__item">
+				<a href="#krotszy-zapis" class="mdl-navigation__link">Krótszy zapis
+				</a>
+			</li><li class="mdl-navigation__item">
+				<a href="#strict" class="mdl-navigation__link">Strict mode
+				</a>
+			</li><li class="mdl-navigation__item">
+				<a href="#literaly" class="mdl-navigation__link">Literały
+				</a>
+			</li><li class="mdl-navigation__item">
+				<a href="#setTimeout" class="mdl-navigation__link">setTimeout
+				</a>
+			</li><li class="mdl-navigation__item">
+				<a href="#petle" class="mdl-navigation__link">Pętle i obiekty
+				</a>
+			</li><li class="mdl-navigation__item">
+				<a href="#namespaces" class="mdl-navigation__link">Funkcje natychmiastowego wywołania i przestrzenie nazw
+				</a>
+			</li><li class="mdl-navigation__item">
+				<a href="#feature-detection" class="mdl-navigation__link">Feature detection
+				</a>
+			</li><li class="mdl-navigation__item">
+				<a href="#delegation" class="mdl-navigation__link">Event delegation
+				</a>
+			</li>
 				</ul>
-			</div>
-		</nav>
+			</nav>
+		</div>
 
-					<main class="col-md-8 col-md-offset-0">
-						<article>
-						<h2 id="start">Wypieść swój JS <a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+				<div class="mdl-layout__content">
+					<main class="content mdl-grid mdl-grid--no-spacing">
+						<article class="mdl-cell--12-col">
+							<h2 class="mdl-typography--display-3" id="start">Wypieść swój JS<a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
+				</h2>
 
-<p class="alert alert-danger">Ten tutorial jest już niestety dość przestarzały i opisuje starszą wersję standardu JS (ECMAScript 5) a także niektóre praktyki, których obecnie nawet ja nie uznaję już za najlepsze. Dlatego lepiej potraktuj go wyłącznie jako ciekawostkę historyczną… i poczekaj aż napiszę o JS coś równie sensownego.</p>
+<p class="tutorials-note mdl-color--red mdl-color-text--black">Ten tutorial jest już niestety dość przestarzały i opisuje starszą wersję standardu JS (ECMAScript 5) a także niektóre praktyki, których obecnie nawet ja nie uznaję już za najlepsze. Dlatego lepiej potraktuj go wyłącznie jako ciekawostkę historyczną… i poczekaj aż napiszę o JS coś równie sensownego.</p>
 
-<h3 id="parser">Inteligentny parser <a href="#parser" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
-<p>JS to język, który pozwala chyba na największą dowolność w składni ze wszystkich języków programowania. Ba, jego parser jest tak sprawny, że sam sobie wstawia średniki w miejscach, w których być powinny.</p>
+<h3 class="mdl-typography--display-2" id="parser">Inteligentny parser<a href="#parser" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
+				</h3>
+<p class="tutorials-note ">JS to język, który pozwala chyba na największą dowolność w składni ze wszystkich języków programowania. Ba, jego parser jest tak sprawny, że sam sobie wstawia średniki w miejscach, w których być powinny.</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">return
 {};</code></pre>
-<p>Ten krótki kod – mimo że na pierwszy, a nawet drugi rzut oka wydaje się poprawny – rzuci nam ładny błąd na konsolę. Czemu? Bo parser widzi go tak:</p>
+<p class="tutorials-note ">Ten krótki kod – mimo że na pierwszy, a nawet drugi rzut oka wydaje się poprawny – rzuci nam ładny błąd na konsolę. Czemu? Bo parser widzi go tak:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">return; //bo niedbały programista zapomniał go tu dać
 {}; //o, a co tu robi definicja obiektu?</code></pre>
-<p>Przez to małe głupstwo kiedyś zraziłem się do JSON i za wszelką cenę próbowałem go omijać. Dlatego na sam początek porad ot, taki mały kwiatek z własnego doświadczenia.</p>
+<p class="tutorials-note ">Przez to małe głupstwo kiedyś zraziłem się do JSON i za wszelką cenę próbowałem go omijać. Dlatego na sam początek porad ot, taki mały kwiatek z własnego doświadczenia.</p>
 
-<h3 id="krotszy-zapis">Krótszy zapis <a href="#krotszy-zapis" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<h3 class="mdl-typography--display-2" id="krotszy-zapis">Krótszy zapis<a href="#krotszy-zapis" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
+				</h3>
 <p class="code">Kod:</p><pre><code class="language-javascript">var width = 0;
 var height = 0;
 var img = null;
 var elem = null;</code></pre>
-<p>vs.</p>
+<p class="tutorials-note ">vs.</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">var width = 0
 ,height = 0
 ,img = null
 ,elem = null;</code></pre>
-<p>IMO czytelniej. Gdyby ktoś pytał czemu przecinek jest przerzucony na początek nowej linii, a nie zostawiony na końcu poprzedniej: spróbuj pousuwać parę zmiennych z listy. Jeśli przecinek jest na końcu linijki, musisz usunąć interesującą Cię zmienną, a następnie przecinek. Tak usuwasz jedno i drugie za jednym zamachem i na pewno nie zostawisz przecinka przez nieuwagę.</p>
+<p class="tutorials-note ">IMO czytelniej. Gdyby ktoś pytał czemu przecinek jest przerzucony na początek nowej linii, a nie zostawiony na końcu poprzedniej: spróbuj pousuwać parę zmiennych z listy. Jeśli przecinek jest na końcu linijki, musisz usunąć interesującą Cię zmienną, a następnie przecinek. Tak usuwasz jedno i drugie za jednym zamachem i na pewno nie zostawisz przecinka przez nieuwagę.</p>
 
-<p class="alert alert-info">Od kiedy ten tutorial powstał, jednak powróciłem do "normalnego" sposobu zapisu przecinków. Mój styl można podejrzeć <a href="https://github.com/Comandeer" class="alert-link">na moim GitHubie</a>, a zwłaszcza <a href="https://github.com/BEMQuery/bemquery-package-boilerplate" class="alert-link">w projekcie BEMQuery</a>.</p>
+<p class="tutorials-note mdl-color--primary mdl-color-text--white">Od kiedy ten tutorial powstał, jednak powróciłem do "normalnego" sposobu zapisu przecinków. Mój styl można podejrzeć <a href="https://github.com/Comandeer" class="mdl-color-text--white">na moim GitHubie</a>, a zwłaszcza <a href="https://github.com/BEMQuery/bemquery-package-boilerplate" class="mdl-color-text--white">w projekcie BEMQuery</a>.</p>
 
-<h3 id="strict">Strict mode <a href="#strict" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
-<p>To małe cudeńko bardzo ułatwia życie, utrudniając je. Włączenie tzw. "strict mode" (tryb ścisły jak ktoś polski lubi) usuwa najbardziej bugowate części JS (np. <code>with</code> czy też ciut naprawia stringi w <code>setTimeout</code>). Co więcej, nie pozwala nam tworzyć nieświadomie zmiennych globalnych, np tak:</p>
+<h3 class="mdl-typography--display-2" id="strict">Strict mode<a href="#strict" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
+				</h3>
+<p class="tutorials-note ">To małe cudeńko bardzo ułatwia życie, utrudniając je. Włączenie tzw. "strict mode" (tryb ścisły jak ktoś polski lubi) usuwa najbardziej bugowate części JS (np. <code class="mdl-color--white mdl-color-text--orange-600">with</code> czy też ciut naprawia stringi w <code class="mdl-color--white mdl-color-text--orange-600">setTimeout</code>). Co więcej, nie pozwala nam tworzyć nieświadomie zmiennych globalnych, np tak:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">for(i = 0; i&lt;tab.length; i++)</code></pre>
-<p>W trybie ścisłym każda zmienna musi być zadeklarowana przed użyciem</p>
+<p class="tutorials-note ">W trybie ścisłym każda zmienna musi być zadeklarowana przed użyciem</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">for(var i = 0; i &lt; tab.length; i++)</code></pre>
-<p>A jak włączyć naszego małego przyjaciela? Prosto</p>
+<p class="tutorials-note ">A jak włączyć naszego małego przyjaciela? Prosto</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">"use strict"; //na samym początku skryptu żeby działał wszędzie
 function a()
 {
 	"use strict"; //lub w funkcji, aby działał tylko w niej
 }</code></pre>
-<p>Od razu uprzedzam, że jeśli nigdy nie zwracałeś uwagi na jakość swojego JS, to po włączeniu strict mode skrypty Ci się wykrzaczą. Ale przystosowanie ich do strict mode wcale nie jest trudne, a w przyszłości na pewno przyniesie korzyści (bo np. ociupinkę zmieni się składnia JS).</p>
+<p class="tutorials-note ">Od razu uprzedzam, że jeśli nigdy nie zwracałeś uwagi na jakość swojego JS, to po włączeniu strict mode skrypty Ci się wykrzaczą. Ale przystosowanie ich do strict mode wcale nie jest trudne, a w przyszłości na pewno przyniesie korzyści (bo np. ociupinkę zmieni się składnia JS).</p>
 
-<h3 id="literaly">Literały <a href="#literaly" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
-<p>Spójrzmy na ten kod:</p>
+<h3 class="mdl-typography--display-2" id="literaly">Literały<a href="#literaly" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
+				</h3>
+<p class="tutorials-note ">Spójrzmy na ten kod:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">var a = new Array(1, 2, 3)
 ,b = new Object();
 
@@ -105,7 +142,7 @@ for(var i = 0; i&lt;a.length; i++)
 
 for(var x in b)
 	console.log(b&#91;x&#93;);</code></pre>
-<p>Wydaje się zupełnie poprawny, prawda? Owszem, może i jest poprawny, ale nie bezpieczny!</p>
+<p class="tutorials-note ">Wydaje się zupełnie poprawny, prawda? Owszem, może i jest poprawny, ale nie bezpieczny!</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">Array = function() {return '';};
 Object = Array;
 
@@ -120,7 +157,7 @@ for(var i = 0; i&lt;a.length; i++)
 
 for(var x in b)
 	console.log(b&#91;x&#93;);</code></pre>
-<p>I mamy krzak, nawet w strict mode! Bezpieczniej użyć literałów:</p>
+<p class="tutorials-note ">I mamy krzak, nawet w strict mode! Bezpieczniej użyć literałów:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">Array = function() {return '';};
 Object = Array;
 
@@ -132,20 +169,22 @@ for(var i = 0; i &lt; a.length; i++)
 
 for(var x in b)
 	console.log(b&#91;x&#93;);</code></pre>
-<p>Tych wykrzaczyć się nie da ;)</p>
+<p class="tutorials-note ">Tych wykrzaczyć się nie da ;)</p>
 
-<h3 id="setTimeout">setTimeout <a href="#setTimeout" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
-<p>Nie przekazuj nazwy funkcji jako stringa!</p>
+<h3 class="mdl-typography--display-2" id="setTimeout">setTimeout<a href="#setTimeout" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
+				</h3>
+<p class="tutorials-note ">Nie przekazuj nazwy funkcji jako stringa!</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">setTimeout("funkcja()", 1000); //don't do this!</code></pre>
-<p>Tym samym wywołujesz sobie <code>eval</code>, a jak każdy wie – <code>eval</code> jest <s>złe</s> niepotrzebnie wykorzystywane, co jedynie obniża wydajność! Przekaż uchwyt do funkcji:</p>
+<p class="tutorials-note ">Tym samym wywołujesz sobie <code class="mdl-color--white mdl-color-text--orange-600">eval</code>, a jak każdy wie – <code class="mdl-color--white mdl-color-text--orange-600">eval</code> jest <s>złe</s> niepotrzebnie wykorzystywane, co jedynie obniża wydajność! Przekaż uchwyt do funkcji:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">setTimeout(funkcja, 1000);</code></pre>
-<p>A jak już musisz parametry przekazać:</p>
+<p class="tutorials-note ">A jak już musisz parametry przekazać:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">setTimeout(function(){funkcja(1, 2);}, 1000);
 //lub
 setTimeout(funkcja, 1000, 1, 2);</code></pre>
 
-<h3 id="petle">Pętle i obiekty <a href="#petle" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
-<p>Masz obiekt i musisz po nim poiterować? Zapewne robisz coś takiego:</p>
+<h3 class="mdl-typography--display-2" id="petle">Pętle i obiekty<a href="#petle" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
+				</h3>
+<p class="tutorials-note ">Masz obiekt i musisz po nim poiterować? Zapewne robisz coś takiego:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">var o = {
 	a: 1
 	,b: 2
@@ -156,7 +195,7 @@ for(var x in o)
 {
 	console.log(o&#91;x&#93;);
 }</code></pre>
-<p>Zgadłem? No to źle robisz:</p>
+<p class="tutorials-note ">Zgadłem? No to źle robisz:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">Object.prototype.oops = 'BUGAHA!';
 
 var o = {
@@ -169,7 +208,7 @@ for(var x in o)
 {
 	console.log(o&#91;x&#93;);
 }</code></pre>
-<p>Powyższy kod wyświetli nam także 'BUGAHA!' (bo <code>for..in</code> iteruje także po wszystkich nienatywnych rozszerzeniach prototypu <code>Object</code>). Nie tego chcemy, prawda? A wystarczy dodać jedną linijkę:</p>
+<p class="tutorials-note ">Powyższy kod wyświetli nam także 'BUGAHA!' (bo <code class="mdl-color--white mdl-color-text--orange-600">for..in</code> iteruje także po wszystkich nienatywnych rozszerzeniach prototypu <code class="mdl-color--white mdl-color-text--orange-600">Object</code>). Nie tego chcemy, prawda? A wystarczy dodać jedną linijkę:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">Object.prototype.oops = 'BUGAHA!';
 
 var o = {
@@ -183,8 +222,8 @@ for(var x in o)
 	if(o.hasOwnProperty(x))
 		console.log(o&#91;x&#93;);
 }</code></pre>
-<p>I już. Metoda <code>hasOwnProperty</code> sprawdza czy wartość podana jako x na pewno jest częścią naszego obiektu i czy nie pochodzi z prototypu.</p>
-<p>Jest też inny sposób, aby zupełnie ominąć jakiekolwiek prototypy i nie martwić się o nie:</p>
+<p class="tutorials-note ">I już. Metoda <code class="mdl-color--white mdl-color-text--orange-600">hasOwnProperty</code> sprawdza czy wartość podana jako x na pewno jest częścią naszego obiektu i czy nie pochodzi z prototypu.</p>
+<p class="tutorials-note ">Jest też inny sposób, aby zupełnie ominąć jakiekolwiek prototypy i nie martwić się o nie:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">Object.prototype.oops = 'BUGAHA!';
 
 var o = Object.create(null);
@@ -196,8 +235,8 @@ for(var x in o)
 {
 	console.log(o&#91;x&#93;);
 }</code></pre>
-<p><code>Object.create</code> tworzy nam obiekt z prototypu podanego jako pierwszy parametr, tak więc tworzymy obiekt z pustym prototypem (domyślnie jest to <code>Object.prototype</code>). W starszych przeglądarkach ten sposób nie działa.</p>
-<p>Jeszcze ładniej można to zrobić, korzystając z <code>Object.keys</code> (która to metoda nie szuka niczego w prototypach i zwraca wszystko w postaci normalnej tablicy kluczy):</p>
+<p class="tutorials-note "><code class="mdl-color--white mdl-color-text--orange-600">Object.create</code> tworzy nam obiekt z prototypu podanego jako pierwszy parametr, tak więc tworzymy obiekt z pustym prototypem (domyślnie jest to <code class="mdl-color--white mdl-color-text--orange-600">Object.prototype</code>). W starszych przeglądarkach ten sposób nie działa.</p>
+<p class="tutorials-note ">Jeszcze ładniej można to zrobić, korzystając z <code class="mdl-color--white mdl-color-text--orange-600">Object.keys</code> (która to metoda nie szuka niczego w prototypach i zwraca wszystko w postaci normalnej tablicy kluczy):</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">var o = {
 	a: 1
 	,b: 2
@@ -209,16 +248,17 @@ Object.keys(o).forEach(function(x)
 	console.log(o&#91;x&#93;);
 });</code></pre>
 
-<h3 id="namespaces">Funkcje natychmiastowego wywołania i przestrzenie nazw <a href="#namespaces" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
-<p>Każdy doskonale wie, że zmienne globalne są bleeee. Jednak w wielu skryptach można znaleźć coś takiego:</p>
+<h3 class="mdl-typography--display-2" id="namespaces">Funkcje natychmiastowego wywołania i przestrzenie nazw<a href="#namespaces" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
+				</h3>
+<p class="tutorials-note ">Każdy doskonale wie, że zmienne globalne są bleeee. Jednak w wielu skryptach można znaleźć coś takiego:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">var width = 0;
 var height = 0;
 var img = null;
 var elem = null;
 //itp.</code></pre>
-<p>Tym sposobem brudzimy sobie globalny scope!</p>
+<p class="tutorials-note ">Tym sposobem brudzimy sobie globalny scope!</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">console.log(window&#91;'width'&#93;);</code></pre>
-<p>A można lepiej, wykorzystując zasięg zmiennych:</p>
+<p class="tutorials-note ">A można lepiej, wykorzystując zasięg zmiennych:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">(function()
 {
 	var width = 0;
@@ -227,7 +267,7 @@ var elem = null;
 	var elem = null;
 }());
 console.log(window&#91;'width'&#93;);</code></pre>
-<p>OK, a jeśli chcemy coś specjalnie umieścić w globalnym scope, np. funkcje naszego super-hiper API? Oczywiście głupim pomysłem jest ładowanie oddzielnie wszystkich 150+ funkcji, bo istnieje szansa, że coś naszego nadpisze funkcje już używane na stronie (np. funkcja o nazwie <code>resizeImg</code>). Wtedy możemy posłużyć się przestrzenią nazw:</p>
+<p class="tutorials-note ">OK, a jeśli chcemy coś specjalnie umieścić w globalnym scope, np. funkcje naszego super-hiper API? Oczywiście głupim pomysłem jest ładowanie oddzielnie wszystkich 150+ funkcji, bo istnieje szansa, że coś naszego nadpisze funkcje już używane na stronie (np. funkcja o nazwie <code class="mdl-color--white mdl-color-text--orange-600">resizeImg</code>). Wtedy możemy posłużyć się przestrzenią nazw:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">
 var API = {
 	resizeImg: function()
@@ -237,7 +277,7 @@ var API = {
 };
 API.resizeImg();
 </code></pre>
-<p>Po połączeniu obydwu metod możemy osiągnąć coś takiego</p>
+<p class="tutorials-note ">Po połączeniu obydwu metod możemy osiągnąć coś takiego</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">(function($)
 {
 	var API = {}
@@ -246,18 +286,20 @@ API.resizeImg();
 	API.resizeImg = resizeImg;
 	$.API = API;
 }(window))</code></pre>
-<p>Voila! W globalnym scope mamy tylko to, co chcieliśmy mieć!</p>
+<p class="tutorials-note ">Voila! W globalnym scope mamy tylko to, co chcieliśmy mieć!</p>
 
-<h3 id="feature-detection">Feature detection <a href="#feature-detection" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
-<blockquote><p>Sniffing an user agent is like sniffing a glue</p><footer><cite>"porneL"</cite></footer></blockquote>
-<p>Dlatego też, zamiast opierać się na wątpliwym przekonaniu, że w IE 5.5.1733958399 zainstalowanym pod Win XP z SP 14 na pewno to działa, warto sprawdzić czy naprawdę funkcja x istnieje i jest funkcją. Wyobraźmy sobie choćby, że chcemy stworzyć obiekt przy pomocy <code>Object.create</code>, ale nie jesteśmy pewni czy ta metoda istnieje:</p>
+<h3 class="mdl-typography--display-2" id="feature-detection">Feature detection<a href="#feature-detection" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
+				</h3>
+<blockquote class="tutorials-quote"><p>Sniffing an user agent is like sniffing a glue</p><cite>"porneL"</cite></blockquote>
+<p class="tutorials-note ">Dlatego też, zamiast opierać się na wątpliwym przekonaniu, że w IE 5.5.1733958399 zainstalowanym pod Win XP z SP 14 na pewno to działa, warto sprawdzić czy naprawdę funkcja x istnieje i jest funkcją. Wyobraźmy sobie choćby, że chcemy stworzyć obiekt przy pomocy <code class="mdl-color--white mdl-color-text--orange-600">Object.create</code>, ale nie jesteśmy pewni czy ta metoda istnieje:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">var o = Object.create(null);</code></pre>
-<p>W starszych IE wywali nam ładny ReferrenceError. A wystarczy sprawdzić czy ta metoda istnieje:</p>
+<p class="tutorials-note ">W starszych IE wywali nam ładny ReferrenceError. A wystarczy sprawdzić czy ta metoda istnieje:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">if(typeof Object.create === 'function')</code></pre>
-<p>Jeśli nie, to można walnąć <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object/create#Polyfill">polyfilla</a>. Na tej samej zasadzie działa cała biblioteka <a href="http://modernizr.com">Modernizr</a>.</p>
+<p class="tutorials-note ">Jeśli nie, to można walnąć <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object/create#Polyfill">polyfilla</a>. Na tej samej zasadzie działa cała biblioteka <a href="http://modernizr.com">Modernizr</a>.</p>
 
-<h3 id="delegation">Event delegation <a href="#delegation" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
-<p>Zdarzenia bąbelkują (jak ktoś nie wierzy, to niech <a href="http://www.quirksmode.org/js/events_order.html">poczyta</a>). Dlatego też możliwe staje się odkrycie, że jakiś tam akapit w jakimś tam divie został kliknięty.</p>
+<h3 class="mdl-typography--display-2" id="delegation">Event delegation<a href="#delegation" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
+				</h3>
+<p class="tutorials-note ">Zdarzenia bąbelkują (jak ktoś nie wierzy, to niech <a href="http://www.quirksmode.org/js/events_order.html">poczyta</a>). Dlatego też możliwe staje się odkrycie, że jakiś tam akapit w jakimś tam divie został kliknięty.</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">(function(d)
 {
 	d.getElementsByTagName('div')&#91;0&#93;.addEventListener('click', function(e)
@@ -267,24 +309,25 @@ API.resizeImg();
 			console.log(t.innerHTML);
 	}, false);
 }(document));</code></pre>
-<p>Kiedy warto tego użyć? Jeśli np. mamy dużo przycisków na stronie i wszystkie są w jednym rodzicu. Zamiast przypisywać zdarzenia do każdego z nich, można przypisać te zdarzenia do ich rodzica i za pomocą <code>e.target</code> (w IE <code>e.srcElement</code>) sprawdzić, co tak naprawdę zostało kliknięte. Przydaje się także przy stronach ajaksowych, gdzie część elementów interaktywnych zostanie dodana po wczytaniu strony. Wtedy można doczepić zdarzenie np. do <code>body</code> i mieć pewność, że każdy przycisk będzie klikalny.</p>
+<p class="tutorials-note ">Kiedy warto tego użyć? Jeśli np. mamy dużo przycisków na stronie i wszystkie są w jednym rodzicu. Zamiast przypisywać zdarzenia do każdego z nich, można przypisać te zdarzenia do ich rodzica i za pomocą <code class="mdl-color--white mdl-color-text--orange-600">e.target</code> (w IE <code class="mdl-color--white mdl-color-text--orange-600">e.srcElement</code>) sprawdzić, co tak naprawdę zostało kliknięte. Przydaje się także przy stronach ajaksowych, gdzie część elementów interaktywnych zostanie dodana po wczytaniu strony. Wtedy można doczepić zdarzenie np. do <code class="mdl-color--white mdl-color-text--orange-600">body</code> i mieć pewność, że każdy przycisk będzie klikalny.</p>
 
 						</article>
-						<section id="komentarze">
-							<h2>Komentarze</h2>
+
+						<section id="komentarze" class="mdl-cell--12-col">
+							<h2 class="mdl-typography--title">Komentarze</h2>
 							<div id="disqus_thread"></div>
 							<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 							<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 						</section>
 					</main>
+
+					<footer class="mdl-mini-footer">
+						<div class="mdl-mini-footer__left-section">
+							<p>Copyright © by <a href="https://www.comandeer.pl" class="mdl-color-text--white" rel="author">Comandeer</a>.</p>
+						</div>
+					</footer>
 				</div>
 			</div>
-
-			<footer class="site-footer">
-				<div class="container-fluid">
-					<p>Copyright © by <a href="https://www.comandeer.pl" rel="author">Comandeer</a>.</p>
-				</div>
-			</footer>
 
 			<script>
 			( function() {
@@ -335,24 +378,6 @@ API.resizeImg();
 				} catch( err ) {}
 			} () );
 			</script>
-			<script src="https://code.jquery.com/jquery-1.12.0.min.js" integrity="sha384-XxcvoeNF5V0ZfksTnV+bejnCsJjOOIzN6UVwF85WBsAnU3zeYh5bloN+L4WLgeNE" crossorigin="anonymous"></script>
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-			<script>
-			$( 'nav' ).affix( {
-				offset: {
-					top: function() {
-						return ( this.top = $( '.navbar-fixed-top' ).outerHeight( true ) + 10 );
-					},
-					bottom: function () {
-						return ( this.bottom = $( '.site-footer' ).outerHeight( true ) + 10 );
-					}
-				}
-			} ).on( 'affix.bs.affix', function() {
-				$( 'main' ).removeClass( 'col-md-offset-0' ).addClass( 'col-md-offset-4' );
-			} ).on( 'affix-top.bs.affix affix-bottom.bs.affix', function() {
-				$( 'main' ).removeClass( 'col-md-offset-4' );
-			} );
-			</script>
-			<script src="/js/prism.js"></script>
+			<script async src="/js/prism.js"></script>
 		</body>
 	</html>
