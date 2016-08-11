@@ -1,6 +1,6 @@
 var fs = require( 'fs' ),
 	tutDir = '../tutorials/',
-	tutTemplate = fs.readFileSync( './templates/template.tpl', 'utf8' ),
+	tutTemplate = fs.readFileSync( './templates/tutorial.tpl', 'utf8' ),
 	parser = require( './bbcode' ),
 	dom = require( 'cheerio' ),
 	tutorials = fs.readdirSync( tutDir );
@@ -85,7 +85,7 @@ tutorials.forEach( function( tutorial ) {
 } );
 
 // building list of tutorials
-var list = fs.readFileSync( './templates/list.tpl', 'utf8' ),
+var list = fs.readFileSync( './templates/index.tpl', 'utf8' ),
 	tuts = require( '../tutslist' ),
 	arts = require( '../artslist' ),
 	response = '',

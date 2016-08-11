@@ -22,139 +22,104 @@
 			 */
 			"open"in document.createElement("details")||document.addEventListener("DOMContentLoaded",function(){try{[].forEach.call(document.querySelectorAll("details"),function(e){var t=e.querySelector("summary"),n=function(n){n?(e.removeAttribute("open"),t.setAttribute("aria-expanded",!1)):(e.setAttribute("open","open"),t.setAttribute("aria-expanded",!0))},i=function(){n(e.hasAttribute("open"))};n(!e.hasAttribute("open")),t.setAttribute("tabindex",0),t.setAttribute("role","button"),t.addEventListener("click",i),t.addEventListener("keyup",function(e){-1!==[13,32].indexOf(e.keyCode)&&(e.preventDefault(),this.click())})})}catch(e){}})
 			</script>
-			<script async defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-			<title>WebComponents i Polymer - niespełniony sen?
-				</title>
+			<title>WebComponents i Polymer - niespełniony sen? </title>
 			<!--[if lt IE 9]>
 				<script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 			<![endif]-->
-			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Roboto:300,400,500,700%7CMaterial+Icons">
-			<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.deep_purple-indigo.min.css">
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 			<link rel="stylesheet" href="/css/prism.css">
-			<link rel="stylesheet" href="/css/mdl/custom.css">
+			<link rel="stylesheet" href="/css/bs/custom.css">
 		</head>
 		<body>
-			<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-				<header class="mdl-layout__header">
-					<div class="mdl-layout__header-row">
-							<h1 class="mdl-layout-title">
-								<a href="/" class="mdl-layout-title__link mdl-color-text--white" title="« Powrót do spisu tutoriali">Tutorials</a>
-							</h1>
+			<header class="navbar navbar-inverse navbar-fixed-top">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<h1 class="navbar-brand"><a href="/" title="« Powrót do spisu tutoriali">Tutorials</a></h1>
 					</div>
-				</header>
+				</div>
+			</header>
 
-				<div class="mdl-layout__drawer mdl-layout__drawer--wide">
-			<span class="mdl-layout-title">
-				<a href="/" class="mdl-layout-title__link" title="« Powrót do spisu tutoriali">Tutorials</a>
-			</span>
-			<nav>
-				<ul class="mdl-navigation">
-				<li class="mdl-navigation__item">
-				<a href="#zalozenia" class="mdl-navigation__link">Założenia a rzeczywistość
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#polymer" class="mdl-navigation__link">Polymer - wrzód na tyłku
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#template" class="mdl-navigation__link">Szablony
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#shadow-dom" class="mdl-navigation__link">ShadowDOM
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#imports" class="mdl-navigation__link">HTML Imports
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#dostepnosc" class="mdl-navigation__link">Dostępność
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#co-dalej" class="mdl-navigation__link">I co dalej?
-				</a>
-			</li>
+			<div class="container-fluid">
+				<div class="row">
+					<nav class="sidebar col-md-4 well">
+		<h2 class="sidebar-header">Spis treści</h2>
+			<div class="sidebar-inner">
+				<ul class="unstyled">
+				<li><a href="#zalozenia">Założenia a rzeczywistość </a></li><li><a href="#polymer">Polymer - wrzód na tyłku </a></li><li><a href="#template">Szablony </a></li><li><a href="#shadow-dom">ShadowDOM </a></li><li><a href="#imports">HTML Imports </a></li><li><a href="#dostepnosc">Dostępność </a></li><li><a href="#co-dalej">I co dalej? </a></li>
 				</ul>
-			</nav>
-		</div>
+			</div>
+		</nav>
 
-				<div class="mdl-layout__content">
-					<main class="content mdl-grid mdl-grid--no-spacing">
-						<article class="mdl-cell--12-col">
-							<h2 class="mdl-typography--display-3" id="start">WebComponents i Polymer - niespełniony sen?<a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h2>
-<p class="tutorials-note ">Nie tak dawno <a href="http://webroad.pl/javascript/3505-web-components">zachwycałem się potęgą Web Components</a>, wieszcząc im świetlaną przyszłość w webmasterskim świecie. Po kilku miesiącach używania tej technologii przyszedł czas na pierwsze refleksje i ostudzenie zbyt wcześnie zapalonego entuzjazmu. Trzeba posypać głowę popiołem i powiedzieć wprost: "To nie tak miało być".</p>
+					<main class="col-md-8 col-md-offset-0">
+						<article>
+						<h2 id="start">WebComponents i Polymer - niespełniony sen? <a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
+<p>Nie tak dawno <a href="http://webroad.pl/javascript/3505-web-components">zachwycałem się potęgą Web Components</a>, wieszcząc im świetlaną przyszłość w webmasterskim świecie. Po kilku miesiącach używania tej technologii przyszedł czas na pierwsze refleksje i ostudzenie zbyt wcześnie zapalonego entuzjazmu. Trzeba posypać głowę popiołem i powiedzieć wprost: "To nie tak miało być".</p>
 
-<h3 class="mdl-typography--display-2" id="zalozenia">Założenia a rzeczywistość<a href="#zalozenia" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h3>
-<p class="tutorials-note ">Nie ukrywam, że w Web Components od samego początku upatrywałem nie tyle całkowitej zmiany paradygmatu tworzenia zaawansowanych aplikacji internetowych, co po prostu naturalnej i wymaganej obecnym stanem Sieci ewolucji. Ewolucji na polu <b>tworzenia <a href="http://www.reactivemanifesto.org/">responsywnych</a> interfejsów użytkownika</b>. Tyle. Tylko tyle i aż tyle.</p>
-<p class="tutorials-note ">Nigdy nie myślałem, żeby do znacznika móc włożyć logikę aplikacji, która nijak się ma do interfejsu… Okazało się jednak, że jestem w przytłaczającej mniejszości. Większość komponentów bowiem, które możemy znaleźć w Sieci, dotyczy rzeczy, które niegdyś były domeną potężnych frameworków MVW. <a href="http://component.kitchen/components/app-router">Deklaratywny router</a>, który wczytuje strony, będące… komponentami? Może i początkowo ta idea wydaje się interesująca, ale bardzo łatwo się przekonać jak bardzo strzelamy sobie w kolano, przenosząc lwią część logiki do HTML. To przerost formy nad treścią w swoim najdoskonalszym wydaniu - zamiast zrobić normalne linki i normalnie wczytywać strony z wykorzystaniem History API, tworzymy rozwiązanie problemu, który… sami na szybko stwarzamy. Tak, Web Components są fajne, ale to nie znaczy, że mamy wszystko na nie przepisać, tworząc rozwiązania niezwykle trudne do rozwijania i utrzymywania. Obawiam się jednak, że takie wykorzystanie Web Components będzie się stawać coraz bardziej popularne (wystarczy tutaj powiedzieć, że przecież Angular 2.0 będzie intensywnie korzystał z Polymera). Czy na pewno chcemy w pełni deklaratywnej Sieci? A jeśli tak, to dlaczego kiedyś protestowaliśmy przeciwko XHTML 2.0?</p>
+<h3 id="zalozenia">Założenia a rzeczywistość <a href="#zalozenia" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<p>Nie ukrywam, że w Web Components od samego początku upatrywałem nie tyle całkowitej zmiany paradygmatu tworzenia zaawansowanych aplikacji internetowych, co po prostu naturalnej i wymaganej obecnym stanem Sieci ewolucji. Ewolucji na polu <b>tworzenia <a href="http://www.reactivemanifesto.org/">responsywnych</a> interfejsów użytkownika</b>. Tyle. Tylko tyle i aż tyle.</p>
+<p>Nigdy nie myślałem, żeby do znacznika móc włożyć logikę aplikacji, która nijak się ma do interfejsu… Okazało się jednak, że jestem w przytłaczającej mniejszości. Większość komponentów bowiem, które możemy znaleźć w Sieci, dotyczy rzeczy, które niegdyś były domeną potężnych frameworków MVW. <a href="http://component.kitchen/components/app-router">Deklaratywny router</a>, który wczytuje strony, będące… komponentami? Może i początkowo ta idea wydaje się interesująca, ale bardzo łatwo się przekonać jak bardzo strzelamy sobie w kolano, przenosząc lwią część logiki do HTML. To przerost formy nad treścią w swoim najdoskonalszym wydaniu - zamiast zrobić normalne linki i normalnie wczytywać strony z wykorzystaniem History API, tworzymy rozwiązanie problemu, który… sami na szybko stwarzamy. Tak, Web Components są fajne, ale to nie znaczy, że mamy wszystko na nie przepisać, tworząc rozwiązania niezwykle trudne do rozwijania i utrzymywania. Obawiam się jednak, że takie wykorzystanie Web Components będzie się stawać coraz bardziej popularne (wystarczy tutaj powiedzieć, że przecież Angular 2.0 będzie intensywnie korzystał z Polymera). Czy na pewno chcemy w pełni deklaratywnej Sieci? A jeśli tak, to dlaczego kiedyś protestowaliśmy przeciwko XHTML 2.0?</p>
 
-<h3 class="mdl-typography--display-2" id="polymer">Polymer - wrzód na tyłku<a href="#polymer" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h3>
-<p class="tutorials-note ">Nikt o zdrowych zmysłach nie tworzy aplikacji obecnie w "czystych" Web Components. Byłaby to sadomasochistyczna sztuka dla sztuki, ponieważ żadna przeglądarka (nawet bleeding edge Chrome) nie wspiera w pełni wszystkich specyfikacji wchodzących w skład Web Components. Dlatego też de facto wszyscy muszą używać jakichś polyfillów (profillów?). Nie będę ukrywał, że najpopularniejszym jest <a href="https://www.polymer-project.org/">projekt Polymer</a>, z którego korzystają także… inne polyfiille (takie jak Mozillowe <a href="http://www.x-tags.org/">X-Tags</a> czy <a href="http://bosonic.github.io/">Bosonic</a>). Mówiąc zatem krótko: na chwilę obecną tworzenie przy użyciu otwartego standardu, jakim są Web Components, sprowadza się do zamknięcia się w bibliotece serwowanej przez Google. Otwarta Sieć, czyż nie?</p>
-<p class="tutorials-note ">Stosunek Google do ich projektów wszyscy znamy - w każdej chwili mogą je uwalić. Co więcej, Polymer jest na tyle specyficznym projektem, że - będąc "na rynku" już 2 lata - wciąż jest uznawany za skrajnie eksperymentalny. Co to oznacza? Że średnio co tydzień można obudzić się z ręką w nocniku, po nieuważnym wklupaniu <code class="mdl-color--white mdl-color-text--orange-600">bower update</code> w konsoli. Tak, Polymer zmienia się na pniu. Ostatnio przeżyłem szok, gdy okazało się, że jego stare, dobre <code class="mdl-color--white mdl-color-text--orange-600">platform.js</code> odeszło na emeryturę, zostając zastąpione bardziej modułowym <code class="mdl-color--white mdl-color-text--orange-600">webcomponents.js</code>. Główna różnica? Zamiast dużego pliku, Polymer zasysa teraz <b>kilkadziesiąt</b> małych. Po prostu wydajność maksymalna out of box. Ale oczywiście inżynierowie Google problem widzą, dlatego przygotowali dla niego rozwiązanie (czy już wspominałem, że w świecie Web Components lubi się rozwiązywać problemy, które samemu się wcześniej stworzyło?) - <a href="https://www.polymer-project.org/articles/concatenating-web-components.html">Vulcanizer</a>. Oczywiście to rozwiązanie tymczasowe, bo tuż za rogiem czeka już HTTP 2.0 i czegoś takiego nie trzeba będzie używać… Tak samo, jak od dwóch lat nie powinniśmy używać dziwnego owijacza w formie Polymera.</p>
-<p class="tutorials-note ">Częste zmiany to nie tylko sajgon w plikach, ale także sajgon przy testowaniu swoich komponentów - Polymer jest podzielony na tak szaloną ilość plików, że prawie zawsze występują jakieś nieporozumienia z cache. Nieporozumienia na tyle trudne, że aż byłem zmuszony <a href="https://github.com/Comandeer/dGUI/blob/18f8f1c08471bdc8c6b3a6f490203a1cc242bf89/components/.htaccess">wyłączyć cache dla komponentów</a> - jak na razie nie wróży to dobrze Polymerowi, bo zasysanie go przy każdym żądaniu od nowa to czysta kpina. Dodajmy do tego konieczność importowania także samych <a href="http://dgui.comandeer.pl">komponentów dGUI</a> i dostajemy co najmniej 3 sekundy do czasu pokazania czegokolwiek na stronie (bo Polymer łaskawie ukrywa wszystko, aż się komponenty nie doczytają…). <b>O 2.5 sekundy za długo.</b></p>
-<p class="tutorials-note ">I wreszcie - sama konwencja Polymera. <a href="https://github.com/Comandeer/dGUI/blob/18f8f1c08471bdc8c6b3a6f490203a1cc242bf89/components/dgui-keyboard/dgui-keyboard.html">Każdy komponent</a> to style i JS wrzucone w znacznik <code class="mdl-color--white mdl-color-text--orange-600">polymer-element</code>. Serio? Zważając na to jak specyficzne są projektowane zastosowania Web Components, uważam to co najmniej za dziwne (CSP, anyone?). Oczywiście Vulcanizer jest w stanie się tym zająć (czy już wspominałem o tworzeniu niepotrzebnych problemów?) - pytanie brzmi: czemu to nie jest domyślnym ustawieniem? Nagle z HTML-a zrobiono worek na wszystko. Witamy w XUL-u?</p>
-<p class="tutorials-note ">Do tego dochodzi fakt, że całe środowisko Polymera opiera się na Bowerze. Zatem, żeby użyć Polymera muszę zainstalować node.js, zainstalować bowera przez npm i dopiero wówczas mogę zainstalować samego Polymera. Na tej samej zasadzie działają wszelkie komponenty w tym wielkim ekosystemie. Czy to plus, czy minus - to zależy. Czasami bardzo przydaje się ustandaryzowany sposób rozprowadzania zależności, innym razem jest to kula u nogi.</p>
-<p class="tutorials-note ">I na sam koniec, komunikat z dev tools Firefoksa:</p>
-<blockquote class="tutorials-quote"><p>mutating the [&#91;Prototype]&#93; of an object will cause your code to run very slowly; instead create the object with the correct initial &#91;&#91;Prototype&#93;&#93; value using Object.create</p><cite>"Konsola JS"</cite></blockquote>
-<p class="tutorials-note ">Nie oszukujmy się - żeby Web Components działały, wraz z emulacją Shadow DOM, gdzie np. trzeba zatrzymać leakage <code class="mdl-color--white mdl-color-text--orange-600">&#91;id&#93;</code> na zewnątrz, Polymer musi nadpisać <b>kilkadziesiąt prototypów DOM-owych</b>. Takie zabawy nigdy nie były wydajne, a co więcej są narażone na wszelkie możliwe błędy (nie bez przyczyny istnieje złota zasada, że prototypów hosta się nie tyka).</p>
-<p class="tutorials-note ">Oczywiście reszta punktów jest pisana z perspektywy właśnie Polymera - jedynej słusznej drogi ku Web Components.</p>
+<h3 id="polymer">Polymer - wrzód na tyłku <a href="#polymer" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<p>Nikt o zdrowych zmysłach nie tworzy aplikacji obecnie w "czystych" Web Components. Byłaby to sadomasochistyczna sztuka dla sztuki, ponieważ żadna przeglądarka (nawet bleeding edge Chrome) nie wspiera w pełni wszystkich specyfikacji wchodzących w skład Web Components. Dlatego też de facto wszyscy muszą używać jakichś polyfillów (profillów?). Nie będę ukrywał, że najpopularniejszym jest <a href="https://www.polymer-project.org/">projekt Polymer</a>, z którego korzystają także… inne polyfiille (takie jak Mozillowe <a href="http://www.x-tags.org/">X-Tags</a> czy <a href="http://bosonic.github.io/">Bosonic</a>). Mówiąc zatem krótko: na chwilę obecną tworzenie przy użyciu otwartego standardu, jakim są Web Components, sprowadza się do zamknięcia się w bibliotece serwowanej przez Google. Otwarta Sieć, czyż nie?</p>
+<p>Stosunek Google do ich projektów wszyscy znamy - w każdej chwili mogą je uwalić. Co więcej, Polymer jest na tyle specyficznym projektem, że - będąc "na rynku" już 2 lata - wciąż jest uznawany za skrajnie eksperymentalny. Co to oznacza? Że średnio co tydzień można obudzić się z ręką w nocniku, po nieuważnym wklupaniu <code>bower update</code> w konsoli. Tak, Polymer zmienia się na pniu. Ostatnio przeżyłem szok, gdy okazało się, że jego stare, dobre <code>platform.js</code> odeszło na emeryturę, zostając zastąpione bardziej modułowym <code>webcomponents.js</code>. Główna różnica? Zamiast dużego pliku, Polymer zasysa teraz <b>kilkadziesiąt</b> małych. Po prostu wydajność maksymalna out of box. Ale oczywiście inżynierowie Google problem widzą, dlatego przygotowali dla niego rozwiązanie (czy już wspominałem, że w świecie Web Components lubi się rozwiązywać problemy, które samemu się wcześniej stworzyło?) - <a href="https://www.polymer-project.org/articles/concatenating-web-components.html">Vulcanizer</a>. Oczywiście to rozwiązanie tymczasowe, bo tuż za rogiem czeka już HTTP 2.0 i czegoś takiego nie trzeba będzie używać… Tak samo, jak od dwóch lat nie powinniśmy używać dziwnego owijacza w formie Polymera.</p>
+<p>Częste zmiany to nie tylko sajgon w plikach, ale także sajgon przy testowaniu swoich komponentów - Polymer jest podzielony na tak szaloną ilość plików, że prawie zawsze występują jakieś nieporozumienia z cache. Nieporozumienia na tyle trudne, że aż byłem zmuszony <a href="https://github.com/Comandeer/dGUI/blob/18f8f1c08471bdc8c6b3a6f490203a1cc242bf89/components/.htaccess">wyłączyć cache dla komponentów</a> - jak na razie nie wróży to dobrze Polymerowi, bo zasysanie go przy każdym żądaniu od nowa to czysta kpina. Dodajmy do tego konieczność importowania także samych <a href="http://dgui.comandeer.pl">komponentów dGUI</a> i dostajemy co najmniej 3 sekundy do czasu pokazania czegokolwiek na stronie (bo Polymer łaskawie ukrywa wszystko, aż się komponenty nie doczytają…). <b>O 2.5 sekundy za długo.</b></p>
+<p>I wreszcie - sama konwencja Polymera. <a href="https://github.com/Comandeer/dGUI/blob/18f8f1c08471bdc8c6b3a6f490203a1cc242bf89/components/dgui-keyboard/dgui-keyboard.html">Każdy komponent</a> to style i JS wrzucone w znacznik <code>polymer-element</code>. Serio? Zważając na to jak specyficzne są projektowane zastosowania Web Components, uważam to co najmniej za dziwne (CSP, anyone?). Oczywiście Vulcanizer jest w stanie się tym zająć (czy już wspominałem o tworzeniu niepotrzebnych problemów?) - pytanie brzmi: czemu to nie jest domyślnym ustawieniem? Nagle z HTML-a zrobiono worek na wszystko. Witamy w XUL-u?</p>
+<p>Do tego dochodzi fakt, że całe środowisko Polymera opiera się na Bowerze. Zatem, żeby użyć Polymera muszę zainstalować node.js, zainstalować bowera przez npm i dopiero wówczas mogę zainstalować samego Polymera. Na tej samej zasadzie działają wszelkie komponenty w tym wielkim ekosystemie. Czy to plus, czy minus - to zależy. Czasami bardzo przydaje się ustandaryzowany sposób rozprowadzania zależności, innym razem jest to kula u nogi.</p>
+<p>I na sam koniec, komunikat z dev tools Firefoksa:</p>
+<blockquote><p>mutating the [&#91;Prototype]&#93; of an object will cause your code to run very slowly; instead create the object with the correct initial &#91;&#91;Prototype&#93;&#93; value using Object.create</p><footer><cite>"Konsola JS"</cite></footer></blockquote>
+<p>Nie oszukujmy się - żeby Web Components działały, wraz z emulacją Shadow DOM, gdzie np. trzeba zatrzymać leakage <code>&#91;id&#93;</code> na zewnątrz, Polymer musi nadpisać <b>kilkadziesiąt prototypów DOM-owych</b>. Takie zabawy nigdy nie były wydajne, a co więcej są narażone na wszelkie możliwe błędy (nie bez przyczyny istnieje złota zasada, że prototypów hosta się nie tyka).</p>
+<p>Oczywiście reszta punktów jest pisana z perspektywy właśnie Polymera - jedynej słusznej drogi ku Web Components.</p>
 
-<h3 class="mdl-typography--display-2" id="template">Szablony<a href="#template" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h3>
-<p class="tutorials-note ">Początkowo idea szablonów w DOM, tworzonych przy pomocy znacznika <code class="mdl-color--white mdl-color-text--orange-600">template</code> brzmi sensownie. Ot, mamy wydzielone na zewnątrz drzewko DOM, na którym możemy sobie do woli operować i dopóki nie wsadzimy go na stronę, nic się nie dzieje - zdarzenia się w nim nie odpalają, obrazki nie wczytują… Do tego dostajemy do pracy z nim potężne narzędzia związane z trawersacją drzewka DOM. Precz z płaskimi stringami, bawimy się żywą strukturą!</p>
-<p class="tutorials-note ">Problem polega na tym, że takie wykorzystanie szablonów jest skrajnie prymitywne i starcza dla podstawowych zastosowań. Dlatego w Polymerze wymyślili sobie tzw. "template bindings", które miały być zgłoszone do procesu standaryzacji w W3C, ale wygląda na to - całe szczęście - że tam nie dotarły. Na czym pomysł polega? Na tym, żeby móc używać w <code class="mdl-color--white mdl-color-text--orange-600">template</code> uproszczonej składni <a href="http://mustache.github.io/">wąsów</a> + logiki ukrytej skrzętnie w atrybutach elementów. Przykład prosto z dokumentacji:</p>
+<h3 id="template">Szablony <a href="#template" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<p>Początkowo idea szablonów w DOM, tworzonych przy pomocy znacznika <code>template</code> brzmi sensownie. Ot, mamy wydzielone na zewnątrz drzewko DOM, na którym możemy sobie do woli operować i dopóki nie wsadzimy go na stronę, nic się nie dzieje - zdarzenia się w nim nie odpalają, obrazki nie wczytują… Do tego dostajemy do pracy z nim potężne narzędzia związane z trawersacją drzewka DOM. Precz z płaskimi stringami, bawimy się żywą strukturą!</p>
+<p>Problem polega na tym, że takie wykorzystanie szablonów jest skrajnie prymitywne i starcza dla podstawowych zastosowań. Dlatego w Polymerze wymyślili sobie tzw. "template bindings", które miały być zgłoszone do procesu standaryzacji w W3C, ale wygląda na to - całe szczęście - że tam nie dotarły. Na czym pomysł polega? Na tym, żeby móc używać w <code>template</code> uproszczonej składni <a href="http://mustache.github.io/">wąsów</a> + logiki ukrytej skrzętnie w atrybutach elementów. Przykład prosto z dokumentacji:</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;template repeat="{{ foo, i in foos }}"&gt;
 	&lt;template repeat="{{ value, j in foo }}"&gt;
 		{{ i }}:{{ j }}. {{ value }}
 	&lt;/template&gt;
 &lt;/template&gt;</code></pre>
-<p class="tutorials-note ">Oczywiście to dodatkowo dostaje 2-way data binding. Brzmi fajnie, ale w praktyce to jest piekło na ziemi. Widać tu 3 poważne problemy:</p>
+<p>Oczywiście to dodatkowo dostaje 2-way data binding. Brzmi fajnie, ale w praktyce to jest piekło na ziemi. Widać tu 3 poważne problemy:</p>
 <ul>
-	<li> z systemu DOM-owego niepostrzeżenie przeszliśmy z powrotem na parsowanie stringów. Tym samym nie ma <b>najmniejszych</b> powodów, żeby dalej korzystać z tagu <code class="mdl-color--white mdl-color-text--orange-600">template</code> - odebrana nam zostaje jego główna zaleta: DOM. To pociąga za sobą bardzo poważne konsekwencje, związane z debugowaniem takiego kodu (nic niemówiące błędy o funkcjach anonimowych w funkcjach anonimowych, które jeszcze przechodzą przez <code class="mdl-color--white mdl-color-text--orange-600">eval</code>; bardzo podobny problem dotyka wszystkie JS-owe parsery HTML-owych stringów, zatem Angulara, jak i JSX z Reacta). W tym wypadku lepiej skorzystać ze standardowych wąsów.
-	</li><li> przenieśliśmy logikę na poziom HTML-a. Stare, przerabiane i za każdym razem ten pomysł upadał (patrz: Web Forms 2.0 i właśnie <code class="mdl-color--white mdl-color-text--orange-600">&#91;repeat&#93;</code> pól). HTML nie służy do takich rzeczy - jest językiem <b>opisu strony</b>, nie językiem deklaratywnych szablonów. Od tego jest inny język (XSLT - i znów: czemu odrzuciliśmy XHTML 2.0, a teraz przepisujemy XML na HTML?)
+	<li> z systemu DOM-owego niepostrzeżenie przeszliśmy z powrotem na parsowanie stringów. Tym samym nie ma <b>najmniejszych</b> powodów, żeby dalej korzystać z tagu <code>template</code> - odebrana nam zostaje jego główna zaleta: DOM. To pociąga za sobą bardzo poważne konsekwencje, związane z debugowaniem takiego kodu (nic niemówiące błędy o funkcjach anonimowych w funkcjach anonimowych, które jeszcze przechodzą przez <code>eval</code>; bardzo podobny problem dotyka wszystkie JS-owe parsery HTML-owych stringów, zatem Angulara, jak i JSX z Reacta). W tym wypadku lepiej skorzystać ze standardowych wąsów.
+	</li><li> przenieśliśmy logikę na poziom HTML-a. Stare, przerabiane i za każdym razem ten pomysł upadał (patrz: Web Forms 2.0 i właśnie <code>&#91;repeat&#93;</code> pól). HTML nie służy do takich rzeczy - jest językiem <b>opisu strony</b>, nie językiem deklaratywnych szablonów. Od tego jest inny język (XSLT - i znów: czemu odrzuciliśmy XHTML 2.0, a teraz przepisujemy XML na HTML?)
 	</li><li> 2-way data binding wprowadza więcej problemów niż je rozwiązuje. Bindowanie model → widok jest naturalne i de facto tak działają od zawsze wszystkie MVW. Bindowanie model ↔ widok już takie nie jest. Czy model musi odpowiadać na zmiany, które zachodzą w widoku? <a href="http://stackoverflow.com/questions/19481/is-data-binding-a-bad-idea">To zależy</a>. Niemniej wiązanie modelu bezpośrednio z DOM brzmi… podejrzanie.
 </li></ul>
-<p class="tutorials-note ">Polymer psuje to, co było dobre w <code class="mdl-color--white mdl-color-text--orange-600">template</code>, sprowadzając go do poziomu rozwiązań, które istniały przed nim. A sens <code class="mdl-color--white mdl-color-text--orange-600">template</code> leży w jego DOM-owej naturze, nie w logice wepchniętej w ledwo trzymające się atrybuty.</p>
+<p>Polymer psuje to, co było dobre w <code>template</code>, sprowadzając go do poziomu rozwiązań, które istniały przed nim. A sens <code>template</code> leży w jego DOM-owej naturze, nie w logice wepchniętej w ledwo trzymające się atrybuty.</p>
 
-<h3 class="mdl-typography--display-2" id="shadow-dom">ShadowDOM<a href="#shadow-dom" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h3>
-<p class="tutorials-note ">ShadowDOM to HTML-owy sposób na enkapsulację. Tym samym tworzymy sobie czarne dziury - konkretny custom element ukrywa przed nami swoją implementację, udostępniając nam <a href="https://github.com/Comandeer/dGUI/blob/18f8f1c08471bdc8c6b3a6f490203a1cc242bf89/components/dgui-colorpicker/demo.html#L17">ładne, eventowe API</a> i nic więcej. Fajna sprawa, jeśli potrzebujemy konkretnego elementu interfejsu, przy którym całkowicie nie interesuje nas jego wewnętrzny sposób działania, a tylko i wyłącznie to, co w zamian dostajemy. Colorpicker jest doskonałym tego przykładem (Po co mi, jako autorowi edytora graficznego, potrzebna jest wiedza, że to kółko kolorów generowane jest na <code class="mdl-color--white mdl-color-text--orange-600">canvas</code>, przechwytuje zdarzenia myszki itd? Ja po prostu potrzebuję narzędzia do łatwego wybierania kolorów!).</p>
-<p class="tutorials-note ">Oczywiście nie może być za dobrze. Problemy pojawiają się bardzo szybko, aż za szybko… Podstawowym jest sposób obsługi zdarzeń na elemencie, będącym shadow rootem. Można z góry zapomnieć o takich wynalazkach, jak event delegation: zdarzenie przypięte do elementu z ShadowDOM zarówno w <code class="mdl-color--white mdl-color-text--orange-600">this</code>, jak i w <code class="mdl-color--white mdl-color-text--orange-600">event.target</code> będzie wskazywać na ten element - granicy cienia nie da się przełamać. Bardzo szybko przekonałem się o tym i to dość boleśnie, próbując naskrobać swój 1. Web Component, jakim stała się <a href="http://dgui.comandeer.pl/components/dgui-keyboard/demo.html">klawiatura ekranowa</a>: odczytanie który dokładnie klawisz został wciśnięty nagle okazało się zajęciem dosyć karkołomnym. Cień udostępnia co prawda metody do pobierania jego dzieci i można bezpośrednio do nich przypinać zdarzenia, jednak ma to dwie wady: musimy pobrać wszystkie potrzebne nam dzieci i musimy do każdego przypiąć konkretne zdarzenie (łatwo policzyć, że dla kilku instancji takiej klawiatury na stronie będziemy mieli ponad 100 zdarzeń dla samych klawiszy!). Niezbyt wydajne, ale w ostateczności da się przeboleć.</p>
-<p class="tutorials-note ">Polymer nie byłby jednak sobą, gdyby nie zaoferował szybkiego, wygodnego i <b>całkowicie nieprzemyślanego</b> rozwiązania. Mowa o atrybutach <code class="mdl-color--white mdl-color-text--orange-600">&#91;on-&#91;event&#93;&#93;</code> dla każdego elementu z ShadowDOM, które musi mieć zdarzenie. Mam wrażenie, że <a href="https://pornel.net/onclick">gdzieś to już widziałem</a>. Wracamy do mieszania warstwy zachowania z… no właśnie - czym jest HTML w Web Components? Bo im bardziej wgłębiam się w ten temat, tym bardziej mam wrażenie, że HTML jest tutaj zawoalowanym odpowiednikiem JS. Niemniej te atrybuty jak dotąd są jedyną sensowną metodą dowiązywania zdarzeń do elementów w ShadowDOM (nie licząc iterowania po wszystkich możliwych węzłach shadow roota, co w Polymerze jest tak zgrabnie ukryte, że i tak lepiej dodać te atrybuty). Sądzę jednak, że <code class="mdl-color--white mdl-color-text--orange-600">&#91;on-click="{{clicker}}"&#93;</code> wciąż wygląda lepiej niż <code class="mdl-color--white mdl-color-text--orange-600">&#91;ng-click="function()"&#93;</code> - bo co do tego drugiego nie mamy żadnych wątpliwości, że całość przechodzi przez <code class="mdl-color--white mdl-color-text--orange-600">eval</code>.</p>
-<p class="tutorials-note ">Warto tu także wspomnieć o dostępnym w każdym elemencie <code class="mdl-color--white mdl-color-text--orange-600">this.$</code>, przechowującym referencje do wszystkich elementów Shadow DOM, które mają nadane <code class="mdl-color--white mdl-color-text--orange-600">&#91;id&#93;</code>. Miły akcent, jednak raczej bym oszalał dodając <code class="mdl-color--white mdl-color-text--orange-600">&#91;id&#93;</code> do każdego elementu.</p>
+<h3 id="shadow-dom">ShadowDOM <a href="#shadow-dom" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<p>ShadowDOM to HTML-owy sposób na enkapsulację. Tym samym tworzymy sobie czarne dziury - konkretny custom element ukrywa przed nami swoją implementację, udostępniając nam <a href="https://github.com/Comandeer/dGUI/blob/18f8f1c08471bdc8c6b3a6f490203a1cc242bf89/components/dgui-colorpicker/demo.html#L17">ładne, eventowe API</a> i nic więcej. Fajna sprawa, jeśli potrzebujemy konkretnego elementu interfejsu, przy którym całkowicie nie interesuje nas jego wewnętrzny sposób działania, a tylko i wyłącznie to, co w zamian dostajemy. Colorpicker jest doskonałym tego przykładem (Po co mi, jako autorowi edytora graficznego, potrzebna jest wiedza, że to kółko kolorów generowane jest na <code>canvas</code>, przechwytuje zdarzenia myszki itd? Ja po prostu potrzebuję narzędzia do łatwego wybierania kolorów!).</p>
+<p>Oczywiście nie może być za dobrze. Problemy pojawiają się bardzo szybko, aż za szybko… Podstawowym jest sposób obsługi zdarzeń na elemencie, będącym shadow rootem. Można z góry zapomnieć o takich wynalazkach, jak event delegation: zdarzenie przypięte do elementu z ShadowDOM zarówno w <code>this</code>, jak i w <code>event.target</code> będzie wskazywać na ten element - granicy cienia nie da się przełamać. Bardzo szybko przekonałem się o tym i to dość boleśnie, próbując naskrobać swój 1. Web Component, jakim stała się <a href="http://dgui.comandeer.pl/components/dgui-keyboard/demo.html">klawiatura ekranowa</a>: odczytanie który dokładnie klawisz został wciśnięty nagle okazało się zajęciem dosyć karkołomnym. Cień udostępnia co prawda metody do pobierania jego dzieci i można bezpośrednio do nich przypinać zdarzenia, jednak ma to dwie wady: musimy pobrać wszystkie potrzebne nam dzieci i musimy do każdego przypiąć konkretne zdarzenie (łatwo policzyć, że dla kilku instancji takiej klawiatury na stronie będziemy mieli ponad 100 zdarzeń dla samych klawiszy!). Niezbyt wydajne, ale w ostateczności da się przeboleć.</p>
+<p>Polymer nie byłby jednak sobą, gdyby nie zaoferował szybkiego, wygodnego i <b>całkowicie nieprzemyślanego</b> rozwiązania. Mowa o atrybutach <code>&#91;on-&#91;event&#93;&#93;</code> dla każdego elementu z ShadowDOM, które musi mieć zdarzenie. Mam wrażenie, że <a href="https://pornel.net/onclick">gdzieś to już widziałem</a>. Wracamy do mieszania warstwy zachowania z… no właśnie - czym jest HTML w Web Components? Bo im bardziej wgłębiam się w ten temat, tym bardziej mam wrażenie, że HTML jest tutaj zawoalowanym odpowiednikiem JS. Niemniej te atrybuty jak dotąd są jedyną sensowną metodą dowiązywania zdarzeń do elementów w ShadowDOM (nie licząc iterowania po wszystkich możliwych węzłach shadow roota, co w Polymerze jest tak zgrabnie ukryte, że i tak lepiej dodać te atrybuty). Sądzę jednak, że <code>&#91;on-click="{{clicker}}"&#93;</code> wciąż wygląda lepiej niż <code>&#91;ng-click="function()"&#93;</code> - bo co do tego drugiego nie mamy żadnych wątpliwości, że całość przechodzi przez <code>eval</code>.</p>
+<p>Warto tu także wspomnieć o dostępnym w każdym elemencie <code>this.$</code>, przechowującym referencje do wszystkich elementów Shadow DOM, które mają nadane <code>&#91;id&#93;</code>. Miły akcent, jednak raczej bym oszalał dodając <code>&#91;id&#93;</code> do każdego elementu.</p>
 
-<h3 class="mdl-typography--display-2" id="imports">HTML Imports<a href="#imports" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h3>
-<p class="tutorials-note ">HTML Imports są HTML-ową wersją modułów CJS - są synchroniczne z natury. Problem polega na tym, że naturalnie występują tylko w Chrome i tylko w nim są synchroniczne. Wszystkie inne przeglądarki dostają zatem rozwiązanie asynchroniczne. Co to oznacza? Problemy.</p>
-<p class="tutorials-note ">Postanowiłem w dGUI pewne wspólne helpery i inne tego typu dziwne rzeczy wydzielić do osobnego pliku JS i importować go jako właśnie HTML Import. Szczęśliwy, że działa w Chrome, scomittowałem zmiany. Oczywiście w lisku nie działało. Czemu? Z prostej przyczyny - wiedząc, że importy są synchroniczne, pozwoliłem sobie na założenie, że globalny obiekt <code class="mdl-color--white mdl-color-text--orange-600">dGUI</code> (tak, globalny obiekt - jeśli ktoś mi pokaże sensowny przykład wykorzystania UMD/AMD z Web Components, bez setki niepotrzebnych udziwnień, wówczas chętnie to zmienię) istnieje. W lisku ewidentnie nie było to prawdą, bo całe importy fallbackują tam do żądań Ajaksem. Tym sposobem skrypt się wyglebił.</p>
-<p class="tutorials-note ">Zatem jeśli chcemy się pobawić w dynamiczne zasysanie skryptów przy pomocy HTML Imports, a od tych skryptów zależeć ma cały nasz skomplikowany system, to lepiej zawczasu przygotować się na dziwne zabawy z asynchronicznością (zdarzenia, wdrożenie mimo wszystko AMD itp. dziwne praktyki, ocierające się o voodoo).</p>
+<h3 id="imports">HTML Imports <a href="#imports" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<p>HTML Imports są HTML-ową wersją modułów CJS - są synchroniczne z natury. Problem polega na tym, że naturalnie występują tylko w Chrome i tylko w nim są synchroniczne. Wszystkie inne przeglądarki dostają zatem rozwiązanie asynchroniczne. Co to oznacza? Problemy.</p>
+<p>Postanowiłem w dGUI pewne wspólne helpery i inne tego typu dziwne rzeczy wydzielić do osobnego pliku JS i importować go jako właśnie HTML Import. Szczęśliwy, że działa w Chrome, scomittowałem zmiany. Oczywiście w lisku nie działało. Czemu? Z prostej przyczyny - wiedząc, że importy są synchroniczne, pozwoliłem sobie na założenie, że globalny obiekt <code>dGUI</code> (tak, globalny obiekt - jeśli ktoś mi pokaże sensowny przykład wykorzystania UMD/AMD z Web Components, bez setki niepotrzebnych udziwnień, wówczas chętnie to zmienię) istnieje. W lisku ewidentnie nie było to prawdą, bo całe importy fallbackują tam do żądań Ajaksem. Tym sposobem skrypt się wyglebił.</p>
+<p>Zatem jeśli chcemy się pobawić w dynamiczne zasysanie skryptów przy pomocy HTML Imports, a od tych skryptów zależeć ma cały nasz skomplikowany system, to lepiej zawczasu przygotować się na dziwne zabawy z asynchronicznością (zdarzenia, wdrożenie mimo wszystko AMD itp. dziwne praktyki, ocierające się o voodoo).</p>
 
-<h3 class="mdl-typography--display-2" id="dostepnosc">Dostępność<a href="#dostepnosc" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h3>
-<p class="tutorials-note ">Web Components to nie HTML. Tutaj nie ma żadnych wartości semantycznych - wszystko należy budować od podstaw. Co to oznacza? ARIA, naprawdę sporo ARIA. I to do oznaczenia rzeczy najbardziej podstawowych, od zera. Taka jest cena za innowację.</p>
+<h3 id="dostepnosc">Dostępność <a href="#dostepnosc" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<p>Web Components to nie HTML. Tutaj nie ma żadnych wartości semantycznych - wszystko należy budować od podstaw. Co to oznacza? ARIA, naprawdę sporo ARIA. I to do oznaczenia rzeczy najbardziej podstawowych, od zera. Taka jest cena za innowację.</p>
 
-<h3 class="mdl-typography--display-2" id="co-dalej">I co dalej?<a href="#co-dalej" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h3>
-<p class="tutorials-note ">Web Components, jako zbiór naprawdę nowych technologii, cierpi na bardzo poważne problemy wieku dziecięcego. Mimo wszystko uważam jednak, że - gdy w końcu sytuacja się ustabilizuje - stanie się sensownym sposobem na implementację zenkapsulowanego, wydajnego i prostego w użyciu interfejsu użytkownika. Mam także nadzieję, że inni webmasterzy również dojdą do tego samego wniosku i przestaną przepisywać na Web Components wszystko, łącznie z rzeczami, które nigdy nie powinny być deklaratywne. Na razie jednak Web Components pozostają ciekawostką - potężną, lecz tylko ciekawostką. Jedynym sensownym jej użyciem prawdopodobnie są ściśle kontrolowane środowiska (typu <a href="https://github.com/rogerwang/node-webkit">node-webkit</a>). I na tym jak na razie zakres stosowania Web Components się kończy.</p>
-<p class="tutorials-note ">Sama technologia nie jest zła - większość tutaj opisanych zarzutów de facto tyczy się Polymera a nie Web Components per se. Niemniej - nie ma obecnie jakiegokolwiek sensu pisać w Web Components nie używając Polymera. I koło się zamyka. W przyszłości pewnie powstaną lekkie i o wiele przyjaźniejsze wrappery na Web Components niż Polymer. No właśnie - wrappery. A do tego jeszcze bardzo długa droga, po wyboistych grzbietach polyfillów…</p>
+<h3 id="co-dalej">I co dalej? <a href="#co-dalej" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<p>Web Components, jako zbiór naprawdę nowych technologii, cierpi na bardzo poważne problemy wieku dziecięcego. Mimo wszystko uważam jednak, że - gdy w końcu sytuacja się ustabilizuje - stanie się sensownym sposobem na implementację zenkapsulowanego, wydajnego i prostego w użyciu interfejsu użytkownika. Mam także nadzieję, że inni webmasterzy również dojdą do tego samego wniosku i przestaną przepisywać na Web Components wszystko, łącznie z rzeczami, które nigdy nie powinny być deklaratywne. Na razie jednak Web Components pozostają ciekawostką - potężną, lecz tylko ciekawostką. Jedynym sensownym jej użyciem prawdopodobnie są ściśle kontrolowane środowiska (typu <a href="https://github.com/rogerwang/node-webkit">node-webkit</a>). I na tym jak na razie zakres stosowania Web Components się kończy.</p>
+<p>Sama technologia nie jest zła - większość tutaj opisanych zarzutów de facto tyczy się Polymera a nie Web Components per se. Niemniej - nie ma obecnie jakiegokolwiek sensu pisać w Web Components nie używając Polymera. I koło się zamyka. W przyszłości pewnie powstaną lekkie i o wiele przyjaźniejsze wrappery na Web Components niż Polymer. No właśnie - wrappery. A do tego jeszcze bardzo długa droga, po wyboistych grzbietach polyfillów…</p>
 
 						</article>
-
-						<section id="komentarze" class="mdl-cell--12-col">
-							<h2 class="mdl-typography--title">Komentarze</h2>
+						<section id="komentarze">
+							<h2>Komentarze</h2>
 							<div id="disqus_thread"></div>
 							<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 							<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 						</section>
 					</main>
-
-					<footer class="mdl-mini-footer">
-						<div class="mdl-mini-footer__left-section">
-							<p>Copyright © by <a href="https://www.comandeer.pl" class="mdl-color-text--white" rel="author">Comandeer</a>.</p>
-						</div>
-					</footer>
 				</div>
 			</div>
+
+			<footer class="site-footer">
+				<div class="container-fluid">
+					<p>Copyright © by <a href="https://www.comandeer.pl" rel="author">Comandeer</a>.</p>
+				</div>
+			</footer>
 
 			<script>
 			( function() {
@@ -205,6 +170,24 @@
 				} catch( err ) {}
 			} () );
 			</script>
-			<script async src="/js/prism.js"></script>
+			<script src="https://code.jquery.com/jquery-1.12.0.min.js" integrity="sha384-XxcvoeNF5V0ZfksTnV+bejnCsJjOOIzN6UVwF85WBsAnU3zeYh5bloN+L4WLgeNE" crossorigin="anonymous"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+			<script>
+			$( 'nav' ).affix( {
+				offset: {
+					top: function() {
+						return ( this.top = $( '.navbar-fixed-top' ).outerHeight( true ) + 10 );
+					},
+					bottom: function () {
+						return ( this.bottom = $( '.site-footer' ).outerHeight( true ) + 10 );
+					}
+				}
+			} ).on( 'affix.bs.affix', function() {
+				$( 'main' ).removeClass( 'col-md-offset-0' ).addClass( 'col-md-offset-4' );
+			} ).on( 'affix-top.bs.affix affix-bottom.bs.affix', function() {
+				$( 'main' ).removeClass( 'col-md-offset-4' );
+			} );
+			</script>
+			<script src="/js/prism.js"></script>
 		</body>
 	</html>
