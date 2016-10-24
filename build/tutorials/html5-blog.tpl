@@ -514,7 +514,7 @@
 			<![endif]-->
 		</head>
 		<body>
-			<a href="#Super-hiper-wazny-wpis" class="focus-only">Przejdź do treści</a>
+			<a href="#main" class="focus-only">Przejdź do treści</a>
 
 			<header id="header">
 				<h1><a href="https://example.net" rel="index">Example.net - fajowy blog, na którym bloguję</a></h1>
@@ -532,9 +532,9 @@
 				</form>
 			</header>
 
-			<main id="main" class="hfeed" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+			<main id="main" class="hfeed" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog" tabindex="-1">
 
-				<article class="hentry post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" id="Super-hiper-wazny-wpis" tabindex="-1">
+				<article class="hentry post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" id="Super-hiper-wazny-wpis">
 					<header>
 						<h2 class="entry-title"><a href="https://example.net/Super-hiper-wazny-wpis" class="bookmark" rel="bookmark" title="Permalink do Super hiper ważny wpis">Super hiper ważny wpis</a></h2>
 					<p class="post-info">Opublikowano <time datetime="2011-01-07T20:40:06+00:00" class="updated" itemprop="datePublished">07.01.2011</time> przez <a href="https://example.net/author" rel="author" class="author vcard"><span class="fn n">Comandeer</span></a></p>
@@ -623,8 +623,8 @@
 
 			<footer id="footer">Copyright &copy; 2016 by <a href="https://example.net/author" rel="author">Comandeer</a></footer>
 
-			<script src="https://bardzo-zajety-serwer.google.com/jquery.js"></script>
-			<script src="https://mniej-zajety-serwer.blog.pl/scripty.js"></script>
+			<script src="https://example.net/jquery.js"></script>
+			<script src="https://example.net/scripty.js"></script>
 		</body>
 	</html>[/code]
 
@@ -685,6 +685,7 @@
 [h2="changelog"]Poprawki i takie tam[/h2]
 [spoiler="changelog"]
 	[list]
+		[*] [b]24.10.2016[/b] - aktualizacja finalnego kodu
 		[*] [b]23.07.2016[/b] - dodanie info o HTML 5.1 jako CR + dodanie linku do najnowszej wersji specki HTML 5.x; zmiana przykładu perfekcyjnego bloga
 		[*] [b]28.05.2016[/b] - poprawienie linków do sekcji o [tt][alt][/tt] i [tt]picture[/tt] w specyfikacji HTML 5.1
 		[*] [b]17.04.2016[/b] - dodanie informacji o aktualizacji algorytmu outline'u w specyfikacji HTML5
