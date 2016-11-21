@@ -22,181 +22,45 @@
 			 */
 			"open"in document.createElement("details")||document.addEventListener("DOMContentLoaded",function(){try{[].forEach.call(document.querySelectorAll("details"),function(e){var t=e.querySelector("summary"),n=function(n){n?(e.removeAttribute("open"),t.setAttribute("aria-expanded",!1)):(e.setAttribute("open","open"),t.setAttribute("aria-expanded",!0))},i=function(){n(e.hasAttribute("open"))};n(!e.hasAttribute("open")),t.setAttribute("tabindex",0),t.setAttribute("role","button"),t.addEventListener("click",i),t.addEventListener("keyup",function(e){-1!==[13,32].indexOf(e.keyCode)&&(e.preventDefault(),this.click())})})}catch(e){}})
 			</script>
-			<script async defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-			<title>Semantyczny blog w HTML5
-				</title>
+			<title>Semantyczny blog w HTML5 </title>
 			<!--[if lt IE 9]>
 				<script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 			<![endif]-->
-			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Roboto:300,400,500,700%7CMaterial+Icons">
-			<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.deep_purple-indigo.min.css">
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 			<link rel="stylesheet" href="/css/prism.css">
-			<link rel="stylesheet" href="/css/mdl/custom.css">
+			<link rel="stylesheet" href="/css/bs/custom.css">
 		</head>
 		<body>
-			<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-				<header class="mdl-layout__header mdl-layout__header--always-visible">
-					<div class="mdl-layout__header-row">
-							<h1 class="mdl-layout-title">
-								<a href="/" class="mdl-layout-title__link mdl-color-text--white" title="« Powrót do spisu tutoriali">Tutorials</a>
-							</h1>
+			<header class="navbar navbar-inverse navbar-fixed-top">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<h1 class="navbar-brand"><a href="/" title="« Powrót do spisu tutoriali">Tutorials</a></h1>
 					</div>
-				</header>
+				</div>
+			</header>
 
-				<div class="mdl-layout__drawer mdl-layout__drawer--wide">
-			<span class="mdl-layout-title">
-				Spis treści
-			</span>
-			<nav>
-				<ul class="mdl-navigation">
-				<li class="mdl-navigation__item">
-				<a href="#punkt-wyjscia" class="mdl-navigation__link">Punkt wyjścia
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#nasz-cel" class="mdl-navigation__link">Nasz cel
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#doctype" class="mdl-navigation__link">Nowy <code class="mdl-color--white mdl-color-text--orange-600">DOCTYPE</code>
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#ustawienie-kodowania" class="mdl-navigation__link">Ustawienie kodowania
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#arkusz-styl&#xF3;w" class="mdl-navigation__link">Dołączanie arkusza stylów i skryptów
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#obsluga-ie" class="mdl-navigation__link">Obsługa starszych przeglądarek
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#naglowek" class="mdl-navigation__link">Nagłówek i nawigacja
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#artykul" class="mdl-navigation__link">Artykuł
-				</a>
-			<ul class="mdl-navigation"><li class="mdl-navigation__item">
-				<a href="#artykul-ramy" class="mdl-navigation__link">Główne ramy
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#artykul-naglowek" class="mdl-navigation__link">Nagłówek
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#artykul-obrazki" class="mdl-navigation__link">Obrazki
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#artykul-outline" class="mdl-navigation__link">Outline
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#artykul-komentarz" class="mdl-navigation__link">Komentarze
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#artykul-calosc" class="mdl-navigation__link">Całość złożona do kupy
-				</a>
-			</li></ul></li><li class="mdl-navigation__item">
-				<a href="#sidebar" class="mdl-navigation__link">Sidebar
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#stopka" class="mdl-navigation__link">Stopka
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#formularze" class="mdl-navigation__link">Formularze (WebForms 2.0)
-				</a>
-			<ul class="mdl-navigation"><li class="mdl-navigation__item">
-				<a href="#formularze-wyszukiwarka" class="mdl-navigation__link">Wyszukiwarka
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#formularze-nowe-pola" class="mdl-navigation__link">Nowe typy pól
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#formularze-bajery" class="mdl-navigation__link">Inne bajery i dostępność
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#formularze-obsluga" class="mdl-navigation__link">Kompatybilność
-				</a>
-			</li></ul></li><li class="mdl-navigation__item">
-				<a href="#rel" class="mdl-navigation__link"><code class="mdl-color--white mdl-color-text--orange-600">&#91;rel&#93;</code> czyli dokąd to prowadzi
-				</a>
-			<ul class="mdl-navigation"><li class="mdl-navigation__item">
-				<a href="#rel-lista" class="mdl-navigation__link">Lista dozwolonych <code class="mdl-color--white mdl-color-text--orange-600">&#91;rel&#93;</code>
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#rel-rozszerzalnosc" class="mdl-navigation__link">Rozszerzalność
-				</a>
-			</li></ul></li><li class="mdl-navigation__item">
-				<a href="#wai-aria" class="mdl-navigation__link">WAI-ARIA
-				</a>
-			<ul class="mdl-navigation"><li class="mdl-navigation__item">
-				<a href="#aria-role" class="mdl-navigation__link">Role
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#aria-wut" class="mdl-navigation__link">Ale po co to?
-				</a>
-			</li></ul></li><li class="mdl-navigation__item">
-				<a href="#semantyka" class="mdl-navigation__link">Dane semantyczne
-				</a>
-			<ul class="mdl-navigation"><li class="mdl-navigation__item">
-				<a href="#semantyka-mikroformaty" class="mdl-navigation__link">Mikroformaty
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#microdata" class="mdl-navigation__link">Microdata
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#semantyka-inne" class="mdl-navigation__link">Inne formaty danych semantycznych
-				</a>
-			</li></ul></li><li class="mdl-navigation__item">
-				<a href="#dublin-core" class="mdl-navigation__link">Dublin Core
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#dostepnosc" class="mdl-navigation__link">Kilka uwag o dostępności
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#ostatnie" class="mdl-navigation__link">Ostatnie poprawki
-				</a>
-			<ul class="mdl-navigation"><li class="mdl-navigation__item">
-				<a href="#wydajnosc" class="mdl-navigation__link">Wydajność i bezpieczeństwo
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#integracja" class="mdl-navigation__link">Integracja z zewnętrznymi usługami
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#kompatybilnosc" class="mdl-navigation__link">Kompatybilność
-				</a>
-			</li></ul></li><li class="mdl-navigation__item">
-				<a href="#nasz-blog" class="mdl-navigation__link">Nasz blog
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#przydatne" class="mdl-navigation__link">Przydatne linki
-				</a>
-			<ul class="mdl-navigation"><li class="mdl-navigation__item">
-				<a href="#standardy" class="mdl-navigation__link">Standardy i oficjalne materiały
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#poradniki" class="mdl-navigation__link">Poradniki
-				</a>
-			</li><li class="mdl-navigation__item">
-				<a href="#narzedzia" class="mdl-navigation__link">Narzędzia
-				</a>
-			</li></ul></li><li class="mdl-navigation__item">
-				<a href="#changelog" class="mdl-navigation__link">Poprawki i takie tam
-				</a>
-			</li>
+			<div class="container-fluid">
+				<div class="row">
+					<nav class="sidebar col-md-4 well">
+		<h2 class="sidebar-header">Spis treści</h2>
+			<div class="sidebar-inner">
+				<ul class="unstyled">
+				<li><a href="#punkt-wyjscia">Punkt wyjścia </a></li><li><a href="#nasz-cel">Nasz cel </a></li><li><a href="#doctype">Nowy <code>DOCTYPE</code> </a></li><li><a href="#ustawienie-kodowania">Ustawienie kodowania </a></li><li><a href="#arkusz-styl&#xF3;w">Dołączanie arkusza stylów i skryptów </a></li><li><a href="#obsluga-ie">Obsługa starszych przeglądarek </a></li><li><a href="#naglowek">Nagłówek i nawigacja </a></li><li><a href="#artykul">Artykuł </a><ul class="unstyled"><li><a href="#artykul-ramy">Główne ramy </a></li><li><a href="#artykul-naglowek">Nagłówek </a></li><li><a href="#artykul-obrazki">Obrazki </a></li><li><a href="#artykul-outline">Outline </a></li><li><a href="#artykul-komentarz">Komentarze </a></li><li><a href="#artykul-calosc">Całość złożona do kupy </a></li></ul></li><li><a href="#sidebar">Sidebar </a></li><li><a href="#stopka">Stopka </a></li><li><a href="#formularze">Formularze (WebForms 2.0) </a><ul class="unstyled"><li><a href="#formularze-wyszukiwarka">Wyszukiwarka </a></li><li><a href="#formularze-nowe-pola">Nowe typy pól </a></li><li><a href="#formularze-bajery">Inne bajery i dostępność </a></li><li><a href="#formularze-obsluga">Kompatybilność </a></li></ul></li><li><a href="#rel"><code>&#91;rel&#93;</code> czyli dokąd to prowadzi </a><ul class="unstyled"><li><a href="#rel-lista">Lista dozwolonych <code>&#91;rel&#93;</code> </a></li><li><a href="#rel-rozszerzalnosc">Rozszerzalność </a></li></ul></li><li><a href="#wai-aria">WAI-ARIA </a><ul class="unstyled"><li><a href="#aria-role">Role </a></li><li><a href="#aria-wut">Ale po co to? </a></li></ul></li><li><a href="#semantyka">Dane semantyczne </a><ul class="unstyled"><li><a href="#semantyka-mikroformaty">Mikroformaty </a></li><li><a href="#microdata">Microdata </a></li><li><a href="#semantyka-inne">Inne formaty danych semantycznych </a></li></ul></li><li><a href="#dublin-core">Dublin Core </a></li><li><a href="#dostepnosc">Kilka uwag o dostępności </a></li><li><a href="#ostatnie">Ostatnie poprawki </a><ul class="unstyled"><li><a href="#wydajnosc">Wydajność i bezpieczeństwo </a></li><li><a href="#integracja">Integracja z zewnętrznymi usługami </a></li><li><a href="#kompatybilnosc">Kompatybilność </a></li></ul></li><li><a href="#nasz-blog">Nasz blog </a></li><li><a href="#przydatne">Przydatne linki </a><ul class="unstyled"><li><a href="#standardy">Standardy i oficjalne materiały </a></li><li><a href="#poradniki">Poradniki </a></li><li><a href="#narzedzia">Narzędzia </a></li></ul></li><li><a href="#changelog">Poprawki i takie tam </a></li>
 				</ul>
-			</nav>
-		</div>
+			</div>
+		</nav>
 
-				<div class="mdl-layout__content">
-					<main class="content mdl-grid">
-						<article class="mdl-cell--12-col">
-							<h2 class="mdl-typography--display-3" id="start">Semantyczny blog w HTML5<a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h2>
+					<main class="col-md-8 col-md-offset-0">
+						<article>
+						<h2 id="start">Semantyczny blog w HTML5 <a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
 
-<p class="tutorials-note mdl-color--primary mdl-color-text--white">Ten tutorial przeznaczony jest dla tych, którzy już mają jakiekolwiek pojęcie o HTML. Dobrym miejscem na zdobycie podstaw wiedzy jest <a href="http://kurshtml.edu.pl" class="mdl-color-text--white">Kurs HTML</a> czy też książka Ferrante <a href="http://ferrante.pl/books/html/" class="mdl-color-text--white">Moja pierwsza strona internetowa w HTML5 i CSS3</a>.</p>
-<p class="tutorials-note ">Witam wszystkich! Przeszukałem kilka for webmasterskich i nie znalazłem ani jednego tutoriala na temat HTML5. Trza to naprawić ;)</p>
-<p class="tutorials-note mdl-color--primary mdl-color-text--white">Od razu uprzedzam, że słowa "semantyczny" i "HTML5" z tematu są rozdzielne i część porad można zastosować w starym dobrym HTML4. A na upartego słowa "blog" wgl można się pozbyć ;)</p>
+<p class="alert alert-info">Ten tutorial przeznaczony jest dla tych, którzy już mają jakiekolwiek pojęcie o HTML. Dobrym miejscem na zdobycie podstaw wiedzy jest <a href="http://kurshtml.edu.pl" class="alert-link">Kurs HTML</a> czy też książka Ferrante <a href="http://ferrante.pl/books/html/" class="alert-link">Moja pierwsza strona internetowa w HTML5 i CSS3</a>.</p>
+<p>Witam wszystkich! Przeszukałem kilka for webmasterskich i nie znalazłem ani jednego tutoriala na temat HTML5. Trza to naprawić ;)</p>
+<p class="alert alert-info">Od razu uprzedzam, że słowa "semantyczny" i "HTML5" z tematu są rozdzielne i część porad można zastosować w starym dobrym HTML4. A na upartego słowa "blog" wgl można się pozbyć ;)</p>
 
 
-<h3 class="mdl-typography--display-2" id="punkt-wyjscia">Punkt wyjścia<a href="#punkt-wyjscia" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h3>
-<p class="tutorials-note ">Dobra, do rzeczy. Wyobraźmy sobie, że mamy sobie przykładowy blog: <a href="http://tutorials.comandeer.pl/res/html5-blog/start.html">http://tutorials.comandeer.pl/res/html5-blog/start.html</a></p>
+<h3 id="punkt-wyjscia">Punkt wyjścia <a href="#punkt-wyjscia" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<p>Dobra, do rzeczy. Wyobraźmy sobie, że mamy sobie przykładowy blog: <a href="http://tutorials.comandeer.pl/res/html5-blog/start.html">http://tutorials.comandeer.pl/res/html5-blog/start.html</a></p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;
 	&lt;html lang="pl" dir="ltr"&gt;
 		&lt;head&gt;
@@ -297,55 +161,49 @@
 			&lt;div id="footer"&gt;Copyright &copy; 2011 by &lt;a href="http://example.net/author"&gt;Comandeer&lt;/a&gt;&lt;/div&gt;
 		&lt;/body&gt;
 	&lt;/html&gt;</code></pre>
-<p class="tutorials-note ">Nic nadzwyczajnego - blog jakich dużo w Internecie. Przyznam się bez bicia, że ten przykładzik to połączenie blogu <a href="http://lea.verou.me">Lea Verou</a> i naszego kochanego <a href="http://roberto.ovh.org/blog">Roberto</a>. Kodu nie będę wyjaśniał, bo mam wrażenie, że powinien być jasny. Ot, zwyczajny wpis na zwyczajnym blogu, poniżej komentarze, formularz do komentowania i jakieś tam dodatkowe info w bocznym panelu. Specjalnie nie dorzucam CSS, bo jestem z tych purystów, co to twierdzą, że strona to treść i kod, a wygląd jest jedynie dodatkiem.</p>
+<p>Nic nadzwyczajnego - blog jakich dużo w Internecie. Przyznam się bez bicia, że ten przykładzik to połączenie blogu <a href="http://lea.verou.me">Lea Verou</a> i naszego kochanego <a href="http://roberto.ovh.org/blog">Roberto</a>. Kodu nie będę wyjaśniał, bo mam wrażenie, że powinien być jasny. Ot, zwyczajny wpis na zwyczajnym blogu, poniżej komentarze, formularz do komentowania i jakieś tam dodatkowe info w bocznym panelu. Specjalnie nie dorzucam CSS, bo jestem z tych purystów, co to twierdzą, że strona to treść i kod, a wygląd jest jedynie dodatkiem.</p>
 
 
-<h3 class="mdl-typography--display-2" id="nasz-cel">Nasz cel<a href="#nasz-cel" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h3>
-<p class="tutorials-note ">Chcemy być cool i porzucamy zgrzybiałego HTML4 na rzecz jego potomka :D. Poza tym spróbujemy nadać większe znaczenie naszej treści, przede wszystkim dla Google, pamiętając, że co dobre dla Google zwykle jest także dobre dla usera. Do tego celu wykorzystamy m.in. mikroformaty i nowe znaczniki z HTML5.</p>
+<h3 id="nasz-cel">Nasz cel <a href="#nasz-cel" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<p>Chcemy być cool i porzucamy zgrzybiałego HTML4 na rzecz jego potomka :D. Poza tym spróbujemy nadać większe znaczenie naszej treści, przede wszystkim dla Google, pamiętając, że co dobre dla Google zwykle jest także dobre dla usera. Do tego celu wykorzystamy m.in. mikroformaty i nowe znaczniki z HTML5.</p>
 
 
-<h3 class="mdl-typography--display-2" id="doctype">Nowy <code class="mdl-color--white mdl-color-text--orange-600">DOCTYPE</code><a href="#doctype" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h3>
-<p class="tutorials-note ">Okey, to zaczynamy. Najpierw omówię przejście na HTML5, bo tego jest najwięcej, a później doszlifujemy resztę. Pierwsze, co należy zmienić, to ten cały rozwlekły <code class="mdl-color--white mdl-color-text--orange-600">DOCTYPE</code>. W HTML5 mamy króciutki i ładniutki:</p>
+<h3 id="doctype">Nowy <code>DOCTYPE</code> <a href="#doctype" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<p>Okey, to zaczynamy. Najpierw omówię przejście na HTML5, bo tego jest najwięcej, a później doszlifujemy resztę. Pierwsze, co należy zmienić, to ten cały rozwlekły <code>DOCTYPE</code>. W HTML5 mamy króciutki i ładniutki:</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;!DOCTYPE html&gt;</code></pre>
-<p class="tutorials-note ">I już - po bólu. Twój blog właśnie stał się cool ;) Jeśli nie jesteś odważny, migrację na HTML5 możesz zakończyć w tym miejscu. Jeśli chcesz jednak poznać jaką zmianę w semantyce przynosi, pójdź za mną, a pokażę ci piękno :D</p>
+<p>I już - po bólu. Twój blog właśnie stał się cool ;) Jeśli nie jesteś odważny, migrację na HTML5 możesz zakończyć w tym miejscu. Jeśli chcesz jednak poznać jaką zmianę w semantyce przynosi, pójdź za mną, a pokażę ci piękno :D</p>
 
 
-<h3 class="mdl-typography--display-2" id="ustawienie-kodowania">Ustawienie kodowania<a href="#ustawienie-kodowania" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h3>
-<p class="tutorials-note ">Kolejnym wrogiem jest ustawienie kodowania. Po nowemu zapisać je można następująco:</p>
+<h3 id="ustawienie-kodowania">Ustawienie kodowania <a href="#ustawienie-kodowania" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<p>Kolejnym wrogiem jest ustawienie kodowania. Po nowemu zapisać je można następująco:</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;meta charset="utf-8"&gt;</code></pre>
-<p class="tutorials-note ">To króciutkie meta obsługuje nawet IE6. Zdziwieni? A powinni, bo ta składnia powstała z… błędu. Na wielu stronach bowiem można było znaleźć potworka typu</p>
+<p>To króciutkie meta obsługuje nawet IE6. Zdziwieni? A powinni, bo ta składnia powstała z… błędu. Na wielu stronach bowiem można było znaleźć potworka typu</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;meta http-equiv="Content-type" content="text/html;charset="UTF-8""&gt;</code></pre>
-<p class="tutorials-note ">Przeglądarki stwierdziły bowiem, że nie ma sensu parsować nieprawidłowego znacznika i po prostu znalazły inny sposób: szukały czegoś na wzór <code class="mdl-color--white mdl-color-text--orange-600">charset=["]*&#91;a-z0-9&#93;&#91;"&#93;*</code> (chyba dobre wyrażenie regularne :D). No, i tak już zostało, a później to… <a href="https://www.w3.org/TR/html5/infrastructure.html#extracting-character-encodings-from-meta-elements">ustandaryzowano w ramach HTML5</a>. BTW ten znacznik i tak nie ma jakiegokolwiek sensu, bo kodowanie jest narzucane przez nagłówki HTTP. Można je kontrolować ręcznie, np. przez PHP</p>
+<p>Przeglądarki stwierdziły bowiem, że nie ma sensu parsować nieprawidłowego znacznika i po prostu znalazły inny sposób: szukały czegoś na wzór <code>charset=["]*&#91;a-z0-9&#93;&#91;"&#93;*</code> (chyba dobre wyrażenie regularne :D). No, i tak już zostało, a później to… <a href="https://www.w3.org/TR/html5/infrastructure.html#extracting-character-encodings-from-meta-elements">ustandaryzowano w ramach HTML5</a>. BTW ten znacznik i tak nie ma jakiegokolwiek sensu, bo kodowanie jest narzucane przez nagłówki HTTP. Można je kontrolować ręcznie, np. przez PHP</p>
 <p class="code">Kod:</p><pre><code class="language-php">&lt;?php header('Content-Type: text/html;charset=UTF-8'); ?&gt;</code></pre>
-<p class="tutorials-note "><s>Chcę także zwrócić uwagę, że powinno się pisać "UTF-8", a nie "utf-8", bo nazwa normy pisana jest z dużej litery (validator.nu się o to rzuca).</s> w specce pojawił się zwrot "case insensitive", więc obydwie formy są już poprawne.</p>
+<p><s>Chcę także zwrócić uwagę, że powinno się pisać "UTF-8", a nie "utf-8", bo nazwa normy pisana jest z dużej litery (validator.nu się o to rzuca).</s> w specce pojawił się zwrot "case insensitive", więc obydwie formy są już poprawne.</p>
 
 
-<h3 class="mdl-typography--display-2" id="arkusz-styl&#xF3;w">Dołączanie arkusza stylów i skryptów<a href="#arkusz-styl&#xF3;w" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h3>
-<p class="tutorials-note ">Teraz słówko o arkuszu stylów - jeśli dołączamy go poprzez <code class="mdl-color--white mdl-color-text--orange-600">link</code> można usunąć zbędny atrybut <code class="mdl-color--white mdl-color-text--orange-600">&#91;type&#93;</code> - arkusze i tak zawsze są typu <code class="mdl-color--white mdl-color-text--orange-600">text/css</code>. To samo tyczy się <code class="mdl-color--white mdl-color-text--orange-600">script</code> - prawie zawsze jest to JS (prawie, bo w teorii można np. zaserwować VBScript dla IE lub użyć tych tagów jako <a href="http://stackoverflow.com/questions/4912586/explanation-of-script-type-text-template-script">system szablonów</a> (co jest nawet opisane w specyfikacji!); w takich wypadkach tego atrybutu ominąć się nie da), więc <code class="mdl-color--white mdl-color-text--orange-600">&#91;type&#93;</code> jest zbędny. Nie ma obaw, ta kosmetyczna zmiana nie sprawi żadnej przeglądarce problemu.</p>
+<h3 id="arkusz-styl&#xF3;w">Dołączanie arkusza stylów i skryptów <a href="#arkusz-styl&#xF3;w" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<p>Teraz słówko o arkuszu stylów - jeśli dołączamy go poprzez <code>link</code> można usunąć zbędny atrybut <code>&#91;type&#93;</code> - arkusze i tak zawsze są typu <code>text/css</code>. To samo tyczy się <code>script</code> - prawie zawsze jest to JS (prawie, bo w teorii można np. zaserwować VBScript dla IE lub użyć tych tagów jako <a href="http://stackoverflow.com/questions/4912586/explanation-of-script-type-text-template-script">system szablonów</a> (co jest nawet opisane w specyfikacji!); w takich wypadkach tego atrybutu ominąć się nie da), więc <code>&#91;type&#93;</code> jest zbędny. Nie ma obaw, ta kosmetyczna zmiana nie sprawi żadnej przeglądarce problemu.</p>
 
 
-<h3 class="mdl-typography--display-2" id="obsluga-ie">Obsługa starszych przeglądarek<a href="#obsluga-ie" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h3>
-<p class="tutorials-note ">Niestety, z obsługą reszty znaczników nie jest już tak kolorowo i IE wymaga odpowiedniego skryptu, który trza dodać w <code class="mdl-color--white mdl-color-text--orange-600">head</code> (IE 9 na szczęście jest już normalny):</p>
+<h3 id="obsluga-ie">Obsługa starszych przeglądarek <a href="#obsluga-ie" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<p>Niestety, z obsługą reszty znaczników nie jest już tak kolorowo i IE wymaga odpowiedniego skryptu, który trza dodać w <code>head</code> (IE 9 na szczęście jest już normalny):</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;!--&#91;if lt IE 9&#93;&gt;
 	&lt;script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"&gt;&lt;/script&gt;
 &lt;!&#91;endif&#93;--&gt; </code></pre>
-<p class="tutorials-note ">Po więcej informacji o tym skrypciku zapraszam na <a href="http://remysharp.com/2009/01/07/html5-enabling-script/">http://remysharp.com/2009/01/07/html5-enabling-script/</a> i <a href="http://paulirish.com/2011/the-history-of-the-html5-shiv/">http://paulirish.com/2011/the-history-of-the-html5-shiv/</a> Jeśli natomiast w przyszłości wzbogacisz swój blog o jakieś nowinki z HTML 5 APIs (np nagrywanie video komentarzy), to warto zapoznać się też z pojęciem feature detection i biblioteką <a href="http://modernizr.com">Modernizr</a>.</p>
-<p class="tutorials-note ">Tutaj warto też od razu zwrócić uwagę na fakt, że nieznane przeglądarce elementy są nieostylowane w żaden sensowny sposób i przez to możemy dostać np. liniowe <code class="mdl-color--white mdl-color-text--orange-600">section</code>, co raczej jest niezbyt pożądane. Na szczęście problem ten rozwiązuje normalizacja stylów (nawet jeśli nie chcesz używać nowych znaczników, to i tak <a href="http://nicolasgallagher.com/about-normalize-css/">powinieneś normalizować</a> lub <a href="http://html5doctor.com/html-5-reset-stylesheet/">resetować</a>), przypisując najbardziej podstawowe style odpowiednim elementom.</p>
+<p>Po więcej informacji o tym skrypciku zapraszam na <a href="http://remysharp.com/2009/01/07/html5-enabling-script/">http://remysharp.com/2009/01/07/html5-enabling-script/</a> i <a href="http://paulirish.com/2011/the-history-of-the-html5-shiv/">http://paulirish.com/2011/the-history-of-the-html5-shiv/</a> Jeśli natomiast w przyszłości wzbogacisz swój blog o jakieś nowinki z HTML 5 APIs (np nagrywanie video komentarzy), to warto zapoznać się też z pojęciem feature detection i biblioteką <a href="http://modernizr.com">Modernizr</a>.</p>
+<p>Tutaj warto też od razu zwrócić uwagę na fakt, że nieznane przeglądarce elementy są nieostylowane w żaden sensowny sposób i przez to możemy dostać np. liniowe <code>section</code>, co raczej jest niezbyt pożądane. Na szczęście problem ten rozwiązuje normalizacja stylów (nawet jeśli nie chcesz używać nowych znaczników, to i tak <a href="http://nicolasgallagher.com/about-normalize-css/">powinieneś normalizować</a> lub <a href="http://html5doctor.com/html-5-reset-stylesheet/">resetować</a>), przypisując najbardziej podstawowe style odpowiednim elementom.</p>
 
 
-<h3 class="mdl-typography--display-2" id="naglowek">Nagłówek i nawigacja<a href="#naglowek" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h3>
-<p class="tutorials-note ">Dobra, <code class="mdl-color--white mdl-color-text--orange-600">head</code> na razie zostawmy i przejdźmy do <code class="mdl-color--white mdl-color-text--orange-600">body</code>. Pierwsze, co rzuca nam się w oczy, to <code class="mdl-color--white mdl-color-text--orange-600">div#header</code>. Zero znaczenia semantycznego, prawda? Nawet <code class="mdl-color--white mdl-color-text--orange-600">&#91;id=header&#93;</code> tego nie ratuje, ponieważ identyfikatory nie mają żadnego znaczenia semantycznego.</p>
-<blockquote class="tutorials-quote"><p>Identifiers are opaque strings. Particular meanings should not be derived from the value of the id attribute</p><cite>"http://www.whatwg.org/specs/web-apps/current-work/multipage/elements.html#the-id-attribute"</cite></blockquote>
-<p class="tutorials-note ">HTML5 rozwiązuje ten problem, wprowadzając znacznik <code class="mdl-color--white mdl-color-text--orange-600">header</code>. Jak sama nazwa wskazuje, służy do oznaczania nagłówków i świetnie się nadaje do oznaczenia nagłówka strony. Zatem zamieńmy nasz <code class="mdl-color--white mdl-color-text--orange-600">div#header</code> na <code class="mdl-color--white mdl-color-text--orange-600">header#header</code>. Niby mała zmiana, a semantyka kodu rośnie. Ale, ale - to jeszcze nie wszystko! Spójrzmy na nagłówek - mamy tam <code class="mdl-color--white mdl-color-text--orange-600">h1</code> z tytułem strony i <code class="mdl-color--white mdl-color-text--orange-600">p</code> z mottem. Fajnie by było gdyby motto też było nagłówkiem, ale co z outlinem dokumentu? <s>Czy się przypadkiem nie zaburzy? Otóż w HTML5 outline jest liczony zupełnie inaczej, a jak, to się dowiedzie jak przerobimy treść artykułu :D Teraz wystarczy abyście wiedzieli, że akapit można z pełnym spokojem zamienić na <code class="mdl-color--white mdl-color-text--orange-600">h2</code> i oba nagłówki opatulić nowiutkim <code class="mdl-color--white mdl-color-text--orange-600">hgroup</code>. Ten znacznik "grupuje" nagłówki, tzn. w outline widnieje tylko nagłówek o najwyższym stopniu. Jest to bardzo pomocne, gdy chcemy wpleść właśnie jakiś bardzo ważny tekst (np. tytuł podstrony), a równocześnie nie chcemy zaburzać outline'u dokumentu.</s>Niestety, <code class="mdl-color--white mdl-color-text--orange-600">hgroup</code> wypadł z wersji specyfikacji od W3C (a z racji tego, że to ta wersja specyfikacji jest tą "oficjalną", to raczej nie powinienem zachęcać do używania tego znacznika). Obecnie podtytuły, zgodnie z tym, co <a href="http://www.w3.org/TR/html5/common-idioms.html#sub-head">czytamy w specyfikacji</a>, winny być oznaczane przy pomocy <code class="mdl-color--white mdl-color-text--orange-600">p</code>, tudzież <code class="mdl-color--white mdl-color-text--orange-600">h* &gt; span</code>.</p>
-<p class="tutorials-note ">Jeśli już zmieniamy wszystko, to pewnie pomyślicie, że menu też można zmienić. Oczywiście macie rację :D W tym celu posłużymy się znacznikiem <code class="mdl-color--white mdl-color-text--orange-600">nav</code>, który powstał specjalnie po to, aby oznaczać elementy nawigacyjne.</p>
-<p class="tutorials-note mdl-color--red mdl-color-text--black">Co prawda w HTML5 istnieje także element <code class="mdl-color--white mdl-color-text--orange-600">menu</code>, ale służy on tworzeniu menu dla aplikacji (menu kontekstowe czy toolbary) i nie należy go mylić z <code class="mdl-color--white mdl-color-text--orange-600">nav</code>.</p>
-<p class="tutorials-note ">W naszym nagłówku pozostał jeszcze formularz wyszukiwania, ale do niego wrócę później i omówię go razem z formularzem dodawania komentarzy. W chwili obecnej nasz nagłówek powinien wyglądać mniej więcej tak:</p>
+<h3 id="naglowek">Nagłówek i nawigacja <a href="#naglowek" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<p>Dobra, <code>head</code> na razie zostawmy i przejdźmy do <code>body</code>. Pierwsze, co rzuca nam się w oczy, to <code>div#header</code>. Zero znaczenia semantycznego, prawda? Nawet <code>&#91;id=header&#93;</code> tego nie ratuje, ponieważ identyfikatory nie mają żadnego znaczenia semantycznego.</p>
+<blockquote><p>Identifiers are opaque strings. Particular meanings should not be derived from the value of the id attribute</p><footer><cite>"http://www.whatwg.org/specs/web-apps/current-work/multipage/elements.html#the-id-attribute"</cite></footer></blockquote>
+<p>HTML5 rozwiązuje ten problem, wprowadzając znacznik <code>header</code>. Jak sama nazwa wskazuje, służy do oznaczania nagłówków i świetnie się nadaje do oznaczenia nagłówka strony. Zatem zamieńmy nasz <code>div#header</code> na <code>header#header</code>. Niby mała zmiana, a semantyka kodu rośnie. Ale, ale - to jeszcze nie wszystko! Spójrzmy na nagłówek - mamy tam <code>h1</code> z tytułem strony i <code>p</code> z mottem. Fajnie by było gdyby motto też było nagłówkiem, ale co z outlinem dokumentu? <s>Czy się przypadkiem nie zaburzy? Otóż w HTML5 outline jest liczony zupełnie inaczej, a jak, to się dowiedzie jak przerobimy treść artykułu :D Teraz wystarczy abyście wiedzieli, że akapit można z pełnym spokojem zamienić na <code>h2</code> i oba nagłówki opatulić nowiutkim <code>hgroup</code>. Ten znacznik "grupuje" nagłówki, tzn. w outline widnieje tylko nagłówek o najwyższym stopniu. Jest to bardzo pomocne, gdy chcemy wpleść właśnie jakiś bardzo ważny tekst (np. tytuł podstrony), a równocześnie nie chcemy zaburzać outline'u dokumentu.</s>Niestety, <code>hgroup</code> wypadł z wersji specyfikacji od W3C (a z racji tego, że to ta wersja specyfikacji jest tą "oficjalną", to raczej nie powinienem zachęcać do używania tego znacznika). Obecnie podtytuły, zgodnie z tym, co <a href="http://www.w3.org/TR/html5/common-idioms.html#sub-head">czytamy w specyfikacji</a>, winny być oznaczane przy pomocy <code>p</code>, tudzież <code>h* &gt; span</code>.</p>
+<p>Jeśli już zmieniamy wszystko, to pewnie pomyślicie, że menu też można zmienić. Oczywiście macie rację :D W tym celu posłużymy się znacznikiem <code>nav</code>, który powstał specjalnie po to, aby oznaczać elementy nawigacyjne.</p>
+<p class="alert alert-danger">Co prawda w HTML5 istnieje także element <code>menu</code>, ale służy on tworzeniu menu dla aplikacji (menu kontekstowe czy toolbary) i nie należy go mylić z <code>nav</code>.</p>
+<p>W naszym nagłówku pozostał jeszcze formularz wyszukiwania, ale do niego wrócę później i omówię go razem z formularzem dodawania komentarzy. W chwili obecnej nasz nagłówek powinien wyglądać mniej więcej tak:</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;header id="header"&gt;
 	&lt;h1&gt;&lt;a href="http://example.net"&gt;Example.net - fajowy blog, na którym bloguję&lt;/a&gt;&lt;/h1&gt;
 	&lt;p&gt;Motto&lt;/p&gt;
@@ -362,61 +220,55 @@
 &lt;/header&gt;</code></pre>
 
 
-<h3 class="mdl-typography--display-2" id="artykul">Artykuł<a href="#artykul" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h3>
+<h3 id="artykul">Artykuł <a href="#artykul" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 
-<h4 class="mdl-typography--display-1" id="artykul-ramy">Główne ramy<a href="#artykul-ramy" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h4>
-<p class="tutorials-note ">Oki doki, teraz czas na danie główne - treść artykułu! Zapewne zauważyliście, że jest opatulona w dodatkowy <code class="mdl-color--white mdl-color-text--orange-600">div#main</code>. Jak już wspomniałem, divy nie mają jakiegoś specjalnego znaczenia semantycznego, dlatego w HTML5 powstało mnóstwo nowych znaczników, które mogą divy zastąpić. Jednym z nich jest <code class="mdl-color--white mdl-color-text--orange-600">section</code>, którym oznacza się pewne części dokumentu, które można wyróżnić ze względu na ich przeznaczenie. W tym wypadku użycie <code class="mdl-color--white mdl-color-text--orange-600">section</code> jest dozwolone, gdyż wyznacza obszar artykułu wraz ze wszystkimi "dodatkami" do niego (tj. tagi i komentarze) - całość tworzy pewną całość treściową. Właśnie do takich przypadków stworzono <code class="mdl-color--white mdl-color-text--orange-600">section</code>! Jednak to, że jest dozwolone, nie oznacza, że na pewno trzeba ten fragment oznaczyć. Za <a href="http://html5doctor.com/the-section-element/">HTML5 Doctor</a>:</p>
-<blockquote class="tutorials-quote"><p>But what would be the purpose of marking it &#91;main content&#93; up specifically, anyway? If you need to style it, use a div. An assistive technology like a screenreader can find the main content because it is the first thing inside a page that isn’t a header, nav or footer.</p></blockquote>
-<p class="tutorials-note "><s>Oczywiście ktoś w W3C myśli zupełnie inaczej… Dlatego pojawiła się <a href="https://dvcs.w3.org/hg/html-extensions/raw-file/tip/maincontent/index.html">propozycja elementu <code class="mdl-color--white mdl-color-text--orange-600">main</code></a>. Ja popieram stanowisko doktorów. Wydaje mi się, że W3C próbuje wręcz przesemantyzować nowy HTML (ale w swojej wersji - w wersji kanonicznej od WHATWG taki znacznik prawdpodobnie się nie pojawi). Jako ciekawostkę rzucę tutaj też fragmentem propozycji:</s></p>
-<blockquote class="tutorials-quote"><p><s>The main element formalises the common practice of identification of the main content section of a document using the id values such as 'content' and 'main'. <b>It also defines an HTML element that embodies the semantics and function of the WAI-ARIA &#91;ARIA&#93; landmark role=main.</b></s></p><cite>"https://dvcs.w3.org/hg/html-extensions/raw-file/tip/maincontent/index.html"</cite></blockquote>
-<p class="tutorials-note "><s>Ktoś nie lubi <a href="http://pl.wikipedia.org/wiki/DRY">być suchy</a>? ;)</s></p>
-<p class="tutorials-note ">Ekhem… No cóż. Okazało się, że webmasterzy bardzo polubili <code class="mdl-color--white mdl-color-text--orange-600">main</code> i znalazło się nawet w <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/grouping-content.html#the-main-element">kanonicznym HTML</a> (realne implementacje, prawda?). No więc - tak, śmiało, możesz sobie użyć <code class="mdl-color--white mdl-color-text--orange-600">main</code>. Co jednak ciekawe, z punktu widzenia technicznego <code class="mdl-color--white mdl-color-text--orange-600">main</code> zachowuje się jak <code class="mdl-color--white mdl-color-text--orange-600">div</code>, nie <code class="mdl-color--white mdl-color-text--orange-600">section</code> (co jest dość logicznym wyborem, zrównując w działaniu <code class="mdl-color--white mdl-color-text--orange-600">header, main, footer</code>) – nie wpływa w żaden sposób na hierarchię nagłówków.</p>
-<p class="tutorials-note ">Dobra, teraz zatrzymujemy się na <code class="mdl-color--white mdl-color-text--orange-600">div.post</code> - to też można ulepszyć. W HTML5 pojawia się <code class="mdl-color--white mdl-color-text--orange-600">article</code>, który służy do oznaczania… artykułów (nie wpadliście na to, co?), a dokładniej "semantycznej całości, która może być prezentowana samodzielnie" (dość swobodna interpretacja specyfikacji ;)). Wpis na blogu pasuje idealnie do tej definicji. No, na co czekasz - wyrzuć tego diva!</p>
-<p class="tutorials-note mdl-color--primary mdl-color-text--white">W tym miejscu pozwolę sobie na małą dygresję. Przed chwilą oznaczyliśmy główną treść strony przy pomocy <code class="mdl-color--white mdl-color-text--orange-600">main</code>. Teraz oznaczamy artykuł przy pomocy <code class="mdl-color--white mdl-color-text--orange-600">article</code>. Jest to całkowicie poprawne, jednakże przy stronach, na których znajduje się tylko jeden artykuł (jak w naszym przypadku) można się zastanawiać czy aż tak dokładny podział jest konieczny. Wówczas można pomyśleć nad rozwiązaniem typu <code class="mdl-color--white mdl-color-text--orange-600">article&#91;role=main&#93;</code> (o <code class="mdl-color--white mdl-color-text--orange-600">&#91;role&#93;</code> napisałem ciut później) lub po prostu pozostawieniu samego <code class="mdl-color--white mdl-color-text--orange-600">main</code>.</p>
+<h4 id="artykul-ramy">Główne ramy <a href="#artykul-ramy" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
+<p>Oki doki, teraz czas na danie główne - treść artykułu! Zapewne zauważyliście, że jest opatulona w dodatkowy <code>div#main</code>. Jak już wspomniałem, divy nie mają jakiegoś specjalnego znaczenia semantycznego, dlatego w HTML5 powstało mnóstwo nowych znaczników, które mogą divy zastąpić. Jednym z nich jest <code>section</code>, którym oznacza się pewne części dokumentu, które można wyróżnić ze względu na ich przeznaczenie. W tym wypadku użycie <code>section</code> jest dozwolone, gdyż wyznacza obszar artykułu wraz ze wszystkimi "dodatkami" do niego (tj. tagi i komentarze) - całość tworzy pewną całość treściową. Właśnie do takich przypadków stworzono <code>section</code>! Jednak to, że jest dozwolone, nie oznacza, że na pewno trzeba ten fragment oznaczyć. Za <a href="http://html5doctor.com/the-section-element/">HTML5 Doctor</a>:</p>
+<blockquote><p>But what would be the purpose of marking it &#91;main content&#93; up specifically, anyway? If you need to style it, use a div. An assistive technology like a screenreader can find the main content because it is the first thing inside a page that isn’t a header, nav or footer.</p></blockquote>
+<p><s>Oczywiście ktoś w W3C myśli zupełnie inaczej… Dlatego pojawiła się <a href="https://dvcs.w3.org/hg/html-extensions/raw-file/tip/maincontent/index.html">propozycja elementu <code>main</code></a>. Ja popieram stanowisko doktorów. Wydaje mi się, że W3C próbuje wręcz przesemantyzować nowy HTML (ale w swojej wersji - w wersji kanonicznej od WHATWG taki znacznik prawdpodobnie się nie pojawi). Jako ciekawostkę rzucę tutaj też fragmentem propozycji:</s></p>
+<blockquote><p><s>The main element formalises the common practice of identification of the main content section of a document using the id values such as 'content' and 'main'. <b>It also defines an HTML element that embodies the semantics and function of the WAI-ARIA &#91;ARIA&#93; landmark role=main.</b></s></p><footer><cite>"https://dvcs.w3.org/hg/html-extensions/raw-file/tip/maincontent/index.html"</cite></footer></blockquote>
+<p><s>Ktoś nie lubi <a href="http://pl.wikipedia.org/wiki/DRY">być suchy</a>? ;)</s></p>
+<p>Ekhem… No cóż. Okazało się, że webmasterzy bardzo polubili <code>main</code> i znalazło się nawet w <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/grouping-content.html#the-main-element">kanonicznym HTML</a> (realne implementacje, prawda?). No więc - tak, śmiało, możesz sobie użyć <code>main</code>. Co jednak ciekawe, z punktu widzenia technicznego <code>main</code> zachowuje się jak <code>div</code>, nie <code>section</code> (co jest dość logicznym wyborem, zrównując w działaniu <code>header, main, footer</code>) – nie wpływa w żaden sposób na hierarchię nagłówków.</p>
+<p>Dobra, teraz zatrzymujemy się na <code>div.post</code> - to też można ulepszyć. W HTML5 pojawia się <code>article</code>, który służy do oznaczania… artykułów (nie wpadliście na to, co?), a dokładniej "semantycznej całości, która może być prezentowana samodzielnie" (dość swobodna interpretacja specyfikacji ;)). Wpis na blogu pasuje idealnie do tej definicji. No, na co czekasz - wyrzuć tego diva!</p>
+<p class="alert alert-info">W tym miejscu pozwolę sobie na małą dygresję. Przed chwilą oznaczyliśmy główną treść strony przy pomocy <code>main</code>. Teraz oznaczamy artykuł przy pomocy <code>article</code>. Jest to całkowicie poprawne, jednakże przy stronach, na których znajduje się tylko jeden artykuł (jak w naszym przypadku) można się zastanawiać czy aż tak dokładny podział jest konieczny. Wówczas można pomyśleć nad rozwiązaniem typu <code>article&#91;role=main&#93;</code> (o <code>&#91;role&#93;</code> napisałem ciut później) lub po prostu pozostawieniu samego <code>main</code>.</p>
 
-<h4 class="mdl-typography--display-1" id="artykul-naglowek">Nagłówek<a href="#artykul-naglowek" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h4>
-<p class="tutorials-note ">Znowu natykamy się na nagłówek, a tuż za nim na akapit z informacjami na temat daty i autora postu. Te rzeczy doskonale nadają się na nagłówek, prawda? No to otoczmy to <code class="mdl-color--white mdl-color-text--orange-600">header</code>! Nagłówki nie są tylko i wyłącznie dla całych stron - mogą je mieć także sekcje i artykuły. To ma sens, ponieważ praktycznie każdy wpis na blogu ma swój tytuł, swojego autora itd., które wcale nie muszą być zgodne z autorem i tytułem całej strony. Ale to jeszcze nie wszystko - daty też mają swój własny znacznik w HTML5 :D Nie, nie jest to <code class="mdl-color--white mdl-color-text--orange-600">date</code> wbrew pozorom, lecz <code class="mdl-color--white mdl-color-text--orange-600">time</code>. Wraz z nim pojawiają się dwa nowe atrybuty: <code class="mdl-color--white mdl-color-text--orange-600">&#91;datetime&#93;</code>, który przyjmuje datę w formacie ISO-8601 i <s><code class="mdl-color--white mdl-color-text--orange-600">&#91;pubdate&#93;</code>, który mówi, że podana data jest datą publikacji danego materiału</s> wyleciało ze specki. Ten znacznik doskonale pasuje do oznaczenia daty publikacji wpisu.</p>
+<h4 id="artykul-naglowek">Nagłówek <a href="#artykul-naglowek" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
+<p>Znowu natykamy się na nagłówek, a tuż za nim na akapit z informacjami na temat daty i autora postu. Te rzeczy doskonale nadają się na nagłówek, prawda? No to otoczmy to <code>header</code>! Nagłówki nie są tylko i wyłącznie dla całych stron - mogą je mieć także sekcje i artykuły. To ma sens, ponieważ praktycznie każdy wpis na blogu ma swój tytuł, swojego autora itd., które wcale nie muszą być zgodne z autorem i tytułem całej strony. Ale to jeszcze nie wszystko - daty też mają swój własny znacznik w HTML5 :D Nie, nie jest to <code>date</code> wbrew pozorom, lecz <code>time</code>. Wraz z nim pojawiają się dwa nowe atrybuty: <code>&#91;datetime&#93;</code>, który przyjmuje datę w formacie ISO-8601 i <s><code>&#91;pubdate&#93;</code>, który mówi, że podana data jest datą publikacji danego materiału</s> wyleciało ze specki. Ten znacznik doskonale pasuje do oznaczenia daty publikacji wpisu.</p>
 
-<h4 class="mdl-typography--display-1" id="artykul-obrazki">Obrazki<a href="#artykul-obrazki" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h4>
-<p class="tutorials-note ">Dobra, później mamy obrazek. "No cóż, przynajmniej obrazka tykać nie będzie…" - pomyślą ci, których przytłacza ogrom nowych możliwości. Niestety, obrazek też można ulepszyć :D W tym wypadku posłużymy się znacznikiem <code class="mdl-color--white mdl-color-text--orange-600">figure</code>. Jego zadaniem jest oznaczanie danych multimedialnych, które są istotne dla danego artykułu (sekcji), lecz mogą także być prezentowane samodzielnie - na chłopski rozum: masz ilustrację do swojego artykułu, użyj <code class="mdl-color--white mdl-color-text--orange-600">figure</code>!</p>
-<p class="tutorials-note mdl-color--primary mdl-color-text--white">Co rozumiem pod pojęciem "ilustracja"? Wystarczy wyobrazić sobie książkę, w której mamy obrazek (albo tabelkę, zdjęcie itp.), a pod nim podpis typu "Ryc. 1. Pusta szafa". Dzięki takiemu oznaczeniu można wyciągnąć tego typu obiekt poza pierwotny kontekst, a wciąż będzie mieć te same znaczenie (pusta szafa z podpisem to wciąż pusta szafa). Natomiast wszelkie ozdobniki graficzne, które są w artykule, żeby było ładnie to po prostu ozdobniki. Ilustracja musi nieść ze sobą jakąś wartość semantyczną (łatwo to stwierdzić po tym, że da się wymyślić sensowny opis) i nie może zależeć od kontekstu swojego występowania (jeśli tekst traci sens po przesunięciu danego obiektu, to znak, że to nie jest kandydat na <code class="mdl-color--white mdl-color-text--orange-600">figure</code>).</p>
+<h4 id="artykul-obrazki">Obrazki <a href="#artykul-obrazki" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
+<p>Dobra, później mamy obrazek. "No cóż, przynajmniej obrazka tykać nie będzie…" - pomyślą ci, których przytłacza ogrom nowych możliwości. Niestety, obrazek też można ulepszyć :D W tym wypadku posłużymy się znacznikiem <code>figure</code>. Jego zadaniem jest oznaczanie danych multimedialnych, które są istotne dla danego artykułu (sekcji), lecz mogą także być prezentowane samodzielnie - na chłopski rozum: masz ilustrację do swojego artykułu, użyj <code>figure</code>!</p>
+<p class="alert alert-info">Co rozumiem pod pojęciem "ilustracja"? Wystarczy wyobrazić sobie książkę, w której mamy obrazek (albo tabelkę, zdjęcie itp.), a pod nim podpis typu "Ryc. 1. Pusta szafa". Dzięki takiemu oznaczeniu można wyciągnąć tego typu obiekt poza pierwotny kontekst, a wciąż będzie mieć te same znaczenie (pusta szafa z podpisem to wciąż pusta szafa). Natomiast wszelkie ozdobniki graficzne, które są w artykule, żeby było ładnie to po prostu ozdobniki. Ilustracja musi nieść ze sobą jakąś wartość semantyczną (łatwo to stwierdzić po tym, że da się wymyślić sensowny opis) i nie może zależeć od kontekstu swojego występowania (jeśli tekst traci sens po przesunięciu danego obiektu, to znak, że to nie jest kandydat na <code>figure</code>).</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;figure&gt;
 	&lt;img src="http://example.net/images/obrazek-do-artykulu.png" alt="Ważny obrazek"&gt;
 	&lt;figcaption&gt;Bardzo ważny obrazek&#91;…&#93;,który jest bardzo ważny&lt;/figcaption&gt;
 &lt;/figure&gt;</code></pre>
-<p class="tutorials-note ">W <code class="mdl-color--white mdl-color-text--orange-600">figcaption</code> można umieścić dokładny opis danego obiektu. Napisałem "obiektu", bo równie dobrze w <code class="mdl-color--white mdl-color-text--orange-600">figure</code> można umieścić filmik (np. poprzez HTML-owy <code class="mdl-color--white mdl-color-text--orange-600">video</code> - tak, też nowy znacznik :D) czy dźwięk (<code class="mdl-color--white mdl-color-text--orange-600">audio</code>).</p>
-<p class="tutorials-note mdl-color--primary mdl-color-text--white">Mała dygresja: <code class="mdl-color--white mdl-color-text--orange-600">&#91;alt&#93;</code> jest potrzebny dla obrazka z powodów dostępności. Jednakże czasami… warto pozostawić go pustym, z tych samych powodów ;) O co chodzi? Otóż nie ma sensu powielać opisu obrazka, jeśli jest on zawarty w otaczającej go treści (np. jeśli w <code class="mdl-color--white mdl-color-text--orange-600">figcaption</code> jest dokładny opis tego, co na obrazku, należy zostawić <code class="mdl-color--white mdl-color-text--orange-600">&#91;alt&#93;</code> pusty; często zdarza się jednak, że w takim wypadku <code class="mdl-color--white mdl-color-text--orange-600">&#91;alt&#93;</code> opisuje co jest na obrazku, a <code class="mdl-color--white mdl-color-text--orange-600">figcaption</code> dodaje do tego interpretację/wyjaśnienie; np <code class="mdl-color--white mdl-color-text--orange-600">&#91;alt&#93;</code> - "czerwony ptak na gałęzi", <code class="mdl-color--white mdl-color-text--orange-600">figcaption</code> - "Karłowata odmiana papugi"). W takich wypadkach można użyć <code class="mdl-color--white mdl-color-text--orange-600">&#91;aria-labelledby&#93;</code>. W3C przygotowało <a href="https://www.w3.org/TR/html51/semantics-embedded-content.html#alt-text" class="mdl-color-text--white">kilka wskazówek</a> (zresztą <a href="http://webaim.org/techniques/alttext/" class="mdl-color-text--white">nie tylko ono</a>). Ciekawy jest także fakt, że <a href="http://blog.paciellogroup.com/2014/04/short-note-alt/" class="mdl-color-text--white"><code class="mdl-color--white mdl-color-text--orange-600">&#91;alt&#93;</code> to nie jedyny sposób na zapewnienie dostępności</a>.</p>
-<p class="tutorials-note ">Jeśli chodzi o sam znacznik <code class="mdl-color--white mdl-color-text--orange-600">img</code> - jego również można ruszyć, a to za sprawą <a href="http://picture.responsiveimages.org/">nowego tagu <code class="mdl-color--white mdl-color-text--orange-600">picture</code></a>. Przykładzik, wprost ze specki:</p>
+<p>W <code>figcaption</code> można umieścić dokładny opis danego obiektu. Napisałem "obiektu", bo równie dobrze w <code>figure</code> można umieścić filmik (np. poprzez HTML-owy <code>video</code> - tak, też nowy znacznik :D) czy dźwięk (<code>audio</code>).</p>
+<p class="alert alert-info">Mała dygresja: <code>&#91;alt&#93;</code> jest potrzebny dla obrazka z powodów dostępności. Jednakże czasami… warto pozostawić go pustym, z tych samych powodów ;) O co chodzi? Otóż nie ma sensu powielać opisu obrazka, jeśli jest on zawarty w otaczającej go treści (np. jeśli w <code>figcaption</code> jest dokładny opis tego, co na obrazku, należy zostawić <code>&#91;alt&#93;</code> pusty; często zdarza się jednak, że w takim wypadku <code>&#91;alt&#93;</code> opisuje co jest na obrazku, a <code>figcaption</code> dodaje do tego interpretację/wyjaśnienie; np <code>&#91;alt&#93;</code> - "czerwony ptak na gałęzi", <code>figcaption</code> - "Karłowata odmiana papugi"). W takich wypadkach można użyć <code>&#91;aria-labelledby&#93;</code>. W3C przygotowało <a href="https://www.w3.org/TR/html51/semantics-embedded-content.html#alt-text" class="alert-link">kilka wskazówek</a> (zresztą <a href="http://webaim.org/techniques/alttext/" class="alert-link">nie tylko ono</a>). Ciekawy jest także fakt, że <a href="http://blog.paciellogroup.com/2014/04/short-note-alt/" class="alert-link"><code>&#91;alt&#93;</code> to nie jedyny sposób na zapewnienie dostępności</a>.</p>
+<p>Jeśli chodzi o sam znacznik <code>img</code> - jego również można ruszyć, a to za sprawą <a href="http://picture.responsiveimages.org/">nowego tagu <code>picture</code></a>. Przykładzik, wprost ze specki:</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;picture&gt;
 	&lt;source media="(min-width: 45em)" srcset="large-1.jpg 1x, large-2.jpg 2x"&gt;
 	&lt;source media="(min-width: 18em)" srcset="med-1.jpg 1x, med-2.jpg 2x"&gt;
 	&lt;source srcset="small-1.jpg 1x, small-2.jpg 2x"&gt;
 	&lt;img src="small-1.jpg" alt=""&gt;
 &lt;/picture&gt;</code></pre>
-<p class="tutorials-note ">Ci, którzy bawili się <code class="mdl-color--white mdl-color-text--orange-600">video</code>/<code class="mdl-color--white mdl-color-text--orange-600">audio</code> na pewno znają znaczniki <code class="mdl-color--white mdl-color-text--orange-600">source</code>. Wskazują one "źródło elementu multimedialnego" (w tym wypadku obrazka). Które <code class="mdl-color--white mdl-color-text--orange-600">source</code> ma wybrać przeglądarka? O tym decydują media queries, zawarte w atrybucie <code class="mdl-color--white mdl-color-text--orange-600">media</code>. Warto zauważyć także, że zawsze podawane są dwa obrazki, dodatkowo oznaczone "1x" i "2x". Są to wersje przystosowane do gęstości pikseli ("1x" dla normalnych monitorów, "2x" dla Retiny ;)). Oczywiście pojawa się też <code class="mdl-color--white mdl-color-text--orange-600">img</code>, <s>jako fallback</s>. Zgodnie z najnowszą wersją <code class="mdl-color--white mdl-color-text--orange-600">picutre</code>, <code class="mdl-color--white mdl-color-text--orange-600">img</code> jest jego główną składową - cała otoczka służy jedynie wyborowi odpowiedniego pliku grafiki, który jest następnie ładowany do rzeczonego <code class="mdl-color--white mdl-color-text--orange-600">img</code>. Proste i skuteczne. Jaki ma sens stosowanie tego typu zabiegów? Wyobraźmy sobie, że mamy zdjęcie prezydenta wygłaszającego orędzie do narodu. Owszem, można zastosować tricki w CSS, żeby obrazek nam się ładnie zeskalował na komórce, ale… No właśnie - będziemy mieli małe, rozmazane wiadomo co ;) Natomiast przy pomocy <code class="mdl-color--white mdl-color-text--orange-600">picture</code> komórkom i innym mniejszym ekranom możemy zaserwować odpowiednio mniejszy (zatem i lżejszy) obrazek ze zbliżeniem na twarz prezydenta. Nie dość, że iPhone będzie musiał mniej ściągnąć, to jeszcze dostanie zdjęcie przedstawiające to, co najważniejsze. Oczywiście działa to też w drugą stronę i super wypasionym ekranom panoramicznym o przekątnej 100 cali możemy wysłać zdjęcie prezydenta + całego słuchającego go tłumu ;)</p>
-<p class="tutorials-note "><s>Jak widać, specyfikacja <code class="mdl-color--white mdl-color-text--orange-600">picture</code> nosi niepokojącą nazwę "Unofficial draft", jednakowoż wciąż jest sygnowana logiem W3C (nadszedł czas standardów i "dobrych praktyk"?).</s> <s>Na razie tag <code class="mdl-color--white mdl-color-text--orange-600">picture</code> ma status <a href="http://www.w3.org/TR/html-picture-element/">szkicu roboczego</a></s>. Tag <code class="mdl-color--white mdl-color-text--orange-600">picture</code> jest już częścią <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-picture-element">specyfikacji HTML5</a>. Równocześnie rozwojem technik związanych z responsive images zajmuje się powołana <a href="http://responsiveimages.org/">"grupa społeczna"</a>. To właśnie ona zajmuje się rozwojem tagu <code class="mdl-color--white mdl-color-text--orange-600">picture</code> oraz jego mniej inwazyjnych odpowiedników - <a href="http://dev.w3.org/html5/srcset/">atrybutów <code class="mdl-color--white mdl-color-text--orange-600">&#91;srcset&#93;</code> i <code class="mdl-color--white mdl-color-text--orange-600">&#91;sizes&#93;</code> dla tagu <code class="mdl-color--white mdl-color-text--orange-600">img</code></a>. I tutaj warto nadmienić, że WHATWG odrzuciło początkowo propozycję znacznika <code class="mdl-color--white mdl-color-text--orange-600">picture</code>, promując <code class="mdl-color--white mdl-color-text--orange-600">&#91;srcset&#93;</code>. Najlepiej wyjaśnia to Ian Hickson - <s>najbardziej wływowy człowiek w Sieci</s> redaktor żyjącego standardu:</p>
-<blockquote class="tutorials-quote"><p>&#91;…&#93;let’s look at design. The way we usually approach ideas is that we describe the problem, then we come up with solutions to the problem and compare them, by evaluating them against the problem. This is where most concrete proposals run into a “no”; something else got the “yes” instead. <code class="mdl-color--white mdl-color-text--orange-600">&lt;picture&gt;</code> is an example of this: we described the problem (that took a few months of back and forth), and then once we had a problem description, I looked at the various proposals, and synthesised a solution based on those that addressed the problems adequately while trying to avoid some common design pitfalls based on lessons we’d learnt from previous ideas. So for example with <code class="mdl-color--white mdl-color-text--orange-600">&lt;picture&gt;</code>, we learnt with <code class="mdl-color--white mdl-color-text--orange-600">&lt;video&gt;</code> and <code class="mdl-color--white mdl-color-text--orange-600">&lt;source&gt;</code> that having multiple elements for selecting a resource is a huge design pitfall, so when designing a solution to the problem here, I avoided that (hence the srcset="" design based on CSS’s image-set() proposal).</p><cite>"http://html5doctor.com/interview-with-ian-hickson-html-editor/"</cite></blockquote>
-<p class="tutorials-note ">IMO osobiście w tym względzie nie zgadzam się z Ianem i raczej widziałbym znacznik <code class="mdl-color--white mdl-color-text--orange-600">picture</code> (+<code class="mdl-color--white mdl-color-text--orange-600">&#91;srcset&#93;</code>) niż "napakowany" <code class="mdl-color--white mdl-color-text--orange-600">img</code>. No, ale jak sam Hixie mówi:</p>
-<blockquote class="tutorials-quote"><p>In reality, I can’t really say either “yes” or “no”. What I say doesn’t mean anything: I don’t write any browsers. The browser vendors say “no” to me all the time, by just not implementing what I’ve specced.</p><cite>"http://html5doctor.com/interview-with-ian-hickson-html-editor/"</cite></blockquote>
-<p class="tutorials-note ">Rzeczywistość szybko zweryfikowała poglądy Hixiego i obecnie <a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-picture-element"><code class="mdl-color--white mdl-color-text--orange-600">picture</code> już jest w kanonicznym HTML</a> ;) <s>Chociaż ostatnio dochodzą mnie niepokojące głosy, że twórcy przeglądarek nie biorą pod uwagę <code class="mdl-color--white mdl-color-text--orange-600">picture</code> (jest zbyt kłopotliwy w implementacji).</s> Po wspomnianej zmianie statusu owego tagu <code class="mdl-color--white mdl-color-text--orange-600">picture &gt; img</code> oraz dzięki istniejącym <a href="http://mobile.smashingmagazine.com/2013/08/21/webkit-implements-srcset-and-why-its-a-good-thing/">pierwszym implementacjom <code class="mdl-color--white mdl-color-text--orange-600">srcset</code></a>, <a href="http://alistapart.com/blog/post/picture-element-qa">prace nad <code class="mdl-color--white mdl-color-text--orange-600">picture</code> ruszyły</a> i wkrótce będzie on obsługiwany przez przeglądarki. Tym samym w cień odeszło <a href="http://tabatkins.github.io/specs/respimg">nowe rozwiązanie - <code class="mdl-color--white mdl-color-text--orange-600">&#91;src-n&#93;</code></a>, które łączy w sobie niejako <code class="mdl-color--white mdl-color-text--orange-600">picture</code> i <code class="mdl-color--white mdl-color-text--orange-600">&#91;srcset&#93;</code> w prostsze, bardziej zrozumiałe rozwiązanie. Coraz częściej próbuje się także zrzucić odpowiedzialność za rozwiązanie problemu <a href="http://www.igvita.com/2013/08/29/automating-dpr-switching-with-client-hints/">na serwer</a> (co IMO jest bardzo rozsądnym rozwiązaniem). Jednak najlepszym (ale też najbardziej długotrwałym) rozwiązaniem wydaje się po prostu <a href="http://mobile.smashingmagazine.com/2013/09/24/responsive-image-container/">stworzenie nowego formatu obrazków</a>. Zresztą nieważne tak naprawdę jak problem responsywnych obrazków zostanie rozwiązany - najważniejsze, żeby został rozwiązany.</p>
+<p>Ci, którzy bawili się <code>video</code>/<code>audio</code> na pewno znają znaczniki <code>source</code>. Wskazują one "źródło elementu multimedialnego" (w tym wypadku obrazka). Które <code>source</code> ma wybrać przeglądarka? O tym decydują media queries, zawarte w atrybucie <code>media</code>. Warto zauważyć także, że zawsze podawane są dwa obrazki, dodatkowo oznaczone "1x" i "2x". Są to wersje przystosowane do gęstości pikseli ("1x" dla normalnych monitorów, "2x" dla Retiny ;)). Oczywiście pojawa się też <code>img</code>, <s>jako fallback</s>. Zgodnie z najnowszą wersją <code>picutre</code>, <code>img</code> jest jego główną składową - cała otoczka służy jedynie wyborowi odpowiedniego pliku grafiki, który jest następnie ładowany do rzeczonego <code>img</code>. Proste i skuteczne. Jaki ma sens stosowanie tego typu zabiegów? Wyobraźmy sobie, że mamy zdjęcie prezydenta wygłaszającego orędzie do narodu. Owszem, można zastosować tricki w CSS, żeby obrazek nam się ładnie zeskalował na komórce, ale… No właśnie - będziemy mieli małe, rozmazane wiadomo co ;) Natomiast przy pomocy <code>picture</code> komórkom i innym mniejszym ekranom możemy zaserwować odpowiednio mniejszy (zatem i lżejszy) obrazek ze zbliżeniem na twarz prezydenta. Nie dość, że iPhone będzie musiał mniej ściągnąć, to jeszcze dostanie zdjęcie przedstawiające to, co najważniejsze. Oczywiście działa to też w drugą stronę i super wypasionym ekranom panoramicznym o przekątnej 100 cali możemy wysłać zdjęcie prezydenta + całego słuchającego go tłumu ;)</p>
+<p><s>Jak widać, specyfikacja <code>picture</code> nosi niepokojącą nazwę "Unofficial draft", jednakowoż wciąż jest sygnowana logiem W3C (nadszedł czas standardów i "dobrych praktyk"?).</s> <s>Na razie tag <code>picture</code> ma status <a href="http://www.w3.org/TR/html-picture-element/">szkicu roboczego</a></s>. Tag <code>picture</code> jest już częścią <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-picture-element">specyfikacji HTML5</a>. Równocześnie rozwojem technik związanych z responsive images zajmuje się powołana <a href="http://responsiveimages.org/">"grupa społeczna"</a>. To właśnie ona zajmuje się rozwojem tagu <code>picture</code> oraz jego mniej inwazyjnych odpowiedników - <a href="http://dev.w3.org/html5/srcset/">atrybutów <code>&#91;srcset&#93;</code> i <code>&#91;sizes&#93;</code> dla tagu <code>img</code></a>. I tutaj warto nadmienić, że WHATWG odrzuciło początkowo propozycję znacznika <code>picture</code>, promując <code>&#91;srcset&#93;</code>. Najlepiej wyjaśnia to Ian Hickson - <s>najbardziej wływowy człowiek w Sieci</s> redaktor żyjącego standardu:</p>
+<blockquote><p>&#91;…&#93;let’s look at design. The way we usually approach ideas is that we describe the problem, then we come up with solutions to the problem and compare them, by evaluating them against the problem. This is where most concrete proposals run into a “no”; something else got the “yes” instead. <code>&lt;picture&gt;</code> is an example of this: we described the problem (that took a few months of back and forth), and then once we had a problem description, I looked at the various proposals, and synthesised a solution based on those that addressed the problems adequately while trying to avoid some common design pitfalls based on lessons we’d learnt from previous ideas. So for example with <code>&lt;picture&gt;</code>, we learnt with <code>&lt;video&gt;</code> and <code>&lt;source&gt;</code> that having multiple elements for selecting a resource is a huge design pitfall, so when designing a solution to the problem here, I avoided that (hence the srcset="" design based on CSS’s image-set() proposal).</p><footer><cite>"http://html5doctor.com/interview-with-ian-hickson-html-editor/"</cite></footer></blockquote>
+<p>IMO osobiście w tym względzie nie zgadzam się z Ianem i raczej widziałbym znacznik <code>picture</code> (+<code>&#91;srcset&#93;</code>) niż "napakowany" <code>img</code>. No, ale jak sam Hixie mówi:</p>
+<blockquote><p>In reality, I can’t really say either “yes” or “no”. What I say doesn’t mean anything: I don’t write any browsers. The browser vendors say “no” to me all the time, by just not implementing what I’ve specced.</p><footer><cite>"http://html5doctor.com/interview-with-ian-hickson-html-editor/"</cite></footer></blockquote>
+<p>Rzeczywistość szybko zweryfikowała poglądy Hixiego i obecnie <a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-picture-element"><code>picture</code> już jest w kanonicznym HTML</a> ;) <s>Chociaż ostatnio dochodzą mnie niepokojące głosy, że twórcy przeglądarek nie biorą pod uwagę <code>picture</code> (jest zbyt kłopotliwy w implementacji).</s> Po wspomnianej zmianie statusu owego tagu <code>picture &gt; img</code> oraz dzięki istniejącym <a href="http://mobile.smashingmagazine.com/2013/08/21/webkit-implements-srcset-and-why-its-a-good-thing/">pierwszym implementacjom <code>srcset</code></a>, <a href="http://alistapart.com/blog/post/picture-element-qa">prace nad <code>picture</code> ruszyły</a> i wkrótce będzie on obsługiwany przez przeglądarki. Tym samym w cień odeszło <a href="http://tabatkins.github.io/specs/respimg">nowe rozwiązanie - <code>&#91;src-n&#93;</code></a>, które łączy w sobie niejako <code>picture</code> i <code>&#91;srcset&#93;</code> w prostsze, bardziej zrozumiałe rozwiązanie. Coraz częściej próbuje się także zrzucić odpowiedzialność za rozwiązanie problemu <a href="http://www.igvita.com/2013/08/29/automating-dpr-switching-with-client-hints/">na serwer</a> (co IMO jest bardzo rozsądnym rozwiązaniem). Jednak najlepszym (ale też najbardziej długotrwałym) rozwiązaniem wydaje się po prostu <a href="http://mobile.smashingmagazine.com/2013/09/24/responsive-image-container/">stworzenie nowego formatu obrazków</a>. Zresztą nieważne tak naprawdę jak problem responsywnych obrazków zostanie rozwiązany - najważniejsze, żeby został rozwiązany.</p>
 
-<h4 class="mdl-typography--display-1" id="artykul-outline">Outline<a href="#artykul-outline" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h4>
-<p class="tutorials-note ">Dobra, akapitów się (jeszcze) zmienić nie da, więc treść mamy z głowy :D <s>Tagi i komentarze zostają bez większych zmian, jedynie <code class="mdl-color--white mdl-color-text--orange-600">h3</code> zmienia się w <code class="mdl-color--white mdl-color-text--orange-600">h2</code>. Czemu? Przypatrzmy się <a href="http://tutorials.comandeer.pl/res/html5-blog/outlinehtml5.png">outline</a>. Zaskoczeni? (Pewnie tak, bo do części kodu jeszcze nie doszliśmy :D). Jak widać w HTML5 outline jest liczony dla każdej sekcji i artykułu oddzielnie, tzn. <code class="mdl-color--white mdl-color-text--orange-600">h1</code> w artykule będzie niżej niż <code class="mdl-color--white mdl-color-text--orange-600">h1</code> w dokumencie. Dla porównania <a href="http://tutorials.comandeer.pl/res/html5-blog/outlinehtml4.png">outline z HTML4</a>. O wiele wygodniej, prawda?</s></p>
-<p class="tutorials-note "><s>Co do liczenia outline'u w HTML5 warto także dodać, że można go budować obecnie tylko przy pomocy <code class="mdl-color--white mdl-color-text--orange-600">h1</code> (i wymuszać hierarchię przez odpowiednie wykorzystywanie <code class="mdl-color--white mdl-color-text--orange-600">section</code> czy <code class="mdl-color--white mdl-color-text--orange-600">article</code>).</s> W końcu <a href="https://lists.w3.org/Archives/Public/public-html/2016Apr/0032.html">postanowiono pozbyć się tej fikcji</a>. Stąd jedynym poprawnym sposobem tworzenia hierarchii treści na stronie HTML5 jest połączenie obydwu metod (tagi sekcjonujące + różnicowanie ważności nagłówków), gdyż nowy algorytm zostanie usunięty ze specyfikacji i zastosowanie go spowoduje, że <a href="http://en.wikipedia.org/wiki/Assistive_Technology">AT</a> dostaną spłaszczoną hierarchię nagłówków (co raczej jest średnim pomysłem). <s>Te obawy potwierdzają <a href="http://blog.paciellogroup.com/2013/10/html5-document-outline/">najnowsze doniesienia</a>, z których wynika, że nikt nie zaimplementował jeszcze nowego sposobu liczenia nagłówków.</s> Dlatego też kod bloga został poprawiony tak, by odzworowywać hierarchię nagłówków przy pomocy sekcji + starej hierarchi z HTML4.</p>
-<p class="tutorials-note ">Jeśli chcesz przetestować swój outline, wystarczy zaznaczyć odpowiednią opcję w <a href="http://validator.w3.org/nu">walidatorze</a>.</p>
-<p class="tutorials-note mdl-color--primary mdl-color-text--white">Jako ciekawostkę można tutaj powiedzieć, że umiejętnie korzystając z atrybutu <code class="mdl-color--white mdl-color-text--orange-600">&#91;role=heading&#93;</code> i <code class="mdl-color--white mdl-color-text--orange-600">&#91;aria-level&#93;</code> można tworzyć hierarchię na samych <code class="mdl-color--white mdl-color-text--orange-600">h1</code>, tak, jak zostało to opisane w specyfikacji. Metodę tą stosuje <a href="https://github.com/ThePacielloGroup/html5-h" class="mdl-color-text--white">niestandardowy znacznik <code class="mdl-color--white mdl-color-text--orange-600">html5-h</code></a> (<s>jak lenistwo mi pozwoli, kiedyś dokładnie opiszę jak i po co takie elementy się tworzy ;)</s> <a href="http://webroad.pl/javascript/3505-web-components" class="mdl-color-text--white">overview tej technologii</a> + <a href="http://tutorials.comandeer.pl/polymer.html" class="mdl-color-text--white">garść refleksji</a>). Niemniej warto zauważyć, że to bardziej hack niźli eleganckie rozwiązanie problemu. Jednakowoż <code class="mdl-color--white mdl-color-text--orange-600">&#91;aria-level&#93;</code> można użyć w przypadku, gdy potrzebujemy więcej niż 6 poziomów zagłębień nagłówków (do "pogłębienia" <code class="mdl-color--white mdl-color-text--orange-600">h6</code> - bardzo edge'owy przypadek, ale warto o tym wiedzieć).</p>
+<h4 id="artykul-outline">Outline <a href="#artykul-outline" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
+<p>Dobra, akapitów się (jeszcze) zmienić nie da, więc treść mamy z głowy :D <s>Tagi i komentarze zostają bez większych zmian, jedynie <code>h3</code> zmienia się w <code>h2</code>. Czemu? Przypatrzmy się <a href="http://tutorials.comandeer.pl/res/html5-blog/outlinehtml5.png">outline</a>. Zaskoczeni? (Pewnie tak, bo do części kodu jeszcze nie doszliśmy :D). Jak widać w HTML5 outline jest liczony dla każdej sekcji i artykułu oddzielnie, tzn. <code>h1</code> w artykule będzie niżej niż <code>h1</code> w dokumencie. Dla porównania <a href="http://tutorials.comandeer.pl/res/html5-blog/outlinehtml4.png">outline z HTML4</a>. O wiele wygodniej, prawda?</s></p>
+<p><s>Co do liczenia outline'u w HTML5 warto także dodać, że można go budować obecnie tylko przy pomocy <code>h1</code> (i wymuszać hierarchię przez odpowiednie wykorzystywanie <code>section</code> czy <code>article</code>).</s> W końcu <a href="https://lists.w3.org/Archives/Public/public-html/2016Apr/0032.html">postanowiono pozbyć się tej fikcji</a>. Stąd jedynym poprawnym sposobem tworzenia hierarchii treści na stronie HTML5 jest połączenie obydwu metod (tagi sekcjonujące + różnicowanie ważności nagłówków), gdyż nowy algorytm zostanie usunięty ze specyfikacji i zastosowanie go spowoduje, że <a href="http://en.wikipedia.org/wiki/Assistive_Technology">AT</a> dostaną spłaszczoną hierarchię nagłówków (co raczej jest średnim pomysłem). <s>Te obawy potwierdzają <a href="http://blog.paciellogroup.com/2013/10/html5-document-outline/">najnowsze doniesienia</a>, z których wynika, że nikt nie zaimplementował jeszcze nowego sposobu liczenia nagłówków.</s> Dlatego też kod bloga został poprawiony tak, by odzworowywać hierarchię nagłówków przy pomocy sekcji + starej hierarchi z HTML4.</p>
+<p>Jeśli chcesz przetestować swój outline, wystarczy zaznaczyć odpowiednią opcję w <a href="http://validator.w3.org/nu">walidatorze</a>.</p>
+<p class="alert alert-info">Jako ciekawostkę można tutaj powiedzieć, że umiejętnie korzystając z atrybutu <code>&#91;role=heading&#93;</code> i <code>&#91;aria-level&#93;</code> można tworzyć hierarchię na samych <code>h1</code>, tak, jak zostało to opisane w specyfikacji. Metodę tą stosuje <a href="https://github.com/ThePacielloGroup/html5-h" class="alert-link">niestandardowy znacznik <code>html5-h</code></a> (<s>jak lenistwo mi pozwoli, kiedyś dokładnie opiszę jak i po co takie elementy się tworzy ;)</s> <a href="http://webroad.pl/javascript/3505-web-components" class="alert-link">overview tej technologii</a> + <a href="http://tutorials.comandeer.pl/polymer.html" class="alert-link">garść refleksji</a>). Niemniej warto zauważyć, że to bardziej hack niźli eleganckie rozwiązanie problemu. Jednakowoż <code>&#91;aria-level&#93;</code> można użyć w przypadku, gdy potrzebujemy więcej niż 6 poziomów zagłębień nagłówków (do "pogłębienia" <code>h6</code> - bardzo edge'owy przypadek, ale warto o tym wiedzieć).</p>
 
-<h4 class="mdl-typography--display-1" id="artykul-komentarz">Komentarze<a href="#artykul-komentarz" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h4>
-<p class="tutorials-note ">Okey, to jeszcze słówko na temat wyświetlania komentarzy: <s>większość używa <code class="mdl-color--white mdl-color-text--orange-600">cite</code> do oznaczania autora wypowiedzi, co jest niezgodne z <a href="http://developers.whatwg.org/text-level-semantics.html#the-cite-element">wytycznymi WHATWG</a>, który zaleca do oznaczania autora <code class="mdl-color--white mdl-color-text--orange-600">b</code>, <code class="mdl-color--white mdl-color-text--orange-600">cite</code> zostawiając tylko do tytułów dzieł)</s> w końcu <a href="#"><code class="mdl-color--white mdl-color-text--orange-600">cite</code> działa tak, jak nakazuje logika</a>. Co więcej, umieścić można każdy komentarz w <code class="mdl-color--white mdl-color-text--orange-600">article</code>, dzięki czemu stworzylibyśmy swoistą hierarchię artykułów (tzn. każdy komentarz byłby "podartykułem" wpisu). Jest to logiczne, ponieważ każdy komentarz może być wyświetlany "samodzielnie" (wszak opinia o dziele A może istnieć odrębnie od tego dzieła). Przywodzi to na myśl stare, dobre gazety, w których odpowiedzią na konkretny artykuł jest… inny artykuł.</p>
-<p class="tutorials-note ">Jeśli jednak już zgodzimy się na oznaczanie komentarzy przy pomocy artykułu, czekają nas kolejne wyzwania. Otóż regułą kciuka jest, by każdy artykuł miał odpowiedni nagłówek. Lecz jaki nagłówek powinien mieć komentarz? Wywiązała się <a href="http://www.forumweb.pl/komentarze-kurshtml-edu-pl/html-html5/496603#496603">gorąca dyskusja na ten temat</a>, która skłoniła mnie do refleksji na temat kodu komentarzy. Na większości stron w Sieci, a także <a href="http://www.w3.org/TR/html5/sections.html#article-example">w specyfikacji</a>, komentarze są traktowane jako wyjątek, który nie posiada nagłówka (bo są to artykuły zagnieżdżone). Niemniej na chwilę obecną uważam, że dodanie jako nagłówka nazwy użytkownika nie zaszkodzi - pozwoli to nam w łatwiejszy sposób śledzić komentarze danego użytkownika (np. naszego ulubionego hejtera!). Pomysł, by w nagłówku czy etykietce <code class="mdl-color--white mdl-color-text--orange-600">&#91;aria-label&#93;</code> dodawać pierwsze słowa komentarza ostatecznie odrzuciłem - z tego samego powodu, z jakiego niekiedy warto zostawić puste <code class="mdl-color--white mdl-color-text--orange-600">&#91;alt&#93;</code>: nie ma sensu dublować treści.</p>
-<p class="tutorials-note mdl-color--primary mdl-color-text--white">Nie oznacza to jednak, że np. w RSS nie warto zamieścić tego typu opisu. W przypadku jednak strony internetowej jest to zbędne.</p>
-<p class="tutorials-note ">Ostatecznie kod komentarzy wygląda tak:</p>
+<h4 id="artykul-komentarz">Komentarze <a href="#artykul-komentarz" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
+<p>Okey, to jeszcze słówko na temat wyświetlania komentarzy: <s>większość używa <code>cite</code> do oznaczania autora wypowiedzi, co jest niezgodne z <a href="http://developers.whatwg.org/text-level-semantics.html#the-cite-element">wytycznymi WHATWG</a>, który zaleca do oznaczania autora <code>b</code>, <code>cite</code> zostawiając tylko do tytułów dzieł)</s> w końcu <a href="#"><code>cite</code> działa tak, jak nakazuje logika</a>. Co więcej, umieścić można każdy komentarz w <code>article</code>, dzięki czemu stworzylibyśmy swoistą hierarchię artykułów (tzn. każdy komentarz byłby "podartykułem" wpisu). Jest to logiczne, ponieważ każdy komentarz może być wyświetlany "samodzielnie" (wszak opinia o dziele A może istnieć odrębnie od tego dzieła). Przywodzi to na myśl stare, dobre gazety, w których odpowiedzią na konkretny artykuł jest… inny artykuł.</p>
+<p>Jeśli jednak już zgodzimy się na oznaczanie komentarzy przy pomocy artykułu, czekają nas kolejne wyzwania. Otóż regułą kciuka jest, by każdy artykuł miał odpowiedni nagłówek. Lecz jaki nagłówek powinien mieć komentarz? Wywiązała się <a href="http://www.forumweb.pl/komentarze-kurshtml-edu-pl/html-html5/496603#496603">gorąca dyskusja na ten temat</a>, która skłoniła mnie do refleksji na temat kodu komentarzy. Na większości stron w Sieci, a także <a href="http://www.w3.org/TR/html5/sections.html#article-example">w specyfikacji</a>, komentarze są traktowane jako wyjątek, który nie posiada nagłówka (bo są to artykuły zagnieżdżone). Niemniej na chwilę obecną uważam, że dodanie jako nagłówka nazwy użytkownika nie zaszkodzi - pozwoli to nam w łatwiejszy sposób śledzić komentarze danego użytkownika (np. naszego ulubionego hejtera!). Pomysł, by w nagłówku czy etykietce <code>&#91;aria-label&#93;</code> dodawać pierwsze słowa komentarza ostatecznie odrzuciłem - z tego samego powodu, z jakiego niekiedy warto zostawić puste <code>&#91;alt&#93;</code>: nie ma sensu dublować treści.</p>
+<p class="alert alert-info">Nie oznacza to jednak, że np. w RSS nie warto zamieścić tego typu opisu. W przypadku jednak strony internetowej jest to zbędne.</p>
+<p>Ostatecznie kod komentarzy wygląda tak:</p>
 
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;article id="comment-25" itemprop="comment" itemscope itemtype="http://schema.org/UserComments"&gt;
 	&lt;header class="comment-meta"&gt;
@@ -426,9 +278,8 @@
 	&lt;p itemprop="commentText"&gt;Ale komentarz!&lt;/p&gt;
 &lt;/article&gt;</code></pre>
 
-<h4 class="mdl-typography--display-1" id="artykul-calosc">Całość złożona do kupy<a href="#artykul-calosc" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h4>
-<p class="tutorials-note ">A oto szkielet naszej treści (spokojnie, na końcu podam całość):</p>
+<h4 id="artykul-calosc">Całość złożona do kupy <a href="#artykul-calosc" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
+<p>A oto szkielet naszej treści (spokojnie, na końcu podam całość):</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;main&gt;
 	&lt;article&gt;
 		&lt;header&gt;
@@ -447,19 +298,18 @@
 		&lt;/section&gt;
 	&lt;/article&gt;
 &lt;/main&gt;</code></pre>
-<p class="tutorials-note "><s>Jak zapewne zauważyliście, samą treść artykułu również ująłem w <code class="mdl-color--white mdl-color-text--orange-600">section</code> (identyczny praktycznie przykład znajduje się w specyfikacji HTML 5), ponieważ jest to fragment strony, który jest spójny tematycznie (dlatego można go traktować jak sekcję).</s> Wycofuję się z tego, ponieważ spowoduje to powstanie niezatytułowanej sekcji. Nie jest to co prawda błąd krytyczny, ale w tym wypadku sekcja nie niesie tak naprawdę żadnej szczególnej informacji. Wiadomo, że jest to treść artykułu (jest w <code class="mdl-color--white mdl-color-text--orange-600">article</code> i nie jest ani w nagłówku, ani w stopce), dlatego co najwyżej można umieścić ją w <code class="mdl-color--white mdl-color-text--orange-600">div</code> w celu ułatwienia stylizacji. Prawdopodobnie w przyszłości do tego celu będzie można użyć tagu <code class="mdl-color--white mdl-color-text--orange-600">main</code> (warto zwrócić na subtelną różnicę w jego definicji w specyfikacji żywego standardu oraz HTML 5.1). Niemniej jednak <code class="mdl-color--white mdl-color-text--orange-600">section</code> w artykule jak najbardziej pojawić się może, ale w przypadku gdy artykuł zawiera w sobie podtytuły (jak np. ten tutorial - nie, nie wzorujcie się na jego kodzie ;)). Wówczas każdy podtytuł z odpowiadającą mu treścią może być traktowany jako osobna <code class="mdl-color--white mdl-color-text--orange-600">section</code>. Z kolei tagi można potraktować jako <code class="mdl-color--white mdl-color-text--orange-600">footer</code> (dodatkowe, poboczne informacje do artykułu) a komentarze - sekcję (mają sensowny tytuł i stanowią spójną całość). <s>Oczywiście można też zrobić inaczej: zarówno tagi, jak i komentarze potraktować jako sekcje i włożyć je w <code class="mdl-color--white mdl-color-text--orange-600">footer</code>. Obydwa sposoby wydają się być zupełnie poprawne.</s> Nie da się jednak wsadzić komentarzy w stopkę z prostego powodu: mają w sobie nagłówek (element <code class="mdl-color--white mdl-color-text--orange-600">header</code>), który jest zabroniony przez specyfikację HTML5 jako potomek <code class="mdl-color--white mdl-color-text--orange-600">footer</code>. Co więcej definicja stopki sugeruje, że jest ona przeznaczona na zawarcie metadanych:</p>
-<blockquote class="tutorials-quote"><p>A footer typically contains information about its section such as who wrote it, links to related documents, copyright data, and the like.</p><cite>"http://www.w3.org/TR/html5/sections.html#the-footer-element"</cite></blockquote>
-<p class="tutorials-note ">Tagi w tym kontekście pasują o wiele bardziej (po prostu opisują dany artykuł jako słowa kluczowe), podczas gdy komentarze już niespecjalnie. Owszem, można je potraktować jako "powiązane dokumenty", jednak są one dośc autonomicznymi tworami i część z nich z powodzeniem mogłaby żyć bez łączności ze swoim "rodzicem". Stąd wydzielenie komentarzy do sekcji i pozostawienie w stopce samych tagów wydaje się rozwiązaniem sensownym.</p>
-<p class="tutorials-note ">Tak to mniej więcej wygląda. Formularz se opuszczę i powrócę do niego później, bo formularze w HTML5 to bardzo ciekawy temat warty więcej od szybkiego spojrzenia.</p>
+<p><s>Jak zapewne zauważyliście, samą treść artykułu również ująłem w <code>section</code> (identyczny praktycznie przykład znajduje się w specyfikacji HTML 5), ponieważ jest to fragment strony, który jest spójny tematycznie (dlatego można go traktować jak sekcję).</s> Wycofuję się z tego, ponieważ spowoduje to powstanie niezatytułowanej sekcji. Nie jest to co prawda błąd krytyczny, ale w tym wypadku sekcja nie niesie tak naprawdę żadnej szczególnej informacji. Wiadomo, że jest to treść artykułu (jest w <code>article</code> i nie jest ani w nagłówku, ani w stopce), dlatego co najwyżej można umieścić ją w <code>div</code> w celu ułatwienia stylizacji. Prawdopodobnie w przyszłości do tego celu będzie można użyć tagu <code>main</code> (warto zwrócić na subtelną różnicę w jego definicji w specyfikacji żywego standardu oraz HTML 5.1). Niemniej jednak <code>section</code> w artykule jak najbardziej pojawić się może, ale w przypadku gdy artykuł zawiera w sobie podtytuły (jak np. ten tutorial - nie, nie wzorujcie się na jego kodzie ;)). Wówczas każdy podtytuł z odpowiadającą mu treścią może być traktowany jako osobna <code>section</code>. Z kolei tagi można potraktować jako <code>footer</code> (dodatkowe, poboczne informacje do artykułu) a komentarze - sekcję (mają sensowny tytuł i stanowią spójną całość). <s>Oczywiście można też zrobić inaczej: zarówno tagi, jak i komentarze potraktować jako sekcje i włożyć je w <code>footer</code>. Obydwa sposoby wydają się być zupełnie poprawne.</s> Nie da się jednak wsadzić komentarzy w stopkę z prostego powodu: mają w sobie nagłówek (element <code>header</code>), który jest zabroniony przez specyfikację HTML5 jako potomek <code>footer</code>. Co więcej definicja stopki sugeruje, że jest ona przeznaczona na zawarcie metadanych:</p>
+<blockquote><p>A footer typically contains information about its section such as who wrote it, links to related documents, copyright data, and the like.</p><footer><cite>"http://www.w3.org/TR/html5/sections.html#the-footer-element"</cite></footer></blockquote>
+<p>Tagi w tym kontekście pasują o wiele bardziej (po prostu opisują dany artykuł jako słowa kluczowe), podczas gdy komentarze już niespecjalnie. Owszem, można je potraktować jako "powiązane dokumenty", jednak są one dośc autonomicznymi tworami i część z nich z powodzeniem mogłaby żyć bez łączności ze swoim "rodzicem". Stąd wydzielenie komentarzy do sekcji i pozostawienie w stopce samych tagów wydaje się rozwiązaniem sensownym.</p>
+<p>Tak to mniej więcej wygląda. Formularz se opuszczę i powrócę do niego później, bo formularze w HTML5 to bardzo ciekawy temat warty więcej od szybkiego spojrzenia.</p>
 
 
-<h3 class="mdl-typography--display-2" id="sidebar">Sidebar<a href="#sidebar" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h3>
-<p class="tutorials-note ">Przejdźmy do <code class="mdl-color--white mdl-color-text--orange-600">div#aside</code>. Tworzy on tzw. "boczny pasek" z informacjami luźno związanymi z <s>wpisem</s> główną treścią (gdyby chodziło o sam artykuł, mielibyśmy do czynienia z <code class="mdl-color--white mdl-color-text--orange-600">article &gt; aside</code>; w tym wypadku chodzi o całą zawartość <code class="mdl-color--white mdl-color-text--orange-600">main</code>; inna sprawa, że tutaj faktycznie jest to jeden artykuł): autor, tagi, archiwa… Do oznaczania takich rzeczy powstał <code class="mdl-color--white mdl-color-text--orange-600">aside</code> - oznacza się nim właśnie luźno związane z główną treścią rzeczy, które można zaprezentować samodzielnie (to chyba ulubione słówko w WHATWG :D).</p>
-<p class="tutorials-note ">Idąc dalej, divy z tagami, autorem i archiwami można potraktować jako artykuły. I choć początkowo taka interpretacja specyfikacji wydaje się ciutkę naciągana, to po dogłębniejszym wczytaniu okazuje się (chyba raczej na pewno) właściwa.</p>
-<blockquote class="tutorials-quote"><p>This could be a forum post, a magazine or newspaper article, a blog entry, a user-submitted comment, an interactive widget or gadget, or <b>any other independent item of content</b>.</p><cite>"http://developers.whatwg.org/sections.html#the-article-element"</cite></blockquote>
-<p class="tutorials-note ">Najważniejszy jest pogrubiony fragment. Ba, tylko co on znaczy? Idąc za <a href="http://html5doctor.com/the-article-element/">radą doktorów</a> trza pomyśleć czy dany fragment wyciągnięty z kontekstu wciąż ma jakiś sens. Notka o autorze, pozbawiona sąsiedztwa wpisu raczej nie stanie się bełkotem. Lista archiwalnych wpisów również pozostanie listą, tak jak lista tagów listą tagów. Dlatego moim skromnym zdaniem, chociaż na pierwszy rzut oka wydaje się to pewnym nadużyciem, <code class="mdl-color--white mdl-color-text--orange-600">article</code> pasują tutaj idealnie. Oczywiście można je z powodzeniem zamienić na <code class="mdl-color--white mdl-color-text--orange-600">section</code> ;)</p>
-<p class="tutorials-note ">Szkielet:</p>
+<h3 id="sidebar">Sidebar <a href="#sidebar" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<p>Przejdźmy do <code>div#aside</code>. Tworzy on tzw. "boczny pasek" z informacjami luźno związanymi z <s>wpisem</s> główną treścią (gdyby chodziło o sam artykuł, mielibyśmy do czynienia z <code>article &gt; aside</code>; w tym wypadku chodzi o całą zawartość <code>main</code>; inna sprawa, że tutaj faktycznie jest to jeden artykuł): autor, tagi, archiwa… Do oznaczania takich rzeczy powstał <code>aside</code> - oznacza się nim właśnie luźno związane z główną treścią rzeczy, które można zaprezentować samodzielnie (to chyba ulubione słówko w WHATWG :D).</p>
+<p>Idąc dalej, divy z tagami, autorem i archiwami można potraktować jako artykuły. I choć początkowo taka interpretacja specyfikacji wydaje się ciutkę naciągana, to po dogłębniejszym wczytaniu okazuje się (chyba raczej na pewno) właściwa.</p>
+<blockquote><p>This could be a forum post, a magazine or newspaper article, a blog entry, a user-submitted comment, an interactive widget or gadget, or <b>any other independent item of content</b>.</p><footer><cite>"http://developers.whatwg.org/sections.html#the-article-element"</cite></footer></blockquote>
+<p>Najważniejszy jest pogrubiony fragment. Ba, tylko co on znaczy? Idąc za <a href="http://html5doctor.com/the-article-element/">radą doktorów</a> trza pomyśleć czy dany fragment wyciągnięty z kontekstu wciąż ma jakiś sens. Notka o autorze, pozbawiona sąsiedztwa wpisu raczej nie stanie się bełkotem. Lista archiwalnych wpisów również pozostanie listą, tak jak lista tagów listą tagów. Dlatego moim skromnym zdaniem, chociaż na pierwszy rzut oka wydaje się to pewnym nadużyciem, <code>article</code> pasują tutaj idealnie. Oczywiście można je z powodzeniem zamienić na <code>section</code> ;)</p>
+<p>Szkielet:</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;aside&gt;
 	&lt;article&gt;
 		&lt;h3&gt;O autorze&lt;/h3&gt;
@@ -471,52 +321,46 @@
 		&lt;h3&gt;Archiwum&lt;/h3&gt;
 	&lt;/article&gt;
 &lt;/aside&gt;</code></pre>
-<p class="tutorials-note "><a href="http://kacperkozak.pl">Kolega</a> zwrócił mi uwagę, że tagi i archiwum można potraktować też w inny sposób ;) Nie da się ukryć, że są to de facto dwie listy odnośników. Dlatego też można je potraktować jako dodatkowe elementy nawigacyjne (otoczyć <code class="mdl-color--white mdl-color-text--orange-600">nav</code>). Moim zdaniem obydwie interpretacje tych elementów są poprawne a różnica wynika po prostu z innej perspektywy spojrzenia na sprawę. Moja interpretacja wynika z analizy samej natury treści (czy jest ona możliwa do zaprezentowania niezależnie, czy stanowi poboczną informację do głównej treści itd.), natomiast interpretacja kolegi - z analizy wzajemnych relacji i funkcji (czy ta lista odnośników może być potraktowana jako nawigacja, czy prowadzi do innej, powiązanej treści w obrębie witryny itd.). Gdyby ktoś był ciekawy, w specyfikacji HTML5 pojawia się zastosowanie <code class="mdl-color--white mdl-color-text--orange-600">aside &gt; nav</code> właśnie w takim kontekście.</p>
-<p class="tutorials-note mdl-color--primary mdl-color-text--white"><code class="mdl-color--white mdl-color-text--orange-600">nav</code> nie służy tylko do oznaczania głównego menu strony. Jest znacznikiem do oznaczania elementów nawigacyjnych w ogóle. Jednak nie każda lista odnośników jest elementem nawigacyjnym. Zbiór odnośników do różnych artykułów w Internecie jest po prostu zbiorem odnośników (lub artykułem, w zależności od kontekstu). Natomiast już breadcrumbs czy też kotwice w obrębie jednej strony można potraktować jako element nawigacyjny.</p>
+<p><a href="http://kacperkozak.pl">Kolega</a> zwrócił mi uwagę, że tagi i archiwum można potraktować też w inny sposób ;) Nie da się ukryć, że są to de facto dwie listy odnośników. Dlatego też można je potraktować jako dodatkowe elementy nawigacyjne (otoczyć <code>nav</code>). Moim zdaniem obydwie interpretacje tych elementów są poprawne a różnica wynika po prostu z innej perspektywy spojrzenia na sprawę. Moja interpretacja wynika z analizy samej natury treści (czy jest ona możliwa do zaprezentowania niezależnie, czy stanowi poboczną informację do głównej treści itd.), natomiast interpretacja kolegi - z analizy wzajemnych relacji i funkcji (czy ta lista odnośników może być potraktowana jako nawigacja, czy prowadzi do innej, powiązanej treści w obrębie witryny itd.). Gdyby ktoś był ciekawy, w specyfikacji HTML5 pojawia się zastosowanie <code>aside &gt; nav</code> właśnie w takim kontekście.</p>
+<p class="alert alert-info"><code>nav</code> nie służy tylko do oznaczania głównego menu strony. Jest znacznikiem do oznaczania elementów nawigacyjnych w ogóle. Jednak nie każda lista odnośników jest elementem nawigacyjnym. Zbiór odnośników do różnych artykułów w Internecie jest po prostu zbiorem odnośników (lub artykułem, w zależności od kontekstu). Natomiast już breadcrumbs czy też kotwice w obrębie jednej strony można potraktować jako element nawigacyjny.</p>
 
 
-<h3 class="mdl-typography--display-2" id="stopka">Stopka<a href="#stopka" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h3>
-<p class="tutorials-note ">No, to lwia część za nami - została tylko stopka. Tak, ją też zmieniamy. Tym razem div zamienia się w <code class="mdl-color--white mdl-color-text--orange-600">footer</code>. Uff, blog jest już w całości przerobiony na HTML5, ale to nie koniec - to dopiero początek :D</p>
-<p class="tutorials-note mdl-color--primary mdl-color-text--white">P.S. dla ekstrawaganckich: <code class="mdl-color--white mdl-color-text--orange-600">html</code>, <code class="mdl-color--white mdl-color-text--orange-600">head</code> i <code class="mdl-color--white mdl-color-text--orange-600">body</code> są opcjonalne ;) Jednak nie muszę chyba wspominać, że ich usunięcie może skutkować dziwnym drzewkiem DOM (szczególnie w IE).</p>
+<h3 id="stopka">Stopka <a href="#stopka" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<p>No, to lwia część za nami - została tylko stopka. Tak, ją też zmieniamy. Tym razem div zamienia się w <code>footer</code>. Uff, blog jest już w całości przerobiony na HTML5, ale to nie koniec - to dopiero początek :D</p>
+<p class="alert alert-info">P.S. dla ekstrawaganckich: <code>html</code>, <code>head</code> i <code>body</code> są opcjonalne ;) Jednak nie muszę chyba wspominać, że ich usunięcie może skutkować dziwnym drzewkiem DOM (szczególnie w IE).</p>
 
 
-<h3 class="mdl-typography--display-2" id="formularze">Formularze (WebForms 2.0)<a href="#formularze" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h3>
+<h3 id="formularze">Formularze (WebForms 2.0) <a href="#formularze" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 
-<h4 class="mdl-typography--display-1" id="formularze-wyszukiwarka">Wyszukiwarka<a href="#formularze-wyszukiwarka" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h4>
-<p class="tutorials-note ">W HTML5 pojawia się pełno nowych typów pól i atrybutów formularzy. My zastosujemy raptem ułamek z nich.</p>
-<p class="tutorials-note ">Zacznijmy od formularza wyszukiwania. Ktoś zna to fajne pole wyszukiwania z Safari i innych Apple'owych produktów (ja jedynie z anegdot :D)? Otóż teraz można je mieć na stronie i to zupełnie za darmo! Nie wierzysz? No to zmień <code class="mdl-color--white mdl-color-text--orange-600">&#91;type="text"&#93;</code> na <code class="mdl-color--white mdl-color-text--orange-600">&#91;type="search"&#93;</code>. Jeśli oglądasz stronę w Webkicie, to jesteś w raju ;)</p>
+<h4 id="formularze-wyszukiwarka">Wyszukiwarka <a href="#formularze-wyszukiwarka" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
+<p>W HTML5 pojawia się pełno nowych typów pól i atrybutów formularzy. My zastosujemy raptem ułamek z nich.</p>
+<p>Zacznijmy od formularza wyszukiwania. Ktoś zna to fajne pole wyszukiwania z Safari i innych Apple'owych produktów (ja jedynie z anegdot :D)? Otóż teraz można je mieć na stronie i to zupełnie za darmo! Nie wierzysz? No to zmień <code>&#91;type="text"&#93;</code> na <code>&#91;type="search"&#93;</code>. Jeśli oglądasz stronę w Webkicie, to jesteś w raju ;)</p>
 
-<h4 class="mdl-typography--display-1" id="formularze-nowe-pola">Nowe typy pól<a href="#formularze-nowe-pola" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h4>
-<p class="tutorials-note ">Oczywiście <code class="mdl-color--white mdl-color-text--orange-600">search</code> to nie jedyny nowy typ pola. Z innych warto wspomnieć:</p>
+<h4 id="formularze-nowe-pola">Nowe typy pól <a href="#formularze-nowe-pola" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
+<p>Oczywiście <code>search</code> to nie jedyny nowy typ pola. Z innych warto wspomnieć:</p>
 <ul>
-<li> <code class="mdl-color--white mdl-color-text--orange-600">email</code> - dla e-maili
-</li><li> <code class="mdl-color--white mdl-color-text--orange-600">url</code> - dla URL-i
-</li><li> <code class="mdl-color--white mdl-color-text--orange-600">number</code> - dla liczb
-</li><li> <code class="mdl-color--white mdl-color-text--orange-600">date</code> - dla dat
-</li><li> <code class="mdl-color--white mdl-color-text--orange-600">color</code> - dla kolorów
-</li><li> <code class="mdl-color--white mdl-color-text--orange-600">range</code> - taki fajny slider :D
+<li> <code>email</code> - dla e-maili
+</li><li> <code>url</code> - dla URL-i
+</li><li> <code>number</code> - dla liczb
+</li><li> <code>date</code> - dla dat
+</li><li> <code>color</code> - dla kolorów
+</li><li> <code>range</code> - taki fajny slider :D
 </li></ul>
 
-<h4 class="mdl-typography--display-1" id="formularze-bajery">Inne bajery i dostępność<a href="#formularze-bajery" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h4>
-<p class="tutorials-note ">Ale, ale. Można jeszcze bardziej podbajerować dzięki atrybutowi <code class="mdl-color--white mdl-color-text--orange-600">&#91;placeholder&#93;</code>. Robi on to, co tysiące tych badziewnych JS - wyświetla pomocniczy tekst, który znika po kliknięciu w pole (i nie kasuje przy okazji już wprowadzonego zapytania…).</p>
-<p class="tutorials-note mdl-color--red mdl-color-text--black"><b>Nie powinien być jednak traktowany jako zastępstwo dla <code class="mdl-color--white mdl-color-text--orange-600">label</code></b>. Wspomina o tym nawet specyfikacja.</p>
-<p class="tutorials-note ">A jeśli już chcesz się nazywać mistrzem formularzy, to dodaj sobie jeszcze atrybut <code class="mdl-color--white mdl-color-text--orange-600">&#91;required&#93;</code>, który oznacza, że formularz nie może zostać wysłany jeśli dane pole jest puste. Po przeróbce formularz szukania wygląda następująco:</p>
+<h4 id="formularze-bajery">Inne bajery i dostępność <a href="#formularze-bajery" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
+<p>Ale, ale. Można jeszcze bardziej podbajerować dzięki atrybutowi <code>&#91;placeholder&#93;</code>. Robi on to, co tysiące tych badziewnych JS - wyświetla pomocniczy tekst, który znika po kliknięciu w pole (i nie kasuje przy okazji już wprowadzonego zapytania…).</p>
+<p class="alert alert-danger"><b>Nie powinien być jednak traktowany jako zastępstwo dla <code>label</code></b>. Wspomina o tym nawet specyfikacja.</p>
+<p>A jeśli już chcesz się nazywać mistrzem formularzy, to dodaj sobie jeszcze atrybut <code>&#91;required&#93;</code>, który oznacza, że formularz nie może zostać wysłany jeśli dane pole jest puste. Po przeróbce formularz szukania wygląda następująco:</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;form action="search.php" method="post"&gt;
 	&lt;p&gt;&lt;label for="search-input"&gt;Szukaj:&lt;/label&gt; &lt;input type="search" id="search-input" name="q" placeholder="Wpisz szukaną frazę…" required&gt;&lt;button type="submit" name="submit" value="1"&gt;Szukaj&lt;/button&gt;&lt;/p&gt;
 &lt;/form&gt;</code></pre>
-<p class="tutorials-note "><code class="mdl-color--white mdl-color-text--orange-600">label</code> do pola wyszukiwania można wstawić <a href="http://adaptivethemes.com/using-css-clip-as-an-accessible-method-of-hiding-content/">techniką ukrywania przed graficznymi przeglądarkami</a>, używaną m.in. w <a href="#">HTML5 Boilerplate</a>. Userzy z wizualnymi przeglądarkami nie zobaczą go (a pole wyszukiwania jest na tyle charakterystyczne, że na pewno je rozpoznają ;)), natomiast ci, którzy korzystają z czytników ekranowych nie poczują się zagubieni, gdy natrafią na pole bez etykiety.</p>
-<p class="tutorials-note mdl-color--red mdl-color-text--black"><b>PAMIĘTAJ! CSS (jak i obrazki, JS, inne dziwne rzeczy typu Flash, Java, Silverlight) są tylko dodatkami, które nie muszą być dostępne!</b></p>
-<p class="tutorials-note ">Oznacza to, że możesz być pewny tylko tego, że końcowy user zobaczy treść i HTML (patrz: użytkownicy Lynxa). Stąd ważne jest zrozumienie podstaw tworzenia czystego, semantycznego kodu, który - nawet bez CSS - tworzy sensowną i czytelną całość. Dlatego też osobiście wolę tworzyć najpierw HTML dla strony, a dopiero później dorabiać CSS i JS. HTML to kartka papieru, na którą nakładam kolejne warstwy folii (CSS, JS). Podejście to znane jest jako <a href="http://webroad.pl/inne/3722-progressive-enhancement-zapomniany-fundament">Progressive Enhancement</a>.</p>
+<p><code>label</code> do pola wyszukiwania można wstawić <a href="http://adaptivethemes.com/using-css-clip-as-an-accessible-method-of-hiding-content/">techniką ukrywania przed graficznymi przeglądarkami</a>, używaną m.in. w <a href="#">HTML5 Boilerplate</a>. Userzy z wizualnymi przeglądarkami nie zobaczą go (a pole wyszukiwania jest na tyle charakterystyczne, że na pewno je rozpoznają ;)), natomiast ci, którzy korzystają z czytników ekranowych nie poczują się zagubieni, gdy natrafią na pole bez etykiety.</p>
+<p class="alert alert-danger"><b>PAMIĘTAJ! CSS (jak i obrazki, JS, inne dziwne rzeczy typu Flash, Java, Silverlight) są tylko dodatkami, które nie muszą być dostępne!</b></p>
+<p>Oznacza to, że możesz być pewny tylko tego, że końcowy user zobaczy treść i HTML (patrz: użytkownicy Lynxa). Stąd ważne jest zrozumienie podstaw tworzenia czystego, semantycznego kodu, który - nawet bez CSS - tworzy sensowną i czytelną całość. Dlatego też osobiście wolę tworzyć najpierw HTML dla strony, a dopiero później dorabiać CSS i JS. HTML to kartka papieru, na którą nakładam kolejne warstwy folii (CSS, JS). Podejście to znane jest jako <a href="http://webroad.pl/inne/3722-progressive-enhancement-zapomniany-fundament">Progressive Enhancement</a>.</p>
 
-<h4 class="mdl-typography--display-1" id="formularze-obsluga">Kompatybilność<a href="#formularze-obsluga" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h4>
-<p class="tutorials-note ">Teraz zapewne się zapytasz: a gdzie nowe typy pól formularzy są obsługiwane? <s>No cóż, tu już jest gorzej. Nowe typy pól formularza obsługuje w pełni tylko Opera, Chrome, Safari i Firefox większość, IE 9 - kilka.</s> Zamiast podawać tak szybko deaktualizujące się informację, <a href="http://caniuse.com/#feat=forms">odsyłam do odpowiedniego źródła</a>. Nie oznacza to jednak, że trza rezygnować z nowoczesnych formularzy. HTML5 jest pisany z myślą o kompatybilności wstecznej, co znaczy, że jeśli dany typ pola nie jest obsługiwany, pojawi się stare, dobre pole tekstowe. Resztę zachowań - włącznie z walidacją wprowadzonych danych - we wszystkich przeglądarkach można osiągnąć dzięki JS (np. <a href="http://www.thecssninja.com/javascript/h5f">http://www.thecssninja.com/javascript/h5f</a>).</p>
-<p class="tutorials-note ">Podobnie można przerobić formularz dodawania komentarzy:</p>
+<h4 id="formularze-obsluga">Kompatybilność <a href="#formularze-obsluga" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
+<p>Teraz zapewne się zapytasz: a gdzie nowe typy pól formularzy są obsługiwane? <s>No cóż, tu już jest gorzej. Nowe typy pól formularza obsługuje w pełni tylko Opera, Chrome, Safari i Firefox większość, IE 9 - kilka.</s> Zamiast podawać tak szybko deaktualizujące się informację, <a href="http://caniuse.com/#feat=forms">odsyłam do odpowiedniego źródła</a>. Nie oznacza to jednak, że trza rezygnować z nowoczesnych formularzy. HTML5 jest pisany z myślą o kompatybilności wstecznej, co znaczy, że jeśli dany typ pola nie jest obsługiwany, pojawi się stare, dobre pole tekstowe. Resztę zachowań - włącznie z walidacją wprowadzonych danych - we wszystkich przeglądarkach można osiągnąć dzięki JS (np. <a href="http://www.thecssninja.com/javascript/h5f">http://www.thecssninja.com/javascript/h5f</a>).</p>
+<p>Podobnie można przerobić formularz dodawania komentarzy:</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;form action="http://example.net/comment.php" method="post" id="add_comment"&gt;
 		&lt;fieldset&gt;
 			&lt;legend&gt;Napisz komentarz&lt;/legend&gt;
@@ -534,104 +378,92 @@
 			&lt;input type="hidden" name="comment_post_ID" value="88"&gt;
 		&lt;/fieldset&gt;
 &lt;/form&gt;</code></pre>
-<p class="tutorials-note ">Tutaj warto wspomnieć o jeszcze jednym nowym atrybucie dla pól formularza - <code class="mdl-color--white mdl-color-text--orange-600">&#91;pattern&#93;</code>, który przyjmuje jako wartość <a href="http://www.regular-expressions.info/">wyrażenie regularne</a>, dzięki czemu - jeśli żadne z nowych typów pól formularza nie spełnia naszych wymagań - można wymusić kokretny format danych, np kodu pocztowego:</p>
+<p>Tutaj warto wspomnieć o jeszcze jednym nowym atrybucie dla pól formularza - <code>&#91;pattern&#93;</code>, który przyjmuje jako wartość <a href="http://www.regular-expressions.info/">wyrażenie regularne</a>, dzięki czemu - jeśli żadne z nowych typów pól formularza nie spełnia naszych wymagań - można wymusić kokretny format danych, np kodu pocztowego:</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;input type="text" name="zipcode" pattern="\d{2}\-\d{3}"&gt;</code></pre>
-<p class="tutorials-note ">Naprawdę zachęcam do używania nowych typów formularzy. Jeśli wkrótce wszystkie przeglądarki będą je wspierać, można uprościć walidację danych po stronie serwera (a przynajmniej nie martwić się, że w e-mailu dostajemy JS-a).</p>
-<p class="tutorials-note mdl-color--red mdl-color-text--black">Uprościć, <b>nie znaczy</b> zaniechać. Niewalidowanie danych po stronie serwera jest jak wpuszczanie nieznajomego do domu, dając mu do tego klucz do sejfu w sypialni.</p>
+<p>Naprawdę zachęcam do używania nowych typów formularzy. Jeśli wkrótce wszystkie przeglądarki będą je wspierać, można uprościć walidację danych po stronie serwera (a przynajmniej nie martwić się, że w e-mailu dostajemy JS-a).</p>
+<p class="alert alert-danger">Uprościć, <b>nie znaczy</b> zaniechać. Niewalidowanie danych po stronie serwera jest jak wpuszczanie nieznajomego do domu, dając mu do tego klucz do sejfu w sypialni.</p>
 
 
-<h3 class="mdl-typography--display-2" id="rel"><code class="mdl-color--white mdl-color-text--orange-600">&#91;rel&#93;</code> czyli dokąd to prowadzi<a href="#rel" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h3>
-<p class="tutorials-note ">Atrybut <code class="mdl-color--white mdl-color-text--orange-600">&#91;rel&#93;</code> dla linków oznacza ich przeznaczenie, a dokładniej do jakiego zasobu się odnoszą. Warto stosować atrybut <code class="mdl-color--white mdl-color-text--orange-600">&#91;rel&#93;</code> na wszystkich linkach, które mają jakiekolwiek znaczenie semantyczne, np. jeśli link prowadzi do strony o autorze, niech będzie miał odpowiedni <code class="mdl-color--white mdl-color-text--orange-600">&#91;rel&#93;</code>. Jakie <code class="mdl-color--white mdl-color-text--orange-600">&#91;rel&#93;</code> można zatem stosować?</p>
+<h3 id="rel"><code>&#91;rel&#93;</code> czyli dokąd to prowadzi <a href="#rel" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<p>Atrybut <code>&#91;rel&#93;</code> dla linków oznacza ich przeznaczenie, a dokładniej do jakiego zasobu się odnoszą. Warto stosować atrybut <code>&#91;rel&#93;</code> na wszystkich linkach, które mają jakiekolwiek znaczenie semantyczne, np. jeśli link prowadzi do strony o autorze, niech będzie miał odpowiedni <code>&#91;rel&#93;</code>. Jakie <code>&#91;rel&#93;</code> można zatem stosować?</p>
 
-<h4 class="mdl-typography--display-1" id="rel-lista">Lista dozwolonych <code class="mdl-color--white mdl-color-text--orange-600">&#91;rel&#93;</code><a href="#rel-lista" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h4>
+<h4 id="rel-lista">Lista dozwolonych <code>&#91;rel&#93;</code> <a href="#rel-lista" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <ul>
-<li> <code class="mdl-color--white mdl-color-text--orange-600">index</code> - strona główna
-</li><li> <code class="mdl-color--white mdl-color-text--orange-600">author</code> - coś o autorze
-</li><li> <code class="mdl-color--white mdl-color-text--orange-600">archive</code>/<code class="mdl-color--white mdl-color-text--orange-600">archives</code> - znany z Wordpressa, prowadzi do archiwum wiadomości. <s>(druga z wersji jest wersją oficjalnie zarejestrowaną)</s> Typ ten niegdyś występował w specyfikacji HTML5, jednak obecnie nie jest nawet typem proponowanym przez Microformats wiki. Niemniej znajduje się w sekcji <a href="http://microformats.org/wiki/existing-rel-values#POSH_usage">wykorzystywanych wartości</a>. Osobiście wydaje mi się, że w końcu zostanie przeforsowany, dlatego zostawiam go w kodzie bloga (pomimo, że walidator się rzuca - ale na szczęście to <a href="http://webroad.pl/html5-css3/3925-validate-or-not-to-validate-that-is-the-question">nie nieomylny demiurg</a>)
-</li><li> <code class="mdl-color--white mdl-color-text--orange-600">prev</code> - poprzedni wpis
-</li><li> <code class="mdl-color--white mdl-color-text--orange-600">next</code> - następny wpis
-</li><li> <code class="mdl-color--white mdl-color-text--orange-600">canonical</code> - oryginalny URI do zasobu (czyli ten, który chcemy zaindeksować w Google :D)
-</li><li> <code class="mdl-color--white mdl-color-text--orange-600">nofollow</code> - BlackSEO ;)
-</li><li> <code class="mdl-color--white mdl-color-text--orange-600">shortlink</code> - oficjalny, skrócony adres strony
-</li><li> <code class="mdl-color--white mdl-color-text--orange-600">tag</code> - do oznaczania tagów
+<li> <code>index</code> - strona główna
+</li><li> <code>author</code> - coś o autorze
+</li><li> <code>archive</code>/<code>archives</code> - znany z Wordpressa, prowadzi do archiwum wiadomości. <s>(druga z wersji jest wersją oficjalnie zarejestrowaną)</s> Typ ten niegdyś występował w specyfikacji HTML5, jednak obecnie nie jest nawet typem proponowanym przez Microformats wiki. Niemniej znajduje się w sekcji <a href="http://microformats.org/wiki/existing-rel-values#POSH_usage">wykorzystywanych wartości</a>. Osobiście wydaje mi się, że w końcu zostanie przeforsowany, dlatego zostawiam go w kodzie bloga (pomimo, że walidator się rzuca - ale na szczęście to <a href="http://webroad.pl/html5-css3/3925-validate-or-not-to-validate-that-is-the-question">nie nieomylny demiurg</a>)
+</li><li> <code>prev</code> - poprzedni wpis
+</li><li> <code>next</code> - następny wpis
+</li><li> <code>canonical</code> - oryginalny URI do zasobu (czyli ten, który chcemy zaindeksować w Google :D)
+</li><li> <code>nofollow</code> - BlackSEO ;)
+</li><li> <code>shortlink</code> - oficjalny, skrócony adres strony
+</li><li> <code>tag</code> - do oznaczania tagów
 </li></ul>
-<p class="tutorials-note mdl-color--red mdl-color-text--black">Pamiętaj, że wszystkie <code class="mdl-color--white mdl-color-text--orange-600">&#91;rel&#93;</code> dotyczą aktualnej strony. Tym samym np. niepoprawne jest oznaczenie tagów w chmurce tagów przy pomocy <code class="mdl-color--white mdl-color-text--orange-600">&#91;rel=tag&#93;</code> (gdyż nie odnoszą się one do tej konkretnej strony). Natomiast oznaczenie tak tagów, które występują wewnątrz głównego artykułu (w nagłówku czy stopce) jest już poprawne (bo odnoszą się do treści danej strony)</p>
+<p class="alert alert-danger">Pamiętaj, że wszystkie <code>&#91;rel&#93;</code> dotyczą aktualnej strony. Tym samym np. niepoprawne jest oznaczenie tagów w chmurce tagów przy pomocy <code>&#91;rel=tag&#93;</code> (gdyż nie odnoszą się one do tej konkretnej strony). Natomiast oznaczenie tak tagów, które występują wewnątrz głównego artykułu (w nagłówku czy stopce) jest już poprawne (bo odnoszą się do treści danej strony)</p>
 
-<h4 class="mdl-typography--display-1" id="rel-rozszerzalnosc">Rozszerzalność<a href="#rel-rozszerzalnosc" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h4>
-<p class="tutorials-note ">Poza tym można tworzyć własne <code class="mdl-color--white mdl-color-text--orange-600">&#91;rel&#93;</code>, chociaż większego sensu w tym nie widzę, bo wszystkie potrzebne już istnieją i są na tyle elastyczne, że można je nagiąć do własnych potrzeb. Na szczęście radosne tworzenie jest monitorowane i żeby jakiś <code class="mdl-color--white mdl-color-text--orange-600">&#91;rel&#93;</code> został uznany za poprawny w HTML 5, należy <a href="http://microformats.org/wiki/existing-rel-values">go zgłosić</a>. To samo <a href="http://wiki.whatwg.org/wiki/MetaExtensions">tyczy się <code class="mdl-color--white mdl-color-text--orange-600">meta&#91;name&#93;</code></a>.</p>
-<p class="tutorials-note ">A teraz, drogi blogerze, linki czekają na semantyczne wsparcie! Naprzód! :D</p>
+<h4 id="rel-rozszerzalnosc">Rozszerzalność <a href="#rel-rozszerzalnosc" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
+<p>Poza tym można tworzyć własne <code>&#91;rel&#93;</code>, chociaż większego sensu w tym nie widzę, bo wszystkie potrzebne już istnieją i są na tyle elastyczne, że można je nagiąć do własnych potrzeb. Na szczęście radosne tworzenie jest monitorowane i żeby jakiś <code>&#91;rel&#93;</code> został uznany za poprawny w HTML 5, należy <a href="http://microformats.org/wiki/existing-rel-values">go zgłosić</a>. To samo <a href="http://wiki.whatwg.org/wiki/MetaExtensions">tyczy się <code>meta&#91;name&#93;</code></a>.</p>
+<p>A teraz, drogi blogerze, linki czekają na semantyczne wsparcie! Naprzód! :D</p>
 
 
-<h3 class="mdl-typography--display-2" id="wai-aria">WAI-ARIA<a href="#wai-aria" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h3>
+<h3 id="wai-aria">WAI-ARIA <a href="#wai-aria" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 
-<h4 class="mdl-typography--display-1" id="aria-role">Role<a href="#aria-role" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h4>
-<p class="tutorials-note ">W HTML5 pojawia się nowy atrybut <code class="mdl-color--white mdl-color-text--orange-600">&#91;role&#93;</code>, który określa rolę danego elementu na stronie. W przypadku bloga można je rozdzielić przykładowo tak:</p>
+<h4 id="aria-role">Role <a href="#aria-role" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
+<p>W HTML5 pojawia się nowy atrybut <code>&#91;role&#93;</code>, który określa rolę danego elementu na stronie. W przypadku bloga można je rozdzielić przykładowo tak:</p>
 <ul>
-<li> <code class="mdl-color--white mdl-color-text--orange-600">header</code> (strony): <code class="mdl-color--white mdl-color-text--orange-600">banner</code> - ogólne informacje o stronie
-</li><li> <code class="mdl-color--white mdl-color-text--orange-600">main</code>: <code class="mdl-color--white mdl-color-text--orange-600">main</code> - główna część strony
-</li><li> <code class="mdl-color--white mdl-color-text--orange-600">article</code>: <code class="mdl-color--white mdl-color-text--orange-600">article</code> - artykuł, względnie <code class="mdl-color--white mdl-color-text--orange-600">document</code> - dokument
-</li><li> <code class="mdl-color--white mdl-color-text--orange-600">article &gt; header, article &gt; footer</code> - <code class="mdl-color--white mdl-color-text--orange-600">group</code> (z tym, że nie wnosi to nic ciekawego tak naprawdę)
-</li><li> <code class="mdl-color--white mdl-color-text--orange-600">aside</code>: <code class="mdl-color--white mdl-color-text--orange-600">complementary</code> - coś uzupełniającego
-</li><li> wyszukiwarka: <code class="mdl-color--white mdl-color-text--orange-600">search</code> - nie trza tłumaczyć :D
-</li><li> <code class="mdl-color--white mdl-color-text--orange-600">footer</code> strony: <code class="mdl-color--white mdl-color-text--orange-600">contentinfo</code> - meta dane
-</li><li> <code class="mdl-color--white mdl-color-text--orange-600">nav</code>: <code class="mdl-color--white mdl-color-text--orange-600">navigation</code> - element nawigacyjny
+<li> <code>header</code> (strony): <code>banner</code> - ogólne informacje o stronie
+</li><li> <code>main</code>: <code>main</code> - główna część strony
+</li><li> <code>article</code>: <code>article</code> - artykuł, względnie <code>document</code> - dokument
+</li><li> <code>article &gt; header, article &gt; footer</code> - <code>group</code> (z tym, że nie wnosi to nic ciekawego tak naprawdę)
+</li><li> <code>aside</code>: <code>complementary</code> - coś uzupełniającego
+</li><li> wyszukiwarka: <code>search</code> - nie trza tłumaczyć :D
+</li><li> <code>footer</code> strony: <code>contentinfo</code> - meta dane
+</li><li> <code>nav</code>: <code>navigation</code> - element nawigacyjny
 </li></ul>
-<p class="tutorials-note ">Warto także zauważyć, że dla większości elementów przeglądarki same nadają odpowiednie <code class="mdl-color--white mdl-color-text--orange-600">&#91;role&#93;</code> i dublowanie ich w kodzie <a href="http://www.w3.org/TR/html5/dom.html#aria-usage-note">jest niezalecane</a>. ARIA przydaje się wówczas, gdy tworzymy pewne struktury od podstaw np. w przypadku wykorzystywania Web Components czy podmienianiu natywnych pól formularza własnymi odpowiednikami.</p>
+<p>Warto także zauważyć, że dla większości elementów przeglądarki same nadają odpowiednie <code>&#91;role&#93;</code> i dublowanie ich w kodzie <a href="http://www.w3.org/TR/html5/dom.html#aria-usage-note">jest niezalecane</a>. ARIA przydaje się wówczas, gdy tworzymy pewne struktury od podstaw np. w przypadku wykorzystywania Web Components czy podmienianiu natywnych pól formularza własnymi odpowiednikami.</p>
 
-<h4 class="mdl-typography--display-1" id="aria-wut">Ale po co to?<a href="#aria-wut" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h4>
-<p class="tutorials-note ">Dobra, <code class="mdl-color--white mdl-color-text--orange-600">&#91;role&#93;</code> jest jasne, ale co to WAI-ARIA? Otóż WAI to organizacja zajmująca się dostępnością stron internetowych, a ARIA to jej najnowszy standard. ARIA to skrót od Accessible Rich Internet Applications i, jak nazwa wskazuje, powstał po to, by podnieść dostępność tak zaawansowanych aplikacji jak Gmail czy Google Docs. Nic jednak nie szkodzi, aby nasz blog potraktować jak webappa :D</p>
-<p class="tutorials-note mdl-color--primary mdl-color-text--white">Dla tworzących bardziej rozbudowane strony, z wykorzystaniem JS, głównie XHR, mogę polecić jeszcze takie własności jak <code class="mdl-color--white mdl-color-text--orange-600">&#91;aria-live&#93;</code> i <code class="mdl-color--white mdl-color-text--orange-600">&#91;aria-atomic&#93;</code>. Przy ciężkim Ajaksie (czyt. wszystko na History API) wręcz ratują życie ;)</p>
-<p class="tutorials-note "><s>A jeśli chcemy być całkowicie wierni specyfikacji ARIA, to każda sekcja posiadająca nagłówek, powinna być z nim połączona przy pomocy <code class="mdl-color--white mdl-color-text--orange-600">&#91;aria-labelledby&#93;</code>.</s> Przeglądarki same to robią.</p>
-<p class="tutorials-note ">Po więcej info o WAI-ARIA zapraszam do specyfikacji HTML5.</p>
+<h4 id="aria-wut">Ale po co to? <a href="#aria-wut" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
+<p>Dobra, <code>&#91;role&#93;</code> jest jasne, ale co to WAI-ARIA? Otóż WAI to organizacja zajmująca się dostępnością stron internetowych, a ARIA to jej najnowszy standard. ARIA to skrót od Accessible Rich Internet Applications i, jak nazwa wskazuje, powstał po to, by podnieść dostępność tak zaawansowanych aplikacji jak Gmail czy Google Docs. Nic jednak nie szkodzi, aby nasz blog potraktować jak webappa :D</p>
+<p class="alert alert-info">Dla tworzących bardziej rozbudowane strony, z wykorzystaniem JS, głównie XHR, mogę polecić jeszcze takie własności jak <code>&#91;aria-live&#93;</code> i <code>&#91;aria-atomic&#93;</code>. Przy ciężkim Ajaksie (czyt. wszystko na History API) wręcz ratują życie ;)</p>
+<p><s>A jeśli chcemy być całkowicie wierni specyfikacji ARIA, to każda sekcja posiadająca nagłówek, powinna być z nim połączona przy pomocy <code>&#91;aria-labelledby&#93;</code>.</s> Przeglądarki same to robią.</p>
+<p>Po więcej info o WAI-ARIA zapraszam do specyfikacji HTML5.</p>
 
 
-<h3 class="mdl-typography--display-2" id="semantyka">Dane semantyczne<a href="#semantyka" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h3>
+<h3 id="semantyka">Dane semantyczne <a href="#semantyka" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 
-<h4 class="mdl-typography--display-1" id="semantyka-mikroformaty">Mikroformaty<a href="#semantyka-mikroformaty" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h4>
-<p class="tutorials-note ">Mikroformaty powstały po to, by w dobie HTML4 niesemantycznym divom nadać semantyczne znaczenie. Mimo, że w HTML5 mamy pełno semantycznych znaczników, to jednak mikroformaty wciąż są niezwykle przydatne. Pozwalają nam dokładnie opisać wydarzenia, osoby czy miejsca używając do tego HTML-owego zapisu ogólnie znanych standardów, takich jak np. vcard (format wizytówek, obsługiwany przez większość telefonów komórkowych). Zastosowanie mikroformatów wcale nie jest trudne, wystarczy dodać odpowiednią klasę. Jako przykład zastosuję hCard (odpowiednik vcard) i "oznaczę" boczne info o autorze:</p>
+<h4 id="semantyka-mikroformaty">Mikroformaty <a href="#semantyka-mikroformaty" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
+<p>Mikroformaty powstały po to, by w dobie HTML4 niesemantycznym divom nadać semantyczne znaczenie. Mimo, że w HTML5 mamy pełno semantycznych znaczników, to jednak mikroformaty wciąż są niezwykle przydatne. Pozwalają nam dokładnie opisać wydarzenia, osoby czy miejsca używając do tego HTML-owego zapisu ogólnie znanych standardów, takich jak np. vcard (format wizytówek, obsługiwany przez większość telefonów komórkowych). Zastosowanie mikroformatów wcale nie jest trudne, wystarczy dodać odpowiednią klasę. Jako przykład zastosuję hCard (odpowiednik vcard) i "oznaczę" boczne info o autorze:</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;article class="vcard"&gt;
 	&lt;h1&gt;O autorze blogaska&lt;/h1&gt;
 	&lt;p&gt;Nazywam się &lt;a href="http://example.net/author" class="fn n url"&gt;Comandeer&lt;/a&gt;, mieszkam w uroczym miasteczku &lt;span class="adr locality"&gt;Świętochłowice&lt;/span&gt; i interesuję się webmasterką.&lt;/p&gt;
 &lt;/article&gt;</code></pre>
-<p class="tutorials-note ">Prawda, że łatwe? W podobny sposób można oznaczać wydarzenia (hCalendar), przepisy (hRecipe), a także upodobnić HTML do ATOM (hAtom).</p>
+<p>Prawda, że łatwe? W podobny sposób można oznaczać wydarzenia (hCalendar), przepisy (hRecipe), a także upodobnić HTML do ATOM (hAtom).</p>
 
-<h4 class="mdl-typography--display-1" id="microdata">Microdata<a href="#microdata" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h4>
-<p class="tutorials-note ">Microdata (mikrodane) to z kolei nowość w HTML5, która działa podobnie do mikroformatów. Jedyna różnica polega na tym, że korzysta z nowych atrybutów - <code class="mdl-color--white mdl-color-text--orange-600">&#91;itemscope&#93;</code>, <code class="mdl-color--white mdl-color-text--orange-600">&#91;itemtype&#93;</code> i <code class="mdl-color--white mdl-color-text--orange-600">&#91;itemprop&#93;</code> oraz z przestrzenii nazw. Najprościej pokazać to na przykładzie:</p>
+<h4 id="microdata">Microdata <a href="#microdata" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
+<p>Microdata (mikrodane) to z kolei nowość w HTML5, która działa podobnie do mikroformatów. Jedyna różnica polega na tym, że korzysta z nowych atrybutów - <code>&#91;itemscope&#93;</code>, <code>&#91;itemtype&#93;</code> i <code>&#91;itemprop&#93;</code> oraz z przestrzenii nazw. Najprościej pokazać to na przykładzie:</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;article itemscope itemtype="http://schema.org/Person"&gt;
 	&lt;h1&gt;O autorze blogaska&lt;/h1&gt;
 	&lt;p&gt;Nazywam się &lt;a href="http://example.net/author" itemprop="name url"&gt;Comandeer&lt;/a&gt;, mieszkam w uroczym miasteczku &lt;span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"&gt;&lt;span itemprop="addressLocality"&gt;Świętochłowice&lt;/span&gt;&lt;/span&gt; i interesuję się webmasterką.&lt;/p&gt;
 &lt;/article&gt;</code></pre>
-<p class="tutorials-note ">Wygląda i działa bardzo podobnie do mikroformatów (chociaż jest bardziej skomplikowane i - teoretycznie - pozwala odwzorowywać bardziej skomplikowane struktury danych). Co ważne, oba sposoby są znane Googlowi, który korzysta z nich do wyciągania danych ze stron. Korzystanie więc podnosi dostępność treści z poziomu wyszukiwarki.</p>
-<p class="tutorials-note mdl-color--primary mdl-color-text--white">Google, Yahoo i Bing zaczęły pracować nad nowym standardem oznaczania treści <a href="http://schema.org" class="mdl-color-text--white">Schema.org</a>, który ma ustandaryzować mikrodane na stronach <a href="http://WWW." class="mdl-color-text--white">WWW.</a> Dzięki temu przedsięwzięciu można oznaczyć prawie każdy typ danych. Wydaje mi się, że takie podejście ma szansę wyprzeć mikroformaty, a przynajmniej <a href="http://microformats.org/wiki/microformats-2" class="mdl-color-text--white">zmusić je do ewolucji</a>.</p>
+<p>Wygląda i działa bardzo podobnie do mikroformatów (chociaż jest bardziej skomplikowane i - teoretycznie - pozwala odwzorowywać bardziej skomplikowane struktury danych). Co ważne, oba sposoby są znane Googlowi, który korzysta z nich do wyciągania danych ze stron. Korzystanie więc podnosi dostępność treści z poziomu wyszukiwarki.</p>
+<p class="alert alert-info">Google, Yahoo i Bing zaczęły pracować nad nowym standardem oznaczania treści <a href="http://schema.org" class="alert-link">Schema.org</a>, który ma ustandaryzować mikrodane na stronach <a href="http://WWW." class="alert-link">WWW.</a> Dzięki temu przedsięwzięciu można oznaczyć prawie każdy typ danych. Wydaje mi się, że takie podejście ma szansę wyprzeć mikroformaty, a przynajmniej <a href="http://microformats.org/wiki/microformats-2" class="alert-link">zmusić je do ewolucji</a>.</p>
 
-<h4 class="mdl-typography--display-1" id="semantyka-inne">Inne formaty danych semantycznych<a href="#semantyka-inne" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h4>
-<p class="tutorials-note ">Tutaj warto wspomnieć o głównym konkurencie microdata - <a href="http://rdfa.info/">RDFa</a>, który wygląda dość podobnie, ale jest bardziej XML-friendly. Chociaż obecnie zarówno on, jak i microdata/mikroformaty, są zagrożone przez najnowszy format danych semantycznych, <a href="http://www.w3.org/TR/json-ld/">JSON LD</a>. Niemniej ten format, z racji swojej specyfiki, IMO znajdzie zastosowanie głównie w RESTful APIs, jako format zwracanych danych.</p>
+<h4 id="semantyka-inne">Inne formaty danych semantycznych <a href="#semantyka-inne" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
+<p>Tutaj warto wspomnieć o głównym konkurencie microdata - <a href="http://rdfa.info/">RDFa</a>, który wygląda dość podobnie, ale jest bardziej XML-friendly. Chociaż obecnie zarówno on, jak i microdata/mikroformaty, są zagrożone przez najnowszy format danych semantycznych, <a href="http://www.w3.org/TR/json-ld/">JSON LD</a>. Niemniej ten format, z racji swojej specyfiki, IMO znajdzie zastosowanie głównie w RESTful APIs, jako format zwracanych danych.</p>
 
 
-<h3 class="mdl-typography--display-2" id="dublin-core">Dublin Core<a href="#dublin-core" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h3>
-<p class="tutorials-note ">Dublin Core jest międzynarodowym standardem metadanych (ISO 15836-2003) i służy do opisywania dokumentów. Jest rozwijany i upowszechniany przez organizację Dublin Core Metadata Initiative, mającej na celu stworzenie semantycznej sieci, w której z łatwością można będzie znaleźć dokumenty (pieśń przyszłości). Standard ustala 15 elementów, dzięki którym można dokładniej opisać stronę, lecz nie tylko - praktycznie każdy dokument cyfrowy. Może dzięki temu stanowić zamiennik dla "standardowych" <code class="mdl-color--white mdl-color-text--orange-600">meta</code>. Najczęściej służy jako zamiennik dwóch metatagów: <code class="mdl-color--white mdl-color-text--orange-600">keywords</code> i <code class="mdl-color--white mdl-color-text--orange-600">description</code>. Ich "dublinowe" odpowiedniki to: <code class="mdl-color--white mdl-color-text--orange-600">dcterms.subject</code> i <code class="mdl-color--white mdl-color-text--orange-600">dcterms.description</code>.</p>
+<h3 id="dublin-core">Dublin Core <a href="#dublin-core" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<p>Dublin Core jest międzynarodowym standardem metadanych (ISO 15836-2003) i służy do opisywania dokumentów. Jest rozwijany i upowszechniany przez organizację Dublin Core Metadata Initiative, mającej na celu stworzenie semantycznej sieci, w której z łatwością można będzie znaleźć dokumenty (pieśń przyszłości). Standard ustala 15 elementów, dzięki którym można dokładniej opisać stronę, lecz nie tylko - praktycznie każdy dokument cyfrowy. Może dzięki temu stanowić zamiennik dla "standardowych" <code>meta</code>. Najczęściej służy jako zamiennik dwóch metatagów: <code>keywords</code> i <code>description</code>. Ich "dublinowe" odpowiedniki to: <code>dcterms.subject</code> i <code>dcterms.description</code>.</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;meta name="dcterms.description" lang="pl" content="Super hiper wpis na temat czegokolwiek"&gt;
 &lt;meta name="dcterms.subject" lang="pl" content="Bardzo ważne słowa kluczowe; rozdzielone średnikiem"&gt;</code></pre>
-<p class="tutorials-note mdl-color--primary mdl-color-text--white">Chciałbym tutaj zwrócić uwagę, że warto także podać atrybut <code class="mdl-color--white mdl-color-text--orange-600">&#91;lang&#93;</code> wskazujący na język użyty w metadanych. W końcu to międzynarodowy standard i niekoniecznie opis dokumentu musi być po polsku.</p>
+<p class="alert alert-info">Chciałbym tutaj zwrócić uwagę, że warto także podać atrybut <code>&#91;lang&#93;</code> wskazujący na język użyty w metadanych. W końcu to międzynarodowy standard i niekoniecznie opis dokumentu musi być po polsku.</p>
 
 
-<h3 class="mdl-typography--display-2" id="dostepnosc">Kilka uwag o dostępności<a href="#dostepnosc" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h3>
-<p class="tutorials-note ">Pisząc ten poradnik, skupiałem się głównie na kwestiach semantyki. Skutkiem ubocznym tego jest automatyczne zwiększenie dostępności tak stworzonej strony <a href="http://WWW.">WWW.</a> Na chwilę obecną nasza strona powinna być już naprawdę dobrze dostosowana dla osób niepełnosprawnych (zwłaszcza po dodaniu kilku rzeczy z opisanego wyżej standardu WAI-ARIA), lecz kilka rzeczy można jeszcze poprawić.</p>
-<p class="tutorials-note ">Na początku <code class="mdl-color--white mdl-color-text--orange-600">body</code> warto dodać:</p>
+<h3 id="dostepnosc">Kilka uwag o dostępności <a href="#dostepnosc" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<p>Pisząc ten poradnik, skupiałem się głównie na kwestiach semantyki. Skutkiem ubocznym tego jest automatyczne zwiększenie dostępności tak stworzonej strony <a href="http://WWW.">WWW.</a> Na chwilę obecną nasza strona powinna być już naprawdę dobrze dostosowana dla osób niepełnosprawnych (zwłaszcza po dodaniu kilku rzeczy z opisanego wyżej standardu WAI-ARIA), lecz kilka rzeczy można jeszcze poprawić.</p>
+<p>Na początku <code>body</code> warto dodać:</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;a href="#Super-hiper-wazny-wpis" class="focus-only" tabindex="1"&gt;Przejdź do treści&lt;/a&gt;</code></pre>
-<p class="tutorials-note ">Zwiększy to użyteczność dla tych, którzy korzystają z przeglądarek głosowych lub mają zaburzenia psychomotoryczne i są zmuszeni używać jedynie klawiatury. Dla innych ukryjemy to w CSS robiąc np. tak:</p>
+<p>Zwiększy to użyteczność dla tych, którzy korzystają z przeglądarek głosowych lub mają zaburzenia psychomotoryczne i są zmuszeni używać jedynie klawiatury. Dla innych ukryjemy to w CSS robiąc np. tak:</p>
 <p class="code">Kod:</p><pre><code class="language-css">.focus-only
 {
 	position:absolute;
@@ -642,7 +474,7 @@
 {
 	position:static;
 }</code></pre>
-<p class="tutorials-note ">Oczywiście link będzie czuły na TAB. Inna metoda (bardziej użyteczna i nie powodująca problemów z wydajnością na urządzeniach mobilnych) to <a href="http://adaptivethemes.com/using-css-clip-as-an-accessible-method-of-hiding-content/">wykorzystanie <code class="mdl-color--white mdl-color-text--orange-600">clip</code></a>. Stosuje ją m.in. <a href="http://h5bp.com">H5BP</a></p>
+<p>Oczywiście link będzie czuły na TAB. Inna metoda (bardziej użyteczna i nie powodująca problemów z wydajnością na urządzeniach mobilnych) to <a href="http://adaptivethemes.com/using-css-clip-as-an-accessible-method-of-hiding-content/">wykorzystanie <code>clip</code></a>. Stosuje ją m.in. <a href="http://h5bp.com">H5BP</a></p>
 <p class="code">Kod:</p><pre><code class="language-css">.focus-only
 {
 	position: absolute;
@@ -652,57 +484,52 @@
 {
 	position: static; /*lub clip: auto;*/
 }</code></pre>
-<p class="tutorials-note ">Warto także dodać, że niektóre przeglądarki co prawda przeskoczą do odpowiedniego elementu, ale zachowają starą kolejność TAB-owania elementów (czyli będzie TAB-ować menu, które chcieliśmy przeskoczyć) – dlatego dla kontenera z treścią warto dorzucić <code class="mdl-color--white mdl-color-text--orange-600">&#91;tabindex=-1&#93;</code>. Więcej info można znaleźć tutaj: <a href="http://viget.com/inspire/skip-link-primer">http://viget.com/inspire/skip-link-primer</a></p>
-<p class="tutorials-note "><s>Dodać odpowiednie <code class="mdl-color--white mdl-color-text--orange-600">&#91;tabindex&#93;</code>, <code class="mdl-color--white mdl-color-text--orange-600">&#91;accesskey&#93;</code> (szczególnie dla menu i wyszukiwarki)</s> Wycofuję się z tego, gdyż narzucony <code class="mdl-color--white mdl-color-text--orange-600">&#91;tabindex&#93;</code> może zrobić więcej szkody niż pożytku i w gruncie rzeczy powinien służyć do uczynienia focusowalnymi tych elementów, które natywnie nie są (czyli de facto winien być używany tylko i wyłącznie w połączeniu z JS i ARIA). Tak samo wydaje mi się, że skróty klawiaturowe lepiej i wygodniej dla użytkownika zrobić jest w JS.</p>
-<p class="tutorials-note ">Dla większości elementów sekcjonujących (<code class="mdl-color--white mdl-color-text--orange-600">section, article, nav, aside</code>) warto dodać nagłówki, które – dla piękna – ukryć można przed wizualnymi przeglądarkami podobną techniką, jak ta dla już wspominanego linku <code class="mdl-color--white mdl-color-text--orange-600">.focus-only</code>. Oczywiście nie ma sensu na chamca wtryniać nagłówków dla każdej sekcji – czasami "Untitled section" jest dozwolone. Lepszy jest brak nagłówka, niźli bezsensowny nagłówek. Inna rzecz, że jeśli coś nie ma nagłówka, to prawdopodobnie nie jest sekcją. Warto o tym pamiętać, bo nagłówki dla sekcji tworzą swoisty schemat nawigacyjny po stronie, który można wykorzystać do szybkiego przeskakiwania między częściami strony i identyfikowania ich. Tutaj warto też zauważyć, że każda sekcja powinna mieć odpowiednie <code class="mdl-color--white mdl-color-text--orange-600">&#91;id&#93;</code> – w języku strony. Dzięki temu będzie można linkować do każdej sekcji, co znacząco zwiększa użyteczność strony. Podobna technika jest stosowana w przypadku tego tutorialu, gdzie można zauważyć najczęściej stosowany wzorzec dla tworzenia identyfikatorów: slug z treści nagłówka.</p>
-<p class="tutorials-note ">Czasami zdarza się też, że musimy zapewnić jeszcze większy poziom dostępności. Tutaj na pomoc przychodzi nam <a href="https://www.w3.org/TR/WCAG20/">standard WCAG 2.0</a>, dokładnie opisujący wszelkie aspekty dotyczące dostępności stron <a href="http://WWW.">WWW.</a> Jest on podzielony na 3 poziomy (A, AA i AAA), określające stopień dostępności (od minimum do sensownego maksimum). Standard ten opisuje <b>naprawdę wszystko</b>, co webmaster powinien wiedzieć o dostępności, stąd można go traktować jako swoistą biblię. Istnieje także <a href="https://www.w3.org/WAI/WCAG20/quickref/">oficjalny katechizm</a>.</p>
-<p class="tutorials-note mdl-color--red mdl-color-text--black">WCAG powinien znać <b>KAŻDY</b> szanujący się programista sieciowy. Zasady określone w tym standardzie nie są trudne w zastosowaniu (większość sprowadza się do poprawnego użycia HTML-a), a przynoszą spore korzyści w dziedzinie dostępności.</p>
-<p class="tutorials-note ">Jeśli przestrzega się zasad semantyki HTML i nie zapomina o zasadzie Progressive Enhancement, wówczas prawdopodobnie nie będziesz musiał specjalnie przejmować się kwestiami dostępności strony. Wyjątkiem będą tu kwestie związane z kontrastem, gdyż je bardzo łatwo przeoczyć.</p>
+<p>Warto także dodać, że niektóre przeglądarki co prawda przeskoczą do odpowiedniego elementu, ale zachowają starą kolejność TAB-owania elementów (czyli będzie TAB-ować menu, które chcieliśmy przeskoczyć) – dlatego dla kontenera z treścią warto dorzucić <code>&#91;tabindex=-1&#93;</code>. Więcej info można znaleźć tutaj: <a href="http://viget.com/inspire/skip-link-primer">http://viget.com/inspire/skip-link-primer</a></p>
+<p><s>Dodać odpowiednie <code>&#91;tabindex&#93;</code>, <code>&#91;accesskey&#93;</code> (szczególnie dla menu i wyszukiwarki)</s> Wycofuję się z tego, gdyż narzucony <code>&#91;tabindex&#93;</code> może zrobić więcej szkody niż pożytku i w gruncie rzeczy powinien służyć do uczynienia focusowalnymi tych elementów, które natywnie nie są (czyli de facto winien być używany tylko i wyłącznie w połączeniu z JS i ARIA). Tak samo wydaje mi się, że skróty klawiaturowe lepiej i wygodniej dla użytkownika zrobić jest w JS.</p>
+<p>Dla większości elementów sekcjonujących (<code>section, article, nav, aside</code>) warto dodać nagłówki, które – dla piękna – ukryć można przed wizualnymi przeglądarkami podobną techniką, jak ta dla już wspominanego linku <code>.focus-only</code>. Oczywiście nie ma sensu na chamca wtryniać nagłówków dla każdej sekcji – czasami "Untitled section" jest dozwolone. Lepszy jest brak nagłówka, niźli bezsensowny nagłówek. Inna rzecz, że jeśli coś nie ma nagłówka, to prawdopodobnie nie jest sekcją. Warto o tym pamiętać, bo nagłówki dla sekcji tworzą swoisty schemat nawigacyjny po stronie, który można wykorzystać do szybkiego przeskakiwania między częściami strony i identyfikowania ich. Tutaj warto też zauważyć, że każda sekcja powinna mieć odpowiednie <code>&#91;id&#93;</code> – w języku strony. Dzięki temu będzie można linkować do każdej sekcji, co znacząco zwiększa użyteczność strony. Podobna technika jest stosowana w przypadku tego tutorialu, gdzie można zauważyć najczęściej stosowany wzorzec dla tworzenia identyfikatorów: slug z treści nagłówka.</p>
+<p>Czasami zdarza się też, że musimy zapewnić jeszcze większy poziom dostępności. Tutaj na pomoc przychodzi nam <a href="https://www.w3.org/TR/WCAG20/">standard WCAG 2.0</a>, dokładnie opisujący wszelkie aspekty dotyczące dostępności stron <a href="http://WWW.">WWW.</a> Jest on podzielony na 3 poziomy (A, AA i AAA), określające stopień dostępności (od minimum do sensownego maksimum). Standard ten opisuje <b>naprawdę wszystko</b>, co webmaster powinien wiedzieć o dostępności, stąd można go traktować jako swoistą biblię. Istnieje także <a href="https://www.w3.org/WAI/WCAG20/quickref/">oficjalny katechizm</a>.</p>
+<p class="alert alert-danger">WCAG powinien znać <b>KAŻDY</b> szanujący się programista sieciowy. Zasady określone w tym standardzie nie są trudne w zastosowaniu (większość sprowadza się do poprawnego użycia HTML-a), a przynoszą spore korzyści w dziedzinie dostępności.</p>
+<p>Jeśli przestrzega się zasad semantyki HTML i nie zapomina o zasadzie Progressive Enhancement, wówczas prawdopodobnie nie będziesz musiał specjalnie przejmować się kwestiami dostępności strony. Wyjątkiem będą tu kwestie związane z kontrastem, gdyż je bardzo łatwo przeoczyć.</p>
 
 
-<h3 class="mdl-typography--display-2" id="ostatnie">Ostatnie poprawki<a href="#ostatnie" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h3>
-<p class="tutorials-note ">To już prawie koniec :D Co jeszcze warto zmienić?</p>
+<h3 id="ostatnie">Ostatnie poprawki <a href="#ostatnie" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<p>To już prawie koniec :D Co jeszcze warto zmienić?</p>
 
-<h4 class="mdl-typography--display-1" id="wydajnosc">Wydajność i bezpieczeństwo<a href="#wydajnosc" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h4>
+<h4 id="wydajnosc">Wydajność i bezpieczeństwo <a href="#wydajnosc" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <ul>
-	<li> Wszystkie <code class="mdl-color--white mdl-color-text--orange-600">script</code> (oprócz tego dla IE) przerzucić na koniec <code class="mdl-color--white mdl-color-text--orange-600">body</code> (zwiększy to szybkość ładowania strony, bo skrypty w <code class="mdl-color--white mdl-color-text--orange-600">head</code> mogą ją <a href="http://developer.yahoo.com/performance/rules.html#js_bottom">"blokować"</a>). Jeśli mamy bardzo dużo JS, ze złożonymi relacjami pomiędzy poszczególnymi plikami, warto rozważyć <a href="https://github.com/umdjs/umd">architekturę modułową</a>
+	<li> Wszystkie <code>script</code> (oprócz tego dla IE) przerzucić na koniec <code>body</code> (zwiększy to szybkość ładowania strony, bo skrypty w <code>head</code> mogą ją <a href="http://developer.yahoo.com/performance/rules.html#js_bottom">"blokować"</a>). Jeśli mamy bardzo dużo JS, ze złożonymi relacjami pomiędzy poszczególnymi plikami, warto rozważyć <a href="https://github.com/umdjs/umd">architekturę modułową</a>
 	</li><li> Można się w ogóle pokusić o serwowanie CSS, JS i obrazków z <a href="http://en.wikipedia.org/wiki/Content_Delivery_Network">CDN</a>. Jest to jedno z zaleceń Google odnośnie szybkości wczytywania stron: rozłożenie wczytywania na 2 paralelne domeny. Jedna serwuje dynamiczną stronę (czyli PHP i generujemy blogaska), a druga serwuje wszystko, co statyczne. Jednak rozłożenie wczytywania strony to tylko część zalet i bardziej rozbudowane CDN-y korzystają choćby z geolokalizacji, żeby zasysać zasoby z serwera jak najbliżej użytkownika, aby czas wczytywania był jeszcze krótszy. Istnieją także darmowe CDN-y, np. <a href="http://www.coralcdn.org/">Coral CDN</a>.
 	</li><li> Warto też stosować build process, podczas którego będziemy minifikować kod HTML, łączyć i minifikować pliki CSS i JS (być może nawet z przygotowywaniem paczek dla poszczególnych podstron) oraz kompresować obrazki (np. przy pomocy <a href="https://imageoptim.com/">ImageOptim</a>). Bardzo prymitywny przykład takiego rozwiązania można zobaczyć w <a href="https://github.com/Comandeer/comandeers-homepage">repozytorium mojej strony domowej</a>.
 	</li><li> Jak lubimy eksperymentować, to warto przejść całkowicie na HTTPS i <a href="https://http2.github.io/">protokół HTTP/2</a>. Zwiększy to zarówno bezpieczeństwo, jak i wydajność naszej strony.
 	</li><li> Jak już jesteśmy przy HTTPS, to warto wspomnieć o <a href="https://developer.mozilla.org/en-US/docs/Web/Security/HTTP_strict_transport_security">HSTS</a> i <a href="https://developer.mozilla.org/en/docs/Web/Security/Public_Key_Pinning">HPKP</a>.
-	</li><li> Kontynuując ten temat, jest jeszcze <a href="https://www.owasp.org/index.php/List_of_useful_HTTP_headers">kilka innych pomocnych nagłówków</a>, z czego najwięcej uwagi warto poświęcić <a href="https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy"><code class="mdl-color--white mdl-color-text--orange-600">Content-Security-Policy</code></a>.
+	</li><li> Kontynuując ten temat, jest jeszcze <a href="https://www.owasp.org/index.php/List_of_useful_HTTP_headers">kilka innych pomocnych nagłówków</a>, z czego najwięcej uwagi warto poświęcić <a href="https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy"><code>Content-Security-Policy</code></a>.
 </li></ul>
 
-<h4 class="mdl-typography--display-1" id="integracja">Integracja z zewnętrznymi usługami<a href="#integracja" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h4>
+<h4 id="integracja">Integracja z zewnętrznymi usługami <a href="#integracja" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <ul>
 	<li> Dodać <a href="http://html5doctor.com/web-manifest-specification/">web app manifest</a>, co pozwoli "uaplikacjowić" się naszemu blogowi.
 	</li><li> Oprócz RSS dodać także ATOM, bo to o wiele lepszy format i lepiej się z nim pracuje.
 	</li><li> Dla obrazków w treści artykułu warto stosować ścieżki bezwzględne <s>(te z // na początku)</s>, bo treść może być udostępniana także przez RSS i ATOM i może pojawić się problem z odnalezieniem właściwego obrazka. <s>Czemu //, a nie <a href="http://?">http://?</a> Ponieważ raz, że szybciej się pisze ;) Po drugie zapis // sam się "przystosowuje": jeśli strona jest słana przez HTTP, obrazek również zostanie przez niego zassany; jeśli przez HTTPS, obrazek będzie przesłany z szyfrowaniem i w ogóle (oczywiście jeśli nie stać cię na SSL, to lepiej wymuszaj <a href="http://">http://</a> ;))</s>. Gdy to tylko możliwe, należy <a href="https://twitter.com/paul_irish/status/588502455530311680">wymuszać HTTPS</a>. Zapewnia to większe bezpieczeństwo, a w przyszłości umożliwi korzystanie z <a href="https://http2.github.io/">HTTP/2</a>.
-	</li><li> Jeśli masz profil na Google+, rozważ umieszczenie <code class="mdl-color--white mdl-color-text--orange-600">link&#91;rel=author&#93;</code> (jako osoba prywatna) bądź też <code class="mdl-color--white mdl-color-text--orange-600">link&#91;rel=publisher&#93;</code> (jako firma, organizacja, paracyrk…) z <code class="mdl-color--white mdl-color-text--orange-600">&#91;href&#93;</code> ustawionym na adres Twojego profilu. <s>Jak Ci się uda, to możliwe, że w wynikach wyszukiwania obok Twojej strony pojawi się Twoje zdjęcie profilowe :&gt;</s> <a href="https://support.google.com/webmasters/answer/6083347?hl=pl">Się nie pojawi</a>, ale i tak warto taką informację dodać dla innych usług:
+	</li><li> Jeśli masz profil na Google+, rozważ umieszczenie <code>link&#91;rel=author&#93;</code> (jako osoba prywatna) bądź też <code>link&#91;rel=publisher&#93;</code> (jako firma, organizacja, paracyrk…) z <code>&#91;href&#93;</code> ustawionym na adres Twojego profilu. <s>Jak Ci się uda, to możliwe, że w wynikach wyszukiwania obok Twojej strony pojawi się Twoje zdjęcie profilowe :&gt;</s> <a href="https://support.google.com/webmasters/answer/6083347?hl=pl">Się nie pojawi</a>, ale i tak warto taką informację dodać dla innych usług:
 	<p class="code">Kod:</p><pre><code class="language-markup">&lt;link rel="author" href="//plus.google.com/108791847143656151689/"&gt;</code></pre>
 	</li><li> Jak już jesteśmy przy społecznościówkach, Facebook też serwuje <a href="http://davidwalsh.name/facebook-meta-tags">swoje metatagi</a> a Twtiter <a href="https://dev.twitter.com/docs/cards">nie pozostaje mu dłużny</a>.
-	</li><li> Warto też serwować ikonkę strony. Najlepiej mieć podstawową - <code class="mdl-color--white mdl-color-text--orange-600">favicon.ico</code> - w głównym folderze witryny. Wtedy, nawet jeśli nie zamieścimy <code class="mdl-color--white mdl-color-text--orange-600">link&#91;rel=icon&#93;</code> w kodzie, przeglądarki sobie ją pobiorą (tak, przeglądarki po prostu na chama szukają ikonki, śląc requesty pod <a href="http://naszastrona.pl/favicon.ico">http://naszastrona.pl/favicon.ico</a>). Mając taką podstawową w zapasie, można próbować wcisnąć browserom np coś w PNG właśnie przy pomocy <code class="mdl-color--white mdl-color-text--orange-600">link&#91;rel=icon&#93;</code>. IE &lt; 9 i tak tego nie rozumie, uparcie szukając <code class="mdl-color--white mdl-color-text--orange-600">link&#91;rel=shortcut&#93;</code>, zatem ono dostanie ico a reszta ładny PNG (albo nawet animację w GIF ;)). Do tego dochodzą jeszcze np. <a href="http://mathiasbynens.be/notes/touch-icons">ikonki dotykowe dla iUrządzeń</a> i inne takie, które też można (a jeśli strona ma być dla mobilnych też - nawet trzeba ;)) zamieścić. Są od tego <a href="http://realfavicongenerator.net/">odpowiednie narzędzia</a>. Uwaga! Generowany kod to prawdziwa kobyła. Tak się to kończy, gdy <a href="http://css-tricks.com/favicon-quiz/">nie istnieje jeden, powszechny standard</a>.
+	</li><li> Warto też serwować ikonkę strony. Najlepiej mieć podstawową - <code>favicon.ico</code> - w głównym folderze witryny. Wtedy, nawet jeśli nie zamieścimy <code>link&#91;rel=icon&#93;</code> w kodzie, przeglądarki sobie ją pobiorą (tak, przeglądarki po prostu na chama szukają ikonki, śląc requesty pod <a href="http://naszastrona.pl/favicon.ico">http://naszastrona.pl/favicon.ico</a>). Mając taką podstawową w zapasie, można próbować wcisnąć browserom np coś w PNG właśnie przy pomocy <code>link&#91;rel=icon&#93;</code>. IE &lt; 9 i tak tego nie rozumie, uparcie szukając <code>link&#91;rel=shortcut&#93;</code>, zatem ono dostanie ico a reszta ładny PNG (albo nawet animację w GIF ;)). Do tego dochodzą jeszcze np. <a href="http://mathiasbynens.be/notes/touch-icons">ikonki dotykowe dla iUrządzeń</a> i inne takie, które też można (a jeśli strona ma być dla mobilnych też - nawet trzeba ;)) zamieścić. Są od tego <a href="http://realfavicongenerator.net/">odpowiednie narzędzia</a>. Uwaga! Generowany kod to prawdziwa kobyła. Tak się to kończy, gdy <a href="http://css-tricks.com/favicon-quiz/">nie istnieje jeden, powszechny standard</a>.
 	</li><li> W nowszych Windowsach (7 i 8) można sobie <a href="http://msdn.microsoft.com/en-us/library/ie/gg491732(v=vs.85).aspx">przypiąć stronę</a> i odpalać ją jak zwykłą aplikację (oczywiście w IE :)). Podobna opcja <a href="https://productforums.google.com/forum/#!topic/chrome/9jHS2dpJX5Q">jest dostępna w Chrome</a>.
 	</li><li> Chrome na mobilnych urządzeniach pozwala również <a href="https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android?hl=en">zmienić kolor paska adresu</a>:
 	<p class="code">Kod:</p><pre><code class="language-markup">&lt;meta name="theme-color" content="#db5945"&gt;</code></pre>
 </li></ul>
 
-<h4 class="mdl-typography--display-1" id="kompatybilnosc">Kompatybilność<a href="#kompatybilnosc" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h4>
+<h4 id="kompatybilnosc">Kompatybilność <a href="#kompatybilnosc" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <ul>
 	<li> Używać media-queries, aby strona sama się dostosowywała do urządzenia użytkownika (nurt responsive webdesign). Opłaca się, bo Google <a href="https://www.google.com/webmasters/tools/mobile-friendly/">lubi strony mobile friendly</a> (a mój telefon to popiera!).
-	</li><li> Dla IE słać <a href="https://github.com/h5bp/html5-boilerplate/blob/b5d6e7b1613fca24d250fa8e5bc7bcc3dd6002ef/dist/doc/html.md#x-ua-compatible">nagłówek <code class="mdl-color--white mdl-color-text--orange-600">X-UA-Compatible</code></a> ustawiony na <code class="mdl-color--white mdl-color-text--orange-600">IE=edge</code>. Wymusza to renderowanie strony przy pomocy najnowszych standardów w IE &gt;= 8. <s>Dodatkowo można słać ten nagłówek z wartością <code class="mdl-color--white mdl-color-text--orange-600">IE=edge; chrome=1</code>, co wymusi użycie <a href="https://developers.google.com/chrome/chrome-frame/">Chrome Frame</a>, jeśli jest dostępny.</s> Chrome Frame odszedł na emeryturę… Googlersi to jednak skrajni idealiści. Jeśli nie lubisz wciskać pluginów userowi, zawsze możesz <s><a href="http://browsehappy.pl/infobarwebmaster">kulturalnie poinformować</a></s> <a href="https://browser-update.org/pl/">naprawdę kulturalnie poinformować</a>.
+	</li><li> Dla IE słać <a href="https://github.com/h5bp/html5-boilerplate/blob/b5d6e7b1613fca24d250fa8e5bc7bcc3dd6002ef/dist/doc/html.md#x-ua-compatible">nagłówek <code>X-UA-Compatible</code></a> ustawiony na <code>IE=edge</code>. Wymusza to renderowanie strony przy pomocy najnowszych standardów w IE &gt;= 8. <s>Dodatkowo można słać ten nagłówek z wartością <code>IE=edge; chrome=1</code>, co wymusi użycie <a href="https://developers.google.com/chrome/chrome-frame/">Chrome Frame</a>, jeśli jest dostępny.</s> Chrome Frame odszedł na emeryturę… Googlersi to jednak skrajni idealiści. Jeśli nie lubisz wciskać pluginów userowi, zawsze możesz <s><a href="http://browsehappy.pl/infobarwebmaster">kulturalnie poinformować</a></s> <a href="https://browser-update.org/pl/">naprawdę kulturalnie poinformować</a>.
 	</li><li> Na końcu warto poświęcić chwilkę i przetestować stronę, poczynając od <a href="http://validator.w3.org">Validatora</a>, przechodząc do <a href="http://wave.webaim.org/">testu dostępności</a> a na <a href="http://developers.google.com/speed/pagespeed/insights/">teście szybkości kończąc</a>. Sprawdzenie strony na kilku różnych urządzeniach lub <a href="https://www.browserstack.com/">BrowserStack</a> też jest dobrym pomysłem.
 </li></ul>
-<p class="tutorials-note "> Więcej grzechów nie pamiętam :D</p>
+<p> Więcej grzechów nie pamiętam :D</p>
 
 
-<h3 class="mdl-typography--display-2" id="nasz-blog">Nasz blog<a href="#nasz-blog" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h3>
-<p class="tutorials-note ">Oto i pełny przerobiony kod z paroma dodatkami :D <a href="http://tutorials.comandeer.pl/res/html5-blog/final.html">http://tutorials.comandeer.pl/res/html5-blog/final.html</a></p>
+<h3 id="nasz-blog">Nasz blog <a href="#nasz-blog" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
+<p>Oto i pełny przerobiony kod z paroma dodatkami :D <a href="http://tutorials.comandeer.pl/res/html5-blog/final.html">http://tutorials.comandeer.pl/res/html5-blog/final.html</a></p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;!DOCTYPE html&gt;
 	&lt;html lang="pl" dir="ltr" itemscope itemtype="http://schema.org/WebPage"&gt;
 		&lt;head&gt;
@@ -856,11 +683,9 @@
 	&lt;/html&gt;</code></pre>
 
 
-<h3 class="mdl-typography--display-2" id="przydatne">Przydatne linki<a href="#przydatne" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h3>
+<h3 id="przydatne">Przydatne linki <a href="#przydatne" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 
-<h4 class="mdl-typography--display-1" id="standardy">Standardy i oficjalne materiały<a href="#standardy" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h4>
+<h4 id="standardy">Standardy i oficjalne materiały <a href="#standardy" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <ul>
 	<li> <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/">HTML Living Standard</a>
 	</li><li> <a href="http://www.w3.org/TR/html5">Specyfikacja HTML5</a> (która jest oficjalną rekomendacją W3C od 28.10.2014!)
@@ -874,35 +699,34 @@
 	</li><li> <a href="http://microformats.org/wiki/Main_Page">Specyfikacje i oficjalne materiały o mikroformatach</a>
 	</li><li> <a href="https://www.w3.org/TR/microdata/">Specyfikacja microdata</a>
 	</li><li> <a href="http://dublincore.org/">Informacje o Dublin Core</a>
-	</li><li> <a href="https://www.w3.org/TR/html51/semantics-embedded-content.html#alt-text">Oficjalna część specyfikacji HTML5, opsiująca użycie atrybutu <code class="mdl-color--white mdl-color-text--orange-600">&#91;alt&#93;</code></a>
+	</li><li> <a href="https://www.w3.org/TR/html51/semantics-embedded-content.html#alt-text">Oficjalna część specyfikacji HTML5, opsiująca użycie atrybutu <code>&#91;alt&#93;</code></a>
 	</li><li> <a href="http://usecases.responsiveimages.org">Oficjalna informacja o responsywnych obrazkach</a>
-	</li><li> <a href="http://www.w3.org/TR/html51/semantics-embedded-content.html#the-picture-element">Definicja tagu <code class="mdl-color--white mdl-color-text--orange-600">picture</code> w HTML5.1</a>
+	</li><li> <a href="http://www.w3.org/TR/html51/semantics-embedded-content.html#the-picture-element">Definicja tagu <code>picture</code> w HTML5.1</a>
 	</li><li> <a href="https://tools.ietf.org/html/rfc7540">Specyfikacja HTTP/2</a>
 	</li><li> <a href="https://www.w3.org/TR/CSP2/">Specyfikacja Content Security Policy</a>
 </li></ul>
 
-<h4 class="mdl-typography--display-1" id="poradniki">Poradniki<a href="#poradniki" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h4>
+<h4 id="poradniki">Poradniki <a href="#poradniki" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <ul>
 	<li> <a href="https://www.paciellogroup.com/blog/">Perfekcyjny przykład bloga w HTML5</a>
 	</li><li> <a href="http://lea.verou.me">Dawny perfekcyjny przykład bloga w HTML5</a>
 	</li><li> <a href="http://www.diveinto.org/html5/extensibility.html">Microdata</a>
 	</li><li> <a href="http://html5doctor.com/microdata/">Doktorzy o microdata</a>
 	</li><li> <a href="http://kurs.browsehappy.pl/HTML/DublinCore">DublinCore</a>
-	</li><li> <a href="http://webaim.org/techniques/alttext/">Techniki dobierania odpowiedniego atrybutu <code class="mdl-color--white mdl-color-text--orange-600">&#91;alt&#93;</code></a>
+	</li><li> <a href="http://webaim.org/techniques/alttext/">Techniki dobierania odpowiedniego atrybutu <code>&#91;alt&#93;</code></a>
 	</li><li> <a href="http://www.alistapart.com/articles/waiaria">WAI-ARIA</a>
 	</li><li> <a href="http://html5doctor.com/on-html-belts-and-aria-braces/">Krótka uwaga dla nadużywających ARIA</a>
-	</li><li> <a href="http://html5doctor.com/the-time-element/">Trochę o tagu <code class="mdl-color--white mdl-color-text--orange-600">time</code></a>
+	</li><li> <a href="http://html5doctor.com/the-time-element/">Trochę o tagu <code>time</code></a>
 	</li><li> <a href="http://html5doctor.com/avoiding-common-html5-mistakes/">Lista najczęstszych błędów</a>
 	</li><li> <a href="http://html5doctor.com/downloads/h5d-sectioning-flowchart.pdf">Prosty schemat pomagający dobrać odpowiedni tag</a>
 	</li><li> <a href="http://webroad.pl/inne/3722-progressive-enhancement-zapomniany-fundament">Progressive Enhancement</a>
 	</li><li> <a href="http://webroad.pl/html5-css3/3925-validate-or-not-to-validate-that-is-the-question">Krótki artykuł o walidacji</a>
 </li></ul>
 
-<h4 class="mdl-typography--display-1" id="narzedzia">Narzędzia<a href="#narzedzia" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h4>
+<h4 id="narzedzia">Narzędzia <a href="#narzedzia" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <ul>
-	<li> <a href="http://validator.w3.org/nu">Oficjalny walidator</a>
+	<li> <a href="http://validator.w3.org/nu">Oficjalny walidator</a> dla wersji standardu od W3C
+	</li><li> <a href="#">Oficjalny walidator</a> dla wersji standardu od WHATWG
 	</li><li> <a href="http://wave.webaim.org/">Narzędzie do sprawdzania dostępności strony</a>
 	</li><li> <a href="https://developers.google.com/speed/pagespeed/insights/">Narzędzie do mierzenia wydajności strony</a>
 	</li><li> <a href="https://www.google.com/webmasters/tools/mobile-friendly/">Tester przyjazności dla urządzeń mobilnych</a>
@@ -913,39 +737,39 @@
 </li></ul>
 
 
-<h3 class="mdl-typography--display-2" id="changelog">Poprawki i takie tam<a href="#changelog" title="Bezpo&#x15B;redni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h3>
+<h3 id="changelog">Poprawki i takie tam <a href="#changelog" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <details><summary>changelog</summary>
 	<ul>
-		<li> <b>24.10.2016</b> - aktualizacja finalnego kodu
+		<li> <b>21.11.2016</b> - dodanie linków  do dwóch oficjalnych walidatorów
+		</li><li> <b>24.10.2016</b> - aktualizacja finalnego kodu
 		</li><li> <b>23.07.2016</b> - dodanie info o HTML 5.1 jako CR + dodanie linku do najnowszej wersji specki HTML 5.x; zmiana przykładu perfekcyjnego bloga
-		</li><li> <b>28.05.2016</b> - poprawienie linków do sekcji o <code class="mdl-color--white mdl-color-text--orange-600">&#91;alt&#93;</code> i <code class="mdl-color--white mdl-color-text--orange-600">picture</code> w specyfikacji HTML 5.1
+		</li><li> <b>28.05.2016</b> - poprawienie linków do sekcji o <code>&#91;alt&#93;</code> i <code>picture</code> w specyfikacji HTML 5.1
 		</li><li> <b>17.04.2016</b> - dodanie informacji o aktualizacji algorytmu outline'u w specyfikacji HTML5
 		</li><li> <b>09.04.2016</b> - dodanie linku do algorytmu wyszukiwania deklaracji kodowania w `meta` oraz linku do opisu `X-UA-Compatible` w H5BP
-		</li><li> <b>16.03.2016</b> - dopisanie krótkiego wyjaśnienia w fragmencie o <code class="mdl-color--white mdl-color-text--orange-600">main</code> zachowującym się jak <code class="mdl-color--white mdl-color-text--orange-600">div</code>
-		</li><li> <b>16.02.2016</b> - poprawienie linków o <code class="mdl-color--white mdl-color-text--orange-600">&#91;alt&#93;</code>; odwrócenie changeloga; poprawienie notki o <code class="mdl-color--white mdl-color-text--orange-600">figure</code>
-		</li><li> <b>03.02.2016</b> - lekkie uszczegółowienie opisu <code class="mdl-color--white mdl-color-text--orange-600">figure</code>; przebudowa i aktualizacja sekcji "Ostatnie poprawki"; dopisanie kilku informacji o bezpieczeństwie; utworzenie sekcji o dostępności; przebudowa i aktualizacja sekcji z linkami; uaktualnienie stopki bloga
+		</li><li> <b>16.03.2016</b> - dopisanie krótkiego wyjaśnienia w fragmencie o <code>main</code> zachowującym się jak <code>div</code>
+		</li><li> <b>16.02.2016</b> - poprawienie linków o <code>&#91;alt&#93;</code>; odwrócenie changeloga; poprawienie notki o <code>figure</code>
+		</li><li> <b>03.02.2016</b> - lekkie uszczegółowienie opisu <code>figure</code>; przebudowa i aktualizacja sekcji "Ostatnie poprawki"; dopisanie kilku informacji o bezpieczeństwie; utworzenie sekcji o dostępności; przebudowa i aktualizacja sekcji z linkami; uaktualnienie stopki bloga
 		</li><li> <b>11.12.2015</b> - uaktualnienie obrazków z outlinem blogów; dodanie notki o możliwości testowania outline w walidatorze; dodanie linka do walidatora
 		</li><li> <b>26.11.2015</b> - mała poprawka we fragmencie o adresach zasobów na stronie
 		</li><li> <b>31.07.2015</b> - wyjęcie komentarzy poza stopkę artykułu
-		</li><li> <b>04.06.2015</b> - opisanie komentarzy, informacja o relative protocol, uzupełnienie informacji o <code class="mdl-color--white mdl-color-text--orange-600">figure</code>, poprawienie wykorzystania <code class="mdl-color--white mdl-color-text--orange-600">&#91;rel=tag&#93;</code>, notka przy <code class="mdl-color--white mdl-color-text--orange-600">&#91;rel&#93;</code> o ich połączeniu z konkretną stroną oraz uaktualnienie kodu bloga
+		</li><li> <b>04.06.2015</b> - opisanie komentarzy, informacja o relative protocol, uzupełnienie informacji o <code>figure</code>, poprawienie wykorzystania <code>&#91;rel=tag&#93;</code>, notka przy <code>&#91;rel&#93;</code> o ich połączeniu z konkretną stroną oraz uaktualnienie kodu bloga
 		</li><li> <b>26.04.2015</b> - podział tutorialu na mniejsze partie (zwłaszcza część poświęconą HTML5)
 		</li><li> <b>23.04.2015</b> - krótka notka na temat wystrzegania się niepotrzebnego stosowania ARIA; poprawiony kod bloga
-		</li><li> <b>09.03.2015</b> - ulepszenie skip linków, uaktualnienie informacji o atrybutach <code class="mdl-color--white mdl-color-text--orange-600">&#91;rel&#93;</code>, poprawienie kodu <code class="mdl-color--white mdl-color-text--orange-600">picture</code> oraz krótki dopisek o formacie JSON LD
-		</li><li> <b>19.11.2014</b> - poprawienie zapisu atrybutów, dodanie linku do CanIUse.com i aktualizacja informacji o tagu <code class="mdl-color--white mdl-color-text--orange-600">picture</code>
+		</li><li> <b>09.03.2015</b> - ulepszenie skip linków, uaktualnienie informacji o atrybutach <code>&#91;rel&#93;</code>, poprawienie kodu <code>picture</code> oraz krótki dopisek o formacie JSON LD
+		</li><li> <b>19.11.2014</b> - poprawienie zapisu atrybutów, dodanie linku do CanIUse.com i aktualizacja informacji o tagu <code>picture</code>
 		</li><li> <b>05.11.2014</b> - kilka poprawek związanych głównie z ARIA
 		</li><li> <b>18.08.2014</b> - dodanie linku do artykułu o favicons
-		</li><li> <b>04.08.2014</b> - poprawnie kodu formularzu (wywalenie <code class="mdl-color--white mdl-color-text--orange-600">&#91;tabindex&#93;</code> i wyjęcie przycisku poza <code class="mdl-color--white mdl-color-text--orange-600">dl</code>)
-		</li><li> <b>13.07.2014</b> - dodanie kilku informacji o ARIA, faviconach oraz przeredagowanie kilku fragmentów; rozróżnienie między <code class="mdl-color--white mdl-color-text--orange-600">nav</code> a <code class="mdl-color--white mdl-color-text--orange-600">menu</code>
-		</li><li> <b>16.04.2014</b> - uwaga początkowa + podlinkowanie książki Ferrante i Kursu HTML + uwagi o <code class="mdl-color--white mdl-color-text--orange-600">&#91;alt&#93;</code>; pewna zmiana w stosunku do <code class="mdl-color--white mdl-color-text--orange-600">&#91;tabindex&#93;</code> i <code class="mdl-color--white mdl-color-text--orange-600">&#91;accesskey&#93;</code>
-		</li><li> <b>10.04.2014</b> - dodanie kilku linków, aktualizacja fragmentu o <code class="mdl-color--white mdl-color-text--orange-600">picture</code>, dodanie części o podstawowych stylach i porady o testowaniu strony
-		</li><li> <b>21.11.2013</b> - dodanie fragmentu o <code class="mdl-color--white mdl-color-text--orange-600">&#91;pattern&#93;</code> i kilka dodatkowych uwag na temat <code class="mdl-color--white mdl-color-text--orange-600">aside</code>
-		</li><li> <b>20.11.2013</b> - zmiana sposobu generowania tutorialu (kod powinien być czystszy), zmiana kodu artykułu (głównie <code class="mdl-color--white mdl-color-text--orange-600">section, footer</code>), wyjaśnienie wątpliwości z <code class="mdl-color--white mdl-color-text--orange-600">cite</code>, aktualności związane z responsywnymi obrazkami oraz nagłówkami
-		</li><li> <b>20.09.2013</b> - dodałem nagłówki w kilku miejscach ostatecznego kodu bloga oraz usunąłem z niego <code class="mdl-color--white mdl-color-text--orange-600">hgroup</code>
-		</li><li> <b>10.03.2013</b> - oddanie sprawiedliwości tagowi <code class="mdl-color--white mdl-color-text--orange-600">main</code>, dodanie kilku linków, troszkę poprawek
+		</li><li> <b>04.08.2014</b> - poprawnie kodu formularzu (wywalenie <code>&#91;tabindex&#93;</code> i wyjęcie przycisku poza <code>dl</code>)
+		</li><li> <b>13.07.2014</b> - dodanie kilku informacji o ARIA, faviconach oraz przeredagowanie kilku fragmentów; rozróżnienie między <code>nav</code> a <code>menu</code>
+		</li><li> <b>16.04.2014</b> - uwaga początkowa + podlinkowanie książki Ferrante i Kursu HTML + uwagi o <code>&#91;alt&#93;</code>; pewna zmiana w stosunku do <code>&#91;tabindex&#93;</code> i <code>&#91;accesskey&#93;</code>
+		</li><li> <b>10.04.2014</b> - dodanie kilku linków, aktualizacja fragmentu o <code>picture</code>, dodanie części o podstawowych stylach i porady o testowaniu strony
+		</li><li> <b>21.11.2013</b> - dodanie fragmentu o <code>&#91;pattern&#93;</code> i kilka dodatkowych uwag na temat <code>aside</code>
+		</li><li> <b>20.11.2013</b> - zmiana sposobu generowania tutorialu (kod powinien być czystszy), zmiana kodu artykułu (głównie <code>section, footer</code>), wyjaśnienie wątpliwości z <code>cite</code>, aktualności związane z responsywnymi obrazkami oraz nagłówkami
+		</li><li> <b>20.09.2013</b> - dodałem nagłówki w kilku miejscach ostatecznego kodu bloga oraz usunąłem z niego <code>hgroup</code>
+		</li><li> <b>10.03.2013</b> - oddanie sprawiedliwości tagowi <code>main</code>, dodanie kilku linków, troszkę poprawek
 		</li><li> <b>10.01.2013</b> - dodano kilka linków, dopisano kilka informacji (m.in. o OpenGraph wspomniano)
-		</li><li> <b>06.01.2013</b> - gryzło mnie sumienie o <code class="mdl-color--white mdl-color-text--orange-600">label</code> na wyszukiwarce. Toteż dopisałem, opisałem i przesadziłem ;) również dodałem/zmieniłem/poprawiłem kilka linków i doaktualizowałem pewne informacje. No i przekroczyłem limit znaków ;) kod HTML początkowy i końcowy walnięte na serwer :P
-		</li><li> <b>29.12.2012</b> - dopisek o elemencie <code class="mdl-color--white mdl-color-text--orange-600">main</code>
+		</li><li> <b>06.01.2013</b> - gryzło mnie sumienie o <code>label</code> na wyszukiwarce. Toteż dopisałem, opisałem i przesadziłem ;) również dodałem/zmieniłem/poprawiłem kilka linków i doaktualizowałem pewne informacje. No i przekroczyłem limit znaków ;) kod HTML początkowy i końcowy walnięte na serwer :P
+		</li><li> <b>29.12.2012</b> - dopisek o elemencie <code>main</code>
 		</li><li> <b>28.11.2012</b> - małe poprawki w kilku miejscach, dodanie kilku linków
 		</li><li> <b>17.09.2012</b> - pojawił się akapicik o responsive images, zmiany w linkach
 		</li><li> <b>25.07.2012</b> - kilka poprawek wymuszonych zmianami w specyfikacji i trochę więcej o Schema.org + kilka takich tam uwag o różnych elementach
@@ -955,22 +779,21 @@
 </details>
 
 						</article>
-
-						<section id="komentarze" class="mdl-cell--12-col">
-							<h2 class="mdl-typography--title">Komentarze</h2>
+						<section id="komentarze">
+							<h2>Komentarze</h2>
 							<div id="disqus_thread"></div>
 							<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 							<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 						</section>
 					</main>
-
-					<footer class="mdl-mini-footer">
-						<div class="mdl-mini-footer__left-section">
-							<p>Copyright © by <a href="https://www.comandeer.pl" class="mdl-color-text--white" rel="author">Comandeer</a>.</p>
-						</div>
-					</footer>
 				</div>
 			</div>
+
+			<footer class="site-footer">
+				<div class="container-fluid">
+					<p>Copyright © by <a href="https://www.comandeer.pl" rel="author">Comandeer</a>.</p>
+				</div>
+			</footer>
 
 			<script>
 			( function() {
@@ -1021,6 +844,24 @@
 				} catch( err ) {}
 			} () );
 			</script>
-			<script async src="/js/prism.js"></script>
+			<script src="https://code.jquery.com/jquery-1.12.0.min.js" integrity="sha384-XxcvoeNF5V0ZfksTnV+bejnCsJjOOIzN6UVwF85WBsAnU3zeYh5bloN+L4WLgeNE" crossorigin="anonymous"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+			<script>
+			$( 'nav' ).affix( {
+				offset: {
+					top: function() {
+						return ( this.top = $( '.navbar-fixed-top' ).outerHeight( true ) + 10 );
+					},
+					bottom: function () {
+						return ( this.bottom = $( '.site-footer' ).outerHeight( true ) + 10 );
+					}
+				}
+			} ).on( 'affix.bs.affix', function() {
+				$( 'main' ).removeClass( 'col-md-offset-0' ).addClass( 'col-md-offset-4' );
+			} ).on( 'affix-top.bs.affix affix-bottom.bs.affix', function() {
+				$( 'main' ).removeClass( 'col-md-offset-4' );
+			} );
+			</script>
+			<script src="/js/prism.js"></script>
 		</body>
 	</html>
