@@ -672,7 +672,7 @@
 [h3="narzedzia"]Narzędzia[/h3]
 [list]
 	[*] [url=http://validator.w3.org/nu]Oficjalny walidator[/url] dla wersji standardu od W3C
-	[*] [url=https:/checker.html5.org]Oficjalny walidator[/url] dla wersji standardu od WHATWG
+	[*] [url=https://checker.html5.org]Oficjalny walidator[/url] dla wersji standardu od WHATWG
 	[*] [url=http://wave.webaim.org/]Narzędzie do sprawdzania dostępności strony[/url]
 	[*] [url=https://developers.google.com/speed/pagespeed/insights/]Narzędzie do mierzenia wydajności strony[/url]
 	[*] [url=https://www.google.com/webmasters/tools/mobile-friendly/]Tester przyjazności dla urządzeń mobilnych[/url]
