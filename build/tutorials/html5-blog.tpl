@@ -671,7 +671,8 @@
 
 [h3="narzedzia"]Narzędzia[/h3]
 [list]
-	[*] [url=http://validator.w3.org/nu]Oficjalny walidator[/url]
+	[*] [url=http://validator.w3.org/nu]Oficjalny walidator[/url] dla wersji standardu od W3C
+	[*] [url=https:/checker.html5.org]Oficjalny walidator[/url] dla wersji standardu od WHATWG
 	[*] [url=http://wave.webaim.org/]Narzędzie do sprawdzania dostępności strony[/url]
 	[*] [url=https://developers.google.com/speed/pagespeed/insights/]Narzędzie do mierzenia wydajności strony[/url]
 	[*] [url=https://www.google.com/webmasters/tools/mobile-friendly/]Tester przyjazności dla urządzeń mobilnych[/url]
@@ -685,6 +686,7 @@
 [h2="changelog"]Poprawki i takie tam[/h2]
 [spoiler="changelog"]
 	[list]
+		[*] [b]21.11.2016[/b] - dodanie linków  do dwóch oficjalnych walidatorów
 		[*] [b]24.10.2016[/b] - aktualizacja finalnego kodu
 		[*] [b]23.07.2016[/b] - dodanie info o HTML 5.1 jako CR + dodanie linku do najnowszej wersji specki HTML 5.x; zmiana przykładu perfekcyjnego bloga
 		[*] [b]28.05.2016[/b] - poprawienie linków do sekcji o [tt][alt][/tt] i [tt]picture[/tt] w specyfikacji HTML 5.1
