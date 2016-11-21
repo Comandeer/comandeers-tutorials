@@ -1,5 +1,5 @@
 #! /usr/bin/env bash
-TYPE=mdl
+TYPE=bs
 if [[ $1 != "" ]]; then
   TYPE=$1
 fi
