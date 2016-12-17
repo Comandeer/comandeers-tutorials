@@ -4,5 +4,6 @@ module.exports = {
 	'Web Components': 'http://webroad.pl/javascript/3505-web-components',
 	'Progressive Enhancement – zapomniany fundament': 'http://webroad.pl/inne/3722-progressive-enhancement-zapomniany-fundament',
 	'To validate or not to validate – that is the question!': 'http://webroad.pl/inne/3925-validate-or-not-to-validate-that-is-the-question',
-	'Filtrowanie HTML przy pomocy selektorów CSS': 'http://devcorner.pl/filtrowanie-html-przy-pomocy-selektorow-css/'
+	'Filtrowanie HTML przy pomocy selektorów CSS': 'http://devcorner.pl/filtrowanie-html-przy-pomocy-selektorow-css/',
+	'The great world of open Web standards': 'https://medium.com/content-uneditable/the-great-world-of-open-web-standards-64c1fe53063'
 };
