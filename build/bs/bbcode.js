@@ -207,6 +207,15 @@ var XBBCODE = ( function() {
 			noParse: true
 		},
 
+		'q': {
+			openTag: function( params, content ) {
+				return '<q>';
+			},
+			closeTag: function( params, content ) {
+				return '</q>';
+			}
+		},
+
 		'quote': {
 			openTag: function( params, content ) {
 				return '<blockquote><p>';
