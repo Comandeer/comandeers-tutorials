@@ -216,12 +216,12 @@
 [p]Jeśli jednak już zgodzimy się na oznaczanie komentarzy przy pomocy artykułu, czekają nas kolejne wyzwania. Otóż regułą kciuka jest, by każdy artykuł miał odpowiedni nagłówek. Lecz jaki nagłówek powinien mieć komentarz? Wywiązała się [url=http://www.forumweb.pl/komentarze-kurshtml-edu-pl/html-html5/496603#496603]gorąca dyskusja na ten temat[/url], która skłoniła mnie do refleksji na temat kodu komentarzy. Na większości stron w Sieci, a także [url=http://www.w3.org/TR/html5/sections.html#article-example]w specyfikacji[/url], komentarze są traktowane jako wyjątek, który nie posiada nagłówka (bo są to artykuły zagnieżdżone). Niemniej na chwilę obecną uważam, że dodanie jako nagłówka nazwy użytkownika nie zaszkodzi – pozwoli to nam w łatwiejszy sposób śledzić komentarze danego użytkownika (np. naszego ulubionego hejtera!). Pomysł, by w nagłówku czy etykietce [tt][aria-label][/tt] dodawać pierwsze słowa komentarza ostatecznie odrzuciłem – z tego samego powodu, z jakiego niekiedy warto zostawić puste [tt][alt][/tt]: nie ma sensu dublować treści.[/p]
 [p=info]Nie oznacza to jednak, że np. w RSS nie warto zamieścić tego typu opisu. W przypadku jednak strony internetowej jest to zbędne.[/p]
 [p]Ostatecznie kod komentarzy wygląda tak:[/p]
-[code=markup]<article id="comment-25" itemprop="comment" itemscope itemtype="http://schema.org/UserComments">
+[code=markup]<article id="comment-25">
 	<header class="comment-meta">
-		<a href="#comment-25"><time datetime="2011-01-07T20:41:06+00:00" itemprop="commentTime">07.01.2011, 20:41</time></a>
-		<h4><b itemprop="creator" itemscope itemtype="http://schema.org/Person"><a href="http://example.net/" itemprop="name url"><img alt="" src="http://avatary.gdziekolwiek.com/Comandeer" height="48" width="48" itemprop="image">Comandeer</a> skomentował</b></h4>
+		<a href="#comment-25"><time datetime="2011-01-07T20:41:06+00:00"">07.01.2011, 20:41</time></a>
+		<h4><b><a href="http://example.net/"><img alt="" src="http://avatary.gdziekolwiek.com/Comandeer" height="48" width="48">Comandeer</a> skomentował</b></h4>
 	</header>
-	<p itemprop="commentText">Ale komentarz!</p>
+	<p>Ale komentarz!</p>
 </article>[/code]
 
 [h3="artykul-naglowki-jako-punkty-nawigacyjne"]Nagłówki jako punkty nawigacyjne[/h3]

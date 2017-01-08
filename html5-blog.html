@@ -270,12 +270,12 @@
 <p>Jeśli jednak już zgodzimy się na oznaczanie komentarzy przy pomocy artykułu, czekają nas kolejne wyzwania. Otóż regułą kciuka jest, by każdy artykuł miał odpowiedni nagłówek. Lecz jaki nagłówek powinien mieć komentarz? Wywiązała się <a href="http://www.forumweb.pl/komentarze-kurshtml-edu-pl/html-html5/496603#496603">gorąca dyskusja na ten temat</a>, która skłoniła mnie do refleksji na temat kodu komentarzy. Na większości stron w Sieci, a także <a href="http://www.w3.org/TR/html5/sections.html#article-example">w specyfikacji</a>, komentarze są traktowane jako wyjątek, który nie posiada nagłówka (bo są to artykuły zagnieżdżone). Niemniej na chwilę obecną uważam, że dodanie jako nagłówka nazwy użytkownika nie zaszkodzi – pozwoli to nam w łatwiejszy sposób śledzić komentarze danego użytkownika (np. naszego ulubionego hejtera!). Pomysł, by w nagłówku czy etykietce <code>&#91;aria-label&#93;</code> dodawać pierwsze słowa komentarza ostatecznie odrzuciłem – z tego samego powodu, z jakiego niekiedy warto zostawić puste <code>&#91;alt&#93;</code>: nie ma sensu dublować treści.</p>
 <p class="alert alert-info">Nie oznacza to jednak, że np. w RSS nie warto zamieścić tego typu opisu. W przypadku jednak strony internetowej jest to zbędne.</p>
 <p>Ostatecznie kod komentarzy wygląda tak:</p>
-<p class="code">Kod:</p><pre><code class="language-markup">&lt;article id="comment-25" itemprop="comment" itemscope itemtype="http://schema.org/UserComments"&gt;
+<p class="code">Kod:</p><pre><code class="language-markup">&lt;article id="comment-25"&gt;
 	&lt;header class="comment-meta"&gt;
-		&lt;a href="#comment-25"&gt;&lt;time datetime="2011-01-07T20:41:06+00:00" itemprop="commentTime"&gt;07.01.2011, 20:41&lt;/time&gt;&lt;/a&gt;
-		&lt;h4&gt;&lt;b itemprop="creator" itemscope itemtype="http://schema.org/Person"&gt;&lt;a href="http://example.net/" itemprop="name url"&gt;&lt;img alt="" src="http://avatary.gdziekolwiek.com/Comandeer" height="48" width="48" itemprop="image"&gt;Comandeer&lt;/a&gt; skomentował&lt;/b&gt;&lt;/h4&gt;
+		&lt;a href="#comment-25"&gt;&lt;time datetime="2011-01-07T20:41:06+00:00""&gt;07.01.2011, 20:41&lt;/time&gt;&lt;/a&gt;
+		&lt;h4&gt;&lt;b&gt;&lt;a href="http://example.net/"&gt;&lt;img alt="" src="http://avatary.gdziekolwiek.com/Comandeer" height="48" width="48"&gt;Comandeer&lt;/a&gt; skomentował&lt;/b&gt;&lt;/h4&gt;
 	&lt;/header&gt;
-	&lt;p itemprop="commentText"&gt;Ale komentarz!&lt;/p&gt;
+	&lt;p&gt;Ale komentarz!&lt;/p&gt;
 &lt;/article&gt;</code></pre>
 
 <h4 id="artykul-naglowki-jako-punkty-nawigacyjne">Nagłówki jako punkty nawigacyjne <a href="#artykul-naglowki-jako-punkty-nawigacyjne" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
