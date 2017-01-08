@@ -305,7 +305,11 @@
 [p=warning][b]Nie powinien być jednak traktowany jako zastępstwo dla [tt]label[/tt][/b]. [url=https://www.w3.org/TR/html51/sec-forms.html#the-placeholder-attribute]Wspomina o tym nawet specyfikacja[/url].[/p]
 [p]A jeśli już chcesz się nazywać mistrzem formularzy, to dodaj sobie jeszcze atrybut [tt][required][/tt], który oznacza, że formularz nie może zostać wysłany jeśli dane pole jest puste. Po przeróbce formularz szukania wygląda następująco:[/p]
 [code=markup]<form action="search.php" method="post">
-	<p><label for="search-input">Szukaj:</label> <input type="search" id="search-input" name="q" placeholder="Wpisz szukaną frazę…" required><button type="submit" name="submit" value="1">Szukaj</button></p>
+	<p>
+		<label for="search-input">Szukaj:</label> 
+		<input type="search" id="search-input" name="q" placeholder="Wpisz szukaną frazę…" required>
+		<button type="submit" name="submit" value="1">Szukaj</button>
+	</p>
 </form>[/code]
 [p][tt]label[/tt] do pola wyszukiwania można wstawić [url=http://adaptivethemes.com/using-css-clip-as-an-accessible-method-of-hiding-content/]techniką ukrywania przed graficznymi przeglądarkami[/url], używaną m.in. w [url=http://h5bp]HTML5 Boilerplate[/url]. Userzy z wizualnymi przeglądarkami nie zobaczą go (a pole wyszukiwania jest na tyle charakterystyczne, że na pewno je rozpoznają), natomiast ci, którzy korzystają z czytników ekranowych nie poczują się zagubieni, gdy natrafią na pole bez etykiety.[/p]
 [p=warning][b]PAMIĘTAJ! CSS (jak i obrazki, JS, inne dziwne rzeczy typu Flash, Java, Silverlight) są tylko dodatkami, które nie muszą być dostępne![/b][/p]
