@@ -306,7 +306,7 @@
 [p]A jeśli już chcesz się nazywać mistrzem formularzy, to dodaj sobie jeszcze atrybut [tt][required][/tt], który oznacza, że formularz nie może zostać wysłany jeśli dane pole jest puste. Po przeróbce formularz szukania wygląda następująco:[/p]
 [code=markup]<form action="search.php" method="post">
 	<p>
-		<label for="search-input">Szukaj:</label> 
+		<label for="search-input">Szukaj:</label>
 		<input type="search" id="search-input" name="q" placeholder="Wpisz szukaną frazę…" required>
 		<button type="submit" name="submit" value="1">Szukaj</button>
 	</p>
@@ -560,7 +560,11 @@
 					</ul>
 				</nav>
 				<form action="search.php" method="post" role="search">
-					<p><label class="visuallyhidden" for="search-input">Szukaj:</label> <input type="search" id="search-input" name="q" placeholder="Wpisz szukaną frazę…" required><button type="submit" name="submit" value="1">Szukaj</button></p>
+					<p>
+						<label class="visuallyhidden" for="search-input">Szukaj:</label>
+						<input type="search" id="search-input" name="q" placeholder="Wpisz szukaną frazę…" required aria-required="true">
+						<button type="submit" name="submit" value="1">Szukaj</button>
+					</p>
 				</form>
 			</header>
 

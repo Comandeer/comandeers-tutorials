@@ -360,7 +360,7 @@
 <p>A jeśli już chcesz się nazywać mistrzem formularzy, to dodaj sobie jeszcze atrybut <code>&#91;required&#93;</code>, który oznacza, że formularz nie może zostać wysłany jeśli dane pole jest puste. Po przeróbce formularz szukania wygląda następująco:</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;form action="search.php" method="post"&gt;
 	&lt;p&gt;
-		&lt;label for="search-input"&gt;Szukaj:&lt;/label&gt; 
+		&lt;label for="search-input"&gt;Szukaj:&lt;/label&gt;
 		&lt;input type="search" id="search-input" name="q" placeholder="Wpisz szukaną frazę…" required&gt;
 		&lt;button type="submit" name="submit" value="1"&gt;Szukaj&lt;/button&gt;
 	&lt;/p&gt;
@@ -614,7 +614,11 @@
 					&lt;/ul&gt;
 				&lt;/nav&gt;
 				&lt;form action="search.php" method="post" role="search"&gt;
-					&lt;p&gt;&lt;label class="visuallyhidden" for="search-input"&gt;Szukaj:&lt;/label&gt; &lt;input type="search" id="search-input" name="q" placeholder="Wpisz szukaną frazę…" required&gt;&lt;button type="submit" name="submit" value="1"&gt;Szukaj&lt;/button&gt;&lt;/p&gt;
+					&lt;p&gt;
+						&lt;label class="visuallyhidden" for="search-input"&gt;Szukaj:&lt;/label&gt;
+						&lt;input type="search" id="search-input" name="q" placeholder="Wpisz szukaną frazę…" required aria-required="true"&gt;
+						&lt;button type="submit" name="submit" value="1"&gt;Szukaj&lt;/button&gt;
+					&lt;/p&gt;
 				&lt;/form&gt;
 			&lt;/header&gt;
 
