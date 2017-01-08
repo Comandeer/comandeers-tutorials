@@ -138,9 +138,9 @@
 [h2="obsluga-starszych-przegladarek"]Obsługa starszych przeglądarek[/h2]
 [p]Niestety, z obsługą reszty znaczników nie jest już tak kolorowo i IE wymaga odpowiedniego skryptu, który trza dodać w [tt]head[/tt] (IE 9 na szczęście jest już normalny):[/p]
 [code=markup]<!--[if lt IE 9]>
-	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
 <![endif]--> [/code]
-[p]Po więcej informacji o tym skrypciku zapraszam na [url=http://remysharp.com/2009/01/07/html5-enabling-script/]blog Remy'iego Sharpa[/url] i [url=http://paulirish.com/2011/the-history-of-the-html5-shiv/]blog Paula Irisha[/url]. Jeśli natomiast w przyszłości wzbogacisz swój blog o jakieś nowinki z HTML 5 APIs (np. nagrywanie video komentarzy), to warto zapoznać się też z pojęciem feature detection (ang. wykrywanie funkcjonalności) i bibliotekami [url=http://modernizr.com]Modernizr[/url] czy [url=https://github.com/phiggins42/has.js/]has.js[/url]. Dodatkowo można też wykorzystać [url=https://polyfill.io/v2/docs/]usługę Polyfill.io[/url], która sama decyduje, jakie polyfille są potrzebne i je dołącza. Warto także poczytać o [url=http://responsivenews.co.uk/post/18948466399/cutting-the-mustard]technice [q]cut the mustard[/q][/url].[/p]
+[p]Po więcej informacji o tym skrypciku zapraszam do [url=https://github.com/aFarkas/html5shiv]oficjalnego repozytorium na GitHubie[/url], na [url=http://remysharp.com/2009/01/07/html5-enabling-script/]blog Remy'iego Sharpa[/url] i [url=http://paulirish.com/2011/the-history-of-the-html5-shiv/]blog Paula Irisha[/url]. Jeśli natomiast w przyszłości wzbogacisz swój blog o jakieś nowinki z HTML 5 APIs (np. nagrywanie video komentarzy), to warto zapoznać się też z pojęciem feature detection (ang. wykrywanie funkcjonalności) i bibliotekami [url=http://modernizr.com]Modernizr[/url] czy [url=https://github.com/phiggins42/has.js/]has.js[/url]. Dodatkowo można też wykorzystać [url=https://polyfill.io/v2/docs/]usługę Polyfill.io[/url], która sama decyduje, jakie polyfille są potrzebne i je dołącza. Warto także poczytać o [url=http://responsivenews.co.uk/post/18948466399/cutting-the-mustard]technice [q]cut the mustard[/q][/url].[/p]
 [p]Tutaj warto też od razu zwrócić uwagę na fakt, że nieznane przeglądarce elementy są nieostylowane w żaden sensowny sposób i przez to możemy dostać np. liniowe [tt]section[/tt], co raczej jest niezbyt pożądane. Na szczęście problem ten rozwiązuje normalizacja stylów (nawet jeśli nie chcesz używać nowych znaczników, to i tak [url=http://nicolasgallagher.com/about-normalize-css/]powinieneś normalizować[/url] lub [url=http://html5doctor.com/html-5-reset-stylesheet/]resetować[/url]), przypisując najbardziej podstawowe style odpowiednim elementom.[/p]
 [p=info]Jeśli się zastanawiasz [q]a co z użytkownikami IE 9-, którym nie działa JS?[/q], odpowiem tak: jest ich na tyle mało, że nie sądzę, byś kiedykolwiek na nich trafił. Niemniej istnieją dwie alternatywy dla znaczników HTML5 (na chwilę obecną już bym ich nie polecał): [url=#aria-role]używanie [tt]div[role][/tt][/url] lub [url=http://2ndidea.com/en/html5-coding-without-html5shiv/](prawie) nieużywanie znaczników HTML5[/url]. Warto się także zastanowić, czy nie porzucić całkowicie HTML5 Shiva jeśli mamy pewność, że użytkownicy [i]naprawdę[/i] starych IE nam się nie trafią.[/p]
 [p=info]Warto także wspomnieć o [url=http://www.quirksmode.org/css/condcom.html]komentarzach warunkowych dla IE[/url] – niemniej w IE 10 już nie działają, a prawdę mówiąc w dzisiejszym webdevie istnieją o wiele lepsze metody (jak wspomniane wyżej feature detection).[/p]
@@ -476,6 +476,7 @@
 	[*] Zacznijmy od tytułu strony: warto się upewnić, że jest w formacie [tt]<Nazwa podstrony> <separator> <Nazwa witryny>[/tt], np. [q]Projekty @ Comandeer's Homepage[/q]. Ma to duże znaczenie zarówno z punktu widzenia użyteczności (widać od razu, co dana karta przeglądarki zawiera), jak i dostępności (czytnik ekranowy przeczyta najpierw nazwę podstrony, a dopiero potem całą resztę).
 	[*] Wszystkie [tt]script[/tt] (oprócz tego dla IE) warto przerzucić na koniec [tt]body[/tt] (zwiększy to szybkość ładowania strony, bo skrypty w [tt]head[/tt] mogą ją [url=http://developer.yahoo.com/performance/rules.html#js_bottom]"blokować"[/url]). Jeśli mamy bardzo dużo JS, ze złożonymi relacjami pomiędzy poszczególnymi plikami, warto rozważyć [url=https://github.com/umdjs/umd]architekturę modułową[/url]. Czy już wspominałem o [url=http://calendar.perfplanet.com/2016/prefer-defer-over-async/]atrybucie [tt][defer][/tt][/url]?
 	[*] Można się w ogóle pokusić o serwowanie CSS, JS i obrazków z [url=http://en.wikipedia.org/wiki/Content_Delivery_Network]CDN[/url]. Jest to jedno z zaleceń Google odnośnie szybkości wczytywania stron: rozłożenie wczytywania na 2 paralelne domeny. Jedna serwuje dynamiczną stronę (czyli PHP i generujemy blogaska), a druga serwuje wszystko, co statyczne. Jednak rozłożenie wczytywania strony to tylko część zalet i bardziej rozbudowane CDN-y korzystają choćby z geolokalizacji, żeby zasysać zasoby z serwera jak najbliżej użytkownika, aby czas wczytywania był jeszcze krótszy. Istnieją także darmowe CDN-y, np. [url=http://www.coralcdn.org/]Coral CDN[/url]. Bardzo ważnym przeciwskazaniem dla CDN-ów jest fakt, że nie mamy nad nimi kontroli, co sprawia, że [i]de facto[/i] uzależniamy swoje bezpieczeństwo od bezpieczeństwa zewnętrznej usługi. Warto mieć to na uwadze.
+	[*] A jeśli już mówimy o bezpieczeństwie zasobów pobieranych z zewnętrznych źródeł, obowiązkową lekturą jest [url=https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity]instrukcja użycia Subresource Integrity[/url].
 	[*] Warto też stosować build process, podczas którego będziemy minifikować kod HTML, łączyć i minifikować pliki CSS i JS (być może nawet z przygotowywaniem paczek dla poszczególnych podstron) oraz kompresować obrazki (np. przy pomocy [url=https://imageoptim.com/]ImageOptim[/url]). Bardzo prymitywny przykład takiego rozwiązania można zobaczyć w [url=https://github.com/Comandeer/comandeers-homepage]repozytorium mojej strony domowej[/url].
 	[*] Jak lubimy eksperymentować, to warto przejść całkowicie na HTTPS i [url=https://http2.github.io/]protokół HTTP/2[/url]. Zwiększy to zarówno bezpieczeństwo, jak i wydajność naszej strony.
 	[*] Jak już jesteśmy przy HTTPS, to warto wspomnieć o [url=https://developer.mozilla.org/en-US/docs/Web/Security/HTTP_strict_transport_security]HSTS[/url] i [url=https://developer.mozilla.org/en/docs/Web/Security/Public_Key_Pinning]HPKP[/url].
@@ -508,7 +509,7 @@
 
 [h2="nasz-blog"]Nasz blog[/h2]
 [p]Oto i [url=http://tutorials.comandeer.pl/res/html5-blog/final.html]pełny przerobiony kod z paroma dodatkami[/url]:[/p]
-[code=markup]<!DOCTYPE html>
+[code=markup]<<!DOCTYPE html>
 	<html lang="pl" dir="ltr" itemscope itemtype="http://schema.org/Blog">
 		<head>
 			<meta charset="UTF-8">
@@ -542,7 +543,7 @@
 			<title itemprop="name">Super hiper ważny wpis | Example.net - fajowy blog, na którym bloguję</title>
 
 			<!--[if lt IE 9]>
-				<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
 			<![endif]-->
 		</head>
 		<body>
@@ -743,7 +744,7 @@
 [h2="changelog"]Poprawki i takie tam[/h2]
 [spoiler="changelog"]
 	[list]
-		[*] [b]08.01.2017[/b] – przeredagowanie; dodanie informacji o [tt]script[type=module][/tt]; dodanie informacji o bibliotekach has.js i polyfill.io oraz teście [q]cut the mustard[/q]; dodanie informacji o alternatywach dla HTML5 shiv oraz komentarzach warunkowych; dodanie informacji o dwóch standardach HTML; usunięcie odwołań do opisu hierarchii nagłówków opartej na sekcjach; dodanie informacji o [tt][id][/tt] nagłówków/sekcji; dodanie informacji o dostępności [tt]nav[/tt]; zmiana kodu formularza; aktualizacja informacji o ARIA, [tt]meta[name][/tt] i mikroformatach; dodanie informacji o czytnikach ekranowych; dodanie informacji o wzorcowym formacie tytułu strony; dodanie linków do kilku narzędzi i czytników ekranowych
+		[*] [b]08.01.2017[/b] – przeredagowanie; dodanie informacji o [tt]script[type=module][/tt]; dodanie informacji o bibliotekach has.js i polyfill.io oraz teście [q]cut the mustard[/q]; dodanie informacji o alternatywach dla HTML5 shiv oraz komentarzach warunkowych; dodanie informacji o dwóch standardach HTML; usunięcie odwołań do opisu hierarchii nagłówków opartej na sekcjach; dodanie informacji o [tt][id][/tt] nagłówków/sekcji; dodanie informacji o dostępności [tt]nav[/tt]; zmiana kodu formularza; aktualizacja informacji o ARIA, [tt]meta[name][/tt] i mikroformatach; dodanie informacji o czytnikach ekranowych; dodanie informacji o wzorcowym formacie tytułu strony; dodanie linków do kilku narzędzi i czytników ekranowych; aktualizacja informacji o HTML5 Shiv; dodanie informacji o SRI
 		[*] [b]21.11.2016[/b] – dodanie linków  do dwóch oficjalnych walidatorów
 		[*] [b]24.10.2016[/b] – aktualizacja finalnego kodu
 		[*] [b]23.07.2016[/b] – dodanie info o HTML 5.1 jako CR + dodanie linku do najnowszej wersji specki HTML 5.x; zmiana przykładu perfekcyjnego bloga
