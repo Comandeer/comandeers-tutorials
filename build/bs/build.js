@@ -105,7 +105,7 @@ Object.keys( tuts ).forEach( function( t ) {
 
 Object.keys( arts ).reverse().forEach( function( t ) {
 	artsr += `<li class="list-group-item">
-		<a href="${arts[ t ]}" class="list-group-item-link">${t}</a>
+		<a href="${arts[ t ]}" class="list-group-item-link" rel="noopener noreferrer">${t}</a>
 		</li>`;
 } );
 

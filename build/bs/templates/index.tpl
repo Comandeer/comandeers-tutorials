@@ -43,7 +43,7 @@
 					<ul class="list-group">
 						{ARTS}
 					</ul>
-					<p>Dodatkowo jestem także redaktorem <a href="http://www.webkrytyk.pl/author/Comandeer/">WebKrytyka</a>, <a href="http://pasjaonline.pl">Pasji Online</a> oraz <a href="http://e-magnifier.pl/author/tomasz-jakut/">Magnifiera</a> (chociaż on akurat średnio programistyczny).</p>
+					<p>Dodatkowo jestem także redaktorem <a href="http://www.webkrytyk.pl/author/Comandeer/" rel="noopener noreferrer">WebKrytyka</a>, <a href="http://pasjaonline.pl" rel="noopener noreferrer">Pasji Online</a> oraz <a href="http://e-magnifier.pl/author/tomasz-jakut/" rel="noopener noreferrer">Magnifiera</a> (chociaż on akurat średnio programistyczny).</p>
 				</main>
 			</div>
 

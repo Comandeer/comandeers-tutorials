@@ -119,7 +119,7 @@ Object.keys( arts ).reverse().forEach( function( t ) {
 	artsr += `<li class="mdl-list__item">
 		<span class="mdl-list__item-primary-content">
 			<i class="material-icons mdl-list__item-icon" aria-hidden="true">book</i>
-			<a href="${arts[ t ]}">${t}</a>
+			<a href="${arts[ t ]}" rel="noopener noreferrer">${t}</a>
 		</span>
 	</li>`;
 } );
