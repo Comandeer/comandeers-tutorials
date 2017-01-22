@@ -18,7 +18,7 @@
 			<script async defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 			<title>Lista tutoriali</title>
 			<!--[if lt IE 9]>
-				<script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
 			<![endif]-->
 			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Roboto:300,400,500,700%7CMaterial+Icons">
 			<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.deep_purple-indigo.min.css">
