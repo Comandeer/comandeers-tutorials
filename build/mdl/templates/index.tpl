@@ -37,7 +37,7 @@
 				<div class="mdl-layout__content">
 					<main class="content mdl-grid">
 						<article class="mdl-cell--12-col" id="lista">
-							<h2 class="mdl-typography--title">Lista tutoriali</h2>
+							<h2 class="mdl-typography--title">Lista tutorialów</h2>
 							<dl class="mdl-list">
 								{LIST}
 							</dl>

@@ -33,7 +33,7 @@
 
 			<div class="container-fluid">
 				<main class="content col-md-10 col-md-offset-1">
-					<h2 id="lista">Lista tutoriali</h2>
+					<h2 id="lista">Lista tutorialów</h2>
 					<dl class="list-group">
 							{LIST}
 						</dl>
