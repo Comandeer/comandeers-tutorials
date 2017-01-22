@@ -53,7 +53,7 @@
 					<main class="col-md-8 col-md-offset-0">
 						<article>
 						<h2 id="start">Dynamiczne wczytywanie skryptów <a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>
-<p>Umieszczając JS na swojej stronie, zapewne nieraz słyszałeś, że masz je umieścić na końcu <code>body</code> i najlepiej je wsadzić w jeden, góra trzy pliki i <a href="https://github.com/mishoo/UglifyJS/">zminifikować</a>. Takie są standardowe zalecenia dotyczące JavaScript na stronie. Ale czy istnieje jakaś alternatywa? Przecież wiadomo, że nawet po wykonaniu tych wszystkich kroków, w tym niby mniejszym pliku JS znajduje się pełno kodu, który nie zostanie wykorzystany na danej podstronie (no przecież nie wszędzie wpychamy slider czy też okienka). Okazuje się, że istnieje! Zwie się "dynamiczne (leniwe) ładowanie skryptów".</p>
+<p>Umieszczając JS na swojej stronie, zapewne nieraz słyszałeś, że masz je umieścić na końcu <code>body</code> i najlepiej je wsadzić w jeden, góra trzy pliki i <a href="https://github.com/mishoo/UglifyJS/" rel="noopener noreferrer">zminifikować</a>. Takie są standardowe zalecenia dotyczące JavaScript na stronie. Ale czy istnieje jakaś alternatywa? Przecież wiadomo, że nawet po wykonaniu tych wszystkich kroków, w tym niby mniejszym pliku JS znajduje się pełno kodu, który nie zostanie wykorzystany na danej podstronie (no przecież nie wszędzie wpychamy slider czy też okienka). Okazuje się, że istnieje! Zwie się "dynamiczne (leniwe) ładowanie skryptów".</p>
 
 <h3 id="co-to">Co to? <a href="#co-to" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Jeśli znasz PHP, na pewno słyszałeś o autoładowaniu klas. Jak to działa?</p>
@@ -73,7 +73,7 @@ $p = new Klasaktorejwczesniejniktniezaladowalaitaknierzucibledu();</code></pre>
 		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 	})();
 &lt;/script&gt;</code></pre>
-<p>Jak to działa? <code>window.___gcfg</code> robi tutaj za ekwiwalent przestrzeni nazw (które to pojęcie wytłumaczyłem w <a href="http://comandeer.pl/tutorials/js-beauty.html#namespaces">innym tutorialu</a>), w której Google przechowuje sobie ustawienia dla swojego widgetu (jak na razie głównie język). Później pojawia się interesująca nas część. Otóż zostaje utworzony dynamicznie znacznik <code>script</code> (żeby nie brudzić globalnego scope, zrobiono to w funkcji natychmiastowego wywołania; też wytłumaczone w tamtym tutku) i wstawiony do dokumentu. Przenalizujmy to sobie</p>
+<p>Jak to działa? <code>window.___gcfg</code> robi tutaj za ekwiwalent przestrzeni nazw (które to pojęcie wytłumaczyłem w <a href="http://comandeer.pl/tutorials/js-beauty.html#namespaces" rel="noopener noreferrer">innym tutorialu</a>), w której Google przechowuje sobie ustawienia dla swojego widgetu (jak na razie głównie język). Później pojawia się interesująca nas część. Otóż zostaje utworzony dynamicznie znacznik <code>script</code> (żeby nie brudzić globalnego scope, zrobiono to w funkcji natychmiastowego wywołania; też wytłumaczone w tamtym tutku) i wstawiony do dokumentu. Przenalizujmy to sobie</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">var po = document.createElement('script');</code></pre>
 <p>Ta linijka tworzy właśnie znacznik <code>script</code>. w ten sposób można tworzyć dowolne znaczniki (nawet te nieistniejące). Zapisujemy sobie go do zmiennej <code>po</code>, żeby móc go później wygodnie używać. Następnie nadajemy mu potrzebne atrybuty: <code>&#91;type&#93;</code>, <code>&#91;async&#93;</code> i <code>&#91;src&#93;</code>. Tak naprawdę jeśli nadalibyśmy sam <code>&#91;src&#93;</code>, powyższy kod działałby równie dobrze. Atrybut <code>&#91;type&#93;</code> i tak jest zbędny w HTML5. Natomiast dziwić może fakt, że można usunąć <code>&#91;async&#93;</code> (jak sama nazwa wskazuje, wymusza asynchroniczne wczytywanie skryptu). Mathias Bynens wyjaśnia:</p>
 <blockquote><p>Kyle Simpson points out that all dynamically inserted scripts default to .async=true as per the spec. Most browsers have always implemented it this way. The only exceptions are Firefox 3.6 and Opera 10+, who execute scripts in insertion order by default, which may cause an unnecessary delay. By setting .async=true explicitly we make sure ga.js doesn’t wait for other previously loaded scripts and doesn’t block any subsequently loaded scripts. This line of code only affects Firefox 3.6. (Sadly, it doesn’t seem to make a difference in Opera). If you’re not using any other scripts, or Firefox 3.6 support is not an issue, you can safely remove it to save even more bytes</p><footer><cite>"http://mathiasbynens.be/notes/async-analytics-snippet"</cite></footer></blockquote>
@@ -83,7 +83,7 @@ $p = new Klasaktorejwczesniejniktniezaladowalaitaknierzucibledu();</code></pre>
 	&lt;meta charset="UTF-8"&gt;
 	&lt;title&gt;Tytuł&lt;/title&gt;
 	&lt;p&gt;reszta&lt;/p&gt;</code></pre>
-<p>Taki kod jest w pełni poprawnym HTML5 (a ile można znaleźć niepoprawnych, to też wiadomo) – nie ma tu ani <code>head</code>, ani <code>body</code>, do których tradycyjnie wstawia się skrypty. Dlatego też nie można sobie pozwolić na założenie, że na stronie, nad którą nie mamy kontroli, te elementy istnieją. Natomiast rodzic pierwszego elementu <code>script</code> istnieć musi. Czemu? Na początek znajdźmy ten "pierwszy element <code>script</code>". Wiesz co to? Tak, to nasz skrypt wstawiający znacznik <code>script</code> (czyli ten, co właśnie go omówiłem, jeśli wciąż masz wątpliwości)! A co jest jego rodzicem? Coś musi być – na pewno znajduje się w <code>document</code> (to de facto główny węzeł <a href="https://developer.mozilla.org/en-US/docs/DOM">DOM</a>, który istnieje zawsze). Zatem jeśli nie znasz strony, na której pracujesz, a masz tam coś wstawić, wstaw to w rodzica elementu, który na pewno istnieje.</p>
+<p>Taki kod jest w pełni poprawnym HTML5 (a ile można znaleźć niepoprawnych, to też wiadomo) – nie ma tu ani <code>head</code>, ani <code>body</code>, do których tradycyjnie wstawia się skrypty. Dlatego też nie można sobie pozwolić na założenie, że na stronie, nad którą nie mamy kontroli, te elementy istnieją. Natomiast rodzic pierwszego elementu <code>script</code> istnieć musi. Czemu? Na początek znajdźmy ten "pierwszy element <code>script</code>". Wiesz co to? Tak, to nasz skrypt wstawiający znacznik <code>script</code> (czyli ten, co właśnie go omówiłem, jeśli wciąż masz wątpliwości)! A co jest jego rodzicem? Coś musi być – na pewno znajduje się w <code>document</code> (to de facto główny węzeł <a href="https://developer.mozilla.org/en-US/docs/DOM" rel="noopener noreferrer">DOM</a>, który istnieje zawsze). Zatem jeśli nie znasz strony, na której pracujesz, a masz tam coś wstawić, wstaw to w rodzica elementu, który na pewno istnieje.</p>
 <p>Ten sposób wstawiania skryptów jednak nie daje dużej kontroli nad procesem jego wczytywania – po prostu go wstawia… i tyle. Jednak jest doskonałym punktem wyjścia do własnych rozwiązań.</p>
 
 <h3 id="prymitywny">Sposób prymitywny <a href="#prymitywny" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
@@ -91,7 +91,7 @@ $p = new Klasaktorejwczesniejniktniezaladowalaitaknierzucibledu();</code></pre>
 <p class="code">Kod:</p><pre><code class="language-javascript">function addScript( uri, callback ) {
 
 }</code></pre>
-<p>Jak na razie jest pusta, ale to za chwilę się zmieni. Na sam początek warto sprawdzić czy <code>uri</code> jest prawdziwym URI (albo przynajmniej czy jest tekstem – w tym przypadku właśnie to sprawdzę, dla uproszczenia sprawy, ale w rzeczywistym projekcie lepiej jednak użyć <a href="http://mathiasbynens.be/demo/url-regex">odpowiedniego wyrażenia regularnego</a>). Jeśli nie, przerywamy funkcję.</p>
+<p>Jak na razie jest pusta, ale to za chwilę się zmieni. Na sam początek warto sprawdzić czy <code>uri</code> jest prawdziwym URI (albo przynajmniej czy jest tekstem – w tym przypadku właśnie to sprawdzę, dla uproszczenia sprawy, ale w rzeczywistym projekcie lepiej jednak użyć <a href="http://mathiasbynens.be/demo/url-regex" rel="noopener noreferrer">odpowiedniego wyrażenia regularnego</a>). Jeśli nie, przerywamy funkcję.</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">if ( typeof uri !== 'string' ) {
 	return false;
 }</code></pre>
@@ -99,7 +99,7 @@ $p = new Klasaktorejwczesniejniktniezaladowalaitaknierzucibledu();</code></pre>
 <p>Kolejny krok to stworzenie naszego znacznika <code>script</code>:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">var s = document.createElement( 'script' );
 s.src = uri;</code></pre>
-<p>Pomijam tutaj zarówno atrybut <code>&#91;async&#93;</code>, jak i <code>&#91;type&#93;</code>, ale możesz je dodać (<a href="http://mathiasbynens.be/notes/async-analytics-snippet">spowalniając nieco skrypt</a>).</p>
+<p>Pomijam tutaj zarówno atrybut <code>&#91;async&#93;</code>, jak i <code>&#91;type&#93;</code>, ale możesz je dodać (<a href="http://mathiasbynens.be/notes/async-analytics-snippet" rel="noopener noreferrer">spowalniając nieco skrypt</a>).</p>
 <p>Następnie wstawiamy skrypt na stronę:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">document.body.appendChild( s );</code></pre>
 <p>Wstawiam do <code>body</code>, bo to moja strona i na mojej stronie <code>body</code> jest zawsze. Jeśli nie chcesz stosować <code>body</code>, wstawiaj skrypt w podobny sposób, jak robi to Google.</p>
@@ -231,7 +231,7 @@ s.src = uri;</code></pre>
 	&lt;/html&gt;</code></pre>
 
 <h3 id="amd">Sposób pro dla browserów <a href="#amd" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
-<p>Ten problem postanowiono rozwiązać w sposób kulturalny i jakoś go ustandaryzować. Tak powstało <a href="https://github.com/amdjs/amdjs-api/wiki/AMD">Asynchrounous Module Definition</a>, na które składają się <i>de facto</i> dwie funkcje – <code>define</code> i <code>require</code>.</p>
+<p>Ten problem postanowiono rozwiązać w sposób kulturalny i jakoś go ustandaryzować. Tak powstało <a href="https://github.com/amdjs/amdjs-api/wiki/AMD" rel="noopener noreferrer">Asynchrounous Module Definition</a>, na które składają się <i>de facto</i> dwie funkcje – <code>define</code> i <code>require</code>.</p>
 <p><code>define</code> służy do deklarowania modułów:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">define( 'opcjonalnanazwamodulu', &#91; 'tablica/modulow', 'lubinnychplikowjs', 'potrzebnychtemumodulowido', 'uruchomienia' &#93;, function( $1, $2, $3, $4 ) { //poszczególne parametry to wczytane moduły z tablicy
 	//tutaj kod modułu
@@ -243,7 +243,7 @@ s.src = uri;</code></pre>
 } );</code></pre>
 <p>Zwróć uwagę na parametry w obydwóch funkcjach. Znajdują się tam wczytane moduły, na których można operować. Dzięki temu kod staje się hermetyczny i nic nie wypływa do globalnego scope (zostaje w <code>require</code>/<code>define</code>). Dlatego ważne jest, żeby każdy moduł "zwracał się" przez <code>return</code>.</p>
 <p>Oczywiście nie wszystkie skrypty są zgodne z AMD (nie stosują <code>define</code>), co nie przeszkadza w ich wczytywaniu przy wykorzystaniu tej techniki. jQuery jest ciekawym przykładem, który stoi pośrodku: dodaje się do globalnego scope, ale równocześnie zachowuje jako moduł AMD.</p>
-<p>Najpopularniejsza implementacja AMD to <a href="http://requirejs.org">Require.js</a>, z którego osobiście korzystam.</p>
+<p>Najpopularniejsza implementacja AMD to <a href="http://requirejs.org" rel="noopener noreferrer">Require.js</a>, z którego osobiście korzystam.</p>
 
 <h3 id="serwery">Jedyny pro sposób dla serwerów <a href="#serwery" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Czyli jak to zrobić w node.js przy pomocy składni CommonJS (CJS):</p>
@@ -252,15 +252,15 @@ s.src = uri;</code></pre>
 <p>Tyle. Teoretycznie można zastosować pokazane powyżej AMD, ale to nie ma sensu.</p>
 
 <h3 id="umd">Pro sposób dla wszystkich <a href="#umd" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
-<p>Oczywiście składni CJS zaczęto używać także dla przeglądarek. Co więcej, coraz częściej mamy do czynienia z <a href="http://nerds.airbnb.com/isomorphic-javascript-future-web-apps/">izomorficznymi aplikacjami internetowymi</a>, co wymusza znalezienie sposobu na współdzielenie tego samego kodu na serwerze i w przeglądarce. Tym samym powstało <a href="https://github.com/umdjs/umd">UMD – Universal Module Definition</a>, które pozwala korzystać nam równocześnie z AMD, jak i CJS. Jest to obecnie najczęściej polecany sposób rozprowadzania kodu JS.</p>
+<p>Oczywiście składni CJS zaczęto używać także dla przeglądarek. Co więcej, coraz częściej mamy do czynienia z <a href="http://nerds.airbnb.com/isomorphic-javascript-future-web-apps/" rel="noopener noreferrer">izomorficznymi aplikacjami internetowymi</a>, co wymusza znalezienie sposobu na współdzielenie tego samego kodu na serwerze i w przeglądarce. Tym samym powstało <a href="https://github.com/umdjs/umd" rel="noopener noreferrer">UMD – Universal Module Definition</a>, które pozwala korzystać nam równocześnie z AMD, jak i CJS. Jest to obecnie najczęściej polecany sposób rozprowadzania kodu JS.</p>
 
 <h3 id="es6">Przyszłość – ES Modules <a href="#es6" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
-<p>Przyszłość przyniesie nam moduły natywnie wbudowane w ECMAScript. Niestety, ich składnia jest niekompatybilna zarówno z AMD, jak i CJS. Niemniej <a href="https://github.com/systemjs/systemjs">istnieją już odpowiednie narzędzia</a> zapewniające choć cień zgodności.</p>
-<p>Po wyczerpujący opis modułów ES6 odsyłam do <a href="http://www.2ality.com/2014/09/es6-modules-final.html">artykułu na 2ality.com</a>.</p>
-<p class="alert alert-info">Jeśli chcesz dowiedzieć się praktycznie wszystkiego o systemach modułów w JS i różnicach między nimi, zajrzyj do <a href="http://addyosmani.com/writing-modular-js/" class="alert-link">wyczerpującego artykułu Addy'iego Osmaniego</a>.</p>
+<p>Przyszłość przyniesie nam moduły natywnie wbudowane w ECMAScript. Niestety, ich składnia jest niekompatybilna zarówno z AMD, jak i CJS. Niemniej <a href="https://github.com/systemjs/systemjs" rel="noopener noreferrer">istnieją już odpowiednie narzędzia</a> zapewniające choć cień zgodności.</p>
+<p>Po wyczerpujący opis modułów ES6 odsyłam do <a href="http://www.2ality.com/2014/09/es6-modules-final.html" rel="noopener noreferrer">artykułu na 2ality.com</a>.</p>
+<p class="alert alert-info">Jeśli chcesz dowiedzieć się praktycznie wszystkiego o systemach modułów w JS i różnicach między nimi, zajrzyj do <a href="http://addyosmani.com/writing-modular-js/" rel="noopener noreferrer" class="alert-link">wyczerpującego artykułu Addy'iego Osmaniego</a>.</p>
 
 <h3 id="cm">Rebelia – Chainable Module Definition <a href="#cm" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
-<p>Czyli przeniesienie łańcuszków z jQuery na poziom modułów. Jedyna implementacja to <a href="http://labs.voronianski.com/melchior.js/">Melchior.js</a>. Wygląda to nawet fajnie i składniowo jest ładniejsze od AMD (ale nie CJS!), ale jest całkowicie niekompatybilne. Tym samym raczej nie zyska dużej popularności i pozostanie ciekawostką (zwłaszcza, że za chwilę wejdą do użycia ES Modules).</p>
+<p>Czyli przeniesienie łańcuszków z jQuery na poziom modułów. Jedyna implementacja to <a href="http://labs.voronianski.com/melchior.js/" rel="noopener noreferrer">Melchior.js</a>. Wygląda to nawet fajnie i składniowo jest ładniejsze od AMD (ale nie CJS!), ale jest całkowicie niekompatybilne. Tym samym raczej nie zyska dużej popularności i pozostanie ciekawostką (zwłaszcza, że za chwilę wejdą do użycia ES Modules).</p>
 
 						</article>
 						<section id="komentarze">

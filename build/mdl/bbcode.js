@@ -384,7 +384,7 @@ var XBBCODE = ( function() {
 					myUrl = '#';
 				}
 
-				return '<a href="' + myUrl + '">';
+				return '<a href="' + myUrl + '" rel="noopener noreferrer">';
 			},
 			closeTag: function( params, content ) {
 				return '</a>';

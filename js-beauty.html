@@ -77,7 +77,7 @@ var elem = null;</code></pre>
 ,elem = null;</code></pre>
 <p>IMO czytelniej. Gdyby ktoś pytał czemu przecinek jest przerzucony na początek nowej linii, a nie zostawiony na końcu poprzedniej: spróbuj pousuwać parę zmiennych z listy. Jeśli przecinek jest na końcu linijki, musisz usunąć interesującą Cię zmienną, a następnie przecinek. Tak usuwasz jedno i drugie za jednym zamachem i na pewno nie zostawisz przecinka przez nieuwagę.</p>
 
-<p class="alert alert-info">Od kiedy ten tutorial powstał, jednak powróciłem do "normalnego" sposobu zapisu przecinków. Mój styl można podejrzeć <a href="https://github.com/Comandeer" class="alert-link">na moim GitHubie</a>, a zwłaszcza <a href="https://github.com/BEMQuery/bemquery-package-boilerplate" class="alert-link">w projekcie BEMQuery</a>.</p>
+<p class="alert alert-info">Od kiedy ten tutorial powstał, jednak powróciłem do "normalnego" sposobu zapisu przecinków. Mój styl można podejrzeć <a href="https://github.com/Comandeer" rel="noopener noreferrer" class="alert-link">na moim GitHubie</a>, a zwłaszcza <a href="https://github.com/BEMQuery/bemquery-package-boilerplate" rel="noopener noreferrer" class="alert-link">w projekcie BEMQuery</a>.</p>
 
 <h3 id="strict">Strict mode <a href="#strict" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>To małe cudeńko bardzo ułatwia życie, utrudniając je. Włączenie tzw. "strict mode" (tryb ścisły jak ktoś polski lubi) usuwa najbardziej bugowate części JS (np. <code>with</code> czy też ciut naprawia stringi w <code>setTimeout</code>). Co więcej, nie pozwala nam tworzyć nieświadomie zmiennych globalnych, np tak:</p>
@@ -254,10 +254,10 @@ API.resizeImg();
 <p class="code">Kod:</p><pre><code class="language-javascript">var o = Object.create(null);</code></pre>
 <p>W starszych IE wywali nam ładny ReferrenceError. A wystarczy sprawdzić czy ta metoda istnieje:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">if(typeof Object.create === 'function')</code></pre>
-<p>Jeśli nie, to można walnąć <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object/create#Polyfill">polyfilla</a>. Na tej samej zasadzie działa cała biblioteka <a href="http://modernizr.com">Modernizr</a>.</p>
+<p>Jeśli nie, to można walnąć <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object/create#Polyfill" rel="noopener noreferrer">polyfilla</a>. Na tej samej zasadzie działa cała biblioteka <a href="http://modernizr.com" rel="noopener noreferrer">Modernizr</a>.</p>
 
 <h3 id="delegation">Event delegation <a href="#delegation" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
-<p>Zdarzenia bąbelkują (jak ktoś nie wierzy, to niech <a href="http://www.quirksmode.org/js/events_order.html">poczyta</a>). Dlatego też możliwe staje się odkrycie, że jakiś tam akapit w jakimś tam divie został kliknięty.</p>
+<p>Zdarzenia bąbelkują (jak ktoś nie wierzy, to niech <a href="http://www.quirksmode.org/js/events_order.html" rel="noopener noreferrer">poczyta</a>). Dlatego też możliwe staje się odkrycie, że jakiś tam akapit w jakimś tam divie został kliknięty.</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">(function(d)
 {
 	d.getElementsByTagName('div')&#91;0&#93;.addEventListener('click', function(e)

@@ -59,7 +59,7 @@
 
 
 <h3 id="alternatywa">Alternatywa? <a href="#alternatywa" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
-<p><a href="http://vanilla-js.com/">VanillaJS</a> + <a href="http://microjs.com/">jeden z tych maluczkich</a></p>
+<p><a href="http://vanilla-js.com/" rel="noopener noreferrer">VanillaJS</a> + <a href="http://microjs.com/" rel="noopener noreferrer">jeden z tych maluczkich</a></p>
 
 
 <h3 id="dom">Podstawowe operacje DOM-owe <a href="#dom" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
@@ -77,7 +77,7 @@
 <h4 id="chaining">Chainowanie metod <a href="#chaining" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>
 <p>Chainowanie metod to to, co decyduje o niezwykłej użyteczności jQ w zastosowaniach DOM-owych.</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">$( '&lt;a&gt;' ).attr( 'href', '#' ).on( 'click', function() {} );</code></pre>
-<p>Owszem, w VanillaJS nie jestem w stanie uzyskać tak wygodnej obsługi DOM. Ale tu z pomocą przychodzi nam <a href="http://leaverou.github.com/chainvas/">Chainvas</a> – małe cudeńko, które jest w stanie złańcuchować <i>de facto</i> wszystko. Dzięki temu można spokojnie napisać:</p>
+<p>Owszem, w VanillaJS nie jestem w stanie uzyskać tak wygodnej obsługi DOM. Ale tu z pomocą przychodzi nam <a href="http://leaverou.github.com/chainvas/" rel="noopener noreferrer">Chainvas</a> – małe cudeńko, które jest w stanie złańcuchować <i>de facto</i> wszystko. Dzięki temu można spokojnie napisać:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">document.createElement( 'a' ).setAttribute( 'href', '#' ).addEventListener( 'click', function() {} );</code></pre>
 <p>I tym sposobem odebraliśmy jQ największą jego przewagę w operacjach DOM-owych, oszczędzając przy tym 31KB kodu (oczywiście mowa tu o wersjach gzipniętych i zminifikowanych).</p>
 
@@ -106,7 +106,7 @@ console.log( clone( document.createElement( 'a' ) ) );</code></pre>
 <p>To już nie jest do końca DOM, ale może się tu nadać.</p>
 <p>Jak wiadomo, w jQ mamy metodę <code>.extend</code> rozszerzającą nam obiekt:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">console.log( $.extend( {}, { cos: 1 } ) );</code></pre>
-<p>W czystym JS <a href="https://github.com/shimondoodkin/nodejs-clone-extend/blob/master/index.js#L40">też się da</a>. Ba, można być nawet chamskim i po prostu wyciągnąć ten kod z jQ.</p>
+<p>W czystym JS <a href="https://github.com/shimondoodkin/nodejs-clone-extend/blob/master/index.js#L40" rel="noopener noreferrer">też się da</a>. Ba, można być nawet chamskim i po prostu wyciągnąć ten kod z jQ.</p>
 
 
 <h3 id="animacje">Animacje <a href="#animacje" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
@@ -123,11 +123,11 @@ s.opacity = +( s.opacity || window.getComputedStyle( el )[ 'opacity' ] );
 
 <h3 id="xhr">XHR <a href="#xhr" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Tu nie będzie przykładów, jedynie krótkie info.</p>
-<p>Otóż wrapper w jQ jest cholernie wygodny i w ogóle. Jednak jeśli chcemy mieć dostęp do bardziej zaawansowanych własności obiektu xhr (np. <code>xhr.upload.progress</code>), <a href="https://github.com/malsup/form/blob/master/jquery.form.js#L258">trzeba użyć natywnego obiektu</a>.</p>
+<p>Otóż wrapper w jQ jest cholernie wygodny i w ogóle. Jednak jeśli chcemy mieć dostęp do bardziej zaawansowanych własności obiektu xhr (np. <code>xhr.upload.progress</code>), <a href="https://github.com/malsup/form/blob/master/jquery.form.js#L258" rel="noopener noreferrer">trzeba użyć natywnego obiektu</a>.</p>
 
 
 <h3 id="ui">jQUI <a href="#ui" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
-<p>Wiele rzeczy <a href="http://pulpit.luke.co.pl/">da się napisać</a> bez tego, wystarcza trochę pomyślunku.</p>
+<p>Wiele rzeczy <a href="http://pulpit.luke.co.pl/" rel="noopener noreferrer">da się napisać</a> bez tego, wystarcza trochę pomyślunku.</p>
 <p>Szybki przykład na resize elementów (akurat wykorzystywany w zupełnie innym kontekście niż browserowy):</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">if ( &#91; 'l', 'r' &#93;.indexOf( resizing ) !== -1 ) {
 	if ( resizing === 'l' ) {
@@ -171,7 +171,7 @@ s.opacity = +( s.opacity || window.getComputedStyle( el )[ 'opacity' ] );
 <h3 id="czy-porzucic">Czy porzucić? <a href="#czy-porzucic" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>
 <p>Nie trzeba. Sam używam i jestem zadowolony. Cały problem polega na tym, że jQuery jest przedstawiane jako lekarstwo na wszelkie zło JS, a to po prostu wierutna bzdura. jQuery powstało jako helper DOM-owy i to wciąż jest jego główną siłą.</p>
 <p>Co więcej, jQuery niszczy świadomość programistów sieciowych. Coraz częściej można spotkać bowiem nie programistów JS, a programistów jQuery, którzy jedynie tą biblioteką są w stanie się posługiwać.</p>
-<p>Dlatego nie mówię, żeby przestać jQ używać. Jeśli natomiast do stronki, gdzie trza oskryptować jeden link, wsadzasz jQ, to znak, że coś jest nie tego. Jeśli natomiast umiesz zastąpić jQ <a href="http://www.forumweb.pl/javascript/cancelbubble-stoppropagation-problem/397808#397808">własnym rozwiązaniem</a> i robisz to, gdy potrzebujesz jedną, konkretną rzecz, to oznacza, że jesteś zupełnie normalnym użytkownikiem tej biblioteki i syndrom uzależnienia Ciebie nie dotyczy.</p>
+<p>Dlatego nie mówię, żeby przestać jQ używać. Jeśli natomiast do stronki, gdzie trza oskryptować jeden link, wsadzasz jQ, to znak, że coś jest nie tego. Jeśli natomiast umiesz zastąpić jQ <a href="http://www.forumweb.pl/javascript/cancelbubble-stoppropagation-problem/397808#397808" rel="noopener noreferrer">własnym rozwiązaniem</a> i robisz to, gdy potrzebujesz jedną, konkretną rzecz, to oznacza, że jesteś zupełnie normalnym użytkownikiem tej biblioteki i syndrom uzależnienia Ciebie nie dotyczy.</p>
 
 						</article>
 						<section id="komentarze">
