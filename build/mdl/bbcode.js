@@ -429,41 +429,45 @@ var XBBCODE = ( function() {
 
 		'h1': {
 			openTag: function( params, content ) {
-				return '<h2 class="mdl-typography--display-3" id="' + params.replace( /["']/g, '' ).substring( 1 ) + '">';
+				return '<div class="heading"><h2 class="mdl-typography--display-3" id="' + params.replace( /["']/g, '' ).substring( 1 ) + '">';
 			},
 			closeTag: function( params, content ) {
-				return `<a href="#${params.replace( /["']/g, '' ).substring( 1 )}" title="Bezpośredni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h2>`;
+				return `</h2>
+					<a href="#${params.replace( /["']/g, '' ).substring( 1 )}" title="Bezpośredni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
+				</div>`;
 			}
 		},
 
 		'h2': {
 			openTag: function( params,content ) {
-				return '<h3 class="mdl-typography--display-2" id="' + params.replace( /["']/g, '' ).substring( 1 ) + '">';
+				return '<div class="heading"><h3 class="mdl-typography--display-2" id="' + params.replace( /["']/g, '' ).substring( 1 ) + '">';
 			},
 			closeTag: function( params, content ) {
-				return `<a href="#${params.replace( /["']/g, '' ).substring( 1 )}" title="Bezpośredni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h3>`;
+				return `</h3>
+					<a href="#${params.replace( /["']/g, '' ).substring( 1 )}" title="Bezpośredni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
+				</div>`;
 			}
 		},
 
 		'h3': {
 			openTag: function( params, content ) {
-				return '<h4 class="mdl-typography--display-1" id="' + params.replace( /["']/g, '' ).substring( 1 ) + '">';
+				return '<div class="heading"><h4 class="mdl-typography--display-1" id="' + params.replace( /["']/g, '' ).substring( 1 ) + '">';
 			},
 			closeTag: function( params, content ) {
-				return `<a href="#${params.replace( /["']/g, '' ).substring( 1 )}" title="Bezpośredni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h4>`;
+				return `</h4>
+					<a href="#${params.replace( /["']/g, '' ).substring( 1 )}" title="Bezpośredni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
+				</div>`;
 			}
 		},
 
 		'h4': {
 			openTag: function( params, content ) {
-				return '<h5 id="' + params.replace( /["']/g, '' ).substring( 1 ) + '">';
+				return '<div class="heading"><h5 id="' + params.replace( /["']/g, '' ).substring( 1 ) + '">';
 			},
 			closeTag: function( params, content ) {
-				return ` <a href="#${params.replace( /["']/g, '' ).substring( 1 )}" title="Bezpośredni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
-				</h5>`;
+				return `</h5>
+					<a href="#${params.replace( /["']/g, '' ).substring( 1 )}" title="Bezpośredni link do sekcji"><span class="material-icons" aria-hidden="true">link</span><span class="sr-only">Bezpośredni link do sekcji</span></a>
+				</div>`;
 			}
 		},
 

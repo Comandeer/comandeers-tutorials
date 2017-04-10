@@ -429,37 +429,37 @@ var XBBCODE = ( function() {
 
 		'h1': {
 			openTag: function( params, content ) {
-				return '<h2 id="' + params.replace( /["']/g, '' ).substring( 1 ) + '">';
+				return '<div class="heading"><h2 id="' + params.replace( /["']/g, '' ).substring( 1 ) + '">';
 			},
 			closeTag: function( params, content ) {
-				return ' <a href="#' + params.replace( /["']/g, '' ).substring( 1 ) + '" title="Bezpośredni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h2>';
+				return '</h2> <a href="#' + params.replace( /["']/g, '' ).substring( 1 ) + '" title="Bezpośredni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>';
 			}
 		},
 
 		'h2': {
 			openTag: function( params,content ) {
-				return '<h3 id="' + params.replace( /["']/g, '' ).substring( 1 ) + '">';
+				return '<div class="heading"><h3 id="' + params.replace( /["']/g, '' ).substring( 1 ) + '">';
 			},
 			closeTag: function( params, content ) {
-				return ' <a href="#' + params.replace( /["']/g, '' ).substring( 1 ) + '" title="Bezpośredni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h3>';
+				return '</h3><a href="#' + params.replace( /["']/g, '' ).substring( 1 ) + '" title="Bezpośredni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>';
 			}
 		},
 
 		'h3': {
 			openTag: function( params, content ) {
-				return '<h4 id="' + params.replace( /["']/g, '' ).substring( 1 ) + '">';
+				return '<div class="heading"><h4 id="' + params.replace( /["']/g, '' ).substring( 1 ) + '">';
 			},
 			closeTag: function( params, content ) {
-				return ' <a href="#' + params.replace( /["']/g, '' ).substring( 1 ) + '" title="Bezpośredni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>';
+				return '</h4><a href="#' + params.replace( /["']/g, '' ).substring( 1 ) + '" title="Bezpośredni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>';
 			}
 		},
 
 		'h4': {
 			openTag: function( params, content ) {
-				return '<h4 id="' + params.replace( /["']/g, '' ).substring( 1 ) + '">';
+				return '<div class="heading"><h5 id="' + params.replace( /["']/g, '' ).substring( 1 ) + '">';
 			},
 			closeTag: function( params, content ) {
-				return ' <a href="#' + params.replace( /["']/g, '' ).substring( 1 ) + '" title="Bezpośredni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></h4>';
+				return '<h5><a href="#' + params.replace( /["']/g, '' ).substring( 1 ) + '" title="Bezpośredni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>';
 			}
 		},
 

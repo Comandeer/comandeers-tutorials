@@ -30,12 +30,11 @@
 	border-radius: 3px;
 }
 
-h1[id] a, h2[id] a, h3[id] a, h2[id] a, h3[id] a, h4[id] a, h5[id] a, h6[id] a {
+.heading a {
 	opacity: 0;
 	transition: opacity .7s ease-in-out;
 }
-h1[id]:hover a, h2[id]:hover a, h3[id]:hover a, h4[id]:hover a, h5[id]:hover a, h6[id]:hover a,
-h1 a:focus, h2 a:focus, h3 a:focus, h4 a:focus, h5 a:focus, h6 a:focus {
+.heading:hover a, .heading a:focus {
 	opacity: .6;
 }
 .code-switch {
