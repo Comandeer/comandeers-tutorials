@@ -7,5 +7,8 @@
     "cheerio": "~0.12.4"
   },
   "author": "Comandeer",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "cz-conventional-changelog": "^2.0.0"
+  }
 }
