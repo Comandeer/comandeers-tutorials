@@ -41,6 +41,11 @@
 
 			<div class="container-fluid">
 				<div class="row">
+					<div class="col-md-8 col-md-offset-{HEADING_OFFSET}">
+						<h1 id="start">{TITLE}</h1>
+					</div>
+				</div>
+				<div class="row">
 					{NAV}
 
 					<main class="col-md-8 col-md-offset-{OFFSET}">

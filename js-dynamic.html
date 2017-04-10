@@ -41,11 +41,23 @@
 
 			<div class="container-fluid">
 				<div class="row">
-					
+					<div class="col-md-8 col-md-offset-4">
+						<h1 id="start">Dynamiczne wczytywanie skryptów</h1>
+					</div>
+				</div>
+				<div class="row">
+					<nav class="sidebar col-md-4 well">
+		<h2 class="sidebar-header">Spis treści</h2>
+			<div class="sidebar-inner">
+				<ul class="unstyled">
+				<li><a href="#co-to">Co to?</a></li><li><a href="#ninja">Sposób na ninja</a></li><li><a href="#prymitywny">Sposób prymitywny</a></li><li><a href="#rozbudowanszy">Sposób rozbudowańszy</a></li><li><a href="#amd">Sposób pro dla browserów</a></li><li><a href="#serwery">Jedyny pro sposób dla serwerów</a></li><li><a href="#umd">Pro sposób dla wszystkich</a></li><li><a href="#es6">Przyszłość – ES Modules</a></li><li><a href="#cm">Rebelia – Chainable Module Definition</a></li>
+				</ul>
+			</div>
+		</nav>
 
-					<main class="col-md-8 col-md-offset-2">
+					<main class="col-md-8 col-md-offset-0">
 						<article>
-						<div class="heading"><h1 id="start">Dynamiczne wczytywanie skryptów</h1> <a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>
+						<div class="heading"> <a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>
 <p>Umieszczając JS na swojej stronie, zapewne nieraz słyszałeś, że masz je umieścić na końcu <code>body</code> i najlepiej je wsadzić w jeden, góra trzy pliki i <a href="https://github.com/mishoo/UglifyJS/" rel="noopener noreferrer">zminifikować</a>. Takie są standardowe zalecenia dotyczące JavaScript na stronie. Ale czy istnieje jakaś alternatywa? Przecież wiadomo, że nawet po wykonaniu tych wszystkich kroków, w tym niby mniejszym pliku JS znajduje się pełno kodu, który nie zostanie wykorzystany na danej podstronie (no przecież nie wszędzie wpychamy slider czy też okienka). Okazuje się, że istnieje! Zwie się "dynamiczne (leniwe) ładowanie skryptów".</p>
 
 <div class="heading"><h2 id="co-to">Co to?</h2><a href="#co-to" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>

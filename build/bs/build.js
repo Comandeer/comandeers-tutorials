@@ -40,8 +40,9 @@ tutorials.forEach( function( tutorial ) {
 	} );
 
 	$( 'h1, h2, h3, h4, h5, h6' ).each( function() {
-		if( this.is( '#start, h2:first-of-type' ) ) {
+		if( this.is( '#start' ) ) {
 			output = output.replace( /{TITLE}/g, this.html().replace( /<a.+?>.+?<\/a>/gi, '' ) );
+			this.remove();
 		} else {
 			var depth = Number( this[ 0 ].name.substring( 1 ) ),
 				html = '',
@@ -78,6 +79,7 @@ tutorials.forEach( function( tutorial ) {
 
 	output = output.replace( '{NAV}', nav );
 	output = output.replace( '{OFFSET}', offset );
+	output = output.replace( '{HEADING_OFFSET}', offset || 4 );
 	output = output.replace( '{CONTENT}', $.html() );
 	output = output.replace( '{DISQUS}', tutorial.replace( '.tpl', '' ) );
 
