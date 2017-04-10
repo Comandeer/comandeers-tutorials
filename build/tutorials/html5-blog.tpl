@@ -218,7 +218,7 @@
 [p]Ostatecznie kod komentarzy wygląda tak:[/p]
 [code=markup]<article id="comment-25">
 	<header class="comment-meta">
-		<a href="#comment-25"><time datetime="2011-01-07T20:41:06+00:00"">07.01.2011, 20:41</time></a>
+		<a href="#comment-25"><time datetime="2011-01-07T20:41:06+00:00">07.01.2011, 20:41</time></a>
 		<h4><b><a href="http://example.net/"><img alt="" src="http://avatary.gdziekolwiek.com/Comandeer" height="48" width="48">Comandeer</a> skomentował</b></h4>
 	</header>
 	<p>Ale komentarz!</p>
