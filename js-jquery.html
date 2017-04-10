@@ -34,7 +34,7 @@
 			<header class="navbar navbar-inverse navbar-fixed-top">
 				<div class="container-fluid">
 					<div class="navbar-header">
-						<h1 class="navbar-brand"><a href="/" title="« Powrót do spisu tutoriali">Tutorials</a></h1>
+						<a href="/" class="navbar-brand" title="« Powrót do spisu tutoriali">Tutorials</a>
 					</div>
 				</div>
 			</header>
@@ -45,26 +45,26 @@
 		<h2 class="sidebar-header">Spis treści</h2>
 			<div class="sidebar-inner">
 				<ul class="unstyled">
-				<li><a href="#mimo">Mimo że zdaje ci się inaczej</a></li><li><a href="#alternatywa">Alternatywa?</a></li><li><a href="#dom">Podstawowe operacje DOM-owe</a><ul class="unstyled"><li><a href="#selektory">Wyszukiwanie po selektorach</a></li><li><a href="#chaining">Chainowanie metod</a></li><li><a href="#delegation">Event delegation</a></li><li><a href="#clone"><code>.clone</code></a></li><li><a href="#extend"><code>.extend</code></a></li></ul></li><li><a href="#animacje">Animacje</a></li><li><a href="#xhr">XHR</a></li><li><a href="#ui">jQUI</a></li><li><a href="#ale">Ale za to w jQ da się…</a></li><li><a href="#czy-porzucic">Czy porzucić?</a></li>
+				<li><a href="#selektory">Wyszukiwanie po selektorach</a></li><li><a href="#chaining">Chainowanie metod</a></li><li><a href="#delegation">Event delegation</a></li><li><a href="#clone"><code>.clone</code></a></li><li><a href="#extend"><code>.extend</code></a></li>
 				</ul>
 			</div>
 		</nav>
 
 					<main class="col-md-8 col-md-offset-0">
 						<article>
-						<div class="heading"><h2 id="start">Czemu nie potrzebujesz jQuery?</h2> <a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>
+						<div class="heading"><h1 id="start">Czemu nie potrzebujesz jQuery?</h1> <a href="#start" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>
 
-<div class="heading"><h3 id="mimo">Mimo że zdaje ci się inaczej</h3><a href="#mimo" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>
+<div class="heading"><h2 id="mimo">Mimo że zdaje ci się inaczej</h2><a href="#mimo" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>
 <p>Ten tutorial kieruję do wszystkich tych, którzy nie wyobrażają sobie wykonania jakiejkolwiek prostej czynności w JS bez użycia tej wszechstronnej biblioteki. Część zarzutów tyczy się też mnie, gdyż osobiście również korzystam z jQuery (hej, to nie moja wina, że DOM jest tak spaprany!)</p>
 
 
-<div class="heading"><h3 id="alternatywa">Alternatywa?</h3><a href="#alternatywa" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>
+<div class="heading"><h2 id="alternatywa">Alternatywa?</h2><a href="#alternatywa" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>
 <p><a href="http://vanilla-js.com/" rel="noopener noreferrer">VanillaJS</a> + <a href="http://microjs.com/" rel="noopener noreferrer">jeden z tych maluczkich</a></p>
 
 
-<div class="heading"><h3 id="dom">Podstawowe operacje DOM-owe</h3><a href="#dom" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>
+<div class="heading"><h2 id="dom">Podstawowe operacje DOM-owe</h2><a href="#dom" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>
 
-<div class="heading"><h4 id="selektory">Wyszukiwanie po selektorach</h4><a href="#selektory" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>
+<div class="heading"><h3 id="selektory">Wyszukiwanie po selektorach</h3><a href="#selektory" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>
 <p>Potęgą jQuery jest jego silniczek Sizzle, który pozwala wyszukać dowolny element tylko i wyłącznie na podstawie selektora. To jest często główny/jedyny powód, dla którego część webmasterów sięga po jQ.</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">$( '#bardzo &gt; optymalny .selektor #ktory .na-bank.dziala' );</code></pre>
 <p class="alert alert-info">Oczywiście optymalizacja takich selektorów to zupełnie inna sprawa.</p>
@@ -74,14 +74,14 @@
 <p class="code">Kod:</p><pre><code class="language-javascript">var $ = document.querySelectorAll.bind( document );</code></pre>
 <p>Voila! Mamy jQ bez jQ.</p>
 
-<div class="heading"><h4 id="chaining">Chainowanie metod</h4><a href="#chaining" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>
+<div class="heading"><h3 id="chaining">Chainowanie metod</h3><a href="#chaining" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>
 <p>Chainowanie metod to to, co decyduje o niezwykłej użyteczności jQ w zastosowaniach DOM-owych.</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">$( '&lt;a&gt;' ).attr( 'href', '#' ).on( 'click', function() {} );</code></pre>
 <p>Owszem, w VanillaJS nie jestem w stanie uzyskać tak wygodnej obsługi DOM. Ale tu z pomocą przychodzi nam <a href="http://leaverou.github.com/chainvas/" rel="noopener noreferrer">Chainvas</a> – małe cudeńko, które jest w stanie złańcuchować <i>de facto</i> wszystko. Dzięki temu można spokojnie napisać:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">document.createElement( 'a' ).setAttribute( 'href', '#' ).addEventListener( 'click', function() {} );</code></pre>
 <p>I tym sposobem odebraliśmy jQ największą jego przewagę w operacjach DOM-owych, oszczędzając przy tym 31KB kodu (oczywiście mowa tu o wersjach gzipniętych i zminifikowanych).</p>
 
-<div class="heading"><h4 id="delegation">Event delegation</h4><a href="#delegation" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>
+<div class="heading"><h3 id="delegation">Event delegation</h3><a href="#delegation" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>
 <p>w jQ jest prosto:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">$( document ).on( 'click', '.clicky', function( evt ) {
 	//awesome stuff
@@ -94,7 +94,7 @@
 	//awesome stuff
 }, false );</code></pre>
 
-<div class="heading"><h4 id="clone"><code>.clone</code></h4><a href="#clone" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>
+<div class="heading"><h3 id="clone"><code>.clone</code></h3><a href="#clone" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>
 <p>Żeby sklonować obiekt w jQ, wystarczy skorzystać z metody <code>.clone</code>. Czy da się zrobić coś takiego w czystym JS? A i owszem.</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">function clone( obj ) {
 	return obj.cloneNode ? obj.cloneNode( obj ) : JSON.parse( JSON.stringify( obj ) );
@@ -102,14 +102,14 @@
 console.log( clone( document.createElement( 'a' ) ) );</code></pre>
 <p>Prosta i przyjemna sztuczka.</p>
 
-<div class="heading"><h4 id="extend"><code>.extend</code></h4><a href="#extend" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>
+<div class="heading"><h3 id="extend"><code>.extend</code></h3><a href="#extend" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>
 <p>To już nie jest do końca DOM, ale może się tu nadać.</p>
 <p>Jak wiadomo, w jQ mamy metodę <code>.extend</code> rozszerzającą nam obiekt:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">console.log( $.extend( {}, { cos: 1 } ) );</code></pre>
 <p>W czystym JS <a href="https://github.com/shimondoodkin/nodejs-clone-extend/blob/master/index.js#L40" rel="noopener noreferrer">też się da</a>. Ba, można być nawet chamskim i po prostu wyciągnąć ten kod z jQ.</p>
 
 
-<div class="heading"><h3 id="animacje">Animacje</h3><a href="#animacje" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>
+<div class="heading"><h2 id="animacje">Animacje</h2><a href="#animacje" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>
 <p>Co tu dużo mówić – od kiedy w CSS są <code>transition</code> i <code>animation</code>, większość rzeczy można w ogóle wyjąć poza JS. Natomiast niektóre inne animacje z jQ można równie łatwo napisać w czystym JS. Przykład, lekko poprawiony, ze strony VanillaJS:</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">$( '#thing' ).fadeOut();
 //vs
@@ -121,12 +121,12 @@ s.opacity = +( s.opacity || window.getComputedStyle( el )[ 'opacity' ] );
 <p class="code">Kod:</p><pre><code class="language-javascript">window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame || function( f ){ setTimeout( f, 1000 / 60 ); };</code></pre>
 
 
-<div class="heading"><h3 id="xhr">XHR</h3><a href="#xhr" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>
+<div class="heading"><h2 id="xhr">XHR</h2><a href="#xhr" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>
 <p>Tu nie będzie przykładów, jedynie krótkie info.</p>
 <p>Otóż wrapper w jQ jest cholernie wygodny i w ogóle. Jednak jeśli chcemy mieć dostęp do bardziej zaawansowanych własności obiektu xhr (np. <code>xhr.upload.progress</code>), <a href="https://github.com/malsup/form/blob/master/jquery.form.js#L258" rel="noopener noreferrer">trzeba użyć natywnego obiektu</a>.</p>
 
 
-<div class="heading"><h3 id="ui">jQUI</h3><a href="#ui" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>
+<div class="heading"><h2 id="ui">jQUI</h2><a href="#ui" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>
 <p>Wiele rzeczy <a href="http://pulpit.luke.co.pl/" rel="noopener noreferrer">da się napisać</a> bez tego, wystarcza trochę pomyślunku.</p>
 <p>Szybki przykład na resize elementów (akurat wykorzystywany w zupełnie innym kontekście niż browserowy):</p>
 <p class="code">Kod:</p><pre><code class="language-javascript">if ( &#91; 'l', 'r' &#93;.indexOf( resizing ) !== -1 ) {
@@ -165,10 +165,10 @@ s.opacity = +( s.opacity || window.getComputedStyle( el )[ 'opacity' ] );
 
 
 
-<div class="heading"><h3 id="ale">Ale za to w jQ da się…</h3><a href="#ale" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>
+<div class="heading"><h2 id="ale">Ale za to w jQ da się…</h2><a href="#ale" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>
 <p>Z racji tego, że jQ jest tylko subsetem JS, śmiem twierdzić, że nie ma rzeczy, której nie dałoby się osiągnąć w czystym JS. Jestem w stanie podjąć każde wyzwanie i udowodnić, że się da bez!</p>
 
-<div class="heading"><h3 id="czy-porzucic">Czy porzucić?</h3><a href="#czy-porzucic" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>
+<div class="heading"><h2 id="czy-porzucic">Czy porzucić?</h2><a href="#czy-porzucic" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>
 <p>Nie trzeba. Sam używam i jestem zadowolony. Cały problem polega na tym, że jQuery jest przedstawiane jako lekarstwo na wszelkie zło JS, a to po prostu wierutna bzdura. jQuery powstało jako helper DOM-owy i to wciąż jest jego główną siłą.</p>
 <p>Co więcej, jQuery niszczy świadomość programistów sieciowych. Coraz częściej można spotkać bowiem nie programistów JS, a programistów jQuery, którzy jedynie tą biblioteką są w stanie się posługiwać.</p>
 <p>Dlatego nie mówię, żeby przestać jQ używać. Jeśli natomiast do stronki, gdzie trza oskryptować jeden link, wsadzasz jQ, to znak, że coś jest nie tego. Jeśli natomiast umiesz zastąpić jQ <a href="http://www.forumweb.pl/javascript/cancelbubble-stoppropagation-problem/397808#397808" rel="noopener noreferrer">własnym rozwiązaniem</a> i robisz to, gdy potrzebujesz jedną, konkretną rzecz, to oznacza, że jesteś zupełnie normalnym użytkownikiem tej biblioteki i syndrom uzależnienia Ciebie nie dotyczy.</p>
