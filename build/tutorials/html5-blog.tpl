@@ -412,7 +412,12 @@
 [p=info]Google, Yahoo i Bing zaczęły pracować nad nowym standardem oznaczania treści [url=http://schema.org]Schema.org[/url], który ma ustandaryzować mikrodane na stronach WWW. Dzięki temu przedsięwzięciu można oznaczyć prawie każdy typ danych. Wydaje mi się, że takie podejście ma szansę wyprzeć mikroformaty, a przynajmniej [url=http://microformats.org/wiki/microformats-2]zmusić je do ewolucji[/url].[/p]
 
 [h3="semantyka-inne"]Inne formaty danych semantycznych[/h3]
-[p]Tutaj warto wspomnieć o głównym konkurencie microdata – [url=http://rdfa.info/]RDFa[/url] – który wygląda dość podobnie, ale jest bardziej XML-friendly. Chociaż obecnie zarówno on, jak i microdata/mikroformaty, są zagrożone przez najnowszy format danych semantycznych, [url=http://www.w3.org/TR/json-ld/]JSON LD[/url]. Niemniej ten format, z racji swojej specyfiki, IMO znajdzie zastosowanie głównie w RESTful APIs, jako format zwracanych danych.[/p]
+[p]Tutaj warto wspomnieć o głównym konkurencie microdata – [url=http://rdfa.info/]RDFa[/url] – który wygląda dość podobnie, ale jest bardziej XML-friendly i… ładniejszy.[/p]
+[code=markup]<article vocab="http://schema.org" typeof="Person">
+	<h3>O autorze blogaska</h3>
+	<p>Nazywam się <a href="http://example.net/author" property="name url">Comandeer</a>, mieszkam w uroczym miasteczku <span property="address" typeof="PostalAddress"><span property="addressLocality">Świętochłowice</span></span> i interesuję się webmasterką.</p>
+</article>[/code]
+[p]Chociaż obecnie zarówno on, jak i microdata/mikroformaty, są zagrożone przez najnowszy format danych semantycznych, [url=http://www.w3.org/TR/json-ld/]JSON LD[/url]. Niemniej ten format, z racji swojej specyfiki, IMO znajdzie zastosowanie głównie w RESTful APIs, jako format zwracanych danych.[/p]
 
 
 [h2="semantyka-dublin-core"]Dublin Core[/h2]
