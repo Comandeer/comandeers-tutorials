@@ -1,3 +1,3 @@
 # Comandeer's tutorials
 
-It's a new home for me tutorials, yay!
+It's a new home for my tutorials, yay!
