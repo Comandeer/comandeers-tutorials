@@ -35,7 +35,7 @@
 			<header class="navbar navbar-inverse navbar-fixed-top">
 				<div class="container-fluid">
 					<div class="navbar-header">
-						<a href="/" class="navbar-brand" title="« Powrót do spisu tutoriali">Tutorials</a>
+						<a href="/" class="navbar-brand" title="« Powrót do spisu tutorialów">Tutorials</a>
 					</div>
 				</div>
 			</header>

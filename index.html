@@ -15,7 +15,7 @@
 				ga('send', 'pageview');
 			}
 			</script>
-			<title>Lista tutoriali</title>
+			<title>Lista tutorialów</title>
 			<!--[if lt IE 9]>
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
 			<![endif]-->
@@ -27,7 +27,7 @@
 			<header class="navbar navbar-inverse navbar-fixed-top">
 				<div class="container-fluid">
 					<div class="navbar-header">
-						<h1 class="navbar-brand"><a href="/" title="« Powrót do spisu tutoriali">Tutorials</a></h1>
+						<h1 class="navbar-brand"><a href="/" title="« Powrót do spisu tutorialów">Tutorials</a></h1>
 					</div>
 				</div>
 			</header>
