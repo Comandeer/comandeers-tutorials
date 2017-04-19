@@ -42,7 +42,7 @@ tutorials.forEach( function( tutorial ) {
 	$( 'h1, h2, h3, h4, h5, h6' ).each( function() {
 		if( this.is( '#start' ) ) {
 			output = output.replace( /{TITLE}/g, this.html().replace( /<a.+?>.+?<\/a>/gi, '' ) );
-			this.remove();
+			this.parent().remove();
 		} else {
 			var depth = Number( this[ 0 ].name.substring( 1 ) ),
 				html = '',
