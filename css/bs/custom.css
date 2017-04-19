@@ -40,15 +40,17 @@ body {
 		overflow: auto;
 	}
 }
-.heading {
+.header {
 	overflow: hidden;
 }
-.heading a {
-	float: left;
+.header__heading, .header__link {
+	display: inline-block;
+}
+.header__link {
 	opacity: 0;
 	transition: opacity .7s ease-in-out;
 }
-.heading:hover a, .heading a:focus {
+.header:hover .header__link, .header__link:focus {
 	opacity: .6;
 }
 .code-switch {
