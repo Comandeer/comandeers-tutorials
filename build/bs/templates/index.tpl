@@ -44,7 +44,7 @@
 					<ul class="list-group">
 						{ARTS}
 					</ul>
-					<p>Dodatkowo jestem także redaktorem <a href="http://www.webkrytyk.pl/author/Comandeer/" rel="noopener noreferrer">WebKrytyka</a>, <a href="http://pasjaonline.pl" rel="noopener noreferrer">Pasji Online</a> oraz <a href="http://e-magnifier.pl/author/tomasz-jakut/" rel="noopener noreferrer">Magnifiera</a> (chociaż on akurat średnio programistyczny). W wolnych chwilach <a href="https://comandeer.github.io/blog" rel="noopener noreferrer">prowadzę osobistego bloga</a>.</p>
+					<p>Dodatkowo jestem także redaktorem <a href="http://www.webkrytyk.pl/author/Comandeer/" rel="noopener noreferrer">WebKrytyka</a>, <a href="http://pasjaonline.pl" rel="noopener noreferrer">Pasji Online</a> oraz <a href="http://e-magnifier.pl/author/tomasz-jakut/" rel="noopener noreferrer">Magnifiera</a> (chociaż on akurat średnio programistyczny). W wolnych chwilach <a href="https://blog.comandeer.pl" rel="noopener noreferrer">prowadzę osobistego bloga</a>.</p>
 				</main>
 			</div>
 
