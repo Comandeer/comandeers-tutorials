@@ -83,7 +83,7 @@ tutorials.forEach( function( tutorial ) {
 	output = output.replace( '{CONTENT}', $.html() );
 	output = output.replace( '{DISQUS}', tutorial.replace( '.tpl', '' ) );
 
-	fs.writeFileSync( '../../' + tutorial.replace( 'tpl', 'html' ), output, 'utf8' );
+	fs.writeFileSync( '../../public/' + tutorial.replace( 'tpl', 'html' ), output, 'utf8' );
 } );
 
 // building list of tutorials
