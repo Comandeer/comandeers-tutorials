@@ -32,18 +32,21 @@
 			<title itemprop="name">Super hiper ważny wpis | Example.net - fajowy blog, na którym bloguję</title>
 
 			<!--[if lt IE 9]>
-				<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+				<script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv-printshiv.min.js"></script>
 			<![endif]-->
 		</head>
 		<body>
 			<a href="#tresc" class="focus-only">Przejdź do treści</a>
 
 			<header id="naglowek">
-				<h1><a href="https://example.net" rel="index">Example.net - fajowy blog, na którym bloguję</a></h1>
-				<p>Motto</p>
 				<nav id="menu" itemscope itemtype="http://schema.org/SiteNavigationElement">
-					<h2 class="visuallyhidden">Menu główne</h2>
 					<ul>
+						<li>
+							<a href="https://example.net" rel="index">
+								<p>Example.net - fajowy blog, na którym bloguję</p>
+								<p>Motto</p>
+							</a>
+						</li>
 						<li><a href="whatever.html">Whatever</a></li>
 						<li><a href="wherever.html">Wherever</a></li>
 						<li><a href="whenever.html">Whenever</a></li>
@@ -61,7 +64,7 @@
 			<main id="tresc" class="hfeed" itemprop="mainEntityOfPage" tabindex="-1">
 				<article class="post h-entry" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" id="super-hiper-wazny-wpis">
 					<header>
-						<h2 class="p-name" itemprop="headline"><a href="https://example.net/Super-hiper-wazny-wpis" class="bookmark u-uid u-url" rel="bookmark" title="Permalink do Super hiper ważny wpis">Super hiper ważny wpis</a></h2>
+						<h1 class="p-name" itemprop="headline"><a href="https://example.net/Super-hiper-wazny-wpis" class="bookmark u-uid u-url" rel="bookmark" title="Permalink do Super hiper ważny wpis">Super hiper ważny wpis</a></h1>
 						<p class="post-info">Opublikowano <time datetime="2011-01-07T20:40:06+00:00" class="dt-published" itemprop="datePublished">07.01.2011</time> przez <a href="https://example.net/author" itemprop="author" itemscope itemtype="http://schema.org/Person" rel="author" class="author p-author h-card"><span itemprop="name">Comandeer</span></a></p>
 					</header>
 					<div class="e-content" itemprop="articleBody">
@@ -83,7 +86,7 @@
 					</div>
 					<footer>
 						<section id="tagi" class="tags" itemprop="articleSection">
-							<h3>Tagi</h3>
+							<h2>Tagi</h2>
 								<ul>
 									<li><a href="https://example.net/tag/Tag1" rel="tag" class="p-category">Tag1</a></li>
 									<li><a href="https://example.net/tag/Tag2" rel="tag" class="p-category">Tag2</a></li>
@@ -92,21 +95,23 @@
 					</footer>
 
 					<section id="komentarze" class="comments">
-						<h3>Komentarze</h3>
-							<article id="comment-25" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
-								<header class="comment-meta">
+						<h2>Komentarze</h2>
+						<ol>
+							<li id="comment-25" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+								<div class="comment-meta">
 									<a href="#comment-25"><time datetime="2011-01-07T20:41:06+00:00" itemprop="dateCreated">07.01.2011, 20:41</time></a>
-									<h4><b itemprop="author" itemscope itemtype="http://schema.org/Person"><a href="http://example.net/" itemprop="name url"><img alt="" src="http://avatary.gdziekolwiek.com/Comandeer" height="48" width="48" itemprop="image">Comandeer</a> skomentował</b></h4>
-								</header>
-									<p itemprop="text">Ale komentarz!</p>
-							</article>
-							<article id="comment-26" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
-								<header class="comment-meta">
+									<b itemprop="author" itemscope itemtype="http://schema.org/Person"><a href="http://example.net/" itemprop="name url"><img alt="" src="http://avatary.gdziekolwiek.com/Comandeer" height="48" width="48" itemprop="image">Comandeer</a> skomentował</b>
+								</div>
+								<p itemprop="text">Ale komentarz!</p>
+							</li>
+							<li id="comment-26" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+								<div class="comment-meta">
 									<a href="#comment-26"><time datetime="2017-01-08T20:08:30+01:00" itemprop="dateCreated">07.01.2017, 20:08</time></a>
-									<h4><b itemprop="author" itemscope itemtype="http://schema.org/Person"><a href="http://example.net/" itemprop="name url"><img alt="" src="http://example.net/avatary/Anonim" height="48" width="48" itemprop="image">Anonim</a> skomentował</b></h4>
-								</header>
-									<p itemprop="text">Inny komentarz!</p>
-							</article>
+									<b itemprop="author" itemscope itemtype="http://schema.org/Person"><a href="http://example.net/" itemprop="name url"><img alt="" src="http://example.net/avatary/Anonim" height="48" width="48" itemprop="image">Anonim</a> skomentował</b>
+								</div>
+								<p itemprop="text">Inny komentarz!</p>
+							</li>
+						</ol>
 
 						<form action="https://example.net/comment.php" method="post" id="dodaj-komentarz">
 							<h3>Dodaj komentarz</h3>
@@ -159,7 +164,7 @@
 				</article>
 			</aside>
 
-			<footer id="stopka">Copyright &copy; 2016 by <a href="https://example.net/author" rel="author">Comandeer</a></footer>
+			<footer id="stopka">Copyright &copy; 2017 by <a href="https://example.net/author" rel="author">Comandeer</a></footer>
 
 			<script src="https://example.net/jquery.js"></script>
 			<script src="https://example.net/scripty.js"></script>
