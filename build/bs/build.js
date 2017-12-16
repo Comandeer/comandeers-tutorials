@@ -114,4 +114,4 @@ Object.keys( arts ).reverse().forEach( function( t ) {
 list = list.replace( '{LIST}', response );
 list = list.replace( '{ARTS}', artsr );
 
-fs.writeFileSync( '../../index.html', list, 'utf8' );
+fs.writeFileSync( '../../public/index.html', list, 'utf8' );
