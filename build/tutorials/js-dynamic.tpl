@@ -1,3 +1,4 @@
+[description]Słów kilka o modułach i innych sposobach dynamicznego wczytywania skryptów.[/description]
 [h1="start"]Dynamiczne wczytywanie skryptów[/h1]
 [p]Umieszczając JS na swojej stronie, zapewne nieraz słyszałeś, że masz je umieścić na końcu [tt]body[/tt] i najlepiej je wsadzić w jeden, góra trzy pliki i [url=https://github.com/mishoo/UglifyJS/]zminifikować[/url]. Takie są standardowe zalecenia dotyczące JavaScript na stronie. Ale czy istnieje jakaś alternatywa? Przecież wiadomo, że nawet po wykonaniu tych wszystkich kroków, w tym niby mniejszym pliku JS znajduje się pełno kodu, który nie zostanie wykorzystany na danej podstronie (no przecież nie wszędzie wpychamy slider czy też okienka). Okazuje się, że istnieje! Zwie się "dynamiczne (leniwe) ładowanie skryptów".[/p]
 

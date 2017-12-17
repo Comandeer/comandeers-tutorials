@@ -1,3 +1,4 @@
+[description]Pokazanie kilku alternatywnych ścieżek.[/description]
 [h1="start"]Czemu nie potrzebujesz jQuery?[/h1]
 
 [h2="mimo"]Mimo że zdaje ci się inaczej[/h2]

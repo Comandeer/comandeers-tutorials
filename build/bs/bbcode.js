@@ -505,6 +505,15 @@ var XBBCODE = ( function() {
 			closeTag: function( params, content ) {
 				return '</details>';
 			}
+		},
+
+		'description': {
+			openTag: function() {
+				return '<description>';
+			},
+			closeTag: function() {
+				return '</description>';
+			}
 		}
 	};
 

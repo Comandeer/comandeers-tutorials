@@ -22,6 +22,16 @@
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 			<link rel="stylesheet" href="/css/bs/custom.css">
+
+			<meta property="og:title" content="Comandeerowe tutorialowe">
+			<meta property="og:description" content="Wypociny o webdevie. Po polsku.">
+
+			<meta property="og:type" content="website">
+
+			<meta property="og:url" content="https://tutorials.comandeer.pl/">
+			<meta property="og:image" content="https://tutorials.comandeer.pl/images/comandeer.jpg">
+			<meta property="og:image:width" content="200">
+			<meta property="og:image:height" content="200">
 		</head>
 		<body>
 			<header class="navbar navbar-inverse navbar-fixed-top">

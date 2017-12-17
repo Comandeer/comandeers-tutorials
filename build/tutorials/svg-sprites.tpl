@@ -1,3 +1,4 @@
+[description]Czyli jak zrobić odpowiednik Font Awesome przy pomocy SVG.[/description]
 [h1="start"][CSS] Sprite'y w SVG[/h1]
 [p=warning]Ten tutorial powstał bardzo dawno temu i od tego czasu zmieniło się sporo! Polecam [url=http://css-tricks.com/svg-fragment-identifiers-work/]artykuł na CSS-Tricks.com[/url], opisujący temat o wiele dokładniej.[/p]
 [p]Czasami sprite'y w CSS mogą być wkurzające[/p]
@@ -21,7 +22,7 @@
 			.icon:target
 			{
 				display: inline;
-			} 
+			}
 		</style>
 	</defs>
 	<g id="rect" class="icon">
@@ -37,7 +38,7 @@
 [p]Ot, nic nadzwyczajnego - mamy dwie ikonki: jakieś [url=http://comandeer.pl/tutorials/res/svg-sprites/stack.svg#rect]dwa prostokąciki[/url] i [url=http://comandeer.pl/tutorials/res/svg-sprites/stack.svg#line]dwie linie[/url]. Jak widać, początkowo obydwie są ukryte, ale [tt]:target[/tt] działa :D Ważna dla nas jest klasa [tt].icon[/tt] i [tt]id[/tt] poszczególnych ikonek (do nich się będziemy odwoływać). Można oczywiście jeszcze bardziej uprościć kod i pozbyć się klasy [tt].icon[/tt], posługując się selektorem [tt]g[/tt].[/p]
 [p]W HTML i CSS też wielkiego problemu nie ma:[/p]
 [code=markup]<style>
-.icon.rect 
+.icon.rect
 {
 	width: 32px;
 	height: 32px;

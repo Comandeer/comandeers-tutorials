@@ -1,3 +1,4 @@
+[description]Kilka porad, aby Twój kod JS był jeszcze lepszy niż obecnie![/description]
 [h1="start"]Wypieść swój JS[/h1]
 
 [p=warning]Ten tutorial jest już niestety dość przestarzały i opisuje starszą wersję standardu JS (ECMAScript 5) a także niektóre praktyki, których obecnie nawet ja nie uznaję już za najlepsze. Dlatego lepiej potraktuj go wyłącznie jako ciekawostkę historyczną… i poczekaj aż napiszę o JS coś równie sensownego.[/p]

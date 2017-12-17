@@ -1,3 +1,4 @@
+[description]Ciekawy trick zaczerpnięty z archiwów Opery.[/description]
 [h1="start"][JavaScript] Ukrywanie ciała funkcji[/h1]
 
 [p=warning]Niestety, w nowych wersjach Chrome ta metoda już nie działa i dostajemy pełen dostęp do ciała funkcji.[/p]

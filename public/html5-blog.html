@@ -23,6 +23,18 @@
 			"open"in document.createElement("details")||document.addEventListener("DOMContentLoaded",function(){try{[].forEach.call(document.querySelectorAll("details"),function(e){var t=e.querySelector("summary"),n=function(n){n?(e.removeAttribute("open"),t.setAttribute("aria-expanded",!1)):(e.setAttribute("open","open"),t.setAttribute("aria-expanded",!0))},i=function(){n(e.hasAttribute("open"))};n(!e.hasAttribute("open")),t.setAttribute("tabindex",0),t.setAttribute("role","button"),t.addEventListener("click",i),t.addEventListener("keyup",function(e){-1!==[13,32].indexOf(e.keyCode)&&(e.preventDefault(),this.click())})})}catch(e){}})
 			</script>
 			<title>Semantyczny blog w HTML5</title>
+			<meta name="description" content="Dogłębny tutorial o tworzeniu podstrony wpisu na blogu przy użyciu HTML5. Semantyka, dostępność, standardy.">
+			<meta property="og:title" content="Semantyczny blog w HTML5">
+			<meta property="og:description" content="Dogłębny tutorial o tworzeniu podstrony wpisu na blogu przy użyciu HTML5. Semantyka, dostępność, standardy.">
+			<meta property="og:type" content="article">
+			<meta property="article:author" content="Comandeer">
+
+			<meta property="og:url" content="https://tutorials.comandeer.pl/html5-blog.html">
+			<meta property="og:image" content="https://tutorials.comandeer.pl/images/comandeer.jpg">
+			<meta property="og:image:width" content="200">
+			<meta property="og:image:height" content="200">
+
+
 			<!--[if lt IE 9]>
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
 			<![endif]-->
@@ -61,6 +73,7 @@
 					<main class="col-md-8 col-md-offset-0">
 						<article>
 						
+
 
 <p class="alert alert-info">Ten tutorial przeznaczony jest dla tych, którzy już mają jakiekolwiek pojęcie o HTML. Dobrym miejscem na zdobycie podstaw wiedzy jest <a href="https://the-awwwesomes.gitbooks.io/html-css-step-by-step/pl/" rel="noopener noreferrer" class="alert-link">tutorial od The Awwwesomes</a> czy też książka Ferrante <a href="https://ferrante.pl/books/html/" rel="noopener noreferrer" class="alert-link">Moja pierwsza strona internetowa w HTML5 i CSS3</a>.</p>
 <p>Witam wszystkich! Przeszukałem kilka for webmasterskich i nie znalazłem ani jednego tutoriala na temat HTML5. Trza to naprawić!</p>
@@ -313,7 +326,7 @@
 	&lt;/article&gt;
 	&#91;…&#93;
 &lt;/main&gt;</code></pre>
-<p class="alert alert-info">Co uważniejszy czytelnik zapewne zastanowi się teraz, czy aby na pewno <code>body &gt; header &gt; h1</code> to to samo co <code>article h1</code>. Odpowiedź na to pytanie zależy. Na gruncie semantyki nie, ponieważ pierwszy nagłówek jest nagłówkiem strony, a drugi - nagłówkiem konkretnego artykułu. Niemniej na gruncie obecnej implementacji dostępności (czyli braku implementacji algorytmu outline'u) ranga nagłówków <b>nie zależy</b> od semantyki. Tym samym <code>h1</code> <b>zawsze</b> jest najważniejszym nagłówkiem na stronie, bez względu na miejsce wystąpienia. I dopóki algorytm outline'u nie zostanie zaimplementowany, tego typu rozwiązanie (<code>article &gt; h1</code> jako główny nagłówek strony) wydaje się najlepsze – pomimo swojej niedoskonałej semantyki.</p>
+<p class="alert alert-info">Co uważniejszy czytelnik zapewne zastanowi się teraz, czy aby na pewno <code>body &gt; header &gt; h1</code> to to samo co <code>article h1</code>. Odpowiedź na to pytanie nie jest jednoznaczna. Na gruncie semantyki nie, ponieważ pierwszy nagłówek jest nagłówkiem strony, a drugi - nagłówkiem konkretnego artykułu. Niemniej na gruncie obecnej implementacji dostępności (czyli braku implementacji algorytmu outline'u) ranga nagłówków <b>nie zależy</b> od semantyki. Tym samym <code>h1</code> <b>zawsze</b> jest najważniejszym nagłówkiem na stronie, bez względu na miejsce wystąpienia. I dopóki algorytm outline'u nie zostanie zaimplementowany, tego typu rozwiązanie (<code>article &gt; h1</code> jako główny nagłówek strony) wydaje się najlepsze – pomimo swojej niedoskonałej semantyki.</p>
 <p>Można pójść o krok dalej. Heydon Pickering w swojej książce <a href="https://www.smashingmagazine.com/inclusive-design-patterns/" rel="noopener noreferrer">Inclusive Design Patterns</a> stwierdza, że w chwili, gdy logo strony nie jest nagłówkiem a jedynie linkiem, staje się integralną częścią nawigacji. Ma to sens, gdyż logo jest odnośnikiem do strony głównej. Tym samym na stronach poszczególnych wpisów można się pokusić o mocniejsze przebudowanie nagłówka:</p>
 <p class="code">Kod:</p><pre><code class="language-markup">&lt;header id="header"&gt;
 	&lt;nav&gt;

@@ -23,6 +23,18 @@
 			"open"in document.createElement("details")||document.addEventListener("DOMContentLoaded",function(){try{[].forEach.call(document.querySelectorAll("details"),function(e){var t=e.querySelector("summary"),n=function(n){n?(e.removeAttribute("open"),t.setAttribute("aria-expanded",!1)):(e.setAttribute("open","open"),t.setAttribute("aria-expanded",!0))},i=function(){n(e.hasAttribute("open"))};n(!e.hasAttribute("open")),t.setAttribute("tabindex",0),t.setAttribute("role","button"),t.addEventListener("click",i),t.addEventListener("keyup",function(e){-1!==[13,32].indexOf(e.keyCode)&&(e.preventDefault(),this.click())})})}catch(e){}})
 			</script>
 			<title>Dynamiczne wczytywanie skryptów</title>
+			<meta name="description" content="Słów kilka o modułach i innych sposobach dynamicznego wczytywania skryptów.">
+			<meta property="og:title" content="Dynamiczne wczytywanie skryptów">
+			<meta property="og:description" content="Słów kilka o modułach i innych sposobach dynamicznego wczytywania skryptów.">
+			<meta property="og:type" content="article">
+			<meta property="article:author" content="Comandeer">
+
+			<meta property="og:url" content="https://tutorials.comandeer.pl/js-dynamic.html">
+			<meta property="og:image" content="https://tutorials.comandeer.pl/images/comandeer.jpg">
+			<meta property="og:image:width" content="200">
+			<meta property="og:image:height" content="200">
+
+
 			<!--[if lt IE 9]>
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
 			<![endif]-->
@@ -61,6 +73,7 @@
 					<main class="col-md-8 col-md-offset-0">
 						<article>
 						
+
 <p>Umieszczając JS na swojej stronie, zapewne nieraz słyszałeś, że masz je umieścić na końcu <code>body</code> i najlepiej je wsadzić w jeden, góra trzy pliki i <a href="https://github.com/mishoo/UglifyJS/" rel="noopener noreferrer">zminifikować</a>. Takie są standardowe zalecenia dotyczące JavaScript na stronie. Ale czy istnieje jakaś alternatywa? Przecież wiadomo, że nawet po wykonaniu tych wszystkich kroków, w tym niby mniejszym pliku JS znajduje się pełno kodu, który nie zostanie wykorzystany na danej podstronie (no przecież nie wszędzie wpychamy slider czy też okienka). Okazuje się, że istnieje! Zwie się "dynamiczne (leniwe) ładowanie skryptów".</p>
 
 <div class="header"><h2 class="header__heading" id="co-to">Co to?</h2><a class="header__link" href="#co-to" title="Bezpo&#x15B;redni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a></div>

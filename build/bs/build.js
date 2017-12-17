@@ -39,6 +39,11 @@ tutorials.forEach( function( tutorial ) {
 		this.addClass( 'alert-link' );
 	} );
 
+	$( 'description' ).each( function() {
+		output = output.replace( /{DESCRIPTION}/g, this.text() );
+		this.remove();
+	} );
+
 	$( 'h1, h2, h3, h4, h5, h6' ).each( function() {
 		if( this.is( '#start' ) ) {
 			output = output.replace( /{TITLE}/g, this.html().replace( /<a.+?>.+?<\/a>/gi, '' ) );
@@ -77,6 +82,7 @@ tutorials.forEach( function( tutorial ) {
 		offset = 2;
 	}
 
+	output = output.replace( /{SLUG}/g, tutorial.replace( '.tpl', '' ) );
 	output = output.replace( '{NAV}', nav );
 	output = output.replace( '{OFFSET}', offset );
 	output = output.replace( '{HEADING_OFFSET}', offset || 4 );

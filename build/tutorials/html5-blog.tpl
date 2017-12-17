@@ -1,3 +1,4 @@
+[description]Dogłębny tutorial o tworzeniu podstrony wpisu na blogu przy użyciu HTML5. Semantyka, dostępność, standardy.[/description]
 [h1="start"]Semantyczny blog w HTML5[/h1]
 
 [p=info]Ten tutorial przeznaczony jest dla tych, którzy już mają jakiekolwiek pojęcie o HTML. Dobrym miejscem na zdobycie podstaw wiedzy jest [url=https://the-awwwesomes.gitbooks.io/html-css-step-by-step/pl/]tutorial od The Awwwesomes[/url] czy też książka Ferrante [url=https://ferrante.pl/books/html/]Moja pierwsza strona internetowa w HTML5 i CSS3[/url].[/p]

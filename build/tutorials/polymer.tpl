@@ -1,3 +1,4 @@
+[description]Przygody Comandeera z tym lepszym frameworkiem od Google.[/description]
 [h1="start"]WebComponents i Polymer - niespełniony sen?[/h1]
 [p]Nie tak dawno [url=http://webroad.pl/javascript/3505-web-components]zachwycałem się potęgą Web Components[/url], wieszcząc im świetlaną przyszłość w webmasterskim świecie. Po kilku miesiącach używania tej technologii przyszedł czas na pierwsze refleksje i ostudzenie zbyt wcześnie zapalonego entuzjazmu. Trzeba posypać głowę popiołem i powiedzieć wprost: "To nie tak miało być".[/p]
 
