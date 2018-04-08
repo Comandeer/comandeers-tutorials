@@ -77,6 +77,8 @@
 				<div class="row">
 					<div class="col-md-8 col-md-offset-{HEADING_OFFSET} header header_main">
 						<h1 id="start" class="header__heading">{TITLE}</h1>
+
+						<a class="header__link" href="{SLUG}.pdf" title="Wersja PDF"><span class="glyphicon glyphicon-book" aria-hidden="true"></span><span class="sr-only">Wersja <abbr title="Portable Document Format" lang="en">PDF</abbr></span></a>
 					</div>
 				</div>
 				<div class="row">

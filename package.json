@@ -4,7 +4,8 @@
   "main": "Gruntfile.js",
   "private": true,
   "dependencies": {
-    "cheerio": "~0.12.4"
+    "cheerio": "~0.12.4",
+    "puppeteer": "^1.2.0"
   },
   "author": "Comandeer",
   "license": "MIT",
@@ -13,7 +14,9 @@
     "http-server": "^0.11.1"
   },
   "scripts": {
-  	"start": "http-server",
-  	"build": "./build.sh"
+    "start": "http-server",
+    "build": "./build.sh",
+    "generate-pdf": "./generate-pdf.sh",
+    "dist": "npm run build && npm run generate-pdf"
   }
 }
