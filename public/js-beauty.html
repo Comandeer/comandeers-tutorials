@@ -21,6 +21,27 @@
 			 Details primitive polyfill by Comandeer
 			 */
 			"open"in document.createElement("details")||document.addEventListener("DOMContentLoaded",function(){try{[].forEach.call(document.querySelectorAll("details"),function(e){var t=e.querySelector("summary"),n=function(n){n?(e.removeAttribute("open"),t.setAttribute("aria-expanded",!1)):(e.setAttribute("open","open"),t.setAttribute("aria-expanded",!0))},i=function(){n(e.hasAttribute("open"))};n(!e.hasAttribute("open")),t.setAttribute("tabindex",0),t.setAttribute("role","button"),t.addEventListener("click",i),t.addEventListener("keyup",function(e){-1!==[13,32].indexOf(e.keyCode)&&(e.preventDefault(),this.click())})})}catch(e){}})
+
+			document.addEventListener( 'DOMContentLoaded', function() {
+				var details = Array.prototype.slice.call( document.querySelectorAll( 'details' ) );
+
+				window.addEventListener( 'beforeprint', function() {
+					details.forEach( function( detail ) {
+						detail.setAttribute( 'data-open', detail.hasAttribute( 'open' ) );
+						detail.setAttribute( 'open', 'open' );
+					} );
+				} );
+
+				window.addEventListener( 'afterprint', function() {
+					details.forEach( function( detail ) {
+						var isOpen = detail.getAttribute( 'data-open' ) && detail.getAttribute( 'data-open' ) === 'true';
+
+						if ( !isOpen ) {
+							detail.removeAttribute( 'open' );
+						}
+					} );
+				} );
+			} );
 			</script>
 			<title>Wypieść swój JS</title>
 			<meta name="description" content="Kilka porad, aby Twój kod JS był jeszcze lepszy niż obecnie!">
@@ -54,7 +75,7 @@
 
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-md-8 col-md-offset-4 header">
+					<div class="col-md-8 col-md-offset-4 header header_main">
 						<h1 id="start" class="header__heading">Wypieść swój JS</h1>
 
 						<a class="header__link" href="#start" title="Bezpośredni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a>
