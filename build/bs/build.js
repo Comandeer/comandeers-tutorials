@@ -29,8 +29,7 @@ tutorials.forEach( function( tutorial ) {
 
 	var $ = dom.load( content ),
 		lastDepth = null,
-		lastElem = null,
-		currentSubmenu = null;
+		currentSubmenu = $ul;
 
 	$ul.html( '' );
 
@@ -45,34 +44,32 @@ tutorials.forEach( function( tutorial ) {
 	} );
 
 	$( 'h1, h2, h3, h4, h5, h6' ).each( function() {
+		var depth = Number( this[ 0 ].name.substring( 1 ) ),
+			lastElem = currentSubmenu.children( 'li' ).last(),
+			html = '',
+			name = this.html().replace( /<a.+?>.+?<\/a>/gi, '' );
+
+		html = '<li><a href="#' + this.attr( 'id' ) + '">' + name + '</a></li>';
+
 		if( this.is( '#start' ) ) {
 			output = output.replace( /{TITLE}/g, this.html().replace( /<a.+?>.+?<\/a>/gi, '' ) );
 			this.parent().remove();
-		} else {
-			var depth = Number( this[ 0 ].name.substring( 1 ) ),
-				html = '',
-				name = this.html().replace( /<a.+?>.+?<\/a>/gi, '' );
+		}
 
-			html = '<li><a href="#' + this.attr( 'id' ) + '">' + name + '</a></li>';
+		if ( lastDepth ) {
+			if ( lastDepth < depth ) {
+				currentSubmenu = $( '<ul></ul>' );
 
-			if ( lastDepth ) {
-				if ( lastDepth < depth ) {
-					lastElem.append( '<ul class="unstyled"></ul>' );
-					currentSubmenu = lastElem.children().last();
-				} else if ( lastDepth > depth ) {
-					currentSubmenu = null;
+				lastElem.append( currentSubmenu );
+			} else if ( lastDepth > depth ) {
+				while ( lastDepth-- > depth ) {
+					currentSubmenu = currentSubmenu.parent().parent( 'ul' );
 				}
 			}
-
-			if ( currentSubmenu ) {
-				currentSubmenu.append( html );
-			} else {
-				$ul.append( html );
-			}
-
-			lastDepth = depth;
-			lastElem = $ul.children().last();
 		}
+
+		currentSubmenu.append( html );
+		lastDepth = depth;
 	} );
 
 	if ( $ul.children().length > 0 ) {

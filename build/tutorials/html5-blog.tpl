@@ -783,7 +783,6 @@
 	[*] [url=https://w3c.github.io/html/]Najnowsza specyfikacja HTML 5.x [/url] – i tu anegdota: warto ufać specyfikacjom W3C publikowanym na GitHubie, ponieważ te pod adresami zaczynającymi się od [tt]https://www.w3.org/TR[/tt] to śmieci ([url=https://github.com/nolanlawson/html5workertest/issues/6#issue-169542408][q]"/TR/ stands for trash" ["/TR/ oznacza śmieci"][/q][/url]), czyli specyfikacje często nieaktualne j niezmieniane po ostatecznym opublikowaniu
 	[*] [url=https://html.spec.whatwg.org/]HTML Living Standard[/url]
 	[*] [url=https://www.w3.org/TR/html50]Specyfikacja HTML5.0[/url] (która stała się oficjalną rekomendacją W3C 28.10.2014)
-	
 	[*] [url=https://html.spec.whatwg.org/dev/]Specka dla developerów[/url]
 	[*] [url=https://w3c.github.io/wcag21/guidelines/]Specyfikacja WCAG 2.1[/url]
 	[*] [url=https://www.w3.org/WAI/WCAG20/quickref/]Oficjalny poradnik WCAG 2.0[/url]

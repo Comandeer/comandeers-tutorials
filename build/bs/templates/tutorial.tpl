@@ -77,8 +77,6 @@
 				<div class="row">
 					<div class="col-md-8 col-md-offset-{HEADING_OFFSET} header header_main">
 						<h1 id="start" class="header__heading">{TITLE}</h1>
-
-						<a class="header__link" href="#start" title="Bezpośredni link do sekcji"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="sr-only">Bezpośredni link do sekcji</span></a>
 					</div>
 				</div>
 				<div class="row">
