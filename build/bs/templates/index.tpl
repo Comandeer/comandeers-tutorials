@@ -34,16 +34,29 @@
 			<meta property="og:image:height" content="200">
 		</head>
 		<body>
-			<header class="navbar navbar-inverse navbar-fixed-top">
+			<nav class="navbar navbar-inverse navbar-fixed-top" aria-label="Nawigacja po witrynie">
 				<div class="container-fluid">
 					<div class="navbar-header">
-						<h1 class="navbar-brand"><a href="/" title="« Powrót do spisu tutorialów">Tutorials</a></h1>
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#site-menu" aria-expanded="false">
+							<span class="sr-only">Włącz/wyłącz menu</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a href="/" class="navbar-brand" title="« Powrót do spisu tutorialów">Tutorials</a>
+					</div>
+
+					<div class="collapse navbar-collapse" id="site-menu">
+						<ul class="nav navbar-nav">{MENU}</ul>
 					</div>
 				</div>
-			</header>
+			</nav>
 
 			<div class="container-fluid">
 				<main class="content col-md-10 col-md-offset-1">
+					<h1>Tutoriale Comandeera</h1>
+					<p>Na tej stronie znajdziesz listę moich tutorialów i artykułów, które piszę od czasu do czasu.</p>
+
 					<h2 id="lista">Lista tutorialów</h2>
 					<dl class="list-group">
 							{LIST}
@@ -66,5 +79,6 @@
 
 			<script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+			<script id="cookiebanner" src="/js/cookies.js" data-message="Używam cookies w celu polepszenia działania witryny." data-linkmsg="Dowiedz się więcej" data-moreinfo="/polityka-prywatnosci.html#pliki-cookies-i-inne-technologie-sledzace"></script>
 		</body>
 	</html>

@@ -65,13 +65,23 @@
 			<link rel="stylesheet" href="/css/bs/custom.css">
 		</head>
 		<body>
-			<header class="navbar navbar-inverse navbar-fixed-top">
+			<nav class="navbar navbar-inverse navbar-fixed-top" aria-label="Nawigacja po witrynie">
 				<div class="container-fluid">
 					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#site-menu" aria-expanded="false">
+							<span class="sr-only">Włącz/wyłącz menu</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
 						<a href="/" class="navbar-brand" title="« Powrót do spisu tutorialów">Tutorials</a>
 					</div>
+
+					<div class="collapse navbar-collapse" id="site-menu">
+						<ul class="nav navbar-nav"><li><a href="polityka-prywatnosci.html">Polityka prywatności</a></li></ul>
+					</div>
 				</div>
-			</header>
+			</nav>
 
 			<div class="container-fluid">
 				<div class="row">
@@ -83,13 +93,13 @@
 				</div>
 				<div class="row">
 					<nav class="sidebar col-md-4 well">
-		<h2 class="sidebar-header">Spis treści</h2>
-			<div class="sidebar-inner">
-				<ul class="unstyled">
-				<li><a href="#start">Czemu nie potrzebujesz jQuery?</a><ul><li><a href="#mimo">Mimo że zdaje ci się inaczej</a></li><li><a href="#alternatywa">Alternatywa?</a></li><li><a href="#dom">Podstawowe operacje DOM-owe</a><ul><li><a href="#selektory">Wyszukiwanie po selektorach</a></li><li><a href="#chaining">Chainowanie metod</a></li><li><a href="#delegation">Event delegation</a></li><li><a href="#clone"><code>.clone</code></a></li><li><a href="#extend"><code>.extend</code></a></li></ul></li><li><a href="#animacje">Animacje</a></li><li><a href="#xhr">XHR</a></li><li><a href="#ui">jQUI</a></li><li><a href="#ale">Ale za to w jQ da się…</a></li><li><a href="#czy-porzucic">Czy porzucić?</a></li></ul></li>
-				</ul>
-			</div>
-		</nav>
+			<h2 class="sidebar-header">Spis treści</h2>
+				<div class="sidebar-inner">
+					<ul class="unstyled">
+					<li><a href="#start">Czemu nie potrzebujesz jQuery?</a><ul><li><a href="#mimo">Mimo że zdaje ci się inaczej</a></li><li><a href="#alternatywa">Alternatywa?</a></li><li><a href="#dom">Podstawowe operacje DOM-owe</a><ul><li><a href="#selektory">Wyszukiwanie po selektorach</a></li><li><a href="#chaining">Chainowanie metod</a></li><li><a href="#delegation">Event delegation</a></li><li><a href="#clone"><code>.clone</code></a></li><li><a href="#extend"><code>.extend</code></a></li></ul></li><li><a href="#animacje">Animacje</a></li><li><a href="#xhr">XHR</a></li><li><a href="#ui">jQUI</a></li><li><a href="#ale">Ale za to w jQ da się…</a></li><li><a href="#czy-porzucic">Czy porzucić?</a></li></ul></li>
+					</ul>
+				</div>
+			</nav>
 
 					<main class="col-md-8 col-md-offset-0">
 						<article>
@@ -300,5 +310,6 @@ s.opacity = +( s.opacity || window.getComputedStyle( el )[ 'opacity' ] );
 			} )
 			</script>
 			<script src="/js/prism.js"></script>
+			<script id="cookiebanner" src="/js/cookies.js" data-message="Używam cookies w celu polepszenia działania witryny." data-linkmsg="Dowiedz się więcej" data-moreinfo="/polityka-prywatnosci.html#pliki-cookies-i-inne-technologie-sledzace"></script>
 		</body>
 	</html>

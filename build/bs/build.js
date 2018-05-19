@@ -1,93 +1,111 @@
 var fs = require( 'fs' ),
 	tutDir = '../tutorials/',
+	pagesDir = '../pages/',
+	pageTemplate = fs.readFileSync( './templates/page.tpl', 'utf8' ),
 	tutTemplate = fs.readFileSync( './templates/tutorial.tpl', 'utf8' ),
 	parser = require( './bbcode' ),
 	dom = require( 'cheerio' ),
-	tutorials = fs.readdirSync( tutDir );
+	tutorials = fs.readdirSync( tutDir ),
+	pages = fs.readdirSync( pagesDir ),
+	pagesList = require( '../pageslist' ),
+	siteMenu = '';
 
-tutorials.forEach( function( tutorial ) {
-	var content = fs.readFileSync( tutDir + tutorial, 'utf8' ),
-		output = tutTemplate,
-		nav = `<nav class="sidebar col-md-4 well">
-		<h2 class="sidebar-header">Spis treści</h2>
-			<div class="sidebar-inner">
-				<ul class="unstyled">
-				{NAV}
-				</ul>
-			</div>
-		</nav>`,
-		offset = 0,
-		$ul = dom.load( nav )( 'ul' ),
-		tmp = parser.process( {
-			text: content,
-			addInLineBreaks: false
+function getBuilder( type = 'tutorial' ) {
+	return function( page ) {
+		var dir = type === 'tutorial' ? tutDir : pagesDir,
+			content = fs.readFileSync( dir + page, 'utf8' ),
+			output = type === 'tutorial' ? tutTemplate : pageTemplate,
+			nav = `<nav class="sidebar col-md-4 well">
+			<h2 class="sidebar-header">Spis treści</h2>
+				<div class="sidebar-inner">
+					<ul class="unstyled">
+					{NAV}
+					</ul>
+				</div>
+			</nav>`,
+			offset = 0,
+			$ul = dom.load( nav )( 'ul' ),
+			tmp = parser.process( {
+				text: content,
+				addInLineBreaks: false
+			} );
+
+		console.log( tmp.errorQueue ); // debugging, yay!
+
+		content = tmp.html;
+
+		var $ = dom.load( content ),
+			lastDepth = null,
+			currentSubmenu = $ul;
+
+		$ul.html( '' );
+
+		// Bootstrap hack for http://getbootstrap.com/components/#alerts-links
+		$( '.alert a' ).each( function() {
+			this.addClass( 'alert-link' );
 		} );
 
-	console.log( tmp.errorQueue ); // debugging, yay!
+		$( 'description' ).each( function() {
+			output = output.replace( /{DESCRIPTION}/g, this.text() );
+			this.remove();
+		} );
 
-	content = tmp.html;
+		$( 'h1, h2, h3, h4, h5, h6' ).each( function() {
+			var depth = Number( this[ 0 ].name.substring( 1 ) ),
+				lastElem = currentSubmenu.children( 'li' ).last(),
+				html = '',
+				name = this.html().replace( /<a.+?>.+?<\/a>/gi, '' );
 
-	var $ = dom.load( content ),
-		lastDepth = null,
-		currentSubmenu = $ul;
+			html = '<li><a href="#' + this.attr( 'id' ) + '">' + name + '</a></li>';
 
-	$ul.html( '' );
+			if( this.is( '#start' ) ) {
+				output = output.replace( /{TITLE}/g, this.html().replace( /<a.+?>.+?<\/a>/gi, '' ) );
+				this.parent().remove();
+			}
 
-	// Bootstrap hack for http://getbootstrap.com/components/#alerts-links
-	$( '.alert a' ).each( function() {
-		this.addClass( 'alert-link' );
-	} );
+			if ( lastDepth ) {
+				if ( lastDepth < depth ) {
+					currentSubmenu = $( '<ul></ul>' );
 
-	$( 'description' ).each( function() {
-		output = output.replace( /{DESCRIPTION}/g, this.text() );
-		this.remove();
-	} );
-
-	$( 'h1, h2, h3, h4, h5, h6' ).each( function() {
-		var depth = Number( this[ 0 ].name.substring( 1 ) ),
-			lastElem = currentSubmenu.children( 'li' ).last(),
-			html = '',
-			name = this.html().replace( /<a.+?>.+?<\/a>/gi, '' );
-
-		html = '<li><a href="#' + this.attr( 'id' ) + '">' + name + '</a></li>';
-
-		if( this.is( '#start' ) ) {
-			output = output.replace( /{TITLE}/g, this.html().replace( /<a.+?>.+?<\/a>/gi, '' ) );
-			this.parent().remove();
-		}
-
-		if ( lastDepth ) {
-			if ( lastDepth < depth ) {
-				currentSubmenu = $( '<ul></ul>' );
-
-				lastElem.append( currentSubmenu );
-			} else if ( lastDepth > depth ) {
-				while ( lastDepth-- > depth ) {
-					currentSubmenu = currentSubmenu.parent().parent( 'ul' );
+					lastElem.append( currentSubmenu );
+				} else if ( lastDepth > depth ) {
+					while ( lastDepth-- > depth ) {
+						currentSubmenu = currentSubmenu.parent().parent( 'ul' );
+					}
 				}
 			}
+
+			currentSubmenu.append( html );
+			lastDepth = depth;
+		} );
+
+		if ( $ul.children().length > 0 ) {
+			nav = nav.replace( '{NAV}', $ul.html() );
+		} else {
+			nav = '';
+			offset = 2;
 		}
 
-		currentSubmenu.append( html );
-		lastDepth = depth;
-	} );
+		output = output.replace( /{SLUG}/g, page.replace( '.tpl', '' ) );
+		output = output.replace( /{MENU}/g, siteMenu );
+		output = output.replace( '{NAV}', nav );
+		output = output.replace( '{OFFSET}', offset );
+		output = output.replace( '{HEADING_OFFSET}', offset || 4 );
+		output = output.replace( '{CONTENT}', $.html() );
+		output = output.replace( '{DISQUS}', page.replace( '.tpl', '' ) );
 
-	if ( $ul.children().length > 0 ) {
-		nav = nav.replace( '{NAV}', $ul.html() );
-	} else {
-		nav = '';
-		offset = 2;
+		fs.writeFileSync( '../../public/' + page.replace( 'tpl', 'html' ), output, 'utf8' );
 	}
+}
 
-	output = output.replace( /{SLUG}/g, tutorial.replace( '.tpl', '' ) );
-	output = output.replace( '{NAV}', nav );
-	output = output.replace( '{OFFSET}', offset );
-	output = output.replace( '{HEADING_OFFSET}', offset || 4 );
-	output = output.replace( '{CONTENT}', $.html() );
-	output = output.replace( '{DISQUS}', tutorial.replace( '.tpl', '' ) );
-
-	fs.writeFileSync( '../../public/' + tutorial.replace( 'tpl', 'html' ), output, 'utf8' );
+// building site menu
+Object.keys( pagesList ).forEach( function( page ) {
+	var pageInfo = pagesList[ page ];
+	siteMenu += `<li><a href="${ pageInfo }.html">${ page }</a></li>`
 } );
+
+tutorials.forEach( getBuilder( 'tutorial' ) );
+pages.forEach( getBuilder( 'page' ) );
 
 // building list of tutorials
 var list = fs.readFileSync( './templates/index.tpl', 'utf8' ),
@@ -116,5 +134,6 @@ Object.keys( arts ).reverse().forEach( function( t ) {
 
 list = list.replace( '{LIST}', response );
 list = list.replace( '{ARTS}', artsr );
+list = list.replace( '{MENU}', siteMenu );
 
 fs.writeFileSync( '../../public/index.html', list, 'utf8' );

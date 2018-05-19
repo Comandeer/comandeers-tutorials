@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+	<html lang="pl" dir="ltr" class="no-js">
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<script>
+			(function(H,c){H[c]=H[c].replace(/\bno-js\b/,'')+' js'})(document.documentElement,'className');
+
+			if ( location.host === 'tutorials.comandeer.pl' ) {
+				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+
+				ga('create', 'UA-33158520-2', 'auto');
+				ga('send', 'pageview');
+			}
+
+			/*
+			 Details primitive polyfill by Comandeer
+			 */
+			"open"in document.createElement("details")||document.addEventListener("DOMContentLoaded",function(){try{[].forEach.call(document.querySelectorAll("details"),function(e){var t=e.querySelector("summary"),n=function(n){n?(e.removeAttribute("open"),t.setAttribute("aria-expanded",!1)):(e.setAttribute("open","open"),t.setAttribute("aria-expanded",!0))},i=function(){n(e.hasAttribute("open"))};n(!e.hasAttribute("open")),t.setAttribute("tabindex",0),t.setAttribute("role","button"),t.addEventListener("click",i),t.addEventListener("keyup",function(e){-1!==[13,32].indexOf(e.keyCode)&&(e.preventDefault(),this.click())})})}catch(e){}})
+
+			document.addEventListener( 'DOMContentLoaded', function() {
+				var details = Array.prototype.slice.call( document.querySelectorAll( 'details' ) );
+
+				window.addEventListener( 'beforeprint', function() {
+					details.forEach( function( detail ) {
+						detail.setAttribute( 'data-open', detail.hasAttribute( 'open' ) );
+						detail.setAttribute( 'open', 'open' );
+					} );
+				} );
+
+				window.addEventListener( 'afterprint', function() {
+					details.forEach( function( detail ) {
+						var isOpen = detail.getAttribute( 'data-open' ) && detail.getAttribute( 'data-open' ) === 'true';
+
+						if ( !isOpen ) {
+							detail.removeAttribute( 'open' );
+						}
+					} );
+				} );
+			} );
+			</script>
+			<title>Polityka prywatności</title>
+			<meta name="description" content="Polityka prywatności tutorialów Comandeera">
+			<meta property="og:title" content="Polityka prywatności">
+			<meta property="og:description" content="Polityka prywatności tutorialów Comandeera">
+			<meta property="og:type" content="article">
+			<meta property="article:author" content="Comandeer">
+
+			<meta property="og:url" content="https://tutorials.comandeer.pl/polityka-prywatnosci.html">
+			<meta property="og:image" content="https://tutorials.comandeer.pl/images/comandeer.jpg">
+			<meta property="og:image:width" content="200">
+			<meta property="og:image:height" content="200">
+
+
+			<!--[if lt IE 9]>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+			<![endif]-->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+			<link rel="stylesheet" href="/css/prism.css">
+			<link rel="stylesheet" href="/css/bs/custom.css">
+		</head>
+		<body>
+			<nav class="navbar navbar-inverse navbar-fixed-top" aria-label="Nawigacja po witrynie">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#site-menu" aria-expanded="false">
+							<span class="sr-only">Włącz/wyłącz menu</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a href="/" class="navbar-brand" title="« Powrót do spisu tutorialów">Tutorials</a>
+					</div>
+
+					<div class="collapse navbar-collapse" id="site-menu">
+						<ul class="nav navbar-nav"><li><a href="polityka-prywatnosci.html">Polityka prywatności</a></li></ul>
+					</div>
+				</div>
+			</nav>
+
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-4 header header_main">
+						<h1 id="start" class="header__heading">Polityka prywatności</h1>
+
+						<a class="header__link" href="polityka-prywatnosci.pdf" title="Wersja PDF"><span class="glyphicon glyphicon-book" aria-hidden="true"></span><span class="sr-only">Wersja <abbr title="Portable Document Format" lang="en">PDF</abbr></span></a>
+					</div>
+				</div>
+				<div class="row">
+					<nav class="sidebar col-md-4 well">
+			<h2 class="sidebar-header">Spis treści</h2>
+				<div class="sidebar-inner">
+					<ul class="unstyled">
+					<li><a href="#start">Polityka prywatności</a><ul><li><a href="#skrocona-wersja-najwazniejsze-informacje">Skrócona wersja – najważniejsze informacje</a></li><li><a href="#dane-osobowe">Dane osobowe</a><ul><li><a href="#uprawnienia">Uprawnienia</a></li><li><a href="#bezpieczenstwo">Bezpieczeństwo</a></li><li><a href="#wykaz-powierzen">Wykaz powierzeń</a></li></ul></li><li><a href="#cele-i-czynnosci-przetwarzania">Cele i czynności przetwarzania</a><ul><li><a href="#komentowanie-wpisow">Komentowanie wpisów</a></li><li><a href="#kontakt-e-mailowy">Kontakt e-mailowy</a></li></ul></li><li><a href="#pliki-cookies-i-inne-technologie-sledzace">Pliki cookies i inne technologie śledzące</a><ul><li><a href="#zgoda-na-cookies">Zgoda na cookies</a></li><li><a href="#cookies-wlasne">Cookies własne</a></li><li><a href="#cookies-podmiotow-trzecich">Cookies podmiotów trzecich</a><ul><li><a href="#analiza-i-statystyka">Analiza i statystyka</a></li><li><a href="#narzedzia-spolecznosciowe">Narzędzia społecznościowe</a></li></ul></li></ul></li></ul></li>
+					</ul>
+				</div>
+			</nav>
+
+					<main class="col-md-8 col-md-offset-0">
+						<article>
+						
+
+
+<p>Jeżeli tutaj trafiłeś, to niezawodny znak, że cenisz swoją prywatność. Doskonale to rozumiem, dlatego przygotowaliśmy dla Ciebie ten dokument, w którym znajdziesz zasady przetwarzania danych osobowych oraz wykorzystywania plików cookies w związku z korzystaniem ze strony internetowej <a href="#" rel="noopener noreferrer">https://tutorials.Comandeer.pl</a>.</p>
+<p> Informacja formalna na początek – administratorem strony jestem ja, Tomasz Jakut.</p>
+<p>W razie jakichkolwiek wątpliwości związanych z polityką prywatności, w każdej chwili możesz się ze mną skontaktować, wysyłając wiadomość na adres <a href="mailto:comandeer@comandeer.pl">comandeer@comandeer.pl</a>.</p>
+
+<div class="header"><h2 class="header__heading" id="skrocona-wersja-najwazniejsze-informacje">Skrócona wersja – najważniejsze informacje</h2></div>
+<p>Dbam o Twoją prywatność, ale również o Twój czas. Dlatego przygotowałem dla Ciebie skróconą wersję najważniejszych zasad związanych z ochroną prywatności.</p>
+<ul>
+	<li> Komentując wpisy czy po prostu 	kontaktując się ze mną, przekazujesz mi swoje dane osobowe, a ja gwarantuję Ci, że Twoje dane pozostaną poufne, bezpieczne i nie zostaną udostępnione jakimkolwiek podmiotom trzecim bez Twojej wyraźnej zgody.
+	</li><li> Powierzam przetwarzanie danych 	osobowych tylko sprawdzonym i zaufanym podmiotom świadczącym usługi związane z przetwarzaniem danych osobowych.
+	</li><li> Korzystam z narzędzi analitycznych Google Analytics, które zbierają informacje na temat Twoich odwiedzin strony, takie jak podstrony, które wyświetliłeś, czas, jaki spędziłeś na stronie czy przejścia pomiędzy poszczególnymi podstronami. W tym celu wykorzystywane są pliki cookies firmy Google LLC dotyczące usługi Google Analytics.
+	</li><li> Osadzam na stronie nagrania wideo z serwisu YouTube. Gdy odtwarzasz takie nagrania, wykorzystywane są pliki cookies firmy Google LLC dotyczące usługi YouTube.
+	</li><li> Zapewniam możliwość korzystania z funkcji społecznościowych, takich jak udostępnianie treści w 	serwisach społecznościowych oraz subskrypcja profilu społecznościowego. Korzystanie z tych funkcji wiąże się z wykorzystywaniem plików cookies administratorów serwisów społecznościowych takich jak Facebook, Instagram, YouTube, Twitter, Google+, LinkedIN.
+	</li><li> Wykorzystuję pliki cookies własne w celu prawidłowego działania strony.
+</li></ul>
+<p>Jeżeli powyższe informacje nie są dla Ciebie wystarczające, poniżej znajdziesz szczegóły.</p>
+
+<div class="header"><h2 class="header__heading" id="dane-osobowe">Dane osobowe</h2></div>
+<p><b>Administratorem</b> Twoich danych osobowych w rozumieniu przepisów o ochronie danych osobowych jest Tomasz Jakut.</p>
+<p><b>Cele, podstawy prawne oraz okres przetwarzania danych osobowych</b> wskazane są odrębnie w stosunku do każdego celu przetwarzania danych (patrz: opis poszczególnych celów przetwarzania danych osobowych poniżej).</p>
+
+<div class="header"><h3 class="header__heading" id="uprawnienia">Uprawnienia</h3></div>
+<p>RODO przyznaje Ci następujące potencjalne uprawnienia związane z przetwarzaniem Twoich danych osobowych:</p>
+<ul>
+	<li> prawo dostępu do danych osobowych,
+	</li><li> prawo do sprostowania danych osobowych,
+	</li><li> prawo do usunięcia danych osobowych,
+	</li><li> prawo do ograniczenia przetwarzania danych osobowych,
+	</li><li> prawo do wniesienia sprzeciwu co do przetwarzania danych osobowych,
+	</li><li> prawo do przenoszenia danych,
+	</li><li> prawo do wniesienia skargi do organu nadzorczego,
+	</li><li> prawo do odwołania zgody na przetwarzanie danych osobowych, jeżeli takową zgodę wyraziłeś.
+</li></ul>
+<p>Zasady związane z realizacją wskazanych uprawnień zostały opisane szczegółowo w art. 16–21 RODO. Zachęcam do zapoznania się z tymi przepisami. Ze swojej strony uważam za potrzebne wyjaśnić Ci, że wskazane powyżej uprawnienia nie są bezwzględne i nie będą przysługiwać Ci w stosunku do wszystkich czynności przetwarzania Twoich danych osobowych. Dla Twojej wygody dołożyłem starań, by w ramach opisu poszczególnych operacji przetwarzania danych osobowych wskazać na przysługujące Ci w ramach tych operacji uprawnienia.</p>
+<p>Podkreślam, że jedno z uprawnień wskazanych powyżej przysługuje Ci zawsze – jeżeli uznasz, że przy przetwarzaniu Twoich danych osobowych dopuściłem się naruszenia przepisów o ochronie danych osobowych, masz możliwość wniesienia skargi do organu nadzorczego (Prezesa Urzędu Ochrony Danych Osobowych).</p>
+<p>Zawsze możesz również zwrócić się do mnie z żądaniem udostępnienia Ci informacji o tym, jakie dane na Twój temat posiadamy oraz w jakich celach je przetwarzamy Wystarczy, że wyślesz wiadomość na adres <a href="mailto:comandeer@comandeer.pl">comandeer@comandeer.pl</a>. Dołożyłem jednak wszelkich starań, by interesujące Cię informacje zostały wyczerpująco przedstawione w niniejszej polityce prywatności. Podany powyżej adres e-mail możesz wykorzystać również w razie jakichkolwiek pytań związanych z przetwarzaniem Twoich danych osobowych.</p>
+
+<div class="header"><h3 class="header__heading" id="bezpieczenstwo">Bezpieczeństwo</h3></div>
+<p>Gwarantuję Ci poufność wszelkich przekazanych nam danych osobowych. Zapewniam podjęcie wszelkich środków bezpieczeństwa i ochrony danych osobowych wymaganych przez przepisy o ochronie danych osobowych. Dane osobowe są gromadzone z należytą starannością i odpowiednio chronione przed dostępem do nich przez osoby do tego nieupoważnione.</p>
+
+<div class="header"><h3 class="header__heading" id="wykaz-powierzen">Wykaz powierzeń</h3></div>
+<p>Powierzam przetwarzanie danych osobowych następującym podmiotom:</p>
+<ul>
+	<li> <b>Disqus, Inc.</b> – w celu świadczenia usługi komentowania wpisów.
+</li></ul>
+<p>Wszystkie podmioty, którym powierzam przetwarzanie danych osobowych, gwarantują stosowanie odpowiednich środków ochrony i bezpieczeństwa danych osobowych wymaganych przez przepisy prawa.</p>
+
+<div class="header"><h2 class="header__heading" id="cele-i-czynnosci-przetwarzania">Cele i czynności przetwarzania</h2></div>
+
+<div class="header"><h3 class="header__heading" id="komentowanie-wpisow">Komentowanie wpisów</h3></div>
+<p>Komentując dowolny wpis, musisz podać swój adres e-mail oraz nick. Podanie danych jest dobrowolne, ale niezbędne do skomentowania.</p>
+<p>Dane wprowadzone przez Ciebie w ramach komentowania przetwarzane są wyłącznie w celu weryfikacji prawdziwości komentarza oraz jego identyfikacji na stronie poprzez wyświetlenie avatara z usługi Gravatar. Dane są przetwarzane przez firmę Disqus, Inc.</p>
+<p>Podstawą prawną przetwarzania Twoich danych osobowych w ramach komentowania jest Twoja zgoda (art. 6 ust. 1 lit. a RODO) wyrażona poprzez pozostawienie komentarza.</p>
+<p>Twoje dane będą przetwarzane tak długo, jak długo na stronie będą się znajdować Twoje komentarze. Po usunięciu komentarzy, Twoje dane zostaną usunięte z bazy.</p>
+<p>W każdej chwili możesz podjąć również decyzję o usunięciu lub modyfikacji swoich danych osobowych, czego możesz dokonać kontaktując się ze mną pod adresem <a href="mailto:comandeer@comandeer.pl">comandeer@comandeer.pl</a>.</p>
+
+<div class="header"><h3 class="header__heading" id="kontakt-e-mailowy">Kontakt e-mailowy</h3></div>
+<p>Kontaktując się ze mną za pośrednictwem poczty elektronicznej, w tym również przesyłając zapytanie poprzez formularz kontaktowy, w sposób naturalny przekazujesz mi swój adres e-mail jako adres nadawcy wiadomości. Ponadto, w treści wiadomości możesz zawrzeć również inne dane osobowe.</p>
+<p>Twoje dane są w tym przypadku przetwarzane w celu kontaktu z Tobą, a podstawą przetwarzania jest art. 6 ust. 1 lit. a RODO, czyli Twoja zgoda wynikające z zainicjowania z nami kontaktu. Podstawą prawną przetwarzania po zakończeniu kontaktu jest usprawiedliwiony cel w postaci archiwizacji korespondencji na potrzeby wewnętrzne (art. 6 ust. 1 lit. c RODO).</p>
+<p>Treść korespondencji może podlegać archiwizacji i nie jestem w stanie jednoznacznie określić, kiedy zostanie usunięta. Masz prawo do domagania się przedstawienia historii korespondencji, jaką ze mną prowadziłeś (jeżeli podlegała archiwizacji), jak również domagać się jej usunięcia, chyba że jej archiwizacja jest uzasadniona z uwagi na moje nadrzędne interesy, np. obrona przed potencjalnymi roszczeniami z Twojej strony.</p>
+
+<div class="header"><h2 class="header__heading" id="pliki-cookies-i-inne-technologie-sledzace">Pliki cookies i inne technologie śledzące</h2></div>
+<p>Moja strona, podobnie jak niemal wszystkie inne strony internetowe, wykorzystuje pliki cookies, by zapewnić Ci najlepsze doświadczenia związane z korzystaniem z niej.</p>
+<p>Cookies to niewielkie informacje tekstowe, przechowywane na Twoim urządzeniu końcowym (np. komputerze, tablecie, smartfonie), które mogą być odczytywane przez nasz system teleinformatyczny.</p>
+<p>Cookies można podzielić na cookies własne oraz cookie podmiotów trzecich.</p>
+<p>Więcej szczegółów znajdziesz poniżej.</p>
+
+<div class="header"><h3 class="header__heading" id="zgoda-na-cookies">Zgoda na cookies</h3></div>
+<p>Podczas pierwszej wizyty na stronie wyświetlana jest Ci informacja na temat stosowania plików cookies wraz z pytaniem o zgodę na wykorzystywanie plików cookies. Zawsze możesz zmienić ustawienia cookies z poziomu swojej przeglądarki albo w ogóle usunąć pliki cookies. Pamiętaj jednak, że wyłączenie plików cookies może powodować trudności w korzystaniu ze strony, jak również z wielu innych stron internetowych, które stosują cookies.</p>
+
+<div class="header"><h3 class="header__heading" id="cookies-wlasne">Cookies własne</h3></div>
+<p>Cookies własne wykorzystuję w celu zapewnienia prawidłowego działania strony, w szczególności w celu dostosowania layoutu strony do Twoich preferencji.</p>
+
+<div class="header"><h3 class="header__heading" id="cookies-podmiotow-trzecich">Cookies podmiotów trzecich</h3></div>
+<p>Moja strona, podobnie jak większość współczesnych stron internetowych, wykorzystuje funkcje zapewniane przez podmioty trzecie, co wiąże się z wykorzystywaniem plików cookies pochodzących od podmiotów trzecich. Wykorzystanie tego rodzaju plików cookies zostało opisane poniżej.</p>
+
+<div class="header"><h4 class="header__heading" id="analiza-i-statystyka">Analiza i statystyka</h4></div>
+<p>Wykorzystuję cookies do śledzenia statystyk strony, takich jak liczba osób odwiedzających, rodzaj systemu operacyjnego i przeglądarki internetowej wykorzystywanej do przeglądania strony, czas spędzony na stronie, odwiedzone podstrony etc. Korzystam w tym zakresie z Google Analytics, co wiąże się z wykorzystaniem plików cookies firmy Google LLC.</p>
+
+<div class="header"><h4 class="header__heading" id="narzedzia-spolecznosciowe">Narzędzia społecznościowe</h4></div>
+<p>Zapewniam możliwość korzystania z funkcji społecznościowych, takich jak udostępnianie treści w serwisach społecznościowych oraz subskrypcja profilu społecznościowego. Korzystanie z tych funkcji wiąże się z wykorzystywaniem plików cookies administratorów serwisów społecznościowych takich jak Facebook, Instagram, YouTube, Twitter, Google+, LinkedIN.</p>
+<p>Osadzam na stronie nagrania wideo z serwisu YouTube. Gdy odtwarzasz takie nagrania, wykorzystywane są pliki cookies firmy Google LLC dotyczące usługi YouTube.</p>
+<p>Umożliwiam komentowanie wpisów poprzez system komentarzy Disqus, co oznacza wykorzystanie plików cookies firmy Disqus, Inc.</p>
+
+						</article>
+					</main>
+				</div>
+			</div>
+
+			<footer class="site-footer">
+				<div class="container-fluid">
+					<p>Copyright © by <a href="https://www.comandeer.pl" rel="author">Comandeer</a>.</p>
+				</div>
+			</footer>
+
+			<script>
+			( function() {
+				try {
+					var codes = document.getElementsByClassName( 'code' );
+
+					[].forEach.call( codes, function( code ) {
+						var next = code.nextElementSibling;
+
+						if ( !next || next.tagName.toLowerCase() !== 'pre' || next.scrollHeight < 300 ) {
+							return false;
+						}
+
+						code.innerHTML = code.innerHTML.replace( ':', ' <span class="code-switch">[Rozwiń]</span>:' );
+						code.getElementsByTagName( 'span' )[ 0 ].toSwitch = next;
+					} );
+
+					document.addEventListener( 'click', function( evt ) {
+						if ( !evt.target || !evt.target.classList.contains( 'code-switch' ) ) {
+							return true;
+						}
+
+						evt.preventDefault();
+
+						var target = evt.target,
+							next = target.toSwitch,
+							html = target.innerHTML;
+
+						if ( !next || next.tagName.toLowerCase() !== 'pre' ) {
+							return false;
+						}
+
+						next.classList.toggle( 'expanded' );
+						target.innerHTML = ( html === '[Zwiń]' ? '[Rozwiń]' : '[Zwiń]' );
+					} );
+				} catch( err ) {}
+			} () );
+			</script>
+			<script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+			<script>
+			$( 'nav' ).on( 'affix.bs.affix', function() {
+				$( 'main' ).removeClass( 'col-md-offset-0' ).addClass( 'col-md-offset-4' );
+			} ).on( 'affix-top.bs.affix affix-bottom.bs.affix', function() {
+				$( 'main' ).removeClass( 'col-md-offset-4' );
+			} ).affix( {
+				offset: {
+					top: function() {
+						return ( this.top = $( '.navbar-fixed-top' ).outerHeight( true ) + 10 );
+					},
+					bottom: function () {
+						return ( this.bottom = $( '.site-footer' ).outerHeight( true ) + 10 );
+					}
+				}
+			} )
+			</script>
+			<script src="/js/prism.js"></script>
+			<script id="cookiebanner" src="/js/cookies.js" data-message="Używam cookies w celu polepszenia działania witryny." data-linkmsg="Dowiedz się więcej" data-moreinfo="/polityka-prywatnosci.html#pliki-cookies-i-inne-technologie-sledzace"></script>
+		</body>
+	</html>

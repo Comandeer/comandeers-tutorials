@@ -1,6 +1,6 @@
 const puppeteer = require( 'puppeteer' );
 const { readdirSync } = require( 'fs' );
-const tutorials = readdirSync( './tutorials' );
+const pages = readdirSync( './tutorials' ).concat( readdirSync( './pages' ) );
 
 async function generatePDF( browser, pages ) {
 	const promises = [];
@@ -34,7 +34,7 @@ async function generatePDF( browser, pages ) {
 	const browser = await puppeteer.launch();
 
 	try {
-		await generatePDF( browser, tutorials );
+		await generatePDF( browser, pages );
 	} catch ( e ) {
 		console.error( e );
 	}

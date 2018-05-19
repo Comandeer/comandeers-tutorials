@@ -6,6 +6,9 @@ body {
 	body {
 		padding-top: 0;
 	}
+	.cookiebanner {
+		display: none !important;
+	}
 }
 .navbar-brand {
 	margin: 0;

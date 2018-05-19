@@ -65,13 +65,23 @@
 			<link rel="stylesheet" href="/css/bs/custom.css">
 		</head>
 		<body>
-			<header class="navbar navbar-inverse navbar-fixed-top">
+			<nav class="navbar navbar-inverse navbar-fixed-top" aria-label="Nawigacja po witrynie">
 				<div class="container-fluid">
 					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#site-menu" aria-expanded="false">
+							<span class="sr-only">Włącz/wyłącz menu</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
 						<a href="/" class="navbar-brand" title="« Powrót do spisu tutorialów">Tutorials</a>
 					</div>
+
+					<div class="collapse navbar-collapse" id="site-menu">
+						<ul class="nav navbar-nav">{MENU}</ul>
+					</div>
 				</div>
-			</header>
+			</nav>
 
 			<div class="container-fluid">
 				<div class="row">
@@ -172,5 +182,6 @@
 			} )
 			</script>
 			<script src="/js/prism.js"></script>
+			<script id="cookiebanner" src="/js/cookies.js" data-message="Używam cookies w celu polepszenia działania witryny." data-linkmsg="Dowiedz się więcej" data-moreinfo="/polityka-prywatnosci.html#pliki-cookies-i-inne-technologie-sledzace"></script>
 		</body>
 	</html>

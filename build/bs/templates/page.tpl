@@ -43,14 +43,14 @@
 				} );
 			} );
 			</script>
-			<title>Data po polsku</title>
-			<meta name="description" content="Słów kilka o standardzie ECMA-402.">
-			<meta property="og:title" content="Data po polsku">
-			<meta property="og:description" content="Słów kilka o standardzie ECMA-402.">
+			<title>{TITLE}</title>
+			<meta name="description" content="{DESCRIPTION}">
+			<meta property="og:title" content="{TITLE}">
+			<meta property="og:description" content="{DESCRIPTION}">
 			<meta property="og:type" content="article">
 			<meta property="article:author" content="Comandeer">
 
-			<meta property="og:url" content="https://tutorials.comandeer.pl/js-intl.html">
+			<meta property="og:url" content="https://tutorials.comandeer.pl/{SLUG}.html">
 			<meta property="og:image" content="https://tutorials.comandeer.pl/images/comandeer.jpg">
 			<meta property="og:image:width" content="200">
 			<meta property="og:image:height" content="200">
@@ -78,68 +78,26 @@
 					</div>
 
 					<div class="collapse navbar-collapse" id="site-menu">
-						<ul class="nav navbar-nav"><li><a href="polityka-prywatnosci.html">Polityka prywatności</a></li></ul>
+						<ul class="nav navbar-nav">{MENU}</ul>
 					</div>
 				</div>
 			</nav>
 
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-md-8 col-md-offset-4 header header_main">
-						<h1 id="start" class="header__heading">Data po polsku</h1>
+					<div class="col-md-8 col-md-offset-{HEADING_OFFSET} header header_main">
+						<h1 id="start" class="header__heading">{TITLE}</h1>
 
-						<a class="header__link" href="js-intl.pdf" title="Wersja PDF"><span class="glyphicon glyphicon-book" aria-hidden="true"></span><span class="sr-only">Wersja <abbr title="Portable Document Format" lang="en">PDF</abbr></span></a>
+						<a class="header__link" href="{SLUG}.pdf" title="Wersja PDF"><span class="glyphicon glyphicon-book" aria-hidden="true"></span><span class="sr-only">Wersja <abbr title="Portable Document Format" lang="en">PDF</abbr></span></a>
 					</div>
 				</div>
 				<div class="row">
-					<nav class="sidebar col-md-4 well">
-			<h2 class="sidebar-header">Spis treści</h2>
-				<div class="sidebar-inner">
-					<ul class="unstyled">
-					<li><a href="#start">Data po polsku</a><ul><li><a href="#po-staremu">Po staremu</a></li><li><a href="#Intl"><code>Intl</code> na ratunek!</a></li><li><a href="#formatujemy">Formatujemy datę</a></li></ul></li>
-					</ul>
-				</div>
-			</nav>
+					{NAV}
 
-					<main class="col-md-8 col-md-offset-0">
+					<main class="col-md-8 col-md-offset-{OFFSET}">
 						<article>
-						
-
-<p>Dzisiaj będzie krótko, rzeczowo i na temat (co dość rzadko mi się zdarza). Otóż: jak <b>dobrze</b> zrobić datę po polsku w JS i się przy tym nie narobić.</p>
-
-<div class="header"><h2 class="header__heading" id="po-staremu">Po staremu</h2></div>
-<p>Dotąd jedynym właściwym sposobem były różne dziwne kombinacje typu "stwórzmy sobie tablicę z polskimi nazwami miesięcy i dni tygodnia, a następnie podstawiajmy pod dane, zwracane przez <code>new Date</code>". Mogą one wyglądać <a href="http://webmade.org/porady/data-po-polsku-js.php" rel="noopener noreferrer">rozwlekle i odpychająco</a> (a ich autorem nie jest Polak). Mogą być też <a href="http://phpjs.org/functions/strftime/" rel="noopener noreferrer">wzorowane na innych językach</a>, stając się jeszcze bardziej rozwlekłe i… nie JS-owe. Mogą w końcu zmienić się po prostu w wywołanie odpowiedniej, krótkiej funkcyjki w PHP, po stwierdzeniu, że JS się do tego nie nadaje.</p>
-
-<div class="header"><h2 class="header__heading" id="Intl"><code>Intl</code> na ratunek!</h2></div>
-<p>Na szczęście się to zmieniło. I to nie znowu tak niedawno (bo w 2012). Wtedy powstał standard <a href="http://www.ecma-international.org/ecma-402/1.0/" rel="noopener noreferrer">ECMA-402 (ECMAScript Internationalization API)</a>. Oczywiście na odzew ze strony producentów przeglądarek trzeba było ciut poczekać, niemniej – jeśli wierzyć <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Browser_Compatibility" rel="noopener noreferrer">MDN</a> – działa dziś wszędzie, oprócz Safari i – co prawdopodobnie może być o wiele ważniejsze – node.js (jednak od czego jest niezawodny GitHub i <a href="https://github.com/andyearnshaw/Intl.js" rel="noopener noreferrer">polyfille</a>; oczywiście w node.js/io.js <a href="https://github.com/nodejs/io.js#intl-ecma-402-support" rel="noopener noreferrer">obsługę można sobie wkompilować</a>).</p>
-<p>Cały standard składa się z 3 głównych "klas", zamkniętych w krótkiej i schludnej przestrzeni nazw – <code>Intl</code>. Są to:</p>
-<ul>
-	<li> <code>Intl.Collator</code> – służący do porównywania tekstu
-	</li><li> <code>Intl.NumberFormat</code> – służący do formatowania wszelkiej maści liczb (między innymi walut czy liczebników porządkowych)
-	</li><li> <code>Intl.DateTimeFormat</code> – tak, tego właśnie użyjemy
-</li></ul>
-
-<div class="header"><h2 class="header__heading" id="formatujemy">Formatujemy datę</h2></div>
-<p>Żeby wyświetlić ładną datę po polsku, musimy stworzyć nowy obiekt "klasy" <code>Intl.DateTimeFormat</code>. Jako pierwszy parametr konstruktor bierze nazwę języka (oczywiście zgodną ze standardem ISO, zatem dwuliterowy skrót):</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">var formatter = new Intl.DateTimeFormat( 'pl' );</code></pre>
-<p>Już! Pierwszy krok za nami. Mamy obiekt wyświetlający datę po polsku. Udostępnia on aż jedną metodę – <code>format</code> – która formatuje przekazaną jej datę (jeśli jej nie podamy, zastosuje aktualną – przynajmniej w Chrome; polecam jednak ją podawać dla zwiększenia czytelności kodu).</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">formatter.format( new Date() ); // 23.7.2016</code></pre>
-<p>Jak widać, mało imponujące. Równie dobrze można to uznać za datę po angielsku. Na pomoc przychodzi nam drugi parametr konstruktora <code>Intl.DateTimeFormat</code> – jest to obiekt opcji. Przyjrzyjmy się takiemu przykładowi:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">var formatter = new Intl.DateTimeFormat( 'pl', {
-	day: 'numeric',
-	month: 'long',
-	year: 'numeric'
-} );
-formatter.format( new Date() ); // 23 lipca 2016</code></pre>
-<p><i>Voila!</i> To jest dokładnie to, o co nam chodziło. Oczywiście opcji jest więcej, po dokładny ich spis <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat#Parameters" rel="noopener noreferrer">zapraszam na MDN</a>.</p>
-
+						{CONTENT}
 						</article>
-						<section id="komentarze">
-							<h2>Komentarze</h2>
-							<div id="disqus_thread"></div>
-							<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-							<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-						</section>
 					</main>
 				</div>
 			</div>
@@ -184,18 +142,6 @@ formatter.format( new Date() ); // 23 lipca 2016</code></pre>
 						next.classList.toggle( 'expanded' );
 						target.innerHTML = ( html === '[Zwiń]' ? '[Rozwiń]' : '[Zwiń]' );
 					} );
-
-					//defer loading of disqus
-
-					if ( location.host === 'tutorials.comandeer.pl' ) {
-						window.disqus_shortname = 'comandeerowa';
-
-						var dsq = document.createElement( 'script' );
-
-						dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-
-						( document.getElementsByTagName( 'head' )[ 0 ] || document.getElementsByTagName( 'body' )[ 0 ] ).appendChild( dsq );
-					}
 				} catch( err ) {}
 			} () );
 			</script>
