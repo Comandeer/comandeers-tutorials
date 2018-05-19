@@ -1,7 +1,7 @@
 [description]Polityka prywatności tutorialów Comandeera[/description]
 [h1="start"]Polityka prywatności[/h1]
 
-[p]Jeżeli tutaj trafiłeś, to niezawodny znak, że cenisz swoją prywatność. Doskonale to rozumiem, dlatego przygotowaliśmy dla Ciebie ten dokument, w którym znajdziesz zasady przetwarzania danych osobowych oraz wykorzystywania plików cookies w związku z korzystaniem ze strony internetowej [url="https://tutorials.comandeer.pl"]https://tutorials.Comandeer.pl[/url].[/p]
+[p]Jeżeli tutaj trafiłeś, to niezawodny znak, że cenisz swoją prywatność. Doskonale to rozumiem, dlatego przygotowałem dla Ciebie ten dokument, w którym znajdziesz zasady przetwarzania danych osobowych oraz wykorzystywania plików cookies w związku z korzystaniem ze strony internetowej [url="https://tutorials.comandeer.pl"]https://tutorials.Comandeer.pl[/url].[/p]
 [p] Informacja formalna na początek – administratorem strony jestem ja, Tomasz Jakut.[/p]
 [p]W razie jakichkolwiek wątpliwości związanych z polityką prywatności, w każdej chwili możesz się ze mną skontaktować, wysyłając wiadomość na adres comandeer@comandeer.pl.[/p]
 
