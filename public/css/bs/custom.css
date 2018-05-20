@@ -76,6 +76,7 @@ body {
 }
 .header__heading, .header__link {
 	display: inline-block;
+	margin-top: 0;
 }
 
 .header_main .header__link {

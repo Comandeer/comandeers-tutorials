@@ -83,7 +83,7 @@
 				</div>
 			</nav>
 
-			<div class="container-fluid">
+			<main class="container-fluid">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-4 header header_main">
 						<h1 id="start" class="header__heading">Polityka prywatności</h1>
@@ -92,17 +92,16 @@
 					</div>
 				</div>
 				<div class="row">
-					<nav class="sidebar col-md-4 well">
-			<h2 class="sidebar-header">Spis treści</h2>
+					<nav class="sidebar col-md-4 well" aria-labelledby="toc-heading">
+			<h2 class="sidebar-header" id="toc-heading">Spis treści</h2>
 				<div class="sidebar-inner">
-					<ul class="unstyled">
+					<ul>
 					<li><a href="#start">Polityka prywatności</a><ul><li><a href="#skrocona-wersja-najwazniejsze-informacje">Skrócona wersja – najważniejsze informacje</a></li><li><a href="#dane-osobowe">Dane osobowe</a><ul><li><a href="#uprawnienia">Uprawnienia</a></li><li><a href="#bezpieczenstwo">Bezpieczeństwo</a></li><li><a href="#wykaz-powierzen">Wykaz powierzeń</a></li></ul></li><li><a href="#cele-i-czynnosci-przetwarzania">Cele i czynności przetwarzania</a><ul><li><a href="#komentowanie-wpisow">Komentowanie wpisów</a></li><li><a href="#kontakt-e-mailowy">Kontakt e-mailowy</a></li></ul></li><li><a href="#pliki-cookies-i-inne-technologie-sledzace">Pliki cookies i inne technologie śledzące</a><ul><li><a href="#zgoda-na-cookies">Zgoda na cookies</a></li><li><a href="#cookies-wlasne">Cookies własne</a></li><li><a href="#cookies-podmiotow-trzecich">Cookies podmiotów trzecich</a><ul><li><a href="#analiza-i-statystyka">Analiza i statystyka</a></li><li><a href="#narzedzia-spolecznosciowe">Narzędzia społecznościowe</a></li></ul></li></ul></li></ul></li>
 					</ul>
 				</div>
 			</nav>
 
-					<main class="col-md-8 col-md-offset-0">
-						<article>
+					<div class="content col-md-8 col-md-offset-0">
 						
 
 
@@ -189,10 +188,9 @@
 <p>Osadzam na stronie nagrania wideo z serwisu YouTube. Gdy odtwarzasz takie nagrania, wykorzystywane są pliki cookies firmy Google LLC dotyczące usługi YouTube.</p>
 <p>Umożliwiam komentowanie wpisów poprzez system komentarzy Disqus, co oznacza wykorzystanie plików cookies firmy Disqus, Inc.</p>
 
-						</article>
-					</main>
+					</div>
 				</div>
-			</div>
+			</main>
 
 			<footer class="site-footer">
 				<div class="container-fluid">
@@ -241,9 +239,9 @@
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 			<script>
 			$( 'nav' ).on( 'affix.bs.affix', function() {
-				$( 'main' ).removeClass( 'col-md-offset-0' ).addClass( 'col-md-offset-4' );
+				$( '.content' ).removeClass( 'col-md-offset-0' ).addClass( 'col-md-offset-4' );
 			} ).on( 'affix-top.bs.affix affix-bottom.bs.affix', function() {
-				$( 'main' ).removeClass( 'col-md-offset-4' );
+				$( '.content' ).removeClass( 'col-md-offset-4' );
 			} ).affix( {
 				offset: {
 					top: function() {

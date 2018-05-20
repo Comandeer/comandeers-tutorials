@@ -83,7 +83,7 @@
 				</div>
 			</nav>
 
-			<div class="container-fluid">
+			<main class="container-fluid">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-4 header header_main">
 						<h1 id="start" class="header__heading">Data po polsku</h1>
@@ -92,17 +92,16 @@
 					</div>
 				</div>
 				<div class="row">
-					<nav class="sidebar col-md-4 well">
-			<h2 class="sidebar-header">Spis treści</h2>
+					<nav class="sidebar col-md-4 well" aria-labelledby="toc-heading">
+			<h2 class="sidebar-header" id="toc-heading">Spis treści</h2>
 				<div class="sidebar-inner">
-					<ul class="unstyled">
+					<ul>
 					<li><a href="#start">Data po polsku</a><ul><li><a href="#po-staremu">Po staremu</a></li><li><a href="#Intl"><code>Intl</code> na ratunek!</a></li><li><a href="#formatujemy">Formatujemy datę</a></li></ul></li>
 					</ul>
 				</div>
 			</nav>
 
-					<main class="col-md-8 col-md-offset-0">
-						<article>
+					<div class="content col-md-8 col-md-offset-0">
 						
 
 <p>Dzisiaj będzie krótko, rzeczowo i na temat (co dość rzadko mi się zdarza). Otóż: jak <b>dobrze</b> zrobić datę po polsku w JS i się przy tym nie narobić.</p>
@@ -133,16 +132,15 @@
 formatter.format( new Date() ); // 23 lipca 2016</code></pre>
 <p><i>Voila!</i> To jest dokładnie to, o co nam chodziło. Oczywiście opcji jest więcej, po dokładny ich spis <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat#Parameters" rel="noopener noreferrer">zapraszam na MDN</a>.</p>
 
-						</article>
 						<section id="komentarze">
 							<h2>Komentarze</h2>
 							<div id="disqus_thread"></div>
 							<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 							<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 						</section>
-					</main>
+					</div>
 				</div>
-			</div>
+			</main>
 
 			<footer class="site-footer">
 				<div class="container-fluid">
@@ -203,9 +201,9 @@ formatter.format( new Date() ); // 23 lipca 2016</code></pre>
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 			<script>
 			$( 'nav' ).on( 'affix.bs.affix', function() {
-				$( 'main' ).removeClass( 'col-md-offset-0' ).addClass( 'col-md-offset-4' );
+				$( '.content' ).removeClass( 'col-md-offset-0' ).addClass( 'col-md-offset-4' );
 			} ).on( 'affix-top.bs.affix affix-bottom.bs.affix', function() {
-				$( 'main' ).removeClass( 'col-md-offset-4' );
+				$( '.content' ).removeClass( 'col-md-offset-4' );
 			} ).affix( {
 				offset: {
 					top: function() {

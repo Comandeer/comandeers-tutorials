@@ -83,7 +83,7 @@
 				</div>
 			</nav>
 
-			<div class="container-fluid">
+			<main class="container-fluid">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-4 header header_main">
 						<h1 id="start" class="header__heading">Czemu nie potrzebujesz jQuery?</h1>
@@ -92,17 +92,16 @@
 					</div>
 				</div>
 				<div class="row">
-					<nav class="sidebar col-md-4 well">
-			<h2 class="sidebar-header">Spis treści</h2>
+					<nav class="sidebar col-md-4 well" aria-labelledby="toc-heading">
+			<h2 class="sidebar-header" id="toc-heading">Spis treści</h2>
 				<div class="sidebar-inner">
-					<ul class="unstyled">
+					<ul>
 					<li><a href="#start">Czemu nie potrzebujesz jQuery?</a><ul><li><a href="#mimo">Mimo że zdaje ci się inaczej</a></li><li><a href="#alternatywa">Alternatywa?</a></li><li><a href="#dom">Podstawowe operacje DOM-owe</a><ul><li><a href="#selektory">Wyszukiwanie po selektorach</a></li><li><a href="#chaining">Chainowanie metod</a></li><li><a href="#delegation">Event delegation</a></li><li><a href="#clone"><code>.clone</code></a></li><li><a href="#extend"><code>.extend</code></a></li></ul></li><li><a href="#animacje">Animacje</a></li><li><a href="#xhr">XHR</a></li><li><a href="#ui">jQUI</a></li><li><a href="#ale">Ale za to w jQ da się…</a></li><li><a href="#czy-porzucic">Czy porzucić?</a></li></ul></li>
 					</ul>
 				</div>
 			</nav>
 
-					<main class="col-md-8 col-md-offset-0">
-						<article>
+					<div class="content col-md-8 col-md-offset-0">
 						
 
 
@@ -225,16 +224,15 @@ s.opacity = +( s.opacity || window.getComputedStyle( el )[ 'opacity' ] );
 <p>Co więcej, jQuery niszczy świadomość programistów sieciowych. Coraz częściej można spotkać bowiem nie programistów JS, a programistów jQuery, którzy jedynie tą biblioteką są w stanie się posługiwać.</p>
 <p>Dlatego nie mówię, żeby przestać jQ używać. Jeśli natomiast do stronki, gdzie trza oskryptować jeden link, wsadzasz jQ, to znak, że coś jest nie tego. Jeśli natomiast umiesz zastąpić jQ <a href="http://www.forumweb.pl/javascript/cancelbubble-stoppropagation-problem/397808#397808" rel="noopener noreferrer">własnym rozwiązaniem</a> i robisz to, gdy potrzebujesz jedną, konkretną rzecz, to oznacza, że jesteś zupełnie normalnym użytkownikiem tej biblioteki i syndrom uzależnienia Ciebie nie dotyczy.</p>
 
-						</article>
 						<section id="komentarze">
 							<h2>Komentarze</h2>
 							<div id="disqus_thread"></div>
 							<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 							<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 						</section>
-					</main>
+					</div>
 				</div>
-			</div>
+			</main>
 
 			<footer class="site-footer">
 				<div class="container-fluid">
@@ -295,9 +293,9 @@ s.opacity = +( s.opacity || window.getComputedStyle( el )[ 'opacity' ] );
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 			<script>
 			$( 'nav' ).on( 'affix.bs.affix', function() {
-				$( 'main' ).removeClass( 'col-md-offset-0' ).addClass( 'col-md-offset-4' );
+				$( '.content' ).removeClass( 'col-md-offset-0' ).addClass( 'col-md-offset-4' );
 			} ).on( 'affix-top.bs.affix affix-bottom.bs.affix', function() {
-				$( 'main' ).removeClass( 'col-md-offset-4' );
+				$( '.content' ).removeClass( 'col-md-offset-4' );
 			} ).affix( {
 				offset: {
 					top: function() {

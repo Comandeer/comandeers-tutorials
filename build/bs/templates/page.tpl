@@ -83,7 +83,7 @@
 				</div>
 			</nav>
 
-			<div class="container-fluid">
+			<main class="container-fluid">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-{HEADING_OFFSET} header header_main">
 						<h1 id="start" class="header__heading">{TITLE}</h1>
@@ -94,13 +94,11 @@
 				<div class="row">
 					{NAV}
 
-					<main class="col-md-8 col-md-offset-{OFFSET}">
-						<article>
+					<div class="content col-md-8 col-md-offset-{OFFSET}">
 						{CONTENT}
-						</article>
-					</main>
+					</div>
 				</div>
-			</div>
+			</main>
 
 			<footer class="site-footer">
 				<div class="container-fluid">
@@ -149,9 +147,9 @@
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 			<script>
 			$( 'nav' ).on( 'affix.bs.affix', function() {
-				$( 'main' ).removeClass( 'col-md-offset-0' ).addClass( 'col-md-offset-4' );
+				$( '.content' ).removeClass( 'col-md-offset-0' ).addClass( 'col-md-offset-4' );
 			} ).on( 'affix-top.bs.affix affix-bottom.bs.affix', function() {
-				$( 'main' ).removeClass( 'col-md-offset-4' );
+				$( '.content' ).removeClass( 'col-md-offset-4' );
 			} ).affix( {
 				offset: {
 					top: function() {

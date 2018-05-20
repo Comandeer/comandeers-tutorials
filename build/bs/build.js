@@ -15,10 +15,10 @@ function getBuilder( type = 'tutorial' ) {
 		var dir = type === 'tutorial' ? tutDir : pagesDir,
 			content = fs.readFileSync( dir + page, 'utf8' ),
 			output = type === 'tutorial' ? tutTemplate : pageTemplate,
-			nav = `<nav class="sidebar col-md-4 well">
-			<h2 class="sidebar-header">Spis treści</h2>
+			nav = `<nav class="sidebar col-md-4 well" aria-labelledby="toc-heading">
+			<h2 class="sidebar-header" id="toc-heading">Spis treści</h2>
 				<div class="sidebar-inner">
-					<ul class="unstyled">
+					<ul>
 					{NAV}
 					</ul>
 				</div>
