@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "cheerio": "~0.12.4",
+    "markdown-it": "^8.4.2",
     "puppeteer": "^1.2.0"
   },
   "author": "Comandeer",
