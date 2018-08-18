@@ -50,7 +50,7 @@
 			<meta property="og:type" content="article">
 			<meta property="article:author" content="Comandeer">
 
-			<meta property="og:url" content="https://tutorials.comandeer.pl/js-hiding.html">
+			<meta property="og:url" content="https://tutorials.comandeer.pl/js-hiding.md.html">
 			<meta property="og:image" content="https://tutorials.comandeer.pl/images/comandeer.jpg">
 			<meta property="og:image:width" content="200">
 			<meta property="og:image:height" content="200">
@@ -88,7 +88,7 @@
 					<div class="col-md-8 col-md-offset-4 header header_main">
 						<h1 id="start" class="header__heading">[JavaScript] Ukrywanie ciała funkcji</h1>
 
-						<a class="header__link" href="js-hiding.pdf" title="Wersja PDF"><span class="glyphicon glyphicon-book" aria-hidden="true"></span><span class="sr-only">Wersja <abbr title="Portable Document Format" lang="en">PDF</abbr></span></a>
+						<a class="header__link" href="js-hiding.md.pdf" title="Wersja PDF"><span class="glyphicon glyphicon-book" aria-hidden="true"></span><span class="sr-only">Wersja <abbr title="Portable Document Format" lang="en">PDF</abbr></span></a>
 					</div>
 				</div>
 				<div class="row">
@@ -102,76 +102,91 @@
 			</nav>
 
 					<div class="content col-md-8 col-md-offset-0">
-						
+						<p></p>
 
-
-<p class="alert alert-danger">Niestety, w nowych wersjach Chrome ta metoda już nie działa i dostajemy pełen dostęp do ciała funkcji.</p>
-<p class="alert alert-info">Na wstępie uprzedzę, że technika ta nie powstała w mym płodnym umyśle. Została znaleziona przez <a href="http://web.archive.org/web/20130907212310/http://my.opera.com/hallvors/blog/2012/03/20/debugging-maps-google-maps" rel="noopener noreferrer" class="alert-link">developera Opery</a> w czasie debugowania pewnego upierdliwego błędu w działaniu Google Maps w tejże przeglądarce. Jak nietrudno zgadnąć, zostało to w bólach znalezione w źródle tego zaawansowanego webappa. Ja jedynie postanowiłem to wykorzystać na szerszą skalę. Trzeba też zaznaczyć, że technika ta jest średnio przydatna jeśli nie zaciemnimy równocześnie źródła skryptu (np. poprzez uglify.js czy też GCC).</p>
+<div class="alert alert-danger">
+<p>Niestety, w nowych wersjach Chrome ta metoda już nie działa i dostajemy pełen dostęp do ciała funkcji.</p>
+</div>
+<div class="alert alert-info">
+<p>Na wstępie uprzedzę, że technika ta nie powstała w mym płodnym umyśle. Została znaleziona przez <a href="http://web.archive.org/web/20130907212310/http://my.opera.com/hallvors/blog/2012/03/20/debugging-maps-google-maps" rel="noreferrer noopener" class="alert-link">developera Opery</a> w czasie debugowania pewnego upierdliwego błędu w działaniu Google Maps w tejże przeglądarce. Jak nietrudno zgadnąć, zostało to w bólach znalezione w źródle tego zaawansowanego webappa. Ja jedynie postanowiłem to wykorzystać na szerszą skalę. Trzeba też zaznaczyć, że technika ta jest średnio przydatna jeśli nie zaciemnimy równocześnie źródła skryptu (np. poprzez uglify.js czy też GCC).</p>
+</div>
 <p>O co wgl chodzi? A no chodzi o pewną magiczną właściwość poniższego fragmentu kodu:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">Function.prototype</code></pre>
+<pre><code class="language-javascript">Function.prototype
+</code></pre>
 <p>Niby co w tym takiego nadzwyczajnego? Już mówię!</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">console.log( Function.prototype.call.apply( Function.prototype.bind, &#91; function(){} &#93; ) );</code></pre>
+<pre><code class="language-javascript">console.log( Function.prototype.call.apply( Function.prototype.bind, [ function(){} ] ) );
+</code></pre>
 <p>Zapewne w większości powyższy kod wzbudza podświadomy lęk. Przyznać trzeba, że naprawdę wygląda dość dziwacznie. Ale postaram się troszkę przybliżyć jego sens.</p>
-<p>Zacznijmy od <code>Function.prototype</code>. Jak już kiedyś wspomniałem, JS jest takim mocno zboczonym językiem, gdzie wszystko jest obiektem. Nic zatem dziwnego, że funkcje są tak naprawdę… obiektami "klasy" <code>Function</code> ("klasy", bo jak wiadomo ECMAScript to jedyna grupa języków prototypowanych). Zatem każda zmiana w prototypie tego globalnego obiektu będzie dziedziczona przez wszystkie funkcje. Jednak tutaj skrypterzy Google poszli o krok dalej i wywołują poszczególne metody prosto z prototypu (czasami, ale to bardzo rzadko, okazuje się to przydatne)!</p>
+<p>Zacznijmy od <code>Function.prototype</code>. Jak już kiedyś wspomniałem, JS jest takim mocno zboczonym językiem, gdzie wszystko jest obiektem. Nic zatem dziwnego, że funkcje są tak naprawdę… obiektami &quot;klasy&quot; <code>Function</code> (&quot;klasy&quot;, bo jak wiadomo ECMAScript to jedyna grupa języków prototypowanych). Zatem każda zmiana w prototypie tego globalnego obiektu będzie dziedziczona przez wszystkie funkcje. Jednak tutaj skrypterzy Google poszli o krok dalej i wywołują poszczególne metody prosto z prototypu (czasami, ale to bardzo rzadko, okazuje się to przydatne)!</p>
 <p>Zatem jakie metody się tu wywołuje? <code>call</code>, <code>apply</code> i <code>bind</code>. Wszystkie działają dość podobnie i ich głównym zadaniem jest zmienienie kontekstu wywołania funkcji (<code>this</code>). Już wyjaśniam na przykładzie:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">var d = { n: 1 };
+<pre><code class="language-javascript">var d = { n: 1 };
 
 function g() {
 	console.log( this );
 }
 
-g.apply( d );</code></pre>
+g.apply( d );
+</code></pre>
 <p>To wywołanie funkcji wyrzuci do konsoli obiekt <code>d</code> zamiast standardowego <code>window</code>.Dość użyteczne, pod warunkiem, że pisze się obiektowy JS i trochę kojarzy pojęcie kontekstu wywołania. Dla nas jednak nie jest to aż tak ważne. Wystarczy wiedzieć, że <code>apply</code> przyjmuje jako pierwszy parametr obiekt, który ma zastąpić nam <code>this</code>, a drugim parametrem jest tablica parametrów wywoływanej funkcji. Przykład, bo brzmi to dziwnie:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">function g( r ) {
+<pre><code class="language-javascript">function g( r ) {
 	console.log( r );
 };
 
-g.apply( window, &#91; 'whatever' &#93; );</code></pre>
+g.apply( window, [ 'whatever' ] );
+</code></pre>
 <p>W konsoli ujrzymy wspaniały napis <code>whatever</code>. <code>call</code> w zasadzie działa tak samo, ale zamiast tablicy parametrów, przyjmuje ich listę:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">function g( r ) {
+<pre><code class="language-javascript">function g( r ) {
 	console.log( r );
 };
 
-g.call( window, 'whatever' );</code></pre>
-<p>Efekt identyczny jak w poprzednim przykładzie. Trochę inaczej działa <code>bind</code>, ponieważ nie wywołuje funkcji w podanym kontekście, a zwraca jej "klona", działającego w danym scope. Dla kompletności przykład, z wiadomym wynikiem:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">function g( r ) {
+g.call( window, 'whatever' );
+</code></pre>
+<p>Efekt identyczny jak w poprzednim przykładzie. Trochę inaczej działa <code>bind</code>, ponieważ nie wywołuje funkcji w podanym kontekście, a zwraca jej &quot;klona&quot;, działającego w danym scope. Dla kompletności przykład, z wiadomym wynikiem:</p>
+<pre><code class="language-javascript">function g( r ) {
 	console.log( r );
 };
-( g.bind( window, &#91; 'whatever' &#93; ) )();</code></pre>
+( g.bind( window, [ 'whatever' ] ) )();
+</code></pre>
 <p>Zatem gdy trochę się wysili szare komórki, można dojść do pewnego uogólnienia, że w bardzo zawoalowany sposób po prostu wywołujemy <code>Function.prototype.bind</code>.</p>
 <p>OK, a teraz gwóźdź programu: co nam daje połączenie tych trzech metod? A no, przy dobrze zaciemnionym kodzie bardzo utrudnia podejrzenie działania naszych funkcji i ukrywa to przed debuggerami. Kod</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">console.log( Function.prototype.call.apply( Function.prototype.bind, &#91; function() {} &#93; ) );</code></pre>
+<pre><code class="language-javascript">console.log( Function.prototype.call.apply( Function.prototype.bind, [ function() {} ] ) );
+</code></pre>
 <p>zwróci nam bowiem nic nie mówiące</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">function() { &#91;native code&#93; }</code></pre>
+<pre><code class="language-javascript">function() { [native code] }
+</code></pre>
 <p>Chyba nie muszę mówić jaką konsternację na twarzy młodocianego hakiera zrobi informacja, że nasza super-hiper-tajna funkcja, w której zaimplementowaliśmy czekający na opatentowanie algorytm, uparcie twierdzi, że jest funkcją wbudowaną i to na dodatek bez nazwy!</p>
 <p>I zanim polecisz opakowywać wszystkie swoje funkcje w ten sposób, wiadro zimnej wody dla ochłody: <b>KOMPATYBILNOŚĆ</b>. Tak, wiem, że wiesz, że ja wiem, że wiesz, że nie działa to w IE &lt; 9 – przecież to logiczne! Ale niestety rynek tych przeglądarek wciąż jest dośc spory. Toteż – dla własnej wygody i kompatybilności – napiszmy sobie prostą funkcję pomocniczą. Nazwijmy ją (a jakże!) <code>obfuscate</code>. Użyjemy tu dwóch bardziej zaawansowanych elementów JS: funkcji natychmiastowego wywołania oraz closures (i w tym miejscu większość mniej zdeterminowanych postanowiła zamknąć tą kartę przeglądarki). Niech Was nie zwiodą pozory – wcale to (aż tak) trudne nie będzie! Na początku zadeklarujmy sobie swoją funkcję:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">var obfuscate = ( function() {
-}() );</code></pre>
+<pre><code class="language-javascript">var obfuscate = ( function() {
+}() );
+</code></pre>
 <p>To jest właśnie tzw. funkcja natychmiastowego wywołania (IIFE – Immediately Invoked Function Expression). Jak nietrudno zgadnąć, nazywa się tak, bo od razu po zadeklarowaniu jest wywoływana (to tak naprawdę jest wywołanie funkcji anonimowej). Na razie nasz kod jest bezużyteczny, bo zmienna <code>obfuscate</code> będzie miała wartość <code>undefined</code>. Toteż trzeba dodać do naszej funkcji <code>return</code>:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">var obfuscate = ( function() {
+<pre><code class="language-javascript">var obfuscate = ( function() {
 	return function( func ) {
-		return Function.prototype.call.apply( Function.prototype.bind, &#91; func &#93; );
+		return Function.prototype.call.apply( Function.prototype.bind, [ func ] );
 	};
-}() )</code></pre>
+}() )
+</code></pre>
 <p>Tak, to jest właśnie closure – funkcja zwracana przez inną funkcję, zamknięta w jej obszarze (no ej, w końcu to technika od samego Google; nikt nie mówił, że łatwo będzie). Tak naprawdę, gdy JS się wczyta, przeglądarka otrzyma coś takiego:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">var obfuscate = function( func ) {
-	return Function.prototype.call.apply( Function.prototype.bind, &#91; func &#93; );
-}</code></pre>
+<pre><code class="language-javascript">var obfuscate = function( func ) {
+	return Function.prototype.call.apply( Function.prototype.bind, [ func ] );
+}
+</code></pre>
 <p>Czemu zatem nie zapisałem tego w taki sposób? Otóż przez IE 8 tak nie zapisałem! Trzeba przecież sprawdzić czy ta metoda ukrywania kodu jest wspierana i w zależności od tego funkcja <code>obfuscate</code> przyjąć może dwie postaci:</p>
 <ul>
-	<li> zaciemni nam kod,
-	</li><li> zwróci niezaciemniony kod.
-</li></ul>
+<li>zaciemni nam kod,</li>
+<li>zwróci niezaciemniony kod.</li>
+</ul>
 <p>A jak sprawdzić czy technika jest obsługiwana? Można sprawdzić czy przeglądarka wysypie się na wywołaniu zaciemnionej w taki sposób funkcji. Ok, ale to nam zatrzyma wykonywanie skryptu… chyba że wrzucimy do tego obsługę wyjątków!</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">try {
-	Function.prototype.call.apply( Function.prototype.bind, &#91; function() {} &#93; )();
-} catch ( err ) {}</code></pre>
+<pre><code class="language-javascript">try {
+	Function.prototype.call.apply( Function.prototype.bind, [ function() {} ] )();
+} catch ( err ) {}
+</code></pre>
 <p>Dobra, zwracanie niezaciemnionego kodu jest łatwe – wystarczy zwrócić parametr <code>func</code>. Tyle. Zatem po połączeniu wszystkiego razem, otrzymamy coś takiego:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">var obfuscate = ( function() {
+<pre><code class="language-javascript">var obfuscate = ( function() {
 	var a = Function.prototype;
 
 	try {
-		a.call.apply( a.bind, &#91; function() {} &#93; )();
+		a.call.apply( a.bind, [ function() {} ] )();
 	} catch ( err ) {
 		return function( func ) {
 			return func;
@@ -179,20 +194,22 @@ g.call( window, 'whatever' );</code></pre>
 	}
 
 	return function( func ) {
-		return a.call.apply( a.bind, &#91; func &#93; );
+		return a.call.apply( a.bind, [ func ] );
 	};
-}() );</code></pre>
+}() );
+</code></pre>
 <ul>
-	<li> Najpierw przypisujemy sobie <code>Function.prototype</code> do zmiennej <code>a</code> (żeby się później nie napisać i oszczędzić te parę bajtów).
-	</li><li> Sprawdzamy, czy obfuskacja w ogóle działa w bloku <code>try</code>/<code>catch</code>. Jeśli nie, jak gdyby nigdy nic zwracamy funkcję zwracającą parametr <code>func</code> (nieźle to brzmi).
-	</li><li> W innych przypadkach po prostu zwracamy funkcję zwracającą zaciemnioną funkcję
-</li></ul>
+<li>Najpierw przypisujemy sobie <code>Function.prototype</code> do zmiennej <code>a</code> (żeby się później nie napisać i oszczędzić te parę bajtów).</li>
+<li>Sprawdzamy, czy obfuskacja w ogóle działa w bloku <code>try</code>/<code>catch</code>. Jeśli nie, jak gdyby nigdy nic zwracamy funkcję zwracającą parametr <code>func</code> (nieźle to brzmi).</li>
+<li>W innych przypadkach po prostu zwracamy funkcję zwracającą zaciemnioną funkcję</li>
+</ul>
 <p>Przykład:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">var f = obfuscate( function( n, r ) {
+<pre><code class="language-javascript">var f = obfuscate( function( n, r ) {
 	return n + ':' + r;
 } );
-console.log( f( 'r', 't' ) ); // "r:t"
-console.log( f ); // function () { &#91;native code&#93; }</code></pre>
+console.log( f( 'r', 't' ) ); // &quot;r:t&quot;
+console.log( f ); // function () { [native code] }
+</code></pre>
 <p>Demo online nie wstawiam, bo raczej za dynamiczne by nie było.</p>
 <p>Aaaaa, i taka uwaga na koniec: moja funkcja <code>obfuscate</code> bardzo lubi strict mode!</p>
 

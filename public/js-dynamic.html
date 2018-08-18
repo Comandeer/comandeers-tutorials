@@ -50,7 +50,7 @@
 			<meta property="og:type" content="article">
 			<meta property="article:author" content="Comandeer">
 
-			<meta property="og:url" content="https://tutorials.comandeer.pl/js-dynamic.html">
+			<meta property="og:url" content="https://tutorials.comandeer.pl/js-dynamic.md.html">
 			<meta property="og:image" content="https://tutorials.comandeer.pl/images/comandeer.jpg">
 			<meta property="og:image:width" content="200">
 			<meta property="og:image:height" content="200">
@@ -88,7 +88,7 @@
 					<div class="col-md-8 col-md-offset-4 header header_main">
 						<h1 id="start" class="header__heading">Dynamiczne wczytywanie skryptów</h1>
 
-						<a class="header__link" href="js-dynamic.pdf" title="Wersja PDF"><span class="glyphicon glyphicon-book" aria-hidden="true"></span><span class="sr-only">Wersja <abbr title="Portable Document Format" lang="en">PDF</abbr></span></a>
+						<a class="header__link" href="js-dynamic.md.pdf" title="Wersja PDF"><span class="glyphicon glyphicon-book" aria-hidden="true"></span><span class="sr-only">Wersja <abbr title="Portable Document Format" lang="en">PDF</abbr></span></a>
 					</div>
 				</div>
 				<div class="row">
@@ -102,66 +102,76 @@
 			</nav>
 
 					<div class="content col-md-8 col-md-offset-0">
-						
+						<p></p>
 
-<p>Umieszczając JS na swojej stronie, zapewne nieraz słyszałeś, że masz je umieścić na końcu <code>body</code> i najlepiej je wsadzić w jeden, góra trzy pliki i <a href="https://github.com/mishoo/UglifyJS/" rel="noopener noreferrer">zminifikować</a>. Takie są standardowe zalecenia dotyczące JavaScript na stronie. Ale czy istnieje jakaś alternatywa? Przecież wiadomo, że nawet po wykonaniu tych wszystkich kroków, w tym niby mniejszym pliku JS znajduje się pełno kodu, który nie zostanie wykorzystany na danej podstronie (no przecież nie wszędzie wpychamy slider czy też okienka). Okazuje się, że istnieje! Zwie się "dynamiczne (leniwe) ładowanie skryptów".</p>
-
-<div class="header"><h2 class="header__heading" id="co-to">Co to?</h2></div>
+<p>Umieszczając JS na swojej stronie, zapewne nieraz słyszałeś, że masz je umieścić na końcu <code>body</code> i najlepiej je wsadzić w jeden, góra trzy pliki i <a href="https://github.com/mishoo/UglifyJS/" rel="noreferrer noopener">zminifikować</a>. Takie są standardowe zalecenia dotyczące JavaScript na stronie. Ale czy istnieje jakaś alternatywa? Przecież wiadomo, że nawet po wykonaniu tych wszystkich kroków, w tym niby mniejszym pliku JS znajduje się pełno kodu, który nie zostanie wykorzystany na danej podstronie (no przecież nie wszędzie wpychamy slider czy też okienka). Okazuje się, że istnieje! Zwie się &quot;dynamiczne (leniwe) ładowanie skryptów&quot;.</p>
+<h2 id="co-to">Co to?</h2>
 <p>Jeśli znasz PHP, na pewno słyszałeś o autoładowaniu klas. Jak to działa?</p>
-<p class="code">Kod:</p><pre><code class="language-php">function __autoload(string $name) {
+<pre><code class="language-php">function __autoload(string $name) {
 	require_once('/tajny/folder/z_klasami/' . $name . '.php');
 }
-$p = new Klasaktorejwczesniejniktniezaladowalaitaknierzucibledu();</code></pre>
+$p = new Klasaktorejwczesniejniktniezaladowalaitaknierzucibledu();
+</code></pre>
 <p>Czemu nasza klasa o zbyt długiej nazwie błędu nie rzuci? Bo PHP – dzięki magii <code>__autoload</code> – przy próbie utworzenia jej instancji, załączy plik z nią! Na podobnej zasadzie działa to w JS.</p>
-
-<div class="header"><h2 class="header__heading" id="ninja">Sposób na ninja</h2></div>
-<p>Ten sposób stosują "dostawcy usług zewnętrznych", czyli np. widgety Google+, Twittera, Facebooka, a także Google Analytics. Przykładowy kod (z Google+):</p>
-<p class="code">Kod:</p><pre><code class="language-markup">&lt;script type="text/javascript"&gt;
+<h2 id="ninja">Sposób na ninja</h2>
+<p>Ten sposób stosują &quot;dostawcy usług zewnętrznych&quot;, czyli np. widgety Google+, Twittera, Facebooka, a także Google Analytics. Przykładowy kod (z Google+):</p>
+<pre><code class="language-markup">&lt;script type=&quot;text/javascript&quot;&gt;
 	window.___gcfg = {lang: 'pl'};
 	(function() {
 		var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
 		po.src = 'https://apis.google.com/js/plusone.js';
 		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 	})();
-&lt;/script&gt;</code></pre>
-<p>Jak to działa? <code>window.___gcfg</code> robi tutaj za ekwiwalent przestrzeni nazw (które to pojęcie wytłumaczyłem w <a href="http://comandeer.pl/tutorials/js-beauty.html#namespaces" rel="noopener noreferrer">innym tutorialu</a>), w której Google przechowuje sobie ustawienia dla swojego widgetu (jak na razie głównie język). Później pojawia się interesująca nas część. Otóż zostaje utworzony dynamicznie znacznik <code>script</code> (żeby nie brudzić globalnego scope, zrobiono to w funkcji natychmiastowego wywołania; też wytłumaczone w tamtym tutku) i wstawiony do dokumentu. Przenalizujmy to sobie</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">var po = document.createElement('script');</code></pre>
-<p>Ta linijka tworzy właśnie znacznik <code>script</code>. w ten sposób można tworzyć dowolne znaczniki (nawet te nieistniejące). Zapisujemy sobie go do zmiennej <code>po</code>, żeby móc go później wygodnie używać. Następnie nadajemy mu potrzebne atrybuty: <code>&#91;type&#93;</code>, <code>&#91;async&#93;</code> i <code>&#91;src&#93;</code>. Tak naprawdę jeśli nadalibyśmy sam <code>&#91;src&#93;</code>, powyższy kod działałby równie dobrze. Atrybut <code>&#91;type&#93;</code> i tak jest zbędny w HTML5. Natomiast dziwić może fakt, że można usunąć <code>&#91;async&#93;</code> (jak sama nazwa wskazuje, wymusza asynchroniczne wczytywanie skryptu). Mathias Bynens wyjaśnia:</p>
-<blockquote><p>Kyle Simpson points out that all dynamically inserted scripts default to .async=true as per the spec. Most browsers have always implemented it this way. The only exceptions are Firefox 3.6 and Opera 10+, who execute scripts in insertion order by default, which may cause an unnecessary delay. By setting .async=true explicitly we make sure ga.js doesn’t wait for other previously loaded scripts and doesn’t block any subsequently loaded scripts. This line of code only affects Firefox 3.6. (Sadly, it doesn’t seem to make a difference in Opera). If you’re not using any other scripts, or Firefox 3.6 support is not an issue, you can safely remove it to save even more bytes</p><footer><cite>"http://mathiasbynens.be/notes/async-analytics-snippet"</cite></footer></blockquote>
-<p>Zatem powyższy kod można spokojnie skrócić, wywalając ustawianie <code>&#91;type&#93;</code> i <code>&#91;async&#93;</code> – ważne jest jedynie <code>&#91;src&#93;</code> (w końcu jakiś skrypt musimy wczytać).</p>
+&lt;/script&gt;
+</code></pre>
+<p>Jak to działa? <code>window.___gcfg</code> robi tutaj za ekwiwalent przestrzeni nazw (które to pojęcie wytłumaczyłem w <a href="http://comandeer.pl/tutorials/js-beauty.html#namespaces" rel="noreferrer noopener">innym tutorialu</a>), w której Google przechowuje sobie ustawienia dla swojego widgetu (jak na razie głównie język). Później pojawia się interesująca nas część. Otóż zostaje utworzony dynamicznie znacznik <code>script</code> (żeby nie brudzić globalnego scope, zrobiono to w funkcji natychmiastowego wywołania; też wytłumaczone w tamtym tutku) i wstawiony do dokumentu. Przenalizujmy to sobie</p>
+<pre><code class="language-javascript">var po = document.createElement('script');
+</code></pre>
+<p>Ta linijka tworzy właśnie znacznik <code>script</code>. w ten sposób można tworzyć dowolne znaczniki (nawet te nieistniejące). Zapisujemy sobie go do zmiennej <code>po</code>, żeby móc go później wygodnie używać. Następnie nadajemy mu potrzebne atrybuty: <code>[type]</code>, <code>[async]</code> i <code>[src]</code>. Tak naprawdę jeśli nadalibyśmy sam <code>[src]</code>, powyższy kod działałby równie dobrze. Atrybut <code>[type]</code> i tak jest zbędny w HTML5. Natomiast dziwić może fakt, że można usunąć <code>[async]</code> (jak sama nazwa wskazuje, wymusza asynchroniczne wczytywanie skryptu). Mathias Bynens wyjaśnia:</p>
+<blockquote>
+Kyle Simpson points out that all dynamically inserted scripts default to .async=true as per the spec. Most browsers have always implemented it this way. The only exceptions are Firefox 3.6 and Opera 10+, who execute scripts in insertion order by default, which may cause an unnecessary delay. By setting .async=true explicitly we make sure ga.js doesn’t wait for other previously loaded scripts and doesn’t block any subsequently loaded scripts. This line of code only affects Firefox 3.6. (Sadly, it doesn’t seem to make a difference in Opera). If you’re not using any other scripts, or Firefox 3.6 support is not an issue, you can safely remove it to save even more bytes
+<footer><cite>http://mathiasbynens.be/notes/async-analytics-snippet</cite></footer></blockquote>
+<p>Zatem powyższy kod można spokojnie skrócić, wywalając ustawianie <code>[type]</code> i <code>[async]</code> – ważne jest jedynie <code>[src]</code> (w końcu jakiś skrypt musimy wczytać).</p>
 <p>Kolejna linijka to wstawianie skryptu na stronę. Wstawiamy go w rodzicu pierwszego elementu <code>script</code> na stronie… Zaraz? Że co? A czemu tak? Otóż skrypt Google+ (czy też Google Analytics) jest skryptem zewnętrznym i nie ma jakiejkolwiek kontroli nad kodem strony, na której jest umieszczany. Równie dobrze taka strona może wyglądać tak:</p>
-<p class="code">Kod:</p><pre><code class="language-markup">&lt;!DOCTYPE html&gt;
-	&lt;meta charset="UTF-8"&gt;
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+	&lt;meta charset=&quot;UTF-8&quot;&gt;
 	&lt;title&gt;Tytuł&lt;/title&gt;
-	&lt;p&gt;reszta&lt;/p&gt;</code></pre>
-<p>Taki kod jest w pełni poprawnym HTML5 (a ile można znaleźć niepoprawnych, to też wiadomo) – nie ma tu ani <code>head</code>, ani <code>body</code>, do których tradycyjnie wstawia się skrypty. Dlatego też nie można sobie pozwolić na założenie, że na stronie, nad którą nie mamy kontroli, te elementy istnieją. Natomiast rodzic pierwszego elementu <code>script</code> istnieć musi. Czemu? Na początek znajdźmy ten "pierwszy element <code>script</code>". Wiesz co to? Tak, to nasz skrypt wstawiający znacznik <code>script</code> (czyli ten, co właśnie go omówiłem, jeśli wciąż masz wątpliwości)! A co jest jego rodzicem? Coś musi być – na pewno znajduje się w <code>document</code> (to de facto główny węzeł <a href="https://developer.mozilla.org/en-US/docs/DOM" rel="noopener noreferrer">DOM</a>, który istnieje zawsze). Zatem jeśli nie znasz strony, na której pracujesz, a masz tam coś wstawić, wstaw to w rodzica elementu, który na pewno istnieje.</p>
+	&lt;p&gt;reszta&lt;/p&gt;
+</code></pre>
+<p>Taki kod jest w pełni poprawnym HTML5 (a ile można znaleźć niepoprawnych, to też wiadomo) – nie ma tu ani <code>head</code>, ani <code>body</code>, do których tradycyjnie wstawia się skrypty. Dlatego też nie można sobie pozwolić na założenie, że na stronie, nad którą nie mamy kontroli, te elementy istnieją. Natomiast rodzic pierwszego elementu <code>script</code> istnieć musi. Czemu? Na początek znajdźmy ten &quot;pierwszy element <code>script</code>&quot;. Wiesz co to? Tak, to nasz skrypt wstawiający znacznik <code>script</code> (czyli ten, co właśnie go omówiłem, jeśli wciąż masz wątpliwości)! A co jest jego rodzicem? Coś musi być – na pewno znajduje się w <code>document</code> (to de facto główny węzeł <a href="https://developer.mozilla.org/en-US/docs/DOM" rel="noreferrer noopener">DOM</a>, który istnieje zawsze). Zatem jeśli nie znasz strony, na której pracujesz, a masz tam coś wstawić, wstaw to w rodzica elementu, który na pewno istnieje.</p>
 <p>Ten sposób wstawiania skryptów jednak nie daje dużej kontroli nad procesem jego wczytywania – po prostu go wstawia… i tyle. Jednak jest doskonałym punktem wyjścia do własnych rozwiązań.</p>
-
-<div class="header"><h2 class="header__heading" id="prymitywny">Sposób prymitywny</h2></div>
+<h2 id="prymitywny">Sposób prymitywny</h2>
 <p>Zatem chcesz wczytywać swój skrypcik i dopiero po jego wczytaniu odpalić zadania, za które jest odpowiedzialny? OK, to musisz odkryć kiedy nasz dynamicznie wstawiony skrypt zostanie wczytany! Na szczęście nie jest to zadanie trudne, bo odpowiada za to zdarzenie <code>load</code> – to dla niego należy dodać nasze zadania. A jak to zrobić najwygodniej? Za pomocą funkcji!</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">function addScript( uri, callback ) {
+<pre><code class="language-javascript">function addScript( uri, callback ) {
 
-}</code></pre>
-<p>Jak na razie jest pusta, ale to za chwilę się zmieni. Na sam początek warto sprawdzić czy <code>uri</code> jest prawdziwym URI (albo przynajmniej czy jest tekstem – w tym przypadku właśnie to sprawdzę, dla uproszczenia sprawy, ale w rzeczywistym projekcie lepiej jednak użyć <a href="http://mathiasbynens.be/demo/url-regex" rel="noopener noreferrer">odpowiedniego wyrażenia regularnego</a>). Jeśli nie, przerywamy funkcję.</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">if ( typeof uri !== 'string' ) {
+}
+</code></pre>
+<p>Jak na razie jest pusta, ale to za chwilę się zmieni. Na sam początek warto sprawdzić czy <code>uri</code> jest prawdziwym URI (albo przynajmniej czy jest tekstem – w tym przypadku właśnie to sprawdzę, dla uproszczenia sprawy, ale w rzeczywistym projekcie lepiej jednak użyć <a href="http://mathiasbynens.be/demo/url-regex" rel="noreferrer noopener">odpowiedniego wyrażenia regularnego</a>). Jeśli nie, przerywamy funkcję.</p>
+<pre><code class="language-javascript">if ( typeof uri !== 'string' ) {
 	return false;
-}</code></pre>
-<p class="alert alert-info">Zamiast zwrócić fałsz, można walnąć wyjątkiem.</p>
+}
+</code></pre>
+<div class="alert alert-info">
+<p>Zamiast zwrócić fałsz, można walnąć wyjątkiem.</p>
+</div>
 <p>Kolejny krok to stworzenie naszego znacznika <code>script</code>:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">var s = document.createElement( 'script' );
-s.src = uri;</code></pre>
-<p>Pomijam tutaj zarówno atrybut <code>&#91;async&#93;</code>, jak i <code>&#91;type&#93;</code>, ale możesz je dodać (<a href="http://mathiasbynens.be/notes/async-analytics-snippet" rel="noopener noreferrer">spowalniając nieco skrypt</a>).</p>
+<pre><code class="language-javascript">var s = document.createElement( 'script' );
+s.src = uri;
+</code></pre>
+<p>Pomijam tutaj zarówno atrybut <code>[async]</code>, jak i <code>[type]</code>, ale możesz je dodać (<a href="http://mathiasbynens.be/notes/async-analytics-snippet" rel="noreferrer noopener">spowalniając nieco skrypt</a>).</p>
 <p>Następnie wstawiamy skrypt na stronę:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">document.body.appendChild( s );</code></pre>
+<pre><code class="language-javascript">document.body.appendChild( s );
+</code></pre>
 <p>Wstawiam do <code>body</code>, bo to moja strona i na mojej stronie <code>body</code> jest zawsze. Jeśli nie chcesz stosować <code>body</code>, wstawiaj skrypt w podobny sposób, jak robi to Google.</p>
-<p>Teraz część z odpalaniem zadań po załadowaniu skryptu. Skorzystamy z częstej taktyki programistów JS – callbacków. Jak widzisz, drugi parametr funkcji <code>addScript</code> właśnie tak się nazywa. Cóż to ten callback? To taka "funkcja zwrotna". Przydaje się najczęściej przy skryptach asynchronicznych (czyt. Ajax). Z racji tego, że są wykonywane asynchronicznie, reszta kodu nie musi czekać aż skończą swe działanie. Z tego też względu nie można z działań asynchronicznych zwrócić wartości… I ten problem rozwiązuje callback. Funkcja ta jest wywoływana przez funkcję asynchroniczną w chwili, gdy ta kończy swe działanie. Najczęściej callback otrzymuje jako parametr to, co wygeneruje funkcja asynchroniczna (np. treść strony, którą pobraliśmy Ajaksem). Jeśli kiedyś korzystałeś z Ajaksu w jQuery, callbacki nie są dla Ciebie obce (<code>success</code>, <code>error</code>…) i wiesz na jakiej zasadzie działają. Jeśli nie wiesz, to za chwilę zobaczysz jeden w akcji.</p>
+<p>Teraz część z odpalaniem zadań po załadowaniu skryptu. Skorzystamy z częstej taktyki programistów JS – callbacków. Jak widzisz, drugi parametr funkcji <code>addScript</code> właśnie tak się nazywa. Cóż to ten callback? To taka &quot;funkcja zwrotna&quot;. Przydaje się najczęściej przy skryptach asynchronicznych (czyt. Ajax). Z racji tego, że są wykonywane asynchronicznie, reszta kodu nie musi czekać aż skończą swe działanie. Z tego też względu nie można z działań asynchronicznych zwrócić wartości… I ten problem rozwiązuje callback. Funkcja ta jest wywoływana przez funkcję asynchroniczną w chwili, gdy ta kończy swe działanie. Najczęściej callback otrzymuje jako parametr to, co wygeneruje funkcja asynchroniczna (np. treść strony, którą pobraliśmy Ajaksem). Jeśli kiedyś korzystałeś z Ajaksu w jQuery, callbacki nie są dla Ciebie obce (<code>success</code>, <code>error</code>…) i wiesz na jakiej zasadzie działają. Jeśli nie wiesz, to za chwilę zobaczysz jeden w akcji.</p>
 <p>Oczywiście musimy mieć pewność, że nasz <code>callback</code> jest funkcją. Sprawdzimy to przy pomocy operatora <code>typeof</code>. Jeśli jest funkcją, należy przypisać go do zdarzenia <code>load</code> naszego skryptu:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">if (typeof callback === 'function' ) {
+<pre><code class="language-javascript">if (typeof callback === 'function' ) {
 	s.onload = callback;
-}</code></pre>
+}
+</code></pre>
 <p>Voila! Czemu nie zastosowałem tutaj <code>addEventListener</code>? Ze względu na IE 8. Zresztą – tak jest ciut szybciej.</p>
 <p>Całość naszej funkcji wygląda następująco:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">function addScript( uri, callback ) {
+<pre><code class="language-javascript">function addScript( uri, callback ) {
 	if ( typeof uri !== 'string' ) {
 		return false;
 	}
@@ -174,12 +184,13 @@ s.src = uri;</code></pre>
 	if ( typeof callback === 'function' ) {
 		s.onload = callback;
 	}
-}</code></pre>
+}
+</code></pre>
 <p>Przykład zastosowania:</p>
-<p class="code">Kod:</p><pre><code class="language-markup">&lt;!DOCTYPE html&gt;
-	&lt;html lang="pl" dir="ltr"&gt;
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+	&lt;html lang=&quot;pl&quot; dir=&quot;ltr&quot;&gt;
 		&lt;head&gt;
-			&lt;meta charset="UTF-8"&gt;
+			&lt;meta charset=&quot;UTF-8&quot;&gt;
 			&lt;title&gt;Ehhhh&lt;/title&gt;
 		&lt;/head&gt;
 		&lt;body&gt;
@@ -204,25 +215,25 @@ s.src = uri;</code></pre>
 			} );
 			&lt;/script&gt;
 		&lt;/body&gt;
-	&lt;/html&gt;</code></pre>
-<p>Gdy skrypt się wczyta, do konsoli zostanie dodany wpis "Wczytano skrypt".</p>
-
-<div class="header"><h2 class="header__heading" id="rozbudowanszy">Sposób rozbudowańszy</h2></div>
-<p>"Czemu to rozbudowywać?" – zapytasz. A ja odpowiem: spróbuj załadować jQuery i jakiś skrypt od niego zależny. Na bank okaże się, że często to ten drugi skrypt wczyta się pierwszy. Musimy jakoś upewnić się, że zostanie zachowana narzucona kolejność wczytywania. Na szczęście jest i na to sposób! Wystarczy wrzucić wymagane skrypty do tablicy, a następnie zagnieżdżać obsługę zdarzenia <code>load</code>. Szybki szkic rozwiązania:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">function addScripts( uris, callback ) {
+	&lt;/html&gt;
+</code></pre>
+<p>Gdy skrypt się wczyta, do konsoli zostanie dodany wpis &quot;Wczytano skrypt&quot;.</p>
+<h2 id="rozbudowanszy">Sposób rozbudowańszy</h2>
+<p>&quot;Czemu to rozbudowywać?&quot; – zapytasz. A ja odpowiem: spróbuj załadować jQuery i jakiś skrypt od niego zależny. Na bank okaże się, że często to ten drugi skrypt wczyta się pierwszy. Musimy jakoś upewnić się, że zostanie zachowana narzucona kolejność wczytywania. Na szczęście jest i na to sposób! Wystarczy wrzucić wymagane skrypty do tablicy, a następnie zagnieżdżać obsługę zdarzenia <code>load</code>. Szybki szkic rozwiązania:</p>
+<pre><code class="language-javascript">function addScripts( uris, callback ) {
 	if ( !uris instanceof Array || uris.length &lt; 1 ) {
 		return false;
 	}
 
 	function add( i ) {
-		var uri = uris&#91; i &#93;,
+		var uri = uris[ i ],
 			s = document.createElement( 'script' );
 
 		s.src = uri;
 
 		document.body.appendChild( s );
 
-		if ( uris&#91; ++i &#93; ) {
+		if ( uris[ ++i ] ) {
 			s.onload = function() {
 				add( i );
 			};
@@ -232,16 +243,20 @@ s.src = uri;</code></pre>
 	};
 
 	add( 0 );
-}</code></pre>
+}
+</code></pre>
 <p>Co robi ten kod? Otóż zamiast przyjmować adres skryptu, przyjmuje tablicę adresów. Oczywiście sprawdzamy, czy na pewno mamy tablicę i czy zawiera przynajmniej jeden element:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">if ( !uris instanceof Array || uris.length &lt; 1 )</code></pre>
-<p class="alert alert-info">Istnieje jeszcze kilka innych sposobów na sprawdzenie, czy zmienna jest tablicą (np. <code>Array.isArray( uris )</code>), ale należy pamiętać, żeby nie robić <code>typeof uris === 'array'</code>, bo typ dla tablicy to <code>object</code>, nie <code>array</code>!</p>
+<pre><code class="language-javascript">if ( !uris instanceof Array || uris.length &lt; 1 )
+</code></pre>
+<div class="alert alert-info">
+<p>Istnieje jeszcze kilka innych sposobów na sprawdzenie, czy zmienna jest tablicą (np. <code>Array.isArray( uris )</code>), ale należy pamiętać, żeby nie robić <code>typeof uris === 'array'</code>, bo typ dla tablicy to <code>object</code>, nie <code>array</code>!</p>
+</div>
 <p>Pojawia się także wewnętrzna funkcja <code>add</code>, która to właśnie wykonuje brudną robotę i dodaje skrypty. Jako parametr bierze indeks elementu, który ma wstawić, a następnie inicjuje wstawianie kolejnego elementu (funkcja rekurencyjna). Jeśli kolejnego elementu nie ma, do zdarzenia <code>load</code> ostatniego skryptu jest dawany nasz callback. Prosty i skuteczny sposób na zapewnienie wczytywania skryptów zgodnie z podaną kolejnością.</p>
 <p>Przykład:</p>
-<p class="code">Kod:</p><pre><code class="language-markup">&lt;!DOCTYPE html&gt;
-	&lt;html lang="pl" dir="ltr"&gt;
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+	&lt;html lang=&quot;pl&quot; dir=&quot;ltr&quot;&gt;
 		&lt;head&gt;
-			&lt;meta charset="UTF-8"&gt;
+			&lt;meta charset=&quot;UTF-8&quot;&gt;
 			&lt;title&gt;Ehhhh&lt;/title&gt;
 		&lt;/head&gt;
 		&lt;body&gt;
@@ -252,14 +267,14 @@ s.src = uri;</code></pre>
 				}
 
 				function add( i ) {
-					var uri = uris&#91; i &#93;,
+					var uri = uris[ i ],
 						s = document.createElement( 'script' );
 
 					s.src = uri;
 
 					document.body.appendChild( s );
 
-					if ( uris&#91; ++i &#93; ) {
+					if ( uris[ ++i ] ) {
 						s.onload = function() {
 							add( i );
 						};
@@ -271,47 +286,48 @@ s.src = uri;</code></pre>
 				add( 0 );
 			}
 
-			addScripts( &#91;
+			addScripts( [
 				'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'
 				,'http://comandeer.pl/js/zoom.js'
-			&#93;, function() {
+			], function() {
 				console.log( 'Wczytano skrypt' );
 			} );
 			&lt;/script&gt;
 		&lt;/body&gt;
-	&lt;/html&gt;</code></pre>
-
-<div class="header"><h2 class="header__heading" id="amd">Sposób pro dla browserów</h2></div>
-<p>Ten problem postanowiono rozwiązać w sposób kulturalny i jakoś go ustandaryzować. Tak powstało <a href="https://github.com/amdjs/amdjs-api/wiki/AMD" rel="noopener noreferrer">Asynchrounous Module Definition</a>, na które składają się <i>de facto</i> dwie funkcje – <code>define</code> i <code>require</code>.</p>
+	&lt;/html&gt;
+</code></pre>
+<h2 id="amd">Sposób pro dla browserów</h2>
+<p>Ten problem postanowiono rozwiązać w sposób kulturalny i jakoś go ustandaryzować. Tak powstało <a href="https://github.com/amdjs/amdjs-api/wiki/AMD" rel="noreferrer noopener">Asynchrounous Module Definition</a>, na które składają się <i>de facto</i> dwie funkcje – <code>define</code> i <code>require</code>.</p>
 <p><code>define</code> służy do deklarowania modułów:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">define( 'opcjonalnanazwamodulu', &#91; 'tablica/modulow', 'lubinnychplikowjs', 'potrzebnychtemumodulowido', 'uruchomienia' &#93;, function( $1, $2, $3, $4 ) { //poszczególne parametry to wczytane moduły z tablicy
+<pre><code class="language-javascript">define( 'opcjonalnanazwamodulu', [ 'tablica/modulow', 'lubinnychplikowjs', 'potrzebnychtemumodulowido', 'uruchomienia' ], function( $1, $2, $3, $4 ) { //poszczególne parametry to wczytane moduły z tablicy
 	//tutaj kod modułu
-	return obiektModulu; //każdy moduł powinien się "zwracać"
-} );</code></pre>
+	return obiektModulu; //każdy moduł powinien się &quot;zwracać&quot;
+} );
+</code></pre>
 <p><code>require</code> natomiast wykonuje daną funkcję po wczytaniu koniecznych do tego modułów</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">require( &#91; 'tablica/modulow', 'lubinnychplikowjs', 'potrzebnychdo', 'uruchomienia' &#93;, function( $1, $2, $3, $4 ) {
+<pre><code class="language-javascript">require( [ 'tablica/modulow', 'lubinnychplikowjs', 'potrzebnychdo', 'uruchomienia' ], function( $1, $2, $3, $4 ) {
 	//tutaj operacje
-} );</code></pre>
-<p>Zwróć uwagę na parametry w obydwóch funkcjach. Znajdują się tam wczytane moduły, na których można operować. Dzięki temu kod staje się hermetyczny i nic nie wypływa do globalnego scope (zostaje w <code>require</code>/<code>define</code>). Dlatego ważne jest, żeby każdy moduł "zwracał się" przez <code>return</code>.</p>
+} );
+</code></pre>
+<p>Zwróć uwagę na parametry w obydwóch funkcjach. Znajdują się tam wczytane moduły, na których można operować. Dzięki temu kod staje się hermetyczny i nic nie wypływa do globalnego scope (zostaje w <code>require</code>/<code>define</code>). Dlatego ważne jest, żeby każdy moduł &quot;zwracał się&quot; przez <code>return</code>.</p>
 <p>Oczywiście nie wszystkie skrypty są zgodne z AMD (nie stosują <code>define</code>), co nie przeszkadza w ich wczytywaniu przy wykorzystaniu tej techniki. jQuery jest ciekawym przykładem, który stoi pośrodku: dodaje się do globalnego scope, ale równocześnie zachowuje jako moduł AMD.</p>
-<p>Najpopularniejsza implementacja AMD to <a href="http://requirejs.org" rel="noopener noreferrer">Require.js</a>, z którego osobiście korzystam.</p>
-
-<div class="header"><h2 class="header__heading" id="serwery">Jedyny pro sposób dla serwerów</h2></div>
+<p>Najpopularniejsza implementacja AMD to <a href="http://requirejs.org" rel="noreferrer noopener">Require.js</a>, z którego osobiście korzystam.</p>
+<h2 id="serwery">Jedyny pro sposób dla serwerów</h2>
 <p>Czyli jak to zrobić w node.js przy pomocy składni CommonJS (CJS):</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">var modul = require( 'nazwamodulu' ),
-	inny = require( 'lub/sciezka/do/pliku.js' );</code></pre>
+<pre><code class="language-javascript">var modul = require( 'nazwamodulu' ),
+	inny = require( 'lub/sciezka/do/pliku.js' );
+</code></pre>
 <p>Tyle. Teoretycznie można zastosować pokazane powyżej AMD, ale to nie ma sensu.</p>
-
-<div class="header"><h2 class="header__heading" id="umd">Pro sposób dla wszystkich</h2></div>
-<p>Oczywiście składni CJS zaczęto używać także dla przeglądarek. Co więcej, coraz częściej mamy do czynienia z <a href="http://nerds.airbnb.com/isomorphic-javascript-future-web-apps/" rel="noopener noreferrer">izomorficznymi aplikacjami internetowymi</a>, co wymusza znalezienie sposobu na współdzielenie tego samego kodu na serwerze i w przeglądarce. Tym samym powstało <a href="https://github.com/umdjs/umd" rel="noopener noreferrer">UMD – Universal Module Definition</a>, które pozwala korzystać nam równocześnie z AMD, jak i CJS. Jest to obecnie najczęściej polecany sposób rozprowadzania kodu JS.</p>
-
-<div class="header"><h2 class="header__heading" id="es6">Przyszłość – ES Modules</h2></div>
-<p>Przyszłość przyniesie nam moduły natywnie wbudowane w ECMAScript. Niestety, ich składnia jest niekompatybilna zarówno z AMD, jak i CJS. Niemniej <a href="https://github.com/systemjs/systemjs" rel="noopener noreferrer">istnieją już odpowiednie narzędzia</a> zapewniające choć cień zgodności.</p>
-<p>Po wyczerpujący opis modułów ES6 odsyłam do <a href="http://www.2ality.com/2014/09/es6-modules-final.html" rel="noopener noreferrer">artykułu na 2ality.com</a>.</p>
-<p class="alert alert-info">Jeśli chcesz dowiedzieć się praktycznie wszystkiego o systemach modułów w JS i różnicach między nimi, zajrzyj do <a href="http://addyosmani.com/writing-modular-js/" rel="noopener noreferrer" class="alert-link">wyczerpującego artykułu Addy'iego Osmaniego</a>.</p>
-
-<div class="header"><h2 class="header__heading" id="cm">Rebelia – Chainable Module Definition</h2></div>
-<p>Czyli przeniesienie łańcuszków z jQuery na poziom modułów. Jedyna implementacja to <a href="http://labs.voronianski.com/melchior.js/" rel="noopener noreferrer">Melchior.js</a>. Wygląda to nawet fajnie i składniowo jest ładniejsze od AMD (ale nie CJS!), ale jest całkowicie niekompatybilne. Tym samym raczej nie zyska dużej popularności i pozostanie ciekawostką (zwłaszcza, że za chwilę wejdą do użycia ES Modules).</p>
+<h2 id="umd">Pro sposób dla wszystkich</h2>
+<p>Oczywiście składni CJS zaczęto używać także dla przeglądarek. Co więcej, coraz częściej mamy do czynienia z <a href="http://nerds.airbnb.com/isomorphic-javascript-future-web-apps/" rel="noreferrer noopener">izomorficznymi aplikacjami internetowymi</a>, co wymusza znalezienie sposobu na współdzielenie tego samego kodu na serwerze i w przeglądarce. Tym samym powstało <a href="https://github.com/umdjs/umd" rel="noreferrer noopener">UMD – Universal Module Definition</a>, które pozwala korzystać nam równocześnie z AMD, jak i CJS. Jest to obecnie najczęściej polecany sposób rozprowadzania kodu JS.</p>
+<h2 id="es6">Przyszłość – ES Modules</h2>
+<p>Przyszłość przyniesie nam moduły natywnie wbudowane w ECMAScript. Niestety, ich składnia jest niekompatybilna zarówno z AMD, jak i CJS. Niemniej <a href="https://github.com/systemjs/systemjs" rel="noreferrer noopener">istnieją już odpowiednie narzędzia</a> zapewniające choć cień zgodności.</p>
+<p>Po wyczerpujący opis modułów ES6 odsyłam do <a href="http://www.2ality.com/2014/09/es6-modules-final.html" rel="noreferrer noopener">artykułu na 2ality.com</a>.</p>
+<div class="alert alert-info">
+<p>Jeśli chcesz dowiedzieć się praktycznie wszystkiego o systemach modułów w JS i różnicach między nimi, zajrzyj do <a href="http://addyosmani.com/writing-modular-js/" rel="noreferrer noopener" class="alert-link">wyczerpującego artykułu Addy'iego Osmaniego</a>.</p>
+</div>
+<h2 id="cm">Rebelia – Chainable Module Definition</h2>
+<p>Czyli przeniesienie łańcuszków z jQuery na poziom modułów. Jedyna implementacja to <a href="http://labs.voronianski.com/melchior.js/" rel="noreferrer noopener">Melchior.js</a>. Wygląda to nawet fajnie i składniowo jest ładniejsze od AMD (ale nie CJS!), ale jest całkowicie niekompatybilne. Tym samym raczej nie zyska dużej popularności i pozostanie ciekawostką (zwłaszcza, że za chwilę wejdą do użycia ES Modules).</p>
 
 						<section id="komentarze">
 							<h2>Komentarze</h2>
