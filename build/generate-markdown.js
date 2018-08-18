@@ -7,7 +7,7 @@ function convertToMD( txt ) {
 			replace( /\[p=info\](.+?)\[\/p\]/g, '\n<div class="alert alert-info">\n\n$1\n\n</div>' ).
 			replace( /\[p=warning\](.+?)\[\/p\]/gs, '\n<div class="alert alert-danger">\n\n$1\n\n</div>' ).
 			replace( /\[\/p\]/g, '' ).
-			replace( /\[h([1-6])\="(.+?)"\](.+?)\[\/h\1\]/g, '\n<h$1 id="$2">$3</h$1>' ).
+			replace( /\[h([1-6])\="?(.+?)"?\](.+?)\[\/h\1\]/g, '\n<h$1 id="$2">$3</h$1>' ).
 			replace( /\[code=(.+?)\](.+?)\[\/code\]/gs, '\n```$1\n$2\n```' ).
 			replace( /\[\/?tt\]/g, '`' ).
 			replace( /\[q\](.+?)\[\/q\]/g, '<q>$1</q>').

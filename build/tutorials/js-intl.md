@@ -1,5 +1,6 @@
 <description>Słów kilka o standardzie ECMA-402.</description>
-[h1=start]Data po polsku[/h1]
+
+<h1 id="start">Data po polsku</h1>
 
 Dzisiaj będzie krótko, rzeczowo i na temat (co dość rzadko mi się zdarza). Otóż: jak <b>dobrze</b> zrobić datę po polsku w JS i się przy tym nie narobić.
 

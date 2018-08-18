@@ -43,9 +43,9 @@
 				} );
 			} );
 			</script>
-			<title>{TITLE}</title>
+			<title>Data po polsku</title>
 			<meta name="description" content="Słów kilka o standardzie ECMA-402.">
-			<meta property="og:title" content="{TITLE}">
+			<meta property="og:title" content="Data po polsku">
 			<meta property="og:description" content="Słów kilka o standardzie ECMA-402.">
 			<meta property="og:type" content="article">
 			<meta property="article:author" content="Comandeer">
@@ -86,7 +86,7 @@
 			<main class="container-fluid">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-4 header header_main">
-						<h1 id="start" class="header__heading">{TITLE}</h1>
+						<h1 id="start" class="header__heading">Data po polsku</h1>
 
 						<a class="header__link" href="js-intl.pdf" title="Wersja PDF"><span class="glyphicon glyphicon-book" aria-hidden="true"></span><span class="sr-only">Wersja <abbr title="Portable Document Format" lang="en">PDF</abbr></span></a>
 					</div>
@@ -96,14 +96,14 @@
 			<h2 class="sidebar-header" id="toc-heading">Spis treści</h2>
 				<div class="sidebar-inner">
 					<ul>
-					<li><a href="#po-staremu">Po staremu</a></li><li><a href="#Intl">`Intl` na ratunek!</a></li><li><a href="#formatujemy">Formatujemy datę</a></li>
+					<li><a href="#start">Data po polsku</a><ul><li><a href="#po-staremu">Po staremu</a></li><li><a href="#Intl">`Intl` na ratunek!</a></li><li><a href="#formatujemy">Formatujemy datę</a></li></ul></li>
 					</ul>
 				</div>
 			</nav>
 
 					<div class="content col-md-8 col-md-offset-0">
-						<p>
-[h1=start]Data po polsku[/h1]</p>
+						<p></p>
+
 <p>Dzisiaj będzie krótko, rzeczowo i na temat (co dość rzadko mi się zdarza). Otóż: jak <b>dobrze</b> zrobić datę po polsku w JS i się przy tym nie narobić.</p>
 <h2 id="po-staremu">Po staremu</h2>
 <p>Dotąd jedynym właściwym sposobem były różne dziwne kombinacje typu &quot;stwórzmy sobie tablicę z polskimi nazwami miesięcy i dni tygodnia, a następnie podstawiajmy pod dane, zwracane przez <code>new Date</code>&quot;. Mogą one wyglądać <a href="http://webmade.org/porady/data-po-polsku-js.php" rel="noreferrer noopener">rozwlekle i odpychająco</a> (a ich autorem nie jest Polak). Mogą być też <a href="http://phpjs.org/functions/strftime/" rel="noreferrer noopener">wzorowane na innych językach</a>, stając się jeszcze bardziej rozwlekłe i… nie JS-owe. Mogą w końcu zmienić się po prostu w wywołanie odpowiedniej, krótkiej funkcyjki w PHP, po stwierdzeniu, że JS się do tego nie nadaje.</p>
