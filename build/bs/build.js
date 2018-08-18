@@ -25,6 +25,7 @@ function getBuilder( type = 'tutorial' ) {
 		var dir = type === 'tutorial' ? tutDir : pagesDir,
 			content = fs.readFileSync( dir + page, 'utf8' ),
 			output = type === 'tutorial' ? tutTemplate : pageTemplate,
+			pageName = page.replace( /(\.tpl|\.md)$/, '' ),
 			nav = `<nav class="sidebar col-md-4 well" aria-labelledby="toc-heading">
 			<h2 class="sidebar-header" id="toc-heading">Spis treści</h2>
 				<div class="sidebar-inner">
@@ -89,15 +90,15 @@ function getBuilder( type = 'tutorial' ) {
 			offset = 2;
 		}
 
-		output = output.replace( /{SLUG}/g, page.replace( '.tpl', '' ) );
+		output = output.replace( /{SLUG}/g, pageName );
 		output = output.replace( /{MENU}/g, siteMenu );
 		output = output.replace( '{NAV}', nav );
 		output = output.replace( '{OFFSET}', offset );
 		output = output.replace( '{HEADING_OFFSET}', offset || 4 );
 		output = output.replace( '{CONTENT}', $.html() );
-		output = output.replace( '{DISQUS}', page.replace( '.tpl', '' ) );
+		output = output.replace( '{DISQUS}', pageName );
 
-		fs.writeFileSync( '../../public/' + page.replace( /(md|tpl)$/, 'html' ), output, 'utf8' );
+		fs.writeFileSync( `../../public/${ pageName }.html`, output, 'utf8' );
 	}
 }
 
