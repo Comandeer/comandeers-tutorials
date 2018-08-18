@@ -5,7 +5,9 @@ const pages = readdirSync( './tutorials' ).concat( readdirSync( './pages' ) );
 async function generatePDF( browser, pages ) {
 	const promises = [];
 
-	pages.forEach( ( page ) => {
+	pages.filter( ( page ) => {
+		return page.endsWith( 'tpl' );
+	} ).forEach( ( page ) => {
 		const name = page.replace( '.tpl', '' );
 
 		promises.push( ( async() => {

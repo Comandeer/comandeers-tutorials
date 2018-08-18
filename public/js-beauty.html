@@ -102,50 +102,55 @@
 			</nav>
 
 					<div class="content col-md-8 col-md-offset-0">
-						
+						<p></p>
 
-
-<p class="alert alert-danger">Ten tutorial jest już niestety dość przestarzały i opisuje starszą wersję standardu JS (ECMAScript 5) a także niektóre praktyki, których obecnie nawet ja nie uznaję już za najlepsze. Dlatego lepiej potraktuj go wyłącznie jako ciekawostkę historyczną… i poczekaj aż napiszę o JS coś równie sensownego.</p>
-
-<div class="header"><h2 class="header__heading" id="parser">Inteligentny parser</h2></div>
+<div class="alert alert-danger">
+<p>Ten tutorial jest już niestety dość przestarzały i opisuje starszą wersję standardu JS (ECMAScript 5) a także niektóre praktyki, których obecnie nawet ja nie uznaję już za najlepsze. Dlatego lepiej potraktuj go wyłącznie jako ciekawostkę historyczną… i poczekaj aż napiszę o JS coś równie sensownego.</p>
+</div>
+<h2 id="parser">Inteligentny parser</h2>
 <p>JS to język, który pozwala chyba na największą dowolność w składni ze wszystkich języków programowania. Ba, jego parser jest tak sprawny, że sam sobie wstawia średniki w miejscach, w których być powinny.</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">return
-{};</code></pre>
+<pre><code class="language-javascript">return
+{};
+</code></pre>
 <p>Ten krótki kod – mimo że na pierwszy, a nawet drugi rzut oka wydaje się poprawny – rzuci nam ładny błąd na konsolę. Czemu? Bo parser widzi go tak:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">return; //bo niedbały programista zapomniał go tu dać
-{}; //o, a co tu robi definicja obiektu?</code></pre>
+<pre><code class="language-javascript">return; //bo niedbały programista zapomniał go tu dać
+{}; //o, a co tu robi definicja obiektu?
+</code></pre>
 <p>Przez to małe głupstwo kiedyś zraziłem się do JSON i za wszelką cenę próbowałem go omijać. Dlatego na sam początek porad ot, taki mały kwiatek z własnego doświadczenia.</p>
-
-<div class="header"><h2 class="header__heading" id="krotszy-zapis">Krótszy zapis</h2></div>
-<p class="code">Kod:</p><pre><code class="language-javascript">var width = 0;
+<h2 id="krotszy-zapis">Krótszy zapis</h2>
+<pre><code class="language-javascript">var width = 0;
 var height = 0;
 var img = null;
-var elem = null;</code></pre>
+var elem = null;
+</code></pre>
 <p>vs.</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">var width = 0
+<pre><code class="language-javascript">var width = 0
 ,height = 0
 ,img = null
-,elem = null;</code></pre>
+,elem = null;
+</code></pre>
 <p>IMO czytelniej. Gdyby ktoś pytał czemu przecinek jest przerzucony na początek nowej linii, a nie zostawiony na końcu poprzedniej: spróbuj pousuwać parę zmiennych z listy. Jeśli przecinek jest na końcu linijki, musisz usunąć interesującą Cię zmienną, a następnie przecinek. Tak usuwasz jedno i drugie za jednym zamachem i na pewno nie zostawisz przecinka przez nieuwagę.</p>
-
-<p class="alert alert-info">Od kiedy ten tutorial powstał, jednak powróciłem do "normalnego" sposobu zapisu przecinków. Mój styl można podejrzeć <a href="https://github.com/Comandeer" rel="noopener noreferrer" class="alert-link">na moim GitHubie</a>, a zwłaszcza <a href="https://github.com/BEMQuery/bemquery-package-boilerplate" rel="noopener noreferrer" class="alert-link">w projekcie BEMQuery</a>.</p>
-
-<div class="header"><h2 class="header__heading" id="strict">Strict mode</h2></div>
-<p>To małe cudeńko bardzo ułatwia życie, utrudniając je. Włączenie tzw. "strict mode" (tryb ścisły jak ktoś polski lubi) usuwa najbardziej bugowate części JS (np. <code>with</code> czy też ciut naprawia stringi w <code>setTimeout</code>). Co więcej, nie pozwala nam tworzyć nieświadomie zmiennych globalnych, np tak:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">for(i = 0; i&lt;tab.length; i++)</code></pre>
+<div class="alert alert-info">
+<p>Od kiedy ten tutorial powstał, jednak powróciłem do &quot;normalnego&quot; sposobu zapisu przecinków. Mój styl można podejrzeć <a href="https://github.com/Comandeer" rel="noreferrer noopener" class="alert-link">na moim GitHubie</a>, a zwłaszcza <a href="https://github.com/BEMQuery/bemquery-package-boilerplate" rel="noreferrer noopener" class="alert-link">w projekcie BEMQuery</a>.</p>
+</div>
+<h2 id="strict">Strict mode</h2>
+<p>To małe cudeńko bardzo ułatwia życie, utrudniając je. Włączenie tzw. &quot;strict mode&quot; (tryb ścisły jak ktoś polski lubi) usuwa najbardziej bugowate części JS (np. <code>with</code> czy też ciut naprawia stringi w <code>setTimeout</code>). Co więcej, nie pozwala nam tworzyć nieświadomie zmiennych globalnych, np tak:</p>
+<pre><code class="language-javascript">for(i = 0; i&lt;tab.length; i++)
+</code></pre>
 <p>W trybie ścisłym każda zmienna musi być zadeklarowana przed użyciem</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">for(var i = 0; i &lt; tab.length; i++)</code></pre>
+<pre><code class="language-javascript">for(var i = 0; i &lt; tab.length; i++)
+</code></pre>
 <p>A jak włączyć naszego małego przyjaciela? Prosto</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">"use strict"; //na samym początku skryptu żeby działał wszędzie
+<pre><code class="language-javascript">&quot;use strict&quot;; //na samym początku skryptu żeby działał wszędzie
 function a()
 {
-	"use strict"; //lub w funkcji, aby działał tylko w niej
-}</code></pre>
+	&quot;use strict&quot;; //lub w funkcji, aby działał tylko w niej
+}
+</code></pre>
 <p>Od razu uprzedzam, że jeśli nigdy nie zwracałeś uwagi na jakość swojego JS, to po włączeniu strict mode skrypty Ci się wykrzaczą. Ale przystosowanie ich do strict mode wcale nie jest trudne, a w przyszłości na pewno przyniesie korzyści (bo np. ociupinkę zmieni się składnia JS).</p>
-
-<div class="header"><h2 class="header__heading" id="literaly">Literały</h2></div>
+<h2 id="literaly">Literały</h2>
 <p>Spójrzmy na ten kod:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">var a = new Array(1, 2, 3)
+<pre><code class="language-javascript">var a = new Array(1, 2, 3)
 ,b = new Object();
 
 b.a = 1;
@@ -155,9 +160,10 @@ for(var i = 0; i&lt;a.length; i++)
 	console.log(a[i]);
 
 for(var x in b)
-	console.log(b&#91;x&#93;);</code></pre>
+	console.log(b[x]);
+</code></pre>
 <p>Wydaje się zupełnie poprawny, prawda? Owszem, może i jest poprawny, ale nie bezpieczny!</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">Array = function() {return '';};
+<pre><code class="language-javascript">Array = function() {return '';};
 Object = Array;
 
 var a = new Array(1,2,3)
@@ -167,37 +173,40 @@ b.a = 1;
 b.b = 2;
 
 for(var i = 0; i&lt;a.length; i++)
-	console.log(a&#91;i&#93;);
+	console.log(a[i]);
 
 for(var x in b)
-	console.log(b&#91;x&#93;);</code></pre>
+	console.log(b[x]);
+</code></pre>
 <p>I mamy krzak, nawet w strict mode! Bezpieczniej użyć literałów:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">Array = function() {return '';};
+<pre><code class="language-javascript">Array = function() {return '';};
 Object = Array;
 
-var a = &#91;1,2,3&#93;
+var a = [1,2,3]
 ,b = {a:1, b:2};
 
 for(var i = 0; i &lt; a.length; i++)
-	console.log(a&#91;i&#93;);
+	console.log(a[i]);
 
 for(var x in b)
-	console.log(b&#91;x&#93;);</code></pre>
+	console.log(b[x]);
+</code></pre>
 <p>Tych wykrzaczyć się nie da ;)</p>
-
-<div class="header"><h2 class="header__heading" id="setTimeout">setTimeout</h2></div>
+<h2 id="setTimeout">setTimeout</h2>
 <p>Nie przekazuj nazwy funkcji jako stringa!</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">setTimeout("funkcja()", 1000); //don't do this!</code></pre>
-<p>Tym samym wywołujesz sobie <code>eval</code>, a jak każdy wie – <code>eval</code> jest <s>złe</s> niepotrzebnie wykorzystywane, co jedynie obniża wydajność! Przekaż uchwyt do funkcji:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">setTimeout(funkcja, 1000);</code></pre>
+<pre><code class="language-javascript">setTimeout(&quot;funkcja()&quot;, 1000); //don't do this!
+</code></pre>
+<p>Tym samym wywołujesz sobie <code>eval</code>, a jak każdy wie – <code>eval</code> jest [s]złe[/s] niepotrzebnie wykorzystywane, co jedynie obniża wydajność! Przekaż uchwyt do funkcji:</p>
+<pre><code class="language-javascript">setTimeout(funkcja, 1000);
+</code></pre>
 <p>A jak już musisz parametry przekazać:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">setTimeout(function(){funkcja(1, 2);}, 1000);
+<pre><code class="language-javascript">setTimeout(function(){funkcja(1, 2);}, 1000);
 //lub
-setTimeout(funkcja, 1000, 1, 2);</code></pre>
-
-<div class="header"><h2 class="header__heading" id="petle">Pętle i obiekty</h2></div>
+setTimeout(funkcja, 1000, 1, 2);
+</code></pre>
+<h2 id="petle">Pętle i obiekty</h2>
 <p>Masz obiekt i musisz po nim poiterować? Zapewne robisz coś takiego:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">var o = {
+<pre><code class="language-javascript">var o = {
 	a: 1
 	,b: 2
 	,c: 3
@@ -205,10 +214,11 @@ setTimeout(funkcja, 1000, 1, 2);</code></pre>
 
 for(var x in o)
 {
-	console.log(o&#91;x&#93;);
-}</code></pre>
+	console.log(o[x]);
+}
+</code></pre>
 <p>Zgadłem? No to źle robisz:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">Object.prototype.oops = 'BUGAHA!';
+<pre><code class="language-javascript">Object.prototype.oops = 'BUGAHA!';
 
 var o = {
 	a: 1
@@ -218,10 +228,11 @@ var o = {
 
 for(var x in o)
 {
-	console.log(o&#91;x&#93;);
-}</code></pre>
+	console.log(o[x]);
+}
+</code></pre>
 <p>Powyższy kod wyświetli nam także 'BUGAHA!' (bo <code>for..in</code> iteruje także po wszystkich nienatywnych rozszerzeniach prototypu <code>Object</code>). Nie tego chcemy, prawda? A wystarczy dodać jedną linijkę:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">Object.prototype.oops = 'BUGAHA!';
+<pre><code class="language-javascript">Object.prototype.oops = 'BUGAHA!';
 
 var o = {
 	a: 1
@@ -232,11 +243,12 @@ var o = {
 for(var x in o)
 {
 	if(o.hasOwnProperty(x))
-		console.log(o&#91;x&#93;);
-}</code></pre>
+		console.log(o[x]);
+}
+</code></pre>
 <p>I już. Metoda <code>hasOwnProperty</code> sprawdza czy wartość podana jako x na pewno jest częścią naszego obiektu i czy nie pochodzi z prototypu.</p>
 <p>Jest też inny sposób, aby zupełnie ominąć jakiekolwiek prototypy i nie martwić się o nie:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">Object.prototype.oops = 'BUGAHA!';
+<pre><code class="language-javascript">Object.prototype.oops = 'BUGAHA!';
 
 var o = Object.create(null);
 o.a = 1;
@@ -245,11 +257,12 @@ o.c = 3;
 
 for(var x in o)
 {
-	console.log(o&#91;x&#93;);
-}</code></pre>
+	console.log(o[x]);
+}
+</code></pre>
 <p><code>Object.create</code> tworzy nam obiekt z prototypu podanego jako pierwszy parametr, tak więc tworzymy obiekt z pustym prototypem (domyślnie jest to <code>Object.prototype</code>). W starszych przeglądarkach ten sposób nie działa.</p>
 <p>Jeszcze ładniej można to zrobić, korzystając z <code>Object.keys</code> (która to metoda nie szuka niczego w prototypach i zwraca wszystko w postaci normalnej tablicy kluczy):</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">var o = {
+<pre><code class="language-javascript">var o = {
 	a: 1
 	,b: 2
 	,c: 3
@@ -257,29 +270,32 @@ for(var x in o)
 
 Object.keys(o).forEach(function(x)
 {
-	console.log(o&#91;x&#93;);
-});</code></pre>
-
-<div class="header"><h2 class="header__heading" id="namespaces">Funkcje natychmiastowego wywołania i przestrzenie nazw</h2></div>
+	console.log(o[x]);
+});
+</code></pre>
+<h2 id="namespaces">Funkcje natychmiastowego wywołania i przestrzenie nazw</h2>
 <p>Każdy doskonale wie, że zmienne globalne są bleeee. Jednak w wielu skryptach można znaleźć coś takiego:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">var width = 0;
+<pre><code class="language-javascript">var width = 0;
 var height = 0;
 var img = null;
 var elem = null;
-//itp.</code></pre>
+//itp.
+</code></pre>
 <p>Tym sposobem brudzimy sobie globalny scope!</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">console.log(window&#91;'width'&#93;);</code></pre>
+<pre><code class="language-javascript">console.log(window['width']);
+</code></pre>
 <p>A można lepiej, wykorzystując zasięg zmiennych:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">(function()
+<pre><code class="language-javascript">(function()
 {
 	var width = 0;
 	var height = 0;
 	var img = null;
 	var elem = null;
 }());
-console.log(window&#91;'width'&#93;);</code></pre>
+console.log(window['width']);
+</code></pre>
 <p>OK, a jeśli chcemy coś specjalnie umieścić w globalnym scope, np. funkcje naszego super-hiper API? Oczywiście głupim pomysłem jest ładowanie oddzielnie wszystkich 150+ funkcji, bo istnieje szansa, że coś naszego nadpisze funkcje już używane na stronie (np. funkcja o nazwie <code>resizeImg</code>). Wtedy możemy posłużyć się przestrzenią nazw:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">
+<pre><code class="language-javascript">
 var API = {
 	resizeImg: function()
 	{
@@ -287,37 +303,42 @@ var API = {
 	}
 };
 API.resizeImg();
+
 </code></pre>
 <p>Po połączeniu obydwu metod możemy osiągnąć coś takiego</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">(function($)
+<pre><code class="language-javascript">(function($)
 {
 	var API = {}
 	,resizeImg = jakiswarunek ? function() {console.log('a');} : function() {console.log(b);};
 
 	API.resizeImg = resizeImg;
 	$.API = API;
-}(window))</code></pre>
+}(window))
+</code></pre>
 <p>Voila! W globalnym scope mamy tylko to, co chcieliśmy mieć!</p>
-
-<div class="header"><h2 class="header__heading" id="feature-detection">Feature detection</h2></div>
-<blockquote><p>Sniffing an user agent is like sniffing a glue</p><footer><cite>"porneL"</cite></footer></blockquote>
+<h2 id="feature-detection">Feature detection</h2>
+<blockquote>
+Sniffing an user agent is like sniffing a glue
+<footer><cite>porneL</cite></footer></blockquote>
 <p>Dlatego też, zamiast opierać się na wątpliwym przekonaniu, że w IE 5.5.1733958399 zainstalowanym pod Win XP z SP 14 na pewno to działa, warto sprawdzić czy naprawdę funkcja x istnieje i jest funkcją. Wyobraźmy sobie choćby, że chcemy stworzyć obiekt przy pomocy <code>Object.create</code>, ale nie jesteśmy pewni czy ta metoda istnieje:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">var o = Object.create(null);</code></pre>
+<pre><code class="language-javascript">var o = Object.create(null);
+</code></pre>
 <p>W starszych IE wywali nam ładny ReferrenceError. A wystarczy sprawdzić czy ta metoda istnieje:</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">if(typeof Object.create === 'function')</code></pre>
-<p>Jeśli nie, to można walnąć <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object/create#Polyfill" rel="noopener noreferrer">polyfilla</a>. Na tej samej zasadzie działa cała biblioteka <a href="http://modernizr.com" rel="noopener noreferrer">Modernizr</a>.</p>
-
-<div class="header"><h2 class="header__heading" id="delegation">Event delegation</h2></div>
-<p>Zdarzenia bąbelkują (jak ktoś nie wierzy, to niech <a href="http://www.quirksmode.org/js/events_order.html" rel="noopener noreferrer">poczyta</a>). Dlatego też możliwe staje się odkrycie, że jakiś tam akapit w jakimś tam divie został kliknięty.</p>
-<p class="code">Kod:</p><pre><code class="language-javascript">(function(d)
+<pre><code class="language-javascript">if(typeof Object.create === 'function')
+</code></pre>
+<p>Jeśli nie, to można walnąć <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object/create#Polyfill" rel="noreferrer noopener">polyfilla</a>. Na tej samej zasadzie działa cała biblioteka <a href="http://modernizr.com" rel="noreferrer noopener">Modernizr</a>.</p>
+<h2 id="delegation">Event delegation</h2>
+<p>Zdarzenia bąbelkują (jak ktoś nie wierzy, to niech <a href="http://www.quirksmode.org/js/events_order.html" rel="noreferrer noopener">poczyta</a>). Dlatego też możliwe staje się odkrycie, że jakiś tam akapit w jakimś tam divie został kliknięty.</p>
+<pre><code class="language-javascript">(function(d)
 {
-	d.getElementsByTagName('div')&#91;0&#93;.addEventListener('click', function(e)
+	d.getElementsByTagName('div')[0].addEventListener('click', function(e)
 	{
 		var t = e.target;
 		if(t.tagName.toLowerCase() === 'p')
 			console.log(t.innerHTML);
 	}, false);
-}(document));</code></pre>
+}(document));
+</code></pre>
 <p>Kiedy warto tego użyć? Jeśli np. mamy dużo przycisków na stronie i wszystkie są w jednym rodzicu. Zamiast przypisywać zdarzenia do każdego z nich, można przypisać te zdarzenia do ich rodzica i za pomocą <code>e.target</code> (w IE <code>e.srcElement</code>) sprawdzić, co tak naprawdę zostało kliknięte. Przydaje się także przy stronach ajaksowych, gdzie część elementów interaktywnych zostanie dodana po wczytaniu strony. Wtedy można doczepić zdarzenie np. do <code>body</code> i mieć pewność, że każdy przycisk będzie klikalny.</p>
 
 						<section id="komentarze">

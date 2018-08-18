@@ -115,7 +115,7 @@
 [p]Chcemy być cool i porzucamy zgrzybiałego HTML4 na rzecz jego potomka! Poza tym spróbujemy nadać większe znaczenie naszej treści, przede wszystkim dla użytkownika, pamiętając, że co dobre dla użytkownika, jest także (najczęściej) dobre dla Google. Do tego celu wykorzystamy m.in. mikroformaty i nowe znaczniki z HTML5.[/p]
 
 
-[h2="nowy-doctype"]Nowy [tt]DOCTYPE[/tt][/h2]
+[h2="nowy-doctype"]Nowy DOCTYPE[/h2]
 [p]OK, to zaczynamy. Najpierw omówię przejście na HTML5, bo tego jest najwięcej, a później doszlifujemy resztę. Pierwsze, co należy zmienić, to ten cały rozwlekły [tt]DOCTYPE[/tt]. W HTML5 mamy króciutki i ładniutki:[/p]
 [code=markup]<!DOCTYPE html>[/code]
 [p]I już – po bólu. Twój blog właśnie stał się cool. Jeśli nie jesteś odważny, migrację na HTML5 możesz zakończyć w tym miejscu. Jeśli chcesz jednak poznać jaką zmianę w semantyce przynosi, pójdź za mną, a pokażę Ci piękno…[/p]
