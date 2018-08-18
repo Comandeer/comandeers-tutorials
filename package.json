@@ -6,6 +6,7 @@
   "dependencies": {
     "cheerio": "~0.12.4",
     "markdown-it": "^8.4.2",
+    "markdown-it-link-attributes": "^2.1.0",
     "puppeteer": "^1.2.0"
   },
   "author": "Comandeer",
