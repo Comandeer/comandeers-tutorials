@@ -3,12 +3,22 @@ var fs = require( 'fs' ),
 	pagesDir = '../pages/',
 	pageTemplate = fs.readFileSync( './templates/page.tpl', 'utf8' ),
 	tutTemplate = fs.readFileSync( './templates/tutorial.tpl', 'utf8' ),
-	parser = require( './bbcode' ),
+	parser = require('markdown-it')( {
+		html: true,
+		linkify: true
+	} ),
+	mila = require('markdown-it-link-attributes'),
 	dom = require( 'cheerio' ),
 	tutorials = fs.readdirSync( tutDir ),
 	pages = fs.readdirSync( pagesDir ),
 	pagesList = require( '../pageslist' ),
 	siteMenu = '';
+
+parser.use( mila, {
+	attrs: {
+		rel: 'noreferrer noopener'
+	}
+} );
 
 function getBuilder( type = 'tutorial' ) {
 	return function( page ) {
@@ -25,14 +35,7 @@ function getBuilder( type = 'tutorial' ) {
 			</nav>`,
 			offset = 0,
 			$ul = dom.load( nav )( 'ul' ),
-			tmp = parser.process( {
-				text: content,
-				addInLineBreaks: false
-			} );
-
-		console.log( tmp.errorQueue ); // debugging, yay!
-
-		content = tmp.html;
+			content = parser.render( content );
 
 		var $ = dom.load( content ),
 			lastDepth = null,
@@ -60,7 +63,7 @@ function getBuilder( type = 'tutorial' ) {
 
 			if( this.is( '#start' ) ) {
 				output = output.replace( /{TITLE}/g, this.html().replace( /<a.+?>.+?<\/a>/gi, '' ) );
-				this.parent().remove();
+				this.remove();
 			}
 
 			if ( lastDepth ) {
@@ -94,7 +97,7 @@ function getBuilder( type = 'tutorial' ) {
 		output = output.replace( '{CONTENT}', $.html() );
 		output = output.replace( '{DISQUS}', page.replace( '.tpl', '' ) );
 
-		fs.writeFileSync( '../../public/' + page.replace( 'tpl', 'html' ), output, 'utf8' );
+		fs.writeFileSync( '../../public/' + page.replace( /(md|tpl)$/, 'html' ), output, 'utf8' );
 	}
 }
 
@@ -104,7 +107,9 @@ Object.keys( pagesList ).forEach( function( page ) {
 	siteMenu += `<li><a href="${ pageInfo }.html">${ page }</a></li>`
 } );
 
-tutorials.forEach( getBuilder( 'tutorial' ) );
+tutorials.filter( ( tutorial ) => {
+	return tutorial.endsWith( '.md' );
+} ).forEach( getBuilder( 'tutorial' ) );
 pages.forEach( getBuilder( 'page' ) );
 
 // building list of tutorials
