@@ -111,7 +111,9 @@ Object.keys( pagesList ).forEach( function( page ) {
 tutorials.filter( ( tutorial ) => {
 	return tutorial.endsWith( '.md' );
 } ).forEach( getBuilder( 'tutorial' ) );
-pages.forEach( getBuilder( 'page' ) );
+pages.filter( ( page ) => {
+	return page.endsWith( '.md' );
+} ).forEach( getBuilder( 'page' ) );
 
 // building list of tutorials
 var list = fs.readFileSync( './templates/index.tpl', 'utf8' ),

@@ -22,14 +22,19 @@ function convertToMD( txt ) {
 			replace( /\[description\](.+?)\[\/description\]/g, '<description>$1</description>' );
 }
 
-const tutorials = readdirSync( joinPath( __dirname, 'tutorials' ) ).filter( ( file ) => {
-	return file.endsWith( '.tpl' );
-} );
+function convertDir( dir ) {
+	const pages = readdirSync( joinPath( __dirname, dir ) ).filter( ( file ) => {
+		return file.endsWith( '.tpl' );
+	} );
 
-tutorials.forEach( ( tutorial ) => {
-	const fileName = tutorial.replace( '.tpl', '.md' );
-	const content = readFileSync( joinPath( __dirname, 'tutorials', tutorial ), 'utf-8' );
-	const newContent = convertToMD( content );
+	pages.forEach( ( page ) => {
+		const fileName = page.replace( '.tpl', '.md' );
+		const content = readFileSync( joinPath( __dirname, dir, page ), 'utf-8' );
+		const newContent = convertToMD( content );
 
-	writeFileSync( joinPath( __dirname, 'tutorials', fileName ), newContent );
-} );
+		writeFileSync( joinPath( __dirname, dir, fileName ), newContent );
+	} );
+}
+
+convertDir( 'tutorials' );
+convertDir( 'pages' );
