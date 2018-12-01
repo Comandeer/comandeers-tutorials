@@ -329,12 +329,6 @@ s.src = uri;
 <h2 id="cm">Rebelia – Chainable Module Definition</h2>
 <p>Czyli przeniesienie łańcuszków z jQuery na poziom modułów. Jedyna implementacja to <a href="http://labs.voronianski.com/melchior.js/" rel="noreferrer noopener">Melchior.js</a>. Wygląda to nawet fajnie i składniowo jest ładniejsze od AMD (ale nie CJS!), ale jest całkowicie niekompatybilne. Tym samym raczej nie zyska dużej popularności i pozostanie ciekawostką (zwłaszcza, że za chwilę wejdą do użycia ES Modules).</p>
 
-						<section id="komentarze">
-							<h2>Komentarze</h2>
-							<div id="disqus_thread"></div>
-							<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-							<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-						</section>
 					</div>
 				</div>
 			</main>
@@ -379,18 +373,6 @@ s.src = uri;
 						next.classList.toggle( 'expanded' );
 						target.innerHTML = ( html === '[Zwiń]' ? '[Rozwiń]' : '[Zwiń]' );
 					} );
-
-					//defer loading of disqus
-
-					if ( location.host === 'tutorials.comandeer.pl' ) {
-						window.disqus_shortname = 'comandeerowa';
-
-						var dsq = document.createElement( 'script' );
-
-						dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-
-						( document.getElementsByTagName( 'head' )[ 0 ] || document.getElementsByTagName( 'body' )[ 0 ] ).appendChild( dsq );
-					}
 				} catch( err ) {}
 			} () );
 			</script>

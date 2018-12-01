@@ -8,7 +8,7 @@
 [h2="skrocona-wersja-najwazniejsze-informacje"]Skrócona wersja – najważniejsze informacje[/h2]
 [p]Dbam o Twoją prywatność, ale również o Twój czas. Dlatego przygotowałem dla Ciebie skróconą wersję najważniejszych zasad związanych z ochroną prywatności.[/p]
 [list]
-	[*] Komentując wpisy czy po prostu 	kontaktując się ze mną, przekazujesz mi swoje dane osobowe, a ja gwarantuję Ci, że Twoje dane pozostaną poufne, bezpieczne i nie zostaną udostępnione jakimkolwiek podmiotom trzecim bez Twojej wyraźnej zgody.
+	[*] Kontaktując się ze mną, przekazujesz mi swoje dane osobowe, a ja gwarantuję Ci, że Twoje dane pozostaną poufne, bezpieczne i nie zostaną udostępnione jakimkolwiek podmiotom trzecim bez Twojej wyraźnej zgody.
 	[*] Powierzam przetwarzanie danych 	osobowych tylko sprawdzonym i zaufanym podmiotom świadczącym usługi związane z przetwarzaniem danych osobowych.
 	[*] Korzystam z narzędzi analitycznych Google Analytics, które zbierają informacje na temat Twoich odwiedzin strony, takie jak podstrony, które wyświetliłeś, czas, jaki spędziłeś na stronie czy przejścia pomiędzy poszczególnymi podstronami. W tym celu wykorzystywane są pliki cookies firmy Google LLC dotyczące usługi Google Analytics.
 	[*] Osadzam na stronie nagrania wideo z serwisu YouTube. Gdy odtwarzasz takie nagrania, wykorzystywane są pliki cookies firmy Google LLC dotyczące usługi YouTube.
@@ -40,21 +40,7 @@
 [h3="bezpieczenstwo"]Bezpieczeństwo[/h3]
 [p]Gwarantuję Ci poufność wszelkich przekazanych nam danych osobowych. Zapewniam podjęcie wszelkich środków bezpieczeństwa i ochrony danych osobowych wymaganych przez przepisy o ochronie danych osobowych. Dane osobowe są gromadzone z należytą starannością i odpowiednio chronione przed dostępem do nich przez osoby do tego nieupoważnione.[/p]
 
-[h3="wykaz-powierzen"]Wykaz powierzeń[/h3]
-[p]Powierzam przetwarzanie danych osobowych następującym podmiotom:[/p]
-[list=1]
-	[*] [b]Disqus, Inc.[/b] – w celu świadczenia usługi komentowania wpisów.
-[/list]
-[p]Wszystkie podmioty, którym powierzam przetwarzanie danych osobowych, gwarantują stosowanie odpowiednich środków ochrony i bezpieczeństwa danych osobowych wymaganych przez przepisy prawa.[/p]
-
 [h2="cele-i-czynnosci-przetwarzania"]Cele i czynności przetwarzania[/h2]
-
-[h3="komentowanie-wpisow"]Komentowanie wpisów[/h3]
-[p]Komentując dowolny wpis, musisz podać swój adres e-mail oraz nick. Podanie danych jest dobrowolne, ale niezbędne do skomentowania.[/p]
-[p]Dane wprowadzone przez Ciebie w ramach komentowania przetwarzane są wyłącznie w celu weryfikacji prawdziwości komentarza oraz jego identyfikacji na stronie poprzez wyświetlenie avatara z usługi Gravatar. Dane są przetwarzane przez firmę Disqus, Inc.[/p]
-[p]Podstawą prawną przetwarzania Twoich danych osobowych w ramach komentowania jest Twoja zgoda (art. 6 ust. 1 lit. a RODO) wyrażona poprzez pozostawienie komentarza.[/p]
-[p]Twoje dane będą przetwarzane tak długo, jak długo na stronie będą się znajdować Twoje komentarze. Po usunięciu komentarzy, Twoje dane zostaną usunięte z bazy.[/p]
-[p]W każdej chwili możesz podjąć również decyzję o usunięciu lub modyfikacji swoich danych osobowych, czego możesz dokonać kontaktując się ze mną pod adresem comandeer@comandeer.pl.[/p]
 
 [h3="kontakt-e-mailowy"]Kontakt e-mailowy[/h3]
 [p]Kontaktując się ze mną za pośrednictwem poczty elektronicznej, w tym również przesyłając zapytanie poprzez formularz kontaktowy, w sposób naturalny przekazujesz mi swój adres e-mail jako adres nadawcy wiadomości. Ponadto, w treści wiadomości możesz zawrzeć również inne dane osobowe.[/p]
@@ -82,4 +68,3 @@
 [h4="narzedzia-spolecznosciowe"]Narzędzia społecznościowe[/h4]
 [p]Zapewniam możliwość korzystania z funkcji społecznościowych, takich jak udostępnianie treści w serwisach społecznościowych oraz subskrypcja profilu społecznościowego. Korzystanie z tych funkcji wiąże się z wykorzystywaniem plików cookies administratorów serwisów społecznościowych takich jak Facebook, Instagram, YouTube, Twitter, Google+, LinkedIN.[/p]
 [p]Osadzam na stronie nagrania wideo z serwisu YouTube. Gdy odtwarzasz takie nagrania, wykorzystywane są pliki cookies firmy Google LLC dotyczące usługi YouTube.[/p]
-[p]Umożliwiam komentowanie wpisów poprzez system komentarzy Disqus, co oznacza wykorzystanie plików cookies firmy Disqus, Inc.[/p]

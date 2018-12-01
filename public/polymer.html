@@ -151,12 +151,6 @@ mutating the [[Prototype]] of an object will cause your code to run very slowly;
 <p>Web Components, jako zbiór naprawdę nowych technologii, cierpi na bardzo poważne problemy wieku dziecięcego. Mimo wszystko uważam jednak, że - gdy w końcu sytuacja się ustabilizuje - stanie się sensownym sposobem na implementację zenkapsulowanego, wydajnego i prostego w użyciu interfejsu użytkownika. Mam także nadzieję, że inni webmasterzy również dojdą do tego samego wniosku i przestaną przepisywać na Web Components wszystko, łącznie z rzeczami, które nigdy nie powinny być deklaratywne. Na razie jednak Web Components pozostają ciekawostką - potężną, lecz tylko ciekawostką. Jedynym sensownym jej użyciem prawdopodobnie są ściśle kontrolowane środowiska (typu <a href="https://github.com/rogerwang/node-webkit" rel="noreferrer noopener">node-webkit</a>). I na tym jak na razie zakres stosowania Web Components się kończy.</p>
 <p>Sama technologia nie jest zła - większość tutaj opisanych zarzutów de facto tyczy się Polymera a nie Web Components per se. Niemniej - nie ma obecnie jakiegokolwiek sensu pisać w Web Components nie używając Polymera. I koło się zamyka. W przyszłości pewnie powstaną lekkie i o wiele przyjaźniejsze wrappery na Web Components niż Polymer. No właśnie - wrappery. A do tego jeszcze bardzo długa droga, po wyboistych grzbietach polyfillów…</p>
 
-						<section id="komentarze">
-							<h2>Komentarze</h2>
-							<div id="disqus_thread"></div>
-							<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-							<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-						</section>
 					</div>
 				</div>
 			</main>
@@ -201,18 +195,6 @@ mutating the [[Prototype]] of an object will cause your code to run very slowly;
 						next.classList.toggle( 'expanded' );
 						target.innerHTML = ( html === '[Zwiń]' ? '[Rozwiń]' : '[Zwiń]' );
 					} );
-
-					//defer loading of disqus
-
-					if ( location.host === 'tutorials.comandeer.pl' ) {
-						window.disqus_shortname = 'comandeerowa';
-
-						var dsq = document.createElement( 'script' );
-
-						dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-
-						( document.getElementsByTagName( 'head' )[ 0 ] || document.getElementsByTagName( 'body' )[ 0 ] ).appendChild( dsq );
-					}
 				} catch( err ) {}
 			} () );
 			</script>

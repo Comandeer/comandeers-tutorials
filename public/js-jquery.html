@@ -218,12 +218,6 @@ s.opacity = +( s.opacity || window.getComputedStyle( el )[ 'opacity' ] );
 <p>Co więcej, jQuery niszczy świadomość programistów sieciowych. Coraz częściej można spotkać bowiem nie programistów JS, a programistów jQuery, którzy jedynie tą biblioteką są w stanie się posługiwać.</p>
 <p>Dlatego nie mówię, żeby przestać jQ używać. Jeśli natomiast do stronki, gdzie trza oskryptować jeden link, wsadzasz jQ, to znak, że coś jest nie tego. Jeśli natomiast umiesz zastąpić jQ <a href="http://www.forumweb.pl/javascript/cancelbubble-stoppropagation-problem/397808#397808" rel="noreferrer noopener">własnym rozwiązaniem</a> i robisz to, gdy potrzebujesz jedną, konkretną rzecz, to oznacza, że jesteś zupełnie normalnym użytkownikiem tej biblioteki i syndrom uzależnienia Ciebie nie dotyczy.</p>
 
-						<section id="komentarze">
-							<h2>Komentarze</h2>
-							<div id="disqus_thread"></div>
-							<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-							<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-						</section>
 					</div>
 				</div>
 			</main>
@@ -268,18 +262,6 @@ s.opacity = +( s.opacity || window.getComputedStyle( el )[ 'opacity' ] );
 						next.classList.toggle( 'expanded' );
 						target.innerHTML = ( html === '[Zwiń]' ? '[Rozwiń]' : '[Zwiń]' );
 					} );
-
-					//defer loading of disqus
-
-					if ( location.host === 'tutorials.comandeer.pl' ) {
-						window.disqus_shortname = 'comandeerowa';
-
-						var dsq = document.createElement( 'script' );
-
-						dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-
-						( document.getElementsByTagName( 'head' )[ 0 ] || document.getElementsByTagName( 'body' )[ 0 ] ).appendChild( dsq );
-					}
 				} catch( err ) {}
 			} () );
 			</script>

@@ -341,12 +341,6 @@ Sniffing an user agent is like sniffing a glue
 </code></pre>
 <p>Kiedy warto tego użyć? Jeśli np. mamy dużo przycisków na stronie i wszystkie są w jednym rodzicu. Zamiast przypisywać zdarzenia do każdego z nich, można przypisać te zdarzenia do ich rodzica i za pomocą <code>e.target</code> (w IE <code>e.srcElement</code>) sprawdzić, co tak naprawdę zostało kliknięte. Przydaje się także przy stronach ajaksowych, gdzie część elementów interaktywnych zostanie dodana po wczytaniu strony. Wtedy można doczepić zdarzenie np. do <code>body</code> i mieć pewność, że każdy przycisk będzie klikalny.</p>
 
-						<section id="komentarze">
-							<h2>Komentarze</h2>
-							<div id="disqus_thread"></div>
-							<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-							<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-						</section>
 					</div>
 				</div>
 			</main>
@@ -391,18 +385,6 @@ Sniffing an user agent is like sniffing a glue
 						next.classList.toggle( 'expanded' );
 						target.innerHTML = ( html === '[Zwiń]' ? '[Rozwiń]' : '[Zwiń]' );
 					} );
-
-					//defer loading of disqus
-
-					if ( location.host === 'tutorials.comandeer.pl' ) {
-						window.disqus_shortname = 'comandeerowa';
-
-						var dsq = document.createElement( 'script' );
-
-						dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-
-						( document.getElementsByTagName( 'head' )[ 0 ] || document.getElementsByTagName( 'body' )[ 0 ] ).appendChild( dsq );
-					}
 				} catch( err ) {}
 			} () );
 			</script>
