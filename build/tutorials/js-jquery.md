@@ -86,7 +86,11 @@ document.addEventListener( 'click', function( evt ) {
 ```
 
 
-<h3 id="clone">`.clone`</h3>
+<h3 id="clone">
+
+`.clone`
+
+</h3>
 
 Żeby sklonować obiekt w jQ, wystarczy skorzystać z metody `.clone`. Czy da się zrobić coś takiego w czystym JS? A i owszem.
 
@@ -100,7 +104,11 @@ console.log( clone( document.createElement( 'a' ) ) );
 Prosta i przyjemna sztuczka.
 
 
-<h3 id="extend">`.extend`</h3>
+<h3 id="extend">
+
+`.extend`
+
+</h3>
 
 To już nie jest do końca DOM, ale może się tu nadać.
 

@@ -10,7 +10,11 @@ Dzisiaj będzie krótko, rzeczowo i na temat (co dość rzadko mi się zdarza). 
 Dotąd jedynym właściwym sposobem były różne dziwne kombinacje typu "stwórzmy sobie tablicę z polskimi nazwami miesięcy i dni tygodnia, a następnie podstawiajmy pod dane, zwracane przez `new Date`". Mogą one wyglądać [rozwlekle i odpychająco](http://webmade.org/porady/data-po-polsku-js.php) (a ich autorem nie jest Polak). Mogą być też [wzorowane na innych językach](http://phpjs.org/functions/strftime/), stając się jeszcze bardziej rozwlekłe i… nie JS-owe. Mogą w końcu zmienić się po prostu w wywołanie odpowiedniej, krótkiej funkcyjki w PHP, po stwierdzeniu, że JS się do tego nie nadaje.
 
 
-<h2 id="Intl">`Intl` na ratunek!</h2>
+<h2 id="Intl">
+
+`Intl` na ratunek!
+
+</h2>
 
 Na szczęście się to zmieniło. I to nie znowu tak niedawno (bo w 2012). Wtedy powstał standard [ECMA-402 (ECMAScript Internationalization API)](http://www.ecma-international.org/ecma-402/1.0/). Oczywiście na odzew ze strony producentów przeglądarek trzeba było ciut poczekać, niemniej – jeśli wierzyć [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Browser_Compatibility) – działa dziś wszędzie, oprócz Safari i – co prawdopodobnie może być o wiele ważniejsze – node.js (jednak od czego jest niezawodny GitHub i [polyfille](https://github.com/andyearnshaw/Intl.js); oczywiście w node.js/io.js [obsługę można sobie wkompilować](https://github.com/nodejs/io.js#intl-ecma-402-support)).
 
