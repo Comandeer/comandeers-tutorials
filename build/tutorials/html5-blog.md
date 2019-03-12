@@ -5,15 +5,17 @@
 
 <div class="alert alert-info">
 
-Ten tutorial przeznaczony jest dla tych, którzy już mają jakiekolwiek pojęcie o HTML. Dobrym miejscem na zdobycie podstaw wiedzy jest [tutorial od The Awwwesomes](https://the-awwwesomes.gitbooks.io/html-css-step-by-step/pl/) czy też książka Ferrante [Moja pierwsza strona internetowa w HTML5 i CSS3](https://ferrante.pl/books/html/).
+Ten tutorial przeznaczony jest dla tych, którzy już mają jakiekolwiek pojęcie o HTML. Dobrym miejscem na zdobycie podstaw wiedzy jest [tutorial od The Awwwesomes](https://the-awwwesomes.gitbooks.io/html-css-step-by-step/pl/) czy też książka Ferrante [Moja pierwsza strona internetowa w HTML5 i CSS3](https://tutorials.comandeer.pl/res/html5-blog/ferrante-book.pdf).
 
 </div>
 
-Witam wszystkich! Przeszukałem kilka for webmasterskich i nie znalazłem ani jednego tutoriala na temat HTML5. Trza to naprawić!
+Witam wszystkich! Przeszukałem kilka for webmasterskich i nie znalazłem ani jednego tutorialu na temat HTML5. Trza to naprawić!
 
 <div class="alert alert-info">
 
-Od razu uprzedzam, że słowa <q>semantyczny</q> i <q>HTML5</q> z tematu są rozdzielne i część porad można zastosować w starym dobrym HTML4. A na upartego słowa <q>blog</q> w ogóle można się pozbyć.
+Od razu uprzedzam, że słowa <q>semantyczny</q> i <q>HTML5</q> z tematu są rozdzielne i część porad można zastosować w starym dobrym HTML 4. A na upartego słowa <q>blog</q> w ogóle można się pozbyć.
+
+Trzeba też zwrócić uwagę na to, że tak po prawdzie [istnieją dwa standardy HTML](https://medium.com/content-uneditable/the-great-world-of-open-web-standards-64c1fe53063). Choć [HTML LS od WHATWG](https://html.spec.whatwg.org/multipage/) jest wersją na bieżąco rozwijaną i w niedalekiej przyszłości prawdopodobnie stanie się jedynym, oficjalnym standardem, w tym tutorialu odwołuję się głównie do [HTML 5.x od W3C](http://w3c.github.io/html/), ponieważ ta wersja standardu zawiera o wiele więcej informacji i dobrych praktyk dotyczących semantyki i dostępności.
 
 </div>
 
@@ -43,20 +45,30 @@ Dobra, do rzeczy. Wyobraźmy sobie, że mamy sobie [przykładowy blog](https://t
 		</head>
 		<body>
 			<div id="header">
-				<h1><a href="http://example.net">Example.net - fajowy blog, na którym bloguję</a></h1>
+				<h1>
+					<a href="http://example.net">Example.net - fajowy blog, na którym bloguję</a>
+				</h1>
 				<p>Motto</p>
 				<ul id="menu">
-					<li><a href="whatever.html">Whatever</a></li>
-					<li><a href="whereever.html">Wherever</a></li>
-					<li><a href="whenever.html">Whenever</a></li>
+					<li>
+						<a href="whatever.html">Whatever</a>
+					</li>
+					<li>
+						<a href="whereever.html">Wherever</a>
+					</li>
+					<li>
+						<a href="whenever.html">Whenever</a>
+					</li>
 				</ul>
 				<form action="search.php" method="post">
-				<p><input type="text" name="q"><button type="submit" name="submit" value="1">Szukaj</button></p>
+					<p><input type="text" name="q"><button type="submit" name="submit" value="1">Szukaj</button></p>
 				</form>
 			</div>
 			<div id="main">
 				<div class="post" id="Super-hiper-wazny-wpis">
-					<h2><a href="http://example.net/Super-hiper-wazny-wpis" rel="bookmark" title="Permalink do Super hiper ważny wpis">Super hiper ważny wpis</a></h2>
+					<h2>
+						<a href="http://example.net/Super-hiper-wazny-wpis" rel="bookmark" title="Permalink do Super hiper ważny wpis">Super hiper ważny wpis</a>
+					</h2>
 					<p class="post info">Opublikowano 07.01.2011 przez <a href="http://example.net/author">Comandeer</a></p>
 					<img src="obrazek-do-artykulu.png" alt="Ważny obrazek">
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu justo enim, ac faucibus massa. Vestibulum in elit aliquam purus sollicitudin adipiscing ac et sapien. Curabitur eleifend justo diam, et viverra nisi. Quisque a ipsum vehicula nunc vestibulum posuere. Suspendisse potenti. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum porttitor, neque eu congue fermentum, velit ante pellentesque arcu, a posuere risus tortor vel ante. Donec et neque at odio hendrerit mattis sed eu tellus. Nullam accumsan leo ut felis suscipit vehicula posuere erat eleifend. Donec semper lorem eu nibh tincidunt varius.</p>
@@ -68,8 +80,12 @@ Dobra, do rzeczy. Wyobraźmy sobie, że mamy sobie [przykładowy blog](https://t
 				<div class="tags">
 					<h3>Tagi</h3>
 					<ol>
-						<li><a href="http://example.net/tag/Tag1">Tag1</a></li>
-						<li><a href="http://example.net/tag/Tag2">Tag2</a></li>
+						<li>
+							<a href="http://example.net/tag/Tag1">Tag1</a>
+						</li>
+						<li>
+							<a href="http://example.net/tag/Tag2">Tag2</a>
+						</li>
 					</ol>
 				</div>
 				<h3>Komentarze</h3>
@@ -77,7 +93,9 @@ Dobra, do rzeczy. Wyobraźmy sobie, że mamy sobie [przykładowy blog](https://t
 					<li class="alt" id="comment-25">
 						<small><a href="#comment-25" title="">30.12.08, 21:19</a> </small>
 						<cite><a href="http://example.net/"><img alt="Avatar użytkownika Comandeer" src="http://avatary.gdziekolwiek.com/Comandeer" height="48" width="48">Comandeer</a></cite>
-						<div><p>Ale komentarz!</p></div>
+						<div>
+							<p>Ale komentarz!</p>
+						</div>
 					</li>
 				</ol>
 				<h3>Dodaj komentarz</h3>
@@ -85,15 +103,33 @@ Dobra, do rzeczy. Wyobraźmy sobie, że mamy sobie [przykładowy blog](https://t
 					<fieldset>
 						<legend>Napisz komentarz</legend>
 						<dl>
-							<dt><label for="comment_author">Nick</label></dt>
-								<dd><input type="text" name="author" id="comment_author" tabindex="1"></dd>
-							<dt><label for="comment_email">E-mail</label></dt>
-								<dd><input type="text" name="email" id="comment_email" tabindex="2"></dd>
-							<dt><label for="comment_url">Strona</label></dt>
-								<dd><input type="text" name="url" id="comment_url" tabindex="3"></dd>
-							<dt><label for="comment_comment">Komentarz</label></dt>
-								<dd><textarea name="comment" id="comment_comment" cols="48" rows="7" tabindex="5" ></textarea></dd>
-							<dd><button name="submit" type="submit" id="comment_submit" tabindex="5">Wyślij</button></dd>
+							<dt>
+								<label for="comment_author">Nick</label>
+							</dt>
+							<dd>
+								<input type="text" name="author" id="comment_author" tabindex="1">
+							</dd>
+							<dt>
+								<label for="comment_email">E-mail</label>
+							</dt>
+							<dd>
+								<input type="text" name="email" id="comment_email" tabindex="2">
+							</dd>
+							<dt>
+								<label for="comment_url">Strona</label>
+							</dt>
+							<dd>
+								<input type="text" name="url" id="comment_url" tabindex="3">
+							</dd>
+							<dt>
+								<label for="comment_comment">Komentarz</label>
+							</dt>
+							<dd>
+								<textarea name="comment" id="comment_comment" cols="48" rows="7" tabindex="5" ></textarea>
+							</dd>
+							<dd>
+								<button name="submit" type="submit" id="comment_submit" tabindex="5">Wyślij</button>
+							</dd>
 						</dl>
 						<input type="hidden" name="comment_post_ID" value="88">
 					</fieldset>
@@ -107,17 +143,29 @@ Dobra, do rzeczy. Wyobraźmy sobie, że mamy sobie [przykładowy blog](https://t
 				<div class="tags cloud">
 					<h3>Tagi</h3>
 					<ul>
-						<li><a href="http://example.net/tag/Tag1">Tag1</a></li>
-						<li><a href="http://example.net/tag/Tag2">Tag2</a></li>
-						<li><a href="http://example.net/tag/Tag3">Tag3</a></li>
-						<li><a href="http://example.net/tag/Tag2">Tag4</a></li>
+						<li>
+							<a href="http://example.net/tag/Tag1">Tag1</a>
+						</li>
+						<li>
+							<a href="http://example.net/tag/Tag2">Tag2</a>
+						</li>
+						<li>
+							<a href="http://example.net/tag/Tag3">Tag3</a>
+						</li>
+						<li>
+							<a href="http://example.net/tag/Tag2">Tag4</a>
+						</li>
 					</ul>
 				</div>
 				<div class="archive">
 					<h3>Archiwum</h3>
 					<ol>
-						<li><a href="http://example.net/archiwum/2011/01">Styczeń 2011</a></li>
-						<li><a href="http://example.net/archiwum/2010/12">Grudzień 2010</a></li>
+						<li>
+							<a href="http://example.net/archiwum/2011/01">Styczeń 2011</a>
+						</li>
+						<li>
+							<a href="http://example.net/archiwum/2010/12">Grudzień 2010</a>
+						</li>
 					</ol>
 				</div>
 			</div>
@@ -126,13 +174,13 @@ Dobra, do rzeczy. Wyobraźmy sobie, że mamy sobie [przykładowy blog](https://t
 	</html>
 ```
 
-Nic nadzwyczajnego – blog jakich dużo w Internecie. Przyznam się bez bicia, że ten przykładzik to połączenie blogu [Lea Verou](http://lea.verou.me) i naszego kochanego [Roberto](http://web.archive.org/web/20150901161552/http://roberto.ovh.org:80/blog). Kodu nie będę wyjaśniał, bo mam wrażenie, że powinien być jasny. Ot, zwyczajny wpis na zwyczajnym blogu, poniżej komentarze, formularz do komentowania i jakieś tam dodatkowe info w bocznym panelu. Specjalnie nie dorzucam CSS, bo jestem z tych purystów, co to twierdzą, że strona to treść i kod, a wygląd jest jedynie dodatkiem.
+Nic nadzwyczajnego – blog jakich dużo w Internecie. Kodu nie będę wyjaśniał, bo mam wrażenie, że powinien być jasny. Ot, zwyczajny wpis na zwyczajnym blogu, poniżej komentarze, formularz do komentowania i jakieś tam dodatkowe info w bocznym panelu. Specjalnie nie dorzucam CSS, bo jestem z tych purystów, co to twierdzą, że [strona to treść i kod, a wygląd jest jedynie dodatkiem](https://webroad.pl/inne/3722-progressive-enhancement-zapomniany-fundament).
 
 
 
 <h2 id="nasz-cel">Nasz cel</h2>
 
-Chcemy być cool i porzucamy zgrzybiałego HTML4 na rzecz jego potomka! Poza tym spróbujemy nadać większe znaczenie naszej treści, przede wszystkim dla użytkownika, pamiętając, że co dobre dla użytkownika, jest także (najczęściej) dobre dla Google. Do tego celu wykorzystamy m.in. mikroformaty i nowe znaczniki z HTML5.
+Chcemy być cool i porzucamy zgrzybiałego HTML 4 na rzecz jego potomka! Poza tym spróbujemy nadać większe znaczenie naszej treści, przede wszystkim dla użytkownika, pamiętając, że co dobre dla użytkownika, jest także (najczęściej) dobre dla Google. Do tego celu wykorzystamy m.in. mikroformaty i nowe znaczniki z HTML5.
 
 
 
@@ -162,7 +210,7 @@ To króciutkie meta obsługuje nawet IE6. Zdziwieni? A powinni, bo ta składnia 
 <meta http-equiv="Content-type" content="text/html;charset="UTF-8"">
 ```
 
-Przeglądarki stwierdziły bowiem, że nie ma sensu parsować nieprawidłowego znacznika i po prostu znalazły inny sposób: szukały czegoś na wzór `charset=["]*[a-z0-9]["]*` (mam nadzieję, że to dobre wyrażenie regularne…). No i tak już zostało, a później to… [ustandaryzowano w ramach HTML5](https://www.w3.org/TR/html50/infrastructure.html#extracting-character-encodings-from-meta-elements). BTW ten znacznik i tak nie ma większego znaczenia, bo kodowanie jest narzucane przez nagłówki HTTP. Można je kontrolować ręcznie, np. przez PHP:
+Przeglądarki stwierdziły bowiem, że nie ma sensu parsować nieprawidłowego znacznika i po prostu znalazły inny sposób: szukały czegoś na wzór `charset=["']*[a-z0-9]["']*` (mam nadzieję, że to dobre wyrażenie regularne…). No i tak już zostało, a później to… [ustandaryzowano w ramach HTML5](https://www.w3.org/TR/html50/infrastructure.html#extracting-character-encodings-from-meta-elements). BTW ten znacznik i tak nie ma większego znaczenia, bo kodowanie jest narzucane przez nagłówki HTTP. Można je kontrolować ręcznie, np. przez PHP:
 
 ```php
 <?php header('Content-Type: text/html;charset=UTF-8'); ?>
@@ -176,7 +224,7 @@ Warto także zwrócić uwagę, że w specyfikacji HTML5 napisano, że nazwa kodo
 
 Teraz słówko o arkuszu stylów: jeśli dołączamy go poprzez `link`, można usunąć zbędny atrybut `[type]` – arkusze i tak zawsze są typu `text/css`.
 
-W przypadku skryptów sprawa jest nieco bardziej skomplikowana. Jeśli mówimy o "normalnym" skrypcie (np. dołączenie jQuery, slider), wówczas `[type]` jest całkowicie zbędne – i tak jest to zawsze `[type=text/javascript]`. W specyfikacji są podane jednak także inne sposoby wykorzystania `script`, m.in. jako [systemu szablonów](https://stackoverflow.com/questions/4912586/explanation-of-script-type-text-template-script). Ostatnio także [dodano do specyfikacji `[type=module]`](https://html.spec.whatwg.org/multipage/webappapis.html#module-script), które pozwala [wczytywać moduły ES](http://exploringjs.com/es6/ch_modules.html).
+W przypadku skryptów sprawa jest nieco bardziej skomplikowana. Jeśli mówimy o "normalnym" skrypcie (np. dołączenie jQuery, slider), wówczas `[type]` jest całkowicie zbędne – i tak jest to zawsze `[type=text/javascript]`. W specyfikacji są podane jednak także inne sposoby wykorzystania `script`, m.in. jako [systemu szablonów](https://stackoverflow.com/questions/4912586/explanation-of-script-type-text-template-script). Ostatnio także [dodano do specyfikacji `[type=module]`](https://html.spec.whatwg.org/multipage/webappapis.html#module-script), które pozwala [wczytywać moduły ES](http://exploringjs.com/es6/ch_modules.html), a wkrótce [może się także pojawić `[type=importmap]`](https://github.com/WICG/import-maps#installation).
 
 
 
@@ -187,12 +235,12 @@ Niestety, z obsługą reszty znaczników nie jest już tak kolorowo i stare IE w
 ```markup
 <!--[if lt IE 9]>
 	<script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv-printshiv.min.js"></script>
-<![endif]--> 
+<![endif]-->
 ```
 
-Po więcej informacji o tym skrypciku zapraszam do [oficjalnego repozytorium na GitHubie](https://github.com/aFarkas/html5shiv), na [blog Remy'iego Sharpa](https://remysharp.com/2009/01/07/html5-enabling-script/) i [blog Paula Irisha](https://www.paulirish.com/2011/the-history-of-the-html5-shiv/). Jeśli natomiast w przyszłości wzbogacisz swój blog o jakieś nowinki z HTML 5 APIs (np. nagrywanie video komentarzy), to warto zapoznać się też z pojęciem feature detection (ang. wykrywanie funkcjonalności) i bibliotekami [Modernizr](https://modernizr.com/) czy [has.js](https://github.com/phiggins42/has.js/). Dodatkowo można też wykorzystać [usługę Polyfill.io](https://polyfill.io/v2/docs/), która sama decyduje, jakie polyfille są potrzebne i je dołącza. Warto także poczytać o [technice <q>cut the mustard</q>](http://responsivenews.co.uk/post/18948466399/cutting-the-mustard).
+Po więcej informacji o tym skrypciku zapraszam do [oficjalnego repozytorium na GitHubie](https://github.com/aFarkas/html5shiv), na [blog Remy'iego Sharpa](https://remysharp.com/2009/01/07/html5-enabling-script/) i [blog Paula Irisha](https://www.paulirish.com/2011/the-history-of-the-html5-shiv/). Jeśli natomiast w przyszłości wzbogacisz swój blog o jakieś nowinki z HTML 5 APIs (np. nagrywanie video komentarzy), to warto zapoznać się też z pojęciem feature detection (ang. wykrywanie możliwości) i bibliotekami [Modernizr](https://modernizr.com/) czy [has.js](https://github.com/phiggins42/has.js/). Dodatkowo można też wykorzystać [usługę Polyfill.io](https://polyfill.io/v2/docs/), która sama decyduje, jakie polyfille są potrzebne i je dołącza. Warto także poczytać o [technice <q>cut the mustard</q>](http://responsivenews.co.uk/post/18948466399/cutting-the-mustard).
 
-Tutaj warto też od razu zwrócić uwagę na fakt, że nieznane przeglądarce elementy są nieostylowane w żaden sensowny sposób i przez to możemy dostać np. liniowe `section`, co raczej jest niezbyt pożądane. Na szczęście problem ten rozwiązuje normalizacja stylów (nawet jeśli nie chcesz używać nowych znaczników, to i tak powinieneś rozważyć [ normalizację](http://nicolasgallagher.com/about-normalize-css/) lub [resetowanie](http://html5doctor.com/html-5-reset-stylesheet/)), przypisując najbardziej podstawowe style odpowiednim elementom.
+Tutaj warto też od razu zwrócić uwagę na fakt, że nieznane przeglądarce elementy są nieostylowane w żaden sensowny sposób i przez to możemy dostać np. liniowe `section`, co raczej jest niezbyt pożądane. Na szczęście problem ten rozwiązuje normalizacja stylów (nawet jeśli nie chcesz używać nowych znaczników, to i tak powinieneś rozważyć [normalizację](http://nicolasgallagher.com/about-normalize-css/), [resetowanie](http://html5doctor.com/html-5-reset-stylesheet/), [sanityzację](https://github.com/csstools/sanitize.css) lub [remedium](https://github.com/mozdevs/cssremedy)), przypisując najbardziej podstawowe style odpowiednim elementom.
 
 <div class="alert alert-info">
 
@@ -226,21 +274,29 @@ Jeśli już zmieniamy wszystko, to pewnie pomyślicie, że menu też można zmie
 
 <div class="alert alert-danger">
 
-Co prawda w HTML5 <i>istniał</i> także element `menu`, ale służył on do tworzenia menu dla aplikacji (menu kontekstowe czy toolbary) i nie należy go mylić z `nav`.
+Co prawda w HTML5 <em>istniał</em> także element `menu`, ale służył on do tworzenia menu dla aplikacji (menu kontekstowe czy toolbary) i nie należy go mylić z `nav`.
 
 </div>
 
-W naszym nagłówku pozostał jeszcze formularz wyszukiwania, ale do niego wrócę później i omówię go razem z formularzem dodawania komentarzy. W chwili obecnej nasz nagłówek powinien wyglądać mniej więcej tak:
+W naszym nagłówku pozostał jeszcze formularz wyszukiwania, ale [do niego wrócę później](https://tutorials.comandeer.pl/html5-blog.html#formularze) i omówię go razem z formularzem dodawania komentarzy. W chwili obecnej nasz nagłówek powinien wyglądać mniej więcej tak:
 
 ```markup
 <header id="header">
-	<h1><a href="http://example.net">Example.net - fajowy blog, na którym bloguję</a></h1>
+	<h1>
+		<a href="http://example.net">Example.net - fajowy blog, na którym bloguję</a>
+	</h1>
 	<p>Motto</p>
 	<nav id="menu">
 		<ul>
-			<li><a href="whatever.html">Whatever</a></li>
-			<li><a href="whereever.html">Wherever</a></li>
-			<li><a href="whenever.html">Whenever</a></li>
+			<li>
+				<a href="whatever.html">Whatever</a>
+			</li>
+			<li>
+				<a href="whereever.html">Wherever</a>
+			</li>
+			<li>
+				<a href="whenever.html">Whenever</a>
+			</li>
 		</ul>
 	</nav>
 	<form action="search.php" method="post">
@@ -256,17 +312,9 @@ W naszym nagłówku pozostał jeszcze formularz wyszukiwania, ale do niego wróc
 
 <h3 id="artykul-glowne-ramy">Główne ramy</h3>
 
-Oki doki, teraz czas na danie główne: treść artykułu! Zapewne zauważyliście, że jest opatulona w dodatkowy `div#main`. Jak już wspomniałem, `div`y nie mają jakiegoś specjalnego znaczenia semantycznego, dlatego w HTML5 powstało mnóstwo nowych znaczników, które mogą `div`y zastąpić. Jednym z nich jest `section`, którym oznacza się pewne części dokumentu, które można wyróżnić ze względu na ich przeznaczenie. W tym wypadku użycie `section` jest dozwolone, gdyż wyznacza obszar artykułu wraz ze wszystkimi "dodatkami" do niego (tj. tagi i komentarze) – całość tworzy pewną całość treściową. Właśnie do takich przypadków stworzono `section`! Jednak to, że jest dozwolone, nie oznacza, że na pewno trzeba ten fragment oznaczyć. Za [HTML5 Doctor](http://html5doctor.com/the-section-element/):
-<blockquote>
+Oki doki, teraz czas na danie główne: treść artykułu! Zapewne zauważyliście, że jest opatulona w dodatkowy `div#main`. Jak już wspomniałem, `div`y nie mają jakiegoś specjalnego znaczenia semantycznego, dlatego w HTML5 powstało mnóstwo nowych znaczników, które mogą `div`y zastąpić. Jednym z nich jest `section`, którym oznacza się pewne części dokumentu, które można wyróżnić ze względu na ich przeznaczenie. W tym wypadku użycie `section` jest dozwolone, gdyż wyznacza obszar artykułu wraz ze wszystkimi "dodatkami" do niego (tj. tagi i komentarze) – całość tworzy pewną całość treściową. Właśnie do takich przypadków stworzono `section`!
 
-
-But what would be the purpose of marking it [main content] up specifically, anyway? If you need to style it, use a div. An assistive technology like a screenreader can find the main content because it is the first thing inside a page that isn’t a header, nav or footer.
-
-[Ale jaki mielibyśmy cel w dodatkowym oznaczaniu głównej treści? Jeśli potrzebujesz ją ostylować, użyj diva. Technologia asystująca, taka jak czytnik ekranowy, będzie w stanie znaleźć główną treść z tego prostego względu, że będzie pierwszą rzeczą wewnątrz strony, która nie jest ani nagłówkiem, ani stopką.]
-
-</blockquote>
-
-Niemniej potrzeba oznaczenia głównej treści strony stała się na tyle duża, że [dodano do HTML5 nowy znacznik, służący wyłącznie temu – `main`](https://w3c.github.io/html/grouping-content.html#the-main-element). Warto dodać, że ten znacznik – ze względów dostępności – powinien znaleźć się na stronie <b>wyłącznie raz</b>, co powoduje [niekończący się spór między WHATWG i W3C](https://github.com/whatwg/html/issues/100) (tutaj warto zwrócić uwagę na to, że [istnieją dwa standardy HTML](https://medium.com/content-uneditable/the-great-world-of-open-web-standards-64c1fe53063) – w tym tutorialu będziemy się opierać głównie na wersji W3C jako tej, która w dogłębniejszy sposób zajmuje się problemami semantyki i dostępności).
+Niemniej potrzeba oznaczenia głównej treści strony stała się na tyle duża, że [dodano do HTML5 nowy znacznik, służący wyłącznie temu – `main`](https://w3c.github.io/html/grouping-content.html#the-main-element). Warto dodać, że ten znacznik – ze względów dostępności – [powinien znaleźć się na stronie <b>wyłącznie raz</b>](https://github.com/whatwg/html/issues/100).
 
 Dobra, teraz zatrzymujemy się na `div.post` – to też można ulepszyć. W HTML5 pojawia się `article`, który służy do oznaczania… artykułów (nie wpadliście na to, co?), a dokładniej <q>semantycznej całości, która może być prezentowana samodzielnie</q> (dość swobodna interpretacja specyfikacji). Wpis na blogu pasuje idealnie do tej definicji. No, na co czekasz – wyrzuć tego `div`a!
 
@@ -299,7 +347,7 @@ Co rozumiem pod pojęciem "ilustracja"? Wystarczy wyobrazić sobie książkę, w
 </figure>
 ```
 
-W `figcaption` można umieścić dokładny opis danego obiektu. Napisałem "obiektu", bo równie dobrze w `figure` można umieścić filmik (np. poprzez HTML-owy `video` – tak, też nowy znacznik) czy dźwięk (`audio`).
+W `figcaption` można umieścić dokładny opis danego obiektu. Napisałem "obiektu", bo równie dobrze w `figure` można umieścić filmik (np. poprzez HTML-owy `video` – tak, też nowy znacznik), dźwięk (`audio`) czy tabelę.
 
 <div class="alert alert-info">
 
@@ -320,36 +368,22 @@ Jeśli chodzi o sam znacznik `img`: jego również można ruszyć, a to za spraw
 
 Ci, którzy bawili się `video`/`audio`, na pewno znają znaczniki `source`. Wskazują one <q>źródło elementu multimedialnego</q> (w tym wypadku obrazka). Które `source` ma wybrać przeglądarka? O tym decydują media queries, zawarte w atrybucie `[media]`. Warto zauważyć także, że często podawane są dwa obrazki, dodatkowo oznaczone "1x" i "2x". Są to wersje przystosowane do gęstości pikseli ("1x" dla normalnych monitorów, "2x" dla Retiny). Pojawia się też `img`. Zgodnie z najnowszą wersją specyfikacji `picture`, `img` jest jego główną składową – cała otoczka służy jedynie wyborowi odpowiedniego pliku grafiki, który jest następnie ładowany do rzeczonego `img`. Proste i skuteczne, a zarazem dostarcza doskonałego fallbacku dla starszych przeglądarek.
 
-Jaki sens ma stosowanie `picture`? Wyobraźmy sobie, że mamy zdjęcie prezydenta wygłaszającego orędzie do narodu. Owszem, można zastosować tricki w CSS, żeby obrazek nam się ładnie zeskalował na komórce, ale… No właśnie - będziemy mieli małe, rozmazane wiadomo co. Natomiast przy pomocy `picture` komórkom i innym mniejszym ekranom możemy zaserwować odpowiednio mniejszy (zatem i lżejszy) obrazek ze zbliżeniem na twarz prezydenta. Nie dość, że iPhone będzie musiał mniej ściągnąć, to jeszcze dostanie zdjęcie przedstawiające to, co najważniejsze. Oczywiście działa to też w drugą stronę i super wypasionym ekranom panoramicznym o przekątnej 100 cali możemy wysłać zdjęcie prezydenta + całego słuchającego go tłumu.
+Jaki sens ma stosowanie `picture`? Wyobraźmy sobie, że mamy zdjęcie prezydenta wygłaszającego orędzie do narodu. Owszem, można zastosować tricki w CSS, żeby obrazek nam się ładnie zeskalował na komórce, ale… No właśnie – będziemy mieli małe, rozmazane wiadomo co. Natomiast przy pomocy `picture` komórkom i innym mniejszym ekranom możemy zaserwować odpowiednio mniejszy (zatem i lżejszy) obrazek ze zbliżeniem na twarz prezydenta. Nie dość, że iPhone będzie musiał mniej ściągnąć, to jeszcze dostanie zdjęcie przedstawiające to, co najważniejsze. Oczywiście działa to też w drugą stronę i super wypasionym ekranom panoramicznym o przekątnej 100 cali możemy wysłać zdjęcie prezydenta + całego słuchającego go tłumu.
 
-Warto zauważyć, że rozwojem technik związanych z responsywnością zajmuje się powołana [community group [grupa społeczna]](https://www.w3.org/community/respimg/) (która jest teraz częścią [większej inicjatywy](https://www.w3.org/community/wicg/)). To właśnie ona stoi za powstaniem tagu `picture` oraz jego mniej inwazyjnych odpowiedników: [atrybutów `[srcset]` i `[sizes]` dla tagu `img`](https://html.spec.whatwg.org/multipage/embedded-content.html#srcset-attributes). Warto też nadmienić, że WHATWG odrzuciło początkowo propozycję znacznika `picture`, promując `[srcset]`. Najlepiej wyjaśnia to Ian Hickson - [s]najbardziej wpływowy człowiek w Sieci[/s] (współ)redaktor żyjącego standardu:
-<blockquote>
+<div class="alert alert-info">
 
+Warto zauważyć, że rozwojem technik związanych z responsywnością zajmuje się powołana [community group [grupa społeczna]](https://www.w3.org/community/respimg/) (która jest teraz częścią [większej inicjatywy](https://www.w3.org/community/wicg/)). To właśnie ona stoi za powstaniem tagu `picture` oraz jego mniej inwazyjnych odpowiedników: [atrybutów `[srcset]` i `[sizes]` dla tagu `img`](https://html.spec.whatwg.org/multipage/embedded-content.html#srcset-attributes).
 
-The way we usually approach ideas is that we describe the problem, then we come up with solutions to the problem and compare them, by evaluating them against the problem. This is where most concrete proposals run into a “no”; something else got the “yes” instead. `<picture>` is an example of this: we described the problem (that took a few months of back and forth), and then once we had a problem description, I looked at the various proposals, and synthesised a solution based on those that addressed the problems adequately while trying to avoid some common design pitfalls based on lessons we’d learnt from previous ideas. So for example with `<picture>`, we learnt with `<video>` and `<source>` that having multiple elements for selecting a resource is a huge design pitfall, so when designing a solution to the problem here, I avoided that (hence the `srcset=""` design based on CSS’s `image-set()` proposal).
+</div>
 
-[Najczęściej podchodzimy do pomysłów poprzez uprzednie opisaniu problemu, a następnie znalezienie jego rozwiązań i ich porównanie ze sobą w zakresie tego, jak są w stanie rozwiązać problem. To właśnie moment, w którym najwięcej konkretnych propozycji natrafia na "nie"; niektóre jednak natrafiają na "tak". `<picture>` jest przykładem tego: opisaliśmy problem (to zajęło nam kilka miesięcy), a gdy już mieliśmy jego dokładny opis, przeglądnąłem różne propozycje i stworzyłem rozwiązanie mające omijać znane błędy projektowe z wcześniejszych rozwiązań. W przypadku `<picture>` były to doświadczenia z `<video>` i `<source>`, wskazujące na to, że posiadanie wielu elementów służących do wyboru konkretnego zasobu jest wielkim błędem projektowym, toteż, tworząc nowe rozwiązanie, unikałem tego (stąd `srcset=""`), oparte na CSS-owej propozycji `image-set()`).]
-
-<footer><cite>http://html5doctor.com/interview-with-ian-hickson-html-editor/</cite></footer></blockquote>
-
-Osobiście w tym względzie nie zgadzam się z Ianem i raczej widziałbym znacznik `picture` (+`[srcset]`) niż "napakowany" `img`. No, ale jak sam Hixie mówi:
-<blockquote>
-
-
-In reality, I can’t really say either “yes” or “no”. What I say doesn’t mean anything: I don’t write any browsers. The browser vendors say “no” to me all the time, by just not implementing what I’ve specced.
-
-[W rzeczywistości nie mogę tak naprawdę powiedzieć ani "tak", ani "nie". To, co mówię, nic nie znaczy: nie tworzę przeglądarek. Twórcy przeglądarek cały czas mówią mi "nie", po prostu nie implementując tego, co ja umieszczam w specyfikacji.]
-
-<footer><cite>http://html5doctor.com/interview-with-ian-hickson-html-editor/</cite></footer></blockquote>
-
-Rzeczywistość szybko zweryfikowała poglądy Hixiego i obecnie [`picture` już jest w HTML Living Standard](https://html.spec.whatwg.org/multipage/embedded-content.html#the-picture-element). Tym samym w cień odeszło [nowe rozwiązanie – `[src-n]`](https://tabatkins.github.io/specs/respimg), które łączy w sobie niejako `picture` i `[srcset]` w prostsze, bardziej zrozumiałe rozwiązanie. Coraz częściej próbuje się także zrzucić odpowiedzialność za rozwiązanie problemu [na serwer](https://www.igvita.com/2013/08/29/automating-dpr-switching-with-client-hints/) (co IMO jest bardzo rozsądnym rozwiązaniem). Jednak najlepszym (ale też najbardziej długotrwałym) rozwiązaniem wydaje się po prostu [stworzenie nowego formatu obrazków](https://www.smashingmagazine.com/2013/09/responsive-image-container/). Zresztą nieważne tak naprawdę, jak problem responsywnych obrazków zostanie rozwiązany – najważniejsze, że(by?) został rozwiązany.
+Obecnie [`picture` jest częścią standardu HTML Living Standard](https://html.spec.whatwg.org/multipage/embedded-content.html#the-picture-element). Tym samym w cień odeszło [nowe rozwiązanie – `[src-n]`](https://tabatkins.github.io/specs/respimg), które łączy w sobie niejako `picture` i `[srcset]` w prostsze, bardziej zrozumiałe rozwiązanie. Coraz częściej próbuje się także zrzucić odpowiedzialność za rozwiązanie problemu [na serwer](https://www.igvita.com/2013/08/29/automating-dpr-switching-with-client-hints/) (co IMO jest bardzo rozsądnym rozwiązaniem). Jednak najlepszym (ale też najbardziej długotrwałym) rozwiązaniem wydaje się po prostu [stworzenie nowego formatu obrazków](https://www.smashingmagazine.com/2013/09/responsive-image-container/). Zresztą nieważne tak naprawdę, jak problem responsywnych obrazków zostanie rozwiązany – najważniejsze, że(by?) został rozwiązany.
 
 
 <h3 id="artykul-outline">Outline</h3>
 
 Dobra, akapitów się (jeszcze) zmienić nie da, więc treść mamy z głowy. Przyjrzyjmy się zatem hierarchii nagłówków w HTML5. Jest to o tyle ważny temat, że hierarchia nagłówków odzwierciedla całą strukturę treści na stronie (stanowi jej spis treści) i dzięki temu [ułatwia nawigację dla osób korzystających z czytników ekranowych](http://internet-bez-barier.com/elementy-naglowkowe-a-dostepnosc/#naglowki-w-nawigacji).
 
-W HTML5 istniał ambitny plan odejścia od tradycyjnych znaczników `h1`–`h6` i przejścia na [hierarchię treści opartą na nowych znacznikach sekcjonujących](https://w3c.github.io/html/sections.html#creating-an-outline) (`section, article` itd.). Niemniej [nikt tego nie zaimplementował](https://www.paciellogroup.com/blog/2013/10/html5-document-outline/) i ostatecznie [postanowiono pozbyć się tej fikcji](https://lists.w3.org/Archives/Public/public-html/2016Apr/0032.html). Stąd jedynym poprawnym sposobem tworzenia hierarchii treści na stronie HTML5 jest połączenie obydwu metod (tagi sekcjonujące + różnicowanie ważności nagłówków), gdyż nowy algorytm zostanie usunięty ze specyfikacji i zastosowanie go spowoduje, że [AT](http://en.wikipedia.org/wiki/Assistive_Technology) dostaną spłaszczoną hierarchię nagłówków (co raczej jest średnim pomysłem).
+W HTML5 istniał ambitny plan odejścia od tradycyjnych znaczników `h1`–`h6` i przejścia na [hierarchię treści opartą na nowych znacznikach sekcjonujących](https://w3c.github.io/html/sections.html#creating-an-outline) (`section, article` itd.). Niemniej [nikt tego nie zaimplementował](https://www.paciellogroup.com/blog/2013/10/html5-document-outline/) i ostatecznie [postanowiono pozbyć się tej fikcji](https://lists.w3.org/Archives/Public/public-html/2016Apr/0032.html). Stąd jedynym poprawnym sposobem tworzenia hierarchii treści na stronie HTML5 jest połączenie obydwu metod (tagi sekcjonujące + różnicowanie ważności nagłówków), gdyż nowy algorytm prawdopodobnie zostanie zastąpiony [nowym rozwiązaniem](https://github.com/whatwg/html/pull/3499) i zastosowanie go w obecnej formie spowoduje, że [AT](http://en.wikipedia.org/wiki/Assistive_Technology) dostaną spłaszczoną hierarchię nagłówków (co raczej jest średnim pomysłem).
 
 Jeśli chcesz przetestować swój outline, wystarczy zaznaczyć odpowiednią opcję (<q>Show outline</q>) w [walidatorze](https://validator.w3.org/nu).
 
@@ -364,7 +398,7 @@ Jak zatem stworzyć sensowną hierarchię nagłówków? Wystarczy trzymać się 
 
 * Nagłówki powinny być po kolei, zatem najpierw `h1`, potem `h2`, `h3` itd. Nie powinna wystąpić sytuacja, gdy hierarchia zaczyna się od np. `h4` albo gdy po `h2` wystąpi od razu `h5`.
 * Nagłówek `h1` powinien wystąpić na stronie tylko raz i powinien stanowić [główny nagłówek strony](https://blog.comandeer.pl/html-css/a11y/2017/07/04/o-naglowkach-slow-kilka.html#g%C5%82%C3%B3wny-nag%C5%82%C3%B3wek).
-* Każda sekcja lub artykuł powinny mieć swój nagłówek.
+* Każda sekcja lub artykuł powinny mieć swój nagłówek. Najlepiej podzielić stronę przy pomocy nagłówków, a dopiero potem dołożyć do tego znaczniki sekcyjne (tzw. [Headings First Principle](https://blog.comandeer.pl/refleksje/html-css/2018/04/30/headings-first-principle.html)).
 
 
 
@@ -372,7 +406,9 @@ Przyjrzyjmy się nieco bliżej kwestii głównego nagłówka. W przypadku bloga 
 
 ```markup
 <header id="header">
-	<h1><a href="http://example.net">Example.net - fajowy blog, na którym bloguję</a></h1>
+	<h1>
+		<a href="http://example.net">Example.net - fajowy blog, na którym bloguję</a>
+	</h1>
 	<p>Motto</p>
 	[…]
 </header>
@@ -405,11 +441,11 @@ Natomiast `h1` znajdzie się wówczas w `main > article`:
 
 <div class="alert alert-info">
 
-Co uważniejszy czytelnik zapewne zastanowi się teraz, czy aby na pewno `body > header > h1` to to samo co `article h1`. Odpowiedź na to pytanie nie jest jednoznaczna. Na gruncie semantyki nie, ponieważ pierwszy nagłówek jest nagłówkiem strony, a drugi - nagłówkiem konkretnego artykułu. Niemniej na gruncie obecnej implementacji dostępności (czyli braku implementacji algorytmu outline'u) ranga nagłówków <b>nie zależy</b> od semantyki. Tym samym `h1` <b>zawsze</b> jest najważniejszym nagłówkiem na stronie, bez względu na miejsce wystąpienia. I dopóki algorytm outline'u nie zostanie zaimplementowany, tego typu rozwiązanie (`article > h1` jako główny nagłówek strony) wydaje się najlepsze – pomimo swojej niedoskonałej semantyki.
+Co uważniejszy czytelnik zapewne zastanowi się teraz, czy aby na pewno `body > header > h1` to to samo co `article h1`. Odpowiedź na to pytanie nie jest jednoznaczna. Na gruncie semantyki nie, ponieważ pierwszy nagłówek jest nagłówkiem strony, a drugi – nagłówkiem konkretnego artykułu. Niemniej na gruncie obecnej implementacji dostępności (czyli braku implementacji algorytmu outline'u) ranga nagłówków <b>nie zależy</b> od semantyki. Tym samym `h1` <b>zawsze</b> jest najważniejszym nagłówkiem na stronie, bez względu na miejsce wystąpienia. I dopóki algorytm outline'u nie zostanie zaimplementowany, tego typu rozwiązanie (`article > h1` jako główny nagłówek strony) wydaje się najlepsze – pomimo swojej niedoskonałej semantyki.
 
 </div>
 
-Można pójść o krok dalej. Heydon Pickering w swojej książce [Inclusive Design Patterns](https://www.smashingmagazine.com/inclusive-design-patterns/) stwierdza, że w chwili, gdy logo strony nie jest nagłówkiem a jedynie linkiem, staje się integralną częścią nawigacji. Ma to sens, gdyż logo jest odnośnikiem do strony głównej. Tym samym na stronach poszczególnych wpisów można się pokusić o mocniejsze przebudowanie nagłówka:
+Można pójść o krok dalej. Heydon Pickering w swojej książce [Inclusive Design Patterns](https://www.smashingmagazine.com/inclusive-design-patterns/) stwierdza, że w chwili, gdy logo strony nie jest nagłówkiem a jedynie linkiem, staje się integralną częścią nawigacji. Ma to sens, gdyż logo jest równocześnie odnośnikiem do strony głównej. Tym samym można się pokusić o całkowite przebudowanie nagłówka:
 
 ```markup
 <header id="header">
@@ -451,7 +487,9 @@ Niemniej ważniejszą kwestią jest sposób organizacji komentarzy. [Przykład w
 	<ol>
 		<li id="comment-25" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
 			<div class="comment-meta">
-				<a href="#comment-25"><time datetime="2011-01-07T20:41:06+00:00" itemprop="dateCreated">07.01.2011, 20:41</time></a>
+				<a href="#comment-25">
+					<time datetime="2011-01-07T20:41:06+00:00" itemprop="dateCreated">07.01.2011, 20:41</time>
+				</a>
 				<b itemprop="author" itemscope itemtype="http://schema.org/Person"><a href="http://example.net/" itemprop="name url"><img alt="" src="http://avatary.gdziekolwiek.com/Comandeer" height="48" width="48" itemprop="image">Comandeer</a> skomentował</b>
 			</div>
 			<p itemprop="text">Ale komentarz!</p>
@@ -460,6 +498,12 @@ Niemniej ważniejszą kwestią jest sposób organizacji komentarzy. [Przykład w
 	[…]
 </section>
 ```
+
+<div class="alert alert-info">
+
+Wyjaśnienie znaczenia atrybutów `[itemprop], [itemscope], [itemtype]` znajduje się w [sekcji o mikrodanych](https://tutorials.comandeer.pl/html5-blog.html#semantyka-microdata).
+
+</div>
 
 Specyfikacja HTML 5.0 sugerowała [oznaczanie komentarzy przy pomocy `article`](https://www.w3.org/TR/html50/sections.html#article-example). Dzięki temu powstała swoista hierarchia artykułów (tzn. każdy komentarz był "podartykułem" wpisu). Jest to logiczne, ponieważ każdy komentarz może być wyświetlany "samodzielnie" (wszak opinia o dziele A może istnieć odrębnie od tego dzieła). Przywodzi to na myśl stare, dobre gazety, w których odpowiedzią na konkretny artykuł jest… inny artykuł.
 
@@ -476,8 +520,12 @@ Ostatecznie kod komentarzy w oparciu o `article` wygląda tak:
 ```markup
 <article id="comment-25">
 	<header class="comment-meta">
-		<a href="#comment-25"><time datetime="2011-01-07T20:41:06+00:00">07.01.2011, 20:41</time></a>
-		<h4><b><a href="http://example.net/"><img alt="" src="http://avatary.gdziekolwiek.com/Comandeer" height="48" width="48">Comandeer</a> skomentował</b></h4>
+		<a href="#comment-25">
+			<time datetime="2011-01-07T20:41:06+00:00">07.01.2011, 20:41</time>
+		</a>
+		<h3>
+			<b><a href="http://example.net/"><img alt="" src="http://avatary.gdziekolwiek.com/Comandeer" height="48" width="48">Comandeer</a> skomentował</b>
+		</h3>
 	</header>
 	<p>Ale komentarz!</p>
 </article>
@@ -515,7 +563,9 @@ A oto szkielet naszej treści (spokojnie, na końcu podam całość):
 <main>
 	<article id="tytul">
 		<header>
-			<h1><a>Tytuł</a></h1>
+			<h1>
+				<a>Tytuł</a>
+			</h1>
 			<p>Autor <time datetime="2011-01-07T20:40:06+00:00">07.01.2011</time></p>
 		</header>
 		<div>
@@ -544,7 +594,7 @@ A footer typically contains information about its section such as who wrote it, 
 
 Tagi w tym kontekście pasują o wiele bardziej (po prostu opisują dany artykuł jako słowa kluczowe), podczas gdy komentarze już niespecjalnie. Owszem, można je potraktować jako "powiązane dokumenty", jednak są one dość autonomicznymi tworami i część z nich z powodzeniem mogłaby żyć bez łączności ze swoim "rodzicem". Stąd wydzielenie komentarzy do sekcji i pozostawienie w stopce samych tagów wydaje się bardziej sensownym rozwiązaniem.
 
-Tak to mniej więcej wygląda. Formularz se opuszczę i powrócę do niego później, bo formularze w HTML5 to bardzo ciekawy temat warty więcej niż szybkiego spojrzenia.
+Tak to mniej więcej wygląda. Formularz se opuszczę i [powrócę do niego później](https://tutorials.comandeer.pl/html5-blog.html#formularze), bo formularze w HTML5 to bardzo ciekawy temat warty więcej niż szybkiego spojrzenia.
 
 
 
@@ -560,9 +610,9 @@ The `<article>` element represents <b>a complete, or self-contained, composition
 
 [Element `<article>` reprezentuje <b>kompletną, niezależną i samodzielną kompozycję w dokumencie</b>, stronie, aplikacji lub witrynie. Może to być magazyn, gazeta, techniczny lub szkolny artykuł, esej lub raport, blog lub inny wpis z sieci społecznych.]
 
-<footer><cite>http://developers.whatwg.org/sections.html#the-article-element</cite></footer></blockquote>
+<footer><cite>https://html.spec.whatwg.org/dev/sections.html#the-article-element</cite></footer></blockquote>
 
-Najważniejszy jest pogrubiony fragment. Ba, tylko co on znaczy? Idąc za [radą doktorów](http://html5doctor.com/the-article-element/) trza pomyśleć, czy dany fragment wyciągnięty z kontekstu wciąż ma jakiś sens. Notka o autorze pozbawiona sąsiedztwa wpisu raczej nie stanie się bełkotem. Lista archiwalnych wpisów również pozostanie listą, tak jak lista tagów – listą tagów. Dlatego, moim skromnym zdaniem, chociaż na pierwszy rzut oka wydaje się to pewnym nadużyciem, `article` pasują tutaj idealnie. Rozważania te wspiera wyżej cytowany opis `article`, który pojawił się po raz pierwszy w specyfikacji HTML 5.1, jeszcze bardziej zwracający uwagę na kwestię niezależności danego fragmentu treści.
+Najważniejszy jest pogrubiony fragment. Ba, tylko co on znaczy? Idąc za [radą doktorów](http://html5doctor.com/the-article-element/) trza pomyśleć, czy dany fragment wyciągnięty z kontekstu wciąż ma jakiś sens. Notka o autorze pozbawiona sąsiedztwa wpisu raczej nie stanie się bełkotem. Lista archiwalnych wpisów również pozostanie listą archiwalnych wpisów, tak jak lista tagów – listą tagów. Dlatego, moim skromnym zdaniem, chociaż na pierwszy rzut oka wydaje się to pewnym nadużyciem, `article` pasują tutaj idealnie. Rozważania te wspiera wyżej cytowany opis `article`, który pojawił się po raz pierwszy w specyfikacji HTML 5.1, jeszcze bardziej zwracający uwagę na kwestię niezależności danego fragmentu treści.
 
 Szkielet:
 
@@ -602,7 +652,7 @@ No, to lwia część za nami – została tylko stopka. Tak, ją też zmieniamy.
 
 <div class="alert alert-info">
 
-P.S. dla ekstrawaganckich: `html`, `head` i `body` są opcjonalne. Jednak nie muszę chyba wspominać, że ich usunięcie może skutkować dziwnym drzewkiem DOM (szczególnie w IE).
+P.S. dla ekstrawaganckich: `html`, `head` i `body` są opcjonalne. Bardzo ciekawy sposób na [dodatkową mikrooptymalizację](https://meiert.com/en/blog/html-performance/).
 
 </div>
 
@@ -655,15 +705,15 @@ A jeśli już chcesz się nazywać mistrzem formularzy, to dodaj sobie jeszcze a
 </form>
 ```
 
-`label` do pola wyszukiwania można wstawić [techniką ukrywania przed graficznymi przeglądarkami](https://adaptivethemes.com/using-css-clip-as-an-accessible-method-of-hiding-content/), używaną m.in. w [HTML5 Boilerplate](https://html5boilerplate.com/). Userzy z wizualnymi przeglądarkami nie zobaczą go (a pole wyszukiwania jest na tyle charakterystyczne, że na pewno je rozpoznają), natomiast ci, którzy korzystają z czytników ekranowych, nie poczują się zagubieni, gdy natrafią na pole bez etykiety.
+`label` do pola wyszukiwania można wstawić [techniką ukrywania przed graficznymi przeglądarkami](https://adaptivethemes.com/using-css-clip-as-an-accessible-method-of-hiding-content/), używaną m.in. w [HTML5 Boilerplate](https://html5boilerplate.com/). Userzy z wizualnymi przeglądarkami nie zobaczą wówczas etykiety (a pole wyszukiwania jest na tyle charakterystyczne, że na pewno je rozpoznają), natomiast ci, którzy korzystają z czytników ekranowych, nie poczują się zagubieni, gdy natrafią na pole bez etykiety. [**Nie można** jednak całkowicie usunąć etykiety](https://www.filamentgroup.com/lab/a11y-form-labels.html)!
 
 <div class="alert alert-danger">
 
 <b>PAMIĘTAJ! CSS (jak i obrazki, JS, inne dziwne rzeczy typu Flash, Java, Silverlight) są tylko dodatkami, które nie muszą być dostępne!</b>
 
-</div>
-
 Oznacza to, że możesz być pewny tylko tego, że końcowy user zobaczy treść i HTML (patrz: użytkownicy Lynxa). Stąd ważne jest zrozumienie podstaw tworzenia czystego, semantycznego kodu, który – nawet bez CSS – tworzy sensowną i czytelną całość. Dlatego też osobiście wolę tworzyć najpierw HTML dla strony, a dopiero później dorabiać CSS i JS. HTML to kartka papieru, na którą nakładam kolejne warstwy folii (CSS, JS). Podejście to znane jest jako [Progressive Enhancement](https://webroad.pl/inne/3722-progressive-enhancement-zapomniany-fundament).
+
+</div>
 
 
 <h3 id="formularze-kompatybilnosc">Kompatybilność</h3>
@@ -710,27 +760,43 @@ Naprawdę zachęcam do używania nowych typów formularzy. Dzięki nim można up
 
 Uprościć, <b>nie znaczy</b> zaniechać. Niewalidowanie danych po stronie serwera jest jak wpuszczanie nieznajomego do domu, dając mu do tego klucz do sejfu w sypialni. Sama specyfikacja wspomina, że [<b>walidacja po stronie klienta ma jedynie podnosić UX</b>](https://w3c.github.io/html/sec-forms.html#constraints-security).
 
+Przy okazji: [natywna walidacja w HTML5 jest ledwo działająca](https://www.quirksmode.org/blog/archives/2017/12/native_form_val.html) i dlatego powinna być wykorzystywana głównie jako najbardziej podstawowa warstwa walidacji po stronie klienta, na której [nadbudujemy własną walidację w JS](https://hiddedevries.nl/en/blog/2017-04-04-how-to-make-inline-error-messages-accessible).
+
 </div>
 
 
 
-<h2 id="rel-czyli-dokad-to-prowadzi">`[rel]` czyli dokąd to prowadzi</h2>
+<h2 id="rel-czyli-dokad-to-prowadzi">
+
+`[rel]` czyli dokąd to prowadzi
+
+</h2>
 
 Atrybut `[rel]` dla linków oznacza ich przeznaczenie, a dokładniej do jakiego zasobu się odnoszą. Warto stosować atrybut `[rel]` na wszystkich linkach, które mają jakiekolwiek znaczenie semantyczne, np. jeśli link prowadzi do strony o autorze, niech będzie miał odpowiedni `[rel]`. Jakie `[rel]` można zatem stosować?
 
+<div class="alert alert-danger">
 
-<h3 id="rel-lista-dozwolonych">Lista dozwolonych `[rel]`</h3>
+Istnieją też dwie wartości atrybutu `[rel]`, które znacząco podwyższają bezpieczeństwo strony: `[rel=noreferrer]` oraz `[rel=noopener]`. Najlepiej obydwa te atrybuty dodawać do linków prowadzących do zewnętrznych stron, dzięki czemu [nie będziemy narażać naszych użytkowników na ataki phishingowe oraz śledzenie](https://www.jitbit.com/alexblog/256-targetblank---the-most-underestimated-vulnerability-ever/).
+
+</div>
 
 
-* `index` – strona główna
-* `author` – coś o autorze
-* `archive`/`archives` – znany z Wordpressa, prowadzi do archiwum wiadomości. Typ ten niegdyś występował w specyfikacji HTML5, jednak obecnie nie jest nawet typem proponowanym przez Microformats wiki. Niemniej znajduje się w sekcji [wykorzystywanych wartości](http://microformats.org/wiki/existing-rel-values#POSH_usage). Osobiście wydaje mi się, że w końcu zostanie przeforsowany, dlatego zostawiam go w kodzie bloga (pomimo, że walidator się rzuca – ale na szczęście to [nie nieomylny demiurg](https://webroad.pl/html5-css3/3925-validate-or-not-to-validate-that-is-the-question))
-* `prev` – poprzedni wpis
-* `next` – następny wpis
-* `canonical` – oryginalny URI do zasobu (czyli ten, który chcemy zaindeksować w Google)
-* `nofollow` – BlackSEO
-* `shortlink` – oficjalny, skrócony adres strony
-* `tag` – do oznaczania tagów
+<h3 id="rel-lista-dozwolonych">
+
+Lista dozwolonych `[rel]`
+
+</h3>
+
+
+* `index` – strona główna.
+* `author` – coś o autorze.
+* `archive`/`archives` – znany z Wordpressa, prowadzi do archiwum wiadomości. Typ ten niegdyś występował w specyfikacji HTML5, jednak obecnie nie jest nawet typem proponowanym przez Microformats wiki. Niemniej znajduje się w sekcji [wykorzystywanych wartości](http://microformats.org/wiki/existing-rel-values#POSH_usage). Osobiście wydaje mi się, że w końcu zostanie przeforsowany, dlatego zostawiam go w kodzie bloga (pomimo, że walidator się rzuca – ale na szczęście to [nie nieomylny demiurg](https://webroad.pl/html5-css3/3925-validate-or-not-to-validate-that-is-the-question)).
+* `prev` – poprzedni wpis.
+* `next` – następny wpis.
+* `canonical` – oryginalny URI do zasobu (czyli ten, który chcemy zaindeksować w Google).
+* `nofollow` – BlackSEO.
+* `shortlink` – oficjalny, skrócony adres strony.
+* `tag` – do oznaczania tagów.
 
 
 
@@ -796,7 +862,7 @@ Po więcej info o WAI-ARIA zapraszam do [specyfikacji <i>ARIA in HTML</i>](http:
 
 <h3 id="semantyka-mikroformaty">Mikroformaty</h3>
 
-Mikroformaty powstały po to, by w dobie HTML4 niesemantycznym divom nadać semantyczne znaczenie. Mimo że w HTML5 mamy pełno semantycznych znaczników, to jednak mikroformaty wciąż są niezwykle przydatne. Pozwalają nam dokładnie opisać wydarzenia, osoby czy miejsca, używając do tego HTML-owego zapisu ogólnie znanych standardów, takich jak np. vcard (format wizytówek, obsługiwany przez większość telefonów komórkowych). Zastosowanie mikroformatów wcale nie jest trudne, wystarczy dodać odpowiednią klasę. Jako przykład zastosuję [hCard (odpowiednik vcard)](http://microformats.org/wiki/h-card) i "oznaczę" boczne info o autorze:
+Mikroformaty powstały po to, by w dobie HTML 4 niesemantycznym divom nadać semantyczne znaczenie. Mimo że w HTML5 mamy pełno semantycznych znaczników, to jednak mikroformaty wciąż są niezwykle przydatne. Pozwalają nam dokładnie opisać wydarzenia, osoby czy miejsca, używając do tego HTML-owego zapisu ogólnie znanych standardów, takich jak np. vcard (format wizytówek, obsługiwany przez większość telefonów komórkowych). Zastosowanie mikroformatów wcale nie jest trudne, wystarczy dodać do elementu odpowiednią klasę. Jako przykład zastosuję [hCard (odpowiednik vcard)](http://microformats.org/wiki/h-card) i "oznaczę" boczne info o autorze:
 
 ```markup
 <article class="h-card">
@@ -823,14 +889,14 @@ Wygląda i działa bardzo podobnie do mikroformatów (chociaż jest bardziej sko
 
 <div class="alert alert-info">
 
-Google, Yahoo i Bing zaczęły pracować nad nowym standardem oznaczania treści [Schema.org](http://schema.org), który ma ustandaryzować mikrodane na stronach WWW. Dzięki temu przedsięwzięciu można oznaczyć prawie każdy typ danych. Wydaje mi się, że takie podejście ma szansę wyprzeć mikroformaty, a przynajmniej [zmusić je do ewolucji](http://microformats.org/wiki/microformats-2).
+Google, Yahoo i Bing stworzyły standard oznaczania treści o nazwie [Schema.org](http://schema.org), który ujednolica mikrodane na stronach WWW. Dzięki temu przedsięwzięciu można oznaczyć prawie każdy typ danych. Wydaje mi się, że takie podejście ma szansę wyprzeć mikroformaty, a przynajmniej [zmusić je do ewolucji](http://microformats.org/wiki/microformats-2).
 
 </div>
 
 
 <h3 id="semantyka-inne">Inne formaty danych semantycznych</h3>
 
-Tutaj warto wspomnieć o głównym konkurencie microdata – [RDFa](http://rdfa.info/) – który wygląda dość podobnie, ale jest bardziej XML-friendly i… ładniejszy. Osobiście preferuję go ponad mikrodane.
+Tutaj warto wspomnieć o głównym konkurencie microdata – [RDFa](http://rdfa.info/) – który wygląda dość podobnie, ale jest bardziej XML-friendly i… ładniejszy. Osobiście preferuję go zamiast mikrodanych.
 
 ```markup
 <article vocab="http://schema.org" typeof="Person">
@@ -845,7 +911,7 @@ Chociaż obecnie zarówno on, jak i microdata/mikroformaty, są zagrożone przez
 
 <h2 id="semantyka-dublin-core">Dublin Core</h2>
 
-Dublin Core jest międzynarodowym standardem metadanych (ISO 15836-2003) i służy do opisywania dokumentów. Jest rozwijany i upowszechniany przez organizację Dublin Core Metadata Initiative, mającą na celu stworzenie semantycznej sieci, w której z łatwością można będzie znaleźć dokumenty (pieśń przyszłości). Standard ustala 15 elementów, dzięki którym można dokładniej opisać stronę, lecz nie tylko – praktycznie każdy dokument cyfrowy. Może dzięki temu stanowić zamiennik dla "standardowych" `meta`. Najczęściej służy jako zamiennik dwóch metatagów: `keywords` i `description`. Ich "dublinowe" odpowiedniki to: `dcterms.subject` i `dcterms.description`.
+Dublin Core jest międzynarodowym standardem metadanych (ISO 15836-2003) i służy do opisywania dokumentów. Jest rozwijany i upowszechniany przez organizację Dublin Core Metadata Initiative, mającą na celu stworzenie semantycznej Sieci, w której z łatwością można będzie znaleźć dokumenty (pieśń przyszłości). Standard ustala 15 elementów, dzięki którym można dokładniej opisać stronę, lecz nie tylko – praktycznie każdy dokument cyfrowy. Może dzięki temu stanowić zamiennik dla "standardowych" `meta`. Najczęściej służy jako zamiennik dwóch metatagów: `keywords` i `description`. Ich "dublinowe" odpowiedniki to: `dcterms.subject` i `dcterms.description`.
 
 ```markup
 <meta name="dcterms.description" lang="pl" content="Super hiper wpis na temat czegokolwiek">
@@ -864,7 +930,7 @@ Chciałbym tutaj zwrócić uwagę, że warto także podać atrybut `[lang]` wska
 
 Pisząc ten poradnik, skupiałem się głównie na kwestiach semantyki. Skutkiem ubocznym tego jest automatyczne zwiększenie dostępności tak stworzonej strony WWW. Na chwilę obecną nasza strona powinna być już naprawdę dobrze dostosowana dla osób niepełnosprawnych (zwłaszcza po dodaniu kilku rzeczy z opisanego wyżej standardu WAI-ARIA), lecz kilka rzeczy można jeszcze poprawić.
 
-Na początku `body` warto dodać link odsyłający nas bezpośrednio do `main` danej strony (przy użyciu [opisanych wyżej kotwic](https://tutorials.comandeer.pl/html5-blog.html#artykul-naglowki-jako-punkty-nawigacyjne)):
+Na początku `body` warto dodać link odsyłający nas bezpośrednio do `main` danej strony (przy użyciu [opisanych wyżej kotwic](https://tutorials.comandeer.pl/html5-blog.html#artykul-naglowki-jako-punkty-nawigacyjne)) – tzw. [skip link](http://internet-bez-barier.com/skip-linki-czym-sa-i-do-czego-sluza/):
 
 ```markup
 <a href="#tresc" class="focus-only">Przejdź do treści</a>
@@ -885,47 +951,47 @@ Zwiększy to użyteczność dla tych, którzy korzystają z przeglądarek głoso
 }
 ```
 
-Oczywiście link będzie czuły na TAB. Inna metoda (bardziej użyteczna i nie powodująca problemów z wydajnością na urządzeniach mobilnych) to [wykorzystanie `clip`](https://adaptivethemes.com/using-css-clip-as-an-accessible-method-of-hiding-content/). Stosuje ją m.in. [H5BP](https://github.com/h5bp/html5-boilerplate/blob/76f6b7d95358ffabb6ac6c4bc8d44a5af35fea8d/dist/css/main.css#L128-L168).
+Oczywiście link będzie czuły na TAB. Inna metoda (bardziej użyteczna i nie powodująca problemów z wydajnością na urządzeniach mobilnych) to [wykorzystanie `clip`](https://adaptivethemes.com/using-css-clip-as-an-accessible-method-of-hiding-content/). Stosuje ją m.in. [H5BP](https://github.com/h5bp/html5-boilerplate/blob/751dc34d02c2ff24a4686910f8355d642eca3450/dist/css/main.css#L132-L168).
 
 ```css
-.focus-only
-{
-	border: 0;
-	clip: rect(0 0 0 0);
-	-webkit-clip-path: inset(50%);
-	clip-path: inset(50%);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
-	white-space: nowrap;
+.focus-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap; /* 1 */
 }
-.focus-only:focus
-{
-	clip: auto;
-	-webkit-clip-path: none;
-	clip-path: none;
-	height: auto;
-	margin: 0;
-	overflow: visible;
-	position: static;
-	width: auto;
-	white-space: inherit;
+.focus-only:active,
+.focus-only:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+  white-space: inherit;
 }
 ```
 
-Warto także dodać, że niektóre przeglądarki co prawda przeskoczą do odpowiedniego elementu, ale zachowają starą kolejność TAB-owania elementów (czyli będzie TAB-ować menu, które chcieliśmy przeskoczyć) – dlatego [dla elementów, do których mamy zamiar linkować, warto dorzucić `[tabindex=-1]`](http://viget.com/inspire/skip-link-primer). 
+Warto także dodać, że niektóre przeglądarki co prawda przeskoczą do odpowiedniego elementu, ale zachowają starą kolejność TAB-owania elementów (czyli będzie TAB-ować menu, które chcieliśmy przeskoczyć) – dlatego [dla elementów, do których mamy zamiar linkować, warto dorzucić `[tabindex=-1]`](http://viget.com/inspire/skip-link-primer).
 
-Przy okazji warto zauważyć, że bezpośrednia zabawa z atrybutami `[tabindex]` czy `[accesskey]` jest średnio przydatna. Narzucony z góry `[tabindex]` może zrobić więcej szkody niż pożytku i w gruncie rzeczy powinien służyć wyłącznie do uczynienia focusowalnymi tych elementów, które natywnie nie są (czyli <i>de facto</i> winien być używany tylko i wyłącznie w połączeniu z JS i ARIA). Tak samo wydaje mi się, że skróty klawiaturowe lepiej i wygodniej dla użytkownika zrobić jest w JS (chociaż istnieje [propozycja naprawienia `[accesskey]`](https://chaals.github.io/accesskey/index.src.html)).
+Przy okazji warto zauważyć, że bezpośrednia zabawa z atrybutami `[tabindex]` czy `[accesskey]` jest średnio przydatna. [Narzucony z góry `[tabindex]` może zrobić więcej szkody niż pożytku](https://bitsofco.de/how-and-when-to-use-the-tabindex-attribute/) i w gruncie rzeczy powinien służyć wyłącznie do uczynienia focusowalnymi tych elementów, które natywnie nie są (czyli <i>de facto</i> winien być używany tylko i wyłącznie w połączeniu z JS i ARIA). Tak samo wydaje mi się, że skróty klawiaturowe lepiej i wygodniej dla użytkownika zrobić jest w JS (chociaż istnieje [propozycja naprawienia `[accesskey]`](https://chaals.github.io/accesskey/index.src.html)).
 
-Dla większości elementów sekcjonujących (`section, article, aside`) warto dodać nagłówki, które – dla piękna – ukryć można przed wizualnymi przeglądarkami podobną techniką, jak ta dla już wspominanego linku `.focus-only`. Oczywiście nie ma sensu na chamca wtryniać nagłówków dla każdej sekcji – czasami "Untitled section" jest dozwolone. Lepszy jest brak nagłówka niźli bezsensowny nagłówek. Inna rzecz, że jeśli coś nie ma nagłówka, to prawdopodobnie nie jest sekcją. Warto o tym pamiętać, bo nagłówki dla sekcji tworzą swoisty schemat nawigacyjny po stronie, który można wykorzystać do szybkiego przeskakiwania między częściami strony i identyfikowania ich. Tutaj warto jeszcze raz przypomnieć, że każda sekcja powinna mieć odpowiednie `[id]` w języku strony. Dzięki temu będzie można linkować do każdej sekcji, co znacząco zwiększa użyteczność strony. Podobna technika jest stosowana w przypadku tego tutorialu, gdzie można zauważyć najczęściej stosowany wzorzec dla tworzenia identyfikatorów: slug z treści nagłówka.
+Dla większości elementów sekcjonujących (`section, article, aside`) należy dodać nagłówki. Oczywiście nie ma sensu na chamca wtryniać nagłówków dla każdej sekcji – czasami "Untitled section" jest dozwolone. Lepszy jest brak nagłówka niźli bezsensowny nagłówek. Inna rzecz, że jeśli coś nie ma nagłówka, to prawdopodobnie nie jest sekcją. A jeśli już nagłówki _naprawdę_ nie pasują do layoutu i nie możemy go poprawić tak, aby pasowały, to same nagłówki ukryć można przed wizualnymi przeglądarkami podobną techniką, jak ta dla już wspominanego linku `.focus-only`. Warto pamiętać o sensownych nagłówkach dla sekcji, bo tworzą swoisty schemat nawigacyjny po stronie, który można wykorzystać do szybkiego przeskakiwania między częściami strony i identyfikowania ich. Tutaj warto jeszcze raz przypomnieć, że każda sekcja powinna mieć odpowiednie `[id]` w języku strony. Dzięki temu będzie można linkować do każdej sekcji, co znacząco zwiększa użyteczność strony. Podobna technika jest stosowana w przypadku tego tutorialu, gdzie można zauważyć najczęściej stosowany wzorzec dla tworzenia identyfikatorów: slug z treści nagłówka.
 
-Czasami zdarza się też, że musimy zapewnić jeszcze większy poziom dostępności. Tutaj na pomoc przychodzi nam [standard WCAG 2](https://w3c.github.io/wcag21/guidelines/), dokładnie opisujący wszelkie aspekty dotyczące dostępności stron WWW. Jest on podzielony na 3 poziomy (A, AA i AAA), określające stopień dostępności (od minimum do sensownego maksimum). Standard ten opisuje <b>naprawdę wszystko</b>, co webmaster powinien wiedzieć o dostępności, stąd można go traktować jako swoistą biblię. Istnieje także [oficjalny katechizm](https://www.w3.org/WAI/WCAG20/quickref/).
-[p="warning"]WCAG powinien znać <b>KAŻDY</b> szanujący się programista sieciowy. Zasady określone w tym standardzie nie są trudne w zastosowaniu (większość sprowadza się do poprawnego użycia HTML-a), a przynoszą spore korzyści w dziedzinie dostępności.
+Czasami zdarza się też, że musimy zapewnić jeszcze większy poziom dostępności. Tutaj na pomoc przychodzi nam [standard WCAG 2.1](https://w3c.github.io/wcag21/guidelines/), dokładnie opisujący wszelkie aspekty dotyczące dostępności stron WWW. Jest on podzielony na 3 poziomy (A, AA i AAA), określające stopień dostępności (od minimum do sensownego maksimum). Standard ten opisuje <b>naprawdę wszystko</b>, co webmaster powinien wiedzieć o dostępności, stąd można go traktować jako swoistą biblię. Istnieje także [oficjalny katechizm](https://www.w3.org/WAI/WCAG21/quickref/).
 
-Jeśli przestrzegasz zasad semantyki HTML i nie zapominasz o zasadzie Progressive Enhancement, wówczas prawdopodobnie nie będziesz musiał specjalnie przejmować się kwestiami dostępności strony. Wyjątkiem będą tu kwestie związane z kontrastem, gdyż je bardzo łatwo przeoczyć.
+<div class="alert alert-danger">
+
+WCAG powinien znać **KAŻDY** szanujący się programista sieciowy. Zasady określone w tym standardzie nie są trudne w zastosowaniu (większość sprowadza się do poprawnego użycia HTML-a), a przynoszą spore korzyści w dziedzinie dostępności.
+
+</div>
+
+Jeśli przestrzegasz zasad semantyki HTML i nie zapominasz o zasadzie Progressive Enhancement, wówczas prawdopodobnie nie będziesz musiał osobno zajmować się kwestiami dostępności strony. Wyjątkiem będą tu kwestie związane z kontrastem, gdyż te bardzo łatwo przeoczyć.
 
 
 
@@ -938,13 +1004,14 @@ To już prawie koniec! Co jeszcze warto zmienić?
 
 
 * Zacznijmy od tytułu strony: warto się upewnić, że jest w formacie `<Nazwa podstrony> <separator> <Nazwa witryny>`, np. <q>Projekty @ Comandeer's Homepage</q>. Ma to duże znaczenie zarówno z punktu widzenia użyteczności (widać od razu, co dana karta przeglądarki zawiera), jak i dostępności (czytnik ekranowy przeczyta najpierw nazwę podstrony, a dopiero potem całą resztę).
-* Wszystkie `script` (oprócz tego dla IE) warto przerzucić na koniec `body` (zwiększy to szybkość ładowania strony, bo skrypty w `head` mogą ją ["blokować"](https://developer.yahoo.com/performance/rules.html#js_bottom)). Jeśli mamy bardzo dużo JS, ze złożonymi relacjami pomiędzy poszczególnymi plikami, warto rozważyć [architekturę modułową](https://github.com/umdjs/umd). Czy już wspominałem o [atrybucie `[defer]`](https://calendar.perfplanet.com/2016/prefer-defer-over-async/)?
+* Wszystkie skrypty, które [nie muszą blokować renderowania strony](https://addyosmani.com/blog/script-priorities/) (w naszym wypadku wyłącznie HTML5 Shiv powinien), warto wyposażyć w [atrybut `[defer]`](https://calendar.perfplanet.com/2016/prefer-defer-over-async/), dzięki któremu zostaną wykonane dopiero po wczytaniu się strony. Jeżeli są to naprawdę mało istotne skrypty (np. reklamy), dodatkowo można przenieść je na koniec `body`. Jeśli mamy bardzo dużo JS, ze złożonymi relacjami pomiędzy poszczególnymi plikami, warto rozważyć [architekturę modułową](https://github.com/umdjs/umd).
 * Można się w ogóle pokusić o serwowanie CSS, JS i obrazków z [CDN](https://en.wikipedia.org/wiki/Content_delivery_network). Jest to jedno z zaleceń Google odnośnie szybkości wczytywania stron: rozłożenie wczytywania na 2 paralelne domeny. Jedna serwuje dynamiczną stronę (czyli PHP i generujemy blogaska), a druga serwuje wszystko, co statyczne. Jednak rozłożenie wczytywania strony to tylko część zalet i bardziej rozbudowane CDN-y korzystają choćby z geolokalizacji, żeby zasysać zasoby z serwera jak najbliżej użytkownika, aby czas wczytywania był jeszcze krótszy. Istnieją także darmowe CDN-y, np. [jsDelivr](https://www.jsdelivr.com/). Bardzo ważnym przeciwskazaniem dla CDN-ów jest fakt, że nie mamy nad nimi kontroli, co sprawia, że <i>de facto</i> uzależniamy swoje bezpieczeństwo od bezpieczeństwa zewnętrznej usługi. Warto mieć to na uwadze.
 * A jeśli już mówimy o bezpieczeństwie zasobów pobieranych z zewnętrznych źródeł, obowiązkową lekturą jest [instrukcja użycia Subresource Integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity).
-* Warto też stosować build process, podczas którego będziemy minifikować kod HTML, łączyć i minifikować pliki CSS i JS (być może nawet z przygotowywaniem paczek dla poszczególnych podstron) oraz kompresować obrazki (np. przy pomocy [ImageOptim](https://imageoptim.com/)). Bardzo prymitywny przykład takiego rozwiązania można zobaczyć w [repozytorium mojej strony domowej](https://github.com/Comandeer/comandeers-homepage).
+* Warto też stosować build process, podczas którego będziemy minifikować kod HTML, łączyć i minifikować pliki CSS i JS (być może nawet z przygotowywaniem paczek dla poszczególnych podstron) oraz kompresować obrazki (np. przy pomocy [ImageOptim](https://imageoptim.com/) czy [Squoosh](https://squoosh.app/)). Bardzo prymitywny przykład takiego rozwiązania można zobaczyć w [repozytorium mojej strony domowej](https://github.com/Comandeer/comandeers-homepage).
 * Jak lubimy eksperymentować, to warto przejść całkowicie na HTTPS i [protokół HTTP/2](https://http2.github.io/). Zwiększy to zarówno bezpieczeństwo, jak i wydajność naszej strony.
 * Jak już jesteśmy przy HTTPS, to warto wspomnieć o [HSTS](https://developer.mozilla.org/en-US/docs/Web/Security/HTTP_strict_transport_security).
 * Kontynuując ten temat, jest jeszcze [kilka innych pomocnych nagłówków](https://www.owasp.org/index.php/List_of_useful_HTTP_headers), z czego najwięcej uwagi warto poświęcić [`Content-Security-Policy`](https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy), które w swojej najnowszej odsłonie [pozwoli nam zabezpieczyć się nawet przed dziurawymi CDN-ami](https://speakerdeck.com/mikispag/making-csp-great-again-michele-spagnuolo-and-lukas-weichselbaum).
+* Warto też dodać [plik zawierający politykę bezpieczeństwa](https://securitytxt.org/).
 
 
 
@@ -953,19 +1020,20 @@ To już prawie koniec! Co jeszcze warto zmienić?
 
 
 * Warto dodać [web app manifest](http://html5doctor.com/web-manifest-specification/), co pozwoli "uaplikacjowić" się naszemu blogowi. To doskonały wstęp do stworzenia z naszej strony [pełnoprawnego Progressive Web Application](https://developers.google.com/web/fundamentals/getting-started/codelabs/your-first-pwapp/).
-* Oprócz RSS można dodać także [Atom](https://en.wikipedia.org/wiki/Atom_(standard)), bo to o wiele lepszy format i lepiej się z nim pracuje.
+* Oprócz RSS można dodać także [Atom](https://en.wikipedia.org/wiki/Atom_(standard)), bo to o wiele lepszy format i lepiej się z nim pracuje. Ostatnio powstał też [JSON Feed](https://jsonfeed.org/).
 * Dla obrazków w treści artykułu warto stosować ścieżki bezwzględne (te z `https://` na początku), bo treść może być udostępniana także przez RSS i Atom i może pojawić się problem z odnalezieniem właściwego obrazka. Gdy to tylko możliwe, należy [wymuszać HTTPS](https://twitter.com/paul_irish/status/588502455530311680). Zapewnia to większe bezpieczeństwo, a w przyszłości umożliwi korzystanie z [HTTP/2](https://http2.github.io/).
-* Jeśli masz profil na Google+, rozważ umieszczenie `link[rel=author]` (jako osoba prywatna) bądź też `link[rel=publisher]` (jako firma, organizacja, paracyrk…) z `[href]` ustawionym na adres Twojego profilu. Co prawda [Twoje zdjęcie profilowe w wynikach wyszukiwania już się nie pojawi](https://support.google.com/webmasters/answer/6083347?hl=pl), ale i tak warto taką informację dodać dla innych usług:
-	
+* Jeśli masz stronę domową/firmową, rozważ umieszczenie `link[rel=author]` (jako osoba prywatna) bądź też `link[rel=publisher]` (jako firma, organizacja, paracyrk…) z `[href]` ustawionym na adres Twojego profilu. Co prawda [Twoje zdjęcie profilowe w wynikach wyszukiwania już się nie pojawi](https://support.google.com/webmasters/answer/6083347?hl=pl), ale i tak warto taką informację dodać dla innych usług:
+
 ```markup
-<link rel="author" href="//plus.google.com/108791847143656151689/">
+<link rel="author" href="https://www.comandeer.pl">
 ```
-* Jak już jesteśmy przy społecznościówkach, Facebook też serwuje [swoje metatagi](https://davidwalsh.name/facebook-meta-tags) a Twtiter [nie pozostaje mu dłużny](https://dev.twitter.com/docs/cards).
+* Można dodatkowo zastosować [humans.txt](http://humanstxt.org/).
+* Powstał też standard [Open Graph Protocol](http://ogp.me/). Facebook posiada [swoje metatagi](https://davidwalsh.name/facebook-meta-tags) a Twtiter [nie pozostaje mu dłużny](https://dev.twitter.com/docs/cards).
 * Warto też serwować ikonkę strony. Najlepiej mieć podstawową – `favicon.ico` – w głównym folderze witryny. Wtedy, nawet jeśli nie zamieścimy `link[rel=icon]` w kodzie, przeglądarki sobie ją pobiorą (tak, przeglądarki po prostu na chama szukają ikonki, śląc requesty pod `http://naszastrona.pl/favicon.ico`). Mając taką podstawową w zapasie, można próbować wcisnąć browserom np coś w PNG właśnie przy pomocy `link[rel=icon]`. IE < 9 i tak tego nie rozumie, uparcie szukając `link[rel=shortcut]`, zatem ono dostanie ico a reszta ładny PNG (albo nawet animację w GIF). Do tego dochodzą jeszcze np. [ikonki dotykowe dla iUrządzeń](https://mathiasbynens.be/notes/touch-icons) i inne takie, które też można (a jeśli strona ma być dla mobilnych też – nawet trzeba) zamieścić. Są od tego [odpowiednie narzędzia](https://realfavicongenerator.net/). Uwaga! Generowany kod to prawdziwa kobyła. Tak się to kończy, gdy [nie istnieje jeden, powszechny standard](https://css-tricks.com/favicon-quiz/).
 * W nowszych Windowsach (7 i 8) można sobie [przypiąć stronę](https://msdn.microsoft.com/library/gg491732(v=vs.85).aspx) i odpalać ją jak zwykłą aplikację (oczywiście w IE). Podobna opcja [jest dostępna w Chrome](https://productforums.google.com/forum/#!topic/chrome/9jHS2dpJX5Q). Istnieje także [generator przypinanych stron](http://www.buildmypinnedsite.com/).
 * Jak już przy generatorach jesteśmy, istnieje [generator PWA](https://www.pwabuilder.com/generator), powstały z dawnego projektu Manifold.js.
 * Chrome na mobilnych urządzeniach pozwala również [zmienić kolor paska adresu](https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android?hl=en):
-	
+
 ```markup
 <meta name="theme-color" content="#db5945">
 ```
@@ -976,8 +1044,8 @@ To już prawie koniec! Co jeszcze warto zmienić?
 <h3 id="ostatnie-poprawki-kompatybilnosc">Kompatybilność</h3>
 
 
-* Warto używać media-queries, aby strona sama się dostosowywała do urządzenia użytkownika (nurt responsive webdesign). Opłaca się, bo Google [lubi strony mobile friendly](https://www.google.com/webmasters/tools/mobile-friendly/) (a mój telefon to popiera!).
-* Dla IE wypada słać [nagłówek `X-UA-Compatible`](https://github.com/h5bp/html5-boilerplate/blob/b5d6e7b1613fca24d250fa8e5bc7bcc3dd6002ef/dist/doc/html.md#x-ua-compatible) ustawiony na `IE=edge`. Wymusza to renderowanie strony przy pomocy najnowszych standardów w IE >= 8. Kiedyś można było słać ten nagłówek z wartością `IE=edge; chrome=1`, co wymuszało użycie [Chrome Frame](https://developers.google.com/chrome/chrome-frame/). Ten jednak już odszedł na emeryturę… Googlersi to jednak skrajni idealiści. Jeśli nie lubisz wciskać pluginów userowi, zawsze możesz [naprawdę kulturalnie poinformować](https://browser-update.org/pl/).
+* Warto używać grida, flexboxa oraz media-queries, aby strona sama się dostosowywała do urządzenia użytkownika (nurt responsive webdesign). Opłaca się, bo Google [lubi strony mobile friendly](https://www.google.com/webmasters/tools/mobile-friendly/) (a mój telefon to popiera!).
+* Dla IE wypada słać [nagłówek `X-UA-Compatible`](https://github.com/h5bp/html5-boilerplate/blob/b5d6e7b1613fca24d250fa8e5bc7bcc3dd6002ef/dist/doc/html.md#x-ua-compatible) ustawiony na `IE=edge`. Wymusza to renderowanie strony przy pomocy najnowszych standardów w IE >= 8. Kiedyś można było słać ten nagłówek z wartością `IE=edge; chrome=1`, co wymuszało użycie [Chrome Frame](https://developers.google.com/chrome/chrome-frame/). Ten jednak już odszedł na emeryturę… Googlerzy to jednak skrajni idealiści. Jeśli nie lubisz wciskać pluginów userowi, zawsze możesz [naprawdę kulturalnie poinformować użytkownika o tym, jak bardzo przestarzałą przeglądarkę używa](https://browser-update.org/pl/).
 * Na końcu warto poświęcić chwilkę i przetestować stronę, poczynając od [walidatora](https://validator.w3.org/nu), przechodząc do [testu dostępności](https://wave.webaim.org/) a na [teście szybkości kończąc](https://www.webpagetest.org/). Sprawdzenie strony na kilku różnych urządzeniach lub [BrowserStack](https://www.browserstack.com/)/[Sauce Labs](https://saucelabs.com/) też jest dobrym pomysłem.
 * A już na naprawdę samym końcu <b>naprawdę zachęcam</b>, aby odpalić [JAWS-a](https://www.freedomscientific.com/Products/Blindness/JAWS), [NVDA](https://www.nvaccess.org/), [VoiceOver](https://www.apple.com/accessibility/mac/vision/) lub jakiś inny czytnik ekranowy (chociaż bardziej bym ufał tej trójce, w kolejności wymieniania) i <i>posłuchać</i> swojej strony. Bo może się okazać, że nie za bardzo jest czego słuchać…
 
@@ -993,11 +1061,11 @@ Oto i [pełny przerobiony kod z paroma dodatkami](https://tutorials.comandeer.pl
 
 ```markup
 <!DOCTYPE html>
-	<html lang="pl" dir="ltr" itemscope itemtype="http://schema.org/Blog">
+	<html lang="pl" dir="ltr" vocab="http://schema.org" typeof="Blog">
 		<head>
 			<meta charset="UTF-8">
 
-			<meta itemprop="url" content="https://example.net/Super-hiper-wazny-wpis">
+			<meta property="url" content="https://example.net/Super-hiper-wazny-wpis">
 			<meta name="description" content="Super hiper wpis na temat czegokolwiek">
 			<meta name="dcterms.description" lang="pl" content="Super hiper wpis na temat czegokolwiek">
 			<meta name="keywords" content="Bardzo ważne słowa kluczowe">
@@ -1023,7 +1091,7 @@ Oto i [pełny przerobiony kod z paroma dodatkami](https://tutorials.comandeer.pl
 			<link rel="apple-touch-icon" href="https://example.net/images/apple-touch-icon.png">
 			<link rel="stylesheet" href="https://example.net/css/style.css">
 
-			<title itemprop="name">Super hiper ważny wpis | Example.net - fajowy blog, na którym bloguję</title>
+			<title property="name">Super hiper ważny wpis | Example.net - fajowy blog, na którym bloguję</title>
 
 			<!--[if lt IE 9]>
 				<script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv-printshiv.min.js"></script>
@@ -1033,7 +1101,7 @@ Oto i [pełny przerobiony kod z paroma dodatkami](https://tutorials.comandeer.pl
 			<a href="#tresc" class="focus-only">Przejdź do treści</a>
 
 			<header id="naglowek">
-				<nav id="menu" itemscope itemtype="http://schema.org/SiteNavigationElement">
+				<nav id="menu" vocab="http://schema.org" typeof="SiteNavigationElement">
 					<ul>
 						<li>
 							<a href="https://example.net" rel="index">
@@ -1055,14 +1123,16 @@ Oto i [pełny przerobiony kod z paroma dodatkami](https://tutorials.comandeer.pl
 				</form>
 			</header>
 
-			<main id="tresc" class="hfeed" itemprop="mainEntityOfPage" tabindex="-1">
-				<article class="post h-entry" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" id="super-hiper-wazny-wpis">
+			<main id="tresc" class="hfeed" property="mainEntityOfPage" tabindex="-1">
+				<article class="post h-entry" property="blogPost" vocab="http://schema.org" typeof="BlogPosting" id="super-hiper-wazny-wpis">
 					<header>
-						<h1 class="p-name" itemprop="headline"><a href="https://example.net/Super-hiper-wazny-wpis" class="bookmark u-uid u-url" rel="bookmark" title="Permalink do Super hiper ważny wpis">Super hiper ważny wpis</a></h1>
-						<p class="post-info">Opublikowano <time datetime="2011-01-07T20:40:06+00:00" class="dt-published" itemprop="datePublished">07.01.2011</time> przez <a href="https://example.net/author" itemprop="author" itemscope itemtype="http://schema.org/Person" rel="author" class="author p-author h-card"><span itemprop="name">Comandeer</span></a></p>
+						<h1 class="p-name" property="headline">
+							<a href="https://example.net/Super-hiper-wazny-wpis" class="bookmark u-uid u-url" rel="bookmark" title="Permalink do Super hiper ważny wpis">Super hiper ważny wpis</a>
+						</h1>
+						<p class="post-info">Opublikowano <time datetime="2011-01-07T20:40:06+00:00" class="dt-published" property="datePublished">07.01.2011</time> przez <a href="https://example.net/author" property="author" vocab="http://schema.org" typeof="Person" rel="author" class="author p-author h-card"><span property="name">Comandeer</span></a></p>
 					</header>
-					<div class="e-content" itemprop="articleBody">
-						<figure itemprop="image">
+					<div class="e-content" property="articleBody">
+						<figure property="image">
 							<picture>
 								<source media="(min-width: 45em)" srcset="large-1.jpg 1x, large-2.jpg 2x">
 								<source media="(min-width: 18em)" srcset="med-1.jpg 1x, med-2.jpg 2x">
@@ -1079,11 +1149,15 @@ Oto i [pełny przerobiony kod z paroma dodatkami](https://tutorials.comandeer.pl
 						<p>Vivamus vitae lectus ut dui luctus iaculis. Pellentesque quis lectus id ipsum venenatis bibendum. Pellentesque non magna nec purus mollis suscipit. Nulla vestibulum interdum ante, vestibulum ullamcorper est vulputate vitae. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque aliquet mollis rhoncus. Phasellus imperdiet posuere bibendum. Quisque consequat imperdiet nibh vitae pretium. Suspendisse quis eros libero, non luctus mauris. Nulla laoreet nibh at eros scelerisque condimentum. Cras aliquam velit at orci luctus et tincidunt arcu scelerisque. Donec at quam magna. Integer leo leo, ultrices facilisis bibendum vel, feugiat interdum neque. Fusce vitae nibh sapien, sit amet consequat velit. Fusce adipiscing tortor id nibh fringilla sollicitudin. Donec sodales sapien in sapien rutrum rutrum. Nam quis enim nec nibh varius mattis nec in ante. Morbi non est eu diam elementum interdum. Morbi at odio non libero tempus eleifend nec quis ligula. Cras pellentesque mauris sit amet felis vestibulum tincidunt.</p>
 					</div>
 					<footer>
-						<section id="tagi" class="tags" itemprop="articleSection">
+						<section id="tagi" class="tags" property="articleSection">
 							<h2>Tagi</h2>
 								<ul>
-									<li><a href="https://example.net/tag/Tag1" rel="tag" class="p-category">Tag1</a></li>
-									<li><a href="https://example.net/tag/Tag2" rel="tag" class="p-category">Tag2</a></li>
+									<li>
+										<a href="https://example.net/tag/Tag1" rel="tag" class="p-category">Tag1</a>
+									</li>
+									<li>
+										<a href="https://example.net/tag/Tag2" rel="tag" class="p-category">Tag2</a>
+									</li>
 								</ul>
 						</section>
 					</footer>
@@ -1091,19 +1165,23 @@ Oto i [pełny przerobiony kod z paroma dodatkami](https://tutorials.comandeer.pl
 					<section id="komentarze" class="comments">
 						<h2>Komentarze</h2>
 						<ol>
-							<li id="comment-25" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+							<li id="comment-25" property="comment" vocab="http://schema.org" typeof="Comment">
 								<div class="comment-meta">
-									<a href="#comment-25"><time datetime="2011-01-07T20:41:06+00:00" itemprop="dateCreated">07.01.2011, 20:41</time></a>
-									<b itemprop="author" itemscope itemtype="http://schema.org/Person"><a href="http://example.net/" itemprop="name url"><img alt="" src="http://avatary.gdziekolwiek.com/Comandeer" height="48" width="48" itemprop="image">Comandeer</a> skomentował</b>
+									<a href="#comment-25">
+										<time datetime="2011-01-07T20:41:06+00:00" property="dateCreated">07.01.2011, 20:41</time>
+									</a>
+									<b property="author" vocab="http://schema.org" typeof="Person"><a href="http://example.net/" property="name url"><img alt="" src="http://avatary.gdziekolwiek.com/Comandeer" height="48" width="48" property="image">Comandeer</a> skomentował</b>
 								</div>
-								<p itemprop="text">Ale komentarz!</p>
+								<p property="text">Ale komentarz!</p>
 							</li>
-							<li id="comment-26" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+							<li id="comment-26" property="comment" vocab="http://schema.org" typeof="Comment">
 								<div class="comment-meta">
-									<a href="#comment-26"><time datetime="2017-01-08T20:08:30+01:00" itemprop="dateCreated">07.01.2017, 20:08</time></a>
-									<b itemprop="author" itemscope itemtype="http://schema.org/Person"><a href="http://example.net/" itemprop="name url"><img alt="" src="http://example.net/avatary/Anonim" height="48" width="48" itemprop="image">Anonim</a> skomentował</b>
+									<a href="#comment-26">
+										<time datetime="2017-01-08T20:08:30+01:00" property="dateCreated">07.01.2017, 20:08</time>
+									</a>
+									<b property="author" vocab="http://schema.org" typeof="Person"><a href="http://example.net/" property="name url"><img alt="" src="http://example.net/avatary/Anonim" height="48" width="48" property="image">Anonim</a> skomentował</b>
 								</div>
-								<p itemprop="text">Inny komentarz!</p>
+								<p property="text">Inny komentarz!</p>
 							</li>
 						</ol>
 
@@ -1136,32 +1214,44 @@ Oto i [pełny przerobiony kod z paroma dodatkami](https://tutorials.comandeer.pl
 
 			<aside id="aside">
 				<h2>Dodatkowe informacje</h2>
-				<article class="author h-card" itemscope itemtype="http://schema.org/Person">
+				<article class="author h-card" vocab="http://schema.org" typeof="Person">
 					<h3>O autorze blogaska</h3>
-					<p>Nazywam się <a href="https://example.net/author" class="fn p-name u-url" itemprop="name url">Comandeer</a>, mieszkam w uroczym miasteczku <span class="adr p-locality" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Świętochłowice</span></span> i interesuję się webmasterką.</p>
+					<p>Nazywam się <a href="https://example.net/author" class="fn p-name u-url" property="name url">Comandeer</a>, mieszkam w uroczym miasteczku <span class="adr p-locality" property="address" vocab="http://schema.org" typeof="PostalAddress"><span property="addressLocality">Świętochłowice</span></span> i interesuję się webmasterką.</p>
 				</article>
 				<article class="tags cloud">
 					<h3>Tagi</h3>
 					<ul>
-						<li><a href="https://example.net/tag/Tag1">Tag1</a></li>
-						<li><a href="https://example.net/tag/Tag2">Tag2</a></li>
-						<li><a href="https://example.net/tag/Tag3">Tag3</a></li>
-						<li><a href="https://example.net/tag/Tag2">Tag4</a></li>
+						<li>
+							<a href="https://example.net/tag/Tag1">Tag1</a>
+						</li>
+						<li>
+							<a href="https://example.net/tag/Tag2">Tag2</a>
+						</li>
+						<li>
+							<a href="https://example.net/tag/Tag3">Tag3</a>
+						</li>
+						<li>
+							<a href="https://example.net/tag/Tag2">Tag4</a>
+						</li>
 					</ul>
 				</article>
 				<article class="archive">
 					<h3>Archiwum</h3>
 					<ol>
-						<li><a href="https://example.net/archiwum/2011/01" rel="archives">Styczeń 2011</a></li>
-						<li><a href="https://example.net/archiwum/2010/12" rel="archives">Grudzień 2010</a></li>
+						<li>
+							<a href="https://example.net/archiwum/2011/01" rel="archives">Styczeń 2011</a>
+						</li>
+						<li>
+							<a href="https://example.net/archiwum/2010/12" rel="archives">Grudzień 2010</a>
+						</li>
 					</ol>
 				</article>
 			</aside>
 
 			<footer id="stopka">Copyright &copy; 2017 by <a href="https://example.net/author" rel="author">Comandeer</a></footer>
 
-			<script src="https://example.net/jquery.js"></script>
-			<script src="https://example.net/scripty.js"></script>
+			<script src="https://example.net/jquery.js" defer></script>
+			<script src="https://example.net/scripty.js" defer></script>
 		</body>
 	</html>
 ```
@@ -1179,7 +1269,7 @@ Oto i [pełny przerobiony kod z paroma dodatkami](https://tutorials.comandeer.pl
 * [Specyfikacja HTML5.0](https://www.w3.org/TR/html50) (która stała się oficjalną rekomendacją W3C 28.10.2014)
 * [Specka dla developerów](https://html.spec.whatwg.org/dev/)
 * [Specyfikacja WCAG 2.1](https://w3c.github.io/wcag21/guidelines/)
-* [Oficjalny poradnik WCAG 2.0](https://www.w3.org/WAI/WCAG20/quickref/)
+* [Oficjalny poradnik WCAG 2.0](https://www.w3.org/WAI/WCAG21/quickref/)
 * [Specyfikacja WAI-ARIA](https://w3c.github.io/aria/)
 * [Oficjalny poradnik dla chcących bawić się WAI-ARIA](https://w3c.github.io/aria-practices/)
 * [Specyfikacje i oficjalne materiały o mikroformatach](http://microformats.org/wiki/Main_Page)
@@ -1199,7 +1289,6 @@ Oto i [pełny przerobiony kod z paroma dodatkami](https://tutorials.comandeer.pl
 
 
 * [Perfekcyjny przykład bloga w HTML5](https://www.paciellogroup.com/blog/)
-* [Dawny perfekcyjny przykład bloga w HTML5](https://lea.verou.me/)
 * [Microdata](http://diveintohtml5.info/extensibility.html)
 * [Doktorzy o microdata](http://html5doctor.com/microdata/)
 * [DublinCore](https://kurs.browsehappy.pl/HTML/DublinCore)
@@ -1218,17 +1307,17 @@ Oto i [pełny przerobiony kod z paroma dodatkami](https://tutorials.comandeer.pl
 <h3 id="narzedzia">Narzędzia</h3>
 
 
-* [Oficjalny walidator](https://validator.w3.org/nu) dla wersji standardu od W3C
-* [Oficjalny walidator](https://checker.html5.org) dla wersji standardu od WHATWG
+* [Oficjalny walidator](https://validator.w3.org/nu) (sprawdza według standardu HTML LS)
+* [Najpełniejszy audyt strony](https://web.dev)
 * [Narzędzie do sprawdzania dostępności strony](https://wave.webaim.org/)
 * [Narzędzie do mierzenia wydajności strony](https://www.webpagetest.org/)
 * [Inne narzędzie do mierzenia wydajności strony](https://developers.google.com/speed/pagespeed/insights/)
-* [Tester przyjazności dla urządzeń mobilnych](https://search.google.com/search-console/mobile-friendly)
 * [Narzędzie do testowania microdata/mikroformatów/RDFa](https://search.google.com/structured-data/testing-tool/)
 * [Prosty sposób na sprawdzenie wsparcia HTML5 w różnych przeglądarkach](https://caniuse.com/)
 * [Testowanie strony w różnych przeglądarkach](https://www.browserstack.com/)
 * [Inne testowanie strony w różnych przeglądarkach](https://saucelabs.com/)
 * [Test wsparcia dla HTML5](https://html5test.com/)
+* [Pokaz możliwości Sieci](https://whatwebcando.today/)
 * [Walidator reguł CSP](https://csp-evaluator.withgoogle.com/)
 * [Miernik "otyłości" strony](https://www.webbloatscore.com/) (radzę nie traktować za poważnie!)
 * [Prosty walidator formularzy](https://formlinter.com/)
@@ -1244,8 +1333,18 @@ Oto i [pełny przerobiony kod z paroma dodatkami](https://tutorials.comandeer.pl
 <h2 id="changelog">Poprawki i takie tam</h2>
 <details><summary>changelog</summary>
 
-	
-
+* <b>12.03.2019</b>:
+	* Podlinkowanie do lokalnej kopii książki Ferrante.
+	* Przeredagowanie kilku fragmentów, łącznie z usunięciem tych wprowadzających niepotrzebny szum informacyjny.
+	* Dodanie info o remedium i sanityzacji CSS.
+	* Poprawienie formatowania kodu.
+	* Przeniesienie informacji o dwóch standardach HTML na początek tekstu.
+	* Dodanie informacji o HFP.
+	* Dodanie informacji o `[rel=noreferrer]` oraz `[rel=noopener]`.
+	* Aktualizacja linków.
+	* Aktualizacja zalecenia co do wczytywania skryptów.
+	* Dodanie informacji o security.txt oraz humans.txt.
+	* Przepisanie kodu na RDF-a.
 * <b>16.12.2017</b> – zmiana struktury nagłówków, uaktualnienie opisu outline'u, zmiana struktury komentarzy, uaktualnienie opisu komentarzy, polskie tłumaczenia cytatów ze specyfikacji, przejście na cytowanie najnowszej wersji specyfikacji W3C, aktualizacja linków, liczne doprecyzowania
 * <b>08.01.2017</b> – przeredagowanie; dodanie informacji o `script[type=module]`; dodanie informacji o bibliotekach has.js i polyfill.io oraz teście <q>cut the mustard</q>; dodanie informacji o alternatywach dla HTML5 shiv oraz komentarzach warunkowych; dodanie informacji o dwóch standardach HTML; usunięcie odwołań do opisu hierarchii nagłówków opartej na sekcjach; dodanie informacji o `[id]` nagłówków/sekcji; dodanie informacji o dostępności `nav`; zmiana kodu formularza; aktualizacja informacji o ARIA, `meta[name]` i mikroformatach; dodanie informacji o czytnikach ekranowych; dodanie informacji o wzorcowym formacie tytułu strony; dodanie linków do kilku narzędzi i czytników ekranowych; aktualizacja informacji o HTML5 Shiv; dodanie informacji o SRI
 * <b>21.11.2016</b> – dodanie linków  do dwóch oficjalnych walidatorów
@@ -1283,7 +1382,7 @@ Oto i [pełny przerobiony kod z paroma dodatkami](https://tutorials.comandeer.pl
 * <b>25.07.2012</b> – kilka poprawek wymuszonych zmianami w specyfikacji i trochę więcej o Schema.org + kilka takich tam uwag o różnych elementach
 * <b>20.10.2011</b> – poprawiłem kilka linków i literówek, lepiej sformatowałem tekst, uzupełniłem informację o mikrodanych, mała zmiana w markupie artykułu
 * <b>09.01.2011</b> – pierwsza wersja
-	
+
 
 
 </details>
