@@ -96,7 +96,11 @@
 			<h2 class="sidebar-header" id="toc-heading">Spis treści</h2>
 				<div class="sidebar-inner">
 					<ul>
-					<li><a href="#start">Czemu nie potrzebujesz jQuery?</a><ul><li><a href="#mimo">Mimo że zdaje ci się inaczej</a></li><li><a href="#alternatywa">Alternatywa?</a></li><li><a href="#dom">Podstawowe operacje DOM-owe</a><ul><li><a href="#selektory">Wyszukiwanie po selektorach</a></li><li><a href="#chaining">Chainowanie metod</a></li><li><a href="#delegation">Event delegation</a></li><li><a href="#clone">`.clone`</a></li><li><a href="#extend">`.extend`</a></li></ul></li><li><a href="#animacje">Animacje</a></li><li><a href="#xhr">XHR</a></li><li><a href="#ui">jQUI</a></li><li><a href="#ale">Ale za to w jQ da się…</a></li><li><a href="#czy-porzucic">Czy porzucić?</a></li></ul></li>
+					<li><a href="#start">Czemu nie potrzebujesz jQuery?</a><ul><li><a href="#mimo">Mimo że zdaje ci się inaczej</a></li><li><a href="#alternatywa">Alternatywa?</a></li><li><a href="#dom">Podstawowe operacje DOM-owe</a><ul><li><a href="#selektory">Wyszukiwanie po selektorach</a></li><li><a href="#chaining">Chainowanie metod</a></li><li><a href="#delegation">Event delegation</a></li><li><a href="#clone">
+<p><code>.clone</code></p>
+</a></li><li><a href="#extend">
+<p><code>.extend</code></p>
+</a></li></ul></li><li><a href="#animacje">Animacje</a></li><li><a href="#xhr">XHR</a></li><li><a href="#ui">jQUI</a></li><li><a href="#ale">Ale za to w jQ da się…</a></li><li><a href="#czy-porzucic">Czy porzucić?</a></li></ul></li>
 					</ul>
 				</div>
 			</nav>
@@ -145,7 +149,9 @@
 	//awesome stuff
 }, false );
 </code></pre>
-<h3 id="clone">`.clone`</h3>
+<h3 id="clone">
+<p><code>.clone</code></p>
+</h3>
 <p>Żeby sklonować obiekt w jQ, wystarczy skorzystać z metody <code>.clone</code>. Czy da się zrobić coś takiego w czystym JS? A i owszem.</p>
 <pre><code class="language-javascript">function clone( obj ) {
 	return obj.cloneNode ? obj.cloneNode( obj ) : JSON.parse( JSON.stringify( obj ) );
@@ -153,7 +159,9 @@
 console.log( clone( document.createElement( 'a' ) ) );
 </code></pre>
 <p>Prosta i przyjemna sztuczka.</p>
-<h3 id="extend">`.extend`</h3>
+<h3 id="extend">
+<p><code>.extend</code></p>
+</h3>
 <p>To już nie jest do końca DOM, ale może się tu nadać.</p>
 <p>Jak wiadomo, w jQ mamy metodę <code>.extend</code> rozszerzającą nam obiekt:</p>
 <pre><code class="language-javascript">console.log( $.extend( {}, { cos: 1 } ) );

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-	<html lang="pl" dir="ltr" itemscope itemtype="http://schema.org/Blog">
+	<html lang="pl" dir="ltr" vocab="http://schema.org" typeof="Blog">
 		<head>
 			<meta charset="UTF-8">
 
-			<meta itemprop="url" content="https://example.net/Super-hiper-wazny-wpis">
+			<meta property="url" content="https://example.net/Super-hiper-wazny-wpis">
 			<meta name="description" content="Super hiper wpis na temat czegokolwiek">
 			<meta name="dcterms.description" lang="pl" content="Super hiper wpis na temat czegokolwiek">
 			<meta name="keywords" content="Bardzo ważne słowa kluczowe">
@@ -29,7 +29,7 @@
 			<link rel="apple-touch-icon" href="https://example.net/images/apple-touch-icon.png">
 			<link rel="stylesheet" href="https://example.net/css/style.css">
 
-			<title itemprop="name">Super hiper ważny wpis | Example.net - fajowy blog, na którym bloguję</title>
+			<title property="name">Super hiper ważny wpis | Example.net - fajowy blog, na którym bloguję</title>
 
 			<!--[if lt IE 9]>
 				<script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv-printshiv.min.js"></script>
@@ -39,7 +39,7 @@
 			<a href="#tresc" class="focus-only">Przejdź do treści</a>
 
 			<header id="naglowek">
-				<nav id="menu" itemscope itemtype="http://schema.org/SiteNavigationElement">
+				<nav id="menu" vocab="http://schema.org" typeof="SiteNavigationElement">
 					<ul>
 						<li>
 							<a href="https://example.net" rel="index">
@@ -61,14 +61,16 @@
 				</form>
 			</header>
 
-			<main id="tresc" class="hfeed" itemprop="mainEntityOfPage" tabindex="-1">
-				<article class="post h-entry" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" id="super-hiper-wazny-wpis">
+			<main id="tresc" class="hfeed" property="mainEntityOfPage" tabindex="-1">
+				<article class="post h-entry" property="blogPost" vocab="http://schema.org" typeof="BlogPosting" id="super-hiper-wazny-wpis">
 					<header>
-						<h1 class="p-name" itemprop="headline"><a href="https://example.net/Super-hiper-wazny-wpis" class="bookmark u-uid u-url" rel="bookmark" title="Permalink do Super hiper ważny wpis">Super hiper ważny wpis</a></h1>
-						<p class="post-info">Opublikowano <time datetime="2011-01-07T20:40:06+00:00" class="dt-published" itemprop="datePublished">07.01.2011</time> przez <a href="https://example.net/author" itemprop="author" itemscope itemtype="http://schema.org/Person" rel="author" class="author p-author h-card"><span itemprop="name">Comandeer</span></a></p>
+						<h1 class="p-name" property="headline">
+							<a href="https://example.net/Super-hiper-wazny-wpis" class="bookmark u-uid u-url" rel="bookmark" title="Permalink do Super hiper ważny wpis">Super hiper ważny wpis</a>
+						</h1>
+						<p class="post-info">Opublikowano <time datetime="2011-01-07T20:40:06+00:00" class="dt-published" property="datePublished">07.01.2011</time> przez <a href="https://example.net/author" property="author" vocab="http://schema.org" typeof="Person" rel="author" class="author p-author h-card"><span property="name">Comandeer</span></a></p>
 					</header>
-					<div class="e-content" itemprop="articleBody">
-						<figure itemprop="image">
+					<div class="e-content" property="articleBody">
+						<figure property="image">
 							<picture>
 								<source media="(min-width: 45em)" srcset="large-1.jpg 1x, large-2.jpg 2x">
 								<source media="(min-width: 18em)" srcset="med-1.jpg 1x, med-2.jpg 2x">
@@ -85,11 +87,15 @@
 						<p>Vivamus vitae lectus ut dui luctus iaculis. Pellentesque quis lectus id ipsum venenatis bibendum. Pellentesque non magna nec purus mollis suscipit. Nulla vestibulum interdum ante, vestibulum ullamcorper est vulputate vitae. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque aliquet mollis rhoncus. Phasellus imperdiet posuere bibendum. Quisque consequat imperdiet nibh vitae pretium. Suspendisse quis eros libero, non luctus mauris. Nulla laoreet nibh at eros scelerisque condimentum. Cras aliquam velit at orci luctus et tincidunt arcu scelerisque. Donec at quam magna. Integer leo leo, ultrices facilisis bibendum vel, feugiat interdum neque. Fusce vitae nibh sapien, sit amet consequat velit. Fusce adipiscing tortor id nibh fringilla sollicitudin. Donec sodales sapien in sapien rutrum rutrum. Nam quis enim nec nibh varius mattis nec in ante. Morbi non est eu diam elementum interdum. Morbi at odio non libero tempus eleifend nec quis ligula. Cras pellentesque mauris sit amet felis vestibulum tincidunt.</p>
 					</div>
 					<footer>
-						<section id="tagi" class="tags" itemprop="articleSection">
+						<section id="tagi" class="tags" property="articleSection">
 							<h2>Tagi</h2>
 								<ul>
-									<li><a href="https://example.net/tag/Tag1" rel="tag" class="p-category">Tag1</a></li>
-									<li><a href="https://example.net/tag/Tag2" rel="tag" class="p-category">Tag2</a></li>
+									<li>
+										<a href="https://example.net/tag/Tag1" rel="tag" class="p-category">Tag1</a>
+									</li>
+									<li>
+										<a href="https://example.net/tag/Tag2" rel="tag" class="p-category">Tag2</a>
+									</li>
 								</ul>
 						</section>
 					</footer>
@@ -97,19 +103,23 @@
 					<section id="komentarze" class="comments">
 						<h2>Komentarze</h2>
 						<ol>
-							<li id="comment-25" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+							<li id="comment-25" property="comment" vocab="http://schema.org" typeof="Comment">
 								<div class="comment-meta">
-									<a href="#comment-25"><time datetime="2011-01-07T20:41:06+00:00" itemprop="dateCreated">07.01.2011, 20:41</time></a>
-									<b itemprop="author" itemscope itemtype="http://schema.org/Person"><a href="http://example.net/" itemprop="name url"><img alt="" src="http://avatary.gdziekolwiek.com/Comandeer" height="48" width="48" itemprop="image">Comandeer</a> skomentował</b>
+									<a href="#comment-25">
+										<time datetime="2011-01-07T20:41:06+00:00" property="dateCreated">07.01.2011, 20:41</time>
+									</a>
+									<b property="author" vocab="http://schema.org" typeof="Person"><a href="http://example.net/" property="name url"><img alt="" src="http://avatary.gdziekolwiek.com/Comandeer" height="48" width="48" property="image">Comandeer</a> skomentował</b>
 								</div>
-								<p itemprop="text">Ale komentarz!</p>
+								<p property="text">Ale komentarz!</p>
 							</li>
-							<li id="comment-26" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+							<li id="comment-26" property="comment" vocab="http://schema.org" typeof="Comment">
 								<div class="comment-meta">
-									<a href="#comment-26"><time datetime="2017-01-08T20:08:30+01:00" itemprop="dateCreated">07.01.2017, 20:08</time></a>
-									<b itemprop="author" itemscope itemtype="http://schema.org/Person"><a href="http://example.net/" itemprop="name url"><img alt="" src="http://example.net/avatary/Anonim" height="48" width="48" itemprop="image">Anonim</a> skomentował</b>
+									<a href="#comment-26">
+										<time datetime="2017-01-08T20:08:30+01:00" property="dateCreated">07.01.2017, 20:08</time>
+									</a>
+									<b property="author" vocab="http://schema.org" typeof="Person"><a href="http://example.net/" property="name url"><img alt="" src="http://example.net/avatary/Anonim" height="48" width="48" property="image">Anonim</a> skomentował</b>
 								</div>
-								<p itemprop="text">Inny komentarz!</p>
+								<p property="text">Inny komentarz!</p>
 							</li>
 						</ol>
 
@@ -142,31 +152,43 @@
 
 			<aside id="aside">
 				<h2>Dodatkowe informacje</h2>
-				<article class="author h-card" itemscope itemtype="http://schema.org/Person">
+				<article class="author h-card" vocab="http://schema.org" typeof="Person">
 					<h3>O autorze blogaska</h3>
-					<p>Nazywam się <a href="https://example.net/author" class="fn p-name u-url" itemprop="name url">Comandeer</a>, mieszkam w uroczym miasteczku <span class="adr p-locality" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Świętochłowice</span></span> i interesuję się webmasterką.</p>
+					<p>Nazywam się <a href="https://example.net/author" class="fn p-name u-url" property="name url">Comandeer</a>, mieszkam w uroczym miasteczku <span class="adr p-locality" property="address" vocab="http://schema.org" typeof="PostalAddress"><span property="addressLocality">Świętochłowice</span></span> i interesuję się webmasterką.</p>
 				</article>
 				<article class="tags cloud">
 					<h3>Tagi</h3>
 					<ul>
-						<li><a href="https://example.net/tag/Tag1">Tag1</a></li>
-						<li><a href="https://example.net/tag/Tag2">Tag2</a></li>
-						<li><a href="https://example.net/tag/Tag3">Tag3</a></li>
-						<li><a href="https://example.net/tag/Tag2">Tag4</a></li>
+						<li>
+							<a href="https://example.net/tag/Tag1">Tag1</a>
+						</li>
+						<li>
+							<a href="https://example.net/tag/Tag2">Tag2</a>
+						</li>
+						<li>
+							<a href="https://example.net/tag/Tag3">Tag3</a>
+						</li>
+						<li>
+							<a href="https://example.net/tag/Tag2">Tag4</a>
+						</li>
 					</ul>
 				</article>
 				<article class="archive">
 					<h3>Archiwum</h3>
 					<ol>
-						<li><a href="https://example.net/archiwum/2011/01" rel="archives">Styczeń 2011</a></li>
-						<li><a href="https://example.net/archiwum/2010/12" rel="archives">Grudzień 2010</a></li>
+						<li>
+							<a href="https://example.net/archiwum/2011/01" rel="archives">Styczeń 2011</a>
+						</li>
+						<li>
+							<a href="https://example.net/archiwum/2010/12" rel="archives">Grudzień 2010</a>
+						</li>
 					</ol>
 				</article>
 			</aside>
 
 			<footer id="stopka">Copyright &copy; 2017 by <a href="https://example.net/author" rel="author">Comandeer</a></footer>
 
-			<script src="https://example.net/jquery.js"></script>
-			<script src="https://example.net/scripty.js"></script>
+			<script src="https://example.net/jquery.js" defer></script>
+			<script src="https://example.net/scripty.js" defer></script>
 		</body>
 	</html>

@@ -96,7 +96,9 @@
 			<h2 class="sidebar-header" id="toc-heading">Spis treści</h2>
 				<div class="sidebar-inner">
 					<ul>
-					<li><a href="#start">Data po polsku</a><ul><li><a href="#po-staremu">Po staremu</a></li><li><a href="#Intl">`Intl` na ratunek!</a></li><li><a href="#formatujemy">Formatujemy datę</a></li></ul></li>
+					<li><a href="#start">Data po polsku</a><ul><li><a href="#po-staremu">Po staremu</a></li><li><a href="#Intl">
+<p><code>Intl</code> na ratunek!</p>
+</a></li><li><a href="#formatujemy">Formatujemy datę</a></li></ul></li>
 					</ul>
 				</div>
 			</nav>
@@ -107,7 +109,9 @@
 <p>Dzisiaj będzie krótko, rzeczowo i na temat (co dość rzadko mi się zdarza). Otóż: jak <b>dobrze</b> zrobić datę po polsku w JS i się przy tym nie narobić.</p>
 <h2 id="po-staremu">Po staremu</h2>
 <p>Dotąd jedynym właściwym sposobem były różne dziwne kombinacje typu &quot;stwórzmy sobie tablicę z polskimi nazwami miesięcy i dni tygodnia, a następnie podstawiajmy pod dane, zwracane przez <code>new Date</code>&quot;. Mogą one wyglądać <a href="http://webmade.org/porady/data-po-polsku-js.php" rel="noreferrer noopener">rozwlekle i odpychająco</a> (a ich autorem nie jest Polak). Mogą być też <a href="http://phpjs.org/functions/strftime/" rel="noreferrer noopener">wzorowane na innych językach</a>, stając się jeszcze bardziej rozwlekłe i… nie JS-owe. Mogą w końcu zmienić się po prostu w wywołanie odpowiedniej, krótkiej funkcyjki w PHP, po stwierdzeniu, że JS się do tego nie nadaje.</p>
-<h2 id="Intl">`Intl` na ratunek!</h2>
+<h2 id="Intl">
+<p><code>Intl</code> na ratunek!</p>
+</h2>
 <p>Na szczęście się to zmieniło. I to nie znowu tak niedawno (bo w 2012). Wtedy powstał standard <a href="http://www.ecma-international.org/ecma-402/1.0/" rel="noreferrer noopener">ECMA-402 (ECMAScript Internationalization API)</a>. Oczywiście na odzew ze strony producentów przeglądarek trzeba było ciut poczekać, niemniej – jeśli wierzyć <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Browser_Compatibility" rel="noreferrer noopener">MDN</a> – działa dziś wszędzie, oprócz Safari i – co prawdopodobnie może być o wiele ważniejsze – node.js (jednak od czego jest niezawodny GitHub i <a href="https://github.com/andyearnshaw/Intl.js" rel="noreferrer noopener">polyfille</a>; oczywiście w node.js/io.js <a href="https://github.com/nodejs/io.js#intl-ecma-402-support" rel="noreferrer noopener">obsługę można sobie wkompilować</a>).</p>
 <p>Cały standard składa się z 3 głównych &quot;klas&quot;, zamkniętych w krótkiej i schludnej przestrzeni nazw – <code>Intl</code>. Są to:</p>
 <ul>
