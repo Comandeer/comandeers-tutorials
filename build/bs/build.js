@@ -1,8 +1,8 @@
 var fs = require( 'fs' ),
 	tutDir = '../tutorials/',
 	pagesDir = '../pages/',
-	pageTemplate = fs.readFileSync( './templates/page.tpl', 'utf8' ),
-	tutTemplate = fs.readFileSync( './templates/tutorial.tpl', 'utf8' ),
+	pageTemplate = fs.readFileSync( './templates/page.html', 'utf8' ),
+	tutTemplate = fs.readFileSync( './templates/tutorial.html', 'utf8' ),
 	parser = require('markdown-it')( {
 		html: true,
 		linkify: true
@@ -25,7 +25,7 @@ function getBuilder( type = 'tutorial' ) {
 		var dir = type === 'tutorial' ? tutDir : pagesDir,
 			content = fs.readFileSync( dir + page, 'utf8' ),
 			output = type === 'tutorial' ? tutTemplate : pageTemplate,
-			pageName = page.replace( /(\.tpl|\.md)$/, '' ),
+			pageName = page.replace( /(\.html|\.md)$/, '' ),
 			nav = `<nav class="sidebar col-md-4 well" aria-labelledby="toc-heading">
 			<h2 class="sidebar-header" id="toc-heading">Spis treści</h2>
 				<div class="sidebar-inner">
@@ -116,7 +116,7 @@ pages.filter( ( page ) => {
 } ).forEach( getBuilder( 'page' ) );
 
 // building list of tutorials
-var list = fs.readFileSync( './templates/index.tpl', 'utf8' ),
+var list = fs.readFileSync( './templates/index.html', 'utf8' ),
 	tuts = require( '../tutslist' ),
 	arts = require( '../artslist' ),
 	response = '',
