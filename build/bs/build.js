@@ -1,3 +1,6 @@
+var oldCwd = process.cwd();
+process.chdir( __dirname );
+
 var fs = require( 'fs' ),
 	tutDir = '../tutorials/',
 	pagesDir = '../pages/',
@@ -145,3 +148,5 @@ list = list.replace( '{ARTS}', artsr );
 list = list.replace( '{MENU}', siteMenu );
 
 fs.writeFileSync( '../../public/index.html', list, 'utf8' );
+
+process.chdir( oldCwd );

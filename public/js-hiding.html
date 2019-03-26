@@ -5,27 +5,6 @@
 			<meta name="viewport" content="width=device-width, initial-scale=1">
 			<script>
 			(function(H,c){H[c]=H[c].replace(/\bno-js\b/,'')+' js'})(document.documentElement,'className');
-
-			document.addEventListener( 'DOMContentLoaded', function() {
-				var details = Array.prototype.slice.call( document.querySelectorAll( 'details' ) );
-
-				window.addEventListener( 'beforeprint', function() {
-					details.forEach( function( detail ) {
-						detail.setAttribute( 'data-open', detail.hasAttribute( 'open' ) );
-						detail.setAttribute( 'open', 'open' );
-					} );
-				} );
-
-				window.addEventListener( 'afterprint', function() {
-					details.forEach( function( detail ) {
-						var isOpen = detail.getAttribute( 'data-open' ) && detail.getAttribute( 'data-open' ) === 'true';
-
-						if ( !isOpen ) {
-							detail.removeAttribute( 'open' );
-						}
-					} );
-				} );
-			} );
 			</script>
 			<title>[JavaScript] Ukrywanie ciała funkcji</title>
 			<meta name="description" content="Ciekawy trick zaczerpnięty z archiwów Opery.">
@@ -43,10 +22,7 @@
 			<!--[if lt IE 9]>
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
 			<![endif]-->
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-			<link rel="stylesheet" href="/css/prism.css">
-			<link rel="stylesheet" href="/css/bs/custom.css">
+			<link rel="stylesheet" href="/css/main.css">
 		</head>
 		<body>
 			<nav class="navbar navbar-inverse navbar-fixed-top" aria-label="Nawigacja po witrynie">
@@ -207,62 +183,7 @@ console.log( f ); // function () { [native code] }
 				</div>
 			</footer>
 
-			<script>
-			( function() {
-				try {
-					var codes = document.getElementsByClassName( 'code' );
-
-					[].forEach.call( codes, function( code ) {
-						var next = code.nextElementSibling;
-
-						if ( !next || next.tagName.toLowerCase() !== 'pre' || next.scrollHeight < 300 ) {
-							return false;
-						}
-
-						code.innerHTML = code.innerHTML.replace( ':', ' <span class="code-switch">[Rozwiń]</span>:' );
-						code.getElementsByTagName( 'span' )[ 0 ].toSwitch = next;
-					} );
-
-					document.addEventListener( 'click', function( evt ) {
-						if ( !evt.target || !evt.target.classList.contains( 'code-switch' ) ) {
-							return true;
-						}
-
-						evt.preventDefault();
-
-						var target = evt.target,
-							next = target.toSwitch,
-							html = target.innerHTML;
-
-						if ( !next || next.tagName.toLowerCase() !== 'pre' ) {
-							return false;
-						}
-
-						next.classList.toggle( 'expanded' );
-						target.innerHTML = ( html === '[Zwiń]' ? '[Rozwiń]' : '[Zwiń]' );
-					} );
-				} catch( err ) {}
-			} () );
-			</script>
-			<script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-			<script>
-			$( 'nav' ).on( 'affix.bs.affix', function() {
-				$( '.content' ).removeClass( 'col-md-offset-0' ).addClass( 'col-md-offset-4' );
-			} ).on( 'affix-top.bs.affix affix-bottom.bs.affix', function() {
-				$( '.content' ).removeClass( 'col-md-offset-4' );
-			} ).affix( {
-				offset: {
-					top: function() {
-						return ( this.top = $( '.navbar-fixed-top' ).outerHeight( true ) + 10 );
-					},
-					bottom: function () {
-						return ( this.bottom = $( '.site-footer' ).outerHeight( true ) + 10 );
-					}
-				}
-			} )
-			</script>
-			<script src="/js/prism.js"></script>
-			<script id="cookiebanner" src="/js/cookies.js" data-message="Używam cookies w celu polepszenia działania witryny." data-linkmsg="Dowiedz się więcej" data-moreinfo="/polityka-prywatnosci.html#pliki-cookies-i-inne-technologie-sledzace"></script>
+			<script src="/js/main.js" defer></script>
+			<script id="cookiebanner" src="/js/cookies.js" data-message="Używam cookies w celu polepszenia działania witryny." data-linkmsg="Dowiedz się więcej" data-moreinfo="/polityka-prywatnosci.html#pliki-cookies-i-inne-technologie-sledzace" defer></script>
 		</body>
 	</html>

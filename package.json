@@ -13,11 +13,14 @@
   "license": "MIT",
   "devDependencies": {
     "cz-conventional-changelog": "^2.0.0",
-    "http-server": "^0.11.1"
+    "http-server": "^0.11.1",
+    "node-sass": "^4.11.0",
+    "rollup": "^1.7.3",
+    "rollup-plugin-babel-minify": "^8.0.0"
   },
   "scripts": {
     "start": "http-server",
-    "build": "./build.sh",
+    "build": "node ./build/bs/build && rollup -c build/bs/rollup.config.js && node-sass build/bs/scss/main.scss public/css/main.css --output-style compressed",
     "generate-pdf": "./generate-pdf.sh",
     "dist": "npm run build && npm run generate-pdf"
   }

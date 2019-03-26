@@ -101,7 +101,9 @@ code {
 	font-size: smaller;
 	font-weight: bold;
 }
-pre {
+pre[class*="language-"] {
+	background-color: hsl(0, 0%, 8%);
+	color: #fff;
 	max-height: 300px;
 	overflow: auto;
 }
