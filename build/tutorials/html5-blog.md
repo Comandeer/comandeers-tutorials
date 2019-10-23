@@ -5,7 +5,7 @@
 
 <div class="alert alert-info">
 
-Ten tutorial przeznaczony jest dla tych, którzy już mają jakiekolwiek pojęcie o HTML. Dobrym miejscem na zdobycie podstaw wiedzy jest [tutorial od The Awwwesomes](https://the-awwwesomes.gitbooks.io/html-css-step-by-step/pl/) czy też książka Ferrante [Moja pierwsza strona internetowa w HTML5 i CSS3](https://tutorials.comandeer.pl/res/html5-blog/ferrante-book.pdf).
+Ten tutorial przeznaczony jest dla tych, którzy już mają jakiekolwiek pojęcie o HTML. Dobrym miejscem na zdobycie podstaw wiedzy jest [tutorial od The Awwwesomes](https://the-awwwesomes.gitbooks.io/html-css-step-by-step/pl/) czy też książka Ferrante [Moja pierwsza strona internetowa w HTML5 i CSS3](https://ferrante.pl/books/html/).
 
 </div>
 
@@ -1333,6 +1333,8 @@ Oto i [pełny przerobiony kod z paroma dodatkami](https://tutorials.comandeer.pl
 <h2 id="changelog">Poprawki i takie tam</h2>
 <details><summary>changelog</summary>
 
+* <b>23.10.2019</b>:
+	* Poprawienie linku do książki Ferrante'a.
 * <b>12.05.2019</b>:
 	* Poprawienie niewłaściwej struktury nagłówków wewnątrz artykułu.
 * <b>12.03.2019</b>:
