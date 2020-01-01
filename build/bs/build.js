@@ -49,25 +49,26 @@ function getBuilder( type = 'tutorial' ) {
 
 		// Bootstrap hack for http://getbootstrap.com/components/#alerts-links
 		$( '.alert a' ).each( function() {
-			this.addClass( 'alert-link' );
+			$( this ).addClass( 'alert-link' );
 		} );
 
 		$( 'description' ).each( function() {
-			output = output.replace( /{DESCRIPTION}/g, this.text() );
-			this.remove();
+			output = output.replace( /{DESCRIPTION}/g, $( this ).text() );
+			$( this ).remove();
 		} );
 
 		$( 'h1, h2, h3, h4, h5, h6' ).each( function() {
-			var depth = Number( this[ 0 ].name.substring( 1 ) ),
+			var $this = $( this ),
+				depth = Number( $this[ 0 ].name.substring( 1 ) ),
 				lastElem = currentSubmenu.children( 'li' ).last(),
 				html = '',
-				name = this.html().replace( /<a.+?>.+?<\/a>/gi, '' );
+				name = $this.html().replace( /<a.+?>.+?<\/a>/gi, '' );
 
-			html = '<li><a href="#' + this.attr( 'id' ) + '">' + name + '</a></li>';
+			html = '<li><a href="#' + $this.attr( 'id' ) + '">' + name + '</a></li>';
 
-			if( this.is( '#start' ) ) {
-				output = output.replace( /{TITLE}/g, this.html().replace( /<a.+?>.+?<\/a>/gi, '' ) );
-				this.remove();
+			if( $this.is( '#start' ) ) {
+				output = output.replace( /{TITLE}/g, $this.html().replace( /<a.+?>.+?<\/a>/gi, '' ) );
+				$this.remove();
 			}
 
 			if ( lastDepth ) {

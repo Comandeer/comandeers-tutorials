@@ -4,24 +4,24 @@
   "main": "Gruntfile.js",
   "private": true,
   "dependencies": {
-    "cheerio": "~0.12.4",
-    "markdown-it": "^8.4.2",
-    "markdown-it-link-attributes": "^2.1.0",
-    "puppeteer": "^1.2.0"
+    "cheerio": "^0.22.0",
+    "markdown-it": "^10.0.0",
+    "markdown-it-link-attributes": "^3.0.0",
+    "puppeteer": "^2.0.0"
   },
   "author": "Comandeer",
   "license": "MIT",
   "devDependencies": {
-    "cz-conventional-changelog": "^2.0.0",
-    "http-server": "^0.11.1",
-    "node-sass": "^4.11.0",
-    "rollup": "^1.7.3",
-    "rollup-plugin-babel-minify": "^8.0.0"
+    "cz-conventional-changelog": "^3.0.2",
+    "http-server": "^0.12.0",
+    "node-sass": "^4.13.0",
+    "rollup": "^1.27.14",
+    "rollup-plugin-babel-minify": "^9.1.1"
   },
   "scripts": {
     "start": "http-server",
     "build": "node ./build/bs/build && rollup -c build/bs/rollup.config.js && node-sass build/bs/scss/main.scss public/css/main.css --output-style compressed",
-    "generate-pdf": "./generate-pdf.sh",
+    "generate-pdf": "node build/generate-pdf.js",
     "dist": "npm run build && npm run generate-pdf"
   }
 }
