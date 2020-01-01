@@ -58,7 +58,7 @@
 					<ul>
 					<li><a href="#start">Data po polsku</a><ul><li><a href="#po-staremu">Po staremu</a></li><li><a href="#Intl">
 <p><code>Intl</code> na ratunek!</p>
-</a></li><li><a href="#formatujemy">Formatujemy datę</a></li></ul></li>
+</a></li><li><a href="#formatujemy">Formatujemy dat&#x119;</a></li></ul></li>
 					</ul>
 				</div>
 			</nav>
@@ -66,35 +66,35 @@
 					<div class="content col-md-8 col-md-offset-0">
 						<p></p>
 
-<p>Dzisiaj będzie krótko, rzeczowo i na temat (co dość rzadko mi się zdarza). Otóż: jak <b>dobrze</b> zrobić datę po polsku w JS i się przy tym nie narobić.</p>
+<p>Dzisiaj b&#x119;dzie kr&#xF3;tko, rzeczowo i na temat (co do&#x15B;&#x107; rzadko mi si&#x119; zdarza). Ot&#xF3;&#x17C;: jak <b>dobrze</b> zrobi&#x107; dat&#x119; po polsku w JS i si&#x119; przy tym nie narobi&#x107;.</p>
 <h2 id="po-staremu">Po staremu</h2>
-<p>Dotąd jedynym właściwym sposobem były różne dziwne kombinacje typu &quot;stwórzmy sobie tablicę z polskimi nazwami miesięcy i dni tygodnia, a następnie podstawiajmy pod dane, zwracane przez <code>new Date</code>&quot;. Mogą one wyglądać <a href="http://webmade.org/porady/data-po-polsku-js.php" rel="noreferrer noopener">rozwlekle i odpychająco</a> (a ich autorem nie jest Polak). Mogą być też <a href="http://phpjs.org/functions/strftime/" rel="noreferrer noopener">wzorowane na innych językach</a>, stając się jeszcze bardziej rozwlekłe i… nie JS-owe. Mogą w końcu zmienić się po prostu w wywołanie odpowiedniej, krótkiej funkcyjki w PHP, po stwierdzeniu, że JS się do tego nie nadaje.</p>
+<p>Dot&#x105;d jedynym w&#x142;a&#x15B;ciwym sposobem by&#x142;y r&#xF3;&#x17C;ne dziwne kombinacje typu &quot;stw&#xF3;rzmy sobie tablic&#x119; z polskimi nazwami miesi&#x119;cy i dni tygodnia, a nast&#x119;pnie podstawiajmy pod dane, zwracane przez <code>new Date</code>&quot;. Mog&#x105; one wygl&#x105;da&#x107; <a href="http://webmade.org/porady/data-po-polsku-js.php" rel="noreferrer noopener">rozwlekle i odpychaj&#x105;co</a> (a ich autorem nie jest Polak). Mog&#x105; by&#x107; te&#x17C; <a href="http://phpjs.org/functions/strftime/" rel="noreferrer noopener">wzorowane na innych j&#x119;zykach</a>, staj&#x105;c si&#x119; jeszcze bardziej rozwlek&#x142;e i&#x2026; nie JS-owe. Mog&#x105; w ko&#x144;cu zmieni&#x107; si&#x119; po prostu w wywo&#x142;anie odpowiedniej, kr&#xF3;tkiej funkcyjki w PHP, po stwierdzeniu, &#x17C;e JS si&#x119; do tego nie nadaje.</p>
 <h2 id="Intl">
 <p><code>Intl</code> na ratunek!</p>
 </h2>
-<p>Na szczęście się to zmieniło. I to nie znowu tak niedawno (bo w 2012). Wtedy powstał standard <a href="http://www.ecma-international.org/ecma-402/1.0/" rel="noreferrer noopener">ECMA-402 (ECMAScript Internationalization API)</a>. Oczywiście na odzew ze strony producentów przeglądarek trzeba było ciut poczekać, niemniej – jeśli wierzyć <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Browser_Compatibility" rel="noreferrer noopener">MDN</a> – działa dziś wszędzie, oprócz Safari i – co prawdopodobnie może być o wiele ważniejsze – node.js (jednak od czego jest niezawodny GitHub i <a href="https://github.com/andyearnshaw/Intl.js" rel="noreferrer noopener">polyfille</a>; oczywiście w node.js/io.js <a href="https://github.com/nodejs/io.js#intl-ecma-402-support" rel="noreferrer noopener">obsługę można sobie wkompilować</a>).</p>
-<p>Cały standard składa się z 3 głównych &quot;klas&quot;, zamkniętych w krótkiej i schludnej przestrzeni nazw – <code>Intl</code>. Są to:</p>
+<p>Na szcz&#x119;&#x15B;cie si&#x119; to zmieni&#x142;o. I to nie znowu tak niedawno (bo w 2012). Wtedy powsta&#x142; standard <a href="http://www.ecma-international.org/ecma-402/1.0/" rel="noreferrer noopener">ECMA-402 (ECMAScript Internationalization API)</a>. Oczywi&#x15B;cie na odzew ze strony producent&#xF3;w przegl&#x105;darek trzeba by&#x142;o ciut poczeka&#x107;, niemniej &#x2013; je&#x15B;li wierzy&#x107; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Browser_Compatibility" rel="noreferrer noopener">MDN</a> &#x2013; dzia&#x142;a dzi&#x15B; wsz&#x119;dzie, opr&#xF3;cz Safari i &#x2013; co prawdopodobnie mo&#x17C;e by&#x107; o wiele wa&#x17C;niejsze &#x2013; node.js (jednak od czego jest niezawodny GitHub i <a href="https://github.com/andyearnshaw/Intl.js" rel="noreferrer noopener">polyfille</a>; oczywi&#x15B;cie w node.js/io.js <a href="https://github.com/nodejs/io.js#intl-ecma-402-support" rel="noreferrer noopener">obs&#x142;ug&#x119; mo&#x17C;na sobie wkompilowa&#x107;</a>).</p>
+<p>Ca&#x142;y standard sk&#x142;ada si&#x119; z 3 g&#x142;&#xF3;wnych &quot;klas&quot;, zamkni&#x119;tych w kr&#xF3;tkiej i schludnej przestrzeni nazw &#x2013; <code>Intl</code>. S&#x105; to:</p>
 <ul>
-<li><code>Intl.Collator</code> – służący do porównywania tekstu</li>
-<li><code>Intl.NumberFormat</code> – służący do formatowania wszelkiej maści liczb (między innymi walut czy liczebników porządkowych)</li>
-<li><code>Intl.DateTimeFormat</code> – tak, tego właśnie użyjemy</li>
+<li><code>Intl.Collator</code> &#x2013; s&#x142;u&#x17C;&#x105;cy do por&#xF3;wnywania tekstu</li>
+<li><code>Intl.NumberFormat</code> &#x2013; s&#x142;u&#x17C;&#x105;cy do formatowania wszelkiej ma&#x15B;ci liczb (mi&#x119;dzy innymi walut czy liczebnik&#xF3;w porz&#x105;dkowych)</li>
+<li><code>Intl.DateTimeFormat</code> &#x2013; tak, tego w&#x142;a&#x15B;nie u&#x17C;yjemy</li>
 </ul>
-<h2 id="formatujemy">Formatujemy datę</h2>
-<p>Żeby wyświetlić ładną datę po polsku, musimy stworzyć nowy obiekt &quot;klasy&quot; <code>Intl.DateTimeFormat</code>. Jako pierwszy parametr konstruktor bierze nazwę języka (oczywiście zgodną ze standardem ISO, zatem dwuliterowy skrót):</p>
-<pre><code class="language-javascript">var formatter = new Intl.DateTimeFormat( 'pl' );
+<h2 id="formatujemy">Formatujemy dat&#x119;</h2>
+<p>&#x17B;eby wy&#x15B;wietli&#x107; &#x142;adn&#x105; dat&#x119; po polsku, musimy stworzy&#x107; nowy obiekt &quot;klasy&quot; <code>Intl.DateTimeFormat</code>. Jako pierwszy parametr konstruktor bierze nazw&#x119; j&#x119;zyka (oczywi&#x15B;cie zgodn&#x105; ze standardem ISO, zatem dwuliterowy skr&#xF3;t):</p>
+<pre><code class="language-javascript">var formatter = new Intl.DateTimeFormat( &apos;pl&apos; );
 </code></pre>
-<p>Już! Pierwszy krok za nami. Mamy obiekt wyświetlający datę po polsku. Udostępnia on aż jedną metodę – <code>format</code> – która formatuje przekazaną jej datę (jeśli jej nie podamy, zastosuje aktualną – przynajmniej w Chrome; polecam jednak ją podawać dla zwiększenia czytelności kodu).</p>
+<p>Ju&#x17C;! Pierwszy krok za nami. Mamy obiekt wy&#x15B;wietlaj&#x105;cy dat&#x119; po polsku. Udost&#x119;pnia on a&#x17C; jedn&#x105; metod&#x119; &#x2013; <code>format</code> &#x2013; kt&#xF3;ra formatuje przekazan&#x105; jej dat&#x119; (je&#x15B;li jej nie podamy, zastosuje aktualn&#x105; &#x2013; przynajmniej w Chrome; polecam jednak j&#x105; podawa&#x107; dla zwi&#x119;kszenia czytelno&#x15B;ci kodu).</p>
 <pre><code class="language-javascript">formatter.format( new Date() ); // 23.7.2016
 </code></pre>
-<p>Jak widać, mało imponujące. Równie dobrze można to uznać za datę po angielsku. Na pomoc przychodzi nam drugi parametr konstruktora <code>Intl.DateTimeFormat</code> – jest to obiekt opcji. Przyjrzyjmy się takiemu przykładowi:</p>
-<pre><code class="language-javascript">var formatter = new Intl.DateTimeFormat( 'pl', {
-	day: 'numeric',
-	month: 'long',
-	year: 'numeric'
+<p>Jak wida&#x107;, ma&#x142;o imponuj&#x105;ce. R&#xF3;wnie dobrze mo&#x17C;na to uzna&#x107; za dat&#x119; po angielsku. Na pomoc przychodzi nam drugi parametr konstruktora <code>Intl.DateTimeFormat</code> &#x2013; jest to obiekt opcji. Przyjrzyjmy si&#x119; takiemu przyk&#x142;adowi:</p>
+<pre><code class="language-javascript">var formatter = new Intl.DateTimeFormat( &apos;pl&apos;, {
+	day: &apos;numeric&apos;,
+	month: &apos;long&apos;,
+	year: &apos;numeric&apos;
 } );
 formatter.format( new Date() ); // 23 lipca 2016
 </code></pre>
-<p><i>Voila!</i> To jest dokładnie to, o co nam chodziło. Oczywiście opcji jest więcej, po dokładny ich spis <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat#Parameters" rel="noreferrer noopener">zapraszam na MDN</a>.</p>
+<p><i>Voila!</i> To jest dok&#x142;adnie to, o co nam chodzi&#x142;o. Oczywi&#x15B;cie opcji jest wi&#x119;cej, po dok&#x142;adny ich spis <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat#Parameters" rel="noreferrer noopener">zapraszam na MDN</a>.</p>
 
 					</div>
 				</div>

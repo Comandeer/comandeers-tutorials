@@ -6,9 +6,9 @@
 			<script>
 			(function(H,c){H[c]=H[c].replace(/\bno-js\b/,'')+' js'})(document.documentElement,'className');
 			</script>
-			<title>[CSS] Sprite'y w SVG</title>
+			<title>[CSS] Sprite&apos;y w SVG</title>
 			<meta name="description" content="Czyli jak zrobić odpowiednik Font Awesome przy pomocy SVG.">
-			<meta property="og:title" content="[CSS] Sprite'y w SVG">
+			<meta property="og:title" content="[CSS] Sprite&apos;y w SVG">
 			<meta property="og:description" content="Czyli jak zrobić odpowiednik Font Awesome przy pomocy SVG.">
 			<meta property="og:type" content="article">
 			<meta property="article:author" content="Comandeer">
@@ -46,7 +46,7 @@
 			<main class="container-fluid">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-4 header header_main">
-						<h1 id="start" class="header__heading">[CSS] Sprite'y w SVG</h1>
+						<h1 id="start" class="header__heading">[CSS] Sprite&apos;y w SVG</h1>
 
 						<a class="header__link" href="svg-sprites.pdf" title="Wersja PDF"><span class="glyphicon glyphicon-book" aria-hidden="true"></span><span class="sr-only">Wersja <abbr title="Portable Document Format" lang="en">PDF</abbr></span></a>
 					</div>
@@ -56,7 +56,7 @@
 			<h2 class="sidebar-header" id="toc-heading">Spis treści</h2>
 				<div class="sidebar-inner">
 					<ul>
-					<li><a href="#start">[CSS] Sprite'y w SVG</a></li>
+					<li><a href="#start">[CSS] Sprite&apos;y w SVG</a></li>
 					</ul>
 				</div>
 			</nav>
@@ -65,20 +65,20 @@
 						<p></p>
 
 <div class="alert alert-danger">
-<p>Ten tutorial powstał bardzo dawno temu i od tego czasu zmieniło się sporo! Polecam <a href="http://css-tricks.com/svg-fragment-identifiers-work/" rel="noreferrer noopener" class="alert-link">artykuł na CSS-Tricks.com</a>, opisujący temat o wiele dokładniej.</p>
+<p>Ten tutorial powsta&#x142; bardzo dawno temu i od tego czasu zmieni&#x142;o si&#x119; sporo! Polecam <a href="http://css-tricks.com/svg-fragment-identifiers-work/" rel="noreferrer noopener" class="alert-link">artyku&#x142; na CSS-Tricks.com</a>, opisuj&#x105;cy temat o wiele dok&#x142;adniej.</p>
 </div>
-<p>Czasami sprite'y w CSS mogą być wkurzające</p>
+<p>Czasami sprite&apos;y w CSS mog&#x105; by&#x107; wkurzaj&#x105;ce</p>
 <pre><code class="language-css">.help
 {
 	background: url(super-hiper-sprite.png) no-repeat -567px -234px;
 }
 </code></pre>
-<p>Jednak ostatnio <a href="http://xn--dahlstrm-t4a.net/" rel="noreferrer noopener">ktoś</a> wpadł na genialny pomysł: zróbmy to w SVG!</p>
-<p>Na czym polega cały trick? Otóż chodzi o zapisanie w jednym pliku SVG kilku ikonek. Do tego dodano trochę magii z CSS3, aby tylko potrzebna nam ikonka się pokazywała. Ta magia jest już dobrze znana:</p>
+<p>Jednak ostatnio <a href="http://xn--dahlstrm-t4a.net/" rel="noreferrer noopener">kto&#x15B;</a> wpad&#x142; na genialny pomys&#x142;: zr&#xF3;bmy to w SVG!</p>
+<p>Na czym polega ca&#x142;y trick? Ot&#xF3;&#x17C; chodzi o zapisanie w jednym pliku SVG kilku ikonek. Do tego dodano troch&#x119; magii z CSS3, aby tylko potrzebna nam ikonka si&#x119; pokazywa&#x142;a. Ta magia jest ju&#x17C; dobrze znana:</p>
 <pre><code class="language-css">.icon {display:none;}
 .icon:target {display:block;}
 </code></pre>
-<p>Stwórzmy sobie zatem prosty pliczek SVG:</p>
+<p>Stw&#xF3;rzmy sobie zatem prosty pliczek SVG:</p>
 <pre><code class="language-markup">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 &lt;svg version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 16 16&quot;&gt;
 	&lt;defs&gt;
@@ -103,9 +103,9 @@
 	&lt;/g&gt;
 &lt;/svg&gt;
 </code></pre>
-<p>najwyższych lotów to on nie jest, wiem, ale do prezentacji starczy ;)</p>
-<p>Ot, nic nadzwyczajnego - mamy dwie ikonki: jakieś <a href="http://comandeer.pl/tutorials/res/svg-sprites/stack.svg#rect" rel="noreferrer noopener">dwa prostokąciki</a> i <a href="http://comandeer.pl/tutorials/res/svg-sprites/stack.svg#line" rel="noreferrer noopener">dwie linie</a>. Jak widać, początkowo obydwie są ukryte, ale <code>:target</code> działa :D Ważna dla nas jest klasa <code>.icon</code> i <code>id</code> poszczególnych ikonek (do nich się będziemy odwoływać). Można oczywiście jeszcze bardziej uprościć kod i pozbyć się klasy <code>.icon</code>, posługując się selektorem <code>g</code>.</p>
-<p>W HTML i CSS też wielkiego problemu nie ma:</p>
+<p>najwy&#x17C;szych lot&#xF3;w to on nie jest, wiem, ale do prezentacji starczy ;)</p>
+<p>Ot, nic nadzwyczajnego - mamy dwie ikonki: jakie&#x15B; <a href="http://comandeer.pl/tutorials/res/svg-sprites/stack.svg#rect" rel="noreferrer noopener">dwa prostok&#x105;ciki</a> i <a href="http://comandeer.pl/tutorials/res/svg-sprites/stack.svg#line" rel="noreferrer noopener">dwie linie</a>. Jak wida&#x107;, pocz&#x105;tkowo obydwie s&#x105; ukryte, ale <code>:target</code> dzia&#x142;a :D Wa&#x17C;na dla nas jest klasa <code>.icon</code> i <code>id</code> poszczeg&#xF3;lnych ikonek (do nich si&#x119; b&#x119;dziemy odwo&#x142;ywa&#x107;). Mo&#x17C;na oczywi&#x15B;cie jeszcze bardziej upro&#x15B;ci&#x107; kod i pozby&#x107; si&#x119; klasy <code>.icon</code>, pos&#x142;uguj&#x105;c si&#x119; selektorem <code>g</code>.</p>
+<p>W HTML i CSS te&#x17C; wielkiego problemu nie ma:</p>
 <pre><code class="language-markup">&lt;style&gt;
 .icon.rect
 {
@@ -116,11 +116,11 @@
 &lt;/style&gt;
 &lt;button class=&quot;icon rect&quot;&gt;&lt;/button&gt;
 </code></pre>
-<p>Ot, zwykłe tło w formacie SVG... I tu pojawia się problem, bo technika ta działa tylko w Firefoxie, co mnie osobiście dziwi (ej, w końcu SVG to wieloletni standard de facto!). Na szczęście wkrótce wsparcie ma się pojawić także w Operze i reszcie.</p>
-<p>Technika IMO bardzo pomocna i obiecująca. Nie dość, że łatwiej się nią posługiwać (nie trzeba wyliczać pozycji tła), to jeszcze obrazki automatycznie się skalują do wielkości elementu (można to sprawdzić, zmieniając wielkość naszego przycisku). No i teoretycznie powinno to ważyć mniej niż zwykły obrazek ;)</p>
+<p>Ot, zwyk&#x142;e t&#x142;o w formacie SVG... I tu pojawia si&#x119; problem, bo technika ta dzia&#x142;a tylko w Firefoxie, co mnie osobi&#x15B;cie dziwi (ej, w ko&#x144;cu SVG to wieloletni standard de facto!). Na szcz&#x119;&#x15B;cie wkr&#xF3;tce wsparcie ma si&#x119; pojawi&#x107; tak&#x17C;e w Operze i reszcie.</p>
+<p>Technika IMO bardzo pomocna i obiecuj&#x105;ca. Nie do&#x15B;&#x107;, &#x17C;e &#x142;atwiej si&#x119; ni&#x105; pos&#x142;ugiwa&#x107; (nie trzeba wylicza&#x107; pozycji t&#x142;a), to jeszcze obrazki automatycznie si&#x119; skaluj&#x105; do wielko&#x15B;ci elementu (mo&#x17C;na to sprawdzi&#x107;, zmieniaj&#x105;c wielko&#x15B;&#x107; naszego przycisku). No i teoretycznie powinno to wa&#x17C;y&#x107; mniej ni&#x17C; zwyk&#x142;y obrazek ;)</p>
 <p><a href="http://tutorials.comandeer.pl/res/svg-sprites" rel="noreferrer noopener">[size=14]DEMO[/size]</a></p>
 <div class="alert alert-info">
-<p>Artykuł można potraktować jako bardzo bardzo luźne tłumaczenie <a href="http://simurai.com/post/20251013889/svg-stacks" rel="noreferrer noopener" class="alert-link">notki Simuraia</a>. W porównaniu do orginalnej metody, lekko uprościłem kod SVG.</p>
+<p>Artyku&#x142; mo&#x17C;na potraktowa&#x107; jako bardzo bardzo lu&#x17A;ne t&#x142;umaczenie <a href="http://simurai.com/post/20251013889/svg-stacks" rel="noreferrer noopener" class="alert-link">notki Simuraia</a>. W por&#xF3;wnaniu do orginalnej metody, lekko upro&#x15B;ci&#x142;em kod SVG.</p>
 </div>
 
 					</div>
