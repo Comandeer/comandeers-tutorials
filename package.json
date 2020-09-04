@@ -14,7 +14,7 @@
   "devDependencies": {
     "cz-conventional-changelog": "^3.0.2",
     "http-server": "^0.12.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "rollup": "^1.27.14",
     "rollup-plugin-babel-minify": "^9.1.1"
   },
