@@ -5,18 +5,18 @@
   "private": true,
   "dependencies": {
     "cheerio": "^0.22.0",
-    "markdown-it": "^10.0.0",
+    "markdown-it": "^12.0.2",
     "markdown-it-link-attributes": "^3.0.0",
-    "puppeteer": "^2.0.0"
+    "puppeteer": "^5.4.1"
   },
   "author": "Comandeer",
   "license": "MIT",
   "devDependencies": {
-    "cz-conventional-changelog": "^3.0.2",
-    "http-server": "^0.12.0",
-    "node-sass": "^4.13.0",
-    "rollup": "^1.27.14",
-    "rollup-plugin-babel-minify": "^9.1.1"
+    "cz-conventional-changelog": "^3.3.0",
+    "http-server": "^0.12.3",
+    "node-sass": "^5.0.0",
+    "rollup": "^2.33.1",
+    "rollup-plugin-babel-minify": "^10.0.0"
   },
   "scripts": {
     "start": "http-server",
