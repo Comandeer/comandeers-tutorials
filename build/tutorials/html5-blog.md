@@ -5,7 +5,7 @@
 
 <div class="alert alert-info">
 
-Ten tutorial przeznaczony jest dla tych, którzy już mają jakiekolwiek pojęcie o HTML. Dobrym miejscem na zdobycie podstaw wiedzy jest [tutorial od The Awwwesomes](https://the-awwwesomes.gitbooks.io/html-css-step-by-step/pl/) czy też książka Ferrante [Moja pierwsza strona internetowa w HTML5 i CSS3](https://ferrante.pl/books/html/).
+Ten tutorial przeznaczony jest dla tych, którzy już mają jakiekolwiek pojęcie o HTML. Dobrym miejscem na zdobycie podstaw wiedzy jest [kurs HTML](https://www.kurshtml.edu.pl/).
 
 </div>
 
@@ -1327,6 +1327,8 @@ Oto i [pełny przerobiony kod z paroma dodatkami](https://tutorials.comandeer.pl
 <h2 id="changelog">Poprawki i takie tam</h2>
 <details><summary>changelog</summary>
 
+* <b>07.11.2020</b>:
+	* Uaktualnienie linków do kursów HTML.
 * <b>02.01.2020</b>:
 	* Przejście na HTML LS i porzucenie terminu HTML5 na rzecz HTML.
 	* Odejście od sformułowań typu "nowe znaczniki".
